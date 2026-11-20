@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-12",
+  "updated": "2026-11-20",
   "documents": [
     {
       "file": "findings/short-term-exam-prep.json",
@@ -8,6 +8,14 @@
       "count": 20,
       "date": "2026-09-09",
       "updated": "2026-09-17 — 産出（スペル）練習の必要性（productive-retrieval-needed-for-spelling）を追加。同日、利用者判断でinput不採用となり未実装に戻す"
+    },
+    {
+      "file": "findings/memorization-and-write-then-select.json",
+      "title": "暗記科目（略語・用語）と『紙に書いてから選ぶ』形式、計算のフェーディング",
+      "question": "3週間で略語の綴り・用語・計算を覚える時、書く→選ぶ形式・誤答の作り方・過去問反復と類題・例題フェードをどう設計するか",
+      "count": 8,
+      "date": "2026-11-20",
+      "updated": "2026-11-20"
     }
   ],
   "source_documents": [
@@ -56,7 +64,9 @@
       "pretesting-beats-posttesting"
     ],
     "retrieval-practice": [
-      "keep-testing-after-first-correct"
+      "keep-testing-after-first-correct",
+      "generation-effect-moderate-size",
+      "recall-attempt-beats-recognition-and-feedback-matters"
     ],
     "dropout": [
       "keep-testing-after-first-correct"
@@ -68,18 +78,24 @@
       "interleaving-beats-blocked-after-a-day"
     ],
     "problem-solving": [
-      "interleaving-beats-blocked-after-a-day"
+      "interleaving-beats-blocked-after-a-day",
+      "worked-example-fading-backward"
     ],
     "question-selection": [
       "interleaving-beats-blocked-after-a-day",
-      "optimal-difficulty-85-percent"
+      "optimal-difficulty-85-percent",
+      "repeat-identical-recall-items-vary-calculation"
     ],
     "question-format": [
       "immediate-feedback-halves-lure-intrusions",
-      "competitive-lures-make-mcq-generative"
+      "competitive-lures-make-mcq-generative",
+      "recall-attempt-beats-recognition-and-feedback-matters",
+      "write-then-select-is-extrapolation",
+      "misspelling-lures-help-and-hurt"
     ],
     "distractors": [
-      "competitive-lures-make-mcq-generative"
+      "competitive-lures-make-mcq-generative",
+      "misspelling-lures-help-and-hurt"
     ],
     "authoring": [
       "competitive-lures-make-mcq-generative"
@@ -87,7 +103,8 @@
     "feedback": [
       "pretesting-beats-posttesting",
       "immediate-feedback-halves-lure-intrusions",
-      "feedback-required-when-accuracy-below-50"
+      "feedback-required-when-accuracy-below-50",
+      "recall-attempt-beats-recognition-and-feedback-matters"
     ],
     "pretesting": [
       "pretesting-beats-posttesting"
@@ -122,7 +139,8 @@
       "errors-are-fine-if-feedback-is-immediate"
     ],
     "variants": [
-      "vary-surface-keep-deep-structure"
+      "vary-surface-keep-deep-structure",
+      "repeat-identical-recall-items-vary-calculation"
     ],
     "cheatsheet": [
       "cheatsheet-content-what-correlates-with-scores"
@@ -131,13 +149,46 @@
       "cheatsheet-content-what-correlates-with-scores"
     ],
     "vocab": [
-      "productive-retrieval-needed-for-spelling"
+      "productive-retrieval-needed-for-spelling",
+      "generation-effect-moderate-size",
+      "write-then-select-is-extrapolation",
+      "handwriting-helps-orthographic-learning",
+      "self-scoring-leniency-use-exact-match-options"
     ],
     "spelling": [
-      "productive-retrieval-needed-for-spelling"
+      "productive-retrieval-needed-for-spelling",
+      "write-then-select-is-extrapolation",
+      "handwriting-helps-orthographic-learning",
+      "self-scoring-leniency-use-exact-match-options",
+      "misspelling-lures-help-and-hurt"
     ],
     "production": [
-      "productive-retrieval-needed-for-spelling"
+      "productive-retrieval-needed-for-spelling",
+      "generation-effect-moderate-size"
+    ],
+    "write-then-select": [
+      "generation-effect-moderate-size",
+      "recall-attempt-beats-recognition-and-feedback-matters",
+      "write-then-select-is-extrapolation",
+      "handwriting-helps-orthographic-learning",
+      "self-scoring-leniency-use-exact-match-options",
+      "misspelling-lures-help-and-hurt",
+      "repeat-identical-recall-items-vary-calculation"
+    ],
+    "handwriting": [
+      "handwriting-helps-orthographic-learning"
+    ],
+    "self-assessment": [
+      "self-scoring-leniency-use-exact-match-options"
+    ],
+    "procedure": [
+      "worked-example-fading-backward"
+    ],
+    "numeric": [
+      "worked-example-fading-backward"
+    ],
+    "scaffolding": [
+      "worked-example-fading-backward"
     ]
   },
   "unimplemented": [
@@ -147,7 +198,6 @@
     "sleep-is-the-active-ingredient-in-spacing",
     "within-session-lag-still-matters",
     "keep-testing-after-first-correct",
-    "interleaving-beats-blocked-after-a-day",
     "equal-interval-is-fine-no-need-for-expanding",
     "pretesting-beats-posttesting",
     "spacing-beats-cramming-almost-always",

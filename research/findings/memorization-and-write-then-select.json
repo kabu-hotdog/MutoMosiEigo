@@ -1,0 +1,249 @@
+[
+  {
+    "id": "generation-effect-moderate-size",
+    "claim": "自分で産出（生成）した項目は、読むだけの項目より覚えやすい（生成効果）。メタ分析で平均 d≈0.40、手がかり再生では d≈0.55。",
+    "numbers": {
+      "全体": "d≈0.40（86研究・445効果量）",
+      "手がかり再生テスト": "d≈0.55",
+      "自由再生": "効果は最小"
+    },
+    "strength": "high",
+    "sources": [
+      {
+        "cite": "Bertsch, Pesta, Wiscott & McDaniel (2007) The generation effect: A meta-analytic review. Memory & Cognition",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/17645161/"
+      },
+      {
+        "cite": "McCurdy et al. (2020) Theories of the generation effect and the impact of generation constraint. Psychonomic Bulletin & Review",
+        "url": "https://link.springer.com/10.3758/s13423-020-01762-3"
+      }
+    ],
+    "applies_to": [
+      "vocab",
+      "concept"
+    ],
+    "implication": "略語→正式名称は「見て選ぶ」前に「自分で思い出して（書いて）みる」手順を必ず挟む。略語を手がかりに正式名称を産出する形は『手がかり再生』にあたり、効果が出やすい側。",
+    "caveat": "実験の多くは単語・短い項目。効果量は中程度で、間隔や再テストの効果（spacing 系 finding）の方が大きい。『書く』行為自体の魔法ではなく『思い出そうとする』部分が効く。",
+    "implemented_in": ["tests/2026-4-kouki-chukan-network-selfcheck/data.json", "tests/2026-4-kouki-chukan-network-ryakugo/data.json"],
+    "tags": [
+      "vocab",
+      "production",
+      "retrieval-practice",
+      "write-then-select"
+    ]
+  },
+  {
+    "id": "recall-attempt-beats-recognition-and-feedback-matters",
+    "claim": "テスト練習は再学習より保持を上げ（d≈0.50）、最初の練習が再生（思い出して答える）形式のほうが再認（選択）形式より効果が大きいとされる。誤答でも、そのあと正解を見せれば効く。",
+    "numbers": {
+      "テスト vs 再学習": "d≈0.50（61研究）",
+      "形式": "再生 > 再認（Rowland 2014）。ただし Adesope 2017 は選択式が最大と逆の報告、混合形式が最良"
+    },
+    "strength": "high",
+    "sources": [
+      {
+        "cite": "Rowland (2014) The effect of testing versus restudy on retention: a meta-analytic review. Psychological Bulletin",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/25150680/"
+      },
+      {
+        "cite": "Adesope, Trevisan & Sundararajan (2017) Rethinking the use of tests: A meta-analysis of practice testing. Review of Educational Research 87(3)",
+        "url": "https://journals.sagepub.com/doi/10.1177/0034654316689306"
+      }
+    ],
+    "applies_to": [
+      "all"
+    ],
+    "implication": "略語テストは『まず紙に書いて思い出す（再生）→ 選択肢で照合（フィードバック）』の2段にするのが理にかなう。1本のテスト内に形式を混ぜる（選択・複数選択・数値）ほうがよい。",
+    "caveat": "再生 vs 選択のどちらが優位かはメタ分析間で食い違う。『再生が必ず上』とは言えない。紙の産出は本人が実際に書く前提で、書かずに選択肢を見てしまえば純粋な再認練習になる。",
+    "implemented_in": ["tests/2026-4-kouki-chukan-network-selfcheck/data.json", "tests/2026-4-kouki-chukan-network-ryakugo/data.json"],
+    "tags": [
+      "retrieval-practice",
+      "question-format",
+      "feedback",
+      "write-then-select"
+    ]
+  },
+  {
+    "id": "write-then-select-is-extrapolation",
+    "claim": "『紙に書いて思い出す→画面の選択肢で照合』は、産出（書く）練習と即時フィードバックを両方満たす実用的な形だが、この形式そのものを直接検証した研究は確認できていない（既存 finding からの外挿）。",
+    "numbers": {},
+    "strength": "low",
+    "sources": [
+      {
+        "cite": "Barenberg et al. (2021) Retrieval practice: Beyond receptive vs. productive retrieval formats. Applied Cognitive Psychology 35(1)",
+        "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/acp.3796"
+      },
+      {
+        "cite": "Rowland (2014) Psychological Bulletin",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/25150680/"
+      }
+    ],
+    "applies_to": [
+      "vocab"
+    ],
+    "implication": "問題文の指示文で『先に紙に書く』を強制し、選択肢は答え合わせ専用にする。画面側は自己申告（書けた/惜しい/書けなかった）を取れると、後述の誤答再出題に使える。",
+    "caveat": "紙に書いたかどうかは画面から確認できない。サボって選択肢を先に見ると、産出練習の利点（productive-retrieval-needed-for-spelling）は失われる。本番が『綴りを書く』形式のため、綴りが目的の項目では書く工程の省略が最大のリスク。",
+    "implemented_in": ["tests/2026-4-kouki-chukan-network-selfcheck/data.json", "tests/2026-4-kouki-chukan-network-ryakugo/data.json"],
+    "tags": [
+      "vocab",
+      "spelling",
+      "write-then-select",
+      "question-format"
+    ]
+  },
+  {
+    "id": "handwriting-helps-orthographic-learning",
+    "claim": "手書きの練習は、新しい文字・綴りの学習でタイピングより転移タスクの成績が高かった（成人対象の実験）。本番が紙に手で書く形式なら、練習も手書きにしておくのは理にかなう。",
+    "numbers": {
+      "Wiley & Rapp 2021": "成人42人、アラビア文字の学習。手書き群が読み・綴りの未訓練課題で最良（タイピング・視聴のみより上）"
+    },
+    "strength": "moderate",
+    "sources": [
+      {
+        "cite": "Wiley & Rapp (2021) The effects of handwriting experience on literacy learning. Psychological Science",
+        "url": "https://journals.sagepub.com/doi/10.1177/0956797621993111"
+      },
+      {
+        "cite": "Ouellette & Tims (2014) The write way to spell: printing vs. typing effects on orthographic learning. Frontiers in Psychology",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3923165"
+      }
+    ],
+    "applies_to": [
+      "vocab"
+    ],
+    "implication": "綴りを書く項目は画面に打たせず紙に手書きさせる方針を支持する材料。『本番と同じ運動・同じ形式』で練習する点でも整合。",
+    "caveat": "対象は新規文字体系の学習で、既知のアルファベットで英単語の綴りを覚える場面そのままではない。Ouellette & Tims の結果は本文を確認できていない。差が小さい可能性は残る。",
+    "implemented_in": ["tests/2026-4-kouki-chukan-network-selfcheck/data.json", "tests/2026-4-kouki-chukan-network-ryakugo/data.json"],
+    "tags": [
+      "vocab",
+      "spelling",
+      "handwriting",
+      "write-then-select"
+    ]
+  },
+  {
+    "id": "self-scoring-leniency-use-exact-match-options",
+    "claim": "学習者は自己採点・自己評価で自分を過大評価しやすく、『もう覚えた』と判断して早く練習をやめ、成績が下がる。意味の近さで丸をつける採点より、綴りが一字一句合っているかを選択肢と照合するほうが曖昧さが小さい。",
+    "numbers": {},
+    "strength": "moderate",
+    "sources": [
+      {
+        "cite": "Dunlosky & Rawson (2012) Overconfidence produces underachievement: Inaccurate self evaluations undermine students' learning and retention. Learning and Instruction 22",
+        "url": "https://www.kent.edu/psychology/profile/john-dunlosky"
+      },
+      {
+        "cite": "Kornell & Bjork (2008) Optimizing self-regulated study: The benefits and costs of dropping flashcards. Memory",
+        "url": "https://bjorklab.psych.ucla.edu/wp-content/uploads/sites/13/2016/07/Kornell_Bjork_2008_Memory.pdf"
+      }
+    ],
+    "applies_to": [
+      "vocab"
+    ],
+    "implication": "指示文に『1文字でも違えば不正解として選ぶ』を明記する。選択肢は正解と綴りが1〜2文字違う誤答を並べて、完全一致でしか正解にならないようにする。『書けた』と思った回答も選択肢で正解が違えば誤答扱いで再出題する。",
+    "caveat": "『綴りの照合で自己採点が正確になる』という点は一般の自己評価研究からの推論で、この形式の直接実験ではない。フラッシュカード自己採点の甘さを直接測った一次論文は確認できていない（Dunlosky & Rawson の本文未確認）。",
+    "implemented_in": ["tests/2026-4-kouki-chukan-network-selfcheck/data.json", "tests/2026-4-kouki-chukan-network-ryakugo/data.json"],
+    "tags": [
+      "vocab",
+      "spelling",
+      "self-assessment",
+      "write-then-select"
+    ]
+  },
+  {
+    "id": "misspelling-lures-help-and-hurt",
+    "claim": "誤選択肢を『もっともらしく』すると多肢選択でも検索練習が起きる（Little & Bjork）。一方、綴り誤りを見せると、その誤綴りが記憶痕跡として残り、あとの綴りテストの成績を下げうる（特に発音が正解と同じ誤綴り）。",
+    "numbers": {
+      "誤綴り曝露": "綴りテストの正答が下がる方向（Brown 1988）。Kaminska & Dixon (1997) では曝露で低下する場合と改善する場合が条件で分かれた"
+    },
+    "strength": "moderate",
+    "sources": [
+      {
+        "cite": "Little & Bjork (2015) Optimizing multiple-choice tests as tools for learning. Memory & Cognition 43",
+        "url": "https://bjorklab.psych.ucla.edu/wp-content/uploads/sites/13/2017/01/LittleBjorkMC2014.pdf"
+      },
+      {
+        "cite": "Brown (1988) Encountering misspellings and spelling performance: Why wrong isn't right. Journal of Educational Psychology",
+        "url": "https://rd.springer.com/chapter/10.1007/978-94-017-3054-9_9"
+      },
+      {
+        "cite": "Dixon (1997) thesis / Kaminska & Dixon (1997) on exposure to misspellings",
+        "url": "https://openaccess.city.ac.uk/30780/1/Dixon%20thesis%201997%20PDF-A.pdf"
+      }
+    ],
+    "applies_to": [
+      "vocab"
+    ],
+    "implication": "綴り確認の選択肢では誤綴りの数を抑える（4択なら誤綴りは最大2つ、他は『別の略語の正式名称』など意味上の紛らわしい誤答）。解説では正解の綴りを大きく出し、誤綴りは×を付けて短く触れるだけにする。誤選択肢を選んだ項目は必ず後で再出題する。",
+    "caveat": "『誤綴り曝露で下がる』は実験室の条件（見たあと同じ単語を綴る）での結果で、即時フィードバックがある学習場面でどの程度かは未確認。（immediate-feedback-halves-lure-intrusions を併用し、誤答直後に正解を見せることが前提。）一次論文の本文は未確認で、二次情報に基づく。",
+    "implemented_in": ["tests/2026-4-kouki-chukan-network-selfcheck/data.json", "tests/2026-4-kouki-chukan-network-ryakugo/data.json"],
+    "tags": [
+      "distractors",
+      "spelling",
+      "question-format",
+      "write-then-select"
+    ]
+  },
+  {
+    "id": "repeat-identical-recall-items-vary-calculation",
+    "claim": "試験でほぼそのまま出る事実・用語の想起は、同じ項目を間隔をあけて繰り返し検索するのが直接の練習になる。変化（類題・数値違い）が効くのは、概念の理解や計算手順の転移。",
+    "numbers": {},
+    "strength": "low",
+    "sources": [
+      {
+        "cite": "Rowland (2014) Psychological Bulletin（テスト練習の効果）",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/25150680/"
+      },
+      {
+        "cite": "Chi & VanLehn (2012) Educational Psychologist 47(3)（深層構造の保持と転移）",
+        "url": "https://www.tandfonline.com/doi/abs/10.1080/00461520.2012.695709"
+      }
+    ],
+    "applies_to": [
+      "vocab",
+      "concept",
+      "procedure"
+    ],
+    "implication": "セルフチェックの過去問は、略語・用語系は同じ問題のまま繰り返し出す（本番が同じ問題の可能性が高い）。理解系・計算系は、過去問のあとに表層を変えた類題を混ぜる。類題だけにして過去問を捨てない。",
+    "caveat": "この使い分けは既存 finding（keep-testing-after-first-correct、vary-surface-keep-deep-structure、interleaving-beats-blocked-after-a-day）の組み合わせから導いた設計判断で、同一問題の反復 vs 類題を直接比べた研究は今回確認できていない。",
+    "implemented_in": ["tests/2026-4-kouki-chukan-network-selfcheck/data.json", "tests/2026-4-kouki-chukan-network-ryakugo/data.json", "tests/2026-4-kouki-chukan-network-keisan/data.json"],
+    "tags": [
+      "variants",
+      "question-selection",
+      "write-then-select"
+    ]
+  },
+  {
+    "id": "worked-example-fading-backward",
+    "claim": "計算・手順系は、完成した解答例（worked example）を見せ、後ろの手順から順に空欄にして自力で解く部分を増やす（後ろ向きフェーディング）と、突然の自力問題より学習効果が高い。",
+    "numbers": {
+      "後ろ向きフェーディングの型": "1問目は最後の1ステップを自力、2問目は最後の2ステップ、…と増やす"
+    },
+    "strength": "moderate",
+    "sources": [
+      {
+        "cite": "Renkl, Atkinson, Maier & Staley (2002) From example study to problem solving: Smooth transitions help learning. Journal of Experimental Education 70",
+        "url": "https://faculty.engineering.asu.edu/mre/wp-content/uploads/sites/31/2020/02/Exp_Rev_LI06.pdf"
+      },
+      {
+        "cite": "Renkl, Atkinson & Große (2004) How fading worked solution steps works. Instructional Science 32",
+        "url": "https://link.springer.com/doi/10.1007/s11251-009-9107-8"
+      },
+      {
+        "cite": "Kalyuga, Ayres, Chandler & Sweller (2003) The expertise reversal effect. Educational Psychologist 38(1)（わかっている人には例題が逆効果）",
+        "url": "https://www.tandfonline.com/doi/abs/10.1207/S15326985EP3801_4"
+      }
+    ],
+    "applies_to": [
+      "procedure"
+    ],
+    "implication": "計算テストは各種類ごとに『例題（全手順つき）→ 最後の1ステップだけ数値入力 → 最後の2ステップ → 全部自力』の順に並べる。解説は途中式を省かない。",
+    "caveat": "実験の多くは確率・統計・数学・回路。教材の細部は一次論文で本文を確認していない。すでに解ける問題に例題を挟むと逆効果（expertise reversal）なので、各種類で最初に1問だけ自力を試させて、できる人は飛ばせる構成にするか、早い段階だけ例題を出す。",
+    "implemented_in": ["tests/2026-4-kouki-chukan-network-keisan/data.json"],
+    "tags": [
+      "procedure",
+      "problem-solving",
+      "numeric",
+      "scaffolding"
+    ]
+  }
+]
