@@ -1,500 +1,607 @@
 {
- "year": 2026,
- "grade": 4,
- "exam": "後期中間試験",
- "subject": "情報ネットワーク工学",
- "title": "情報ネットワーク工学 ・ 学習 第5回 アクセスネットワークと LAN",
- "storageKey": "ine_learn_05_v1",
- "minutes": 40,
- "goals": [
-  "ベーシック手順と HDLC の違い(一方向/両方向、パリティ/CRC など)を言える",
-  "ISDN(2B+D)・ADSL・FTTH・CATV の特徴と、バス・リング・スターの形、CSMA/CD と CSMA/CA の違いを言える",
-  "リピータハブとスイッチングハブの違いを説明でき、MAC アドレスが 48 ビットだと言える"
- ],
- "katex": false,
- "terms": [
-  { "name": "ISDN", "full": "Integrated Service Digital Network", "plain": "音声もデータも1本のディジタル回線で送るサービス。基本は「2B+D」" },
-  { "name": "ADSL", "full": "Asymmetric Digital Subscriber Line", "plain": "今ある固定電話の線で使う高速インターネット。電話局から遠いほど遅い" },
-  { "name": "FTTH", "full": "Fiber To The Home", "plain": "光ファイバを家まで引くインターネット" },
-  { "name": "CATV", "full": "CAble TeleVision", "plain": "ケーブルテレビの回線でつなぐインターネット" },
-  { "name": "HDLC", "full": "High-level Data Link Control", "plain": "ベーシック手順より新しい通信手順。両方向で、誤り検出が強い" },
-  { "name": "CSMA/CD", "full": "Carrier Sense Multiple Access / Collision Detection", "plain": "同じ線を使う機器どうしの信号が、ぶつかったことを見つける約束" },
-  { "name": "UTP", "full": "Unshielded Twisted Pair", "plain": "シールドなしのより線ケーブル。外部の雑音に弱い" },
-  { "name": "LTE", "full": "Long Term Evolution", "plain": "第3.9世代の携帯電話の通信方式。(資料外・Moodle の正解表記)" },
-  { "name": "TCP", "full": "Transmission Control Protocol", "plain": "データを間違いなく届けるための約束(第4層)。(資料外・Moodle の正解表記)" },
-  { "name": "ITU", "full": "International Telecommunication Union", "plain": "国際電気通信連合。通信の国際的なルールを決める機関。(資料外・Moodle の正解表記)" },
-  { "name": "DoS", "full": "Denial of Service attack", "plain": "大量の要求を送りつけて、サービスを使えなくする攻撃。attack まで含めて書く。(資料外・Moodle の正解表記)" },
-  { "name": "MAC アドレス", "full": "Media Access Control address", "plain": "ネットワーク機器ごとの 48 ビットの番号(背番号のようなもの)" }
- ],
- "blocks": [
-  {
-   "id": "b1",
-   "title": "ISDN は1本の回線で音声もデータも送る。基本は「2B+D」",
-   "pre": [
-    {
-     "type": "single",
-     "q": "「アクセスネットワーク」は、何と何をつなぐネットワーク?(知らなくて当然。外れてOK)",
-     "opts": [
-      "ユーザの端末と、いちばん近い通信事業者の装置",
-      "通信事業者どうし",
-      "世界中のサーバどうし"
-     ],
-     "ans": "ユーザの端末と、いちばん近い通信事業者の装置",
-     "note": "家(端末)から最寄りの局までの区間。「ラストワンマイル」とも呼ぶ。第5回 p.3 [A6]"
-    }
-   ],
-   "body": "<b>アクセスネットワーク</b>は、ユーザの端末(や家の中のネットワーク)と、いちばん近い通信事業者の装置をつなぐ区間で、<b>ラストワンマイル</b>とも呼ぶ。つなぐ先によって家側の装置が違い、DSU(Digital Service Unit)、ONU(Optical Network Unit)、STB(Set-Top Box)がある(どの網でどれを使うかは資料外。教科書 図6.1)。<br><b>ISDN</b>は音声・データ・画像を1本のディジタル回線で送る。回線交換とパケット交換のどちらも使える。速度が 1.5Mbps までなら N-ISDN、1.5Mbps 以上なら B-ISDN。基本インターフェースは B チャネル2本と D チャネル1本が同時に使えるので <b>2B+D</b> と書く(D は呼制御用にも使う。演習6.3)。2024年1月にサービス終了(2025年1月に完全終了)で、インターネット EDI(Electronic Data Interchange)へ移った。(第5回 p.3, p.7)",
-   "fig": "<svg viewBox='0 0 300 235' width='300' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='アクセスネットワーク'><rect x='75' y='10' width='150' height='44' rx='8' fill='none' stroke='currentColor' stroke-width='2'/><text x='150' y='38' text-anchor='middle' fill='currentColor' font-size='15'>ユーザ端末</text><line x1='150' y1='54' x2='150' y2='120' stroke='currentColor' stroke-width='3'/><text x='162' y='82' font-weight='700' fill='currentColor' font-size='13'>アクセスネットワーク</text><text x='162' y='102'  fill='currentColor' font-size='13'>(= ラストワンマイル)</text><rect x='75' y='120' width='150' height='50' rx='8' fill='none' stroke='currentColor' stroke-width='2'/><text x='150' y='142' text-anchor='middle' fill='currentColor' font-size='13'>最寄りの通信事業者</text><text x='150' y='159' text-anchor='middle' fill='currentColor' font-size='13'>の装置</text><text x='150' y='200' text-anchor='middle' fill='currentColor' font-size='13'>家側の装置は接続先で変わる</text><text x='150' y='222' text-anchor='middle' font-weight='700' fill='currentColor' font-size='14'>DSU ・ ONU ・ STB</text></svg>",
-   "example": {
-    "steps": [
-     "B チャネル1本は 64 kbps(資料外の一般知識)。D チャネル1本は 16 kbps(資料外の一般知識)",
-     "2B+D の「2B」は B が2本 → 64 × 2 = 128 kbps",
-     "「D」は D が1本 → 16 kbps",
-     "合計 = 128 + 16"
-    ],
-    "fill": {
-     "type": "numeric",
-     "q": "基本インターフェース(2B+D)の合計は何 kbps?(B=64kbps、D=16kbps は資料外)",
-     "parts": [
-      { "ans": 144, "unit": "kbps", "tol": 0 }
-     ],
-     "note": "128 + 16 = 144 kbps。B=64kbps・D=16kbps は資料外の一般知識。"
-    }
-   },
-   "check": [
-    {
-     "type": "single",
-     "q": "ISDN 基本インターフェースの「2B+D」の意味は?",
-     "opts": [
-      "B チャネル2本と D チャネル1本が使える",
-      "B チャネル1本と D チャネル2本が使える",
-      "B という速度 2Mbps と D という速度が使える",
-      "B 型と D 型の2種類の端末をつなげる"
-     ],
-     "ans": "B チャネル2本と D チャネル1本が使える",
-     "note": "数字は本数。2B = B が2本、D は1本。第5回 p.7 [A21]"
-    },
-    {
-     "type": "single",
-     "q": "N-ISDN と B-ISDN の境目の速度は?",
-     "opts": [
-      "1.5Mbps",
-      "64kbps",
-      "10Mbps",
-      "100Mbps"
-     ],
-     "ans": "1.5Mbps",
-     "note": "N-ISDN は 1.5Mbps まで、B-ISDN は 1.5Mbps 以上。第5回 p.7 [A21][C5]"
-    },
-    {
-     "type": "single",
-     "q": "演習6.3 の「基本インターフェースでは2本使える」チャネルは B と D のどちら? その理由は?",
-     "opts": [
-      "B。2B+D の「2B」が B 2本という意味だから",
-      "D。2B+D の「D」は2本分あるから",
-      "B。B は呼制御用のチャネルだから",
-      "D。D は 64kbps で B より速いから"
-     ],
-     "ans": "B。2B+D の「2B」が B 2本という意味だから",
-     "note": "2本あるのは B、1本が D。演習6.3 の答えは ①D ②B。数字 ③16 ④64(kbps)は資料外の一般知識。第5回 p.7, p.13 [A21]"
-    }
-   ]
-  },
-  {
-   "id": "b2",
-   "title": "ADSL・FTTH・CATV は、家まで引く線の種類が違う",
-   "pre": [
-    {
-     "type": "single",
-     "q": "ADSL は、電話局から家までの距離が遠くなると、速度はどうなる?(知らなくて当然。外れてOK)",
-     "opts": [
-      "遅くなる",
-      "速くなる",
-      "距離とは関係ない"
-     ],
-     "ans": "遅くなる",
-     "note": "距離に応じて速度が下がる。使える距離は 5km(10km)程度まで。第5回 p.8 [A22]"
-    }
-   ],
-   "body": "<table style='width:100%;border-collapse:collapse;font-size:.88rem'><tr><th style='border:1px solid var(--line);padding:6px 8px;text-align:left'>方式</th><th style='border:1px solid var(--line);padding:6px 8px;text-align:left'>線</th><th style='border:1px solid var(--line);padding:6px 8px;text-align:left'>ポイント</th></tr><tr><td style='border:1px solid var(--line);padding:6px 8px'><b>ADSL</b></td><td style='border:1px solid var(--line);padding:6px 8px'>今ある固定電話の線</td><td style='border:1px solid var(--line);padding:6px 8px'>電話局から遠いほど遅い(最大 5km〔10km〕程度)。2024年3月に終了(2025年1月に完全終了)。移行先は FTTH・CATV・WiMAX2 など</td></tr><tr><td style='border:1px solid var(--line);padding:6px 8px'><b>FTTH</b></td><td style='border:1px solid var(--line);padding:6px 8px'>光ファイバ</td><td style='border:1px solid var(--line);padding:6px 8px'>SS(Single Star)と PDS(Passive Double Star)の2つの構成がある。PDS 構成が <b>PON</b>(Passive Optical Network)。PON は<b>時分割多重</b>(時間を細かく区切り、利用者が順番に使う方式)で送る(スライドの「自分割」は誤字)。家側の装置は ONU(資料外。教科書 図6.1)</td></tr><tr><td style='border:1px solid var(--line);padding:6px 8px'><b>CATV</b></td><td style='border:1px solid var(--line);padding:6px 8px'>ケーブルテレビの回線</td><td style='border:1px solid var(--line);padding:6px 8px'>CAble TeleVision の略。家側の装置は STB(Set-Top Box)(資料外。教科書 図6.1)</td></tr></table>有線のつなぎ方は、ダイヤルアップ → ISDN → ADSL・CATV → FTTH・CATV と移ってきた。(第5回 p.8〜p.12)",
-   "check": [
-    {
-     "type": "single",
-     "q": "ADSL のサービス終了後の乗り換え先として、資料に挙がっていないものは?",
-     "opts": [
-      "ISDN",
-      "FTTH",
-      "CATV",
-      "WiMAX2"
-     ],
-     "ans": "ISDN",
-     "noShuffle": false,
-     "note": "乗り換え先は FTTH・CATV・WiMAX2 など。ISDN も ADSL と同じく終了したサービス。第5回 p.8, p.10 [A22]"
-    },
-    {
-     "type": "single",
-     "q": "CATV でインターネットにつなぐとき、家側で使う装置は?",
-     "opts": [
-      "STB",
-      "ONU",
-      "DSU",
-      "L2SW"
-     ],
-     "ans": "STB",
-     "note": "STB = Set-Top Box。ONU は光(FTTH)、DSU は ISDN 側の装置。ただし、装置と網の対応は教科書の図6.1にしか載っていない(資料外。教科書 図6.1)。第5回 p.3, p.12 [A24]"
-    },
-    {
-     "type": "single",
-     "q": "PON(PDS 構成)で、なぜ時分割多重が使われる?",
-     "opts": [
-      "1本の光ファイバを複数の利用者で分け合い、順番に使わせるため",
-      "光ファイバは1本しか作れないため",
-      "電話線の速度に合わせるため",
-      "ADSL と同じ電波を使うため"
-     ],
-     "ans": "1本の光ファイバを複数の利用者で分け合い、順番に使わせるため",
-     "note": "時分割 = 時間を区切って順番に使う。スライドは「自分割」と誤記(正しくは時分割)。「分け合うから」は PDS(Double Star)の形からの補足で資料外。第5回 p.11 [A23]"
-    }
-   ]
-  },
-  {
-   "id": "b3",
-   "title": "HDLC は、ベーシック手順より両方向・大容量・高速・誤り検出が強い",
-   "pre": [
-    {
-     "type": "single",
-     "q": "ベーシック手順と HDLC のうち、両方向に通信できるのはどちら?(知らなくて当然。外れてOK)",
-     "opts": [
-      "HDLC",
-      "ベーシック手順",
-      "どちらもできない"
-     ],
-     "ans": "HDLC",
-     "note": "ベーシック手順は一方向だけ、HDLC は両方向。第5回 p.5 [A20]"
-    }
-   ],
-   "body": "通信手順(データをやりとりする約束)の古い方式が<b>ベーシック手順</b>(1972年に ISO が標準化)、新しい方式が <b>HDLC</b>(High-level Data Link Control)。演習6.2「比較せよ」の答えは次の表。<table style='width:100%;border-collapse:collapse;font-size:.88rem;margin-top:8px'><tr><th style='border:1px solid var(--line);padding:6px 8px;text-align:left'>見る点</th><th style='border:1px solid var(--line);padding:6px 8px;text-align:left'>ベーシック手順</th><th style='border:1px solid var(--line);padding:6px 8px;text-align:left'>HDLC</th></tr><tr><td style='border:1px solid var(--line);padding:6px 8px'>向き</td><td style='border:1px solid var(--line);padding:6px 8px'>一方向だけ</td><td style='border:1px solid var(--line);padding:6px 8px'><b>両方向</b>OK</td></tr><tr><td style='border:1px solid var(--line);padding:6px 8px'>送る単位</td><td style='border:1px solid var(--line);padding:6px 8px'>文字(キャラクタ)単位。最小でも 7 ビット</td><td style='border:1px solid var(--line);padding:6px 8px'>任意の大きさ</td></tr><tr><td style='border:1px solid var(--line);padding:6px 8px'>応答の確認</td><td style='border:1px solid var(--line);padding:6px 8px'>1ブロックごとに必要</td><td style='border:1px solid var(--line);padding:6px 8px'>フレーム(送るデータのひとまとまり)ごとには不要。複数まとめて確認でき、高速化できる</td></tr><tr><td style='border:1px solid var(--line);padding:6px 8px'>誤り検出</td><td style='border:1px solid var(--line);padding:6px 8px'>パリティビット(誤り検出用に足す1ビット。資料外の補足)を付けるだけ</td><td style='border:1px solid var(--line);padding:6px 8px'><b>CRC</b>(Cyclic Redundancy Check、巡回冗長検査)。より強力</td></tr></table>HDLC の方式は、コンテンション方式(平衡型)とポーリング/セレクティング方式(非平衡型)の2つ。(第5回 p.4, p.5。例題6.1 は試験対象外なので解かなくてよい)",
-   "check": [
-    {
-     "type": "single",
-     "q": "ベーシック手順にはなく、HDLC にある特徴は?",
-     "opts": [
-      "両方向の伝送ができる",
-      "パリティビットで誤りを調べる",
-      "1ブロックごとに応答確認が必要",
-      "伝送単位が最小でも 7 ビット"
-     ],
-     "ans": "両方向の伝送ができる",
-     "note": "残り3つはベーシック手順の特徴。第5回 p.5 [A20]"
-    },
-    {
-     "type": "single",
-     "q": "HDLC が誤り検出に使う方式は?",
-     "opts": [
-      "CRC(巡回冗長検査)",
-      "パリティビットだけ",
-      "誤り検出はしない",
-      "チェックサムだけ"
-     ],
-     "ans": "CRC(巡回冗長検査)",
-     "note": "CRC = Cyclic Redundancy Check。パリティだけなのはベーシック手順。第5回 p.5 [A20]"
-    },
-    {
-     "type": "single",
-     "q": "ベーシック手順は、なぜ HDLC より誤り検出が弱い?",
-     "opts": [
-      "パリティビットを付けるだけで判定するから",
-      "一方向にしか送れないから",
-      "1ブロックごとに応答を返すから",
-      "最小でも 7 ビット単位で送るから"
-     ],
-     "ans": "パリティビットを付けるだけで判定するから",
-     "note": "誤り検出の強さは検出方式で決まる。HDLC は CRC を使う。第5回 p.5 [A20]"
-    }
-   ]
-  },
-  {
-   "id": "b4a",
-   "title": "LAN のケーブルは UTP と STP。機器のつなぎ方(トポロジ)はバス・リング・スター",
-   "pre": [
-    {
-     "type": "single",
-     "q": "UTP と STP のうち、外部の雑音に強いのはどちら?(知らなくて当然。外れてOK)",
-     "opts": [
-      "STP",
-      "UTP",
-      "どちらも同じ"
-     ],
-     "ans": "STP",
-     "note": "STP はシールド(覆い)がある。UTP はシールドなしで雑音に弱い。第5回 p.18 [C1]"
-    }
-   ],
-   "body": "<b>ケーブル</b>: LAN の線はより線で、UTP(Unshielded Twisted Pair)はシールド(外の雑音を防ぐ覆い)がなく雑音に弱い。STP(Shielded Twisted Pair)はシールドがあり強い。家庭や一般企業の標準はカテゴリ6A(UTP、100m まで)。「100BASE-TX」は 100(最大 100Mbps)+BASE(ベースバンド方式)+TX(ケーブルの種類)と読む。<br><b>トポロジ</b>(接続形態)=機器をどうつなぐかの形。バス型(1本の線に全部つなぐ。例: イーサネット)、リング型(輪にしてつなぐ。例: FDDI = Fiber Distributed Data Interface)、スター型(中心の機器から各機器へ線を引く。例: イーサネット)。(第5回 p.18〜p.22)",
-   "fig": "<svg viewBox='0 0 360 330' width='360' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='バス型・リング型・スター型の図'><line x1='10' y1='30' x2='190' y2='30' stroke='currentColor' stroke-width='3'/><line x1='30' y1='30' x2='30' y2='64' stroke='currentColor' stroke-width='2'/><circle cx='30' cy='73' r='9' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><line x1='80' y1='30' x2='80' y2='64' stroke='currentColor' stroke-width='2'/><circle cx='80' cy='73' r='9' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><line x1='130' y1='30' x2='130' y2='64' stroke='currentColor' stroke-width='2'/><circle cx='130' cy='73' r='9' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><line x1='170' y1='30' x2='170' y2='64' stroke='currentColor' stroke-width='2'/><circle cx='170' cy='73' r='9' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><text x='270' y='40' text-anchor='middle' font-weight='700' fill='currentColor' font-size='16'>バス型</text><text x='270' y='62' text-anchor='middle' fill='currentColor' font-size='13'>1本の線に全部つなぐ</text><text x='270' y='82' text-anchor='middle' fill='currentColor' font-size='13'>例: イーサネット</text><circle cx='100' cy='165' r='36' fill='none' stroke='currentColor' stroke-width='2' /><circle cx='100' cy='129' r='9' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><circle cx='136' cy='165' r='9' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><circle cx='100' cy='201' r='9' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><circle cx='64' cy='165' r='9' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><text x='270' y='150' text-anchor='middle' font-weight='700' fill='currentColor' font-size='16'>リング型</text><text x='270' y='172' text-anchor='middle' fill='currentColor' font-size='13'>輪にしてつなぐ</text><text x='270' y='192' text-anchor='middle' fill='currentColor' font-size='13'>例: FDDI</text><line x1='100' y1='275' x2='50' y2='240' stroke='currentColor' stroke-width='2'/><circle cx='50' cy='240' r='9' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><line x1='100' y1='275' x2='150' y2='240' stroke='currentColor' stroke-width='2'/><circle cx='150' cy='240' r='9' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><line x1='100' y1='275' x2='50' y2='310' stroke='currentColor' stroke-width='2'/><circle cx='50' cy='310' r='9' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><line x1='100' y1='275' x2='150' y2='310' stroke='currentColor' stroke-width='2'/><circle cx='150' cy='310' r='9' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><circle cx='100' cy='275' r='15' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><text x='100' y='279' text-anchor='middle' fill='currentColor' font-size='11'>中心</text><text x='270' y='260' text-anchor='middle' font-weight='700' fill='currentColor' font-size='16'>スター型</text><text x='270' y='282' text-anchor='middle' fill='currentColor' font-size='13'>中心の機器から線を引く</text><text x='270' y='302' text-anchor='middle' fill='currentColor' font-size='13'>例: イーサネット</text></svg>",
-   "check": [
-    {
-     "type": "single",
-     "q": "リング型 LAN の例として、資料に挙がっているのは?",
-     "opts": [
-      "FDDI",
-      "イーサネット",
-      "ADSL",
-      "PON"
-     ],
-     "ans": "FDDI",
-     "note": "バス型とスター型はイーサネット、リング型は FDDI。第5回 p.22 [A25]"
-    },
-    {
-     "type": "single",
-     "q": "家庭や一般企業等での標準使用カテゴリとされているのは?",
-     "opts": [
-      "カテゴリ6A",
-      "カテゴリ5e",
-      "カテゴリ6",
-      "カテゴリ8"
-     ],
-     "ans": "カテゴリ6A",
-     "note": "カテゴリ6A(UTP、10GBASE-T、100m)に黄色の吹き出しで「標準使用カテゴリ」とある。5e も赤枠で強調されているが標準とは書かれていない。第5回 p.18 [C1]",
-     "noShuffle": false
-    },
-    {
-     "type": "single",
-     "q": "STP が UTP より外部の雑音に強いのは、なぜ?",
-     "opts": [
-      "シールド(覆い)で外からの雑音を防ぐから",
-      "線が長く作られているから",
-      "信号を2倍の速さで送るから",
-      "電波ではなく光で送るから"
-     ],
-     "ans": "シールド(覆い)で外からの雑音を防ぐから",
-     "note": "S = Shielded。シールドがあるのが STP、ないのが UTP。光(光ファイバ)は別のケーブル。第5回 p.18 [C1][C9]"
-    }
-   ]
-  },
-  {
-   "id": "b4b",
-   "title": "同じ線で信号がぶつかるのを、CSMA/CD は「見つけ」、CSMA/CA は「避ける」",
-   "pre": [
-    {
-     "type": "single",
-     "q": "同じ線で2台が同時にデータを送ると、どうなる?(知らなくて当然。外れてOK)",
-     "opts": [
-      "信号がぶつかって(衝突して)読めなくなる",
-      "速度が2倍になる",
-      "自動で順番に送られる"
-     ],
-     "ans": "信号がぶつかって(衝突して)読めなくなる",
-     "note": "このぶつかりを防ぐ約束が、このブロックの CSMA。第5回 p.23"
-    }
-   ],
-   "body": "同じ回線を複数の機器が使うと、同時に送った信号がぶつかる(衝突)。そこで<b>アクセス制御方式</b>(だれがいつ送るかの約束)で整理する。方式には ALOHA 方式と CSMA 方式があり、CSMA = Carrier Sense Multiple Access。CSMA/CD の CD は Collision Detection、CSMA/CA の CA は Collision Avoidance(黄色で強調)。<br>(資料外の補足)Carrier Sense = 送る前に回線が使われていないか確かめる、Collision = 衝突。つまり CD は衝突を<b>見つける</b>、CA は衝突を<b>避ける</b>。CSMA は線が長いと信号の到着が遅れ、相手が送り始めたことに気づけずぶつかりやすい(演習7.1 の考え方。資料外)。(第5回 p.23)",
-   "check": [
-    {
-     "type": "single",
-     "q": "CSMA/CA の「CA」は何の略?",
-     "opts": [
-      "Collision Avoidance",
-      "Collision Detection",
-      "Carrier Access",
-      "Channel Allocation"
-     ],
-     "ans": "Collision Avoidance",
-     "note": "CSMA/CD の CD が Collision Detection。CSMA/CA は黄色で強調されている。第5回 p.23 [A27]"
-    },
-    {
-     "type": "single",
-     "q": "信号の衝突を「見つける」のは、CSMA/CD と CSMA/CA のどちら?",
-     "opts": [
-      "CSMA/CD(Collision Detection = 衝突の検出)",
-      "CSMA/CA(Collision Avoidance = 衝突の回避)",
-      "どちらも衝突を見つける",
-      "どちらも衝突を見つけない"
-     ],
-     "ans": "CSMA/CD(Collision Detection = 衝突の検出)",
-     "note": "Detection = 見つける、Avoidance = 避ける。CD→CA の順に黄色で強調されている。第5回 p.23 [A27]"
-    },
-    {
-     "type": "single",
-     "q": "CSMA が長距離のネットワークに向かない理由は?(演習7.1)",
-     "opts": [
-      "信号が届くまでの遅れが大きく、相手が送り始めたことに気づけずぶつかりやすいから",
-      "ケーブルが長いと信号が強くなりすぎるから",
-      "長距離では暗号化が必要になるから",
-      "スター型にできなくなるから"
-     ],
-     "ans": "信号が届くまでの遅れが大きく、相手が送り始めたことに気づけずぶつかりやすいから",
-     "note": "(資料外)演習7.1 の答えは資料に載っていない。一般的な説明。第5回 p.23, p.31 [A27]"
-    }
-   ]
-  },
-  {
-   "id": "b5",
-   "title": "リピータハブは全員に配り、スイッチングハブは MAC アドレスで宛先だけに配る",
-   "pre": [
-    {
-     "type": "single",
-     "q": "MAC アドレスは何ビットの番号?(知らなくて当然。外れてOK)",
-     "opts": [
-      "48 ビット",
-      "32 ビット",
-      "64 ビット",
-      "128 ビット"
-     ],
-     "ans": "48 ビット",
-     "note": "32 ビットは IPv4 アドレス、128 ビットは IPv6 アドレス。MAC アドレスは 48 ビット。第5回 p.24 [A17][A18]"
-    },
-    {
-     "type": "single",
-     "q": "ルータが宛先を決めるのに使うのは、MAC アドレスと IP アドレスのどちら?",
-     "opts": [
-      "IP アドレス",
-      "MAC アドレス"
-     ],
-     "ans": "IP アドレス",
-     "note": "ブリッジやスイッチングハブは MAC、ルータは IP。第5回 p.5, p.24 [A18]"
-    }
-   ],
-   "body": "<b>リピータハブ</b>(ダムハブ)は、受け取ったデータを全ホストに転送する。宛先でないホストは「自分宛てじゃない」と破棄する。<b>スイッチングハブ</b>(L2SW)は、ポート番号と MAC アドレスの対応表(MAC アドレステーブル)を持ち、宛先のホストだけに転送する。リピータは電気信号の再生。<br><b>MAC アドレス</b>(Media Access Control address)は機器ごとの番号で、第2層(データリンク層)で使う。<b>48 ビット</b>、16進数(00〜FF)、区切りは「-」か「:」。最初の3オクテット(= 24 ビット。スライドは「8bit」と誤記)がベンダー ID、次の1オクテットが機種 ID、最後の2オクテットがシリアル ID。2<sup>48</sup> ≒ 281兆個で、IPv4 のような枯渇問題は実用上ない。<br>LAN 間をつなぐ装置: ブリッジは MAC アドレス、ルータは IP アドレスで中継する。規格番号は、イーサネットが IEEE 802.3、無線 LAN が IEEE 802.11。(第5回 p.24〜p.28)",
-   "fig": "<svg viewBox='0 0 360 310' width='360' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='リピータハブとスイッチングハブの違い'><circle cx='30' cy='60' r='13' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><text x='30' y='65' text-anchor='middle' fill='currentColor' font-size='13'>A</text><line x1='43' y1='60' x2='75' y2='60' stroke='currentColor' stroke-width='2'/><rect x='75' y='46' width='60' height='28' rx='5' style='fill:var(--card)' stroke='currentColor' stroke-width='2'/><text x='105' y='65' text-anchor='middle' fill='currentColor' font-size='13'>ハブ</text><line x1='135' y1='60' x2='250' y2='25' stroke='currentColor' stroke-width='2'/><circle cx='262' cy='25' r='12' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><text x='262' y='29' text-anchor='middle' fill='currentColor' font-size='13'>B</text><text x='282' y='29'  fill='currentColor' font-size='13'>破棄</text><line x1='135' y1='60' x2='250' y2='60' stroke='currentColor' stroke-width='2'/><circle cx='262' cy='60' r='12' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><text x='262' y='64' text-anchor='middle' fill='currentColor' font-size='13'>C</text><text x='282' y='64'  fill='currentColor' font-size='13'>宛先</text><line x1='135' y1='60' x2='250' y2='95' stroke='currentColor' stroke-width='2'/><circle cx='262' cy='95' r='12' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><text x='262' y='99' text-anchor='middle' fill='currentColor' font-size='13'>D</text><text x='282' y='99'  fill='currentColor' font-size='13'>破棄</text><text x='180' y='135' text-anchor='middle' font-weight='700' fill='currentColor' font-size='14'>リピータハブ: 全員に送る</text><line x1='10' y1='155' x2='350' y2='155' stroke='currentColor' stroke-width='1' opacity='.3'/><circle cx='30' cy='220' r='13' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><text x='30' y='225' text-anchor='middle' fill='currentColor' font-size='13'>A</text><line x1='43' y1='220' x2='75' y2='220' stroke='currentColor' stroke-width='3'/><rect x='75' y='206' width='60' height='28' rx='5' style='fill:var(--card)' stroke='currentColor' stroke-width='2'/><text x='105' y='225' text-anchor='middle' fill='currentColor' font-size='13'>ハブ</text><line x1='135' y1='220' x2='250' y2='185' stroke='currentColor' stroke-width='1' stroke-dasharray='3 3'/><circle cx='262' cy='185' r='12' fill='none' stroke='currentColor' stroke-width='2' stroke-dasharray='3 3'/><text x='262' y='189' text-anchor='middle' fill='currentColor' font-size='13'>B</text><text x='282' y='189'  fill='currentColor' font-size='13'>送らない</text><line x1='135' y1='220' x2='250' y2='220' stroke='currentColor' stroke-width='3'/><circle cx='262' cy='220' r='12' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><text x='262' y='224' text-anchor='middle' fill='currentColor' font-size='13'>C</text><text x='282' y='224'  fill='currentColor' font-size='13'>宛先</text><line x1='135' y1='220' x2='250' y2='255' stroke='currentColor' stroke-width='1' stroke-dasharray='3 3'/><circle cx='262' cy='255' r='12' fill='none' stroke='currentColor' stroke-width='2' stroke-dasharray='3 3'/><text x='262' y='259' text-anchor='middle' fill='currentColor' font-size='13'>D</text><text x='282' y='259'  fill='currentColor' font-size='13'>送らない</text><text x='180' y='295' text-anchor='middle' font-weight='700' fill='currentColor' font-size='14'>スイッチングハブ: 宛先 C だけ</text></svg>",
-   "check": [
-    {
-     "type": "single",
-     "q": "MAC アドレステーブルを持ち、宛先のホストだけにデータを転送するのは?",
-     "opts": [
-      "スイッチングハブ",
-      "リピータハブ(ダムハブ)",
-      "リピータ",
-      "ルータ"
-     ],
-     "ans": "スイッチングハブ",
-     "note": "リピータハブは全ホストに転送。ルータは IP アドレスで経路を決める。第5回 p.26, p.27 [A26]"
-    },
-    {
-     "type": "single",
-     "q": "MAC アドレスの説明として正しいのは?",
-     "opts": [
-      "48 ビットで、先頭の3オクテット(24 ビット)がベンダー ID",
-      "32 ビットで、先頭の3オクテット(8 ビット)がベンダー ID",
-      "48 ビットで、先頭の3オクテットが機種 ID",
-      "64 ビットで、区切りは「.」"
-     ],
-     "ans": "48 ビットで、先頭の3オクテット(24 ビット)がベンダー ID",
-     "note": "1オクテット = 8 ビットなので3オクテット = 24 ビット(スライドの「3オクテット(8bit)」は誤記)。次の1オクテットが機種 ID、最後の2オクテットがシリアル ID。第5回 p.24 [A18]"
-    },
-    {
-     "type": "single",
-     "q": "スイッチングハブは、なぜ宛先のホストだけに送れる?",
-     "opts": [
-      "MAC アドレステーブルで、ポートと MAC アドレスの対応を覚えているから",
-      "IP アドレスを見て経路を選ぶから",
-      "電気信号を増幅するから",
-      "全ホストに送って、宛先でないホストに破棄させるから"
-     ],
-     "ans": "MAC アドレステーブルで、ポートと MAC アドレスの対応を覚えているから",
-     "note": "最後の選択肢はリピータハブの動き。演習7.2「リピータハブとスイッチングハブの比較」の答えの柱。第5回 p.26, p.27, p.31 [A26]"
-    }
-   ]
-  }
- ],
- "summary": {
-  "rows": [
-   ["アクセスネットワーク", "ユーザ端末と最寄りの通信事業者装置をつなぐ区間(ラストワンマイル)。家側の装置は DSU・ONU・STB"],
-   ["ISDN", "音声もデータも1本で。基本は 2B+D(B 2本+D 1本)。1.5Mbps までが N-ISDN、以上が B-ISDN"],
-   ["ADSL", "固定電話の線。電話局から遠いほど遅い(最大 5km〔10km〕程度)。終了済み。移行先は FTTH・CATV・WiMAX2"],
-   ["FTTH / PON", "光ファイバを家まで。PDS 構成が PON(Passive Optical Network)。多重化は時分割。装置は ONU"],
-   ["CATV", "CAble TeleVision。ケーブルテレビの回線。装置は STB"],
-   ["ベーシック vs HDLC", "一方向/両方向、最小7ビット/任意の大きさ、1ブロックごとの応答/まとめて確認、パリティ/CRC"],
-   ["トポロジ", "バス = イーサネット、リング = FDDI、スター = イーサネット"],
-   ["CSMA/CD と CSMA/CA", "CD = Collision Detection、CA = Collision Avoidance。CSMA = Carrier Sense Multiple Access"],
-   ["UTP / STP", "シールドなし(雑音に弱い)/ あり(強い)。標準はカテゴリ6A。100BASE-TX は 100 = 最大 100Mbps"],
-   ["ハブ", "リピータハブ(ダム)= 全員へ。スイッチングハブ = MAC アドレステーブルで宛先だけへ"],
-   ["MAC アドレス", "48 ビット。先頭 3 オクテット = ベンダー ID。約 281 兆個。ブリッジ = MAC、ルータ = IP で中継"],
-   ["LTE", "Long Term Evolution(資料外・Moodle の正解表記)"],
-   ["TCP", "Transmission Control Protocol(資料外・Moodle の正解表記)"],
-   ["ITU", "International Telecommunication Union(資料外・Moodle の正解表記)"],
-   ["DoS", "Denial of Service attack。attack まで書く(資料外・Moodle の正解表記)"],
-   ["読むだけ(無線 LAN・パスワード)", "IEEE 802.3 = イーサネット、802.11 = 無線 LAN、Wi-Fi 6 = 802.11ax。WEP・WPA は推奨されない。パスワードは大小英字・数字・記号を混ぜ、本人の情報を入れず 12 字以上。辞書にある単語は辞書攻撃の対象。(第5回 p.14〜p.17, p.28〜p.30)"]
+  "year": 2026,
+  "grade": 4,
+  "exam": "後期中間試験",
+  "subject": "情報ネットワーク工学",
+  "title": "情報ネットワーク工学 ・ 学習 第5回 アクセスネットワークと LAN",
+  "storageKey": "ine_learn_05_v1",
+  "minutes": 40,
+  "goals": [
+    "ベーシック手順と HDLC の違い(一方向/両方向、パリティ/CRC など)を言える",
+    "ISDN(2B+D)・ADSL・FTTH・CATV の特徴と、バス・リング・スターの形、CSMA/CD と CSMA/CA の違いを言える",
+    "リピータハブとスイッチングハブの違いを説明でき、MAC アドレスが 48 ビットだと言える"
   ],
-  "write3": "紙に3行、友達に説明するつもりで書く:「ベーシック手順と HDLC の違い」と「リピータハブとスイッチングハブの違い」(演習6.2 と 7.2 の答えになる)"
- },
- "final": [
-  {
-   "type": "single",
-   "q": "【第5回 Q7】紙に「DoS」の正式名称を書いてから、自分の綴りと同じものを選ぼう。正しい綴りは?",
-   "opts": [
-    "Denial of Service attack",
-    "Denial of Service",
-    "Denial of Services attack",
-    "どれにも一致しない(自分の綴りが違った)"
-   ],
-   "ans": "Denial of Service attack",
-   "noShuffle": true,
-   "note": "Moodle の正解は attack まで含めた Denial of Service attack(attack が無いと不正解)。DoS の展開は講義資料にない(資料外・Moodle の正解表記)。第5回 Q7"
+  "katex": false,
+  "terms": [
+    {
+      "name": "ISDN",
+      "full": "Integrated Service Digital Network",
+      "plain": "音声もデータも1本のディジタル回線で送るサービス。基本は「2B+D」"
+    },
+    {
+      "name": "ADSL",
+      "full": "Asymmetric Digital Subscriber Line",
+      "plain": "今ある固定電話の線で使う高速インターネット。電話局から遠いほど遅い"
+    },
+    {
+      "name": "FTTH",
+      "full": "Fiber To The Home",
+      "plain": "光ファイバを家まで引くインターネット"
+    },
+    {
+      "name": "CATV",
+      "full": "CAble TeleVision",
+      "plain": "ケーブルテレビの回線でつなぐインターネット"
+    },
+    {
+      "name": "HDLC",
+      "full": "High-level Data Link Control",
+      "plain": "ベーシック手順より新しい通信手順。両方向で、誤り検出が強い"
+    },
+    {
+      "name": "CSMA/CD",
+      "full": "Carrier Sense Multiple Access / Collision Detection",
+      "plain": "同じ線を使う機器どうしの信号が、ぶつかったことを見つける約束"
+    },
+    {
+      "name": "UTP",
+      "full": "Unshielded Twisted Pair",
+      "plain": "シールドなしのより線ケーブル。外部の雑音に弱い"
+    },
+    {
+      "name": "LTE",
+      "full": "Long Term Evolution",
+      "plain": "第3.9世代の携帯電話の通信方式。(資料外・Moodle の正解表記)"
+    },
+    {
+      "name": "TCP",
+      "full": "Transmission Control Protocol",
+      "plain": "データを間違いなく届けるための約束(第4層)。(資料外・Moodle の正解表記)"
+    },
+    {
+      "name": "ITU",
+      "full": "International Telecommunication Union",
+      "plain": "国際電気通信連合。通信の国際的なルールを決める機関。(資料外・Moodle の正解表記)"
+    },
+    {
+      "name": "DoS",
+      "full": "Denial of Service attack",
+      "plain": "大量の要求を送りつけて、サービスを使えなくする攻撃。attack まで含めて書く。(資料外・Moodle の正解表記)"
+    },
+    {
+      "name": "MAC アドレス",
+      "full": "Media Access Control address",
+      "plain": "ネットワーク機器ごとの 48 ビットの番号(背番号のようなもの)"
+    }
+  ],
+  "blocks": [
+    {
+      "id": "b1",
+      "title": "ISDN は1本の回線で音声もデータも送る。基本は「2B+D」",
+      "pre": [
+        {
+          "type": "single",
+          "q": "「アクセスネットワーク」は、何と何をつなぐネットワーク?(知らなくて当然。外れてOK)",
+          "opts": [
+            "ユーザの端末と、いちばん近い通信事業者の装置",
+            "通信事業者どうし",
+            "世界中のサーバどうし"
+          ],
+          "ans": "ユーザの端末と、いちばん近い通信事業者の装置",
+          "note": "家(端末)から最寄りの局までの区間。「ラストワンマイル」とも呼ぶ。第5回 p.3 [A6]"
+        }
+      ],
+      "body": "<b>アクセスネットワーク</b>は、ユーザの端末(や家の中のネットワーク)と、いちばん近い通信事業者の装置をつなぐ区間で、<b>ラストワンマイル</b>とも呼ぶ。つなぐ先によって家側の装置が違い、DSU(Digital Service Unit)、ONU(Optical Network Unit)、STB(Set-Top Box)がある(どの網でどれを使うかは資料外。教科書 図6.1)。<br><b>ISDN</b>は音声・データ・画像を1本のディジタル回線で送る。回線交換とパケット交換のどちらも使える。速度が 1.5Mbps までなら N-ISDN、1.5Mbps 以上なら B-ISDN。基本インターフェースは B チャネル2本と D チャネル1本が同時に使えるので <b>2B+D</b> と書く(D は呼制御用にも使う。演習6.3)。2024年1月にサービス終了(2025年1月に完全終了)で、インターネット EDI(Electronic Data Interchange)へ移った。(第5回 p.3, p.7)",
+      "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/textbook/fig6-12.jpg\" alt=\"図6.12 一次群インターフェース\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">教科書 図6.12 一次群インターフェース</figcaption></figure><svg viewBox='0 0 300 235' width='300' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='アクセスネットワーク'><rect x='75' y='10' width='150' height='44' rx='8' fill='none' stroke='currentColor' stroke-width='2'/><text x='150' y='38' text-anchor='middle' fill='currentColor' font-size='15'>ユーザ端末</text><line x1='150' y1='54' x2='150' y2='120' stroke='currentColor' stroke-width='3'/><text x='162' y='82' font-weight='700' fill='currentColor' font-size='13'>アクセスネットワーク</text><text x='162' y='102'  fill='currentColor' font-size='13'>(= ラストワンマイル)</text><rect x='75' y='120' width='150' height='50' rx='8' fill='none' stroke='currentColor' stroke-width='2'/><text x='150' y='142' text-anchor='middle' fill='currentColor' font-size='13'>最寄りの通信事業者</text><text x='150' y='159' text-anchor='middle' fill='currentColor' font-size='13'>の装置</text><text x='150' y='200' text-anchor='middle' fill='currentColor' font-size='13'>家側の装置は接続先で変わる</text><text x='150' y='222' text-anchor='middle' font-weight='700' fill='currentColor' font-size='14'>DSU ・ ONU ・ STB</text></svg>",
+      "example": {
+        "steps": [
+          "B チャネル1本は 64 kbps(資料外の一般知識)。D チャネル1本は 16 kbps(資料外の一般知識)",
+          "2B+D の「2B」は B が2本 → 64 × 2 = 128 kbps",
+          "「D」は D が1本 → 16 kbps",
+          "合計 = 128 + 16"
+        ],
+        "fill": {
+          "type": "numeric",
+          "q": "基本インターフェース(2B+D)の合計は何 kbps?(B=64kbps、D=16kbps は資料外)",
+          "parts": [
+            {
+              "ans": 144,
+              "unit": "kbps",
+              "tol": 0
+            }
+          ],
+          "note": "128 + 16 = 144 kbps。B=64kbps・D=16kbps は資料外の一般知識。"
+        }
+      },
+      "check": [
+        {
+          "type": "single",
+          "q": "ISDN 基本インターフェースの「2B+D」の意味は?",
+          "opts": [
+            "B チャネル2本と D チャネル1本が使える",
+            "B チャネル1本と D チャネル2本が使える",
+            "B という速度 2Mbps と D という速度が使える",
+            "B 型と D 型の2種類の端末をつなげる"
+          ],
+          "ans": "B チャネル2本と D チャネル1本が使える",
+          "note": "数字は本数。2B = B が2本、D は1本。第5回 p.7 [A21]"
+        },
+        {
+          "type": "single",
+          "q": "N-ISDN と B-ISDN の境目の速度は?",
+          "opts": [
+            "1.5Mbps",
+            "64kbps",
+            "10Mbps",
+            "100Mbps"
+          ],
+          "ans": "1.5Mbps",
+          "note": "N-ISDN は 1.5Mbps まで、B-ISDN は 1.5Mbps 以上。第5回 p.7 [A21][C5]"
+        },
+        {
+          "type": "single",
+          "q": "演習6.3 の「基本インターフェースでは2本使える」チャネルは B と D のどちら? その理由は?",
+          "opts": [
+            "B。2B+D の「2B」が B 2本という意味だから",
+            "D。2B+D の「D」は2本分あるから",
+            "B。B は呼制御用のチャネルだから",
+            "D。D は 64kbps で B より速いから"
+          ],
+          "ans": "B。2B+D の「2B」が B 2本という意味だから",
+          "note": "2本あるのは B、1本が D。演習6.3 の答えは ①D ②B。数字 ③16 ④64(kbps)は資料外の一般知識。第5回 p.7, p.13 [A21]"
+        }
+      ]
+    },
+    {
+      "id": "b2",
+      "title": "ADSL・FTTH・CATV は、家まで引く線の種類が違う",
+      "pre": [
+        {
+          "type": "single",
+          "q": "ADSL は、電話局から家までの距離が遠くなると、速度はどうなる?(知らなくて当然。外れてOK)",
+          "opts": [
+            "遅くなる",
+            "速くなる",
+            "距離とは関係ない"
+          ],
+          "ans": "遅くなる",
+          "note": "距離に応じて速度が下がる。使える距離は 5km(10km)程度まで。第5回 p.8 [A22]"
+        }
+      ],
+      "body": "<table style='width:100%;border-collapse:collapse;font-size:.88rem'><tr><th style='border:1px solid var(--line);padding:6px 8px;text-align:left'>方式</th><th style='border:1px solid var(--line);padding:6px 8px;text-align:left'>線</th><th style='border:1px solid var(--line);padding:6px 8px;text-align:left'>ポイント</th></tr><tr><td style='border:1px solid var(--line);padding:6px 8px'><b>ADSL</b></td><td style='border:1px solid var(--line);padding:6px 8px'>今ある固定電話の線</td><td style='border:1px solid var(--line);padding:6px 8px'>電話局から遠いほど遅い(最大 5km〔10km〕程度)。2024年3月に終了(2025年1月に完全終了)。移行先は FTTH・CATV・WiMAX2 など</td></tr><tr><td style='border:1px solid var(--line);padding:6px 8px'><b>FTTH</b></td><td style='border:1px solid var(--line);padding:6px 8px'>光ファイバ</td><td style='border:1px solid var(--line);padding:6px 8px'>SS(Single Star)と PDS(Passive Double Star)の2つの構成がある。PDS 構成が <b>PON</b>(Passive Optical Network)。PON は<b>時分割多重</b>(時間を細かく区切り、利用者が順番に使う方式)で送る(スライドの「自分割」は誤字)。家側の装置は ONU(資料外。教科書 図6.1)</td></tr><tr><td style='border:1px solid var(--line);padding:6px 8px'><b>CATV</b></td><td style='border:1px solid var(--line);padding:6px 8px'>ケーブルテレビの回線</td><td style='border:1px solid var(--line);padding:6px 8px'>CAble TeleVision の略。家側の装置は STB(Set-Top Box)(資料外。教科書 図6.1)</td></tr></table>有線のつなぎ方は、ダイヤルアップ → ISDN → ADSL・CATV → FTTH・CATV と移ってきた。(第5回 p.8〜p.12)",
+      "check": [
+        {
+          "type": "single",
+          "q": "ADSL のサービス終了後の乗り換え先として、資料に挙がっていないものは?",
+          "opts": [
+            "ISDN",
+            "FTTH",
+            "CATV",
+            "WiMAX2"
+          ],
+          "ans": "ISDN",
+          "noShuffle": false,
+          "note": "乗り換え先は FTTH・CATV・WiMAX2 など。ISDN も ADSL と同じく終了したサービス。第5回 p.8, p.10 [A22]"
+        },
+        {
+          "type": "single",
+          "q": "CATV でインターネットにつなぐとき、家側で使う装置は?",
+          "opts": [
+            "STB",
+            "ONU",
+            "DSU",
+            "L2SW"
+          ],
+          "ans": "STB",
+          "note": "STB = Set-Top Box。ONU は光(FTTH)、DSU は ISDN 側の装置。ただし、装置と網の対応は教科書の図6.1にしか載っていない(資料外。教科書 図6.1)。第5回 p.3, p.12 [A24]"
+        },
+        {
+          "type": "single",
+          "q": "PON(PDS 構成)で、なぜ時分割多重が使われる?",
+          "opts": [
+            "1本の光ファイバを複数の利用者で分け合い、順番に使わせるため",
+            "光ファイバは1本しか作れないため",
+            "電話線の速度に合わせるため",
+            "ADSL と同じ電波を使うため"
+          ],
+          "ans": "1本の光ファイバを複数の利用者で分け合い、順番に使わせるため",
+          "note": "時分割 = 時間を区切って順番に使う。スライドは「自分割」と誤記(正しくは時分割)。「分け合うから」は PDS(Double Star)の形からの補足で資料外。第5回 p.11 [A23]"
+        }
+      ],
+      "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/textbook/fig6-13.jpg\" alt=\"図6.13 ADSLの接続構成\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">教科書 図6.13 ADSLの接続構成</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/textbook/fig6-14.jpg\" alt=\"図6.14 xDSL\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">教科書 図6.14 xDSL</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/textbook/fig6-15.jpg\" alt=\"図6.15 光アクセスの構成法\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">教科書 図6.15 光アクセスの構成法</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/textbook/fig6-16.jpg\" alt=\"図6.16 PDS構成\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">教科書 図6.16 PDS構成</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/textbook/fig6-17.jpg\" alt=\"図6.17 PONでの多重化\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">教科書 図6.17 PONでの多重化</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/textbook/fig6-18.jpg\" alt=\"図6.18 CATVによるインターネット接続\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">教科書 図6.18 CATVによるインターネット接続</figcaption></figure>"
+    },
+    {
+      "id": "b3",
+      "title": "HDLC は、ベーシック手順より両方向・大容量・高速・誤り検出が強い",
+      "pre": [
+        {
+          "type": "single",
+          "q": "ベーシック手順と HDLC のうち、両方向に通信できるのはどちら?(知らなくて当然。外れてOK)",
+          "opts": [
+            "HDLC",
+            "ベーシック手順",
+            "どちらもできない"
+          ],
+          "ans": "HDLC",
+          "note": "ベーシック手順は一方向だけ、HDLC は両方向。第5回 p.5 [A20]"
+        }
+      ],
+      "body": "通信手順(データをやりとりする約束)の古い方式が<b>ベーシック手順</b>(1972年に ISO が標準化)、新しい方式が <b>HDLC</b>(High-level Data Link Control)。演習6.2「比較せよ」の答えは次の表。<table style='width:100%;border-collapse:collapse;font-size:.88rem;margin-top:8px'><tr><th style='border:1px solid var(--line);padding:6px 8px;text-align:left'>見る点</th><th style='border:1px solid var(--line);padding:6px 8px;text-align:left'>ベーシック手順</th><th style='border:1px solid var(--line);padding:6px 8px;text-align:left'>HDLC</th></tr><tr><td style='border:1px solid var(--line);padding:6px 8px'>向き</td><td style='border:1px solid var(--line);padding:6px 8px'>一方向だけ</td><td style='border:1px solid var(--line);padding:6px 8px'><b>両方向</b>OK</td></tr><tr><td style='border:1px solid var(--line);padding:6px 8px'>送る単位</td><td style='border:1px solid var(--line);padding:6px 8px'>文字(キャラクタ)単位。最小でも 7 ビット</td><td style='border:1px solid var(--line);padding:6px 8px'>任意の大きさ</td></tr><tr><td style='border:1px solid var(--line);padding:6px 8px'>応答の確認</td><td style='border:1px solid var(--line);padding:6px 8px'>1ブロックごとに必要</td><td style='border:1px solid var(--line);padding:6px 8px'>フレーム(送るデータのひとまとまり)ごとには不要。複数まとめて確認でき、高速化できる</td></tr><tr><td style='border:1px solid var(--line);padding:6px 8px'>誤り検出</td><td style='border:1px solid var(--line);padding:6px 8px'>パリティビット(誤り検出用に足す1ビット。資料外の補足)を付けるだけ</td><td style='border:1px solid var(--line);padding:6px 8px'><b>CRC</b>(Cyclic Redundancy Check、巡回冗長検査)。より強力</td></tr></table>HDLC の方式は、コンテンション方式(平衡型)とポーリング/セレクティング方式(非平衡型)の2つ。(第5回 p.4, p.5。例題6.1 は試験対象外なので解かなくてよい)",
+      "check": [
+        {
+          "type": "single",
+          "q": "ベーシック手順にはなく、HDLC にある特徴は?",
+          "opts": [
+            "両方向の伝送ができる",
+            "パリティビットで誤りを調べる",
+            "1ブロックごとに応答確認が必要",
+            "伝送単位が最小でも 7 ビット"
+          ],
+          "ans": "両方向の伝送ができる",
+          "note": "残り3つはベーシック手順の特徴。第5回 p.5 [A20]"
+        },
+        {
+          "type": "single",
+          "q": "HDLC が誤り検出に使う方式は?",
+          "opts": [
+            "CRC(巡回冗長検査)",
+            "パリティビットだけ",
+            "誤り検出はしない",
+            "チェックサムだけ"
+          ],
+          "ans": "CRC(巡回冗長検査)",
+          "note": "CRC = Cyclic Redundancy Check。パリティだけなのはベーシック手順。第5回 p.5 [A20]"
+        },
+        {
+          "type": "single",
+          "q": "ベーシック手順は、なぜ HDLC より誤り検出が弱い?",
+          "opts": [
+            "パリティビットを付けるだけで判定するから",
+            "一方向にしか送れないから",
+            "1ブロックごとに応答を返すから",
+            "最小でも 7 ビット単位で送るから"
+          ],
+          "ans": "パリティビットを付けるだけで判定するから",
+          "note": "誤り検出の強さは検出方式で決まる。HDLC は CRC を使う。第5回 p.5 [A20]"
+        }
+      ]
+    },
+    {
+      "id": "b4a",
+      "title": "LAN のケーブルは UTP と STP。機器のつなぎ方(トポロジ)はバス・リング・スター",
+      "pre": [
+        {
+          "type": "single",
+          "q": "UTP と STP のうち、外部の雑音に強いのはどちら?(知らなくて当然。外れてOK)",
+          "opts": [
+            "STP",
+            "UTP",
+            "どちらも同じ"
+          ],
+          "ans": "STP",
+          "note": "STP はシールド(覆い)がある。UTP はシールドなしで雑音に弱い。第5回 p.18 [C1]"
+        }
+      ],
+      "body": "<b>ケーブル</b>: LAN の線はより線で、UTP(Unshielded Twisted Pair)はシールド(外の雑音を防ぐ覆い)がなく雑音に弱い。STP(Shielded Twisted Pair)はシールドがあり強い。家庭や一般企業の標準はカテゴリ6A(UTP、100m まで)。「100BASE-TX」は 100(最大 100Mbps)+BASE(ベースバンド方式)+TX(ケーブルの種類)と読む。<br><b>トポロジ</b>(接続形態)=機器をどうつなぐかの形。バス型(1本の線に全部つなぐ。例: イーサネット)、リング型(輪にしてつなぐ。例: FDDI = Fiber Distributed Data Interface)、スター型(中心の機器から各機器へ線を引く。例: イーサネット)。(第5回 p.18〜p.22)",
+      "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/textbook/fig7-4.jpg\" alt=\"図7.4 LANのトポロジー\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">教科書 図7.4 LANのトポロジー</figcaption></figure><svg viewBox='0 0 360 330' width='360' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='バス型・リング型・スター型の図'><line x1='10' y1='30' x2='190' y2='30' stroke='currentColor' stroke-width='3'/><line x1='30' y1='30' x2='30' y2='64' stroke='currentColor' stroke-width='2'/><circle cx='30' cy='73' r='9' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><line x1='80' y1='30' x2='80' y2='64' stroke='currentColor' stroke-width='2'/><circle cx='80' cy='73' r='9' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><line x1='130' y1='30' x2='130' y2='64' stroke='currentColor' stroke-width='2'/><circle cx='130' cy='73' r='9' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><line x1='170' y1='30' x2='170' y2='64' stroke='currentColor' stroke-width='2'/><circle cx='170' cy='73' r='9' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><text x='270' y='40' text-anchor='middle' font-weight='700' fill='currentColor' font-size='16'>バス型</text><text x='270' y='62' text-anchor='middle' fill='currentColor' font-size='13'>1本の線に全部つなぐ</text><text x='270' y='82' text-anchor='middle' fill='currentColor' font-size='13'>例: イーサネット</text><circle cx='100' cy='165' r='36' fill='none' stroke='currentColor' stroke-width='2' /><circle cx='100' cy='129' r='9' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><circle cx='136' cy='165' r='9' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><circle cx='100' cy='201' r='9' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><circle cx='64' cy='165' r='9' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><text x='270' y='150' text-anchor='middle' font-weight='700' fill='currentColor' font-size='16'>リング型</text><text x='270' y='172' text-anchor='middle' fill='currentColor' font-size='13'>輪にしてつなぐ</text><text x='270' y='192' text-anchor='middle' fill='currentColor' font-size='13'>例: FDDI</text><line x1='100' y1='275' x2='50' y2='240' stroke='currentColor' stroke-width='2'/><circle cx='50' cy='240' r='9' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><line x1='100' y1='275' x2='150' y2='240' stroke='currentColor' stroke-width='2'/><circle cx='150' cy='240' r='9' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><line x1='100' y1='275' x2='50' y2='310' stroke='currentColor' stroke-width='2'/><circle cx='50' cy='310' r='9' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><line x1='100' y1='275' x2='150' y2='310' stroke='currentColor' stroke-width='2'/><circle cx='150' cy='310' r='9' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><circle cx='100' cy='275' r='15' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><text x='100' y='279' text-anchor='middle' fill='currentColor' font-size='11'>中心</text><text x='270' y='260' text-anchor='middle' font-weight='700' fill='currentColor' font-size='16'>スター型</text><text x='270' y='282' text-anchor='middle' fill='currentColor' font-size='13'>中心の機器から線を引く</text><text x='270' y='302' text-anchor='middle' fill='currentColor' font-size='13'>例: イーサネット</text></svg>",
+      "check": [
+        {
+          "type": "single",
+          "q": "リング型 LAN の例として、資料に挙がっているのは?",
+          "opts": [
+            "FDDI",
+            "イーサネット",
+            "ADSL",
+            "PON"
+          ],
+          "ans": "FDDI",
+          "note": "バス型とスター型はイーサネット、リング型は FDDI。第5回 p.22 [A25]"
+        },
+        {
+          "type": "single",
+          "q": "家庭や一般企業等での標準使用カテゴリとされているのは?",
+          "opts": [
+            "カテゴリ6A",
+            "カテゴリ5e",
+            "カテゴリ6",
+            "カテゴリ8"
+          ],
+          "ans": "カテゴリ6A",
+          "note": "カテゴリ6A(UTP、10GBASE-T、100m)に黄色の吹き出しで「標準使用カテゴリ」とある。5e も赤枠で強調されているが標準とは書かれていない。第5回 p.18 [C1]",
+          "noShuffle": false
+        },
+        {
+          "type": "single",
+          "q": "STP が UTP より外部の雑音に強いのは、なぜ?",
+          "opts": [
+            "シールド(覆い)で外からの雑音を防ぐから",
+            "線が長く作られているから",
+            "信号を2倍の速さで送るから",
+            "電波ではなく光で送るから"
+          ],
+          "ans": "シールド(覆い)で外からの雑音を防ぐから",
+          "note": "S = Shielded。シールドがあるのが STP、ないのが UTP。光(光ファイバ)は別のケーブル。第5回 p.18 [C1][C9]"
+        }
+      ]
+    },
+    {
+      "id": "b4b",
+      "title": "同じ線で信号がぶつかるのを、CSMA/CD は「見つけ」、CSMA/CA は「避ける」",
+      "pre": [
+        {
+          "type": "single",
+          "q": "同じ線で2台が同時にデータを送ると、どうなる?(知らなくて当然。外れてOK)",
+          "opts": [
+            "信号がぶつかって(衝突して)読めなくなる",
+            "速度が2倍になる",
+            "自動で順番に送られる"
+          ],
+          "ans": "信号がぶつかって(衝突して)読めなくなる",
+          "note": "このぶつかりを防ぐ約束が、このブロックの CSMA。第5回 p.23"
+        }
+      ],
+      "body": "同じ回線を複数の機器が使うと、同時に送った信号がぶつかる(衝突)。そこで<b>アクセス制御方式</b>(だれがいつ送るかの約束)で整理する。方式には ALOHA 方式と CSMA 方式があり、CSMA = Carrier Sense Multiple Access。CSMA/CD の CD は Collision Detection、CSMA/CA の CA は Collision Avoidance(黄色で強調)。<br>(資料外の補足)Carrier Sense = 送る前に回線が使われていないか確かめる、Collision = 衝突。つまり CD は衝突を<b>見つける</b>、CA は衝突を<b>避ける</b>。CSMA は線が長いと信号の到着が遅れ、相手が送り始めたことに気づけずぶつかりやすい(演習7.1 の考え方。資料外)。(第5回 p.23)",
+      "check": [
+        {
+          "type": "single",
+          "q": "CSMA/CA の「CA」は何の略?",
+          "opts": [
+            "Collision Avoidance",
+            "Collision Detection",
+            "Carrier Access",
+            "Channel Allocation"
+          ],
+          "ans": "Collision Avoidance",
+          "note": "CSMA/CD の CD が Collision Detection。CSMA/CA は黄色で強調されている。第5回 p.23 [A27]"
+        },
+        {
+          "type": "single",
+          "q": "信号の衝突を「見つける」のは、CSMA/CD と CSMA/CA のどちら?",
+          "opts": [
+            "CSMA/CD(Collision Detection = 衝突の検出)",
+            "CSMA/CA(Collision Avoidance = 衝突の回避)",
+            "どちらも衝突を見つける",
+            "どちらも衝突を見つけない"
+          ],
+          "ans": "CSMA/CD(Collision Detection = 衝突の検出)",
+          "note": "Detection = 見つける、Avoidance = 避ける。CD→CA の順に黄色で強調されている。第5回 p.23 [A27]"
+        },
+        {
+          "type": "single",
+          "q": "CSMA が長距離のネットワークに向かない理由は?(演習7.1)",
+          "opts": [
+            "信号が届くまでの遅れが大きく、相手が送り始めたことに気づけずぶつかりやすいから",
+            "ケーブルが長いと信号が強くなりすぎるから",
+            "長距離では暗号化が必要になるから",
+            "スター型にできなくなるから"
+          ],
+          "ans": "信号が届くまでの遅れが大きく、相手が送り始めたことに気づけずぶつかりやすいから",
+          "note": "(資料外)演習7.1 の答えは資料に載っていない。一般的な説明。第5回 p.23, p.31 [A27]"
+        }
+      ]
+    },
+    {
+      "id": "b5",
+      "title": "リピータハブは全員に配り、スイッチングハブは MAC アドレスで宛先だけに配る",
+      "pre": [
+        {
+          "type": "single",
+          "q": "MAC アドレスは何ビットの番号?(知らなくて当然。外れてOK)",
+          "opts": [
+            "48 ビット",
+            "32 ビット",
+            "64 ビット",
+            "128 ビット"
+          ],
+          "ans": "48 ビット",
+          "note": "32 ビットは IPv4 アドレス、128 ビットは IPv6 アドレス。MAC アドレスは 48 ビット。第5回 p.24 [A17][A18]"
+        },
+        {
+          "type": "single",
+          "q": "ルータが宛先を決めるのに使うのは、MAC アドレスと IP アドレスのどちら?",
+          "opts": [
+            "IP アドレス",
+            "MAC アドレス"
+          ],
+          "ans": "IP アドレス",
+          "note": "ブリッジやスイッチングハブは MAC、ルータは IP。第5回 p.5, p.24 [A18]"
+        }
+      ],
+      "body": "<b>リピータハブ</b>(ダムハブ)は、受け取ったデータを全ホストに転送する。宛先でないホストは「自分宛てじゃない」と破棄する。<b>スイッチングハブ</b>(L2SW)は、ポート番号と MAC アドレスの対応表(MAC アドレステーブル)を持ち、宛先のホストだけに転送する。リピータは電気信号の再生。<br><b>MAC アドレス</b>(Media Access Control address)は機器ごとの番号で、第2層(データリンク層)で使う。<b>48 ビット</b>、16進数(00〜FF)、区切りは「-」か「:」。最初の3オクテット(= 24 ビット。スライドは「8bit」と誤記)がベンダー ID、次の1オクテットが機種 ID、最後の2オクテットがシリアル ID。2<sup>48</sup> ≒ 281兆個で、IPv4 のような枯渇問題は実用上ない。<br>LAN 間をつなぐ装置: ブリッジは MAC アドレス、ルータは IP アドレスで中継する。規格番号は、イーサネットが IEEE 802.3、無線 LAN が IEEE 802.11。(第5回 p.24〜p.28)",
+      "fig": "<svg viewBox='0 0 360 310' width='360' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='リピータハブとスイッチングハブの違い'><circle cx='30' cy='60' r='13' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><text x='30' y='65' text-anchor='middle' fill='currentColor' font-size='13'>A</text><line x1='43' y1='60' x2='75' y2='60' stroke='currentColor' stroke-width='2'/><rect x='75' y='46' width='60' height='28' rx='5' style='fill:var(--card)' stroke='currentColor' stroke-width='2'/><text x='105' y='65' text-anchor='middle' fill='currentColor' font-size='13'>ハブ</text><line x1='135' y1='60' x2='250' y2='25' stroke='currentColor' stroke-width='2'/><circle cx='262' cy='25' r='12' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><text x='262' y='29' text-anchor='middle' fill='currentColor' font-size='13'>B</text><text x='282' y='29'  fill='currentColor' font-size='13'>破棄</text><line x1='135' y1='60' x2='250' y2='60' stroke='currentColor' stroke-width='2'/><circle cx='262' cy='60' r='12' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><text x='262' y='64' text-anchor='middle' fill='currentColor' font-size='13'>C</text><text x='282' y='64'  fill='currentColor' font-size='13'>宛先</text><line x1='135' y1='60' x2='250' y2='95' stroke='currentColor' stroke-width='2'/><circle cx='262' cy='95' r='12' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><text x='262' y='99' text-anchor='middle' fill='currentColor' font-size='13'>D</text><text x='282' y='99'  fill='currentColor' font-size='13'>破棄</text><text x='180' y='135' text-anchor='middle' font-weight='700' fill='currentColor' font-size='14'>リピータハブ: 全員に送る</text><line x1='10' y1='155' x2='350' y2='155' stroke='currentColor' stroke-width='1' opacity='.3'/><circle cx='30' cy='220' r='13' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><text x='30' y='225' text-anchor='middle' fill='currentColor' font-size='13'>A</text><line x1='43' y1='220' x2='75' y2='220' stroke='currentColor' stroke-width='3'/><rect x='75' y='206' width='60' height='28' rx='5' style='fill:var(--card)' stroke='currentColor' stroke-width='2'/><text x='105' y='225' text-anchor='middle' fill='currentColor' font-size='13'>ハブ</text><line x1='135' y1='220' x2='250' y2='185' stroke='currentColor' stroke-width='1' stroke-dasharray='3 3'/><circle cx='262' cy='185' r='12' fill='none' stroke='currentColor' stroke-width='2' stroke-dasharray='3 3'/><text x='262' y='189' text-anchor='middle' fill='currentColor' font-size='13'>B</text><text x='282' y='189'  fill='currentColor' font-size='13'>送らない</text><line x1='135' y1='220' x2='250' y2='220' stroke='currentColor' stroke-width='3'/><circle cx='262' cy='220' r='12' style='fill:var(--card)' stroke='currentColor' stroke-width='2' /><text x='262' y='224' text-anchor='middle' fill='currentColor' font-size='13'>C</text><text x='282' y='224'  fill='currentColor' font-size='13'>宛先</text><line x1='135' y1='220' x2='250' y2='255' stroke='currentColor' stroke-width='1' stroke-dasharray='3 3'/><circle cx='262' cy='255' r='12' fill='none' stroke='currentColor' stroke-width='2' stroke-dasharray='3 3'/><text x='262' y='259' text-anchor='middle' fill='currentColor' font-size='13'>D</text><text x='282' y='259'  fill='currentColor' font-size='13'>送らない</text><text x='180' y='295' text-anchor='middle' font-weight='700' fill='currentColor' font-size='14'>スイッチングハブ: 宛先 C だけ</text></svg>",
+      "check": [
+        {
+          "type": "single",
+          "q": "MAC アドレステーブルを持ち、宛先のホストだけにデータを転送するのは?",
+          "opts": [
+            "スイッチングハブ",
+            "リピータハブ(ダムハブ)",
+            "リピータ",
+            "ルータ"
+          ],
+          "ans": "スイッチングハブ",
+          "note": "リピータハブは全ホストに転送。ルータは IP アドレスで経路を決める。第5回 p.26, p.27 [A26]"
+        },
+        {
+          "type": "single",
+          "q": "MAC アドレスの説明として正しいのは?",
+          "opts": [
+            "48 ビットで、先頭の3オクテット(24 ビット)がベンダー ID",
+            "32 ビットで、先頭の3オクテット(8 ビット)がベンダー ID",
+            "48 ビットで、先頭の3オクテットが機種 ID",
+            "64 ビットで、区切りは「.」"
+          ],
+          "ans": "48 ビットで、先頭の3オクテット(24 ビット)がベンダー ID",
+          "note": "1オクテット = 8 ビットなので3オクテット = 24 ビット(スライドの「3オクテット(8bit)」は誤記)。次の1オクテットが機種 ID、最後の2オクテットがシリアル ID。第5回 p.24 [A18]"
+        },
+        {
+          "type": "single",
+          "q": "スイッチングハブは、なぜ宛先のホストだけに送れる?",
+          "opts": [
+            "MAC アドレステーブルで、ポートと MAC アドレスの対応を覚えているから",
+            "IP アドレスを見て経路を選ぶから",
+            "電気信号を増幅するから",
+            "全ホストに送って、宛先でないホストに破棄させるから"
+          ],
+          "ans": "MAC アドレステーブルで、ポートと MAC アドレスの対応を覚えているから",
+          "note": "最後の選択肢はリピータハブの動き。演習7.2「リピータハブとスイッチングハブの比較」の答えの柱。第5回 p.26, p.27, p.31 [A26]"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "rows": [
+      [
+        "アクセスネットワーク",
+        "ユーザ端末と最寄りの通信事業者装置をつなぐ区間(ラストワンマイル)。家側の装置は DSU・ONU・STB"
+      ],
+      [
+        "ISDN",
+        "音声もデータも1本で。基本は 2B+D(B 2本+D 1本)。1.5Mbps までが N-ISDN、以上が B-ISDN"
+      ],
+      [
+        "ADSL",
+        "固定電話の線。電話局から遠いほど遅い(最大 5km〔10km〕程度)。終了済み。移行先は FTTH・CATV・WiMAX2"
+      ],
+      [
+        "FTTH / PON",
+        "光ファイバを家まで。PDS 構成が PON(Passive Optical Network)。多重化は時分割。装置は ONU"
+      ],
+      [
+        "CATV",
+        "CAble TeleVision。ケーブルテレビの回線。装置は STB"
+      ],
+      [
+        "ベーシック vs HDLC",
+        "一方向/両方向、最小7ビット/任意の大きさ、1ブロックごとの応答/まとめて確認、パリティ/CRC"
+      ],
+      [
+        "トポロジ",
+        "バス = イーサネット、リング = FDDI、スター = イーサネット"
+      ],
+      [
+        "CSMA/CD と CSMA/CA",
+        "CD = Collision Detection、CA = Collision Avoidance。CSMA = Carrier Sense Multiple Access"
+      ],
+      [
+        "UTP / STP",
+        "シールドなし(雑音に弱い)/ あり(強い)。標準はカテゴリ6A。100BASE-TX は 100 = 最大 100Mbps"
+      ],
+      [
+        "ハブ",
+        "リピータハブ(ダム)= 全員へ。スイッチングハブ = MAC アドレステーブルで宛先だけへ"
+      ],
+      [
+        "MAC アドレス",
+        "48 ビット。先頭 3 オクテット = ベンダー ID。約 281 兆個。ブリッジ = MAC、ルータ = IP で中継"
+      ],
+      [
+        "LTE",
+        "Long Term Evolution(資料外・Moodle の正解表記)"
+      ],
+      [
+        "TCP",
+        "Transmission Control Protocol(資料外・Moodle の正解表記)"
+      ],
+      [
+        "ITU",
+        "International Telecommunication Union(資料外・Moodle の正解表記)"
+      ],
+      [
+        "DoS",
+        "Denial of Service attack。attack まで書く(資料外・Moodle の正解表記)"
+      ],
+      [
+        "読むだけ(無線 LAN・パスワード)",
+        "IEEE 802.3 = イーサネット、802.11 = 無線 LAN、Wi-Fi 6 = 802.11ax。WEP・WPA は推奨されない。パスワードは大小英字・数字・記号を混ぜ、本人の情報を入れず 12 字以上。辞書にある単語は辞書攻撃の対象。(第5回 p.14〜p.17, p.28〜p.30)"
+      ]
+    ],
+    "write3": "紙に3行、友達に説明するつもりで書く:「ベーシック手順と HDLC の違い」と「リピータハブとスイッチングハブの違い」(演習6.2 と 7.2 の答えになる)"
   },
-  {
-   "type": "single",
-   "q": "LAN 間接続装置の説明として、正しいものは?",
-   "opts": [
-    "ブリッジは MAC アドレスをもとにフレームを中継する",
-    "ブリッジは IP アドレスをもとにフレームを中継する",
-    "ルータは MAC アドレスをもとにフレームを中継する",
-    "リピータは IP アドレスで配信先を決める"
-   ],
-   "ans": "ブリッジは MAC アドレスをもとにフレームを中継する",
-   "note": "ルータが IP アドレス。演習7.3 の元の問題の正解は「リピータは信号を増幅して距離を延ばす」(スライド p.24 の書き方は「電気信号の再生」)。第5回 p.24, p.31 [A28]"
-  },
-  {
-   "type": "single",
-   "q": "リピータハブ(ダムハブ)の動作として、正しいものは?",
-   "opts": [
-    "全ホストに転送し、宛先でないホストは破棄する",
-    "宛先のホストだけに転送する",
-    "MAC アドレステーブルを学習して、ポートを選ぶ",
-    "IP アドレスで経路を選ぶ"
-   ],
-   "ans": "全ホストに転送し、宛先でないホストは破棄する",
-   "note": "残り3つのうち、2つ目と3つ目はスイッチングハブ、4つ目はルータの動き。第5回 p.26, p.27 [A26]"
-  },
-  {
-   "type": "single",
-   "q": "ADSL の説明として、正しいものは?",
-   "opts": [
-    "既存の固定電話回線を使い、電話局から遠いほど速度が落ちる",
-    "光ファイバを家まで引き、距離が遠くても速度は落ちない",
-    "ケーブルテレビの回線を使い、家側の装置は STB",
-    "1本の回線で2B+Dの2種類のチャネルを使う"
-   ],
-   "ans": "既存の固定電話回線を使い、電話局から遠いほど速度が落ちる",
-   "note": "2つ目は FTTH、3つ目は CATV、4つ目は ISDN の説明。第5回 p.7, p.8, p.11, p.12 [A22]"
-  },
-  {
-   "type": "single",
-   "q": "【第2回】GSM 方式は第何世代の携帯電話?",
-   "opts": [
-    "第2世代",
-    "第3世代",
-    "第3.9世代",
-    "第4世代"
-   ],
-   "ans": "第2世代",
-   "note": "第2世代は TDMA/CDMA で PDC・GSM・IS-95。第3世代は W-CDMA・CDMA2000、第3.9世代は LTE・WiMAX(OFDMA)。第2回 p.4 表1.1 [A4]"
-  },
-  {
-   "type": "single",
-   "q": "【第4回】次のうち、データリンク層(第2層)で動作する機器は?",
-   "opts": [
-    "ブリッジ",
-    "ルータ",
-    "リピータ",
-    "ネットワークケーブル"
-   ],
-   "ans": "ブリッジ",
-   "note": "第2層はスイッチ・ブリッジ・モデム。ルータは第3層、リピータ・ケーブルは第1層。第4回 p.5 [A14]"
-  }
- ],
- "next": [
-  { "label": "演習 ② セルフチェック 第5回へ", "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-selfcheck/data.json#s5" },
-  { "label": "演習 ⑤ 類題 第5回へ", "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-ruidai/data.json#s6c" }
- ],
- "footer": "出典: 情報ネットワーク工学 第5回講義資料(p.2〜p.31)、第2回・第4回講義資料。「資料外」と書いた部分は講義資料にない一般知識の補足。"
+  "final": [
+    {
+      "type": "single",
+      "q": "【第5回 Q7】紙に「DoS」の正式名称を書いてから、自分の綴りと同じものを選ぼう。正しい綴りは?",
+      "opts": [
+        "Denial of Service attack",
+        "Denial of Service",
+        "Denial of Services attack",
+        "どれにも一致しない(自分の綴りが違った)"
+      ],
+      "ans": "Denial of Service attack",
+      "noShuffle": true,
+      "note": "Moodle の正解は attack まで含めた Denial of Service attack(attack が無いと不正解)。DoS の展開は講義資料にない(資料外・Moodle の正解表記)。第5回 Q7"
+    },
+    {
+      "type": "single",
+      "q": "LAN 間接続装置の説明として、正しいものは?",
+      "opts": [
+        "ブリッジは MAC アドレスをもとにフレームを中継する",
+        "ブリッジは IP アドレスをもとにフレームを中継する",
+        "ルータは MAC アドレスをもとにフレームを中継する",
+        "リピータは IP アドレスで配信先を決める"
+      ],
+      "ans": "ブリッジは MAC アドレスをもとにフレームを中継する",
+      "note": "ルータが IP アドレス。演習7.3 の元の問題の正解は「リピータは信号を増幅して距離を延ばす」(スライド p.24 の書き方は「電気信号の再生」)。第5回 p.24, p.31 [A28]"
+    },
+    {
+      "type": "single",
+      "q": "リピータハブ(ダムハブ)の動作として、正しいものは?",
+      "opts": [
+        "全ホストに転送し、宛先でないホストは破棄する",
+        "宛先のホストだけに転送する",
+        "MAC アドレステーブルを学習して、ポートを選ぶ",
+        "IP アドレスで経路を選ぶ"
+      ],
+      "ans": "全ホストに転送し、宛先でないホストは破棄する",
+      "note": "残り3つのうち、2つ目と3つ目はスイッチングハブ、4つ目はルータの動き。第5回 p.26, p.27 [A26]"
+    },
+    {
+      "type": "single",
+      "q": "ADSL の説明として、正しいものは?",
+      "opts": [
+        "既存の固定電話回線を使い、電話局から遠いほど速度が落ちる",
+        "光ファイバを家まで引き、距離が遠くても速度は落ちない",
+        "ケーブルテレビの回線を使い、家側の装置は STB",
+        "1本の回線で2B+Dの2種類のチャネルを使う"
+      ],
+      "ans": "既存の固定電話回線を使い、電話局から遠いほど速度が落ちる",
+      "note": "2つ目は FTTH、3つ目は CATV、4つ目は ISDN の説明。第5回 p.7, p.8, p.11, p.12 [A22]"
+    },
+    {
+      "type": "single",
+      "q": "【第2回】GSM 方式は第何世代の携帯電話?",
+      "opts": [
+        "第2世代",
+        "第3世代",
+        "第3.9世代",
+        "第4世代"
+      ],
+      "ans": "第2世代",
+      "note": "第2世代は TDMA/CDMA で PDC・GSM・IS-95。第3世代は W-CDMA・CDMA2000、第3.9世代は LTE・WiMAX(OFDMA)。第2回 p.4 表1.1 [A4]"
+    },
+    {
+      "type": "single",
+      "q": "【第4回】次のうち、データリンク層(第2層)で動作する機器は?",
+      "opts": [
+        "ブリッジ",
+        "ルータ",
+        "リピータ",
+        "ネットワークケーブル"
+      ],
+      "ans": "ブリッジ",
+      "note": "第2層はスイッチ・ブリッジ・モデム。ルータは第3層、リピータ・ケーブルは第1層。第4回 p.5 [A14]"
+    }
+  ],
+  "next": [
+    {
+      "label": "演習 ② セルフチェック 第5回へ",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-selfcheck/data.json#s5"
+    },
+    {
+      "label": "演習 ⑤ 類題 第5回へ",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-ruidai/data.json#s6c"
+    }
+  ],
+  "footer": "出典: 情報ネットワーク工学 第5回講義資料(p.2〜p.31)、第2回・第4回講義資料。「資料外」と書いた部分は講義資料にない一般知識の補足。"
 }
