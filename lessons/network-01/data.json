@@ -1,0 +1,476 @@
+{
+  "year": 2026,
+  "grade": 4,
+  "exam": "後期中間試験",
+  "subject": "情報ネットワーク工学",
+  "title": "情報ネットワーク工学 ・ 学習 第1回 (通信の歴史・略語・電話交換・携帯の世代)",
+  "storageKey": "ine_learn_01_v1",
+  "minutes": 40,
+  "goals": [
+    "ADSL・HTTP などの略語を、英語の正式名称で綴りまで書ける",
+    "電信 → 電話 → IP電話の歴史と、携帯電話の世代ごとの多元接続方式(FDMA・TDMA/CDMA・CDMA・OFDMA)を言える",
+    "電話機 n 台を全部つなぐ回線数 (n-1)×n/2 を計算でき、交換機で回線が減る理由を説明できる"
+  ],
+  "katex": false,
+  "terms": [
+    {
+      "name": "ADSL",
+      "full": "Asymmetric Digital Subscriber Line",
+      "plain": "電話線を使う高速インターネット。上りと下りの速さが違う(下りが速い)。2024年にサービス終了"
+    },
+    {
+      "name": "HTTP",
+      "full": "Hyper Text Transfer Protocol",
+      "plain": "Web ページをやりとりするときの約束事。Hyper Text は2語に分ける"
+    },
+    {
+      "name": "URL",
+      "full": "Uniform Resource Locator",
+      "plain": "Web ページなどの「住所」(資料外。講義資料に正式名称は無いが Moodle に出る)"
+    },
+    {
+      "name": "IP",
+      "full": "Internet Protocol",
+      "plain": "ネットで相手を探して届けるための約束事(資料外。Moodle に出る)"
+    },
+    {
+      "name": "DHCP",
+      "full": "Dynamic Host Configuration Protocol",
+      "plain": "つないだ機器に IP アドレスを自動で配る仕組み(資料外。Moodle に出る)"
+    },
+    {
+      "name": "SMTP",
+      "full": "Simple Mail Transfer Protocol",
+      "plain": "メールを送るときの約束事。Transfer の綴りは HTTP と同じ(資料外。Moodle に出る)"
+    },
+    {
+      "name": "UDP",
+      "full": "User Datagram Protocol",
+      "plain": "受け取りの確認をせず、素早くデータを送る約束事(資料外。Moodle に出る)"
+    },
+    {
+      "name": "OFDMA",
+      "full": "Orthogonal Frequency Division Multiple Access",
+      "plain": "直交周波数分割多元接続。携帯電話の第3.9世代(LTE)で使う、電波の分け合い方"
+    }
+  ],
+  "blocks": [
+    {
+      "id": "b1",
+      "title": "通信は「符号 → 音声 → IP・光」の順に進んだ",
+      "pre": [
+        {
+          "type": "single",
+          "q": "電信(符号を送る)と電話(音声を送る)、先に発明されたのはどっち?(外れて当然)",
+          "opts": [
+            "電信",
+            "電話",
+            "同じ年"
+          ],
+          "ans": "電信",
+          "note": "電信は1837年、電話は1876年。符号が先、音声があと。"
+        },
+        {
+          "type": "single",
+          "q": "ADSL は今でも新しく申し込める?(外れて当然)",
+          "opts": [
+            "申し込める",
+            "2024年に終了した"
+          ],
+          "ans": "2024年に終了した",
+          "note": "ADSL は2024年に終了。光(FTTH)などに移った。"
+        }
+      ],
+      "body": "通信手段は、符号 → 音声 → ディジタル・IP の順に進んだ。1837年にモールス(米)が電信(符号を送る)、1876年にベル(米)が電話機(音声を送る)を発明し、1890年に東京-横浜間で電話サービスが始まった(200回線)。1895年はマルコーニ(伊)の無線電信。1988年に ISDN(64kbps)が始まり、1990年代に ADSL、2000年代に IP電話、2010年代に FTTH(光ファイバ)が普及した。ネット接続はダイヤルアップ → ISDN → ADSL・CATV → FTTH・CATV と変わった(ダイヤルアップ=電話線+MODEM、ISDN=ディジタルの電話回線、CATV=ケーブルテレビの回線、FTTH=家まで光ファイバ。この一言ずつの説明は資料外)。<b>なぜ</b>古いものは終わるのか。光とIPに一本化する流れだからで(この理由づけは資料外)、2024年に ADSL が終了し、固定電話網の IP化が始まり、2035年までに固定電話のメタル(銅)回線も廃止される。",
+      "fig": "<svg style='min-width:640px' viewBox='0 0 690 190' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='通信の歴史の年表'><line x1='20' y1='70' x2='670' y2='70' stroke='currentColor' stroke-opacity='.5'/><g fill='var(--teal)'><circle cx='45' cy='70' r='5'/><circle cx='130' cy='70' r='5'/><circle cx='215' cy='70' r='5'/><circle cx='300' cy='70' r='5'/><circle cx='385' cy='70' r='5'/><circle cx='470' cy='70' r='5'/><circle cx='555' cy='70' r='5'/><circle cx='640' cy='70' r='5'/></g><g text-anchor='middle' font-size='12' font-weight='bold' fill='var(--teal)'><text x='45' y='50'>1837</text><text x='130' y='50'>1876</text><text x='215' y='50'>1895</text><text x='300' y='50'>1988</text><text x='385' y='50'>1990年代</text><text x='470' y='50'>2000年代</text><text x='555' y='50'>2010年代</text><text x='640' y='50'>2024</text></g><g text-anchor='middle' font-size='12' fill='currentColor'><text x='45' y='95'>電信(符号)</text><text x='130' y='95'>電話(音声)</text><text x='215' y='95'>無線電信</text><text x='300' y='95'>ISDN</text><text x='385' y='95'>ADSL</text><text x='470' y='95'>IP電話</text><text x='555' y='95'>FTTH</text><text x='640' y='95'>ADSL終了</text></g><g text-anchor='middle' font-size='11' fill='var(--muted)'><text x='45' y='112'>モールス(米)</text><text x='130' y='112'>ベル(米)</text><text x='215' y='112'>マルコーニ(伊)</text><text x='300' y='112'>64kbps</text><text x='385' y='112'>普及</text><text x='470' y='112'>普及</text><text x='555' y='112'>光ファイバ</text><text x='640' y='112'>網のIP化開始</text></g><line x1='20' y1='135' x2='670' y2='135' stroke='currentColor' stroke-opacity='.25'/><text x='345' y='162' text-anchor='middle' font-size='13' fill='var(--amber)'>ネット接続: ダイヤルアップ → ISDN → ADSL・CATV → FTTH・CATV</text></svg>",
+      "check": [
+        {
+          "type": "single",
+          "q": "電話機を発明したのは誰?",
+          "opts": [
+            "モールス(米)",
+            "ベル(米)",
+            "マルコーニ(伊)",
+            "ノイマン(米)"
+          ],
+          "ans": "ベル(米)",
+          "note": "1876年にベル(米)が電話機を発明。モールスは電信、マルコーニは無線電信。(第1回 p.9)"
+        },
+        {
+          "type": "single",
+          "q": "有線のネット接続の移り変わりとして正しい並びは?",
+          "opts": [
+            "ダイヤルアップ → ISDN → ADSL → FTTH",
+            "ADSL → ISDN → ダイヤルアップ → FTTH",
+            "FTTH → ADSL → ISDN → ダイヤルアップ",
+            "ISDN → ダイヤルアップ → FTTH → ADSL"
+          ],
+          "ans": "ダイヤルアップ → ISDN → ADSL → FTTH",
+          "note": "電話線+MODEM → ISDN → ADSL・CATV → 光(FTTH・CATV)の順。(第2回 p.8)"
+        },
+        {
+          "type": "single",
+          "q": "なぜ電信は「符号伝送」、電話は「音声伝送」と呼ばれる?",
+          "opts": [
+            "電信は文字を符号にして送り、電話は声そのものを送るから",
+            "電信は有線、電話は無線だから",
+            "電信は1本、電話は2本の線を使うから"
+          ],
+          "ans": "電信は文字を符号にして送り、電話は声そのものを送るから",
+          "note": "年表(第1回 p.9)に「符号伝送」「音声伝送」とある。符号=トン・ツーなどの決まった記号の組み合わせ(この一言の説明は資料外)。"
+        }
+      ]
+    },
+    {
+      "id": "b2",
+      "title": "略語は英語の正式名称を、綴りまで書けるようにする",
+      "pre": [
+        {
+          "type": "single",
+          "q": "ADSL の A は何の頭文字?(知らなくて当然)",
+          "opts": [
+            "Asymmetric",
+            "Advanced",
+            "Analog"
+          ],
+          "ans": "Asymmetric",
+          "note": "Asymmetric = 非対称。上りと下りの速さが違うという意味。"
+        },
+        {
+          "type": "single",
+          "q": "HTTP の T は何?(知らなくて当然)",
+          "opts": [
+            "Text と Transfer",
+            "Terminal と Transport",
+            "Telephone と Transmission"
+          ],
+          "ans": "Text と Transfer",
+          "note": "Hyper Text Transfer Protocol。Text と Transfer の2つの T。"
+        }
+      ],
+      "body": "先生は資料(第1回 p.8)で「略語、正式名称、意味・定義を憶える。英語の綴りを含めて正しく憶える」と言い、赤字で脱字を直している。落とし穴は3つ。ADSL は Subsc<b>r</b>iber の r、HTTP は Tran<b>s</b>fer の s、Hyper Text は2語に分ける。<b>なぜ綴りまで?</b> Moodle は綴りが1字違うだけで不正解になるから。意味も言えるように。ADSL は上りと下りの速さが違う(非対称)電話線のネット、HTTP は Web ページをやりとりする約束事。ISO は英語の略語ではないので範囲外。URL・IP・DHCP・SMTP・UDP は講義資料に正式名称が無い(資料外)が Moodle に出るので、上の「今日の用語」で綴りを見て覚える。覚えるときは目で見るだけでなく紙に書く。",
+      "fig": "<svg style='min-width:520px' viewBox='0 0 600 150' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='綴りの落とし穴'><g font-size='14' fill='currentColor'><text x='20' y='28' font-weight='bold' fill='var(--teal)'>ADSL</text><text x='90' y='28'>Asymmetric Digital Subsc<tspan fill='var(--amber)' font-weight='bold'>r</tspan>iber Line</text><text x='20' y='70' font-weight='bold' fill='var(--teal)'>HTTP</text><text x='90' y='70'>Hyper Text Tran<tspan fill='var(--amber)' font-weight='bold'>s</tspan>fer Protocol</text><text x='20' y='112' font-weight='bold' fill='var(--teal)'>SMTP</text><text x='90' y='112'>Simple Mail Tran<tspan fill='var(--amber)' font-weight='bold'>s</tspan>fer Protocol</text></g><g font-size='12' fill='var(--muted)'><text x='20' y='46'>r を落とさない(赤字で訂正されている所)</text><text x='20' y='88'>s を落とさない / Hyper と Text は別の単語</text><text x='20' y='130'>Transfer は HTTP と同じ綴り</text></g></svg>",
+      "check": [
+        {
+          "type": "single",
+          "q": "(先に紙に綴りを書いてから選ぶ)HTTP の正式名称は?",
+          "opts": [
+            "Hyper Text Transfer Protocol",
+            "Hyper Text Tranfer Protocol",
+            "HyperText Transfer Protocol",
+            "Hyper Text Transport Protocol"
+          ],
+          "ans": "Hyper Text Transfer Protocol",
+          "note": "Transfer の s を落とさない。Hyper と Text は別の単語。(第1回 p.8)"
+        },
+        {
+          "type": "single",
+          "q": "なぜ ADSL の頭に Asymmetric(非対称)が付く?",
+          "opts": [
+            "上りと下りの速さが違う(下りが速い)から",
+            "ISDN より遅い方式であることを表すから",
+            "利用者の家と電話局で回線の太さが違うから"
+          ],
+          "ans": "上りと下りの速さが違う(下りが速い)から",
+          "note": "Asymmetric は非対称の意味。下りを速く、上りを遅くした方式。光ファイバは上下とも速い。(第1回 p.8、第1回 p.9)"
+        },
+        {
+          "type": "single",
+          "q": "(先に紙に綴りを書いてから選ぶ)SMTP の正式名称は?",
+          "opts": [
+            "Simple Mail Transfer Protocol",
+            "Simple Mail Tranfer Protocol",
+            "Simple Male Transfer Protocol",
+            "Simple Mail Transmit Protocol"
+          ],
+          "ans": "Simple Mail Transfer Protocol",
+          "note": "Moodle の正解表記。Transfer の綴りは HTTP と同じ。(資料外。講義資料に正式名称は無く、Moodle で確認済み)"
+        }
+      ]
+    },
+    {
+      "id": "b3",
+      "title": "電話機が増えても、交換機があれば回線は台数と同じ本数ですむ",
+      "pre": [
+        {
+          "type": "single",
+          "q": "電話機3台を、全部の組み合わせで直接つなぐと何本?(数えてみて)",
+          "opts": [
+            "2本",
+            "3本",
+            "6本"
+          ],
+          "ans": "3本",
+          "note": "A-B、A-C、B-C の3本。"
+        },
+        {
+          "type": "single",
+          "q": "では電話機4台は何本?",
+          "opts": [
+            "4本",
+            "6本",
+            "8本"
+          ],
+          "ans": "6本",
+          "note": "A-B、A-C、A-D、B-C、B-D、C-D の6本。"
+        }
+      ],
+      "body": "電話機を全部直接つなぐと、回線は台数が増えるほど爆発的に増える。n 台なら <b>(n-1)×n/2 本</b>。<b>なぜ?</b> 1台は自分以外の n-1 台とつなぎ、n 台ぶん数えると同じ線(A-B など)を2回数えるので2で割る。1000台なら 499,500本。そこで途中に交換機(話したい相手に線をつなぎ替える装置)を置き、各電話機から交換機へ1本ずつつなぐと、交換機が相手ごとにつなぎ替えるので n 本ですむ(1000台 → 1000本)。倍率は 499,500 ÷ 1000 = 499.5倍。これは例題1.1(第1回 p.11)で、第2回の演習1.3(5000台)でも同じ形が出た。台数を変えて出やすい。電話交換は19世紀末に手動 → 自動 → 高集積化と進み、2024年1月に固定電話交換網の IP化が始まった。",
+      "fig": "<svg style='min-width:480px' viewBox='0 0 560 200' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='交換機なしと交換機ありの回線数の違い'><g stroke='currentColor' stroke-width='1.5'><line x1='60' y1='50' x2='200' y2='50'/><line x1='60' y1='150' x2='200' y2='150'/><line x1='60' y1='50' x2='60' y2='150'/><line x1='200' y1='50' x2='200' y2='150'/><line x1='60' y1='50' x2='200' y2='150'/><line x1='200' y1='50' x2='60' y2='150'/></g><g stroke='currentColor' stroke-width='1.5'><line x1='310' y1='50' x2='400' y2='100'/><line x1='490' y1='50' x2='400' y2='100'/><line x1='310' y1='150' x2='400' y2='100'/><line x1='490' y1='150' x2='400' y2='100'/></g><rect x='360' y='85' width='80' height='30' rx='6' fill='var(--bg2)' stroke='var(--amber)' stroke-width='2'/><text x='400' y='105' text-anchor='middle' font-size='14' font-weight='bold' fill='var(--amber)'>交換機</text><g fill='var(--bg2)' stroke='var(--teal)' stroke-width='2'><circle cx='60' cy='50' r='15'/><circle cx='200' cy='50' r='15'/><circle cx='60' cy='150' r='15'/><circle cx='200' cy='150' r='15'/><circle cx='310' cy='50' r='15'/><circle cx='490' cy='50' r='15'/><circle cx='310' cy='150' r='15'/><circle cx='490' cy='150' r='15'/></g><g text-anchor='middle' font-size='13' fill='currentColor'><text x='60' y='55'>A</text><text x='200' y='55'>B</text><text x='60' y='155'>C</text><text x='200' y='155'>D</text><text x='310' y='55'>A</text><text x='490' y='55'>B</text><text x='310' y='155'>C</text><text x='490' y='155'>D</text></g><g text-anchor='middle' font-size='14' font-weight='bold' fill='var(--teal)'><text x='130' y='20'>交換機なし: 4台 → 6本</text><text x='400' y='20'>交換機あり: 4台 → 4本</text></g><g text-anchor='middle' font-size='12' fill='var(--muted)'><text x='130' y='192'>(4-1)×4/2 = 6</text><text x='400' y='192'>台数と同じ n 本</text></g></svg>",
+      "example": {
+        "steps": [
+          "1台は自分以外の (1000-1) = 999台とつなぐ。1000台ぶんで 1000×999 本に見えるが、A-B の線を A側と B側で2回数えているので2で割る(なぜ2で割るか)",
+          "交換機なし = (1000-1)×1000/2 = 499,500本",
+          "交換機あり = 各電話機から交換機へ1本ずつ = 1000本",
+          "倍率 = 499,500 ÷ 1000"
+        ],
+        "fill": {
+          "type": "numeric",
+          "q": "倍率は何倍?(最後の一手)",
+          "parts": [
+            {
+              "label": "倍率",
+              "ans": 499.5,
+              "unit": "倍",
+              "abs": 0.05
+            }
+          ],
+          "note": "499,500 ÷ 1000 = 499.5倍。(第1回 p.11 例題1.1)"
+        }
+      },
+      "check": [
+        {
+          "type": "single",
+          "q": "電話機1000台を、交換機なしで全部つなぐと回線は何本?",
+          "opts": [
+            "499,500本",
+            "999,000本",
+            "1,000,000本",
+            "500,000本"
+          ],
+          "ans": "499,500本",
+          "note": "(1000-1)×1000/2 = 499,500。999,000 は2で割り忘れ。(第1回 p.11 例題1.1)"
+        },
+        {
+          "type": "single",
+          "q": "電話機1000台を、交換機を使ってつなぐと回線は何本?",
+          "opts": [
+            "1000本",
+            "999本",
+            "500本",
+            "499,500本"
+          ],
+          "ans": "1000本",
+          "note": "各電話機から交換機へ1本ずつなので台数と同じ。(第1回 p.11)"
+        },
+        {
+          "type": "single",
+          "q": "なぜ全部つなぐ式で、最後に2で割る?",
+          "opts": [
+            "A-B の1本を、A側と B側で2回数えているから",
+            "回線1本で2台分を受け持てるので、台数の半分で足りるから",
+            "交換機が半分の回線を代わりに受け持つから"
+          ],
+          "ans": "A-B の1本を、A側と B側で2回数えているから",
+          "note": "1台あたり n-1 本を n 台ぶん足すと、同じ線を両端で2回数える。"
+        }
+      ]
+    },
+    {
+      "id": "b4",
+      "title": "携帯電話は世代ごとに電波の分け合い方(多元接続)が変わった",
+      "pre": [
+        {
+          "type": "single",
+          "q": "携帯電話が、アナログからディジタルに変わったのは第何世代?(外れて当然)",
+          "opts": [
+            "第1世代",
+            "第2世代",
+            "第3世代"
+          ],
+          "ans": "第2世代",
+          "note": "第1世代(1980年代)はアナログ、第2世代(1990年代)からディジタル。"
+        },
+        {
+          "type": "single",
+          "q": "FDMA の F は何の頭文字?(外れて当然)",
+          "opts": [
+            "Frequency(周波数)",
+            "Fast(高速)",
+            "Fiber(光ファイバ)"
+          ],
+          "ans": "Frequency(周波数)",
+          "note": "Frequency division multiple access = 周波数分割多元接続。"
+        }
+      ],
+      "body": "携帯電話は約10年ごとに世代が変わった。そのたびに<b>多元接続</b>(1本の電波を大勢で分け合う方法。この一言は資料外)が進んだ。第1世代(1980年代)はアナログで <b>FDMA</b>(周波数で分ける)、第2世代(1990年代)はディジタルで <b>TDMA</b>(時間で分ける)/<b>CDMA</b>(符号で分ける)、第3世代(2000年代)は CDMA、第3.9世代(2010年代)は <b>OFDMA</b>(直交周波数分割)で、通信方式は LTE。<b>なぜ進んだ?</b> 速さ(1秒に送れるデータ量。kbps・Mbps はその単位)が 1.2kbps から 100Mbps に上がり、電話だけだったのがデータ通信・動画まで使えるようになったから。覚え方は、第3=CDMA、第3.9=OFDMA、LTE は第3.9世代。OFDMA の正式名称は Orthogonal Frequency Division Multiple Access。",
+      "fig": "<svg style='min-width:600px' viewBox='0 0 640 250' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='携帯電話の世代表'><rect x='5' y='92' width='630' height='22' rx='4' fill='var(--accent-soft)'/><rect x='5' y='117' width='630' height='22' rx='4' fill='var(--accent-soft)'/><g font-size='12' font-weight='bold' fill='var(--muted)'><text x='15' y='25'>世代</text><text x='100' y='25'>年代</text><text x='175' y='25'>信号</text><text x='245' y='25'>多元接続</text><text x='330' y='25'>通信方式</text><text x='505' y='25'>伝送速度</text></g><line x1='5' y1='33' x2='635' y2='33' stroke='currentColor' stroke-opacity='.3'/><g font-size='13' fill='currentColor'><text x='15' y='57'>第1世代</text><text x='100' y='57'>1980年代</text><text x='175' y='57'>アナログ</text><text x='245' y='57' font-weight='bold' fill='var(--teal)'>FDMA</text><text x='330' y='57'>AMPS・NTT・NMT・TACS</text><text x='505' y='57'>1.2kbps</text><text x='15' y='82'>第2世代</text><text x='100' y='82'>1990年代</text><text x='175' y='82'>ディジタル</text><text x='245' y='82' font-weight='bold' fill='var(--teal)'>TDMA/CDMA</text><text x='330' y='82'>PDC・GSM・IS-95</text><text x='505' y='82'>2.4〜64kbps</text><text x='15' y='107'>第3世代</text><text x='100' y='107'>2000年代</text><text x='175' y='107'>ディジタル</text><text x='245' y='107' font-weight='bold' fill='var(--teal)'>CDMA</text><text x='330' y='107'>W-CDMA・CDMA2000</text><text x='505' y='107'>144kbps〜21Mbps</text><text x='15' y='132'>第3.9世代</text><text x='100' y='132'>2010年代</text><text x='175' y='132'>ディジタル</text><text x='245' y='132' font-weight='bold' fill='var(--teal)'>OFDMA</text><text x='330' y='132'>LTE・WiMAX</text><text x='505' y='132'>21〜100Mbps</text></g><g font-size='12' fill='var(--muted)'><text x='15' y='205'>第4世代: LTE-Advanced・WiMAX2(IPv6対応)</text><text x='15' y='225'>第5世代(2020年代): 高速大容量・高信頼低遅延・多数同時接続</text><text x='15' y='243'>FDMA=周波数 / TDMA=時間 / CDMA=符号 / OFDMA=直交周波数 で分ける</text></g></svg>",
+      "check": [
+        {
+          "type": "single",
+          "q": "携帯電話の第3世代の多元接続方式は?",
+          "opts": [
+            "CDMA",
+            "TDMA",
+            "FDMA",
+            "OFDMA"
+          ],
+          "ans": "CDMA",
+          "note": "第3世代(2000年代)は CDMA(W-CDMA・CDMA2000)。TDMA は第2世代、FDMA は第1世代、OFDMA は第3.9世代。(第2回 p.4)"
+        },
+        {
+          "type": "single",
+          "q": "第3.9世代の通信方式は?",
+          "opts": [
+            "LTE",
+            "W-CDMA",
+            "CDMA2000",
+            "GSM"
+          ],
+          "ans": "LTE",
+          "note": "第3.9世代は LTE・WiMAX。W-CDMA・CDMA2000 は第3世代、GSM は第2世代。(第2回 p.4)"
+        },
+        {
+          "type": "single",
+          "q": "なぜ第1世代では電話しかできなかったのに、第3.9世代では動画まで見られるようになった?(資料の表から)",
+          "opts": [
+            "伝送速度が 1.2kbps から 21〜100Mbps に上がったから",
+            "基地局が増えて、電話がつながりやすくなったから",
+            "多元接続方式が FDMA から TDMA に変わっただけだから"
+          ],
+          "ans": "伝送速度が 1.2kbps から 21〜100Mbps に上がったから",
+          "note": "第1世代は 1.2kbps で電話のみ、第3.9世代は 21〜100Mbps でインターネット・SNS・動画・電話。(第2回 p.4)"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "rows": [
+      [
+        "ADSL",
+        "Asymmetric Digital Subscriber Line。電話線のネット、上りと下りが違う。2024年終了"
+      ],
+      [
+        "HTTP",
+        "Hyper Text Transfer Protocol。Web ページをやりとりする約束事。Transfer の s"
+      ],
+      [
+        "電信 → 電話",
+        "1837年モールス(符号) → 1876年ベル(音声) → 1895年マルコーニ(無線電信)"
+      ],
+      [
+        "ネット接続",
+        "ダイヤルアップ → ISDN → ADSL・CATV → FTTH・CATV。2024年 ADSL 終了"
+      ],
+      [
+        "回線数",
+        "全部つなぐと (n-1)×n/2 本。交換機ありは n 本。1000台なら 499,500本と 1000本(499.5倍)"
+      ],
+      [
+        "携帯の世代",
+        "第1=FDMA、第2=TDMA/CDMA、第3=CDMA、第3.9=OFDMA(LTE)"
+      ],
+      [
+        "OFDMA",
+        "Orthogonal Frequency Division Multiple Access(直交周波数分割多元接続)"
+      ],
+      [
+        "資料外の略語",
+        "URL=Uniform Resource Locator / IP=Internet Protocol / DHCP=Dynamic Host Configuration Protocol / SMTP=Simple Mail Transfer Protocol / UDP=User Datagram Protocol"
+      ]
+    ],
+    "write3": "紙に3行、友達に説明するつもりで書く(書かないと効果が下がる):「電話機が増えても、交換機があると回線が少なくてすむのはなぜか」"
+  },
+  "final": [
+    {
+      "type": "numeric",
+      "q": "電話機が500台ある。交換機なしで全部つなぐと回線は何本? (半角数字、カンマなし)",
+      "parts": [
+        {
+          "label": "回線数",
+          "ans": 124750,
+          "unit": "本",
+          "tol": 0
+        }
+      ],
+      "hint": "(n-1)×n/2 に n=500 を入れる。",
+      "reveal": [
+        "(500-1)×500/2 = 499×500/2 = 124,750"
+      ],
+      "note": "(500-1)×500/2 = 124,750本。2で割り忘れると 249,500 になる。(第1回 p.11 例題1.1 と同じ形)"
+    },
+    {
+      "type": "single",
+      "q": "携帯電話の第3.9世代の多元接続方式は?",
+      "opts": [
+        "OFDMA",
+        "CDMA",
+        "TDMA",
+        "ADMA"
+      ],
+      "ans": "OFDMA",
+      "note": "第3.9世代(2010年代)は OFDMA(LTE・WiMAX)。CDMA は第3世代。ADMA という方式は無い。(第2回 p.4)"
+    },
+    {
+      "type": "single",
+      "q": "(先に紙に綴りを書いてから選ぶ)URL の正式名称は?",
+      "opts": [
+        "Uniform Resource Locator",
+        "Uniform Resource Locater",
+        "Universal Resource Locator",
+        "Uniform Resource Location"
+      ],
+      "ans": "Uniform Resource Locator",
+      "note": "Moodle の正解表記。Locator の語尾は -or。(資料外。講義資料に正式名称は無く、Moodle で確認済み)"
+    },
+    {
+      "type": "single",
+      "q": "(先に紙に綴りを書いてから選ぶ)DHCP の正式名称は?",
+      "opts": [
+        "Dynamic Host Configuration Protocol",
+        "Dynamic Host Configuaration Protocol",
+        "Dynamic Hosting Configuration Protocol",
+        "Dynamic Host Connection Protocol"
+      ],
+      "ans": "Dynamic Host Configuration Protocol",
+      "note": "Moodle の正解表記。Configuration の綴りに注意。(資料外。講義資料に正式名称は無く、Moodle で確認済み)"
+    },
+    {
+      "type": "single",
+      "q": "(先に紙に綴りを書いてから選ぶ)IP の正式名称は?",
+      "opts": [
+        "Internet Protocol",
+        "Internet Protocal",
+        "Internal Protocol",
+        "Internetwork Protocol",
+        "どれにも一致しない(自分の綴りが違った)"
+      ],
+      "ans": "Internet Protocol",
+      "noShuffle": true,
+      "note": "Internet の語尾は -net、Protocol の語尾は -col(-cal ではない)。(第1回 p.8 の略語表の範囲。綴りまで書けるようにする)"
+    },
+    {
+      "type": "single",
+      "q": "(先に紙に綴りを書いてから選ぶ)UDP の正式名称は?",
+      "opts": [
+        "User Datagram Protocol",
+        "User Datagram Protcol",
+        "User Datagrum Protocol",
+        "Unit Datagram Protocol"
+      ],
+      "ans": "User Datagram Protocol",
+      "note": "Moodle の正解表記。Datagram の綴りに注意。(資料外。UDP の語は第2回 p.7・第3回 p.14 に出るが、正式名称は講義資料に無く、Moodle で確認済み)"
+    }
+  ],
+  "next": [
+    {
+      "label": "演習 ② セルフチェック 第1回へ",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-selfcheck/data.json"
+    },
+    {
+      "label": "演習 ① 略語の正式名称へ",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-ryakugo/data.json"
+    }
+  ],
+  "footer": "出典: 第1回講義資料 p.8〜p.12(略語・年表・電話交換・例題1.1)、第2回講義資料 p.4〜p.5・p.8(携帯の世代表・多元接続・ネット接続の変遷)、Moodle セルフチェック第1回の正解表記。「(資料外)」は講義資料に載っていない補足。"
+}

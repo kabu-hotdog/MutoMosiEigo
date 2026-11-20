@@ -1,0 +1,12 @@
+{
+  "year": 2026, "grade": 4, "exam": "後期中間試験", "title": "サンプル クイズ", "eyebrow": "サンプル", "description": "動作確認用",
+  "subject": "サンプル", "storageKey": "sample_quiz_v1", "noPoints": true, "katex": false,
+  "sections": [
+    { "id": "s1", "no": "01", "title": "単位", "qs": [
+      { "type": "single", "q": "1 B は何 bit?", "opts": ["8", "4", "16"], "ans": "8", "note": "8bit" },
+      { "type": "single", "q": "bps の読みは?", "opts": ["ビット毎秒", "バイト毎秒"], "ans": "ビット毎秒", "note": "" },
+      { "type": "numeric", "q": "80 Mbit ÷ 40 Mbps = ?", "parts": [{ "ans": 2, "unit": "秒", "abs": 0.01 }, { "ans": 4, "unit": "秒", "abs": 0.01 }] },
+      { "type": "single", "q": "ADSL で遅いのは?", "opts": ["上り", "下り"], "ans": "上り", "note": "" }
+    ] }
+  ]
+}

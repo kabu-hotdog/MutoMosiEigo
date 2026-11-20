@@ -1,0 +1,540 @@
+{
+  "year": 2026,
+  "grade": 4,
+  "exam": "後期中間試験",
+  "subject": "情報ネットワーク工学",
+  "title": "情報ネットワーク工学 ・ 学習 第4回 OSI参照モデルとアクセスネットワーク",
+  "storageKey": "ine_learn_04_v1",
+  "minutes": 40,
+  "goals": [
+    "OSI参照モデルの上位層と下位層の境目(第4層と第5層の間)と、各層の機器・プロトコルの例を言える",
+    "カプセル化で大きくなるもの(オーバーヘッド)を正しい表記で言える",
+    "アクセスネットワークの装置(ISDN=DSU、FTTH=ONU、CATV=STB)と、2024年10月に新規契約できる回線を言える"
+  ],
+  "katex": false,
+  "terms": [
+    {
+      "name": "OSI",
+      "full": "Open Systems Interconnection",
+      "plain": "通信のルールを7つの層に分けて考える決まり(開放型システム間相互接続)"
+    },
+    {
+      "name": "FQDN",
+      "full": "Fully Qualified Domain Name",
+      "plain": "ホスト名+ドメイン名をつないだ完全な名前(例 www.yahoo.com)"
+    },
+    {
+      "name": "SCP",
+      "full": "Session Control Protocol",
+      "plain": "第5層(セッション層)の例。ファイル転送の途中に目印(同期点)を入れる"
+    },
+    {
+      "name": "DSU",
+      "full": "Digital Service Unit",
+      "plain": "ISDN で家に置く装置"
+    },
+    {
+      "name": "ONU",
+      "full": "Optical Network Unit",
+      "plain": "光ファイバー(FTTH)で家に置く装置。O は Optical=光"
+    },
+    {
+      "name": "STB",
+      "full": "Set-Top Box",
+      "plain": "ケーブルテレビ(CATV)で家に置く装置。テレビの上に置く箱"
+    },
+    {
+      "name": "HDLC",
+      "full": "High-level Data Link Control",
+      "plain": "第2層(データリンク)のデータリンク制御方式の一つ"
+    },
+    {
+      "name": "MAC",
+      "full": "Media Access Control",
+      "plain": "MACアドレスの MAC。機器ごとの固有番号(48bit)。第2層で使う"
+    },
+    {
+      "name": "ISDN",
+      "full": "Integrated Service Digital Network",
+      "plain": "音声・データ・画像を1本の回線で送れるディジタル回線。2024年1月に終了"
+    },
+    {
+      "name": "ADSL",
+      "full": "Asymmetric Digital Subscriber Line",
+      "plain": "固定電話の回線を使う高速通信。電話局から遠いほど遅い。2024年3月に終了"
+    },
+    {
+      "name": "FTTH",
+      "full": "Fiber To The Home",
+      "plain": "光ファイバーを家まで引く回線"
+    },
+    {
+      "name": "CATV",
+      "full": "CAble TeleVision",
+      "plain": "ケーブルテレビの回線を使ったネット接続(大文字小文字に注意)"
+    },
+    {
+      "name": "IPsec",
+      "full": "",
+      "plain": "第3層(ネットワーク層)の暗号化に使う仕組み"
+    }
+  ],
+  "blocks": [
+    {
+      "id": "b1",
+      "title": "通信は7層に分かれ、上位と下位の境目は「第4層と第5層の間」",
+      "pre": [
+        {
+          "type": "single",
+          "q": "OSI参照モデルは全部で何層に分かれている?(知らなくて当然)",
+          "opts": [
+            "4層",
+            "5層",
+            "7層",
+            "10層"
+          ],
+          "ans": "7層",
+          "note": "7層。第1層(物理)から第7層(アプリケーション)まで。[A12]"
+        },
+        {
+          "type": "single",
+          "q": "「上位層」と「下位層」の境目はどこだと思う?(外れて当然)",
+          "opts": [
+            "第4層と第5層の間",
+            "第3層と第4層の間",
+            "第2層と第3層の間"
+          ],
+          "ans": "第4層と第5層の間",
+          "note": "第4層と第5層の間。第4回 p.4 で青い線が引かれている。[A13]"
+        }
+      ],
+      "body": "通信のルール(プロトコル)は、役割ごとに<b>7つの層</b>(OSI参照モデル)に分けて考える。上から順に働きは次のとおり。<br>第7層 アプリケーション=具体的な通信サービス(Web・メールなど)<br>第6層 プレゼンテーション=データの表し方<br>第5層 セッション=通信の手順(進め方)<br>第4層 トランスポート=通信の管理(確実に届ける)<br>第3層 ネットワーク=経路選択・中継・アドレス付け<br>第2層 データリンク=機器どうしの信号のやり取りの確立・維持・開放<br>第1層 物理=線・コネクタ・電圧<br>図の真ん中は各層の代表的なプロトコル、右はその層でのデータの呼び名。先生は層の名前と働きを赤字で「正確に憶える」と指示している。<br><b>第5層以上が「上位層」(情報伝送の制御)</b>、<b>第1〜4層が「下位層」(データ伝送の制御)</b>。境目は<b>第4層と第5層の間</b>。第4層までで「データを相手に確実に届ける」仕事が終わり、第5層からは届いた情報の扱い(手順・表し方・サービス)になるため。ベーシック手順・HDLC手順(データリンク制御方式)も第2層(詳しくは第5回)。",
+      "fig": "<svg viewBox='0 0 440 226' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='OSI参照モデルの7層と上位下位の境目'><g font-size='12' fill='currentColor'><rect x='5' y='6' width='430' height='26' fill='none' stroke='currentColor'/><text x='12' y='24'>第7層 アプリケーション</text><text x='170' y='24'>HTTP・SMTP・FTP・SSH</text><text x='320' y='24'>メッセージ</text><rect x='5' y='34' width='430' height='26' fill='none' stroke='currentColor'/><text x='12' y='52'>第6層 プレゼンテーション</text><text x='170' y='52'>ASN.1</text><text x='320' y='52'>メッセージ</text><rect x='5' y='62' width='430' height='26' fill='none' stroke='currentColor'/><text x='12' y='80'>第5層 セッション</text><text x='170' y='80'>SIP・SCP</text><text x='320' y='80'>メッセージ</text><line x1='5' y1='93' x2='435' y2='93' stroke='#d9534f' stroke-width='3' stroke-dasharray='8 4'/><text x='220' y='107' text-anchor='middle' font-size='11' font-weight='bold' fill='#d9534f'>▲上位(第5〜7層) 境目 ▼下位(第1〜4層)</text><rect x='5' y='112' width='430' height='26' fill='none' stroke='currentColor'/><text x='12' y='130'>第4層 トランスポート</text><text x='170' y='130'>TCP・UDP</text><text x='300' y='130' font-size='10'>セグメント/データグラム</text><rect x='5' y='140' width='430' height='26' fill='none' stroke='currentColor'/><text x='12' y='158'>第3層 ネットワーク</text><text x='170' y='158'>IP・ICMP・ARP</text><text x='320' y='158'>パケット</text><rect x='5' y='168' width='430' height='26' fill='none' stroke='currentColor'/><text x='12' y='186'>第2層 データリンク</text><text x='170' y='186'>HDLC・LLC/MAC</text><text x='320' y='186'>フレーム</text><rect x='5' y='196' width='430' height='26' fill='none' stroke='currentColor'/><text x='12' y='214'>第1層 物理</text><text x='170' y='214'>CAT5e・RJ45・5V</text><text x='320' y='214'>ビット</text></g></svg>",
+      "example": {
+        "steps": [
+          "例題5.1 (1)「通信エラーを見つけて直し、高品質にデータを届ける」→ データを確実に届ける管理は第4層の仕事。代表は TCP。答え: トランスポート層(TCP)",
+          "(2)「ファイル転送の途中に『同期点』を入れ、誤りが出たらそこからやり直す」→ 通信の進め方(手順)を管理するのは第5層。代表は SCP(Session Control Protocol)",
+          "最後の一手: 「通信の手順を管理する層」の名前を選ぶ"
+        ],
+        "fill": {
+          "type": "single",
+          "q": "「同期点を挿入し、誤りが起きたら同期点から転送をやり直す」のは、どの層?",
+          "opts": [
+            "トランスポート層",
+            "セッション層",
+            "ネットワーク層",
+            "データリンク層"
+          ],
+          "ans": "セッション層",
+          "note": "セッション層(第5層)。SCP=Session Control Protocol。第4回 p.10 例題5.1(2)。[A16]"
+        }
+      },
+      "check": [
+        {
+          "type": "single",
+          "q": "OSI参照モデルで、上位層と下位層を分ける位置は?",
+          "opts": [
+            "第4層と第5層の間",
+            "第3層と第4層の間",
+            "第5層と第6層の間",
+            "第2層と第3層の間"
+          ],
+          "ans": "第4層と第5層の間",
+          "note": "上位=第5〜7層、下位=第1〜4層なので境目は第4層と第5層の間。「第3層と第4層の間」は引っかけ。第4回 p.4・p.5。[A13]"
+        },
+        {
+          "type": "single",
+          "q": "データリンク制御方式の HDLC手順 や、LLC/MAC が属するのは、どの層?",
+          "opts": [
+            "物理層(第1層)",
+            "データリンク層(第2層)",
+            "ネットワーク層(第3層)",
+            "トランスポート層(第4層)"
+          ],
+          "ans": "データリンク層(第2層)",
+          "note": "第2層は HDLC・LLC/MAC(ベーシック手順・HDLC手順はデータリンク制御方式=第4回 p.15)。ネットワーク層は IP・ICMP・ARP、トランスポート層は TCP・UDP。第4回 p.4。[A13]"
+        },
+        {
+          "type": "single",
+          "q": "上位・下位の境目が「第3層と第4層の間」ではなく「第4層と第5層の間」なのはなぜ?",
+          "opts": [
+            "第4層までで「データを相手に確実に届ける」仕事が終わり、第5層からは届いた情報の扱いになるから",
+            "第4層(トランスポート)はアプリケーションに近い層で、情報伝送の制御をするから",
+            "第3層までが線やコネクタなど物理的な機器を扱う層で、第4層から先はすべてソフトウェアだから"
+          ],
+          "ans": "第4層までで「データを相手に確実に届ける」仕事が終わり、第5層からは届いた情報の扱いになるから",
+          "note": "下位層=第1〜4層(データ伝送の制御)。第5層以上は情報伝送の制御。第4回 p.4。[A13]"
+        }
+      ]
+    },
+    {
+      "id": "b2",
+      "title": "ルータは第3層(IPで中継)、スイッチは第2層(MACで中継)",
+      "pre": [
+        {
+          "type": "single",
+          "q": "データリンク層(第2層)で動作する機器はどれだと思う?(外れて当然)",
+          "opts": [
+            "スイッチ",
+            "ルータ",
+            "リピータ"
+          ],
+          "ans": "スイッチ",
+          "note": "スイッチ(とブリッジ)。ルータは第3層、リピータは第1層。第4回 p.5 例題。[A14]"
+        },
+        {
+          "type": "single",
+          "q": "IPv6のネットワーク層の暗号化に使うのは?(外れて当然)",
+          "opts": [
+            "PPP",
+            "SSH",
+            "IPsec",
+            "TLS"
+          ],
+          "ans": "IPsec",
+          "note": "IPsec。第4回 p.5 の赤い吹き出し「暗号化: IPsec」と、応用情報 令和2年10月 問37。[A15]"
+        }
+      ],
+      "body": "各層には、その層で動く機器がある。<b>第3層=ルータ(L3SW)</b>、<b>第2層=スイッチ・ブリッジ(・モデム)</b>、<b>第1層=ケーブル・コネクタ・ハブ・リピータ</b>。昔のハブ(ダムハブ)とリピータは信号を流すだけで、第1層。<br>見分けるコツは「送り先をどの番号で決めるか」。<b>スイッチ・ブリッジはMACアドレス</b>(Media Access Control。機器ごとの固有番号で48bit。例 02-00-4C-4F-4F-50)、<b>ルータはIPアドレス</b>(ネットワーク上の住所。IPv4は32bit=約43億個でほぼ割当完了、IPv6は128bit。例 202.231.11.77)。MACアドレスを扱うのは<b>第2層(データリンク層)</b>、IPは経路選択をする第3層のプロトコル。スイッチはハード的、ブリッジはソフト的に処理するが、どちらも第2層。<br>第3層の暗号化には<b>IPsec</b>を使う。ホスト名+ドメイン名をつないだ完全な名前を FQDN という(例 www.yahoo.com)。",
+      "fig": "<svg viewBox='0 0 440 160' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='層と機器の対応'><g font-size='12' fill='currentColor'><rect x='5' y='6' width='430' height='44' fill='none' stroke='currentColor'/><text x='12' y='25' font-weight='bold'>第3層 ネットワーク</text><text x='12' y='42'>ルータ・L3SW</text><text x='200' y='25'>送り先 = IPアドレス</text><text x='200' y='42'>暗号化 = IPsec</text><rect x='5' y='54' width='430' height='44' fill='none' stroke='currentColor'/><text x='12' y='73' font-weight='bold'>第2層 データリンク</text><text x='12' y='90'>スイッチ・ブリッジ・モデム</text><text x='200' y='73'>送り先 = MACアドレス</text><text x='200' y='90'>(スイッチ=ハード的、ブリッジ=ソフト的)</text><rect x='5' y='102' width='430' height='44' fill='none' stroke='currentColor'/><text x='12' y='121' font-weight='bold'>第1層 物理</text><text x='12' y='138' font-size='11'>ケーブル・コネクタ・ハブ・リピータ</text><text x='210' y='121'>信号をそのまま流すだけ</text><text x='210' y='138' font-size='11'>(LANケーブル CAT5e、コネクタ RJ45)</text></g></svg>",
+      "check": [
+        {
+          "type": "single",
+          "q": "ネットワーク層(第3層)で動作する機器は?",
+          "opts": [
+            "リピータ",
+            "ブリッジ",
+            "スイッチ",
+            "ルータ"
+          ],
+          "ans": "ルータ",
+          "note": "ルータ(とL3SW)が第3層で、IPアドレスを見て経路を選ぶ。ブリッジ・スイッチは第2層、リピータは第1層。第4回 p.5。[A14]"
+        },
+        {
+          "type": "single",
+          "q": "データリンク層(第2層)で動作する機器の組み合わせは?",
+          "opts": [
+            "スイッチ・ブリッジ",
+            "ハブ・リピータ",
+            "ルータ・ブリッジ",
+            "ルータ・リピータ"
+          ],
+          "ans": "スイッチ・ブリッジ",
+          "note": "どちらもMACアドレスを見て、エラー検出し、正常なデータだけを転送する。ハブ・リピータは第1層、ルータは第3層。第4回 p.5 例題(答は c スイッチと e ブリッジ)。[A14]"
+        },
+        {
+          "type": "single",
+          "q": "スイッチ・ブリッジが第2層(データリンク層)の機器とされるのはなぜ?",
+          "opts": [
+            "送り先をMACアドレスで決めていて、MACアドレスを扱うのは第2層だから",
+            "送り先をIPアドレスで決めていて、IPアドレスを扱うのは第2層だから",
+            "電気信号をそのまま流すだけで、データの中身は見ないから",
+            "経路選択とアドレッシングをするのは第2層だから"
+          ],
+          "ans": "送り先をMACアドレスで決めていて、MACアドレスを扱うのは第2層だから",
+          "note": "MACアドレスを扱うのは第2層(データリンク層)。IPアドレスで経路を選ぶのは第3層のルータ。信号を流すだけなのは第1層(ハブ・リピータ)。第4回 p.4・p.6・p.7、第5回 p.24。[A18]"
+        }
+      ]
+    },
+    {
+      "id": "b3",
+      "title": "カプセル化で層ごとにヘッダが付き、「オーバーヘッド」が大きくなる",
+      "pre": [
+        {
+          "type": "single",
+          "q": "データを送る時、各層が付け足していくものは?(外れて当然)",
+          "opts": [
+            "ヘッダ(制御用の情報)",
+            "データを小さくする圧縮ファイル",
+            "宛先ごとに別の中身"
+          ],
+          "ans": "ヘッダ(制御用の情報)",
+          "note": "ヘッダ(第2層ではトレーラも)。これがカプセル化。第4回 p.11。[A19]"
+        }
+      ],
+      "body": "データは、送る前に<b>層ごとにヘッダ</b>(宛先などの制御情報)を付け足される。これが<b>カプセル化</b>。第4層でTCPのヘッダが付いて「セグメント」(UDPなら「データグラム」)、第3層でIPのヘッダ(ネットワークヘッダ)が付いて「パケット」(=データ+ネットワークヘッダ)、第2層でヘッダとトレーラ(終わりのエラー検出情報。トレイラとも書く)が付いて「フレーム」になる。フレームのヘッダ・トレーラやMACは、第2層側のもの。<br>付け足されるのは送りたい中身ではなく制御用のデータなので、層を通るほど<b>オーバーヘッド</b>(送信すべきデータ以外の制御用データ)が大きくなる。表記は<b>「オーバーヘッド」</b>(長音あり)。Moodle では「オーバヘッド」は不正解だった。",
+      "fig": "<svg viewBox='0 0 440 176' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='カプセル化でヘッダが増える様子'><g font-size='10' fill='currentColor' text-anchor='middle'><rect x='170' y='8' width='80' height='26' fill='none' stroke='currentColor'/><text x='210' y='25'>データ</text><text x='310' y='25' text-anchor='start' font-size='12'>元のデータ</text><rect x='130' y='42' width='40' height='26' fill='none' stroke='currentColor'/><text x='150' y='59'>TCP</text><rect x='170' y='42' width='80' height='26' fill='none' stroke='currentColor'/><text x='210' y='59'>データ</text><text x='310' y='59' text-anchor='start' font-size='12'>第4層 セグメント</text><rect x='90' y='76' width='40' height='26' fill='none' stroke='currentColor'/><text x='110' y='93'>IP</text><rect x='130' y='76' width='40' height='26' fill='none' stroke='currentColor'/><text x='150' y='93'>TCP</text><rect x='170' y='76' width='80' height='26' fill='none' stroke='currentColor'/><text x='210' y='93'>データ</text><text x='310' y='93' text-anchor='start' font-size='12'>第3層 パケット</text><rect x='50' y='110' width='40' height='26' fill='none' stroke='currentColor'/><text x='70' y='127'>ヘッダ</text><rect x='90' y='110' width='40' height='26' fill='none' stroke='currentColor'/><text x='110' y='127'>IP</text><rect x='130' y='110' width='40' height='26' fill='none' stroke='currentColor'/><text x='150' y='127'>TCP</text><rect x='170' y='110' width='80' height='26' fill='none' stroke='currentColor'/><text x='210' y='127'>データ</text><rect x='250' y='110' width='40' height='26' fill='none' stroke='currentColor'/><text x='270' y='127'>トレーラ</text><text x='310' y='127' text-anchor='start' font-size='12'>第2層 フレーム</text><text x='220' y='162' font-size='12' font-weight='bold' fill='#d9534f'>制御用データが増える = オーバーヘッドが大きくなる</text></g></svg>",
+      "check": [
+        {
+          "type": "single",
+          "q": "ネットワーク層(第3層)のカプセル化で、パケットに含まれるのは?",
+          "opts": [
+            "データとネットワークヘッダ",
+            "データとフレームヘッダ・フレームトレーラ",
+            "データだけ(ヘッダは付かない)",
+            "データとMACアドレス"
+          ],
+          "ans": "データとネットワークヘッダ",
+          "note": "パケット=データ+ネットワークヘッダ。フレームヘッダ・トレーラ・MACは第2層(データリンク層)側。第4回 p.4。[A13]"
+        },
+        {
+          "type": "single",
+          "q": "カプセル化が行われるほど大きくなる「送信すべきデータ以外の制御用データ」を何という?(Moodleで正解になる表記)",
+          "opts": [
+            "オーバーヘッド",
+            "オーバヘッド",
+            "オーバーヘット",
+            "オーバーヘッダ"
+          ],
+          "ans": "オーバーヘッド",
+          "note": "「オーバーヘッド」(長音あり)。「オーバヘッド」は Moodle で不正解。第4回 p.11(赤字・下線)。[A19]"
+        },
+        {
+          "type": "single",
+          "q": "カプセル化が進むほどオーバーヘッドが大きくなるのはなぜ?",
+          "opts": [
+            "各層がヘッダ(第2層はトレーラも)を付け足すだけで、送りたい中身そのものは変わらないから",
+            "各層が送りたい中身を暗号化し直して、データ量が増えるから",
+            "上位層から下位層へ渡すたびに、中身を何回かコピーして送るから"
+          ],
+          "ans": "各層がヘッダ(第2層はトレーラも)を付け足すだけで、送りたい中身そのものは変わらないから",
+          "note": "付け足されるのは制御用データだけ。第4回 p.11。[A19]"
+        }
+      ]
+    },
+    {
+      "id": "b4",
+      "title": "アクセスネットワークの装置は ISDN=DSU、FTTH=ONU、CATV=STB",
+      "pre": [
+        {
+          "type": "single",
+          "q": "ISDN の回線で使う装置はどれだと思う?(外れて当然)",
+          "opts": [
+            "DSU",
+            "ONU",
+            "STB"
+          ],
+          "ans": "DSU",
+          "note": "DSU(Digital Service Unit)。ONU は光(FTTH)、STB はケーブルテレビ(CATV)。(資料外)図6.1の対応。[A24]"
+        },
+        {
+          "type": "single",
+          "q": "アクセスネットワークは、何と何をつなぐ?(外れて当然)",
+          "opts": [
+            "ユーザー端末と、最寄りの通信事業者の装置",
+            "通信事業者どうし",
+            "サーバどうし"
+          ],
+          "ans": "ユーザー端末と、最寄りの通信事業者の装置",
+          "note": "利用者側の端末(またはそのネットワーク)と、一番近い通信事業者装置。第4回 p.14。[A6]"
+        }
+      ],
+      "body": "<b>アクセスネットワーク</b>は、ユーザーの端末(または自宅・学校のネットワーク)と、一番近い通信事業者の装置をつなぐ部分。通信網のいちばん端なので<b>ラストワンマイル</b>とも呼ぶ(赤字・下線)。<br>つなぎ方(回線)には、ISDN(音声・データを1本で送るディジタル回線)、FTTH(光ファイバーを家まで引く)、CATV(CAble TeleVision。ケーブルテレビの回線)などがあり、回線ごとに家の側に置く装置が違う。<b>ISDN=DSU</b>(Digital Service Unit)、<b>FTTH(光)=ONU</b>(Optical Network Unit)、<b>CATV=STB</b>(Set-Top Box)。この対応は教科書の図6.1にあり、講義PDFには載っていない(資料外)。<br>覚え方: ONU の O は Optical=光。STB はテレビの上に置く箱=ケーブルテレビ。残りの ISDN が DSU。ADSL は ADSLモデム(資料外)。<br>ONU・ADSL・ISDN は装置や回線で、データリンク制御方式ではない。データリンク制御方式(第2層)は<b>ベーシック手順とHDLC手順</b>(6.2。詳しくは第5回)。",
+      "fig": "<svg viewBox='0 0 440 150' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='回線と装置の対応'><g font-size='12' fill='currentColor'><text x='12' y='16' font-weight='bold'>回線</text><text x='200' y='16' font-weight='bold'>家に置く装置</text><rect x='10' y='28' width='150' height='28' fill='none' stroke='currentColor'/><text x='18' y='47'>ISDN</text><text x='172' y='47'>→</text><rect x='196' y='28' width='60' height='28' fill='none' stroke='currentColor' stroke-width='2'/><text x='226' y='47' text-anchor='middle' font-weight='bold'>DSU</text><text x='266' y='47'>Digital Service Unit</text><rect x='10' y='68' width='150' height='28' fill='none' stroke='currentColor'/><text x='18' y='87'>FTTH(光ファイバー)</text><text x='172' y='87'>→</text><rect x='196' y='68' width='60' height='28' fill='none' stroke='currentColor' stroke-width='2'/><text x='226' y='87' text-anchor='middle' font-weight='bold'>ONU</text><text x='266' y='87'>Optical Network Unit</text><rect x='10' y='108' width='150' height='28' fill='none' stroke='currentColor'/><text x='18' y='127'>CATV(ケーブルテレビ)</text><text x='172' y='127'>→</text><rect x='196' y='108' width='60' height='28' fill='none' stroke='currentColor' stroke-width='2'/><text x='226' y='127' text-anchor='middle' font-weight='bold'>STB</text><text x='266' y='127'>Set-Top Box</text></g></svg>",
+      "check": [
+        {
+          "type": "single",
+          "q": "アクセスネットワークの別名は?",
+          "opts": [
+            "ラストワンマイル",
+            "バックボーン",
+            "コアネットワーク"
+          ],
+          "ans": "ラストワンマイル",
+          "note": "ユーザーと最寄りの通信事業者装置のあいだ=最後の1区間、の意味。第4回 p.14・第5回 p.3(赤字)。[A6]"
+        },
+        {
+          "type": "single",
+          "q": "アクセスネットワークの CATV で用いる装置は?",
+          "opts": [
+            "ONU",
+            "STB",
+            "DSU",
+            "Modem",
+            "ADSL Modem"
+          ],
+          "ans": "STB",
+          "note": "STB(Set-Top Box)。Moodle では Modem は不正解。ONU は FTTH、DSU は ISDN。(資料外)図6.1の対応。[A24]"
+        },
+        {
+          "type": "single",
+          "q": "ONU が FTTH の装置だと覚えやすいのはなぜ?",
+          "opts": [
+            "ONU は Optical(光) Network Unit で、FTTH は光ファイバーの回線だから",
+            "ONU は Open Network Unit で、FTTH は開放型の回線だから",
+            "ONU は Office Network Unit で、FTTH は事務所向けの回線だから"
+          ],
+          "ans": "ONU は Optical(光) Network Unit で、FTTH は光ファイバーの回線だから",
+          "note": "O=Optical=光。FTTH=Fiber To The Home(光を家まで)。第4回 p.14・第5回 p.11。[A24]"
+        }
+      ]
+    },
+    {
+      "id": "b5",
+      "title": "2024年10月に新規契約できるのは FTTH・WiMAX・CATV。ISDNとADSLは終了済み",
+      "pre": [
+        {
+          "type": "single",
+          "q": "2024年10月の時点で、新しく契約できない回線はどれだと思う?(外れて当然)",
+          "opts": [
+            "ISDN",
+            "FTTH",
+            "CATV"
+          ],
+          "ans": "ISDN",
+          "note": "ISDN は2024年1月にサービス終了。ADSL も2024年3月に終了。第5回 p.7・p.8。[A22]"
+        }
+      ],
+      "body": "有線のネット接続は、ダイヤルアップ → <b>ISDN</b> → <b>ADSL</b> → <b>FTTH・CATV</b> と変わってきた(FTTH・CATVは赤字)。古い2つはもう終わった。<br>・<b>ISDN</b>(INS)=<b>2024年1月</b>にサービス終了(2025年1月に完全終了)<br>・<b>ADSL</b>=<b>2024年3月</b>に終了(フレッツ・ADSLは2023年1月に終了済、2025年1月に完全終了)。乗り換え先は FTTH・CATV・WiMAX2 など。<br>2024年10月は両方の終了日より後なので、新規に契約できるのは<b>FTTH・WiMAX・CATV</b>(WiMAX は無線の高速通信で、第2回の携帯電話の世代表に出てくる。スライドの表記は WiMAX2 で、同じ仲間として扱う)。ADSL は既存の固定電話回線を使うので、電話局から遠いほど速度が落ちる(最大距離は5km(10km)程度)。",
+      "fig": "<svg viewBox='0 0 440 170' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='ISDN・ADSLの終了時期と2024年10月'><g font-size='12' fill='currentColor'><line x1='60' y1='20' x2='420' y2='20' stroke='currentColor'/><line x1='160' y1='14' x2='160' y2='26' stroke='currentColor'/><text x='160' y='11' text-anchor='middle' font-size='10'>2024/1</text><line x1='200' y1='14' x2='200' y2='26' stroke='currentColor'/><text x='204' y='11' text-anchor='start' font-size='10'>3</text><line x1='340' y1='14' x2='340' y2='26' stroke='#d9534f' stroke-width='3'/><text x='340' y='11' text-anchor='middle' font-size='10' font-weight='bold' fill='#d9534f'>2024/10(問い)</text><line x1='400' y1='14' x2='400' y2='26' stroke='currentColor'/><text x='400' y='11' text-anchor='middle' font-size='10'>2025/1</text><text x='8' y='52'>ISDN</text><rect x='60' y='40' width='100' height='16' fill='currentColor' opacity='0.3'/><text x='168' y='52' font-size='11'>2024年1月 終了</text><text x='8' y='82'>ADSL</text><rect x='60' y='70' width='140' height='16' fill='currentColor' opacity='0.3'/><text x='208' y='82' font-size='11'>2024年3月 終了</text><text x='8' y='112'>FTTH</text><rect x='60' y='100' width='350' height='16' fill='currentColor' opacity='0.6'/><text x='8' y='142'>CATV</text><rect x='60' y='130' width='350' height='16' fill='currentColor' opacity='0.6'/><text x='8' y='166'>WiMAX</text><rect x='60' y='154' width='350' height='12' fill='currentColor' opacity='0.6'/><line x1='340' y1='26' x2='340' y2='168' stroke='#d9534f' stroke-width='2' stroke-dasharray='4 3'/></g></svg>",
+      "check": [
+        {
+          "type": "single",
+          "q": "2024年10月の時点で新規契約できるアクセスネットワークの組み合わせは?",
+          "opts": [
+            "FTTH・WiMAX・CATV",
+            "ISDN・ADSL・FTTH",
+            "ISDN・CATV・WiMAX",
+            "ADSL・WiMAX・FTTH"
+          ],
+          "ans": "FTTH・WiMAX・CATV",
+          "note": "ISDN(2024年1月終了)とADSL(2024年3月終了)は除く。スライドの表記は WiMAX2。第5回 p.7・p.8・p.10。[A22]"
+        },
+        {
+          "type": "single",
+          "q": "ADSL の特徴として正しいのは?",
+          "opts": [
+            "既存の固定電話回線を使い、電話局から遠いほど速度が落ちる",
+            "光ファイバーを家まで引き、距離で速度が落ちない",
+            "テレビ放送の電波を使い、天気で速度が変わる"
+          ],
+          "ans": "既存の固定電話回線を使い、電話局から遠いほど速度が落ちる",
+          "note": "ADSL=Asymmetric Digital Subscriber Line。最大距離は5km(10km)程度。第5回 p.8。[A22]"
+        },
+        {
+          "type": "single",
+          "q": "2024年10月に ISDN と ADSL を新しく契約できないのはなぜ?",
+          "opts": [
+            "どちらも2024年1月・3月にサービスが終了しているから",
+            "どちらも FTTH・CATV より通信速度が遅くて、契約する人がいないから",
+            "どちらも光ファイバーに変えないと使えない決まりだから"
+          ],
+          "ans": "どちらも2024年1月・3月にサービスが終了しているから",
+          "note": "ISDN=2024年1月、ADSL=2024年3月に終了(完全終了は2025年1月)。10月はその後。第5回 p.7・p.8。[A22]"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "rows": [
+      [
+        "OSI参照モデル",
+        "通信を7層に分けたモデル。上位=第5〜7層、下位=第1〜4層。境目は第4層と第5層の間"
+      ],
+      [
+        "層と代表",
+        "第4層 TCP・UDP / 第3層 IP・ICMP・ARP / 第2層 HDLC・LLC/MAC / 第1層 CAT5e・RJ45"
+      ],
+      [
+        "機器と層",
+        "ルータ=第3層(IP)。スイッチ・ブリッジ=第2層(MAC)。ハブ・リピータ=第1層。暗号化 IPsec=ネットワーク層"
+      ],
+      [
+        "カプセル化",
+        "各層でヘッダ(第2層はトレーラも)が付く。オーバーヘッド(長音あり)が大きくなる"
+      ],
+      [
+        "アドレスの大きさ",
+        "IPv4=32bit(約43億個)、IPv6=128bit、MAC=48bit。FQDN=ホスト名+ドメイン名"
+      ],
+      [
+        "ラストワンマイル",
+        "アクセスネットワークの別名。端末と最寄りの通信事業者装置をつなぐ"
+      ],
+      [
+        "装置の対応",
+        "ISDN=DSU、FTTH=ONU、CATV=STB。ADSL=ADSLモデム(図6.1・資料外)"
+      ],
+      [
+        "新規契約(2024年10月)",
+        "FTTH・WiMAX・CATV。ISDN(2024年1月)・ADSL(2024年3月)は終了"
+      ]
+    ],
+    "write3": "紙に3行、友達に説明するつもりで書く(書かないと効果が下がる): 「上位層と下位層の境目」「ISDN・FTTH・CATV の装置」「カプセル化で大きくなるもの」"
+  },
+  "final": [
+    {
+      "type": "single",
+      "q": "OSI参照モデルで、上位層と下位層を分ける位置は?",
+      "opts": [
+        "第3層と第4層の間",
+        "第4層と第5層の間",
+        "第5層と第6層の間",
+        "第6層と第7層の間"
+      ],
+      "ans": "第4層と第5層の間",
+      "note": "上位=第5〜7層、下位=第1〜4層。第4回 p.4・p.5。[A13]"
+    },
+    {
+      "type": "single",
+      "q": "アクセスネットワークの ISDN で用いる装置は?",
+      "opts": [
+        "ONU",
+        "STB",
+        "DSU",
+        "ADSLモデム"
+      ],
+      "ans": "DSU",
+      "note": "ISDN=DSU(Digital Service Unit)、FTTH=ONU、CATV=STB。(資料外)教科書の図6.1の対応。第4回 p.14。[A24]"
+    },
+    {
+      "type": "single",
+      "q": "カプセル化が行われるほど大きくなる「送信すべきデータ以外の制御用データ」の正しい表記は?",
+      "opts": [
+        "オーバヘッド",
+        "オーバーヘッド",
+        "オーバーヘット",
+        "オーバーヘッダ"
+      ],
+      "ans": "オーバーヘッド",
+      "note": "長音あり。「オーバヘッド」は Moodle で不正解。第4回 p.11。[A19]"
+    },
+    {
+      "type": "single",
+      "q": "2024年10月の時点で新規契約できるアクセスネットワークは?",
+      "opts": [
+        "ISDN・ADSL・FTTH",
+        "FTTH・WiMAX・CATV",
+        "ISDN・CATV・WiMAX",
+        "ADSL・CATV・FTTH"
+      ],
+      "ans": "FTTH・WiMAX・CATV",
+      "note": "ISDN(2024年1月)・ADSL(2024年3月)は終了済み。第5回 p.7・p.8。[A22]"
+    },
+    {
+      "type": "single",
+      "q": "IPv6 のアドレスは何ビット? (第4回 p.9)",
+      "opts": [
+        "32 bit",
+        "48 bit",
+        "64 bit",
+        "128 bit"
+      ],
+      "ans": "128 bit",
+      "note": "IPv6=128bit(約340澗個)。IPv4=32bit(約43億個)、MAC=48bit。第4回 p.9。[A17]"
+    },
+    {
+      "type": "single",
+      "q": "(第3回の復習) 回線交換の説明として正しいのは?",
+      "opts": [
+        "通信が終わるまで回線を占有する。音声向けで、データ通信には不向き",
+        "データを小包に分け、回線を多くの人で共有する",
+        "品質保証がない方式を「バーチャルサーキット」という",
+        "X.25 は回線交換の規格である"
+      ],
+      "ans": "通信が終わるまで回線を占有する。音声向けで、データ通信には不向き",
+      "note": "回線交換は占有型。パケット交換のバーチャルサーキットは品質保証「有」、データグラムは「無」。第3回 p.9〜p.10。[A11]"
+    }
+  ],
+  "next": [
+    {
+      "label": "演習 ② 第4回セルフチェックへ",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-selfcheck/data.json#s4"
+    },
+    {
+      "label": "演習 ① 略語へ(第4回: FQDN・SCP・DSU・ONU・STB)",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-ryakugo/data.json#r9"
+    }
+  ],
+  "footer": "出典: 第4回講義資料 p.3〜p.14、第5回講義資料 p.3〜p.10・p.12・p.24、第3回講義資料 p.9〜p.10(PDFのページ番号)。(資料外)は講義資料に書かれていない補足。"
+}

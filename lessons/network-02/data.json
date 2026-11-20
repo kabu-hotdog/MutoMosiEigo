@@ -1,0 +1,557 @@
+{
+  "year": 2026,
+  "grade": 4,
+  "exam": "後期中間試験",
+  "subject": "情報ネットワーク工学",
+  "title": "情報ネットワーク工学 ・ 学習 第2回 携帯電話の世代・インターネットの歴史・ディジタル化と変調",
+  "storageKey": "ine_learn_02_v1",
+  "minutes": 40,
+  "goals": [
+    "携帯電話の世代(1G〜5G)と多元接続(FDMA・TDMA・CDMA・OFDMA)を結びつけて言える",
+    "アナログとディジタルの違い、標本化→量子化→符号化の順を言え、標本化定理の計算(fs > 2f0、f = 1/T、伝送速度)ができる",
+    "AM・FM・PM、ベースバンド方式、ディジタル変調(ASK・FSK・PSK・QAM)、多重化(FDM・TDM・CDM)を分類できる"
+  ],
+  "katex": true,
+  "terms": [
+    {
+      "name": "FDMA",
+      "full": "Frequency Division Multiple Access",
+      "plain": "周波数で利用者を分ける多元接続(第1世代)"
+    },
+    {
+      "name": "TDMA",
+      "full": "Time Division Multiple Access",
+      "plain": "時間で利用者を分ける多元接続(第2世代)"
+    },
+    {
+      "name": "CDMA",
+      "full": "Code Division Multiple Access",
+      "plain": "符号で利用者を分ける多元接続(第3世代)"
+    },
+    {
+      "name": "OFDMA",
+      "full": "Orthogonal Frequency Division Multiple Access",
+      "plain": "直交周波数で利用者を分ける多元接続(第3.9世代 LTE)"
+    },
+    {
+      "name": "LTE",
+      "full": "Long Term Evolution",
+      "plain": "第3.9世代の通信方式(第4世代の LTE-Advanced の元)。正式名称は Moodle の正解で、スライドには書かれていない"
+    },
+    {
+      "name": "ENIAC",
+      "full": "Electronic Numerical Integrator And Computer",
+      "plain": "1946年にできた、最初期のコンピュータ"
+    },
+    {
+      "name": "NRZ",
+      "full": "Non Return to Zero",
+      "plain": "ベースバンド方式の1つ(スライドは Non-Return とハイフン付き。Moodle の正解は半角スペース)"
+    },
+    {
+      "name": "QAM",
+      "full": "Quadrature Amplitude Modulation",
+      "plain": "ディジタル変調の1つ(振幅位相変調)"
+    },
+    {
+      "name": "FDM",
+      "full": "Frequency Division Multiplexing",
+      "plain": "周波数で信号を分ける多重化(周波数分割多重)"
+    }
+  ],
+  "blocks": [
+    {
+      "id": "b1",
+      "title": "携帯電話は世代が上がるたびに、電波の分け方(多元接続)が変わる",
+      "pre": [
+        {
+          "q": "第1世代(1980年代)の携帯電話の信号は、アナログとディジタルのどちら?(知らなくて当然)",
+          "opts": [
+            "アナログ",
+            "ディジタル"
+          ],
+          "ans": "アナログ",
+          "note": "第1世代はアナログ。ディジタルになったのは第2世代(1990年代)から。L2 p.4"
+        },
+        {
+          "q": "大勢が同じ電波を同時に使っても混ざらないよう、分ける軸として思いつくのは?(当てずっぽうでよい)",
+          "opts": [
+            "周波数・時間・符号などで分ける",
+            "全員が同じ周波数で同時にしゃべる",
+            "利用者1人に基地局を1台ずつ置く"
+          ],
+          "ans": "周波数・時間・符号などで分ける",
+          "note": "多くの利用者が電波を分け合う仕組みを多元接続という。分け方は周波数・時間・符号・直交周波数の4つ(L2 p.5)。"
+        }
+      ],
+      "body": "<p>携帯電話はおよそ10年ごとに世代が替わる。世代ごとに<b>多元接続</b>(多くの人が1つの電波を分け合う方法)が決まっていて、頭文字が分け方になる。</p><p><b>1G</b>(1980年代)はアナログで <b>FDMA</b>=<b>F</b>requency(周波数)で分ける。<b>2G</b>(1990年代)からディジタルで <b>TDMA</b>=<b>T</b>ime(時間)で分ける(CDMA もある)。<b>3G</b>(2000年代)は <b>CDMA</b>=<b>C</b>ode(符号)で分ける。<b>3.9G</b>(2010年代・LTE と WiMAX)は <b>OFDMA</b>=<b>O</b>rthogonal <b>F</b>requency(直交周波数)で分ける。OFDMA の元は OFDM(直交周波数分割多重方式)。</p><p><b>4G</b> は LTE-Advanced・WiMAX2(IPv6対応)。<b>5G</b>(2020年代)は高速大容量・高信頼低遅延・多数同時接続。世代が上がるほど伝送速度が 1.2 kbps から Mbps へ上がり、電話だけでなく動画も扱えるようになった。</p>",
+      "fig": "<svg viewBox='0 0 380 150' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='携帯電話の世代表'><g font-size='11' fill='currentColor'><text x='6' y='14' font-weight='700'>世代</text><text x='44' y='14' font-weight='700'>年代</text><text x='88' y='14' font-weight='700'>信号</text><text x='146' y='14' font-weight='700' fill='var(--teal)'>多元接続</text><text x='224' y='14' font-weight='700'>通信方式</text><line x1='4' y1='20' x2='376' y2='20' stroke='currentColor' opacity='.4'/><text x='6' y='38'>1G</text><text x='44' y='38'>1980s</text><text x='88' y='38'>アナログ</text><text x='146' y='38' font-weight='700' fill='var(--teal)'>FDMA</text><text x='224' y='38'>AMPS・NMT・TACS</text><text x='6' y='58'>2G</text><text x='44' y='58'>1990s</text><text x='88' y='58'>ディジタル</text><text x='146' y='58' font-weight='700' fill='var(--teal)'>TDMA/CDMA</text><text x='224' y='58'>PDC・GSM・IS-95</text><text x='6' y='78'>3G</text><text x='44' y='78'>2000s</text><text x='88' y='78'>ディジタル</text><text x='146' y='78' font-weight='700' fill='var(--teal)'>CDMA</text><text x='224' y='78'>W-CDMA・CDMA2000</text><text x='6' y='98'>3.9G</text><text x='44' y='98'>2010s</text><text x='88' y='98'>ディジタル</text><text x='146' y='98' font-weight='700' fill='var(--teal)'>OFDMA</text><text x='224' y='98'>LTE・WiMAX</text><text x='6' y='118'>4G</text><text x='44' y='118'>―</text><text x='88' y='118'>―</text><text x='146' y='118'>―</text><text x='224' y='118'>LTE-Advanced・WiMAX2</text><text x='6' y='138'>5G</text><text x='44' y='138'>2020s</text><text x='88' y='138'>高速大容量・高信頼低遅延・多数同時接続</text></g></svg><svg viewBox='0 0 380 124' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='4つの多元接続の分け方' style='margin-top:14px'><g font-size='10' fill='currentColor'><text x='190' y='12' text-anchor='middle'>縦=周波数、横=時間。A・B・C は利用者</text><g fill='none' stroke='currentColor'><rect x='8' y='22' width='80' height='66'/><line x1='8' y1='44' x2='88' y2='44'/><line x1='8' y1='66' x2='88' y2='66'/><rect x='102' y='22' width='80' height='66'/><line x1='128.7' y1='22' x2='128.7' y2='88'/><line x1='155.3' y1='22' x2='155.3' y2='88'/><rect x='196' y='22' width='80' height='66'/><rect x='290' y='22' width='80' height='66'/><line x1='290' y1='33' x2='370' y2='33' opacity='.5'/><line x1='290' y1='44' x2='370' y2='44' opacity='.5'/><line x1='290' y1='55' x2='370' y2='55' opacity='.5'/><line x1='290' y1='66' x2='370' y2='66' opacity='.5'/><line x1='290' y1='77' x2='370' y2='77' opacity='.5'/></g><text x='48' y='37' text-anchor='middle'>A</text><text x='48' y='59' text-anchor='middle'>B</text><text x='48' y='81' text-anchor='middle'>C</text><text x='115' y='60' text-anchor='middle'>A</text><text x='142' y='60' text-anchor='middle'>B</text><text x='169' y='60' text-anchor='middle'>C</text><text x='236' y='52' text-anchor='middle'>A・B・C を</text><text x='236' y='66' text-anchor='middle'>重ねて送る</text><text x='330' y='31' text-anchor='middle' font-size='9'>A</text><text x='330' y='42' text-anchor='middle' font-size='9'>B</text><text x='330' y='53' text-anchor='middle' font-size='9'>C</text><text x='330' y='64' text-anchor='middle' font-size='9'>A</text><text x='330' y='75' text-anchor='middle' font-size='9'>B</text><text x='330' y='86' text-anchor='middle' font-size='9'>C</text><g font-size='11' font-weight='700' fill='var(--teal)' text-anchor='middle'><text x='48' y='102'>FDMA</text><text x='142' y='102'>TDMA</text><text x='236' y='102'>CDMA</text><text x='330' y='102'>OFDMA</text></g><g text-anchor='middle'><text x='48' y='116'>周波数で分ける</text><text x='142' y='116'>時間で分ける</text><text x='236' y='116'>符号で分ける</text><text x='330' y='116'>直交周波数で分ける</text></g></g></svg>",
+      "check": [
+        {
+          "type": "single",
+          "q": "第3世代(2000年代)の携帯電話で使われた多元接続方式は?",
+          "opts": [
+            "FDMA",
+            "TDMA",
+            "CDMA",
+            "OFDMA"
+          ],
+          "ans": "CDMA",
+          "note": "第3世代=CDMA(W-CDMA・CDMA2000)。1G=FDMA、2G=TDMA/CDMA、3.9G=OFDMA。L2 p.4 [A4]"
+        },
+        {
+          "type": "single",
+          "q": "「時間で分ける」(時分割)多元接続方式は?",
+          "opts": [
+            "FDMA",
+            "TDMA",
+            "CDMA",
+            "OFDMA"
+          ],
+          "ans": "TDMA",
+          "note": "T=Time=時分割。F=周波数、C=符号、OFDMA=直交周波数。L2 p.5 [A3]"
+        },
+        {
+          "type": "single",
+          "q": "第1世代(1G)から第2世代(2G)への変化として、講義資料の表に合うのは?",
+          "opts": [
+            "通信方法がアナログからディジタルに変わった",
+            "通信方式の名前が AMPS から LTE に変わった",
+            "電波の分け方が OFDMA に変わった"
+          ],
+          "ans": "通信方法がアナログからディジタルに変わった",
+          "note": "第2世代からディジタル(L2 p.4)。ディジタル信号なら0と1の形でデータを運べるのでデータ通信に向く、という説明は(資料外)。LTE は3.9世代、OFDMA も3.9世代。[A4]"
+        }
+      ]
+    },
+    {
+      "id": "b2",
+      "title": "インターネットの始まりは1969年の ARPANET。家庭の接続はダイヤルアップから光へ",
+      "pre": [
+        {
+          "q": "インターネットの元になったネットワークはどれ?(知らなくて当然)",
+          "opts": [
+            "ARPANET",
+            "WIDE",
+            "SINET"
+          ],
+          "ans": "ARPANET",
+          "note": "1969年、アメリカの ARPANET がインターネットの始まり。WIDE は1988年の日本のプロジェクト、SINET は2002年。L2 p.7"
+        },
+        {
+          "q": "電話線と MODEM だけで家庭からつなぐ、いちばん古い接続方式はどれ?(当てずっぽうでよい)",
+          "opts": [
+            "ダイヤルアップ",
+            "ADSL",
+            "FTTH"
+          ],
+          "ans": "ダイヤルアップ",
+          "note": "ダイヤルアップ(電話線+MODEM)→ISDN→ADSL・CATV→FTTH・CATV の順。L2 p.8"
+        }
+      ],
+      "body": "1945年にフォン・ノイマンがストアードプログラム方式(ノイマン型)を提唱し、1946年に <b>ENIAC</b>(ペンシルバニア大学・アメリカ)、1951年に最初の商用コンピュータ UNIVAC I ができた。コンピュータの単体利用やクライアントサーバは<b>集中型</b>、ネットワークでつないで連携させるのが<b>分散型</b>。<b>1969年 ARPANET</b>(アメリカ)がインターネットの始まり。1988年に WIDE プロジェクトが始まり、<b>1990年代にインターネットが一般開放</b>され、1999年に ADSL が始まった。基礎技術は <b>TCP/IP・UDP/IP・OSI参照モデル</b>。家庭の有線接続は <b>ダイヤルアップ→ISDN→ADSL・CATV→FTTH・CATV</b>(光ケーブル)の順に変わってきた。利用者側のこの区間をアクセスネットワークといい、別名を<b>ラストワンマイル</b>という(第4・5回でくわしく)。",
+      "fig": "<svg viewBox='0 0 400 150' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='コンピュータとインターネットの年表と有線接続の変遷'><g font-size='10.5' fill='currentColor' text-anchor='middle'><line x1='10' y1='50' x2='392' y2='50' stroke='currentColor'/><g stroke='currentColor'><line x1='25' y1='46' x2='25' y2='54'/><line x1='75' y1='46' x2='75' y2='54'/><line x1='125' y1='46' x2='125' y2='54'/><line x1='185' y1='46' x2='185' y2='54'/><line x1='245' y1='46' x2='245' y2='54'/><line x1='300' y1='46' x2='300' y2='54'/><line x1='360' y1='46' x2='360' y2='54'/></g><text x='25' y='32'>1945</text><text x='25' y='20'>ノイマン型</text><text x='75' y='68'>1946</text><text x='75' y='80'>ENIAC</text><text x='125' y='32'>1951</text><text x='125' y='20'>UNIVAC I</text><text x='185' y='68' font-weight='700' fill='var(--teal)'>1969</text><text x='185' y='80' font-weight='700' fill='var(--teal)'>ARPANET</text><text x='245' y='32'>1988</text><text x='245' y='20'>WIDE開始</text><text x='300' y='68'>1990年代</text><text x='300' y='80'>一般開放</text><text x='360' y='32'>1999</text><text x='360' y='20'>ADSL開始</text><text x='200' y='108' font-weight='700'>有線接続の変遷(家庭向け)</text><text x='200' y='128'>ダイヤルアップ → ISDN → ADSL・CATV → <tspan font-weight='700' fill='var(--teal)'>FTTH・CATV</tspan></text></g></svg>",
+      "check": [
+        {
+          "q": "インターネットの基礎技術として、講義で挙げられた通信の決まりはどれ?",
+          "opts": [
+            "TCP/IP",
+            "PCM",
+            "AMI",
+            "QAM"
+          ],
+          "ans": "TCP/IP",
+          "note": "基礎技術は TCP/IP・UDP/IP・OSI参照モデル。PCM は音声のディジタル化、AMI・QAM は信号の送り方。(L2 p.7)"
+        },
+        {
+          "type": "single",
+          "q": "家庭の有線インターネット接続の移り変わりとして、正しい順はどれ?",
+          "opts": [
+            "ダイヤルアップ → ISDN → ADSL → FTTH",
+            "ISDN → ダイヤルアップ → ADSL → FTTH",
+            "ダイヤルアップ → ADSL → ISDN → FTTH",
+            "FTTH → ADSL → ISDN → ダイヤルアップ"
+          ],
+          "ans": "ダイヤルアップ → ISDN → ADSL → FTTH",
+          "note": "ダイヤルアップ(電話線+MODEM)→ISDN→ADSL・CATV→FTTH・CATV。最新の FTTH・CATV は赤字。L2 p.8 [A6]"
+        },
+        {
+          "type": "single",
+          "q": "ENIAC(1946年)は ARPANET(1969年)より古いのに、インターネットの始まりとは言われない。なぜ?",
+          "opts": [
+            "ENIAC は1台のコンピュータで、ネットワークではないから",
+            "ENIAC はアメリカ以外で作られ、国をまたいで使えなかったから",
+            "ENIAC は電話線につなげず、通信に使えなかったから"
+          ],
+          "ans": "ENIAC は1台のコンピュータで、ネットワークではないから",
+          "note": "ENIAC は最初期のコンピュータ(L2 p.6)、ARPANET はコンピュータどうしをつなぐネットワーク(L2 p.7)。両者の違いの説明そのものは(資料外)。[C7, A5]"
+        }
+      ]
+    },
+    {
+      "id": "b3",
+      "title": "ディジタル化は 標本化→量子化→符号化 の順。時間を切り、大きさを切り、0と1にする",
+      "pre": [
+        {
+          "q": "アナログ信号の特徴として合うのはどれ?(当てずっぽうでよい)",
+          "opts": [
+            "時間も大きさも連続",
+            "時間も大きさもとびとび",
+            "時間だけとびとび"
+          ],
+          "ans": "時間も大きさも連続",
+          "note": "アナログ=連続量(時間軸・大きさ軸ともに連続)。ディジタル=離散量(ともにとびとび)。L2 p.10"
+        },
+        {
+          "q": "アナログ信号をディジタルにするとき、最初にする操作はどれ?",
+          "opts": [
+            "標本化",
+            "量子化",
+            "符号化"
+          ],
+          "ans": "標本化",
+          "note": "順番は (平滑化・LPF→) 標本化→量子化→符号化。L2 p.12"
+        }
+      ],
+      "body": "<b>アナログ信号</b>=時間も大きさも連続した信号。<b>ディジタル信号</b>=時間も大きさもとびとび(離散)の信号。連続を離散にする操作を離散化といい、順番は(平滑化・LPF→)<b>標本化→量子化→符号化</b>。<ol><li><b>標本化</b>(サンプリング)=一定の時間間隔で値を拾う。</li><li><b>量子化</b>=値を一定の大きさの段(量子化ステップ)に丸める。</li><li><b>符号化</b>(エンコード)=段を 0 と 1 の規則的な符号に割り当てる。</li></ol>標本化だけでは時間しかとびとびにならず、量子化で大きさもとびとびになる。電話音声はこの方法(PCM伝送)で 64 kbps になる。1940年代に情報を数で表したシャノンは「情報理論の父」と呼ばれる。",
+      "fig": "<svg viewBox='0 0 400 90' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='ディジタル化の3段階'><g fill='none' stroke='currentColor'><rect x='3' y='10' width='82' height='50' rx='6'/><rect x='107' y='10' width='82' height='50' rx='6'/><rect x='211' y='10' width='82' height='50' rx='6'/><rect x='315' y='10' width='82' height='50' rx='6'/></g><g fill='currentColor' font-size='12' text-anchor='middle' font-weight='700'><text x='44' y='32'>アナログ</text><text x='148' y='32' fill='var(--teal)'>標本化</text><text x='252' y='32' fill='var(--teal)'>量子化</text><text x='356' y='32' fill='var(--teal)'>符号化</text><text x='96' y='39' font-size='16'>→</text><text x='200' y='39' font-size='16'>→</text><text x='304' y='39' font-size='16'>→</text></g><g fill='currentColor' font-size='10' text-anchor='middle'><text x='44' y='50'>連続の信号</text><text x='148' y='50'>時間を切る</text><text x='252' y='50'>大きさを切る</text><text x='356' y='50'>0と1にする</text><text x='44' y='78'>時間も大きさも連続</text><text x='148' y='78'>時間が離散に</text><text x='252' y='78'>大きさも離散に</text><text x='356' y='78'>0と1の並び</text></g></svg>",
+      "check": [
+        {
+          "type": "single",
+          "q": "ディジタル信号の説明として正しいのはどれ?",
+          "opts": [
+            "時間軸・大きさ軸ともに離散(とびとび)",
+            "時間軸・大きさ軸ともに連続",
+            "時間軸だけが離散",
+            "大きさ軸だけが離散"
+          ],
+          "ans": "時間軸・大きさ軸ともに離散(とびとび)",
+          "note": "ディジタル=離散量(時間・大きさとも不連続)。連続量はアナログ。L2 p.10 [A32]"
+        },
+        {
+          "type": "single",
+          "q": "値を一定の大きさの段に丸める操作はどれ?",
+          "opts": [
+            "標本化",
+            "量子化",
+            "符号化",
+            "平滑化"
+          ],
+          "ans": "量子化",
+          "note": "標本化は時間方向、量子化は大きさ方向。符号化は段を0と1に割り当てる。L2 p.11 [A32]"
+        },
+        {
+          "type": "single",
+          "q": "標本化しただけの信号は、まだディジタル信号とは呼べない。なぜ?",
+          "opts": [
+            "値の大きさがまだ連続のままだから",
+            "時間がまだ連続のままだから",
+            "標本化では信号の周波数が変わってしまうから"
+          ],
+          "ans": "値の大きさがまだ連続のままだから",
+          "note": "標本化は時間をとびとびにするだけ。大きさは量子化でとびとびにする。ディジタル信号の定義は時間・大きさの両方が離散(L2 p.10, p.11)。[A32]"
+        }
+      ]
+    },
+    {
+      "id": "b4",
+      "title": "標本化は最高周波数の2倍より速く。伝送速度 = 標本化周波数 × ビット数",
+      "pre": [
+        {
+          "q": "音楽用 CD の標本化周波数は?(知らなくて当然)",
+          "opts": [
+            "44.1 kHz",
+            "4.41 kHz",
+            "441 kHz"
+          ],
+          "ans": "44.1 kHz",
+          "note": "CD の標本化周波数は 44.1 kHz(例題2.1。数値は演習2.4に出てくる)。L2 p.12, p.13"
+        },
+        {
+          "q": "電話の音声をディジタル化すると、伝送速度はどれくらい?(当てずっぽうでよい)",
+          "opts": [
+            "64 kbps",
+            "64 Mbps",
+            "6.4 kbps"
+          ],
+          "ans": "64 kbps",
+          "note": "電話音声は 64 kbps(=8 kBps)。このあとの演習2.1で自分で計算して確かめる。L2 p.12"
+        }
+      ],
+      "body": "<b>標本化定理</b>: 元の信号を完全に復元するには、標本化周波数 $f_s$ を、信号の最高周波数 $f_0$ の<b>2倍より大きく</b>する($f_s \\gt 2f_0$)。この $2f_0$ を、この講義では<b>ナイキスト周波数</b>という。周波数と周期は $f = 1/T$ の関係なので、標本化間隔 $T$ は $T \\lt \\dfrac{1}{2f_0}$ にする。「帯域 4 kHz」は最高周波数 4 kHz のこと。<b>伝送速度</b>[bps] = 標本化周波数[Hz] × 量子化ビット数[bit]。<br><b>単位の意味</b>: bps=bit per second(1秒に何ビット送るか)。Hz=1秒に何回か(周波数)。ms=1000分の1秒、μs=100万分の1秒(1 μs=0.000001秒)。量子化ビット数=1回の測定値を何ビットで表すか(多いほど細かく表せる)。<br>なぜ掛け算か: 1秒に $f_s$ 回測り、1回で $n$ ビット出すから。",
+      "fig": "<svg viewBox='0 0 360 140' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='標本化のようす'><g fill='none' stroke='currentColor'><line x1='20' y1='60' x2='340' y2='60' stroke-dasharray='3 3' opacity='.5'/><polyline points='20,60 40,31.7 60,20 80,31.7 100,60 120,88.3 140,100 160,88.3 180,60 200,31.7 220,20 240,31.7 260,60 280,88.3 300,100 320,88.3 340,60'/></g><g fill='var(--teal)'><circle cx='20' cy='60' r='3.5'/><circle cx='60' cy='20' r='3.5'/><circle cx='100' cy='60' r='3.5'/><circle cx='140' cy='100' r='3.5'/><circle cx='180' cy='60' r='3.5'/><circle cx='220' cy='20' r='3.5'/><circle cx='260' cy='60' r='3.5'/><circle cx='300' cy='100' r='3.5'/><circle cx='340' cy='60' r='3.5'/></g><g fill='currentColor' font-size='11'><text x='180' y='12' text-anchor='middle'>曲線=元のアナログ信号 ● =標本点</text><g stroke='currentColor'><line x1='20' y1='116' x2='60' y2='116'/><line x1='20' y1='112' x2='20' y2='120'/><line x1='60' y1='112' x2='60' y2='120'/></g><text x='40' y='132' text-anchor='middle'>標本化間隔 T</text><text x='250' y='122' text-anchor='middle'>fs = 1/T は 2×f0 より大きくする</text></g></svg>",
+      "example": {
+        "steps": [
+          "【例題2.1】CD の標本化周波数は <b>44.1 kHz</b>(演習2.4でも使う数値)。",
+          "【演習2.1】帯域 4 kHz・8 ビット。標本化周波数は、定理では「2倍より大きく」だが、演習2.1 は計算を簡単にするため<b>ちょうど2倍</b>で計算する。 $f_s = 2 \\times 4 = 8$ kHz。伝送速度 $= 8000 \\times 8 = 64000$ bps = <b>64 kbps</b>(電話音声の速度と一致)。",
+          "【演習2.2】8 ビット・伝送速度 32 kbps。1秒の標本化回数 $= 32000 \\div 8 = 4000$ 回。間隔は $T = 1/4000 = 0.00025$ 秒 = <b>0.25 ms = 250 μs</b>。(なぜ割る? 速度 = 回数 × ビット数だから、回数 = 速度 ÷ ビット数)",
+          "【演習2.3】信号が 0〜20 kHz。最高周波数 20 kHz の2倍で $f_s \\gt 2 \\times 20 = 40$ kHz。よって $T \\lt 1/40000 = 25$ μs(25 μs「未満」)。",
+          "【演習2.4】44.1 kHz・16 ビット(1チャネル)。伝送速度 $= 44100 \\times 16$ = ?"
+        ],
+        "fill": {
+          "type": "numeric",
+          "q": "$44100 \\times 16$ は何 kbps? (bps を 1000 で割って kbps にする)",
+          "parts": [
+            {
+              "ans": 705.6,
+              "unit": "kbps",
+              "abs": 0.05
+            }
+          ],
+          "hint": "44100 × 16 = 705600 bps。1000 で割る。",
+          "note": "44100×16 = 705,600 bps = 705.6 kbps。資料に答えなし・トラ計算(ステレオなら×2は(資料外))。[A8]"
+        }
+      },
+      "check": [
+        {
+          "type": "numeric",
+          "q": "8 ビットで量子化し、伝送速度が 16 kbps になった。標本化間隔は何 μs?(演習2.2 と同じ考え方)",
+          "parts": [
+            {
+              "ans": 500,
+              "unit": "μs",
+              "abs": 0.5
+            }
+          ],
+          "hint": "まず1秒に何回標本化するかを出す(速度 ÷ ビット数)。",
+          "reveal": [
+            "16000 ÷ 8 = 2000 回/秒",
+            "T = 1/2000 = 0.0005 秒 = 500 μs"
+          ],
+          "note": "16000÷8=2000回/秒 → T=1/2000=500 μs。演習2.2(32 kbps なら 250 μs)の数値違い。資料に答えなし・トラ計算。L2 p.13 [A8]"
+        },
+        {
+          "type": "single",
+          "q": "最高周波数 4 kHz の音声を標本化する。標本化間隔は何未満にすればよい?",
+          "opts": [
+            "125 μs",
+            "250 μs",
+            "8 μs",
+            "125 ms"
+          ],
+          "ans": "125 μs",
+          "note": "fs > 2×4 = 8 kHz → T < 1/8000 = 125 μs。250 μs は演習2.2の答え(別の問題)、桁違いに注意。L2 p.12, p.13 [A8]"
+        },
+        {
+          "type": "single",
+          "q": "標本化周波数を「最高周波数の2倍より大きく」しなければならない理由として、講義資料に沿うのはどれ?",
+          "opts": [
+            "2倍より高い周波数で標本化すれば、元の信号を完全に復元できると標本化定理で示されているから",
+            "周波数が高いほど量子化ビット数が自動で増え、元の信号に近づくから",
+            "伝送速度をちょうど 64 kbps にそろえて、電話回線に合わせるため"
+          ],
+          "ans": "2倍より高い周波数で標本化すれば、元の信号を完全に復元できると標本化定理で示されているから",
+          "note": "ナイキスト・シャノンの標本化定理。最高周波数の2倍がナイキスト周波数(赤字)。L2 p.12 [A8]"
+        }
+      ]
+    },
+    {
+      "id": "b5",
+      "title": "変調は搬送波の何を変えるか、ベースバンドはそのまま。多重化は1本に束ねる",
+      "pre": [
+        {
+          "q": "周波数が高い電波ほど、遠くまで届きにくい(減衰が大きい)。合っている?(当てずっぽうでよい)",
+          "opts": [
+            "合っている(減衰が大きい)",
+            "合っていない(減衰が小さい)"
+          ],
+          "ans": "合っている(減衰が大きい)",
+          "note": "周波数が低い=減衰が小さい・直進性が弱い・容量が小さい。高い=減衰が大きい・直進性が強い・容量が大きい。L2 p.16, L3 p.4"
+        },
+        {
+          "q": "ディジタル信号を、搬送波を使わず、そのまま電気信号にして送る方式の名前は?(知らなくて当然)",
+          "opts": [
+            "ベースバンド方式",
+            "ディジタル変調",
+            "多重化"
+          ],
+          "ans": "ベースバンド方式",
+          "note": "ベースバンド方式は信号をそのまま電気信号にする(NRZ・RZ・AMI・マンチェスタ)。搬送波を変えるのがディジタル変調。L2 p.15"
+        }
+      ],
+      "body": "信号の送り方は3つの箱で覚える。①<b>アナログ変調</b>: 搬送波(情報を載せる正弦波)の何を変えるかで <b>AM</b>(振幅)・<b>FM</b>(周波数)・<b>PM</b>(位相)。FM は電気雑音の直接影響を受け難く高品質、AM はラジオ放送で雑音の影響を受ける。②<b>ディジタル信号の送り方</b>: <b>ベースバンド方式</b>は信号をそのまま電気信号にする(NRZ・RZ・AMI・マンチェスタ)。<b>ディジタル変調</b>は搬送波を変える(ASK・FSK・PSK・QAM)。③<b>多重化</b>: 1本の回線に複数の信号を載せる(FDM・TDM・CDM、光なら WDM)。電波は周波数が低い順に LW(Long Wave 長波)・MW(Medium Wave 中波)・SW(Short Wave 短波。HF=High Frequency)・VHF(Very High Frequency)・UHF(Ultra High Frequency)で、高いほど容量が大きいが減衰も大きい(下の図)。",
+      "fig": "<svg viewBox='0 0 400 120' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='信号の送り方の3つの箱'><g fill='none' stroke='currentColor'><rect x='1' y='2' width='124' height='114' rx='6'/><rect x='138' y='2' width='124' height='114' rx='6'/><rect x='275' y='2' width='124' height='114' rx='6'/></g><g fill='currentColor' font-size='11' text-anchor='middle'><text x='63' y='18' font-weight='700' fill='var(--teal)'>アナログ変調</text><text x='63' y='36'>搬送波の何を変える?</text><text x='63' y='50'>AM=振幅</text><text x='63' y='64'>FM=周波数</text><text x='63' y='78'>PM=位相</text><text x='63' y='96'>FM は雑音に強い</text><text x='200' y='18' font-weight='700' fill='var(--teal)'>ディジタルの送り方</text><text x='200' y='34'>ベースバンド</text><text x='200' y='48'>NRZ・RZ・AMI・</text><text x='200' y='62'>マンチェスタ</text><text x='200' y='80'>ディジタル変調</text><text x='200' y='94'>ASK・FSK・</text><text x='200' y='108'>PSK・QAM</text><text x='337' y='18' font-weight='700' fill='var(--teal)'>多重化</text><text x='337' y='36'>1本の回線に</text><text x='337' y='50'>複数の信号を載せる</text><text x='337' y='66'>FDM=周波数</text><text x='337' y='80'>TDM=時間</text><text x='337' y='94'>CDM=符号</text><text x='337' y='108'>WDM=波長(光)</text></g></svg><svg viewBox='0 0 400 112' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='周波数帯と用途' style='margin-top:14px'><g fill='currentColor' font-size='10.5' text-anchor='middle'><line x1='10' y1='30' x2='384' y2='30' stroke='currentColor'/><polygon points='392,30 383,26 383,34'/><g stroke='currentColor'><line x1='40' y1='26' x2='40' y2='34'/><line x1='110' y1='26' x2='110' y2='34'/><line x1='180' y1='26' x2='180' y2='34'/><line x1='250' y1='26' x2='250' y2='34'/><line x1='330' y1='26' x2='330' y2='34'/></g><text x='40' y='20' font-weight='700'>LW</text><text x='110' y='20' font-weight='700'>MW</text><text x='180' y='20' font-weight='700'>SW(≒HF)</text><text x='250' y='20' font-weight='700'>VHF</text><text x='330' y='20' font-weight='700'>UHF</text><text x='40' y='46'>長波</text><text x='110' y='46'>中波</text><text x='180' y='46'>短波</text><text x='250' y='46'>超高周波・超短波</text><text x='330' y='46'>極超短波</text><text x='110' y='64' fill='var(--teal)'>AMラジオ</text><text x='235' y='64' fill='var(--teal)'>FM放送・コードレス電話</text><text x='335' y='78' fill='var(--teal)'>携帯電話・PHS・</text><text x='335' y='91' fill='var(--teal)'>TV放送・無線LAN</text><text x='6' y='104' text-anchor='start'>低: 減衰小・直進弱・容量小</text><text x='394' y='104' text-anchor='end'>高: 減衰大・直進強・容量大</text></g></svg>",
+      "check": [
+        {
+          "type": "single",
+          "q": "電気雑音の直接の影響を受け難く、高品質な伝送ができるアナログ変調はどれ?",
+          "opts": [
+            "AM",
+            "FM",
+            "PM",
+            "ASK"
+          ],
+          "ans": "FM",
+          "note": "FM=周波数変調は雑音に強い。AM=振幅変調はラジオ放送で雑音の影響を受ける。ASK はディジタル変調。L2 p.14 [A31]"
+        },
+        {
+          "type": "single",
+          "q": "ASK・FSK・PSK・QAM は「ディジタル変調」、NRZ・RZ・AMI は「ベースバンド方式」と分けられる。違いとして合うのは?",
+          "opts": [
+            "変調は搬送波を変えるが、ベースバンドは信号をそのまま電気信号にするから",
+            "変調は光で送り、ベースバンドは電波で送るから",
+            "変調はアナログ専用で、ベースバンドはディジタル専用だから"
+          ],
+          "ans": "変調は搬送波を変えるが、ベースバンドは信号をそのまま電気信号にするから",
+          "note": "ベースバンド方式=ディジタル信号をそのまま電気信号に変換(NRZ・RZ・AMI・マンチェスタ)。ディジタル変調=ASK・FSK・PSK・QAM。L3 p.5 [A30]"
+        },
+        {
+          "type": "single",
+          "q": "ディジタル通信の多重化技術として挙げられるのはどれ?",
+          "opts": [
+            "TDM",
+            "PCM",
+            "AMI",
+            "ASK"
+          ],
+          "ans": "TDM",
+          "note": "多重化=FDM・TDM・CDM(光は WDM)。PCM=符号化、AMI=ベースバンド、ASK=ディジタル変調。なお多重化(TDM)は信号を束ねる話、多元接続(TDMA)は利用者が電波を分け合う話と区別すると混ざらない(この区別の言い方は(資料外))。L3 p.7 [A30]"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "rows": [
+      [
+        "世代と多元接続",
+        "1G アナログ・FDMA / 2G ディジタル・TDMA/CDMA / 3G CDMA / 3.9G OFDMA(LTE・WiMAX) / 4G LTE-Advanced・WiMAX2 / 5G 高速大容量・高信頼低遅延・多数同時接続"
+      ],
+      [
+        "多元接続の4つ",
+        "FDMA=周波数、TDMA=時間、CDMA=符号、OFDMA=直交周波数で分ける。OFDM=直交周波数分割多重方式"
+      ],
+      [
+        "ARPANET",
+        "1969年アメリカ。インターネットの始まり。基礎技術は TCP/IP・UDP/IP・OSI参照モデル"
+      ],
+      [
+        "有線接続の変遷",
+        "ダイヤルアップ→ISDN→ADSL・CATV→FTTH・CATV。アクセスネットワーク=ラストワンマイル"
+      ],
+      [
+        "信号の種類",
+        "アナログ=時間も大きさも連続。ディジタル=どちらもとびとび(離散)"
+      ],
+      [
+        "ディジタル化の順",
+        "(平滑化・LPF→)標本化(時間)→量子化(大きさ)→符号化(0と1)"
+      ],
+      [
+        "標本化定理",
+        "fs > 2f0(2f0=ナイキスト周波数)。f = 1/T。伝送速度 = fs × ビット数。電話音声は 64 kbps"
+      ],
+      [
+        "アナログ変調",
+        "AM=振幅(雑音の影響を受ける)・FM=周波数(雑音に強い)・PM=位相"
+      ],
+      [
+        "ディジタルの送り方",
+        "ベースバンド=NRZ・RZ・AMI・マンチェスタ / ディジタル変調=ASK・FSK・PSK・QAM"
+      ],
+      [
+        "多重化",
+        "FDM・TDM・CDM、光は WDM"
+      ],
+      [
+        "周波数帯",
+        "LW 長波・MW 中波・SW 短波(≒HF)・VHF 超高周波・超短波・UHF 極超短波。高いほど容量大・減衰大"
+      ]
+    ],
+    "write3": "紙に3行、友達に説明するつもりで書く: 「声(アナログ)が、ディジタルで電話の向こうに届くまでに、何をどの順にするか」。標本化・量子化・符号化の言葉を使うこと。"
+  },
+  "final": [
+    {
+      "type": "single",
+      "q": "GSM は第何世代の携帯電話の通信方式?",
+      "opts": [
+        "第1世代",
+        "第2世代",
+        "第3世代",
+        "第3.9世代"
+      ],
+      "ans": "第2世代",
+      "note": "GSM・PDC・IS-95 は第2世代(TDMA/CDMA)。W-CDMA・CDMA2000 が第3世代、LTE・WiMAX が第3.9世代。L2 p.4 [A4]"
+    },
+    {
+      "type": "single",
+      "q": "アナログ信号をディジタル化するための処理に「当てはまらない」ものはどれ?",
+      "opts": [
+        "標本化",
+        "量子化",
+        "符号化",
+        "暗号化"
+      ],
+      "ans": "暗号化",
+      "note": "必要なのは標本化→量子化→符号化(前に平滑化・LPF)。暗号化はこの流れに出てこない。L2 p.11, p.12 [A32]"
+    },
+    {
+      "type": "numeric",
+      "q": "(第1回の範囲)電話機が 500 台ある。交換機を使わず、すべての電話機どうしを直接つなぐと、回線は何本必要? (カンマなしの数字で入力)",
+      "parts": [
+        {
+          "ans": 124750,
+          "unit": "本",
+          "tol": 0
+        }
+      ],
+      "hint": "(n−1)×n÷2 に n = 500 を入れる。",
+      "reveal": [
+        "(500−1)×500÷2",
+        "= 499 × 250 = 124,750"
+      ],
+      "note": "(n−1)×n/2 = 499×500/2 = 124,750 本(交換機を使えば 500 本)。1000台なら 499,500 本(例題1.1)。L1 p.11 [A7]"
+    },
+    {
+      "type": "numeric",
+      "q": "0〜20 kHz の信号を標本化する。標本化周期は何 μs 未満にすればよい?",
+      "parts": [
+        {
+          "ans": 25,
+          "unit": "μs",
+          "abs": 0.05
+        }
+      ],
+      "hint": "fs > 2 × 20 kHz。周期は 1 ÷ 周波数。",
+      "reveal": [
+        "fs > 40 kHz",
+        "T < 1/40000 = 25 μs"
+      ],
+      "note": "演習2.3。fs > 40 kHz → T < 1/40000 = 25 μs(「未満」)。資料に答えなし・トラ計算。L2 p.13 [A8]"
+    },
+    {
+      "type": "single",
+      "q": "携帯電話・PHS・TV放送・無線LAN が使う周波数帯はどれ?",
+      "opts": [
+        "LW",
+        "MW",
+        "VHF",
+        "UHF"
+      ],
+      "ans": "UHF",
+      "note": "UHF=Ultra High Frequency(極超短波)。VHF=Very High Frequency(超高周波・超短波)は FM放送・コードレス電話。AMラジオは MW。L2 p.15, p.16 [A29, D12]"
+    },
+    {
+      "type": "single",
+      "q": "アクセスネットワークの別名はどれ?",
+      "opts": [
+        "ラストワンマイル",
+        "バックボーン",
+        "コアネットワーク",
+        "ダイヤルアップ"
+      ],
+      "ans": "ラストワンマイル",
+      "note": "アクセスネットワーク=ラストワンマイル(赤字・下線)。バックボーン・コアネットワークは基幹側の呼び名(資料外)。L2 p.8, L4 p.14 [A6]"
+    }
+  ],
+  "next": [
+    {
+      "label": "演習 ② セルフチェック 第2回へ",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-selfcheck/data.json#s2"
+    },
+    {
+      "label": "演習 ③ 計算(標本化・伝送速度のセクション)へ",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-keisan/data.json#s2"
+    }
+  ],
+  "footer": "出典: 情報ネットワーク工学 第2回講義資料(INE-2_2_2026)。ベースバンド・ディジタル変調・多重化は第3回 p.5・p.7、回線数は第1回 p.11。計算の答えは資料に書かれておらず、式から計算(トラ計算)。"
+}

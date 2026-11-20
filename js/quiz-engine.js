@@ -428,7 +428,7 @@ window.numCheck = function (key, secId, pi) {
   const pk = key + '_p' + pi;
   if (_state[pk] === 1) return; // 正解済みはロック
   const inp = document.getElementById('ni_' + pk);
-  let v = parseFloat((inp || {}).value);
+  let v = parseFloat(String((inp || {}).value || '').replace(/[,，\s]/g, ''));
   if (isNaN(v)) { if (inp) inp.classList.add('ng'); return; }
   if (part.mult) v = v * part.mult;
   const diff = Math.abs(v - part.ans);

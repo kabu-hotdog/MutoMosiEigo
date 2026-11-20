@@ -1,0 +1,11 @@
+{
+  "year": 2026, "grade": 4, "exam": "後期中間試験", "subject": "サンプル",
+  "title": "サンプル ・ ロードマップ",
+  "intro": "上から順にやる。迷ったら一番上の未完了から。\n正答率が5割を割ったら、学習ページの該当ブロックに戻る。",
+  "storageKey": "sample_roadmap_v1",
+  "steps": [
+    { "id": "L1", "phase": "学習", "label": "学習 第1回 通信の速さ", "href": "/lesson.html?d=lessons/_sample/data.json", "minutes": 10, "why": "授業を聞いていなくても解けるようにする最初の一歩。", "done": { "lesson": "sample_learn_01_v1" } },
+    { "id": "P1", "phase": "演習1周目", "label": "サンプルクイズ", "href": "/quiz.html?d=lessons/_sample/quiz.json", "minutes": 5, "why": "学習のあとで腕試し。", "done": { "quiz": "sample_quiz_v1", "total": 4 } },
+    { "id": "E1", "phase": "前日", "label": "前日: 誤答だけ見直す", "minutes": 15, "why": "新しい問題はやらない。早く寝る。" }
+  ]
+}

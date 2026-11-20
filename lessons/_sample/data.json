@@ -1,0 +1,218 @@
+{
+ "year": 2026,
+ "grade": 4,
+ "exam": "後期中間試験",
+ "subject": "サンプル",
+ "title": "サンプル ・ 学習 第1回 通信の速さ",
+ "storageKey": "sample_learn_01_v1",
+ "minutes": 10,
+ "goals": [
+  "bps と B/s の違いを言える",
+  "転送時間を計算できる",
+  "上りと下りが違う回線を1つ言える"
+ ],
+ "katex": true,
+ "terms": [
+  {
+   "name": "ADSL",
+   "full": "Asymmetric Digital Subscriber Line",
+   "plain": "電話線で使う高速インターネット(上りと下りの速さが違う)"
+  },
+  {
+   "name": "bps",
+   "full": "bits per second",
+   "plain": "1秒に送れるビット数"
+  }
+ ],
+ "blocks": [
+  {
+   "id": "b1",
+   "title": "回線の速さは bps、ファイルの大きさは B。8倍ずれる",
+   "pre": [
+    {
+     "q": "1 B(バイト)は何ビット?(知らなくて当然)",
+     "opts": [
+      "4 bit",
+      "8 bit",
+      "16 bit"
+     ],
+     "ans": "8 bit",
+     "note": "1バイト = 8ビット。ここが出発点。"
+    }
+   ],
+   "body": "回線の速さは bps(ビット毎秒)で書く。ファイルの大きさは B(バイト)で書く。1 B = 8 bit なので、100 Mbps の回線でも1秒に運べるのは 12.5 MB。転送時間 $t$ は $t = \\dfrac{\\text{データ量[bit]}}{\\text{速さ[bps]}}$ で出る。",
+   "fig": "<svg viewBox=\"0 0 320 80\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"20\" width=\"90\" height=\"40\" fill=\"none\" stroke=\"currentColor\"/><text x=\"55\" y=\"45\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"13\">1 B</text><text x=\"160\" y=\"45\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"13\">= 8 bit</text><rect x=\"210\" y=\"20\" width=\"100\" height=\"40\" fill=\"none\" stroke=\"currentColor\"/><text x=\"260\" y=\"45\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"13\">10101010</text></svg>",
+   "example": {
+    "steps": [
+     "データ量 10 MB = 10 × 8 = 80 Mbit",
+     "回線 40 Mbps",
+     "$t = 80 / 40$"
+    ],
+    "fill": {
+     "type": "numeric",
+     "q": "転送時間は何秒?",
+     "parts": [
+      {
+       "ans": 2,
+       "unit": "秒",
+       "abs": 0.01
+      }
+     ]
+    }
+   },
+   "check": [
+    {
+     "type": "single",
+     "q": "100 Mbps の回線で1秒に運べるのは?",
+     "opts": [
+      "100 MB",
+      "12.5 MB",
+      "800 MB"
+     ],
+     "ans": "12.5 MB",
+     "note": "100 ÷ 8 = 12.5 MB。"
+    },
+    {
+     "type": "single",
+     "q": "転送時間を出す式は?",
+     "opts": [
+      "データ量[bit] ÷ 速さ[bps]",
+      "データ量[bit] × 速さ[bps]",
+      "速さ[bps] ÷ データ量[bit]"
+     ],
+     "ans": "データ量[bit] ÷ 速さ[bps]",
+     "note": "割り算。単位を見ると秒になる。"
+    },
+    {
+     "type": "single",
+     "q": "なぜ 100 Mbps の回線でも 100 MB のファイルが1秒で届かないのか?",
+     "opts": [
+      "B と bit で8倍違うから",
+      "回線が壊れているから",
+      "MB は大きすぎて送れないから"
+     ],
+     "ans": "B と bit で8倍違うから",
+     "note": "100 MB = 800 Mbit なので8秒かかる。"
+    }
+   ]
+  },
+  {
+   "id": "b2",
+   "title": "ADSL は下りが速い。光は上下とも速い",
+   "body": "ADSL は電話線を使い、下り(受信)を速く、上り(送信)を遅くした方式。光ファイバは上りも下りも同じくらい速い。",
+   "check": [
+    {
+     "type": "single",
+     "q": "ADSL で速いのは?",
+     "opts": [
+      "下り",
+      "上り"
+     ],
+     "ans": "下り",
+     "note": "下りが速い非対称型。"
+    },
+    {
+     "type": "single",
+     "q": "光ファイバの特徴は?",
+     "opts": [
+      "上下とも速い",
+      "下りだけ速い",
+      "電話線を使う"
+     ],
+     "ans": "上下とも速い",
+     "note": "対称に近い。"
+    },
+    {
+     "type": "single",
+     "q": "ADSL の A は何の頭文字?",
+     "opts": [
+      "Asymmetric",
+      "Advanced",
+      "Analog"
+     ],
+     "ans": "Asymmetric",
+     "note": "非対称という意味。"
+    }
+   ]
+  }
+ ],
+ "summary": {
+  "rows": [
+   [
+    "bps",
+    "回線の速さ(ビット/秒)"
+   ],
+   [
+    "B",
+    "データの大きさ。1 B = 8 bit"
+   ],
+   [
+    "ADSL",
+    "下りが速い非対称回線"
+   ]
+  ],
+  "write3": "友達に「回線の速さとファイルの大きさの単位の違い」を3行で説明する。"
+ },
+ "final": [
+  {
+   "type": "single",
+   "q": "8 Mbit のデータを 4 Mbps で送ると何秒?",
+   "opts": [
+    "2秒",
+    "4秒",
+    "32秒"
+   ],
+   "ans": "2秒",
+   "note": "8 ÷ 4 = 2。"
+  },
+  {
+   "type": "single",
+   "q": "1 MB は何 Mbit?",
+   "opts": [
+    "8",
+    "1",
+    "0.125"
+   ],
+   "ans": "8",
+   "note": "×8。"
+  },
+  {
+   "type": "single",
+   "q": "ADSL は上りと下りのどちらが遅い?",
+   "opts": [
+    "上り",
+    "下り"
+   ],
+   "ans": "上り",
+   "note": "非対称。"
+  },
+  {
+   "type": "numeric",
+   "q": "100 Mbps の回線は1秒に何 MB 運べる?",
+   "parts": [
+    {
+     "ans": 12.5,
+     "unit": "MB",
+     "tol": 0.01
+    }
+   ]
+  },
+  {
+   "type": "single",
+   "q": "光ファイバの上りと下りは?",
+   "opts": [
+    "同程度に速い",
+    "上りだけ速い"
+   ],
+   "ans": "同程度に速い",
+   "note": "対称に近い。"
+  }
+ ],
+ "next": [
+  {
+   "label": "演習(サンプルクイズ)へ",
+   "href": "/quiz.html?d=lessons/_sample/quiz.json"
+  }
+ ],
+ "footer": "サンプル(動作確認用)"
+}

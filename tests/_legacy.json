@@ -52,5 +52,71 @@
     "totalItems": 0,
     "type": "summary",
     "path": "/eigo-honbun.html"
+  },
+  {
+    "year": 2026,
+    "grade": 4,
+    "exam": "後期中間試験",
+    "subject": "情報ネットワーク工学",
+    "title": "情報ネットワーク工学 ・ ロードマップ(ここから)",
+    "storageKey": null,
+    "totalItems": 0,
+    "type": "summary",
+    "path": "/roadmap.html?d=roadmaps/network-2026-kouki-chukan.json"
+  },
+  {
+    "year": 2026,
+    "grade": 4,
+    "exam": "後期中間試験",
+    "subject": "情報ネットワーク工学",
+    "title": "情報ネットワーク工学 ・ 学習 第1回 (通信の歴史・略語・電話交換・携帯の世代)",
+    "storageKey": null,
+    "totalItems": 0,
+    "type": "summary",
+    "path": "/lesson.html?d=lessons/network-01/data.json"
+  },
+  {
+    "year": 2026,
+    "grade": 4,
+    "exam": "後期中間試験",
+    "subject": "情報ネットワーク工学",
+    "title": "情報ネットワーク工学 ・ 学習 第2回 携帯電話の世代・インターネットの歴史・ディジタル化と変調",
+    "storageKey": null,
+    "totalItems": 0,
+    "type": "summary",
+    "path": "/lesson.html?d=lessons/network-02/data.json"
+  },
+  {
+    "year": 2026,
+    "grade": 4,
+    "exam": "後期中間試験",
+    "subject": "情報ネットワーク工学",
+    "title": "情報ネットワーク工学 ・ 学習 第3回 変調・回線交換とパケット交換・OSI参照モデル",
+    "storageKey": null,
+    "totalItems": 0,
+    "type": "summary",
+    "path": "/lesson.html?d=lessons/network-03/data.json"
+  },
+  {
+    "year": 2026,
+    "grade": 4,
+    "exam": "後期中間試験",
+    "subject": "情報ネットワーク工学",
+    "title": "情報ネットワーク工学 ・ 学習 第4回 OSI参照モデルとアクセスネットワーク",
+    "storageKey": null,
+    "totalItems": 0,
+    "type": "summary",
+    "path": "/lesson.html?d=lessons/network-04/data.json"
+  },
+  {
+    "year": 2026,
+    "grade": 4,
+    "exam": "後期中間試験",
+    "subject": "情報ネットワーク工学",
+    "title": "情報ネットワーク工学 ・ 学習 第5回 アクセスネットワークと LAN",
+    "storageKey": null,
+    "totalItems": 0,
+    "type": "summary",
+    "path": "/lesson.html?d=lessons/network-05/data.json"
   }
 ]

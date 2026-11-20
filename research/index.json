@@ -16,6 +16,14 @@
       "count": 8,
       "date": "2026-11-20",
       "updated": "2026-11-20"
+    },
+    {
+      "file": "findings/learning-material-for-novices.json",
+      "title": "前提知識ゼロの人向け学習教材の作り方と、学習→演習の移り方",
+      "question": "授業を聞いていない人に新しい技術概念を教える教材の組み立て、確認問題の入れ方、習熟の基準、21日のロードマップ",
+      "count": 12,
+      "date": "2026-11-20",
+      "updated": "2026-11-20"
     }
   ],
   "source_documents": [
@@ -41,14 +49,16 @@
       "three-relearning-sessions-is-enough",
       "sleep-is-the-active-ingredient-in-spacing",
       "equal-interval-is-fine-no-need-for-expanding",
-      "cap-interval-at-exam-date"
+      "cap-interval-at-exam-date",
+      "novice-roadmap-learn-then-practice-21-days"
     ],
     "short-window": [
       "optimal-gap-is-20-40-percent-of-days-left",
       "three-relearning-sessions-is-enough",
       "spread-correct-recalls-across-sessions",
       "sleep-is-the-active-ingredient-in-spacing",
-      "cap-interval-at-exam-date"
+      "cap-interval-at-exam-date",
+      "novice-roadmap-learn-then-practice-21-days"
     ],
     "successive-relearning": [
       "three-relearning-sessions-is-enough",
@@ -56,7 +66,9 @@
     ],
     "criterion": [
       "three-relearning-sessions-is-enough",
-      "keep-testing-after-first-correct"
+      "keep-testing-after-first-correct",
+      "mastery-testing-before-moving-on-helps",
+      "mastery-threshold-80-percent-is-convention"
     ],
     "session-design": [
       "spread-correct-recalls-across-sessions",
@@ -107,7 +119,8 @@
       "recall-attempt-beats-recognition-and-feedback-matters"
     ],
     "pretesting": [
-      "pretesting-beats-posttesting"
+      "pretesting-beats-posttesting",
+      "prequestions-help-only-the-asked-facts"
     ],
     "difficulty": [
       "optimal-difficulty-85-percent",
@@ -182,13 +195,111 @@
       "self-scoring-leniency-use-exact-match-options"
     ],
     "procedure": [
-      "worked-example-fading-backward"
+      "worked-example-fading-backward",
+      "worked-examples-help-novices-math-g048"
     ],
     "numeric": [
-      "worked-example-fading-backward"
+      "worked-example-fading-backward",
+      "worked-examples-help-novices-math-g048"
     ],
     "scaffolding": [
       "worked-example-fading-backward"
+    ],
+    "novice": [
+      "pretraining-names-first-for-novices",
+      "segment-and-signal-small-to-medium",
+      "coherence-and-contiguity-cut-extras-and-put-labels-in-figures",
+      "worked-examples-help-novices-math-g048",
+      "expertise-reversal-fade-guidance-as-skill-grows",
+      "self-explanation-moderate-but-costly-for-novices",
+      "prequestions-help-only-the-asked-facts",
+      "interpolated-quizzes-cut-mind-wandering",
+      "mastery-testing-before-moving-on-helps",
+      "mastery-threshold-80-percent-is-convention",
+      "lesson-chunk-size-is-design-judgment",
+      "novice-roadmap-learn-then-practice-21-days",
+      "worked-example-fading-backward",
+      "pretesting-beats-posttesting"
+    ],
+    "pretraining": [
+      "pretraining-names-first-for-novices"
+    ],
+    "page-design": [
+      "pretraining-names-first-for-novices",
+      "segment-and-signal-small-to-medium",
+      "coherence-and-contiguity-cut-extras-and-put-labels-in-figures",
+      "self-explanation-moderate-but-costly-for-novices",
+      "prequestions-help-only-the-asked-facts",
+      "lesson-chunk-size-is-design-judgment"
+    ],
+    "lesson-structure": [
+      "pretraining-names-first-for-novices",
+      "segment-and-signal-small-to-medium",
+      "worked-examples-help-novices-math-g048",
+      "self-explanation-moderate-but-costly-for-novices",
+      "prequestions-help-only-the-asked-facts",
+      "interpolated-quizzes-cut-mind-wandering",
+      "lesson-chunk-size-is-design-judgment"
+    ],
+    "segmenting": [
+      "segment-and-signal-small-to-medium"
+    ],
+    "signaling": [
+      "segment-and-signal-small-to-medium"
+    ],
+    "coherence": [
+      "coherence-and-contiguity-cut-extras-and-put-labels-in-figures"
+    ],
+    "spatial-contiguity": [
+      "coherence-and-contiguity-cut-extras-and-put-labels-in-figures"
+    ],
+    "figures": [
+      "coherence-and-contiguity-cut-extras-and-put-labels-in-figures"
+    ],
+    "worked-example": [
+      "worked-examples-help-novices-math-g048"
+    ],
+    "expertise-reversal": [
+      "expertise-reversal-fade-guidance-as-skill-grows"
+    ],
+    "fading": [
+      "expertise-reversal-fade-guidance-as-skill-grows"
+    ],
+    "learning-to-practice": [
+      "expertise-reversal-fade-guidance-as-skill-grows",
+      "mastery-testing-before-moving-on-helps",
+      "mastery-threshold-80-percent-is-convention",
+      "novice-roadmap-learn-then-practice-21-days",
+      "three-relearning-sessions-is-enough",
+      "optimal-difficulty-85-percent",
+      "feedback-required-when-accuracy-below-50"
+    ],
+    "self-explanation": [
+      "self-explanation-moderate-but-costly-for-novices"
+    ],
+    "prequestion": [
+      "prequestions-help-only-the-asked-facts"
+    ],
+    "interpolated-testing": [
+      "interpolated-quizzes-cut-mind-wandering"
+    ],
+    "check-interval": [
+      "interpolated-quizzes-cut-mind-wandering",
+      "lesson-chunk-size-is-design-judgment"
+    ],
+    "attention": [
+      "interpolated-quizzes-cut-mind-wandering"
+    ],
+    "mastery": [
+      "mastery-testing-before-moving-on-helps",
+      "mastery-threshold-80-percent-is-convention"
+    ],
+    "roadmap": [
+      "novice-roadmap-learn-then-practice-21-days",
+      "optimal-gap-is-20-40-percent-of-days-left",
+      "three-relearning-sessions-is-enough",
+      "sleep-is-the-active-ingredient-in-spacing",
+      "cap-interval-at-exam-date"
     ]
   },
   "unimplemented": [
@@ -202,6 +313,15 @@
     "pretesting-beats-posttesting",
     "spacing-beats-cramming-almost-always",
     "cap-interval-at-exam-date",
-    "productive-retrieval-needed-for-spelling"
+    "productive-retrieval-needed-for-spelling",
+    "pretraining-names-first-for-novices",
+    "segment-and-signal-small-to-medium",
+    "coherence-and-contiguity-cut-extras-and-put-labels-in-figures",
+    "worked-examples-help-novices-math-g048",
+    "expertise-reversal-fade-guidance-as-skill-grows",
+    "self-explanation-moderate-but-costly-for-novices",
+    "prequestions-help-only-the-asked-facts",
+    "interpolated-quizzes-cut-mind-wandering",
+    "mastery-testing-before-moving-on-helps"
   ]
 }

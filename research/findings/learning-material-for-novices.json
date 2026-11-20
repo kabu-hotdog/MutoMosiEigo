@@ -1,0 +1,224 @@
+[
+  {
+    "id": "pretraining-names-first-for-novices",
+    "claim": "本編の前に、主要な用語の名前と特徴だけを先に教えておくと、そのあとの説明の理解（転移・問題解決）が上がる。",
+    "numbers": {
+      "Mayer(2002)": "5実験すべてで、用語の事前学習群が問題解決の転移テストで上回った",
+      "中央値の効果量": "d = 0.75（k = 16）。Mayer のハンドブック章の集計（プールしたメタ分析ではない）"
+    },
+    "strength": "moderate",
+    "sources": [
+      { "cite": "Mayer, Mathias & Wetzell (2002) Fostering understanding of multimedia messages through pre-training, Journal of Experimental Psychology: Applied 8:147-154", "url": "https://www.cambridge.org/core/books/abs/multimedia-learning/pretraining-principle/01791D57F5D4164251269E6DF56A8BF1" },
+      { "cite": "Mayer (2014) Principles for managing essential processing in multimedia learning: segmenting, pretraining, and modality principles, Cambridge Handbook of Multimedia Learning", "url": "https://www.cambridge.org/core/books/cambridge-handbook-of-multimedia-learning/principles-for-managing-essential-processing-in-multimedia-learning-segmenting-pretraining-and-modality-principles/4110A2275F6DCD02DAB1F8B37BA7E5CE" }
+    ],
+    "applies_to": ["concept", "vocab"],
+    "implication": "1回分のページの最初に「今日の用語」ブロックを置く。用語（略語は英語の正式名称つき）＋平易な一言＋小さな図だけ。説明はしない（名前と特徴だけ）。本編はその用語を使って書く。",
+    "caveat": "実験は主に短い（数分）の動画・アニメーションの教材で、速いペースで複雑なものほど効く。プールした新しいメタ分析は見つからず、0.75 は中央値の集計なので過大の可能性がある。文章中心のページでの効果量は直接測られていない（外挿）。用語が少ない・やさしい回では省略してよい。",
+    "implemented_in": [],
+    "tags": ["novice", "pretraining", "page-design", "lesson-structure"]
+  },
+  {
+    "id": "segment-and-signal-small-to-medium",
+    "claim": "教材を学習者のペースで区切って見せる（segmenting）と、保持・転移がともに小〜中の効果で上がる。強調の合図（signaling）も効く。",
+    "numbers": {
+      "segmenting メタ分析": "56研究・88比較で有意、保持・転移とも小〜中の効果",
+      "signaling メタ分析": "d = 0.38（29研究）。質の高い研究・事前テストで知識を統制した研究でも残る",
+      "Mayer の中央値集計": "segmenting 0.79（k=10）、signaling 0.70。ただし実験者本人の集計で、メタ分析の値より大きい"
+    },
+    "strength": "moderate",
+    "sources": [
+      { "cite": "Rey, Beege, Nebel, Wirzberger, Schmitt & Schneider (2019) A meta-analysis of the segmenting effect, Educational Psychology Review 31", "url": "https://www.doi.org/10.1007/S10648-018-9456-4" },
+      { "cite": "Schneider, Beege, Nebel & Rey (2018) A meta-analysis of how signaling affects learning with media, Educational Research Review 23", "url": "https://rex.libraries.wsu.edu/esploro/outputs/journalArticle/A-meta-analysis-of-signaling-principle-in/99900601052901842" },
+      { "cite": "Noetel et al. (2022) Multimedia design for learning: an overview of reviews with meta-meta-analysis, Review of Educational Research 92(3):413-454", "url": "https://doi.org/10.3102/00346543211052329" }
+    ],
+    "applies_to": ["concept", "procedure"],
+    "implication": "1回分のページを3〜4ブロックに切り、ブロックごとに「見出し（一言の結論）→本文3〜5行→図」にする。重要語は太字、手順は番号、色は1色だけの強調。ブロックの終わりで次へ進む（ボタン・区切り線）。",
+    "caveat": "効果は小〜中で、Mayer 本人の中央値（0.7〜0.8）を信じすぎないこと。実験は動画・アニメが中心で、静的な HTML ページへの適用は外挿。区切りの最適な長さ（何分・何字）を決めた研究はない。",
+    "implemented_in": [],
+    "tags": ["novice", "segmenting", "signaling", "page-design", "lesson-structure"]
+  },
+  {
+    "id": "coherence-and-contiguity-cut-extras-and-put-labels-in-figures",
+    "claim": "関係ない話・飾り・BGM などを削る（coherence）、図と説明文を近くに置く（spatial contiguity）と、理解と転移が上がる。",
+    "numbers": {
+      "Mayer(2021) の中央値": "coherence 0.86、spatial contiguity 0.82、signaling 0.70、redundancy は 0.10（ほぼ効果なし）",
+      "全体の平均": "Mayer の研究の別メタ分析では平均 g = 0.37（中程度）"
+    },
+    "strength": "moderate",
+    "sources": [
+      { "cite": "Mayer (2021) Research-based principles for designing multimedia instruction（表: 原則ごとの効果量の中央値）", "url": "https://www.unh.edu/teaching-learning-resource-hub/sites/default/files/media/2023-06/itow-research-based-principles-for-designing-multimedia-instruction-mayer.pdf" },
+      { "cite": "Noetel et al. (2022) Review of Educational Research 92(3)", "url": "https://doi.org/10.3102/00346543211052329" }
+    ],
+    "applies_to": ["concept", "procedure"],
+    "implication": "ページから装飾・脱線・「ついでに」の話を外す（面白さ目的の挿話は入れない）。図には凡例を別に置かず、矢印・ラベルを図の中に直接書き、その図を説明文の直後に置く。同じ内容を文章と図の両方でなぞる冗長な作りは避ける。",
+    "caveat": "0.86 や 0.82 は Mayer 自身の集計の中央値で、独立のメタ分析では小さくなる傾向がある。coherence は「面白くする飾り」を削る話で、必要な背景・用語の説明を削るのではない。初学者には足場（なぜの一言）を残す。実験は短い教材が中心で、ここも外挿。",
+    "implemented_in": [],
+    "tags": ["novice", "coherence", "spatial-contiguity", "page-design", "figures"]
+  },
+  {
+    "id": "worked-examples-help-novices-math-g048",
+    "claim": "数学の学習で、解き方が全部書いてある例題を読ませる（worked example）と、自力で解かせるより成績が上がる（平均 g = 0.48）。",
+    "numbers": {
+      "平均効果量": "g = 0.48（43研究、主に中高の代数・幾何）",
+      "練習用・初期の習得用のどちらでも": "効果は残る",
+      "正しい例題のみ": "誤答例のみ・混在より効果が大きい",
+      "自己説明の促し": "例題に付けると、付けない例題より成績が低い傾向"
+    },
+    "strength": "moderate",
+    "sources": [
+      { "cite": "Barbieri, Miller-Cotto, Clerjuste & Chawla (2023) A meta-analysis of the worked examples effect on mathematics performance, Educational Psychology Review 35:11", "url": "https://link.springer.com/content/pdf/10.1007/s10648-023-09745-1.pdf" }
+    ],
+    "applies_to": ["procedure"],
+    "implication": "計算の単元（回線数 n(n-1)/2、標本化、64QAM など）は、学習ページに「例題（全手順＋なぜその式か）→最後の一手だけ穴埋め」を入れる。そのあとの練習は既存の worked-example-fading-backward（演習 keisan）に渡す。誤答例だけの例題は初学者には使わない。",
+    "caveat": "対象は主に中高生の数学。高専4年の情報通信の単位換算まじりの計算にそのまま当てはまるかは外挿。例題を読むだけで「分かった気」になりやすいので、必ず穴埋めを続ける。",
+    "implemented_in": [],
+    "tags": ["novice", "worked-example", "procedure", "numeric", "lesson-structure"]
+  },
+  {
+    "id": "expertise-reversal-fade-guidance-as-skill-grows",
+    "claim": "初学者に効く足場（詳しい例題、用語の先出し、手取り足取りの説明）は、習熟が進むと効かなくなり、逆効果にもなる（expertise reversal）。",
+    "numbers": {
+      "効果の向き": "知識が少ない人は例題で上がり、習熟すると問題を自力で解くほうが上回る（Kalyuga ら）",
+      "効果量": "今回は確認できず（レビュー論文の記述のみ確認）"
+    },
+    "strength": "moderate",
+    "sources": [
+      { "cite": "Kalyuga (2007) Expertise reversal effect and its implications for learner-tailored instruction, Educational Psychology Review 19:509-539", "url": "https://link.springer.com/article/10.1007%2Fs10648-007-9054-3" }
+    ],
+    "applies_to": ["all"],
+    "implication": "学習ページは「初回は全部見る」、2周目以降は要点だけ（詳細・例題は折りたたみ、既に取れている確認問題は飛ばせる）にする。演習に移ってからは、毎回ページを読み直させず、間違えたブロックだけ戻す。授業ゼロの人でも、回が進めば習熟度が上がるので、後半の回ほど足場を減らす。",
+    "caveat": "「習熟度」を測る道具が必要（確認問題の正答率で代用する）。反転が起きる習熟度の境目を数字で決めた研究はない。元の研究は実験室の短い課題が中心。",
+    "implemented_in": [],
+    "tags": ["novice", "expertise-reversal", "fading", "learning-to-practice"]
+  },
+  {
+    "id": "self-explanation-moderate-but-costly-for-novices",
+    "claim": "自分の言葉で理由を説明させる（自己説明）と学習成績が上がる（g = 0.55）が、初学者が自由記述で説明するのは負担が大きく、例題に足すと逆に下がる研究もある。",
+    "numbers": {
+      "全体": "g = 0.55（69効果量、64報告、95%CI 0.45〜0.65）",
+      "プロンプトの型": "疑問形 0.56（36研究）、命令形 0.40（12研究）、事前に方向づけ 0.70（8研究）。二次資料の数字で原典で未照合",
+      "例題への追加": "自己説明の促しを付けた例題は、付けない例題より成績が低い傾向（Barbieri 2023）"
+    },
+    "strength": "moderate",
+    "sources": [
+      { "cite": "Bisra, Liu, Nesbit, Salimi & Winne (2018) Inducing self-explanation: a meta-analysis, Educational Psychology Review 30:703-725", "url": "https://doi.org/10.1007/s10648-018-9434-x" },
+      { "cite": "Barbieri et al. (2023) Educational Psychology Review 35:11", "url": "https://link.springer.com/content/pdf/10.1007/s10648-023-09745-1.pdf" }
+    ],
+    "applies_to": ["concept", "procedure"],
+    "implication": "自己説明は「紙に1〜2行」までに絞る。回の終わりに「友達に3行で説明する」を1回、各ブロック末の確認に「なぜ」を問う選択問題を1問。自由記述をブロックごとに求めない。例題には自己説明を足さず、先に例題で手順を見せる。",
+    "caveat": "メタ分析の対象は主に大学生で、初学者が間違った説明を作るリスクがある（フィードバックが必要）。紙に書いたかをシステムは確認できない。時間を食うので、やるなら1回分あたり数分に限る。型別の数字は二次資料。",
+    "implemented_in": [],
+    "tags": ["novice", "self-explanation", "lesson-structure", "page-design"]
+  },
+  {
+    "id": "prequestions-help-only-the-asked-facts",
+    "claim": "本編の前に問いを出して答えを推測させる（prequestion）と、その問いで聞いた内容の記憶が上がる（g = 0.54）が、聞いていない内容までは上がらず、問いを読むだけだと効果は小さい。",
+    "numbers": {
+      "特定の効果（問いに出た内容）": "g = 0.54（k = 97、事前登録のメタ分析）",
+      "一般の効果（問いに出ていない内容）": "ほぼなし",
+      "答えを生成させた場合": "g = 0.65",
+      "問いを読むだけの場合": "g = 0.22",
+      "既存知見": "Pan & Sana(2021) 5実験1573人でも事前テストが学習後テストを上回る（pretesting-beats-posttesting）"
+    },
+    "strength": "high",
+    "sources": [
+      { "cite": "St. Hilaire, Chan & Ahn (2024) Guessing as a learning intervention: a meta-analytic review of the prequestion effect, Psychonomic Bulletin & Review 31:411-441", "url": "https://doi.org/10.3758/s13423-023-02353-8" },
+      { "cite": "St. Hilaire et al.(2024) の答え生成モデレータ（Pan らの 2026 論文での引用）", "url": "https://sc-pan.github.io/pdf/RBPT_2026.pdf" }
+    ],
+    "applies_to": ["concept", "vocab"],
+    "implication": "各ブロックの前に、そのブロックで答えが出る問いを1〜2問、先に出す。必ず「推測して選ぶ（または紙に書く）→すぐ答えと解説が出る」にし、読ませるだけにしない。問いは試験で聞く内容に直結するものだけに絞る（聞かなかった内容には効かない）。",
+    "caveat": "初学者（前提知識ゼロ）で効果が弱まるかを直接調べたメタ分析は見つからなかった。論文の多くは大学生・短い文章。知識ゼロだと推測が当てずっぽうになるため、選択肢つきの問いにして「外れて当然」と画面に書く。正解フィードバックがないと誤答が定着する（既存知見）。",
+    "implemented_in": [],
+    "tags": ["novice", "pretesting", "prequestion", "page-design", "lesson-structure"]
+  },
+  {
+    "id": "interpolated-quizzes-cut-mind-wandering",
+    "claim": "講義を区切って途中に確認テストを挟むと、注意が逸れる割合が半減し、最後のテストの成績が上がる。ただし追試では効果が一定しない。",
+    "numbers": {
+      "注意逸れの割合": "テスト群 約20% vs 非テスト・再学習群 約40%",
+      "最終リストの成績": "毎回テストを受けた群は最後のリストを約2倍学習",
+      "追試": "Jing ら(2016)は区切りごとのクイズで注意逸れの差が出ず、注意が逸れた学習者はテスト群で成績がより下がった"
+    },
+    "strength": "moderate",
+    "sources": [
+      { "cite": "Szpunar, Khan & Schacter (2013) Interpolated memory tests reduce mind wandering and improve learning of online lectures, PNAS 110(16):6313-6317", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3631699" },
+      { "cite": "Jing, Szpunar & Schacter (2016) Interpolated testing influences focused attention and improves integration of information during a video-recorded lecture, Journal of Experimental Psychology: Applied", "url": "https://sites.harvard.edu/schacter-memory/files/2022/08/jing2016-1-1.pdf" }
+    ],
+    "applies_to": ["all"],
+    "implication": "本文の読み物を連続で長く読ませない。各ブロックの末尾に確認問題を3問程度入れる（読む→すぐ思い出す）。スマホに逃げやすい本人には、この区切りが注意を戻す仕掛けになる。",
+    "caveat": "元の実験は1つの講義・1つの主題の動画で、複数回・実際の授業・自分で読み進めるページで続くかは不明。何問・何分おきが最適かを決めた研究はない。質問が多すぎると学習時間を食う。",
+    "implemented_in": [],
+    "tags": ["novice", "interpolated-testing", "lesson-structure", "check-interval", "attention"]
+  },
+  {
+    "id": "mastery-testing-before-moving-on-helps",
+    "claim": "「小テストで一定水準に達してから次へ進む」マスタリーラーニングは、試験成績を平均で標準偏差の約0.5上げる。効果の中心は習熟度テストを入れること。",
+    "numbers": {
+      "平均効果量": "約 0.52（Kulik, Kulik & Bangert-Drowns 1990、108研究）。二次資料の数字で原典で未照合",
+      "テストを外した場合": "習熟度テストを外すと効果が大きく下がり、下がり幅は基準の厳しさに依存",
+      "研究間のばらつき": "大きい"
+    },
+    "strength": "moderate",
+    "sources": [
+      { "cite": "Kulik, Kulik & Bangert-Drowns (1990) Effectiveness of mastery learning programs: a meta-analysis, Review of Educational Research 60", "url": "https://www.academia.edu/81783373/Effectiveness_of_Mastery_Learning_Programs_A_Meta_Analysis" },
+      { "cite": "Slavin (1987) Mastery learning reconsidered, Review of Educational Research 57", "url": "https://Www.Gwern.net/doc/psychology/1987-slavin.pdf" }
+    ],
+    "applies_to": ["all"],
+    "implication": "「学習→演習」「ブロック→次のブロック」の移り方は、気分ではなく確認問題の結果で決める。確認問題に達しなかった所だけを戻して、再テストしてから次へ進む。ただし期限があるので、戻るのは1ブロック2回までに上限を付ける（上限を過ぎたら印を付けて進む）。",
+    "caveat": "対象は主に学校の授業で、自習ページではない。基準の具体的な数字（何%か）を決めた研究は今回確認できず、80%は慣行（mastery-threshold-80-percent-is-convention）。マスタリー方式は進度が遅くなる副作用があり、期限が固定の試験前ではその分を日割りで確保する必要がある。",
+    "implemented_in": [],
+    "tags": ["novice", "mastery", "criterion", "learning-to-practice"]
+  },
+  {
+    "id": "mastery-threshold-80-percent-is-convention",
+    "claim": "習熟の基準を「確認問題で8割正解（初回）」にするのは、マスタリーラーニングの慣行であって、実験で最適と示された数字ではない。",
+    "numbers": {
+      "慣行の基準": "単元テスト 80%（二次資料の記述）",
+      "整合する既存知見": "学習が最も速い正答率は約85%（optimal-difficulty-85-percent）、50%未満はフィードバックが必須（feedback-required-when-accuracy-below-50）"
+    },
+    "strength": "practice",
+    "sources": [
+      { "cite": "マスタリーラーニング解説（EduCaixa 技術付録）", "url": "https://educaixa.org/es/-/apendice-tecnico-mastery-learning" }
+    ],
+    "applies_to": ["all"],
+    "implication": "学習ページの確認問題の合格ラインは「初回で8割（3問なら3問、5問なら4問、6問なら5問）」とする。ユーザーにエビデンスとは言わず「慣行＋既存の85%目安に合わせた」と説明する。",
+    "caveat": "これは実務慣行であり、実験的エビデンスではない。ユーザーに「研究で示された」とは言わないこと。確認問題が3問だと1問の誤差で判定が変わるので、回末は5〜6問にする。",
+    "implemented_in": [],
+    "tags": ["novice", "mastery", "criterion", "learning-to-practice"]
+  },
+  {
+    "id": "lesson-chunk-size-is-design-judgment",
+    "claim": "1回分の教材を何分・何ページに切るのが最適かを決めた実験は確認できなかった。根拠は「区切る・間に確認を挟む」までで、数字は設計上の判断。",
+    "numbers": {
+      "既存の運用値": "セッション20〜25分（作問方針_リサーチ.md）",
+      "判断値（本リサーチ）": "1回分 約40分＝用語先出し3分＋ブロック3〜4個（読み5分＋確認3分）＋回末まとめ5分＋回末チェック6分"
+    },
+    "strength": "practice",
+    "sources": [
+      { "cite": "区切りの数字を直接決めた文献は今回の検索では見つからず。segment-and-signal-small-to-medium と interpolated-quizzes-cut-mind-wandering からの設計上の外挿", "url": "" }
+    ],
+    "applies_to": ["all"],
+    "implication": "1ブロック＝読み約5分（本文300〜500字＋図1枚）、確認3問。ブロックは3〜4個で1回分約40分。ブロック単位で中断・再開できる作りにする（本人は一回サボると戻りにくいので、1ブロック5〜8分でも進められる形に）。",
+    "caveat": "実務慣行・設計判断であり、エビデンスではない。実際に本人が解いた時間・離脱位置を見て調整する前提。",
+    "implemented_in": [],
+    "tags": ["novice", "lesson-structure", "check-interval", "page-design"]
+  },
+  {
+    "id": "novice-roadmap-learn-then-practice-21-days",
+    "claim": "授業ゼロの人が残り21日で「学習5回分＋演習6本」を終えるなら、学習を最初の5日で終え、演習は4〜8日あけた3周に分け、前日は新規を入れない。",
+    "numbers": {
+      "間隔の基準": "残り21日 × 20〜40% = 約4〜8日（optimal-gap-is-20-40-percent-of-days-left）",
+      "目標の周回数": "別日に3回正解（three-relearning-sessions-is-enough, spread-correct-recalls-across-sessions）",
+      "夜→朝の挟み": "睡眠を挟めば12時間でも1回の分散として効く（sleep-is-the-active-ingredient-in-spacing）"
+    },
+    "strength": "practice",
+    "sources": [
+      { "cite": "上記の既存 finding（Cepeda 2008、Rawson & Dunlosky 2022、Bell 2014）からの組み立て。日程そのものは設計判断で、実験で検証されたものではない", "url": "https://laplab.ucsd.edu/articles/Cepeda%20et%20al%202008_psychsci.pdf" }
+    ],
+    "applies_to": ["all"],
+    "implication": "学習 11/20〜11/24（1日1回）→ 演習1周目 11/25〜11/30 → 2周目 12/2〜12/5 → 3周目 12/8〜12/9 → 12/10 は軽く（新規なし）。日程と1日の量は `素材メモ\\学習教材の作り方_リサーチ.md` を参照。",
+    "caveat": "実務の組み立てで、実験での検証はない。個々の根拠は強いが、組み合わせ全体は検証されていない。授業ゼロの人は学習フェーズの理解度の個人差が大きく、学習の5日間が延びたら周回の間隔を詰めて3周を確保する（2周でも点は伸びる＝three-relearning の0→1→2回で20→50→70%）。",
+    "implemented_in": [],
+    "tags": ["novice", "roadmap", "scheduling", "short-window", "learning-to-practice"]
+  }
+]
