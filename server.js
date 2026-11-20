@@ -18,9 +18,18 @@ function applyTitleOverride(u) {
   return u;
 }
 
-let siteLocked = false; // 管理者によるアクセス制限フラグ
-let scoreInputLocked = false; // 得点入力締め切りフラグ
-let registrationLocked = false; // 新規登録制限フラグ
+// ロック状態は DB(settings) が正。サーバーレスでは複数インスタンスが動くので、メモリに持たず短時間だけキャッシュする。
+let _flagCache = { at: 0, v: { siteLocked: false, scoreInputLocked: false, registrationLocked: false } };
+async function getFlags() {
+  if (Date.now() - _flagCache.at < 3000) return _flagCache.v;
+  try {
+    const { rows } = await pool.query("SELECT key, value FROM settings WHERE key IN ('site_locked','score_locked','registration_locked')");
+    const m = Object.fromEntries(rows.map(r => [r.key, r.value === 'true']));
+    _flagCache = { at: Date.now(), v: { siteLocked: !!m.site_locked, scoreInputLocked: !!m.score_locked, registrationLocked: !!m.registration_locked } };
+  } catch (e) { /* 失敗時は前回値 */ }
+  return _flagCache.v;
+}
+function dropFlagCache() { _flagCache.at = 0; }
 
 const app = express();
 const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false }, connectionTimeoutMillis: 10000, statement_timeout: 20000 });
@@ -367,7 +376,7 @@ app.post('/api/sync-user', async (req, res) => {
 
   const { rows } = await pool.query('SELECT * FROM users WHERE supabase_id = $1', [user.id]);
   if (rows.length === 0) {
-    if (registrationLocked) return res.status(403).json({ error: '現在、新規登録を受け付けていません' });
+    if ((await getFlags()).registrationLocked) return res.status(403).json({ error: '現在、新規登録を受け付けていません' });
     await pool.query(
       'INSERT INTO users (supabase_id, username, email, created_at) VALUES ($1, $2, $3, $4)',
       [user.id, name, email, new Date().toISOString()]
@@ -400,7 +409,7 @@ app.put('/api/avatar', auth, async (req, res) => {
 
 // ポイント加算（問題正解）— サーバー側重複防止
 app.post('/api/points', auth, async (req, res) => {
-  if (siteLocked) return res.status(423).json({ error: 'サイトがロック中のためポイントを加算できません' });
+  if ((await getFlags()).siteLocked) return res.status(423).json({ error: 'サイトがロック中のためポイントを加算できません' });
   const { amount, quizKey, questionKey, correct, subject } = req.body;
 
   // アクティブレースの教科を取得してシーズンpt加算可否を判定
@@ -794,7 +803,7 @@ app.get('/api/me', auth, async (req, res) => {
 
 // パスワード登録
 app.post('/api/register', async (req, res) => {
-  if (registrationLocked) return res.status(403).json({ error: '現在、新規登録を受け付けていません' });
+  if ((await getFlags()).registrationLocked) return res.status(403).json({ error: '現在、新規登録を受け付けていません' });
   const { username, password } = req.body;
   if (!username || !password) return res.status(400).json({ error: 'ユーザー名とパスワードが必要です' });
   if (username.length < 2 || username.length > 20) return res.status(400).json({ error: 'ユーザー名は2〜20文字で' });
@@ -871,7 +880,7 @@ app.post('/api/test/predict', auth, async (req, res) => {
 });
 
 app.post('/api/test/score', auth, async (req, res) => {
-  if (scoreInputLocked) return res.status(423).json({ error: '得点入力は締め切られました' });
+  if ((await getFlags()).scoreInputLocked) return res.status(423).json({ error: '得点入力は締め切られました' });
   const { score } = req.body;
   if (score == null || score < 0 || score > 100) return res.status(400).json({ error: '0〜100で入力してください' });
   await pool.query('UPDATE users SET test_score=$1 WHERE id=$2', [score, req.user.id]);
@@ -1169,58 +1178,58 @@ app.post('/api/admin/grant-all', auth, async (req, res) => {
 
 // サイトステータス（公開）
 app.get('/api/site-status', async (req, res) => {
-  res.json({ locked: siteLocked, registrationLocked });
+  const f = await getFlags(); res.json({ locked: f.siteLocked, registrationLocked: f.registrationLocked });
 });
 
 // 得点入力ステータス（公開）
 app.get('/api/score-status', async (req, res) => {
-  res.json({ locked: scoreInputLocked });
+  res.json({ locked: (await getFlags()).scoreInputLocked });
 });
 
 // 管理者：得点入力締め切り
 app.post('/api/admin/lock-score', auth, async (req, res) => {
   if (req.user.email !== 'kabu6113450@gmail.com') return res.status(403).json({ error: '権限がありません' });
-  scoreInputLocked = true;
   await pool.query("INSERT INTO settings (key, value) VALUES ('score_locked','true') ON CONFLICT (key) DO UPDATE SET value='true'");
+  dropFlagCache();
   res.json({ ok: true });
 });
 
 // 管理者：得点入力締め切り解除
 app.post('/api/admin/unlock-score', auth, async (req, res) => {
   if (req.user.email !== 'kabu6113450@gmail.com') return res.status(403).json({ error: '権限がありません' });
-  scoreInputLocked = false;
   await pool.query("INSERT INTO settings (key, value) VALUES ('score_locked','false') ON CONFLICT (key) DO UPDATE SET value='false'");
+  dropFlagCache();
   res.json({ ok: true });
 });
 
 // 管理者：新規登録制限
 app.post('/api/admin/lock-registration', auth, async (req, res) => {
   if (req.user.email !== 'kabu6113450@gmail.com') return res.status(403).json({ error: '権限がありません' });
-  registrationLocked = true;
   await pool.query("INSERT INTO settings (key, value) VALUES ('registration_locked','true') ON CONFLICT (key) DO UPDATE SET value='true'");
+  dropFlagCache();
   res.json({ ok: true });
 });
 
 app.post('/api/admin/unlock-registration', auth, async (req, res) => {
   if (req.user.email !== 'kabu6113450@gmail.com') return res.status(403).json({ error: '権限がありません' });
-  registrationLocked = false;
   await pool.query("INSERT INTO settings (key, value) VALUES ('registration_locked','false') ON CONFLICT (key) DO UPDATE SET value='false'");
+  dropFlagCache();
   res.json({ ok: true });
 });
 
 // 管理者：サイトロック
 app.post('/api/admin/lock', auth, async (req, res) => {
   if (req.user.email !== 'kabu6113450@gmail.com') return res.status(403).json({ error: '権限がありません' });
-  siteLocked = true;
   await pool.query("INSERT INTO settings (key, value) VALUES ('site_locked','true') ON CONFLICT (key) DO UPDATE SET value='true'");
+  dropFlagCache();
   res.json({ ok: true });
 });
 
 // 管理者：サイトロック解除
 app.post('/api/admin/unlock', auth, async (req, res) => {
   if (req.user.email !== 'kabu6113450@gmail.com') return res.status(403).json({ error: '権限がありません' });
-  siteLocked = false;
   await pool.query("INSERT INTO settings (key, value) VALUES ('site_locked','false') ON CONFLICT (key) DO UPDATE SET value='false'");
+  dropFlagCache();
   res.json({ ok: true });
 });
 
@@ -1811,14 +1820,21 @@ app.get('/api/tests', (req, res) => {
 
 app.use(express.static('.'));
 
-const PORT = process.env.PORT || 3000;
-initDB().then(async () => {
-  // DB からロック状態を復元
-  const { rows } = await pool.query("SELECT value FROM settings WHERE key='site_locked'").catch(() => ({ rows: [] }));
-  siteLocked = rows[0]?.value === 'true';
-  const { rows: sr } = await pool.query("SELECT value FROM settings WHERE key='score_locked'").catch(() => ({ rows: [] }));
-  scoreInputLocked = sr[0]?.value === 'true';
-  const { rows: rr } = await pool.query("SELECT value FROM settings WHERE key='registration_locked'").catch(() => ({ rows: [] }));
-  registrationLocked = rr[0]?.value === 'true';
-  app.listen(PORT, () => console.log(`サーバー起動中 → http://localhost:${PORT}`));
-}).catch(err => { console.error('起動エラー:', err); process.exit(1); });
+// ── 起動 ──────────────────────────────────────────────────────
+// テーブル作成などの起動処理は、1インスタンスにつき1回だけ裏で動かす(リクエストは待たない。テーブルは既にある)。
+let _initPromise = null;
+function ensureInit() {
+  if (!_initPromise) _initPromise = initDB().catch(err => { console.error('起動エラー:', err); _initPromise = null; });
+  return _initPromise;
+}
+ensureInit();
+
+module.exports = app;
+
+// 直接 `node server.js` で動かした時(Render・ローカル)だけ待ち受ける。Vercel は app を受け取って動かす。
+if (require.main === module) {
+  const PORT = process.env.PORT || 3000;
+  ensureInit().then(() => {
+    app.listen(PORT, () => console.log(`サーバー起動中 → http://localhost:${PORT}`));
+  });
+}
