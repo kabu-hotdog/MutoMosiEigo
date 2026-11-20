@@ -431,9 +431,13 @@ window.numCheck = function (key, secId, pi) {
   let v = parseFloat((inp || {}).value);
   if (isNaN(v)) { if (inp) inp.classList.add('ng'); return; }
   if (part.mult) v = v * part.mult;
-  const ok = part.angle
-    ? Math.abs(v - part.ans) <= 2
-    : Math.abs(v - part.ans) / Math.abs(part.ans) <= 0.02;
+  const diff = Math.abs(v - part.ans);
+  const scale = Math.max(1, Math.abs(part.ans));
+  let ok;
+  if (typeof part.abs === 'number') ok = diff <= Math.max(part.abs, 1e-9 * scale);
+  else if (typeof part.tol === 'number') ok = diff <= Math.max(part.tol * Math.abs(part.ans), 1e-9 * scale);
+  else if (part.angle) ok = diff <= 2;
+  else ok = diff <= 0.02 * Math.abs(part.ans);
   _state[pk] = ok ? 1 : -1;
   if (ok && window.addPoints) {
     addPoints(_data.pointsPerPart || _data.pointsPerQ || 100, _storageKey, pk, true, _data.subject);

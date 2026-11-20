@@ -76,7 +76,7 @@ nekku 系も含め、**すべてのテストデータは `tests/` に集約す�
 | `multi` | `opts[]`, `ans[]` | 複数選択（全部選んで採点ボタン） |
 | `sort` | `items[]`, `ans[]` | 並べ替え（選んで順番を決める） |
 | `input` | `ans` (文字列or配列), `hint?` | テキスト入力（Enter or 採点ボタン） |
-| `numeric` | `parts[]`（各 `ans` は数値） | 数値解答＋許容誤差（相対2%／`angle:true` は±2）。`parts[].label?`/`unit?`/`mult?`/`angle?`、問題ごとに `tag?`/`svg?`/`hint?`/`reveal?`(string[])。`katex:true` と併用可 |
+| `numeric` | `parts[]`（各 `ans` は数値） | 数値解答＋許容誤差（相対2%／`angle:true` は±2）。`parts[].label?`/`unit?`/`mult?`/`angle?`/`tol?`/`abs?`（`abs`=絶対誤差、`tol`=相対誤差の数値。例 `tol:0`は完全一致、`tol:0.001`は0.1%、`abs:0.05`は±0.05。優先順は abs → tol → angle → 既定2%）、問題ごとに `tag?`/`svg?`/`hint?`/`reveal?`(string[])。`katex:true` と併用可 |
 | `flashcard` | `front`, `back` | 暗記カード（タップで裏面表示→「覚えた／まだ」を自己判定）。採点・ポイントなし。進捗は「覚えた」数。`tag?` で小ラベル |
 
 ## KaTeX使用時
