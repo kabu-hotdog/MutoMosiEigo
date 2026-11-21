@@ -5,6 +5,7 @@
 var CSS = `
 .rm-wrap{max-width:820px;margin:0 auto;padding:18px 16px 90px;line-height:1.65}
 .rm-wrap *{box-sizing:border-box}
+.rm-listlink{font-size:.8rem;margin-bottom:6px}.rm-listlink a{color:var(--muted);text-decoration:underline}
 .rm-eyebrow{font-size:.72rem;letter-spacing:.14em;color:var(--teal);font-weight:700}
 .rm-wrap h1{margin:6px 0 8px;font-size:1.55rem;line-height:1.3;font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif}
 .rm-intro{color:var(--muted);font-size:.92rem;margin:0 0 14px}
@@ -92,6 +93,7 @@ function render() {
   var nextIdx = states.findIndex(function (s) { return !s.checked; });
 
   wrap.appendChild(el('div', 'rm-eyebrow', 'ROADMAP'));
+  if (D.subject) wrap.appendChild(el('div', 'rm-listlink', '<a href="/?list=' + encodeURIComponent(D.subject) + '">テストを1つずつ選ぶ(一覧)</a>　<a href="/">ホームへ</a>'));
   wrap.appendChild(el('h1', '', D.title));
   if (D.intro) {
     var introHtml = String(D.intro).split('\n').filter(Boolean).map(function (ln) {

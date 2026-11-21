@@ -674,7 +674,12 @@ function renderFolders() {
   document.getElementById("folder-grid").innerHTML = cards;
 }
 
-function openSubject(s) {
+function openSubject(s, forceList) {
+  // ロードマップがある科目は、押したらロードマップへ直行(テスト一覧は ?list=科目名 で開ける)
+  if (!forceList) {
+    const rm = tests.find(t => t.subject === s && /^\/roadmap\.html/.test(t.path || ''));
+    if (rm) { location.href = rm.path; return; }
+  }
   selectedSubject = s;
   activeExam = "すべて";
   document.getElementById("folder-view").style.display = "none";
@@ -784,6 +789,8 @@ fetch("/api/tests")
   .then(data => {
     tests = data;
     loadExamSchedule();
+    const want = new URLSearchParams(location.search).get('list');
+    if (want && tests.some(t => t.subject === want)) openSubject(want, true);
   })
   .catch(() => {
     document.getElementById("folder-grid").innerHTML =
