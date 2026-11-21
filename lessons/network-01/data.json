@@ -185,7 +185,7 @@
           "note": "Hyper Text Transfer Protocol。Text と Transfer の2つの T。"
         }
       ],
-      "body": "先生は資料(第1回 p.8)で「略語、正式名称、意味・定義を憶える。英語の綴りを含めて正しく憶える」と言い、教科書の略語表(vii・viii頁)を指している。<b>この表の20語(ISO を除く)が、第1回で覚える略語</b>。上の「用語集」に、20語の正式名称と意味を全部載せてある。先生が赤字で直した脱字は2つ。ADSL は Subsc<b>r</b>iber の r、HTTP は Tran<b>s</b>fer の s(教科書の表は、この2か所が抜けている)。<b>なぜ綴りまで?</b> Moodle は綴りが1字違うだけで不正解になるから。意味も言えるように。ISO は英語の略語ではないので範囲外。覚え方は、用語集を見ながら紙に書く → 学習が終わったら、略語テストの「教科書の略語表」(セット1〜4・20問)で、紙に書いてから答えを見て自己採点する形で確かめる。",
+      "body": "先生は資料(第1回 p.8)で「略語、正式名称、意味・定義を憶える。英語の綴りを含めて正しく憶える」と言い、教科書の略語表(vii・viii頁)を指している。<b>この表の20語(ISO を除く)が、第1回で覚える略語</b>。上の「用語集」に、20語の正式名称と意味を全部載せてある。先生が赤字で直した脱字は2つ。ADSL は Subsc<b>r</b>iber の r、HTTP は Tran<b>s</b>fer の s(教科書の表は、この2か所が抜けている)。<b>なぜ綴りまで?</b> Moodle は綴りが1字違うだけで不正解になるから。意味も言えるように。ISO は英語の略語ではないので範囲外。覚え方は、用語集を見ながら紙に書く → 学習が終わったら、略語テストの「教科書の略語表」(セット1〜4・20問)で、1語ずつ選ぶ形で確かめる。",
       "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/textbook/table-ryakugo-vii.jpg\" alt=\"重要略語一覧(vii頁)\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">教科書 重要略語一覧(vii頁)</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/textbook/table-ryakugo-viii.jpg\" alt=\"重要略語一覧(viii頁)\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">教科書 重要略語一覧(viii頁)</figcaption></figure>",
       "check": [
         {

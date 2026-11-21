@@ -10,7 +10,7 @@
   "storageKey": "ine_chukan_mix_v3",
   "pointsPerQ": 100,
   "katex": false,
-  "tip": "各問はタップで即採点&一行解説。略語の正式名称は【紙に書く→答えを見て自己採点】: まず紙に英語で書き、「答えを見る」を押して、書いた綴りと1文字も違わなければ○、違えば×を押します(書かずに押すと効果が下がります)。解説の末尾の[A3]などは出題ヒント番号。間違えた問題は数問あけて、次の日にもう一度。",
+  "tip": "各問はタップで即採点&一行解説。略語の正式名称は【1語ずつ順に選ぶ】: 似た綴りの選択肢から、1語目、2語目…と選びます。1語でも間違えたら不正解(赤い語が直す所)。間違えた略語は紙にも書き直すと本番に強くなります。解説の末尾の[A3]などは出題ヒント番号。間違えた問題は数問あけて、次の日にもう一度。",
   "footer": "出典: 第1〜5回講義資料(森川先生)、Moodle セルフチェック第1〜5回の正解。(資料外)と付いた所は資料に無く、Moodle正解または一般知識で確定。",
   "sections": [
     {
@@ -56,8 +56,55 @@
           "note": "CSMA/CD(Collision Detection)→CSMA/CA(Collision Avoidance)(第5回 p.23、CSMA/CAは黄色ハイライト)。CとDの対応を逆にしない。[A27]"
         },
         {
-          "type": "selfgrade",
-          "q": "ENIAC の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
+          "type": "seq",
+          "q": "ENIAC の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Electronic",
+              "opts": [
+                "Electronic",
+                "Electric",
+                "Elcetronic",
+                "Electranic"
+              ]
+            },
+            {
+              "ans": "Numerical",
+              "opts": [
+                "Numerical",
+                "Numirical",
+                "Namerical",
+                "Numerikal"
+              ]
+            },
+            {
+              "ans": "Integrator",
+              "opts": [
+                "Integrator",
+                "Integrater",
+                "Integgrator",
+                "Integratol"
+              ]
+            },
+            {
+              "ans": "And",
+              "opts": [
+                "And",
+                "An",
+                "Add",
+                "End"
+              ]
+            },
+            {
+              "ans": "Computer",
+              "opts": [
+                "Computer",
+                "Conputer",
+                "Comquter",
+                "Comupter"
+              ]
+            }
+          ],
           "answer": "Electronic Numerical Integrator And Computer",
           "note": "Electronic Numerical Integrator And Computer(1946年 ペンシルバニア大。頭文字を太字で展開。第2回 p.6)。×Integrater は語尾違い、Electric・Interpreter は似た語。[C7][A2]"
         },

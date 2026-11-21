@@ -100,6 +100,10 @@ footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--line);color:v
 .fc-hint{font-size:.8rem;color:var(--dim);margin-top:10px}
 .fc-back{font-size:.98rem;color:var(--ink);line-height:1.85}
 .fc-actions{display:flex;gap:8px;margin-top:12px}
+.sq-built{margin-top:10px;font-size:1.05rem;font-weight:700;line-height:1.9;overflow-wrap:anywhere}
+.sq-w{display:inline-block;padding:1px 9px;margin:0 2px;border-radius:8px;background:var(--card2);border:1px solid var(--line)}
+.sq-w.ok{color:var(--good)}.sq-w.bad{color:var(--bad)}.sq-w.cur{color:var(--muted);font-weight:400}
+.sq-step{margin-top:10px;font-size:.78rem;color:var(--muted)}
 .sg-ans{margin-top:12px;padding:10px 14px;background:var(--card2);border:1px solid var(--line);border-radius:10px}
 .sg-lab{font-size:.72rem;color:var(--muted);font-weight:700}
 .sg-val{font-size:1.05rem;font-weight:700;margin-top:2px;overflow-wrap:anywhere}
@@ -113,6 +117,7 @@ footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--line);color:v
 
 // Module-level state
 let _data, _sections, _storageKey, _state = {};
+const _seqOrder = {}; // 1語ずつ選ぶ問題の選択肢の並び(画面を開いている間だけ保つ)
 const _fcFlipped = {}; // 単語帳の表裏。保存しない（再読み込みで必ず表に戻る）
 
 function getQ(secId, key) {
@@ -325,6 +330,36 @@ function buildQuestion(q, qi, key, secId) {
     </div>`;
   }
 
+  if (q.type === 'seq') {
+    const total = q.parts.length;
+    const step = _state[key + '_si'] || 0;
+    const wr = String(_state[key + '_sw'] || '');
+    let built = '';
+    for (let i = 0; i < Math.min(step, total); i++) {
+      built += `<span class="sq-w ${wr[i] === '1' ? 'bad' : 'ok'}">${q.parts[i].ans}</span> `;
+    }
+    if (step < total) built += `<span class="sq-w cur">＿＿＿</span>`;
+    inner += `<div class="sq-built">${built}</div>`;
+    if (step < total) {
+      const part = q.parts[step];
+      if (!_seqOrder[key + '_' + step]) {
+        const idx = part.opts.map((_, i) => i);
+        for (let i = idx.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const t = idx[i]; idx[i] = idx[j]; idx[j] = t; }
+        _seqOrder[key + '_' + step] = idx;
+      }
+      inner += `<div class="sq-step">${step + 1}語目 / ${total}語</div><div class="opts">`;
+      _seqOrder[key + '_' + step].forEach((oi, k) => {
+        inner += `<button class="opt" onclick="seqPick('${key}','${secId}',${oi})"><span class="lab">${labelChar(k)}</span>${part.opts[oi]}</button>`;
+      });
+      inner += `</div>`;
+    }
+  }
+
+  if (q.type === 'seq' && _state[key] !== undefined) {
+    const ok = _state[key] === 1;
+    inner += `<div class="fb show"><span class="verdict ${ok ? 'g' : 'b'}">${ok ? '✓ 正解' : '✗ 不正解(赤い語を間違えた。正しい綴りを紙に書き直す)'}</span>${q.note ? `<div class="note">${q.note}</div>` : ''}</div>`;
+  }
+
   if (q.type === 'selfgrade') {
     const shown = !!_state[key + '_shown'] || _state[key] !== undefined;
     if (!shown) {
@@ -337,7 +372,7 @@ function buildQuestion(q, qi, key, secId) {
     }
   }
 
-  if (q.type !== 'numeric' && q.type !== 'flashcard' && q.type !== 'selfgrade') {
+  if (q.type !== 'numeric' && q.type !== 'flashcard' && q.type !== 'selfgrade' && q.type !== 'seq') {
     const fbShow = _state[key] !== undefined ? 'show' : '';
     const ok = _state[key] === 1;
     inner += `<div class="fb ${fbShow}"><span class="verdict ${ok ? 'g' : 'b'}">${ok ? '✓ 正解' : '✗ 不正解'}</span>${q.note ? `<div class="note">${q.note}</div>` : ''}</div>`;
@@ -481,6 +516,19 @@ window.numReveal = function (key, secId) {
   save(); refreshQ(key, secId);
 };
 
+window.seqPick = function (key, secId, oi) {
+  const q = getQ(secId, key); if (!q || _state[key] !== undefined) return;
+  const step = _state[key + '_si'] || 0; if (step >= q.parts.length) return;
+  const bad = q.parts[step].opts[oi] !== q.parts[step].ans;
+  _state[key + '_sw'] = String(_state[key + '_sw'] || '') + (bad ? '1' : '0');
+  _state[key + '_si'] = step + 1;
+  if (step + 1 >= q.parts.length) {
+    const allOk = !/1/.test(_state[key + '_sw']);
+    if (allOk) award(key);
+    _state[key] = allOk ? 1 : -1;
+  }
+  save(); refreshQ(key, secId);
+};
 window.sgShow = function (key, secId) {
   _state[key + '_shown'] = 1; save(); refreshQ(key, secId);
 };

@@ -32,14 +32,90 @@
           "note": "第1回 Q1 と同じ考え方(世代→多元接続を表1.1で引く)。第1世代=FDMA。TDMA/CDMAは第2世代、OFDMAは第3.9世代、ADMAという方式は無い(第2回 p.4)。[A4]"
         },
         {
-          "type": "selfgrade",
-          "q": "HTTP の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
+          "type": "seq",
+          "q": "HTTP の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Hyper",
+              "opts": [
+                "Hyper",
+                "Hypel",
+                "Hypper",
+                "Hypir"
+              ]
+            },
+            {
+              "ans": "Text",
+              "opts": [
+                "Text",
+                "Texd",
+                "Taxt",
+                "Txet"
+              ]
+            },
+            {
+              "ans": "Transfer",
+              "opts": [
+                "Transfer",
+                "Tranfer",
+                "Transport",
+                "Trnasfer"
+              ]
+            },
+            {
+              "ans": "Protocol",
+              "opts": [
+                "Protocol",
+                "Protocal",
+                "Protacol",
+                "Portocol"
+              ]
+            }
+          ],
           "answer": "Hyper Text Transfer Protocol",
           "note": "第1回 Q3 と同じ考え方(綴りまで書いて選ぶ)。Hyper Text Transfer Protocol。スライドが赤字で直した「Transfer の s」の落とし穴(第1回 p.8)。×Tranfer は s 落ち、Transport は似た語。[A1][A2]"
         },
         {
-          "type": "selfgrade",
-          "q": "FQDN の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
+          "type": "seq",
+          "q": "FQDN の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Fully",
+              "opts": [
+                "Fully",
+                "Full",
+                "Fluly",
+                "Vully"
+              ]
+            },
+            {
+              "ans": "Qualified",
+              "opts": [
+                "Qualified",
+                "Qualifed",
+                "Quantified",
+                "Qualiffied"
+              ]
+            },
+            {
+              "ans": "Domain",
+              "opts": [
+                "Domain",
+                "Donain",
+                "Dumain",
+                "Damain"
+              ]
+            },
+            {
+              "ans": "Name",
+              "opts": [
+                "Name",
+                "Nami",
+                "Nama",
+                "Namme"
+              ]
+            }
+          ],
           "answer": "Fully Qualified Domain Name",
           "note": "第1回 Q5 と同じ考え方(長い略語の正式名称)。Fully Qualified Domain Name=ホスト名+ドメイン名(第4回 p.9)。×Qualifed は i 落ち、Quantified は似た語、Full は語尾違い。[A17][A2]"
         },
@@ -57,20 +133,134 @@
           "hint": "n(n-1)/2"
         },
         {
-          "type": "selfgrade",
-          "q": "PPP の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
+          "type": "seq",
+          "q": "PPP の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Point",
+              "opts": [
+                "Point",
+                "Poimt",
+                "Poent",
+                "Poynt"
+              ]
+            },
+            {
+              "ans": "to",
+              "opts": [
+                "to",
+                "too",
+                "two",
+                "do"
+              ]
+            },
+            {
+              "ans": "Point",
+              "opts": [
+                "Point",
+                "Ponit",
+                "Poynt",
+                "Poimt"
+              ]
+            },
+            {
+              "ans": "Protocol",
+              "opts": [
+                "Protocol",
+                "Protocal",
+                "Plotocol",
+                "Prrotocol"
+              ]
+            }
+          ],
           "answer": "Point to Point Protocol",
           "note": "第1回 Q7 と同じ考え方(プロトコル名の正式名称)。Point to Point Protocol(ダイヤルアップ接続。第5回 p.2)。×Protocal は綴り違い、Peer to Peer・Multipoint は似た語。[A2]"
         },
         {
-          "type": "selfgrade",
-          "q": "HDLC の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
+          "type": "seq",
+          "q": "HDLC の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "High-level",
+              "opts": [
+                "High-level",
+                "Higgh-level",
+                "High-leval",
+                "High-lever"
+              ]
+            },
+            {
+              "ans": "Data",
+              "opts": [
+                "Data",
+                "Datta",
+                "Dtaa",
+                "Bata"
+              ]
+            },
+            {
+              "ans": "Link",
+              "opts": [
+                "Link",
+                "Line",
+                "Linnk",
+                "Lnik"
+              ]
+            },
+            {
+              "ans": "Control",
+              "opts": [
+                "Control",
+                "Controll",
+                "Conrtol",
+                "Comtrol"
+              ]
+            }
+          ],
           "answer": "High-level Data Link Control",
           "note": "第1回 Q9 と同じ考え方。High-level Data Link Control(第4回 p.15、第5回 p.4。頭文字が赤字)。×Controll は綴り違い、Line・Digital は似た語。[A20][A2]"
         },
         {
-          "type": "selfgrade",
-          "q": "CDMA の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
+          "type": "seq",
+          "q": "CDMA の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Code",
+              "opts": [
+                "Code",
+                "Time",
+                "Cdoe",
+                "Cude"
+              ]
+            },
+            {
+              "ans": "Division",
+              "opts": [
+                "Division",
+                "Divisional",
+                "Divisoin",
+                "Diviison"
+              ]
+            },
+            {
+              "ans": "Multiple",
+              "opts": [
+                "Multiple",
+                "Multiplle",
+                "Multipple",
+                "Multilpe"
+              ]
+            },
+            {
+              "ans": "Access",
+              "opts": [
+                "Access",
+                "Acess",
+                "Ackess",
+                "Acciss"
+              ]
+            }
+          ],
           "answer": "Code Division Multiple Access",
           "note": "第1回 Q10 と同じ考え方(多元接続の正式名称)。Code Division Multiple Access(符号分割多元接続。第2回 p.5)。×Acess は綴り違い、Divisional は語尾違い、Time は TDMA。[A3][A2]"
         },
@@ -195,8 +385,37 @@
           "note": "第4回 Q2(確信度低め)と同じ考え方(2問目)。ADSLの乗り換え先=FTTH・CATV・WiMAX2等(第5回 p.8, p.10)。ISDN・ダイヤルアップは古い方式。[A22]"
         },
         {
-          "type": "selfgrade",
-          "q": "DSU の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
+          "type": "seq",
+          "q": "DSU の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Digital",
+              "opts": [
+                "Digital",
+                "Diggital",
+                "Digitel",
+                "Digitol"
+              ]
+            },
+            {
+              "ans": "Service",
+              "opts": [
+                "Service",
+                "Servike",
+                "Servece",
+                "Zervice"
+              ]
+            },
+            {
+              "ans": "Unit",
+              "opts": [
+                "Unit",
+                "Unite",
+                "User",
+                "Uint"
+              ]
+            }
+          ],
           "answer": "Digital Service Unit",
           "note": "第4回 Q3 と同じ考え方(装置の正式名称)。Digital Service Unit(頭文字 D・S・U が太字。第4回 p.14、第5回 p.3)。×Unite は綴り違い、Subscriber・User は似た語。[A24][A2]"
         },
@@ -218,9 +437,15 @@
           "note": "第4回 Q4 と同じ考え方(データリンク制御方式)。HDLC=両方向・任意容量・まとめて確認・CRC。7ビット最小と1ブロック毎確認はベーシック手順(第5回 p.5、演習6.2)。[A20]"
         },
         {
-          "type": "selfgrade",
-          "q": "各層でデータに付加されるヘッダやトレイラなど、送信すべきデータ以外の制御用データを何と呼ぶか(全角カタカナ)<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
-          "answer": "オーバーヘッド",
+          "type": "single",
+          "q": "各層でデータに付加されるヘッダやトレイラなど、送信すべきデータ以外の制御用データを何と呼ぶか(全角カタカナ)",
+          "opts": [
+            "オーバヘッド",
+            "オーバーヘッダ",
+            "ペイロード",
+            "オーバーヘッド"
+          ],
+          "ans": "オーバーヘッド",
           "note": "第4回 Q5(間違えた問題)と同じ考え方。オーバーヘッド(長音あり。「オーバヘッド」はMoodleで不正解)。カプセル化で大きくなる(第4回 p.11 赤字・下線)。ペイロードは本体データ側。[A19]"
         },
         {
@@ -257,32 +482,213 @@
           "note": "第5回 Q1 と同じ考え方(世代表を引く)。第3世代=2000年代、第2世代(GSM)=1990年代、第3.9世代=2010年代(第2回 p.4 表1.1)。[A4]"
         },
         {
-          "type": "selfgrade",
-          "q": "FDDI の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
+          "type": "seq",
+          "q": "FDDI の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Fiber",
+              "opts": [
+                "Fiber",
+                "Fibber",
+                "Fyber",
+                "Fibar"
+              ]
+            },
+            {
+              "ans": "Distributed",
+              "opts": [
+                "Distributed",
+                "Disrtibuted",
+                "Dystributed",
+                "Distirbuted"
+              ]
+            },
+            {
+              "ans": "Data",
+              "opts": [
+                "Data",
+                "Dato",
+                "Date",
+                "Datta"
+              ]
+            },
+            {
+              "ans": "Interface",
+              "opts": [
+                "Interface",
+                "Interfase",
+                "Interfacce",
+                "Intefrace"
+              ]
+            }
+          ],
           "answer": "Fiber Distributed Data Interface",
           "note": "第5回 Q2 と同じ考え方(略語を綴りまで)。Fiber Distributed Data Interface(リング型LANの例。第5回 p.22)。×Interfase は綴り違い、Distributed Digital は似た語、Fiber Digital Data は語順違い。[A25][A2]"
         },
         {
-          "type": "selfgrade",
-          "q": "TDM の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
+          "type": "seq",
+          "q": "TDM の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Time",
+              "opts": [
+                "Time",
+                "Timme",
+                "Tima",
+                "Tine"
+              ]
+            },
+            {
+              "ans": "Division",
+              "opts": [
+                "Division",
+                "Divisiun",
+                "Bivision",
+                "Dviision"
+              ]
+            },
+            {
+              "ans": "Multiplexing",
+              "opts": [
+                "Multiplexing",
+                "Multiplexig",
+                "Multiplixing",
+                "Multiqlexing"
+              ]
+            }
+          ],
           "answer": "Time Division Multiplexing",
           "note": "第5回 Q3 と同じ考え方(分割方式の正式名称)。Time Division Multiplexing(時分割多重。第3回 p.7 赤字)。Multiple Access は多元接続の TDMA、×Multiplexig は綴り違い、Divided は語尾違い。[A30][A2]"
         },
         {
-          "type": "selfgrade",
-          "q": "PON の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
+          "type": "seq",
+          "q": "PON の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Passive",
+              "opts": [
+                "Passive",
+                "Passiva",
+                "Passeve",
+                "Psasive"
+              ]
+            },
+            {
+              "ans": "Optical",
+              "opts": [
+                "Optical",
+                "Optic",
+                "Optecal",
+                "Opticcal"
+              ]
+            },
+            {
+              "ans": "Network",
+              "opts": [
+                "Network",
+                "Netwrok",
+                "Netwark",
+                "Netwurk"
+              ]
+            }
+          ],
           "answer": "Passive Optical Network",
           "note": "第5回 Q4 と同じ考え方。Passive Optical Network(FTTHのPDS構成。頭文字が赤字。第5回 p.11)。×Netwrok は綴り違い、Optic は語尾違い、Passive Double Star は PDS(別の略語)。[A23][A2]"
         },
         {
-          "type": "selfgrade",
-          "q": "ISDN の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
+          "type": "seq",
+          "q": "ISDN の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Integrated",
+              "opts": [
+                "Integrated",
+                "Integreted",
+                "Integrateb",
+                "Imtegrated"
+              ]
+            },
+            {
+              "ans": "Service",
+              "opts": [
+                "Service",
+                "Servece",
+                "Servici",
+                "Serivce"
+              ]
+            },
+            {
+              "ans": "Digital",
+              "opts": [
+                "Digital",
+                "Digitar",
+                "Degital",
+                "Diigtal"
+              ]
+            },
+            {
+              "ans": "Network",
+              "opts": [
+                "Network",
+                "Netwok",
+                "Networrk",
+                "Ntework"
+              ]
+            }
+          ],
           "answer": "Integrated Service Digital Network",
           "note": "第5回 Q6 と同じ考え方(略語を綴りまで)。スライドの表記は Integrated Service Digital Network(第5回 p.7。頭文字 I・S・D・N が太字)。第5回 p.7 の画像で Service(単数)と確認済み。×Netwok は綴り違い、Standard・Data は似た語。[A21][A2]"
         },
         {
-          "type": "selfgrade",
-          "q": "DDoS の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
+          "type": "seq",
+          "q": "DDoS の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Distributed",
+              "opts": [
+                "Distributed",
+                "Distrebuted",
+                "Distribbuted",
+                "Distlibuted"
+              ]
+            },
+            {
+              "ans": "Denial",
+              "opts": [
+                "Denial",
+                "Dennial",
+                "Dinial",
+                "Denail"
+              ]
+            },
+            {
+              "ans": "of",
+              "opts": [
+                "of",
+                "off",
+                "or",
+                "on"
+              ]
+            },
+            {
+              "ans": "Service",
+              "opts": [
+                "Service",
+                "Servise",
+                "Selvice",
+                "Servici"
+              ]
+            },
+            {
+              "ans": "attack",
+              "opts": [
+                "attack",
+                "atdack",
+                "attakk",
+                "attock"
+              ]
+            }
+          ],
           "answer": "Distributed Denial of Service attack",
           "note": "第5回 Q7(間違えた問題)と同じ考え方(attack を付けて書く)。Distributed Denial of Service attack(資料外。語の展開は資料に無く、DDoS攻撃の語のみ第4回 p.22)。attack を付けないと不正解扱いになる(DoS の Moodle 正解にならう)。×Servise は綴り違い、Dispersed は似た語。[C8][A2]"
         }
