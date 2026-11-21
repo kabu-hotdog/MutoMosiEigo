@@ -129,11 +129,11 @@
           "opts": [
             "Hyper Text Transfer Protocol",
             "Hyper Text Tranfer Protocol",
-            "HyperText Transfer Protocol",
+            "Hyper Text Transfer Protocal",
             "Hyper Text Transport Protocol"
           ],
           "ans": "Hyper Text Transfer Protocol",
-          "note": "Transfer の s を落とさない。Hyper と Text は別の単語。(第1回 p.8)"
+          "note": "Transfer の s を落とさない。Protocol の綴り(Protocal ではない)にも注意。(第1回 p.8)"
         }
       ]
     },
