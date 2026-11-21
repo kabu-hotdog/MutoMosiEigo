@@ -57,6 +57,36 @@
       "name": "FDM",
       "full": "Frequency Division Multiplexing",
       "plain": "周波数で信号を分ける多重化(周波数分割多重)"
+    },
+    {
+      "name": "OFDM",
+      "full": "Orthogonal Frequency-Division Multiplexing",
+      "plain": "直交周波数分割多重方式。OFDMAの元になった方式。スライドの表記は Frequency-Division とハイフン付き(OFDMA は Moodle 表記でハイフン無し)。"
+    },
+    {
+      "name": "SINET",
+      "full": "Science Information NETwork",
+      "plain": "2002年に登場した学術情報ネットワーク。NET の3文字だけ大文字。"
+    },
+    {
+      "name": "FTTH",
+      "full": "Fiber To The Home",
+      "plain": "光ファイバを家庭まで引き込むアクセス方式。"
+    },
+    {
+      "name": "AM",
+      "full": "Amplitude Modulation",
+      "plain": "信号の大きさに合わせて搬送波の振幅を変える変調。電気雑音の影響を受ける。"
+    },
+    {
+      "name": "FM",
+      "full": "Frequency Modulation",
+      "plain": "搬送波の周波数を変える変調。電気雑音の直接影響を受け難く高品質。"
+    },
+    {
+      "name": "PM",
+      "full": "Phase Modulation",
+      "plain": "搬送波の位相を変える変調。"
     }
   ],
   "blocks": [
@@ -430,12 +460,16 @@
   ],
   "next": [
     {
-      "label": "演習 ② セルフチェック 第2回へ",
+      "label": "① 略語 第2回の略語 セット5〜6へ",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-ryakugo/data.json#r5"
+    },
+    {
+      "label": "② セルフチェック 授業第2回の範囲へ",
       "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-selfcheck/data.json#s2"
     },
     {
-      "label": "演習 ③ 計算(標本化・伝送速度のセクション)へ",
-      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-keisan/data.json#s2"
+      "label": "③ 計算 標本化・伝送速度へ",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-keisan/data.json#r2"
     }
   ],
   "footer": "出典: 情報ネットワーク工学 第2回講義資料(INE-2_2_2026)。ベースバンド・ディジタル変調・多重化は第3回 p.5・p.7、回線数は第1回 p.11。計算の答えは資料に書かれておらず、式から計算(トラ計算)。"

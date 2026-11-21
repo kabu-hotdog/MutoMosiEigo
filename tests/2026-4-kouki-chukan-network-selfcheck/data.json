@@ -4,10 +4,10 @@
   "exam": "後期中間試験",
   "subject": "情報ネットワーク工学",
   "title": "情報ネットワーク工学 ・ ② セルフチェック(Moodle そのまま)",
-  "subtitle": "Moodle セルフチェック第1〜5回 50問を元の形のまま",
+  "subtitle": "Moodle セルフチェック50問を元の形のまま。授業の回ごとに並べ直し",
   "eyebrow": "情報ネットワーク工学 ・ 後期中間試験(12/11) ・ ②",
-  "description": "第1〜5回の Moodle セルフチェック50問を、元の形のまま出します。まずここで穴を見つけてください。表面だけ変えた類題は④、全回を混ぜた総合ミックスは⑤です。範囲は第5回 p.31(7章の演習7.4)まで。",
-  "storageKey": "ine_chukan_selfcheck_v2",
+  "description": "第1〜5回の Moodle セルフチェック50問を、元の形のまま出します。授業の回ごとに、その回までに習った内容で解ける問題を集め直しました(Moodle の回の分け方とは違います)。まずここで穴を見つけてください。表面だけ変えた類題は④、全回を混ぜた総合ミックスは⑤です。範囲は第5回 p.31(7章の演習7.4)まで。",
+  "storageKey": "ine_chukan_selfcheck_v3",
   "pointsPerQ": 100,
   "katex": false,
   "tip": "各問はタップで即採点&一行解説。略語の正式名称は【紙に書く→選ぶ】: 選択肢を見る前に紙に英語で書き、書いた綴りと1文字も違わない選択肢を選びます。1文字でも違えば最後の「どれにも一致しない」を選ぶこと(書かずに選ぶと効果が下がります)。解説の末尾の[A3]などは出題ヒント番号。間違えた問題は数問あけて、次の日にもう一度。",
@@ -16,34 +16,8 @@
     {
       "id": "s1",
       "no": "01",
-      "title": "第1回 セルフチェック(Moodle そのまま)",
+      "title": "授業第1回の範囲(Moodle そのまま・11問)",
       "qs": [
-        {
-          "type": "single",
-          "q": "携帯電話の第3.9世代で用いられている多元接続方式はどれですか。",
-          "opts": [
-            "CDMA",
-            "TDMA",
-            "ADMA",
-            "FDMA",
-            "OFDMA"
-          ],
-          "ans": "OFDMA",
-          "note": "第3.9世代=OFDMA(LTE・WiMAX)。CDMAは第3世代、TDMAは第2世代、FDMAは第1世代、ADMAという方式は無い(第2回 p.4 表1.1)。[A4]"
-        },
-        {
-          "type": "single",
-          "q": "携帯電話の第3世代で用いられている多元接続方式はどれですか。",
-          "opts": [
-            "ADMA",
-            "OFDMA",
-            "FDMA",
-            "CDMA",
-            "TDMA"
-          ],
-          "ans": "CDMA",
-          "note": "第3世代=CDMA(W-CDMA・CDMA2000)。OFDMAは第3.9世代、TDMAは第2世代、FDMAは第1世代(第2回 p.4 表1.1)。[A4]"
-        },
         {
           "type": "single",
           "q": "【紙に書く→選ぶ】URL の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
@@ -115,19 +89,6 @@
         },
         {
           "type": "single",
-          "q": "第3.9世代の通信方式はどれですか。",
-          "opts": [
-            "GSM",
-            "CDMA2000",
-            "LTE",
-            "W-CDMA",
-            "PDC"
-          ],
-          "ans": "LTE",
-          "note": "第3.9世代=LTE・WiMAX。GSM・PDCは第2世代、W-CDMA・CDMA2000は第3世代(第2回 p.4 表1.1)。[A4]"
-        },
-        {
-          "type": "single",
           "q": "【紙に書く→選ぶ】UDP の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
           "opts": [
             "User Datagram Protocal",
@@ -142,6 +103,122 @@
         },
         {
           "type": "single",
+          "q": "【紙に書く→選ぶ】LTE の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
+          "opts": [
+            "Long Term Evolution",
+            "Long Time Evolution",
+            "Long Term Evoluton",
+            "Long Term Evolution Advanced",
+            "どれにも一致しない(自分の綴りが違った)"
+          ],
+          "ans": "Long Term Evolution",
+          "note": "Long Term Evolution(資料外・Moodle正解)。第3.9世代、多元接続はOFDMA(第2回 p.4)。Time は似た語、×Evoluton は綴り違い、Advanced は第4世代 LTE-Advanced の語。第5回 Q2。[A4][A2]",
+          "noShuffle": true
+        },
+        {
+          "type": "single",
+          "q": "【紙に書く→選ぶ】TCP の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
+          "opts": [
+            "Transmision Control Protocol",
+            "Transport Control Protocol",
+            "Transmission Control Protocol",
+            "Transfer Control Protocol",
+            "どれにも一致しない(自分の綴りが違った)"
+          ],
+          "ans": "Transmission Control Protocol",
+          "note": "Transmission Control Protocol(資料外・Moodle正解)。第4層でデータ単位はセグメント(第3回 p.14)。×Transmision は綴り違い、Transport・Transfer は似た語。第5回 Q4。[A2]",
+          "noShuffle": true
+        },
+        {
+          "type": "single",
+          "q": "【紙に書く→選ぶ】CATV の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
+          "opts": [
+            "CAble TeleVision",
+            "Community Antenna Television",
+            "Cable Television",
+            "CAble Television",
+            "どれにも一致しない(自分の綴りが違った)"
+          ],
+          "ans": "CAble TeleVision",
+          "note": "CAble TeleVision(第5回 p.12。CA・T・V が大文字。Moodleの正解表記)。Community Antenna Television はMoodleで不正解、小文字の cable/Television 版も一致しない。第5回 Q5(間違えた問題)。[A23][A2]",
+          "noShuffle": true
+        },
+        {
+          "type": "single",
+          "q": "【紙に書く→選ぶ】ITU の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
+          "opts": [
+            "International Telecommunications Union",
+            "International Telecommunication Unit",
+            "Internet Telecommunication Union",
+            "International Telecommunication Union",
+            "どれにも一致しない(自分の綴りが違った)"
+          ],
+          "ans": "International Telecommunication Union",
+          "note": "International Telecommunication Union(資料外・Moodle正解)。Telecommunication は単数形。×Telecommunications は複数形、Unit は似た語。第5回 Q6。[A2]",
+          "noShuffle": true
+        },
+        {
+          "type": "single",
+          "q": "【紙に書く→選ぶ】DoS の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
+          "opts": [
+            "Denial of Service",
+            "Denial of Service attack",
+            "Denial of Servise attack",
+            "Distributed Denial of Service attack",
+            "どれにも一致しない(自分の綴りが違った)"
+          ],
+          "ans": "Denial of Service attack",
+          "note": "Denial of Service attack(資料外。Moodleは attack 付きが正解で、付けないと不正解)。×Servise は綴り違い、Distributed は DDoS の語。第5回 Q7(間違えた問題)。[C8][A2]",
+          "noShuffle": true
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "no": "02",
+      "title": "授業第2回の範囲(Moodle そのまま・19問)",
+      "qs": [
+        {
+          "type": "single",
+          "q": "第3.9世代の通信方式はどれですか。",
+          "opts": [
+            "GSM",
+            "CDMA2000",
+            "LTE",
+            "W-CDMA",
+            "PDC"
+          ],
+          "ans": "LTE",
+          "note": "第3.9世代=LTE・WiMAX。GSM・PDCは第2世代、W-CDMA・CDMA2000は第3世代(第2回 p.4 表1.1)。[A4]"
+        },
+        {
+          "type": "single",
+          "q": "携帯電話の第3.9世代で用いられている多元接続方式はどれですか。",
+          "opts": [
+            "CDMA",
+            "TDMA",
+            "ADMA",
+            "FDMA",
+            "OFDMA"
+          ],
+          "ans": "OFDMA",
+          "note": "第3.9世代=OFDMA(LTE・WiMAX)。CDMAは第3世代、TDMAは第2世代、FDMAは第1世代、ADMAという方式は無い(第2回 p.4 表1.1)。[A4]"
+        },
+        {
+          "type": "single",
+          "q": "携帯電話の第3世代で用いられている多元接続方式はどれですか。",
+          "opts": [
+            "ADMA",
+            "OFDMA",
+            "FDMA",
+            "CDMA",
+            "TDMA"
+          ],
+          "ans": "CDMA",
+          "note": "第3世代=CDMA(W-CDMA・CDMA2000)。OFDMAは第3.9世代、TDMAは第2世代、FDMAは第1世代(第2回 p.4 表1.1)。[A4]"
+        },
+        {
+          "type": "single",
           "q": "【紙に書く→選ぶ】OFDMA の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
           "opts": [
             "Orthogonal Frequency Division Multiple Access",
@@ -153,14 +230,7 @@
           "ans": "Orthogonal Frequency Division Multiple Access",
           "note": "Orthogonal Frequency Division Multiple Access(直交周波数分割多元接続)。Orthogonal=直交、末尾は Multiple Access(第2回 p.5)。×Acess は綴り違い、Multiplexing は OFDM の語。第1回 Q10。[A3]",
           "noShuffle": true
-        }
-      ]
-    },
-    {
-      "id": "s2",
-      "no": "02",
-      "title": "第2回 セルフチェック(Moodle そのまま)",
-      "qs": [
+        },
         {
           "type": "single",
           "q": "帯域4 kHzの音声信号を標本化するとき、標本化間隔は何秒未満になるか。帯域4 kHzとは最高周波数が4 kHzのことである。",
@@ -308,13 +378,80 @@
             "FM"
           ],
           "note": "アナログ変調=AM(振幅)・FM(周波数)・PM(位相)(第2回 p.14)。PCMは符号化、QAMはディジタル変調(第3回 p.5)。[A31]"
+        },
+        {
+          "type": "single",
+          "q": "携帯電話のGSM方式は、どの世代に分類されますか。",
+          "opts": [
+            "第2世代",
+            "第3世代",
+            "第5世代",
+            "第4世代",
+            "第1世代"
+          ],
+          "ans": "第2世代",
+          "note": "GSM・PDC・IS-95は第2世代(TDMA/CDMA)。W-CDMAは第3世代、LTEは第3.9世代(第2回 p.4 表1.1)。[A4]"
+        },
+        {
+          "type": "single",
+          "q": "【紙に書く→選ぶ】FDMA の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
+          "opts": [
+            "Frequency Division Multiple Acces",
+            "Time Division Multiple Access",
+            "Frequency Division Multiple Access",
+            "Frequency Division Multiplexing Access",
+            "どれにも一致しない(自分の綴りが違った)"
+          ],
+          "ans": "Frequency Division Multiple Access",
+          "note": "Frequency Division Multiple Access(周波数分割多元接続。第2回 p.5。Moodleは各語頭大文字)。Time は TDMA、×Acces は綴り違い。第5回 Q3。[A3][A2]",
+          "noShuffle": true
+        },
+        {
+          "type": "single",
+          "q": "インターネットのもととなったといわれているアメリカ国防省のネットワークの名称はどれですか。",
+          "opts": [
+            "GlobalNet",
+            "CERN",
+            "NFSNET",
+            "WIDE",
+            "ARPANET"
+          ],
+          "ans": "ARPANET",
+          "note": "1969年 ARPANET(アメリカ)がインターネットの始まり(第2回 p.7 赤字)。WIDEは1988年の日本のプロジェクト、CERNはMosaic(WWWブラウザ)の所属。[A5]"
+        },
+        {
+          "type": "single",
+          "q": "【紙に書く→選ぶ】TDMA の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
+          "opts": [
+            "Time Division Multiple Acces",
+            "Time Division Multiple Access",
+            "Time Divisional Multiple Access",
+            "Code Division Multiple Access",
+            "どれにも一致しない(自分の綴りが違った)"
+          ],
+          "ans": "Time Division Multiple Access",
+          "note": "Time Division Multiple Access(時分割多元接続。第2回 p.5)。Code は CDMA、×Acces は綴り違い、Divisional は語尾違い。第5回 Q10。[A3][A2]",
+          "noShuffle": true
+        },
+        {
+          "type": "single",
+          "q": "インターネットの中核をなす技術として適切なのはどれですか。",
+          "opts": [
+            "WWW",
+            "ADSL",
+            "LAN",
+            "TCP/IP",
+            "FTTH"
+          ],
+          "ans": "TCP/IP",
+          "note": "インターネットの基礎技術=TCP/IP・UDP/IP・OSI参照モデル(第2回 p.7 赤字太字)。WWWはブラウザ側、ADSL・FTTHは回線、LANは範囲の名前。[A5]"
         }
       ]
     },
     {
       "id": "s3",
       "no": "03",
-      "title": "第3回 セルフチェック(Moodle そのまま)",
+      "title": "授業第3回の範囲(Moodle そのまま・10問)",
       "qs": [
         {
           "type": "single",
@@ -444,6 +581,26 @@
           "note": "パケット交換方式=バーチャルサーキット形式(品質保証有)・データグラム形式(無)(第3回 p.10)。時分割・空間分割・TSスイッチは回線交換(p.9)。[A11]"
         },
         {
+          "type": "single",
+          "q": "MACを取り扱うのは、OSI参照モデルのどの層ですか。",
+          "opts": [
+            "トランスポート層",
+            "データリンク層",
+            "ネットワーク層",
+            "物理層",
+            "セッション層"
+          ],
+          "ans": "データリンク層",
+          "note": "MACは第2層データリンク層(第4回 p.4、第5回 p.24)。IPアドレスを扱うのは第3層ネットワーク層。[A13][A18]"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "no": "04",
+      "title": "授業第4回の範囲(Moodle そのまま・10問)",
+      "qs": [
+        {
           "type": "multi",
           "q": "データ構造が「メッセージ」であるOSI参照モデルの層に該当する項目はどれですか。(全て選ぶ)",
           "opts": [
@@ -459,14 +616,7 @@
             "セッション層"
           ],
           "note": "第5層以上(セッション・プレゼンテーション・アプリケーション)が【メッセージ】レベル(第3回 p.14)。トランスポートはセグメント、ネットワークはパケット。[A13]"
-        }
-      ]
-    },
-    {
-      "id": "s4",
-      "no": "04",
-      "title": "第4回 セルフチェック(Moodle そのまま)",
-      "qs": [
+        },
         {
           "type": "single",
           "q": "OSI参照モデルの上位層と下位層を分ける位置として正しいのはどれですか。",
@@ -479,23 +629,6 @@
           ],
           "ans": "第4層と第5層の間",
           "note": "第4層(トランスポート)と第5層(セッション)の間に線がある。下位=第1〜4層、上位=第5〜7層(第4回 p.4-5)。※確信度低め→06に類題あり。[A13]"
-        },
-        {
-          "type": "multi",
-          "q": "2024年10月時点で新規契約可能なアクセスネットワークはどれですか。(全て選ぶ)",
-          "opts": [
-            "FTTH",
-            "ISDN",
-            "WiMAX",
-            "CATV",
-            "ADSL"
-          ],
-          "ans": [
-            "FTTH",
-            "WiMAX",
-            "CATV"
-          ],
-          "note": "ISDNは2024年1月、ADSLは2024年3月にサービス終了済み(第5回 p.7-8, p.10)。移行先はFTTH・CATV・WiMAX2等。※確信度低め→06に類題あり。[A22][A21]"
         },
         {
           "type": "single",
@@ -540,19 +673,6 @@
           "ans": "オーバーヘッド",
           "note": "オーバーヘッド(長音あり。Moodleは「オーバヘッド」を不正解にした)。カプセル化で各層のヘッダ・トレイラが付くと増える(第4回 p.11 赤字・下線)。ペイロードは逆で本体データ側。第4回 Q5(間違えた問題)。[A19]",
           "noShuffle": true
-        },
-        {
-          "type": "single",
-          "q": "MACを取り扱うのは、OSI参照モデルのどの層ですか。",
-          "opts": [
-            "トランスポート層",
-            "データリンク層",
-            "ネットワーク層",
-            "物理層",
-            "セッション層"
-          ],
-          "ans": "データリンク層",
-          "note": "MACは第2層データリンク層(第4回 p.4、第5回 p.24)。IPアドレスを扱うのは第3層ネットワーク層。[A13][A18]"
         },
         {
           "type": "single",
@@ -609,150 +729,23 @@
           ],
           "ans": "STB",
           "note": "CATV=STB(Set-Top Box)(装置の対応は図6.1で資料外・Moodle正解。Modemは不正解)。ADSL Modem は ADSL 用、ONUは光、DSUはISDN用。第4回 Q10(間違えた問題)。[A24]"
-        }
-      ]
-    },
-    {
-      "id": "s5",
-      "no": "05",
-      "title": "第5回 セルフチェック(Moodle そのまま)",
-      "qs": [
-        {
-          "type": "single",
-          "q": "携帯電話のGSM方式は、どの世代に分類されますか。",
-          "opts": [
-            "第2世代",
-            "第3世代",
-            "第5世代",
-            "第4世代",
-            "第1世代"
-          ],
-          "ans": "第2世代",
-          "note": "GSM・PDC・IS-95は第2世代(TDMA/CDMA)。W-CDMAは第3世代、LTEは第3.9世代(第2回 p.4 表1.1)。[A4]"
         },
         {
-          "type": "single",
-          "q": "【紙に書く→選ぶ】LTE の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
+          "type": "multi",
+          "q": "2024年10月時点で新規契約可能なアクセスネットワークはどれですか。(全て選ぶ)",
           "opts": [
-            "Long Term Evolution",
-            "Long Time Evolution",
-            "Long Term Evoluton",
-            "Long Term Evolution Advanced",
-            "どれにも一致しない(自分の綴りが違った)"
+            "FTTH",
+            "ISDN",
+            "WiMAX",
+            "CATV",
+            "ADSL"
           ],
-          "ans": "Long Term Evolution",
-          "note": "Long Term Evolution(資料外・Moodle正解)。第3.9世代、多元接続はOFDMA(第2回 p.4)。Time は似た語、×Evoluton は綴り違い、Advanced は第4世代 LTE-Advanced の語。第5回 Q2。[A4][A2]",
-          "noShuffle": true
-        },
-        {
-          "type": "single",
-          "q": "【紙に書く→選ぶ】FDMA の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
-          "opts": [
-            "Frequency Division Multiple Acces",
-            "Time Division Multiple Access",
-            "Frequency Division Multiple Access",
-            "Frequency Division Multiplexing Access",
-            "どれにも一致しない(自分の綴りが違った)"
+          "ans": [
+            "FTTH",
+            "WiMAX",
+            "CATV"
           ],
-          "ans": "Frequency Division Multiple Access",
-          "note": "Frequency Division Multiple Access(周波数分割多元接続。第2回 p.5。Moodleは各語頭大文字)。Time は TDMA、×Acces は綴り違い。第5回 Q3。[A3][A2]",
-          "noShuffle": true
-        },
-        {
-          "type": "single",
-          "q": "【紙に書く→選ぶ】TCP の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
-          "opts": [
-            "Transmision Control Protocol",
-            "Transport Control Protocol",
-            "Transmission Control Protocol",
-            "Transfer Control Protocol",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Transmission Control Protocol",
-          "note": "Transmission Control Protocol(資料外・Moodle正解)。第4層でデータ単位はセグメント(第3回 p.14)。×Transmision は綴り違い、Transport・Transfer は似た語。第5回 Q4。[A2]",
-          "noShuffle": true
-        },
-        {
-          "type": "single",
-          "q": "【紙に書く→選ぶ】CATV の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
-          "opts": [
-            "CAble TeleVision",
-            "Community Antenna Television",
-            "Cable Television",
-            "CAble Television",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "CAble TeleVision",
-          "note": "CAble TeleVision(第5回 p.12。CA・T・V が大文字。Moodleの正解表記)。Community Antenna Television はMoodleで不正解、小文字の cable/Television 版も一致しない。第5回 Q5(間違えた問題)。[A23][A2]",
-          "noShuffle": true
-        },
-        {
-          "type": "single",
-          "q": "【紙に書く→選ぶ】ITU の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
-          "opts": [
-            "International Telecommunications Union",
-            "International Telecommunication Unit",
-            "Internet Telecommunication Union",
-            "International Telecommunication Union",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "International Telecommunication Union",
-          "note": "International Telecommunication Union(資料外・Moodle正解)。Telecommunication は単数形。×Telecommunications は複数形、Unit は似た語。第5回 Q6。[A2]",
-          "noShuffle": true
-        },
-        {
-          "type": "single",
-          "q": "【紙に書く→選ぶ】DoS の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
-          "opts": [
-            "Denial of Service",
-            "Denial of Service attack",
-            "Denial of Servise attack",
-            "Distributed Denial of Service attack",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Denial of Service attack",
-          "note": "Denial of Service attack(資料外。Moodleは attack 付きが正解で、付けないと不正解)。×Servise は綴り違い、Distributed は DDoS の語。第5回 Q7(間違えた問題)。[C8][A2]",
-          "noShuffle": true
-        },
-        {
-          "type": "single",
-          "q": "インターネットのもととなったといわれているアメリカ国防省のネットワークの名称はどれですか。",
-          "opts": [
-            "GlobalNet",
-            "CERN",
-            "NFSNET",
-            "WIDE",
-            "ARPANET"
-          ],
-          "ans": "ARPANET",
-          "note": "1969年 ARPANET(アメリカ)がインターネットの始まり(第2回 p.7 赤字)。WIDEは1988年の日本のプロジェクト、CERNはMosaic(WWWブラウザ)の所属。[A5]"
-        },
-        {
-          "type": "single",
-          "q": "インターネットの中核をなす技術として適切なのはどれですか。",
-          "opts": [
-            "WWW",
-            "ADSL",
-            "LAN",
-            "TCP/IP",
-            "FTTH"
-          ],
-          "ans": "TCP/IP",
-          "note": "インターネットの基礎技術=TCP/IP・UDP/IP・OSI参照モデル(第2回 p.7 赤字太字)。WWWはブラウザ側、ADSL・FTTHは回線、LANは範囲の名前。[A5]"
-        },
-        {
-          "type": "single",
-          "q": "【紙に書く→選ぶ】TDMA の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
-          "opts": [
-            "Time Division Multiple Acces",
-            "Time Division Multiple Access",
-            "Time Divisional Multiple Access",
-            "Code Division Multiple Access",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Time Division Multiple Access",
-          "note": "Time Division Multiple Access(時分割多元接続。第2回 p.5)。Code は CDMA、×Acces は綴り違い、Divisional は語尾違い。第5回 Q10。[A3][A2]",
-          "noShuffle": true
+          "note": "ISDNは2024年1月、ADSLは2024年3月にサービス終了済み(第5回 p.7-8, p.10)。移行先はFTTH・CATV・WiMAX2等。※確信度低め→06に類題あり。[A22][A21]"
         }
       ]
     }

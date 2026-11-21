@@ -52,6 +52,41 @@
       "name": "プロトコル",
       "full": "protocol",
       "plain": "規約。接続・開放の手順や情報の形などの約束事"
+    },
+    {
+      "name": "NRZ",
+      "full": "Non Return to Zero",
+      "plain": "ベースバンド方式の一つ。信号がゼロに戻らない符号。スライドは Non-Return とハイフン付きだが、Moodle の正解は半角スペース(Non Return to Zero)。"
+    },
+    {
+      "name": "RZ",
+      "full": "Return to Zero",
+      "plain": "ベースバンド方式の一つ。信号が毎回ゼロに戻る符号。"
+    },
+    {
+      "name": "AMI",
+      "full": "Alternate Mark Inversion",
+      "plain": "ベースバンド方式の一つ。1(マーク)を交互に正負の極性にする符号。"
+    },
+    {
+      "name": "FDM",
+      "full": "Frequency Division Multiplexing",
+      "plain": "周波数分割多重。多重化技術の一つ。"
+    },
+    {
+      "name": "TDM",
+      "full": "Time Division Multiplexing",
+      "plain": "時分割多重。多重化技術の一つ。"
+    },
+    {
+      "name": "CDM",
+      "full": "Code Division Multiplexing",
+      "plain": "符号分割多重。多重化技術の一つ。"
+    },
+    {
+      "name": "WDM",
+      "full": "Wave Division Multiplexing",
+      "plain": "波長多重。光の波長で多重化する技術。"
     }
   ],
   "blocks": [
@@ -436,16 +471,16 @@
   ],
   "next": [
     {
-      "label": "演習 ② セルフチェック 第3回へ(Moodle そのまま)",
+      "label": "① 略語 第3回の略語 セット7〜9へ",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-ryakugo/data.json#r7"
+    },
+    {
+      "label": "② セルフチェック 授業第3回の範囲へ",
       "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-selfcheck/data.json#s3"
     },
     {
-      "label": "演習 ③ 計算 ボーレートとビットレートへ(例題3.1・演習3.3)",
-      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-keisan/data.json#s4"
-    },
-    {
-      "label": "演習 ③ 計算 BERへ(例題3.2・演習3.4)",
-      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-keisan/data.json#s5"
+      "label": "③ 計算 ボーレート・BERへ",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-keisan/data.json#r4"
     }
   ],
   "footer": "出典: 情報ネットワーク工学 第3回講義資料 p.2〜p.16(第3章の残り・第4章4.1〜4.2・第5章5.1〜5.3)。第2回 p.14、第1回 p.8 は復習問題の出典。計算の答えは資料に無く、トラが計算した。"

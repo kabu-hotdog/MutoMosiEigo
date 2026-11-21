@@ -72,6 +72,71 @@
       "name": "MAC アドレス",
       "full": "Media Access Control address",
       "plain": "ネットワーク機器ごとの 48 ビットの番号(背番号のようなもの)"
+    },
+    {
+      "name": "PPP",
+      "full": "Point to Point Protocol",
+      "plain": "ダイヤルアップ接続で使う2点間の通信プロトコル。"
+    },
+    {
+      "name": "CRC",
+      "full": "Cyclic Redundancy Check",
+      "plain": "巡回冗長検査。誤り検出の方式で、HDLCが採用する。"
+    },
+    {
+      "name": "EDI",
+      "full": "Electronic Data Interchange",
+      "plain": "企業間でデータを電子的にやり取りする仕組み(ISDNの移行先: インターネットEDI)。"
+    },
+    {
+      "name": "INS",
+      "full": "Information Network System",
+      "plain": "ISDNサービスの名称。2024年1月にサービス終了【2025年1月完全終了】。"
+    },
+    {
+      "name": "SS",
+      "full": "Single Star",
+      "plain": "FTTHの光アクセス構成の一つ(PON=PDS構成と対になる方式)。"
+    },
+    {
+      "name": "PDS",
+      "full": "Passive Double Star",
+      "plain": "FTTHの光アクセス構成の一つ。PONと呼ばれる方式。"
+    },
+    {
+      "name": "PON",
+      "full": "Passive Optical Network",
+      "plain": "PDS構成の光アクセス。多重化は時分割多重方式。スライドは多重化方式を「自分割」と誤記(正しくは時分割)。"
+    },
+    {
+      "name": "STP",
+      "full": "Shielded Twisted Pair",
+      "plain": "シールドがあり外部雑音に強いツイストペアケーブル。"
+    },
+    {
+      "name": "FDDI",
+      "full": "Fiber Distributed Data Interface",
+      "plain": "リング型LANの例。"
+    },
+    {
+      "name": "CSMA",
+      "full": "Carrier Sense Multiple Access",
+      "plain": "LANのアクセス制御方式の一つ。搬送波を検知してから送信する。"
+    },
+    {
+      "name": "CSMA/CA",
+      "full": "Collision Avoidance",
+      "plain": "CSMAに「衝突回避」を加えたアクセス制御方式(黄色ハイライト。スライドでは Carrier Sense Multiple Access と Collision Avoidance を別々に展開)。一般には「Carrier Sense Multiple Access with Collision Avoidance」と書く。⚠️ 本番の表記は未確認。"
+    },
+    {
+      "name": "WEP",
+      "full": "Wired Equivalent Privacy",
+      "plain": "無線LANの暗号化方式の一つ(資料では×印)。"
+    },
+    {
+      "name": "WPA",
+      "full": "Wi-Fi Protected Access",
+      "plain": "Wi-Fi関連の無線LAN暗号化方式の一つ(資料では×印。WPA2・WPA3が後続)。"
     }
   ],
   "blocks": [
@@ -450,12 +515,12 @@
   ],
   "next": [
     {
-      "label": "演習 ② セルフチェック 第5回へ",
-      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-selfcheck/data.json#s5"
+      "label": "① 略語 第5回の略語 セット12〜14へ",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-ryakugo/data.json#r12"
     },
     {
-      "label": "演習 ④ 類題 第5回へ",
-      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-ruidai/data.json#s6c"
+      "label": "③ 計算 ISDNへ",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-keisan/data.json#r6"
     }
   ],
   "footer": "出典: 情報ネットワーク工学 第5回講義資料(p.2〜p.31)、第2回・第4回講義資料。「資料外」と書いた部分は講義資料にない一般知識の補足。"
