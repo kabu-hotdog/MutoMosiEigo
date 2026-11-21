@@ -290,25 +290,25 @@
           "q": "CATV の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
           "parts": [
             {
-              "ans": "Cable",
+              "ans": "CAble",
               "opts": [
-                "Cable",
-                "Channel",
-                "Carrier",
-                "Cell"
+                "CAble",
+                "CHannel",
+                "CArrier",
+                "CEll"
               ]
             },
             {
-              "ans": "Television",
+              "ans": "TeleVision",
               "opts": [
-                "Television",
-                "Terminal",
-                "Telecommunication",
-                "Transmission"
+                "TeleVision",
+                "TeleText",
+                "TeleCom",
+                "TeleMetry"
               ]
             }
           ],
-          "answer": "Cable Television",
+          "answer": "CAble TeleVision",
           "note": "CAble TeleVision(第5回 p.12。CA・T・V が大文字。Moodleの正解表記)。Community Antenna Television はMoodleで不正解、小文字の cable/Television 版も一致しない。第5回 Q5(間違えた問題)。[A23][A2]"
         },
         {

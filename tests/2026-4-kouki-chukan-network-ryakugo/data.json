@@ -258,25 +258,25 @@
           "q": "<b>CATV</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
           "parts": [
             {
-              "ans": "Cable",
+              "ans": "CAble",
               "opts": [
-                "Cable",
-                "Channel",
-                "Carrier",
-                "Cell"
+                "CAble",
+                "CHannel",
+                "CArrier",
+                "CEll"
               ]
             },
             {
-              "ans": "Television",
+              "ans": "TeleVision",
               "opts": [
-                "Television",
-                "Terminal",
-                "Telecommunication",
-                "Transmission"
+                "TeleVision",
+                "TeleText",
+                "TeleCom",
+                "TeleMetry"
               ]
             }
           ],
-          "answer": "Cable Television",
+          "answer": "CAble TeleVision",
           "note": "<b>正解: CAble TeleVision</b>　×Community Antenna Television(Moodleで不正解の名称) ×CAble TeleVison ×CAbel TeleVision<br>CATV = ケーブルテレビの回線を使うインターネット接続(装置はSTB)。★Moodleで間違えた問題。「Community Antenna Television」は Moodle で不正解。CA・T・V が大文字。 覚え方: CA(ble)・T(ele)・V(ision) と CA・T・V を大文字。 出典: 第5回 p.12(第5回 セルフチェック Q5)。 [A2][A23]"
         },
         {
@@ -1041,16 +1041,16 @@
               ]
             },
             {
-              "ans": "Network",
+              "ans": "NETwork",
               "opts": [
-                "Network",
-                "Node",
-                "Name",
-                "Next"
+                "NETwork",
+                "NODe",
+                "NAMe",
+                "NEXt"
               ]
             }
           ],
-          "answer": "Science Information Network",
+          "answer": "Science Information NETwork",
           "note": "<b>正解: Science Information NETwork</b>　×Sience Information NETwork ×Science Infomation NETwork ×Information Network System(INSの名称)<br>SINET = 2002年に登場した学術情報ネットワーク。NET の3文字だけ大文字。 覚え方: Science・Information・NET(work)。 出典: 第2回 p.7。 [略語表]"
         },
         {
