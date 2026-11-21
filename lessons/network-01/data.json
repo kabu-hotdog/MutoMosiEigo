@@ -14,39 +14,104 @@
   "katex": false,
   "terms": [
     {
+      "name": "LTE",
+      "full": "Long Term Evolution",
+      "plain": "携帯電話のデータ通信方式の一つ。下り 100 Mbps 以上の高速通信ができる(第3.9世代)"
+    },
+    {
+      "name": "LAN",
+      "full": "Local Area Network",
+      "plain": "建物の中のコンピュータどうしを、比較的速い回線でつなぐネットワーク"
+    },
+    {
+      "name": "OSI",
+      "full": "Open Systems Interconnection",
+      "plain": "ISO が決めた、通信の機能を7つの層に分けたモデル(OSI参照モデル)"
+    },
+    {
+      "name": "ITU",
+      "full": "International Telecommunication Union",
+      "plain": "情報通信の国際標準を決める国際機関"
+    },
+    {
+      "name": "ISDN",
+      "full": "Integrated Service Digital Network",
+      "plain": "電話・FAX・データ通信などを1つにまとめるディジタル通信網。基本インターフェースは 2B+D"
+    },
+    {
       "name": "ADSL",
       "full": "Asymmetric Digital Subscriber Line",
-      "plain": "電話線を使う高速インターネット。上りと下りの速さが違う(下りが速い)。2024年にサービス終了"
+      "plain": "今ある電話回線で、最大数十 Mbps の高速通信をする技術。上りと下りの速さが違う。2024年にサービス終了。教科書の表は subscriber の r が抜けているが、先生が赤字で直したとおり Subscriber"
     },
     {
-      "name": "HTTP",
-      "full": "Hyper Text Transfer Protocol",
-      "plain": "Web ページをやりとりするときの約束事。Hyper Text は2語に分ける"
-    },
-    {
-      "name": "URL",
-      "full": "Uniform Resource Locator",
-      "plain": "Web ページなどの「住所」(資料外。講義資料に正式名称は無いが Moodle に出る)"
+      "name": "CATV",
+      "full": "CAble TeleVision (cable television)",
+      "plain": "電波ではなくケーブルでテレビ放送などを送るしくみ。インターネット接続もできる。スライドと Moodle の表記は CA・T・V が大文字"
     },
     {
       "name": "IP",
       "full": "Internet Protocol",
-      "plain": "ネットで相手を探して届けるための約束事(資料外。Moodle に出る)"
+      "plain": "IP アドレスをもとに、パケットを相手のネットワークやホストまで届ける(ルーティングする)約束事"
     },
     {
-      "name": "DHCP",
-      "full": "Dynamic Host Configuration Protocol",
-      "plain": "つないだ機器に IP アドレスを自動で配る仕組み(資料外。Moodle に出る)"
-    },
-    {
-      "name": "SMTP",
-      "full": "Simple Mail Transfer Protocol",
-      "plain": "メールを送るときの約束事。Transfer の綴りは HTTP と同じ(資料外。Moodle に出る)"
+      "name": "TCP",
+      "full": "Transmission Control Protocol(転送制御プロトコル)",
+      "plain": "IP の1つ上の層で使う約束事。コネクションを作ってから通信を始める"
     },
     {
       "name": "UDP",
       "full": "User Datagram Protocol",
-      "plain": "受け取りの確認をせず、素早くデータを送る約束事(資料外。Moodle に出る)"
+      "plain": "IP の1つ上の層で使う約束事。コネクションを作らずに通信を始める。受け取りの確認もしない"
+    },
+    {
+      "name": "DoS",
+      "full": "Denial of Service attack",
+      "plain": "サーバやネットワークに、わざと過剰な負荷をかけてサービスを止める攻撃。attack まで書く"
+    },
+    {
+      "name": "DNS",
+      "full": "Domain Name System",
+      "plain": "IP アドレスとドメイン名(例: example.com)の対応を管理するしくみ"
+    },
+    {
+      "name": "DHCP",
+      "full": "Dynamic Host Configuration Protocol",
+      "plain": "つないだ機器に、IP アドレスなどの必要な情報を自動で割り当てる約束事"
+    },
+    {
+      "name": "WWW",
+      "full": "World Wide Web",
+      "plain": "世界中のサーバの情報を、Web ページとして見られるしくみ"
+    },
+    {
+      "name": "URL",
+      "full": "Uniform Resource Locator",
+      "plain": "ネット上の情報の場所(住所)を示す書き方"
+    },
+    {
+      "name": "HTTP",
+      "full": "Hyper Text Transfer Protocol",
+      "plain": "Web ブラウザと Web サーバの間で、HTML などをやりとりする約束事。教科書の表は Transfer の s が抜けているが、正しくは Transfer"
+    },
+    {
+      "name": "HTML",
+      "full": "Hyper Text Markup Language",
+      "plain": "Web ページを作るための言語"
+    },
+    {
+      "name": "SMTP",
+      "full": "Simple Mail Transfer Protocol",
+      "plain": "電子メールを送るための約束事。TCP/IP ネットワークで標準的に使われる"
+    },
+    {
+      "name": "VoIP",
+      "full": "Voice over IP",
+      "plain": "IP ネットワークの上で音声データを送る技術(IP電話)"
+    },
+    {
+      "name": "SIP",
+      "full": "Session Initiation Protocol",
+      "plain": "VoIP で、接続(セッション)の開始・変更・終了を行う約束事"
     }
   ],
   "blocks": [
@@ -226,8 +291,8 @@
         "全部つなぐと (n-1)×n/2 本。交換機ありは n 本。1000台なら 499,500本と 1000本(499.5倍)"
       ],
       [
-        "資料外の略語",
-        "URL=Uniform Resource Locator / IP=Internet Protocol / DHCP=Dynamic Host Configuration Protocol / SMTP=Simple Mail Transfer Protocol / UDP=User Datagram Protocol"
+        "教科書の略語表",
+        "vii・viii頁の略語(ISO を除く20語)が用語集に載っている。スライドに正式名称が無いのは URL / IP / DHCP / SMTP / UDP など(Moodle には出る)"
       ]
     ],
     "write3": "紙に3行、友達に説明するつもりで書く(書かないと効果が下がる):「電話機が増えても、交換機があると回線が少なくてすむのはなぜか」"
