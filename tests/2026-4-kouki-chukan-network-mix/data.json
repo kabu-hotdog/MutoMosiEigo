@@ -7,10 +7,10 @@
   "subtitle": "第1〜5回を混ぜた総合21問",
   "eyebrow": "情報ネットワーク工学 ・ 後期中間試験(12/11) ・ ⑤",
   "description": "②と④のあとに。回をまたいで混ぜてある総合21問です。どの回の問題か分からない状態で解くので、本番に近い練習になります。範囲は第5回 p.31(7章の演習7.4)まで。",
-  "storageKey": "ine_chukan_mix_v2",
+  "storageKey": "ine_chukan_mix_v3",
   "pointsPerQ": 100,
   "katex": false,
-  "tip": "各問はタップで即採点&一行解説。略語の正式名称は【紙に書く→選ぶ】: 選択肢を見る前に紙に英語で書き、書いた綴りと1文字も違わない選択肢を選びます。1文字でも違えば最後の「どれにも一致しない」を選ぶこと(書かずに選ぶと効果が下がります)。解説の末尾の[A3]などは出題ヒント番号。間違えた問題は数問あけて、次の日にもう一度。",
+  "tip": "各問はタップで即採点&一行解説。略語の正式名称は【紙に書く→答えを見て自己採点】: まず紙に英語で書き、「答えを見る」を押して、書いた綴りと1文字も違わなければ○、違えば×を押します(書かずに押すと効果が下がります)。解説の末尾の[A3]などは出題ヒント番号。間違えた問題は数問あけて、次の日にもう一度。",
   "footer": "出典: 第1〜5回講義資料(森川先生)、Moodle セルフチェック第1〜5回の正解。(資料外)と付いた所は資料に無く、Moodle正解または一般知識で確定。",
   "sections": [
     {
@@ -56,18 +56,10 @@
           "note": "CSMA/CD(Collision Detection)→CSMA/CA(Collision Avoidance)(第5回 p.23、CSMA/CAは黄色ハイライト)。CとDの対応を逆にしない。[A27]"
         },
         {
-          "type": "single",
-          "q": "【紙に書く→選ぶ】ENIAC の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
-          "opts": [
-            "Electronic Numerical Integrater And Computer",
-            "Electronic Numerical Integrator And Computer",
-            "Electric Numerical Integrator And Computer",
-            "Electronic Numerical Interpreter And Computer",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Electronic Numerical Integrator And Computer",
-          "note": "Electronic Numerical Integrator And Computer(1946年 ペンシルバニア大。頭文字を太字で展開。第2回 p.6)。×Integrater は語尾違い、Electric・Interpreter は似た語。[C7][A2]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "ENIAC の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Electronic Numerical Integrator And Computer",
+          "note": "Electronic Numerical Integrator And Computer(1946年 ペンシルバニア大。頭文字を太字で展開。第2回 p.6)。×Integrater は語尾違い、Electric・Interpreter は似た語。[C7][A2]"
         },
         {
           "type": "single",

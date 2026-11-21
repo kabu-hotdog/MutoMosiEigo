@@ -7,10 +7,10 @@
   "subtitle": "Moodle セルフチェック50問を元の形のまま。授業の回ごとに並べ直し",
   "eyebrow": "情報ネットワーク工学 ・ 後期中間試験(12/11) ・ ②",
   "description": "第1〜5回の Moodle セルフチェック50問を、元の形のまま出します。授業の回ごとに、その回までに習った内容で解ける問題を集め直しました(Moodle の回の分け方とは違います)。まずここで穴を見つけてください。表面だけ変えた類題は④、全回を混ぜた総合ミックスは⑤です。範囲は第5回 p.31(7章の演習7.4)まで。",
-  "storageKey": "ine_chukan_selfcheck_v3",
+  "storageKey": "ine_chukan_selfcheck_v4",
   "pointsPerQ": 100,
   "katex": false,
-  "tip": "各問はタップで即採点&一行解説。略語の正式名称は【紙に書く→選ぶ】: 選択肢を見る前に紙に英語で書き、書いた綴りと1文字も違わない選択肢を選びます。1文字でも違えば最後の「どれにも一致しない」を選ぶこと(書かずに選ぶと効果が下がります)。解説の末尾の[A3]などは出題ヒント番号。間違えた問題は数問あけて、次の日にもう一度。",
+  "tip": "各問はタップで即採点&一行解説。略語の正式名称は【紙に書く→答えを見て自己採点】: まず紙に英語で書き、「答えを見る」を押して、書いた綴りと1文字も違わなければ○、違えば×を押します(書かずに押すと効果が下がります)。解説の末尾の[A3]などは出題ヒント番号。間違えた問題は数問あけて、次の日にもう一度。",
   "footer": "出典: 第1〜5回講義資料(森川先生)、Moodle セルフチェック第1〜5回の正解。(資料外)と付いた所は資料に無く、Moodle正解または一般知識で確定。",
   "sections": [
     {
@@ -19,46 +19,22 @@
       "title": "授業第1回の範囲(Moodle そのまま・11問)",
       "qs": [
         {
-          "type": "single",
-          "q": "【紙に書く→選ぶ】URL の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
-          "opts": [
-            "Uniform Resource Locater",
-            "Uniform Resource Locator",
-            "Universal Resource Locator",
-            "Uniform Resource Identifier",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Uniform Resource Locator",
-          "note": "Uniform Resource Locator(資料外・Moodle正解)。×Locater は語尾違い、Universal は似た語、Identifier は別の略語 URI。第1回 Q3。[A2]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "URL の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Uniform Resource Locator",
+          "note": "Uniform Resource Locator(資料外・Moodle正解)。×Locater は語尾違い、Universal は似た語、Identifier は別の略語 URI。第1回 Q3。[A2]"
         },
         {
-          "type": "single",
-          "q": "【紙に書く→選ぶ】IP の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
-          "opts": [
-            "Internet Protocal",
-            "Internal Protocol",
-            "Interconnection Protocol",
-            "Internet Protocol",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Internet Protocol",
-          "note": "Internet Protocol(資料外・Moodle正解)。×Protocal は綴り違い、Internal は似た語。第1回 Q4。[A2]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "IP の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Internet Protocol",
+          "note": "Internet Protocol(資料外・Moodle正解)。×Protocal は綴り違い、Internal は似た語。第1回 Q4。[A2]"
         },
         {
-          "type": "single",
-          "q": "【紙に書く→選ぶ】DHCP の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
-          "opts": [
-            "Dynamic Host Configuration Protocol",
-            "Dynamic Host Configuaration Protocol",
-            "Dynamic Hyper Configuration Protocol",
-            "Dynamic Host Control Protocol",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Dynamic Host Configuration Protocol",
-          "note": "Dynamic Host Configuration Protocol(資料外・Moodle正解)。×Configuaration は綴り違い、Hyper は HTTP の語との取り違え、Control は似た語。第1回 Q5。[A2]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "DHCP の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Dynamic Host Configuration Protocol",
+          "note": "Dynamic Host Configuration Protocol(資料外・Moodle正解)。×Configuaration は綴り違い、Hyper は HTTP の語との取り違え、Control は似た語。第1回 Q5。[A2]"
         },
         {
           "type": "numeric",
@@ -74,102 +50,46 @@
           "hint": "n(n-1)/2 を使う"
         },
         {
-          "type": "single",
-          "q": "【紙に書く→選ぶ】SMTP の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
-          "opts": [
-            "Simple Mail Transfar Protocol",
-            "Simple Mail Transport Protocol",
-            "Simple Mail Transfer Protocol",
-            "Standard Mail Transfer Protocol",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Simple Mail Transfer Protocol",
-          "note": "Simple Mail Transfer Protocol(資料外・Moodle正解)。Transfer は HTTP と同じ綴り。×Transfar は綴り違い、Transport は似た語。第1回 Q7。[A2]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "SMTP の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Simple Mail Transfer Protocol",
+          "note": "Simple Mail Transfer Protocol(資料外・Moodle正解)。Transfer は HTTP と同じ綴り。×Transfar は綴り違い、Transport は似た語。第1回 Q7。[A2]"
         },
         {
-          "type": "single",
-          "q": "【紙に書く→選ぶ】UDP の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
-          "opts": [
-            "User Datagram Protocal",
-            "Universal Datagram Protocol",
-            "User Datagram Protocol",
-            "User Data Protocol",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "User Datagram Protocol",
-          "note": "User Datagram Protocol(資料外・Moodle正解)。第4層でデータ単位は「データグラム」(第3回 p.14)。×Protocal は綴り違い、Datagram を Data にしない。第1回 Q9。[A2]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "UDP の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "User Datagram Protocol",
+          "note": "User Datagram Protocol(資料外・Moodle正解)。第4層でデータ単位は「データグラム」(第3回 p.14)。×Protocal は綴り違い、Datagram を Data にしない。第1回 Q9。[A2]"
         },
         {
-          "type": "single",
-          "q": "【紙に書く→選ぶ】LTE の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
-          "opts": [
-            "Long Term Evolution",
-            "Long Time Evolution",
-            "Long Term Evoluton",
-            "Long Term Evolution Advanced",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Long Term Evolution",
-          "note": "Long Term Evolution(資料外・Moodle正解)。第3.9世代、多元接続はOFDMA(第2回 p.4)。Time は似た語、×Evoluton は綴り違い、Advanced は第4世代 LTE-Advanced の語。第5回 Q2。[A4][A2]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "LTE の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Long Term Evolution",
+          "note": "Long Term Evolution(資料外・Moodle正解)。第3.9世代、多元接続はOFDMA(第2回 p.4)。Time は似た語、×Evoluton は綴り違い、Advanced は第4世代 LTE-Advanced の語。第5回 Q2。[A4][A2]"
         },
         {
-          "type": "single",
-          "q": "【紙に書く→選ぶ】TCP の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
-          "opts": [
-            "Transmision Control Protocol",
-            "Transport Control Protocol",
-            "Transmission Control Protocol",
-            "Transfer Control Protocol",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Transmission Control Protocol",
-          "note": "Transmission Control Protocol(資料外・Moodle正解)。第4層でデータ単位はセグメント(第3回 p.14)。×Transmision は綴り違い、Transport・Transfer は似た語。第5回 Q4。[A2]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "TCP の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Transmission Control Protocol",
+          "note": "Transmission Control Protocol(資料外・Moodle正解)。第4層でデータ単位はセグメント(第3回 p.14)。×Transmision は綴り違い、Transport・Transfer は似た語。第5回 Q4。[A2]"
         },
         {
-          "type": "single",
-          "q": "【紙に書く→選ぶ】CATV の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
-          "opts": [
-            "CAble TeleVision",
-            "Community Antenna Television",
-            "Cable Television",
-            "CAble Television",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "CAble TeleVision",
-          "note": "CAble TeleVision(第5回 p.12。CA・T・V が大文字。Moodleの正解表記)。Community Antenna Television はMoodleで不正解、小文字の cable/Television 版も一致しない。第5回 Q5(間違えた問題)。[A23][A2]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "CATV の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "CAble TeleVision",
+          "note": "CAble TeleVision(第5回 p.12。CA・T・V が大文字。Moodleの正解表記)。Community Antenna Television はMoodleで不正解、小文字の cable/Television 版も一致しない。第5回 Q5(間違えた問題)。[A23][A2]"
         },
         {
-          "type": "single",
-          "q": "【紙に書く→選ぶ】ITU の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
-          "opts": [
-            "International Telecommunications Union",
-            "International Telecommunication Unit",
-            "Internet Telecommunication Union",
-            "International Telecommunication Union",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "International Telecommunication Union",
-          "note": "International Telecommunication Union(資料外・Moodle正解)。Telecommunication は単数形。×Telecommunications は複数形、Unit は似た語。第5回 Q6。[A2]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "ITU の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "International Telecommunication Union",
+          "note": "International Telecommunication Union(資料外・Moodle正解)。Telecommunication は単数形。×Telecommunications は複数形、Unit は似た語。第5回 Q6。[A2]"
         },
         {
-          "type": "single",
-          "q": "【紙に書く→選ぶ】DoS の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
-          "opts": [
-            "Denial of Service",
-            "Denial of Service attack",
-            "Denial of Servise attack",
-            "Distributed Denial of Service attack",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Denial of Service attack",
-          "note": "Denial of Service attack(資料外。Moodleは attack 付きが正解で、付けないと不正解)。×Servise は綴り違い、Distributed は DDoS の語。第5回 Q7(間違えた問題)。[C8][A2]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "DoS の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Denial of Service attack",
+          "note": "Denial of Service attack(資料外。Moodleは attack 付きが正解で、付けないと不正解)。×Servise は綴り違い、Distributed は DDoS の語。第5回 Q7(間違えた問題)。[C8][A2]"
         }
       ]
     },
@@ -218,18 +138,10 @@
           "note": "第3世代=CDMA(W-CDMA・CDMA2000)。OFDMAは第3.9世代、TDMAは第2世代、FDMAは第1世代(第2回 p.4 表1.1)。[A4]"
         },
         {
-          "type": "single",
-          "q": "【紙に書く→選ぶ】OFDMA の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
-          "opts": [
-            "Orthogonal Frequency Division Multiple Access",
-            "Orthogonal Frequency Division Multiple Acess",
-            "Orthogonal Frequency Division Multiplexing Access",
-            "Optical Frequency Division Multiple Access",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Orthogonal Frequency Division Multiple Access",
-          "note": "Orthogonal Frequency Division Multiple Access(直交周波数分割多元接続)。Orthogonal=直交、末尾は Multiple Access(第2回 p.5)。×Acess は綴り違い、Multiplexing は OFDM の語。第1回 Q10。[A3]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "OFDMA の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Orthogonal Frequency Division Multiple Access",
+          "note": "Orthogonal Frequency Division Multiple Access(直交周波数分割多元接続)。Orthogonal=直交、末尾は Multiple Access(第2回 p.5)。×Acess は綴り違い、Multiplexing は OFDM の語。第1回 Q10。[A3]"
         },
         {
           "type": "single",
@@ -349,18 +261,10 @@
           "note": "ディジタル変調=ASK・FSK・PSK・QAM(第3回 p.5)。AMIはベースバンド方式(符号化)。[A30]"
         },
         {
-          "type": "single",
-          "q": "【紙に書く→選ぶ】NRZ の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
-          "opts": [
-            "Non Retrun to Zero",
-            "Return to Zero",
-            "Normal Return to Zero",
-            "Non Return to Zero",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Non Return to Zero",
-          "note": "Non Return to Zero(スライドは Non-Return to Zero。Moodleは半角スペース表記が正解。第3回 p.5)。Return to Zero は RZ、×Retrun は綴り違い。第2回 Q9。[A30][A2]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "NRZ の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Non Return to Zero",
+          "note": "Non Return to Zero(スライドは Non-Return to Zero。Moodleは半角スペース表記が正解。第3回 p.5)。Return to Zero は RZ、×Retrun は綴り違い。第2回 Q9。[A30][A2]"
         },
         {
           "type": "multi",
@@ -393,18 +297,10 @@
           "note": "GSM・PDC・IS-95は第2世代(TDMA/CDMA)。W-CDMAは第3世代、LTEは第3.9世代(第2回 p.4 表1.1)。[A4]"
         },
         {
-          "type": "single",
-          "q": "【紙に書く→選ぶ】FDMA の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
-          "opts": [
-            "Frequency Division Multiple Acces",
-            "Time Division Multiple Access",
-            "Frequency Division Multiple Access",
-            "Frequency Division Multiplexing Access",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Frequency Division Multiple Access",
-          "note": "Frequency Division Multiple Access(周波数分割多元接続。第2回 p.5。Moodleは各語頭大文字)。Time は TDMA、×Acces は綴り違い。第5回 Q3。[A3][A2]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "FDMA の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Frequency Division Multiple Access",
+          "note": "Frequency Division Multiple Access(周波数分割多元接続。第2回 p.5。Moodleは各語頭大文字)。Time は TDMA、×Acces は綴り違い。第5回 Q3。[A3][A2]"
         },
         {
           "type": "single",
@@ -420,18 +316,10 @@
           "note": "1969年 ARPANET(アメリカ)がインターネットの始まり(第2回 p.7 赤字)。WIDEは1988年の日本のプロジェクト、CERNはMosaic(WWWブラウザ)の所属。[A5]"
         },
         {
-          "type": "single",
-          "q": "【紙に書く→選ぶ】TDMA の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
-          "opts": [
-            "Time Division Multiple Acces",
-            "Time Division Multiple Access",
-            "Time Divisional Multiple Access",
-            "Code Division Multiple Access",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Time Division Multiple Access",
-          "note": "Time Division Multiple Access(時分割多元接続。第2回 p.5)。Code は CDMA、×Acces は綴り違い、Divisional は語尾違い。第5回 Q10。[A3][A2]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "TDMA の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Time Division Multiple Access",
+          "note": "Time Division Multiple Access(時分割多元接続。第2回 p.5)。Code は CDMA、×Acces は綴り違い、Divisional は語尾違い。第5回 Q10。[A3][A2]"
         },
         {
           "type": "single",
@@ -631,18 +519,10 @@
           "note": "第4層(トランスポート)と第5層(セッション)の間に線がある。下位=第1〜4層、上位=第5〜7層(第4回 p.4-5)。※確信度低め→06に類題あり。[A13]"
         },
         {
-          "type": "single",
-          "q": "【紙に書く→選ぶ】ONU の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
-          "opts": [
-            "Optic Network Unit",
-            "Optical Network Unit",
-            "Optical Network Unite",
-            "Optical Network User",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Optical Network Unit",
-          "note": "Optical Network Unit(光回線終端装置。第4回 p.14、第5回 p.3)。×Optic・Unite は綴り違い、User は似た語。第4回 Q3。[A24][A2]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "ONU の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Optical Network Unit",
+          "note": "Optical Network Unit(光回線終端装置。第4回 p.14、第5回 p.3)。×Optic・Unite は綴り違い、User は似た語。第4回 Q3。[A24][A2]"
         },
         {
           "type": "multi",
@@ -661,32 +541,16 @@
           "note": "データリンク制御方式=ベーシック手順・HDLC手順(第4回 p.15)。ONUは装置、ADSL・ISDNはアクセスネットワークの方式。[A20]"
         },
         {
-          "type": "single",
-          "q": "【紙に書く→選ぶ】「カプセル化が行われるほど、[ ](送信すべきデータ以外の制御用データ)が大きくなる。」の[ ]に入る全角カタカナ(選択肢を見る前に紙に書き、1文字も違わない選択肢を選ぶ。違えば最後を選ぶ)",
-          "opts": [
-            "オーバヘッド",
-            "オーバーヘッド",
-            "オーバーヘッダ",
-            "ペイロード",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "オーバーヘッド",
-          "note": "オーバーヘッド(長音あり。Moodleは「オーバヘッド」を不正解にした)。カプセル化で各層のヘッダ・トレイラが付くと増える(第4回 p.11 赤字・下線)。ペイロードは逆で本体データ側。第4回 Q5(間違えた問題)。[A19]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "「カプセル化が行われるほど、[ ](送信すべきデータ以外の制御用データ)が大きくなる。」の[ ]に入る全角カタカナ<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "オーバーヘッド",
+          "note": "オーバーヘッド(長音あり。Moodleは「オーバヘッド」を不正解にした)。カプセル化で各層のヘッダ・トレイラが付くと増える(第4回 p.11 赤字・下線)。ペイロードは逆で本体データ側。第4回 Q5(間違えた問題)。[A19]"
         },
         {
-          "type": "single",
-          "q": "【紙に書く→選ぶ】MAC(MACアドレスの MAC) の正式名称は?選択肢を見る前に紙に英語で書く。書いた綴りと1文字も違わない選択肢を選ぶ(違えば最後を選ぶ)。",
-          "opts": [
-            "Medium Access Control",
-            "Media Acces Control",
-            "Machine Access Control",
-            "Media Access Control",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Media Access Control",
-          "note": "Media Access Control(第5回 p.24。Moodleもこの綴りが正解)。Medium とは書かない。×Acces は綴り違い、Machine は似た語。第4回 Q7。[A18][A2]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "MAC(MACアドレスの MAC) の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Media Access Control",
+          "note": "Media Access Control(第5回 p.24。Moodleもこの綴りが正解)。Medium とは書かない。×Acces は綴り違い、Machine は似た語。第4回 Q7。[A18][A2]"
         },
         {
           "type": "multi",

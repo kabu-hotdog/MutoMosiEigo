@@ -100,6 +100,10 @@ footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--line);color:v
 .fc-hint{font-size:.8rem;color:var(--dim);margin-top:10px}
 .fc-back{font-size:.98rem;color:var(--ink);line-height:1.85}
 .fc-actions{display:flex;gap:8px;margin-top:12px}
+.sg-ans{margin-top:12px;padding:10px 14px;background:var(--card2);border:1px solid var(--line);border-radius:10px}
+.sg-lab{font-size:.72rem;color:var(--muted);font-weight:700}
+.sg-val{font-size:1.05rem;font-weight:700;margin-top:2px;overflow-wrap:anywhere}
+.sg-ask{margin-top:12px;font-size:.9rem;color:var(--muted)}
 .q.correct .fc-face{border-color:var(--teal-d);background:rgba(70,214,196,.06)}
 .q.hash-highlight{outline:2px solid var(--teal);outline-offset:3px;transition:outline-color .6s}
 .q-ref{margin:6px 0 2px;font-size:.82rem}
@@ -321,10 +325,26 @@ function buildQuestion(q, qi, key, secId) {
     </div>`;
   }
 
-  if (q.type !== 'numeric' && q.type !== 'flashcard') {
+  if (q.type === 'selfgrade') {
+    const shown = !!_state[key + '_shown'] || _state[key] !== undefined;
+    if (!shown) {
+      inner += `<div class="fc-actions"><button class="btn" onclick="sgShow('${key}','${secId}')">書いた → 答えを見る</button></div>`;
+    } else {
+      inner += `<div class="sg-ans"><div class="sg-lab">正解</div><div class="sg-val">${q.answer}</div></div>`;
+      if (_state[key] === undefined) {
+        inner += `<div class="sg-ask">自分の答えは、綴りまで1文字も違わず合っていた?</div><div class="fc-actions"><button class="btn" onclick="sgMark('${key}','${secId}',1)">○ 合ってた</button><button class="btn ghost" onclick="sgMark('${key}','${secId}',-1)">× 違った</button></div>`;
+      }
+    }
+  }
+
+  if (q.type !== 'numeric' && q.type !== 'flashcard' && q.type !== 'selfgrade') {
     const fbShow = _state[key] !== undefined ? 'show' : '';
     const ok = _state[key] === 1;
     inner += `<div class="fb ${fbShow}"><span class="verdict ${ok ? 'g' : 'b'}">${ok ? '✓ 正解' : '✗ 不正解'}</span>${q.note ? `<div class="note">${q.note}</div>` : ''}</div>`;
+  }
+  if (q.type === 'selfgrade' && _state[key] !== undefined) {
+    const ok = _state[key] === 1;
+    inner += `<div class="fb show"><span class="verdict ${ok ? 'g' : 'b'}">${ok ? '✓ 合ってた' : '✗ 違った(正しい綴りを紙にもう一度書く)'}</span>${q.note ? `<div class="note">${q.note}</div>` : ''}</div>`;
   }
   inner += `</div></div>`;
   div.innerHTML = inner;
@@ -459,6 +479,15 @@ window.numHint = function (key) {
 window.numReveal = function (key, secId) {
   _state[key + '_revealed'] = 1;
   save(); refreshQ(key, secId);
+};
+
+window.sgShow = function (key, secId) {
+  _state[key + '_shown'] = 1; save(); refreshQ(key, secId);
+};
+window.sgMark = function (key, secId, val) {
+  if (_state[key] !== undefined) return;
+  if (val === 1) award(key);
+  _state[key] = val; save(); refreshQ(key, secId);
 };
 
 window.fcFlip = function (key) {

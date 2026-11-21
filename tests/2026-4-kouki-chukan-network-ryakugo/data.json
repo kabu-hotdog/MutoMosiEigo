@@ -1,16 +1,16 @@
 {
   "title": "情報ネットワーク工学 ・ ① 略語の正式名称",
-  "subtitle": "書いてから選ぶ。本番は「略語→英語の正式名称を綴りまで記述」5問5分",
+  "subtitle": "紙に書いてから自己採点。本番は「略語→英語の正式名称を綴りまで記述」5問5分",
   "eyebrow": "情報ネットワーク工学 ・ 後期中間試験",
   "description": "範囲(第1〜5回)の略語64語を、略語→英語の正式名称の形で練習します。まず「教科書の略語表」20語(第1回で覚える。教科書 vii・viii頁)、次に回ごとの略語(第2〜5回)、最後に「意味」の順。各回の学習ページの用語集に載っている語が、その回の略語セットで出ます。1問ずつ即採点と解説が出ます。ISOは範囲外、参考扱いの12語(LW・MW・SW・HF・VHF・UHF・MII・IIN・RaaS・eKYC・ENIAC・UNIVAC I)は絞るため出しません。",
   "year": 2026,
   "grade": 4,
   "exam": "後期中間試験",
   "subject": "情報ネットワーク工学",
-  "storageKey": "ine_chukan_ryakugo_v3",
+  "storageKey": "ine_chukan_ryakugo_v4",
   "pointsPerQ": 100,
   "katex": false,
-  "tip": "<b>必ず先に紙へ手書き</b>してから選択肢を見る(書かずに見ると効果が下がります。本番は手書きの綴りが採点されるため)。選択肢と1文字でも違ったら「どれにも一致しない」を選ぶ。間違えた略語は解説に正しい綴りが出るので、もう一度紙に書き直してから次へ。1セット=5問=5分の目安。",
+  "tip": "<b>必ず先に紙へ手書き</b>してから「答えを見る」を押す(書かずに見ると効果が下がります。本番は手書きの綴りが採点されるため)。正解と1文字でも違ったら「× 違った」を押し、正しい綴りをもう一度紙に書き直してから次へ。1セット=5問=5分の目安。",
   "footer": "<b>範囲の略語一覧(元は70語。ISOは範囲外、参考扱いの12語は出題から外した。一覧には残してある)</b>　略語=正式名称(出典) / ※=正式名称が資料に無くMoodleの正解を採用 / ⚠️=要確認<br><b>第1回</b> ADSL=Asymmetric Digital Subscriber Line(第1回 p.8・第5回 p.8) / HTTP=Hyper Text Transfer Protocol(第1回 p.8・第3回 p.14) / URL=Uniform Resource Locator(第1回 セルフチェック Q3)※ / IP=Internet Protocol(第1回 セルフチェック Q4)※ / DHCP=Dynamic Host Configuration Protocol(第1回 セルフチェック Q5)※ / SMTP=Simple Mail Transfer Protocol(第1回 セルフチェック Q7)※ / UDP=User Datagram Protocol(第1回 セルフチェック Q9)※<br><b>第2回</b> OFDMA=Orthogonal Frequency Division Multiple Access(第2回 p.4・p.5) / FDMA=Frequency Division Multiple Access(第2回 p.5) / TDMA=Time Division Multiple Access(第2回 p.5) / CDMA=Code Division Multiple Access(第2回 p.5) / OFDM=Orthogonal Frequency-Division Multiplexing(第2回 p.5) / ENIAC=Electronic Numerical Integrator And Computer(第2回 p.6) / UNIVAC I=UNIVersal Automatic Computer I(第2回 p.6)⚠️ / SINET=Science Information NETwork(第2回 p.7) / FTTH=Fiber To The Home(第2回 p.8・第5回 p.11) / AM=Amplitude Modulation(第2回 p.14) / FM=Frequency Modulation(第2回 p.14) / PM=Phase Modulation(第2回 p.14) / LW=Long Wave(第2回 p.15・第3回 p.3) / MW=Medium Wave(第2回 p.15・p.16) / SW=Short Wave(第2回 p.15・第3回 p.3) / HF=High Frequency(第2回 p.15・第3回 p.3) / VHF=Very High Frequency(第2回 p.15・p.16) / UHF=Ultra High Frequency(第2回 p.15・p.16) / LTE=Long Term Evolution(第2回 p.4)※<br><b>第3回</b> NRZ=Non Return to Zero(第3回 p.5) / RZ=Return to Zero(第3回 p.5) / AMI=Alternate Mark Inversion(第3回 p.5) / ASK=Amplitude Shift Keying(第3回 p.5) / FSK=Frequency Shift Keying(第3回 p.5)※ / PSK=Phase Shift Keying(第3回 p.5)※ / QAM=Quadrature Amplitude Modulation(第3回 p.5・p.6) / BER=Bit Error Rate(第3回 p.6) / FDM=Frequency Division Multiplexing(第3回 p.7) / TDM=Time Division Multiplexing(第3回 p.7) / CDM=Code Division Multiplexing(第3回 p.7) / WDM=Wave Division Multiplexing(第3回 p.7) / OSI=Open Systems Interconnection(第3回 p.12・第4回 p.3) / TCP=Transmission Control Protocol(第3回 p.14)※<br><b>第4回</b> FQDN=Fully Qualified Domain Name(第4回 p.9) / SCP=Session Control Protocol(第4回 p.10) / DSU=Digital Service Unit(第4回 p.14) / ONU=Optical Network Unit(第4回 p.14) / STB=Set-Top Box(第4回 p.14) / HDLC=High-level Data Link Control(第4回 p.15・第5回 p.4・p.5) / RaaS=Ransomware as a Service(第4回 p.19) / eKYC=electronic Know Your Customer(第4回 p.23) / MAC=Media Access Control(第5回 p.24)<br><b>第5回</b> PPP=Point to Point Protocol(第5回 p.2) / CRC=Cyclic Redundancy Check(第5回 p.5) / MII=Major Industry Identifier(第5回 p.6) / IIN=Issuer Identifier Number(第5回 p.6) / ISDN=Integrated Service Digital Network(第5回 p.7) / EDI=Electronic Data Interchange(第5回 p.7) / INS=Information Network System(第5回 p.7) / SS=Single Star(第5回 p.11) / PDS=Passive Double Star(第5回 p.11) / PON=Passive Optical Network(第5回 p.11) / CATV=CAble TeleVision(第5回 p.12) / UTP=Unshielded Twisted Pair(第5回 p.18) / STP=Shielded Twisted Pair(第5回 p.18) / FDDI=Fiber Distributed Data Interface(第5回 p.22) / CSMA=Carrier Sense Multiple Access(第5回 p.23) / CSMA/CD=Carrier Sense Multiple Access / Collision Detection(第5回 p.23)⚠️ / CSMA/CA=Carrier Sense Multiple Access / Collision Avoidance(第5回 p.23)⚠️ / WEP=Wired Equivalent Privacy(第5回 p.30) / WPA=Wi-Fi Protected Access(第5回 p.30) / ITU=International Telecommunication Union(第5回 セルフチェック Q6)※ / DoS=Denial of Service attack(第5回 セルフチェック Q7)※<br>出典の元は教員配布の講義資料(第1〜5回)と Moodle セルフチェックの正解。綴りは Moodle で正解になった表記を優先。",
   "sections": [
     {
@@ -19,74 +19,34 @@
       "title": "教科書の略語表 セット1/14(5問5分): LTE・LAN・OSI・ITU・ISDN",
       "qs": [
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>LTE</b> の正式名称は?",
-          "opts": [
-            "Long Term Evolusion",
-            "Long Term Evolution",
-            "Long Wave",
-            "Long Time Evolution",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Long Term Evolution",
-          "note": "<b>正解: Long Term Evolution</b>　×Long Term Evolusion ×Long Time Evolution ×Long Wave(LWの名称)<br>LTE = 第3.9世代の携帯電話の通信方式(多元接続はOFDMA)。 覚え方: L・T・E = Long・Term・Evolution。 出典: 第2回 p.4(第1回 セルフチェック Q8・第5回 Q2、正式名称は資料外・Moodle正解)(正式名称は資料外)。 [A2][A4]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>LTE</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Long Term Evolution",
+          "note": "<b>正解: Long Term Evolution</b>　×Long Term Evolusion ×Long Time Evolution ×Long Wave(LWの名称)<br>LTE = 第3.9世代の携帯電話の通信方式(多元接続はOFDMA)。 覚え方: L・T・E = Long・Term・Evolution。 出典: 第2回 p.4(第1回 セルフチェック Q8・第5回 Q2、正式名称は資料外・Moodle正解)(正式名称は資料外)。 [A2][A4]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>LAN</b> の正式名称は?",
-          "opts": [
-            "Local Aera Network",
-            "Local Area Network",
-            "Wide Area Network",
-            "Local Area Netwrok",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Local Area Network",
-          "note": "<b>正解: Local Area Network</b>　×Local Aera Network ×Wide Area Network ×Local Area Netwrok<br>LAN = 建物の中のコンピュータどうしを、比較的速い回線でつなぐネットワーク。 覚え方: L・A・N = Local・Area・Network(ローカル=狭い範囲)。 出典: 教科書 vii・viii頁の略語表(スライドに正式名称は無い)。",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>LAN</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Local Area Network",
+          "note": "<b>正解: Local Area Network</b>　×Local Aera Network ×Wide Area Network ×Local Area Netwrok<br>LAN = 建物の中のコンピュータどうしを、比較的速い回線でつなぐネットワーク。 覚え方: L・A・N = Local・Area・Network(ローカル=狭い範囲)。 出典: 教科書 vii・viii頁の略語表(スライドに正式名称は無い)。"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>OSI</b> の正式名称は?",
-          "opts": [
-            "Transmission Control Protocol",
-            "Open System Interconnection",
-            "Open Systems Interconnection",
-            "Systems Open Interconnection",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Open Systems Interconnection",
-          "note": "<b>正解: Open Systems Interconnection</b>　×Open System Interconnection ×Systems Open Interconnection(語順違い) ×Transmission Control Protocol(TCPの名称)<br>OSI = 開放型システム間相互接続。各層の名称と働きを正確に憶える参照モデル。Systems は複数形(s が付く)。 覚え方: O・S・I = Open・Systems・Interconnection。 出典: 第3回 p.12・第4回 p.3。 [A12]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>OSI</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Open Systems Interconnection",
+          "note": "<b>正解: Open Systems Interconnection</b>　×Open System Interconnection ×Systems Open Interconnection(語順違い) ×Transmission Control Protocol(TCPの名称)<br>OSI = 開放型システム間相互接続。各層の名称と働きを正確に憶える参照モデル。Systems は複数形(s が付く)。 覚え方: O・S・I = Open・Systems・Interconnection。 出典: 第3回 p.12・第4回 p.3。 [A12]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>ITU</b> の正式名称は?",
-          "opts": [
-            "Internatinal Telecommunication Union",
-            "Denial of Service attack",
-            "International Telecommunications Union",
-            "International Telecommunication Union",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "International Telecommunication Union",
-          "note": "<b>正解: International Telecommunication Union</b>　×International Telecommunications Union ×Internatinal Telecommunication Union ×Denial of Service attack(DoSの名称)<br>ITU = 国際電気通信連合。Telecommunication は複数形にしない。 覚え方: I・T・U = International・Telecommunication・Union。 出典: 第5回 セルフチェック Q6(資料外・Moodle正解)(正式名称は資料外)。 [A2]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>ITU</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "International Telecommunication Union",
+          "note": "<b>正解: International Telecommunication Union</b>　×International Telecommunications Union ×Internatinal Telecommunication Union ×Denial of Service attack(DoSの名称)<br>ITU = 国際電気通信連合。Telecommunication は複数形にしない。 覚え方: I・T・U = International・Telecommunication・Union。 出典: 第5回 セルフチェック Q6(資料外・Moodle正解)(正式名称は資料外)。 [A2]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>ISDN</b> の正式名称は?",
-          "opts": [
-            "Intergrated Service Digital Network",
-            "Integrated Service Digital Network",
-            "Digital Service Unit",
-            "Integrated Digital Service Network",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Integrated Service Digital Network",
-          "note": "<b>正解: Integrated Service Digital Network</b>　×Intergrated Service Digital Network ×Integrated Digital Service Network(語順違い) ×Digital Service Unit(DSUの名称)<br>ISDN = 音声・データ・画像を1本の回線で扱うディジタルネットワーク(基本インターフェースは2B+D)。Service は単数形。 覚え方: I・S・D・N = Integrated・Service・Digital・Network。 出典: 第5回 p.7。 [A21]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>ISDN</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Integrated Service Digital Network",
+          "note": "<b>正解: Integrated Service Digital Network</b>　×Intergrated Service Digital Network ×Integrated Digital Service Network(語順違い) ×Digital Service Unit(DSUの名称)<br>ISDN = 音声・データ・画像を1本の回線で扱うディジタルネットワーク(基本インターフェースは2B+D)。Service は単数形。 覚え方: I・S・D・N = Integrated・Service・Digital・Network。 出典: 第5回 p.7。 [A21]"
         }
       ]
     },
@@ -96,74 +56,34 @@
       "title": "教科書の略語表 セット2/14(5問5分): ADSL・CATV・IP・TCP・UDP",
       "qs": [
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>ADSL</b> の正式名称は?",
-          "opts": [
-            "Asymmetric Digital Subscriber Line",
-            "Asymmetric Subscriber Digital Line",
-            "Digital Service Unit",
-            "Asymmetric Digital Subsciber Line",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Asymmetric Digital Subscriber Line",
-          "note": "<b>正解: Asymmetric Digital Subscriber Line</b>　×Asymmetric Digital Subsciber Line ×Asymmetric Subscriber Digital Line(語順違い) ×Digital Service Unit(DSUの名称)<br>ADSL = 既存の電話回線を使う高速通信。局からの距離が遠いほど速度が下がる。スライド赤字の訂正: Subscriber の r を落とさない。 覚え方: A・D・S・L = Asymmetric・Digital・Subscriber・Line。 出典: 第1回 p.8・第5回 p.8。 [A1][A2][A22]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>ADSL</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Asymmetric Digital Subscriber Line",
+          "note": "<b>正解: Asymmetric Digital Subscriber Line</b>　×Asymmetric Digital Subsciber Line ×Asymmetric Subscriber Digital Line(語順違い) ×Digital Service Unit(DSUの名称)<br>ADSL = 既存の電話回線を使う高速通信。局からの距離が遠いほど速度が下がる。スライド赤字の訂正: Subscriber の r を落とさない。 覚え方: A・D・S・L = Asymmetric・Digital・Subscriber・Line。 出典: 第1回 p.8・第5回 p.8。 [A1][A2][A22]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>CATV</b> の正式名称は?",
-          "opts": [
-            "CAble TeleVision",
-            "Community Antenna Television",
-            "CAble TeleVison",
-            "CAbel TeleVision",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "CAble TeleVision",
-          "note": "<b>正解: CAble TeleVision</b>　×Community Antenna Television(Moodleで不正解の名称) ×CAble TeleVison ×CAbel TeleVision<br>CATV = ケーブルテレビの回線を使うインターネット接続(装置はSTB)。★Moodleで間違えた問題。「Community Antenna Television」は Moodle で不正解。CA・T・V が大文字。 覚え方: CA(ble)・T(ele)・V(ision) と CA・T・V を大文字。 出典: 第5回 p.12(第5回 セルフチェック Q5)。 [A2][A23]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>CATV</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "CAble TeleVision",
+          "note": "<b>正解: CAble TeleVision</b>　×Community Antenna Television(Moodleで不正解の名称) ×CAble TeleVison ×CAbel TeleVision<br>CATV = ケーブルテレビの回線を使うインターネット接続(装置はSTB)。★Moodleで間違えた問題。「Community Antenna Television」は Moodle で不正解。CA・T・V が大文字。 覚え方: CA(ble)・T(ele)・V(ision) と CA・T・V を大文字。 出典: 第5回 p.12(第5回 セルフチェック Q5)。 [A2][A23]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>IP</b> の正式名称は?",
-          "opts": [
-            "Intenet Protocol",
-            "Internet Protocol",
-            "Internet Protocal",
-            "Dynamic Host Configuration Protocol",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Internet Protocol",
-          "note": "<b>正解: Internet Protocol</b>　×Internet Protocal ×Intenet Protocol ×Dynamic Host Configuration Protocol(DHCPの名称)<br>IP = 第3層(ネットワーク層)でアドレスをもとに経路選択をするプロトコル。 覚え方: I・P = Internet・Protocol。 出典: 第1回 セルフチェック Q4(資料外・Moodle正解)・第3回 p.14(正式名称は資料外)。 [A2][A13]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>IP</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Internet Protocol",
+          "note": "<b>正解: Internet Protocol</b>　×Internet Protocal ×Intenet Protocol ×Dynamic Host Configuration Protocol(DHCPの名称)<br>IP = 第3層(ネットワーク層)でアドレスをもとに経路選択をするプロトコル。 覚え方: I・P = Internet・Protocol。 出典: 第1回 セルフチェック Q4(資料外・Moodle正解)・第3回 p.14(正式名称は資料外)。 [A2][A13]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>TCP</b> の正式名称は?",
-          "opts": [
-            "Transmission Protocol Control",
-            "Session Control Protocol",
-            "Transmision Control Protocol",
-            "Transmission Control Protocol",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Transmission Control Protocol",
-          "note": "<b>正解: Transmission Control Protocol</b>　×Transmision Control Protocol ×Transmission Protocol Control(語順違い) ×Session Control Protocol(SCPの名称)<br>TCP = 第4層(トランスポート層)のプロトコルで、データの単位は「セグメント」。 覚え方: T・C・P = Transmission・Control・Protocol。 出典: 第3回 p.14(第5回 セルフチェック Q4、正式名称は資料外・Moodle正解)(正式名称は資料外)。 [A2][A13]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>TCP</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Transmission Control Protocol",
+          "note": "<b>正解: Transmission Control Protocol</b>　×Transmision Control Protocol ×Transmission Protocol Control(語順違い) ×Session Control Protocol(SCPの名称)<br>TCP = 第4層(トランスポート層)のプロトコルで、データの単位は「セグメント」。 覚え方: T・C・P = Transmission・Control・Protocol。 出典: 第3回 p.14(第5回 セルフチェック Q4、正式名称は資料外・Moodle正解)(正式名称は資料外)。 [A2][A13]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>UDP</b> の正式名称は?",
-          "opts": [
-            "Usar Datagram Protocol",
-            "User Datagram Protocol",
-            "User Datagramm Protocol",
-            "Transmission Control Protocol",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "User Datagram Protocol",
-          "note": "<b>正解: User Datagram Protocol</b>　×User Datagramm Protocol ×Usar Datagram Protocol ×Transmission Control Protocol(TCPの名称)<br>UDP = 第4層(トランスポート層)のプロトコルで、データの単位は「データグラム」。 覚え方: U・D・P = User・Datagram・Protocol。 出典: 第1回 セルフチェック Q9(資料外・Moodle正解)・第3回 p.14(正式名称は資料外)。 [A2][A13]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>UDP</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "User Datagram Protocol",
+          "note": "<b>正解: User Datagram Protocol</b>　×User Datagramm Protocol ×Usar Datagram Protocol ×Transmission Control Protocol(TCPの名称)<br>UDP = 第4層(トランスポート層)のプロトコルで、データの単位は「データグラム」。 覚え方: U・D・P = User・Datagram・Protocol。 出典: 第1回 セルフチェック Q9(資料外・Moodle正解)・第3回 p.14(正式名称は資料外)。 [A2][A13]"
         }
       ]
     },
@@ -173,74 +93,34 @@
       "title": "教科書の略語表 セット3/14(5問5分): DoS・DNS・DHCP・WWW・URL",
       "qs": [
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>DoS</b> の正式名称は?",
-          "opts": [
-            "Ransomware as a Service",
-            "Denial of Service attack",
-            "Denail of Service attack",
-            "Denial of Service",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Denial of Service attack",
-          "note": "<b>正解: Denial of Service attack</b>　×Denial of Service ×Denail of Service attack ×Ransomware as a Service(RaaSの名称)<br>DoS = サービスを使えなくして停止させる攻撃。★Moodleで間違えた問題。Moodle の正解は attack が付いた形(付けないと不正解)。 覚え方: Denial + of + Service + attack(DoS の o は of)。 出典: 第5回 セルフチェック Q7(資料外・Moodle正解)・DDoS は第4回 p.22(正式名称は資料外)。 [A2][C8]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>DoS</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Denial of Service attack",
+          "note": "<b>正解: Denial of Service attack</b>　×Denial of Service ×Denail of Service attack ×Ransomware as a Service(RaaSの名称)<br>DoS = サービスを使えなくして停止させる攻撃。★Moodleで間違えた問題。Moodle の正解は attack が付いた形(付けないと不正解)。 覚え方: Denial + of + Service + attack(DoS の o は of)。 出典: 第5回 セルフチェック Q7(資料外・Moodle正解)・DDoS は第4回 p.22(正式名称は資料外)。 [A2][C8]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>DNS</b> の正式名称は?",
-          "opts": [
-            "Domain Name Sytem",
-            "Dynamic Name System",
-            "Domain Nama System",
-            "Domain Name System",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Domain Name System",
-          "note": "<b>正解: Domain Name System</b>　×Domain Name Sytem ×Dynamic Name System ×Domain Nama System<br>DNS = IP アドレスとドメイン名の対応を管理するしくみ。 覚え方: D・N・S = Domain・Name・System。 出典: 教科書 vii・viii頁の略語表(スライドに正式名称は無い)。",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>DNS</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Domain Name System",
+          "note": "<b>正解: Domain Name System</b>　×Domain Name Sytem ×Dynamic Name System ×Domain Nama System<br>DNS = IP アドレスとドメイン名の対応を管理するしくみ。 覚え方: D・N・S = Domain・Name・System。 出典: 教科書 vii・viii頁の略語表(スライドに正式名称は無い)。"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>DHCP</b> の正式名称は?",
-          "opts": [
-            "Simple Mail Transfer Protocol",
-            "Dynamic Host Configuration Protocol",
-            "Dynamic Host Protocol Configuration",
-            "Dynamic Host Configration Protocol",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Dynamic Host Configuration Protocol",
-          "note": "<b>正解: Dynamic Host Configuration Protocol</b>　×Dynamic Host Configration Protocol ×Dynamic Host Protocol Configuration(語順違い) ×Simple Mail Transfer Protocol(SMTPの名称)<br>DHCP = ネットワークにつないだ端末へIPアドレス等を自動で割り当てるプロトコル。 覚え方: D・H・C・P = Dynamic・Host・Configuration・Protocol。 出典: 第1回 セルフチェック Q5(資料外・Moodle正解)(正式名称は資料外)。 [A2]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>DHCP</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Dynamic Host Configuration Protocol",
+          "note": "<b>正解: Dynamic Host Configuration Protocol</b>　×Dynamic Host Configration Protocol ×Dynamic Host Protocol Configuration(語順違い) ×Simple Mail Transfer Protocol(SMTPの名称)<br>DHCP = ネットワークにつないだ端末へIPアドレス等を自動で割り当てるプロトコル。 覚え方: D・H・C・P = Dynamic・Host・Configuration・Protocol。 出典: 第1回 セルフチェック Q5(資料外・Moodle正解)(正式名称は資料外)。 [A2]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>WWW</b> の正式名称は?",
-          "opts": [
-            "World Wide Web",
-            "Word Wide Web",
-            "World Wild Web",
-            "World Wide Wep",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "World Wide Web",
-          "note": "<b>正解: World Wide Web</b>　×Word Wide Web ×World Wild Web ×World Wide Wep<br>WWW = 世界中のサーバの情報を、Web ページとして見られるしくみ。 覚え方: W が3つ = World・Wide・Web。 出典: 教科書 vii・viii頁の略語表(スライドに正式名称は無い)。",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>WWW</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "World Wide Web",
+          "note": "<b>正解: World Wide Web</b>　×Word Wide Web ×World Wild Web ×World Wide Wep<br>WWW = 世界中のサーバの情報を、Web ページとして見られるしくみ。 覚え方: W が3つ = World・Wide・Web。 出典: 教科書 vii・viii頁の略語表(スライドに正式名称は無い)。"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>URL</b> の正式名称は?",
-          "opts": [
-            "Uniform Resourse Locator",
-            "Unifrom Resource Locator",
-            "Internet Protocol",
-            "Uniform Resource Locator",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Uniform Resource Locator",
-          "note": "<b>正解: Uniform Resource Locator</b>　×Uniform Resourse Locator ×Unifrom Resource Locator ×Internet Protocol(IPの名称)<br>URL = Web上の情報の場所(アドレス)を表す文字列。 覚え方: U・R・L = Uniform・Resource・Locator。 出典: 第1回 セルフチェック Q3(資料外・Moodle正解)(正式名称は資料外)。 [A2]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>URL</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Uniform Resource Locator",
+          "note": "<b>正解: Uniform Resource Locator</b>　×Uniform Resourse Locator ×Unifrom Resource Locator ×Internet Protocol(IPの名称)<br>URL = Web上の情報の場所(アドレス)を表す文字列。 覚え方: U・R・L = Uniform・Resource・Locator。 出典: 第1回 セルフチェック Q3(資料外・Moodle正解)(正式名称は資料外)。 [A2]"
         }
       ]
     },
@@ -250,74 +130,34 @@
       "title": "教科書の略語表 セット4/14(5問5分): HTTP・HTML・SMTP・VoIP・SIP",
       "qs": [
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>HTTP</b> の正式名称は?",
-          "opts": [
-            "Hyper Text Protocol Transfer",
-            "Hyper Text Tranfer Protocol",
-            "Simple Mail Transfer Protocol",
-            "Hyper Text Transfer Protocol",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Hyper Text Transfer Protocol",
-          "note": "<b>正解: Hyper Text Transfer Protocol</b>　×Hyper Text Tranfer Protocol ×Hyper Text Protocol Transfer(語順違い) ×Simple Mail Transfer Protocol(SMTPの名称)<br>HTTP = 第7層(アプリケーション層)でWebページのやり取りに使うプロトコル。スライド赤字の訂正: Transfer の s を落とさない。Hyper Text は2語。 覚え方: H・T・T・P = Hyper・Text・Transfer・Protocol。 出典: 第1回 p.8・第3回 p.14。 [A1][A2]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>HTTP</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Hyper Text Transfer Protocol",
+          "note": "<b>正解: Hyper Text Transfer Protocol</b>　×Hyper Text Tranfer Protocol ×Hyper Text Protocol Transfer(語順違い) ×Simple Mail Transfer Protocol(SMTPの名称)<br>HTTP = 第7層(アプリケーション層)でWebページのやり取りに使うプロトコル。スライド赤字の訂正: Transfer の s を落とさない。Hyper Text は2語。 覚え方: H・T・T・P = Hyper・Text・Transfer・Protocol。 出典: 第1回 p.8・第3回 p.14。 [A1][A2]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>HTML</b> の正式名称は?",
-          "opts": [
-            "Hyper Text Markup Langage",
-            "Hyper Text Makeup Language",
-            "Hyper Text Markup Language",
-            "Hyper Text Markup Languege",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Hyper Text Markup Language",
-          "note": "<b>正解: Hyper Text Markup Language</b>　×Hyper Text Markup Langage ×Hyper Text Makeup Language ×Hyper Text Markup Languege<br>HTML = Web ページを作るための言語。 覚え方: H・T・M・L = Hyper Text・Markup・Language(Markup は Make up ではない)。 出典: 教科書 vii・viii頁の略語表(スライドに正式名称は無い)。",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>HTML</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Hyper Text Markup Language",
+          "note": "<b>正解: Hyper Text Markup Language</b>　×Hyper Text Markup Langage ×Hyper Text Makeup Language ×Hyper Text Markup Languege<br>HTML = Web ページを作るための言語。 覚え方: H・T・M・L = Hyper Text・Markup・Language(Markup は Make up ではない)。 出典: 教科書 vii・viii頁の略語表(スライドに正式名称は無い)。"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>SMTP</b> の正式名称は?",
-          "opts": [
-            "Simple Mail Tranfer Protocol",
-            "Simple Transfer Mail Protocol",
-            "Simple Mail Transfer Protocol",
-            "Hyper Text Transfer Protocol",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Simple Mail Transfer Protocol",
-          "note": "<b>正解: Simple Mail Transfer Protocol</b>　×Simple Mail Tranfer Protocol ×Simple Transfer Mail Protocol(語順違い) ×Hyper Text Transfer Protocol(HTTPの名称)<br>SMTP = 電子メールを送信するときのプロトコル(第7層)。 覚え方: S・M・T・P = Simple・Mail・Transfer・Protocol。 出典: 第1回 セルフチェック Q7(資料外・Moodle正解)・第3回 p.14(正式名称は資料外)。 [A2]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>SMTP</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Simple Mail Transfer Protocol",
+          "note": "<b>正解: Simple Mail Transfer Protocol</b>　×Simple Mail Tranfer Protocol ×Simple Transfer Mail Protocol(語順違い) ×Hyper Text Transfer Protocol(HTTPの名称)<br>SMTP = 電子メールを送信するときのプロトコル(第7層)。 覚え方: S・M・T・P = Simple・Mail・Transfer・Protocol。 出典: 第1回 セルフチェック Q7(資料外・Moodle正解)・第3回 p.14(正式名称は資料外)。 [A2]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>VoIP</b> の正式名称は?",
-          "opts": [
-            "Voise over IP",
-            "Voice over IP",
-            "Voice ovre IP",
-            "Voice on IP",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Voice over IP",
-          "note": "<b>正解: Voice over IP</b>　×Voise over IP ×Voice ovre IP ×Voice on IP<br>VoIP = IP ネットワークの上で音声データを送る技術(IP電話)。教科書の表記は小文字(voice over IP)。 覚え方: Voice over IP = IP の上の声。 出典: 教科書 vii・viii頁の略語表(スライドに正式名称は無い)。",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>VoIP</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Voice over IP",
+          "note": "<b>正解: Voice over IP</b>　×Voise over IP ×Voice ovre IP ×Voice on IP<br>VoIP = IP ネットワークの上で音声データを送る技術(IP電話)。教科書の表記は小文字(voice over IP)。 覚え方: Voice over IP = IP の上の声。 出典: 教科書 vii・viii頁の略語表(スライドに正式名称は無い)。"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>SIP</b> の正式名称は?",
-          "opts": [
-            "Session Initation Protocol",
-            "Session Initiative Protocol",
-            "Session Initiation Protocol",
-            "Session Initiation Protcol",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Session Initiation Protocol",
-          "note": "<b>正解: Session Initiation Protocol</b>　×Session Initation Protocol ×Session Initiative Protocol ×Session Initiation Protcol<br>SIP = VoIP で、接続(セッション)の開始・変更・終了を行う約束事。 覚え方: S・I・P = Session・Initiation・Protocol。 出典: 教科書 vii・viii頁の略語表(スライドに正式名称は無い)。",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>SIP</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Session Initiation Protocol",
+          "note": "<b>正解: Session Initiation Protocol</b>　×Session Initation Protocol ×Session Initiative Protocol ×Session Initiation Protcol<br>SIP = VoIP で、接続(セッション)の開始・変更・終了を行う約束事。 覚え方: S・I・P = Session・Initiation・Protocol。 出典: 教科書 vii・viii頁の略語表(スライドに正式名称は無い)。"
         }
       ]
     },
@@ -327,74 +167,34 @@
       "title": "第2回の略語 セット5/14(5問5分): OFDMA・FDMA・TDMA・CDMA・OFDM",
       "qs": [
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>OFDMA</b> の正式名称は?",
-          "opts": [
-            "Orthogonal Frequncy Division Multiple Access",
-            "Orthogonel Frequency Division Multiple Access",
-            "Frequency Division Multiple Access",
-            "Orthogonal Frequency Division Multiple Access",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Orthogonal Frequency Division Multiple Access",
-          "note": "<b>正解: Orthogonal Frequency Division Multiple Access</b>　×Orthogonel Frequency Division Multiple Access ×Orthogonal Frequncy Division Multiple Access ×Frequency Division Multiple Access(FDMAの名称)<br>OFDMA = 直交周波数分割多元接続。第3.9世代(LTE)の多元接続方式。スライドは division multiple access が小文字だが、Moodle の正解は各語の頭が大文字。 覚え方: O・F・D・M・A = Orthogonal・Frequency・Division・Multiple・Access。 出典: 第2回 p.4・p.5(第1回 セルフチェック Q1・Q10)。 [A2][A3][A4]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>OFDMA</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Orthogonal Frequency Division Multiple Access",
+          "note": "<b>正解: Orthogonal Frequency Division Multiple Access</b>　×Orthogonel Frequency Division Multiple Access ×Orthogonal Frequncy Division Multiple Access ×Frequency Division Multiple Access(FDMAの名称)<br>OFDMA = 直交周波数分割多元接続。第3.9世代(LTE)の多元接続方式。スライドは division multiple access が小文字だが、Moodle の正解は各語の頭が大文字。 覚え方: O・F・D・M・A = Orthogonal・Frequency・Division・Multiple・Access。 出典: 第2回 p.4・p.5(第1回 セルフチェック Q1・Q10)。 [A2][A3][A4]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>FDMA</b> の正式名称は?",
-          "opts": [
-            "Frequncy Division Multiple Access",
-            "Frequency Divison Multiple Access",
-            "Orthogonal Frequency Division Multiple Access",
-            "Frequency Division Multiple Access",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Frequency Division Multiple Access",
-          "note": "<b>正解: Frequency Division Multiple Access</b>　×Frequncy Division Multiple Access ×Frequency Divison Multiple Access ×Orthogonal Frequency Division Multiple Access(OFDMAの名称)<br>FDMA = 周波数分割多元接続。周波数で利用者を分ける方式(第1世代)。Moodle の正解は各語の頭が大文字(スライドは小文字)。 覚え方: F・D・M・A = Frequency・Division・Multiple・Access。 出典: 第2回 p.5(第5回 セルフチェック Q3)。 [A2][A3]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>FDMA</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Frequency Division Multiple Access",
+          "note": "<b>正解: Frequency Division Multiple Access</b>　×Frequncy Division Multiple Access ×Frequency Divison Multiple Access ×Orthogonal Frequency Division Multiple Access(OFDMAの名称)<br>FDMA = 周波数分割多元接続。周波数で利用者を分ける方式(第1世代)。Moodle の正解は各語の頭が大文字(スライドは小文字)。 覚え方: F・D・M・A = Frequency・Division・Multiple・Access。 出典: 第2回 p.5(第5回 セルフチェック Q3)。 [A2][A3]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>TDMA</b> の正式名称は?",
-          "opts": [
-            "Division Time Multiple Access",
-            "Time Divison Multiple Access",
-            "Time Division Multiple Access",
-            "Code Division Multiple Access",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Time Division Multiple Access",
-          "note": "<b>正解: Time Division Multiple Access</b>　×Time Divison Multiple Access ×Division Time Multiple Access(語順違い) ×Code Division Multiple Access(CDMAの名称)<br>TDMA = 時分割多元接続。時間で利用者を分ける方式(第2世代)。Moodle の正解は各語の頭が大文字(スライドは小文字)。 覚え方: T・D・M・A = Time・Division・Multiple・Access。 出典: 第2回 p.5(第5回 セルフチェック Q10)。 [A2][A3]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>TDMA</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Time Division Multiple Access",
+          "note": "<b>正解: Time Division Multiple Access</b>　×Time Divison Multiple Access ×Division Time Multiple Access(語順違い) ×Code Division Multiple Access(CDMAの名称)<br>TDMA = 時分割多元接続。時間で利用者を分ける方式(第2世代)。Moodle の正解は各語の頭が大文字(スライドは小文字)。 覚え方: T・D・M・A = Time・Division・Multiple・Access。 出典: 第2回 p.5(第5回 セルフチェック Q10)。 [A2][A3]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>CDMA</b> の正式名称は?",
-          "opts": [
-            "Orthogonal Frequency Division Multiple Access",
-            "Cord Division Multiple Access",
-            "Code Division Multiple Access",
-            "Code Divison Multiple Access",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Code Division Multiple Access",
-          "note": "<b>正解: Code Division Multiple Access</b>　×Code Divison Multiple Access ×Cord Division Multiple Access ×Orthogonal Frequency Division Multiple Access(OFDMAの名称)<br>CDMA = 符号分割多元接続。符号で利用者を分ける方式(第3世代)。Moodle 未出題。FDMA・TDMA と同じ表記(各語の頭が大文字)で統一。スライドは小文字。 覚え方: C・D・M・A = Code・Division・Multiple・Access。 出典: 第2回 p.5。 [A3]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>CDMA</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Code Division Multiple Access",
+          "note": "<b>正解: Code Division Multiple Access</b>　×Code Divison Multiple Access ×Cord Division Multiple Access ×Orthogonal Frequency Division Multiple Access(OFDMAの名称)<br>CDMA = 符号分割多元接続。符号で利用者を分ける方式(第3世代)。Moodle 未出題。FDMA・TDMA と同じ表記(各語の頭が大文字)で統一。スライドは小文字。 覚え方: C・D・M・A = Code・Division・Multiple・Access。 出典: 第2回 p.5。 [A3]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>OFDM</b> の正式名称は?",
-          "opts": [
-            "Orthogonal Frequncy-Division Multiplexing",
-            "Orthogonel Frequency-Division Multiplexing",
-            "Frequency Division Multiplexing",
-            "Orthogonal Frequency-Division Multiplexing",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Orthogonal Frequency-Division Multiplexing",
-          "note": "<b>正解: Orthogonal Frequency-Division Multiplexing</b>　×Orthogonel Frequency-Division Multiplexing ×Orthogonal Frequncy-Division Multiplexing ×Frequency Division Multiplexing(FDMの名称)<br>OFDM = 直交周波数分割多重方式。OFDMAの元になった方式。スライドの表記は Frequency-Division とハイフン付き(OFDMA は Moodle 表記でハイフン無し)。 覚え方: O・F・D・M = Orthogonal・Frequency・Division・Multiplexing。 出典: 第2回 p.5。 [A3]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>OFDM</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Orthogonal Frequency-Division Multiplexing",
+          "note": "<b>正解: Orthogonal Frequency-Division Multiplexing</b>　×Orthogonel Frequency-Division Multiplexing ×Orthogonal Frequncy-Division Multiplexing ×Frequency Division Multiplexing(FDMの名称)<br>OFDM = 直交周波数分割多重方式。OFDMAの元になった方式。スライドの表記は Frequency-Division とハイフン付き(OFDMA は Moodle 表記でハイフン無し)。 覚え方: O・F・D・M = Orthogonal・Frequency・Division・Multiplexing。 出典: 第2回 p.5。 [A3]"
         }
       ]
     },
@@ -404,74 +204,34 @@
       "title": "第2回の略語 セット6/14(5問5分): SINET・FTTH・AM・FM・PM",
       "qs": [
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>SINET</b> の正式名称は?",
-          "opts": [
-            "Sience Information NETwork",
-            "Science Information NETwork",
-            "Information Network System",
-            "Science Infomation NETwork",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Science Information NETwork",
-          "note": "<b>正解: Science Information NETwork</b>　×Sience Information NETwork ×Science Infomation NETwork ×Information Network System(INSの名称)<br>SINET = 2002年に登場した学術情報ネットワーク。NET の3文字だけ大文字。 覚え方: Science・Information・NET(work)。 出典: 第2回 p.7。 [略語表]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>SINET</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Science Information NETwork",
+          "note": "<b>正解: Science Information NETwork</b>　×Sience Information NETwork ×Science Infomation NETwork ×Information Network System(INSの名称)<br>SINET = 2002年に登場した学術情報ネットワーク。NET の3文字だけ大文字。 覚え方: Science・Information・NET(work)。 出典: 第2回 p.7。 [略語表]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>FTTH</b> の正式名称は?",
-          "opts": [
-            "Fiber To The Home",
-            "Fiver To The Home",
-            "Fiber Distributed Data Interface",
-            "Fiber To The House",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Fiber To The Home",
-          "note": "<b>正解: Fiber To The Home</b>　×Fiver To The Home ×Fiber To The House ×Fiber Distributed Data Interface(FDDIの名称)<br>FTTH = 光ファイバを家庭まで引き込むアクセス方式。 覚え方: F・T・T・H = Fiber・To・The・Home。 出典: 第2回 p.8・第5回 p.11。 [A23]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>FTTH</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Fiber To The Home",
+          "note": "<b>正解: Fiber To The Home</b>　×Fiver To The Home ×Fiber To The House ×Fiber Distributed Data Interface(FDDIの名称)<br>FTTH = 光ファイバを家庭まで引き込むアクセス方式。 覚え方: F・T・T・H = Fiber・To・The・Home。 出典: 第2回 p.8・第5回 p.11。 [A23]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>AM</b> の正式名称は?",
-          "opts": [
-            "Quadrature Amplitude Modulation",
-            "Amplitude Modulaton",
-            "Amplitute Modulation",
-            "Amplitude Modulation",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Amplitude Modulation",
-          "note": "<b>正解: Amplitude Modulation</b>　×Amplitute Modulation ×Amplitude Modulaton ×Quadrature Amplitude Modulation(QAMの名称)<br>AM = 信号の大きさに合わせて搬送波の振幅を変える変調。電気雑音の影響を受ける。 覚え方: A・M = Amplitude・Modulation。 出典: 第2回 p.14。 [A30][A31]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>AM</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Amplitude Modulation",
+          "note": "<b>正解: Amplitude Modulation</b>　×Amplitute Modulation ×Amplitude Modulaton ×Quadrature Amplitude Modulation(QAMの名称)<br>AM = 信号の大きさに合わせて搬送波の振幅を変える変調。電気雑音の影響を受ける。 覚え方: A・M = Amplitude・Modulation。 出典: 第2回 p.14。 [A30][A31]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>FM</b> の正式名称は?",
-          "opts": [
-            "Frequncy Modulation",
-            "Frequency Modulaton",
-            "Phase Modulation",
-            "Frequency Modulation",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Frequency Modulation",
-          "note": "<b>正解: Frequency Modulation</b>　×Frequncy Modulation ×Frequency Modulaton ×Phase Modulation(PMの名称)<br>FM = 搬送波の周波数を変える変調。電気雑音の直接影響を受け難く高品質。 覚え方: F・M = Frequency・Modulation。 出典: 第2回 p.14。 [A30][A31]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>FM</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Frequency Modulation",
+          "note": "<b>正解: Frequency Modulation</b>　×Frequncy Modulation ×Frequency Modulaton ×Phase Modulation(PMの名称)<br>FM = 搬送波の周波数を変える変調。電気雑音の直接影響を受け難く高品質。 覚え方: F・M = Frequency・Modulation。 出典: 第2回 p.14。 [A30][A31]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>PM</b> の正式名称は?",
-          "opts": [
-            "Phase Modulation",
-            "Phace Modulation",
-            "Phase Modulaton",
-            "Phase Shift Keying",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Phase Modulation",
-          "note": "<b>正解: Phase Modulation</b>　×Phace Modulation ×Phase Modulaton ×Phase Shift Keying(PSKの名称)<br>PM = 搬送波の位相を変える変調。 覚え方: P・M = Phase・Modulation。 出典: 第2回 p.14。 [A30][A31]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>PM</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Phase Modulation",
+          "note": "<b>正解: Phase Modulation</b>　×Phace Modulation ×Phase Modulaton ×Phase Shift Keying(PSKの名称)<br>PM = 搬送波の位相を変える変調。 覚え方: P・M = Phase・Modulation。 出典: 第2回 p.14。 [A30][A31]"
         }
       ]
     },
@@ -481,60 +241,28 @@
       "title": "第3回の略語 セット7/14(4問4分): NRZ・RZ・AMI・ASK",
       "qs": [
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>NRZ</b> の正式名称は?",
-          "opts": [
-            "Return to Zero",
-            "Non Return to Zero",
-            "Non Retrun to Zero",
-            "Not Return to Zero",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Non Return to Zero",
-          "note": "<b>正解: Non Return to Zero</b>　×Non Retrun to Zero ×Not Return to Zero ×Return to Zero(RZの名称)<br>NRZ = ベースバンド方式の一つ。信号がゼロに戻らない符号。スライドは Non-Return とハイフン付きだが、Moodle の正解は半角スペース(Non Return to Zero)。 覚え方: N・R・Z = Non・Return・Zero。 出典: 第3回 p.5(第2回 セルフチェック Q9)。 [A2][A30]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>NRZ</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Non Return to Zero",
+          "note": "<b>正解: Non Return to Zero</b>　×Non Retrun to Zero ×Not Return to Zero ×Return to Zero(RZの名称)<br>NRZ = ベースバンド方式の一つ。信号がゼロに戻らない符号。スライドは Non-Return とハイフン付きだが、Moodle の正解は半角スペース(Non Return to Zero)。 覚え方: N・R・Z = Non・Return・Zero。 出典: 第3回 p.5(第2回 セルフチェック Q9)。 [A2][A30]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>RZ</b> の正式名称は?",
-          "opts": [
-            "Return too Zero",
-            "Return to Zero",
-            "Non Return to Zero",
-            "Retrun to Zero",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Return to Zero",
-          "note": "<b>正解: Return to Zero</b>　×Retrun to Zero ×Return too Zero ×Non Return to Zero(NRZの名称)<br>RZ = ベースバンド方式の一つ。信号が毎回ゼロに戻る符号。 覚え方: R・Z = Return・Zero。 出典: 第3回 p.5。 [A30]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>RZ</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Return to Zero",
+          "note": "<b>正解: Return to Zero</b>　×Retrun to Zero ×Return too Zero ×Non Return to Zero(NRZの名称)<br>RZ = ベースバンド方式の一つ。信号が毎回ゼロに戻る符号。 覚え方: R・Z = Return・Zero。 出典: 第3回 p.5。 [A30]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>AMI</b> の正式名称は?",
-          "opts": [
-            "Alternate Mask Inversion",
-            "Amplitude Shift Keying",
-            "Alternete Mark Inversion",
-            "Alternate Mark Inversion",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Alternate Mark Inversion",
-          "note": "<b>正解: Alternate Mark Inversion</b>　×Alternete Mark Inversion ×Alternate Mask Inversion ×Amplitude Shift Keying(ASKの名称)<br>AMI = ベースバンド方式の一つ。1(マーク)を交互に正負の極性にする符号。 覚え方: A・M・I = Alternate・Mark・Inversion。 出典: 第3回 p.5。 [A30]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>AMI</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Alternate Mark Inversion",
+          "note": "<b>正解: Alternate Mark Inversion</b>　×Alternete Mark Inversion ×Alternate Mask Inversion ×Amplitude Shift Keying(ASKの名称)<br>AMI = ベースバンド方式の一つ。1(マーク)を交互に正負の極性にする符号。 覚え方: A・M・I = Alternate・Mark・Inversion。 出典: 第3回 p.5。 [A30]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>ASK</b> の正式名称は?",
-          "opts": [
-            "Amplitude Shift Keing",
-            "Amplitute Shift Keying",
-            "Frequency Shift Keying",
-            "Amplitude Shift Keying",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Amplitude Shift Keying",
-          "note": "<b>正解: Amplitude Shift Keying</b>　×Amplitute Shift Keying ×Amplitude Shift Keing ×Frequency Shift Keying(FSKの名称)<br>ASK = 振幅偏移変調。ディジタル変調方式の一つ。 覚え方: A・S・K = Amplitude・Shift・Keying。 出典: 第3回 p.5。 [A30]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>ASK</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Amplitude Shift Keying",
+          "note": "<b>正解: Amplitude Shift Keying</b>　×Amplitute Shift Keying ×Amplitude Shift Keing ×Frequency Shift Keying(FSKの名称)<br>ASK = 振幅偏移変調。ディジタル変調方式の一つ。 覚え方: A・S・K = Amplitude・Shift・Keying。 出典: 第3回 p.5。 [A30]"
         }
       ]
     },
@@ -544,60 +272,28 @@
       "title": "第3回の略語 セット8/14(4問4分): FSK・PSK・QAM・BER",
       "qs": [
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>FSK</b> の正式名称は?",
-          "opts": [
-            "Frequency Shift Keing",
-            "Frequncy Shift Keying",
-            "Frequency Shift Keying",
-            "Phase Shift Keying",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Frequency Shift Keying",
-          "note": "<b>正解: Frequency Shift Keying</b>　×Frequncy Shift Keying ×Frequency Shift Keing ×Phase Shift Keying(PSKの名称)<br>FSK = 周波数偏移変調。ディジタル変調方式の一つ。 覚え方: F・S・K = Frequency・Shift・Keying。 出典: 第3回 p.5(スライドは頭文字Fが赤字。綴り全体は資料外)(正式名称は資料外)。 [A30]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>FSK</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Frequency Shift Keying",
+          "note": "<b>正解: Frequency Shift Keying</b>　×Frequncy Shift Keying ×Frequency Shift Keing ×Phase Shift Keying(PSKの名称)<br>FSK = 周波数偏移変調。ディジタル変調方式の一つ。 覚え方: F・S・K = Frequency・Shift・Keying。 出典: 第3回 p.5(スライドは頭文字Fが赤字。綴り全体は資料外)(正式名称は資料外)。 [A30]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>PSK</b> の正式名称は?",
-          "opts": [
-            "Phace Shift Keying",
-            "Amplitude Shift Keying",
-            "Phase Shift Keing",
-            "Phase Shift Keying",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Phase Shift Keying",
-          "note": "<b>正解: Phase Shift Keying</b>　×Phace Shift Keying ×Phase Shift Keing ×Amplitude Shift Keying(ASKの名称)<br>PSK = 位相偏移変調。ディジタル変調方式の一つ。 覚え方: P・S・K = Phase・Shift・Keying。 出典: 第3回 p.5(スライドは頭文字Pが赤字。綴り全体は資料外)(正式名称は資料外)。 [A30]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>PSK</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Phase Shift Keying",
+          "note": "<b>正解: Phase Shift Keying</b>　×Phace Shift Keying ×Phase Shift Keing ×Amplitude Shift Keying(ASKの名称)<br>PSK = 位相偏移変調。ディジタル変調方式の一つ。 覚え方: P・S・K = Phase・Shift・Keying。 出典: 第3回 p.5(スライドは頭文字Pが赤字。綴り全体は資料外)(正式名称は資料外)。 [A30]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>QAM</b> の正式名称は?",
-          "opts": [
-            "Quadrature Amplitude Modulation",
-            "Amplitude Modulation",
-            "Quadrature Amplitute Modulation",
-            "Quadrture Amplitude Modulation",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Quadrature Amplitude Modulation",
-          "note": "<b>正解: Quadrature Amplitude Modulation</b>　×Quadrture Amplitude Modulation ×Quadrature Amplitute Modulation ×Amplitude Modulation(AMの名称)<br>QAM = 振幅位相変調。ディジタル変調方式の一つ(64QAMなど)。 覚え方: Q・A・M = Quadrature・Amplitude・Modulation。 出典: 第3回 p.5・p.6。 [A9][A30]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>QAM</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Quadrature Amplitude Modulation",
+          "note": "<b>正解: Quadrature Amplitude Modulation</b>　×Quadrture Amplitude Modulation ×Quadrature Amplitute Modulation ×Amplitude Modulation(AMの名称)<br>QAM = 振幅位相変調。ディジタル変調方式の一つ(64QAMなど)。 覚え方: Q・A・M = Quadrature・Amplitude・Modulation。 出典: 第3回 p.5・p.6。 [A9][A30]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>BER</b> の正式名称は?",
-          "opts": [
-            "Bit Rate Error",
-            "Bit Eror Rate",
-            "Amplitude Modulation",
-            "Bit Error Rate",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Bit Error Rate",
-          "note": "<b>正解: Bit Error Rate</b>　×Bit Eror Rate ×Bit Rate Error(語順違い) ×Amplitude Modulation(AMの名称)<br>BER = ビット誤り率。伝送路の品質の評価尺度で、小さい方が良い。 覚え方: B・E・R = Bit・Error・Rate。 出典: 第3回 p.6。 [A9]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>BER</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Bit Error Rate",
+          "note": "<b>正解: Bit Error Rate</b>　×Bit Eror Rate ×Bit Rate Error(語順違い) ×Amplitude Modulation(AMの名称)<br>BER = ビット誤り率。伝送路の品質の評価尺度で、小さい方が良い。 覚え方: B・E・R = Bit・Error・Rate。 出典: 第3回 p.6。 [A9]"
         }
       ]
     },
@@ -607,60 +303,28 @@
       "title": "第3回の略語 セット9/14(4問4分): FDM・TDM・CDM・WDM",
       "qs": [
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>FDM</b> の正式名称は?",
-          "opts": [
-            "Frequency Division Multiplexing",
-            "Frequency Divison Multiplexing",
-            "Frequncy Division Multiplexing",
-            "Orthogonal Frequency-Division Multiplexing",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Frequency Division Multiplexing",
-          "note": "<b>正解: Frequency Division Multiplexing</b>　×Frequncy Division Multiplexing ×Frequency Divison Multiplexing ×Orthogonal Frequency-Division Multiplexing(OFDMの名称)<br>FDM = 周波数分割多重。多重化技術の一つ。 覚え方: F・D・M = Frequency・Division・Multiplexing。 出典: 第3回 p.7。 [A30]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>FDM</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Frequency Division Multiplexing",
+          "note": "<b>正解: Frequency Division Multiplexing</b>　×Frequncy Division Multiplexing ×Frequency Divison Multiplexing ×Orthogonal Frequency-Division Multiplexing(OFDMの名称)<br>FDM = 周波数分割多重。多重化技術の一つ。 覚え方: F・D・M = Frequency・Division・Multiplexing。 出典: 第3回 p.7。 [A30]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>TDM</b> の正式名称は?",
-          "opts": [
-            "Times Division Multiplexing",
-            "Code Division Multiplexing",
-            "Time Division Multiplexing",
-            "Time Divison Multiplexing",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Time Division Multiplexing",
-          "note": "<b>正解: Time Division Multiplexing</b>　×Time Divison Multiplexing ×Times Division Multiplexing ×Code Division Multiplexing(CDMの名称)<br>TDM = 時分割多重。多重化技術の一つ。 覚え方: T・D・M = Time・Division・Multiplexing。 出典: 第3回 p.7。 [A30]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>TDM</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Time Division Multiplexing",
+          "note": "<b>正解: Time Division Multiplexing</b>　×Time Divison Multiplexing ×Times Division Multiplexing ×Code Division Multiplexing(CDMの名称)<br>TDM = 時分割多重。多重化技術の一つ。 覚え方: T・D・M = Time・Division・Multiplexing。 出典: 第3回 p.7。 [A30]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>CDM</b> の正式名称は?",
-          "opts": [
-            "Cord Division Multiplexing",
-            "Wave Division Multiplexing",
-            "Code Divison Multiplexing",
-            "Code Division Multiplexing",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Code Division Multiplexing",
-          "note": "<b>正解: Code Division Multiplexing</b>　×Code Divison Multiplexing ×Cord Division Multiplexing ×Wave Division Multiplexing(WDMの名称)<br>CDM = 符号分割多重。多重化技術の一つ。 覚え方: C・D・M = Code・Division・Multiplexing。 出典: 第3回 p.7。 [A30]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>CDM</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Code Division Multiplexing",
+          "note": "<b>正解: Code Division Multiplexing</b>　×Code Divison Multiplexing ×Cord Division Multiplexing ×Wave Division Multiplexing(WDMの名称)<br>CDM = 符号分割多重。多重化技術の一つ。 覚え方: C・D・M = Code・Division・Multiplexing。 出典: 第3回 p.7。 [A30]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>WDM</b> の正式名称は?",
-          "opts": [
-            "Orthogonal Frequency-Division Multiplexing",
-            "Wave Division Multiplexing",
-            "Weve Division Multiplexing",
-            "Wave Divison Multiplexing",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Wave Division Multiplexing",
-          "note": "<b>正解: Wave Division Multiplexing</b>　×Weve Division Multiplexing ×Wave Divison Multiplexing ×Orthogonal Frequency-Division Multiplexing(OFDMの名称)<br>WDM = 波長多重。光の波長で多重化する技術。 覚え方: W・D・M = Wave・Division・Multiplexing。 出典: 第3回 p.7。 [A30]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>WDM</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Wave Division Multiplexing",
+          "note": "<b>正解: Wave Division Multiplexing</b>　×Weve Division Multiplexing ×Wave Divison Multiplexing ×Orthogonal Frequency-Division Multiplexing(OFDMの名称)<br>WDM = 波長多重。光の波長で多重化する技術。 覚え方: W・D・M = Wave・Division・Multiplexing。 出典: 第3回 p.7。 [A30]"
         }
       ]
     },
@@ -670,60 +334,28 @@
       "title": "第4回の略語 セット10/14(4問4分): FQDN・SCP・DSU・ONU",
       "qs": [
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>FQDN</b> の正式名称は?",
-          "opts": [
-            "Session Control Protocol",
-            "Fully Qualified Domain Name",
-            "Fully Qualifed Domain Name",
-            "Fully Qualified Domein Name",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Fully Qualified Domain Name",
-          "note": "<b>正解: Fully Qualified Domain Name</b>　×Fully Qualifed Domain Name ×Fully Qualified Domein Name ×Session Control Protocol(SCPの名称)<br>FQDN = ホスト名+ドメイン名で表す階層構造の名前(例 www.yahoo.com)。 覚え方: F・Q・D・N = Fully・Qualified・Domain・Name。 出典: 第4回 p.9。 [A17]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>FQDN</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Fully Qualified Domain Name",
+          "note": "<b>正解: Fully Qualified Domain Name</b>　×Fully Qualifed Domain Name ×Fully Qualified Domein Name ×Session Control Protocol(SCPの名称)<br>FQDN = ホスト名+ドメイン名で表す階層構造の名前(例 www.yahoo.com)。 覚え方: F・Q・D・N = Fully・Qualified・Domain・Name。 出典: 第4回 p.9。 [A17]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>SCP</b> の正式名称は?",
-          "opts": [
-            "Session Controll Protocol",
-            "Session Control Protocol",
-            "Sesion Control Protocol",
-            "Transmission Control Protocol",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Session Control Protocol",
-          "note": "<b>正解: Session Control Protocol</b>　×Sesion Control Protocol ×Session Controll Protocol ×Transmission Control Protocol(TCPの名称)<br>SCP = 第5層(セッション層)で、同期点を挿入して転送をやり直せるようにする通信手順。 覚え方: S・C・P = Session・Control・Protocol。 出典: 第4回 p.10(例題5.1)。 [A16][A13]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>SCP</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Session Control Protocol",
+          "note": "<b>正解: Session Control Protocol</b>　×Sesion Control Protocol ×Session Controll Protocol ×Transmission Control Protocol(TCPの名称)<br>SCP = 第5層(セッション層)で、同期点を挿入して転送をやり直せるようにする通信手順。 覚え方: S・C・P = Session・Control・Protocol。 出典: 第4回 p.10(例題5.1)。 [A16][A13]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>DSU</b> の正式名称は?",
-          "opts": [
-            "Integrated Service Digital Network",
-            "Digital Servise Unit",
-            "Digital Service Unit",
-            "Digitial Service Unit",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Digital Service Unit",
-          "note": "<b>正解: Digital Service Unit</b>　×Digitial Service Unit ×Digital Servise Unit ×Integrated Service Digital Network(ISDNの名称)<br>DSU = ISDNのアクセスネットワークで使う装置。装置と回線の対応は図6.1(資料外)。Moodle の正解は DSU。 覚え方: D・S・U = Digital・Service・Unit。 出典: 第4回 p.14(第4回 セルフチェック Q9)。 [A24]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>DSU</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Digital Service Unit",
+          "note": "<b>正解: Digital Service Unit</b>　×Digitial Service Unit ×Digital Servise Unit ×Integrated Service Digital Network(ISDNの名称)<br>DSU = ISDNのアクセスネットワークで使う装置。装置と回線の対応は図6.1(資料外)。Moodle の正解は DSU。 覚え方: D・S・U = Digital・Service・Unit。 出典: 第4回 p.14(第4回 セルフチェック Q9)。 [A24]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>ONU</b> の正式名称は?",
-          "opts": [
-            "Optical Network Unit",
-            "Optial Network Unit",
-            "Optical Netwok Unit",
-            "Passive Optical Network",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Optical Network Unit",
-          "note": "<b>正解: Optical Network Unit</b>　×Optial Network Unit ×Optical Netwok Unit ×Passive Optical Network(PONの名称)<br>ONU = FTTH(光アクセス)で使う装置。装置と回線の対応は図6.1(資料外)。 覚え方: O・N・U = Optical・Network・Unit。 出典: 第4回 p.14(第4回 セルフチェック Q3)。 [A2][A24]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>ONU</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Optical Network Unit",
+          "note": "<b>正解: Optical Network Unit</b>　×Optial Network Unit ×Optical Netwok Unit ×Passive Optical Network(PONの名称)<br>ONU = FTTH(光アクセス)で使う装置。装置と回線の対応は図6.1(資料外)。 覚え方: O・N・U = Optical・Network・Unit。 出典: 第4回 p.14(第4回 セルフチェック Q3)。 [A2][A24]"
         }
       ]
     },
@@ -733,46 +365,22 @@
       "title": "第4回の略語 セット11/14(3問3分): STB・HDLC・MAC",
       "qs": [
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>STB</b> の正式名称は?",
-          "opts": [
-            "Sit-Top Box",
-            "Set-Top Box",
-            "Set-Tap Box",
-            "Integrated Service Digital Network",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Set-Top Box",
-          "note": "<b>正解: Set-Top Box</b>　×Set-Tap Box ×Sit-Top Box ×Integrated Service Digital Network(ISDNの名称)<br>STB = CATVのアクセスネットワークで使う装置。★Moodleで間違えた問題の系統。Moodle の正解は STB(Modem は不正解)。ハイフンありの Set-Top。 覚え方: S・T・B = Set・Top・Box。 出典: 第4回 p.14(第4回 セルフチェック Q10)。 [A24]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>STB</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Set-Top Box",
+          "note": "<b>正解: Set-Top Box</b>　×Set-Tap Box ×Sit-Top Box ×Integrated Service Digital Network(ISDNの名称)<br>STB = CATVのアクセスネットワークで使う装置。★Moodleで間違えた問題の系統。Moodle の正解は STB(Modem は不正解)。ハイフンありの Set-Top。 覚え方: S・T・B = Set・Top・Box。 出典: 第4回 p.14(第4回 セルフチェック Q10)。 [A24]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>HDLC</b> の正式名称は?",
-          "opts": [
-            "High-level Data Link Control",
-            "Media Access Control",
-            "High-level Link Data Control",
-            "High-levle Data Link Control",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "High-level Data Link Control",
-          "note": "<b>正解: High-level Data Link Control</b>　×High-levle Data Link Control ×High-level Link Data Control(語順違い) ×Media Access Control(MACの名称)<br>HDLC = データリンク制御方式の一つ。両方向の伝送ができる。 覚え方: High-level・Data・Link・Control(ハイフン語は1文字)。 出典: 第4回 p.15・第5回 p.4・p.5。 [A20]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>HDLC</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "High-level Data Link Control",
+          "note": "<b>正解: High-level Data Link Control</b>　×High-levle Data Link Control ×High-level Link Data Control(語順違い) ×Media Access Control(MACの名称)<br>HDLC = データリンク制御方式の一つ。両方向の伝送ができる。 覚え方: High-level・Data・Link・Control(ハイフン語は1文字)。 出典: 第4回 p.15・第5回 p.4・p.5。 [A20]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>MAC</b> の正式名称は?",
-          "opts": [
-            "Medium Access Control",
-            "Media Control Access",
-            "Media Access Control",
-            "Carrier Sense Multiple Access",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Media Access Control",
-          "note": "<b>正解: Media Access Control</b>　×Medium Access Control ×Media Control Access(語順違い) ×Carrier Sense Multiple Access(CSMAの名称)<br>MAC = 第2層(データリンク層)で使うアドレス。48ビットで機器を識別する。Moodle の正解は Media(Medium は不正解)。 覚え方: M・A・C = Media・Access・Control。 出典: 第5回 p.24(第4回 セルフチェック Q7)。 [A2][A18]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>MAC</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Media Access Control",
+          "note": "<b>正解: Media Access Control</b>　×Medium Access Control ×Media Control Access(語順違い) ×Carrier Sense Multiple Access(CSMAの名称)<br>MAC = 第2層(データリンク層)で使うアドレス。48ビットで機器を識別する。Moodle の正解は Media(Medium は不正解)。 覚え方: M・A・C = Media・Access・Control。 出典: 第5回 p.24(第4回 セルフチェック Q7)。 [A2][A18]"
         }
       ]
     },
@@ -782,74 +390,34 @@
       "title": "第5回の略語 セット12/14(5問5分): PPP・CRC・EDI・INS・SS",
       "qs": [
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>PPP</b> の正式名称は?",
-          "opts": [
-            "Hyper Text Transfer Protocol",
-            "Pont to Point Protocol",
-            "Point to Point Protocal",
-            "Point to Point Protocol",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Point to Point Protocol",
-          "note": "<b>正解: Point to Point Protocol</b>　×Point to Point Protocal ×Pont to Point Protocol ×Hyper Text Transfer Protocol(HTTPの名称)<br>PPP = ダイヤルアップ接続で使う2点間の通信プロトコル。 覚え方: P・P・P = Point・Point・Protocol。 出典: 第5回 p.2。 [B7]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>PPP</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Point to Point Protocol",
+          "note": "<b>正解: Point to Point Protocol</b>　×Point to Point Protocal ×Pont to Point Protocol ×Hyper Text Transfer Protocol(HTTPの名称)<br>PPP = ダイヤルアップ接続で使う2点間の通信プロトコル。 覚え方: P・P・P = Point・Point・Protocol。 出典: 第5回 p.2。 [B7]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>CRC</b> の正式名称は?",
-          "opts": [
-            "Major Industry Identifier",
-            "Cycle Redundancy Check",
-            "Cyclic Check Redundancy",
-            "Cyclic Redundancy Check",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Cyclic Redundancy Check",
-          "note": "<b>正解: Cyclic Redundancy Check</b>　×Cycle Redundancy Check ×Cyclic Check Redundancy(語順違い) ×Major Industry Identifier(MIIの名称)<br>CRC = 巡回冗長検査。誤り検出の方式で、HDLCが採用する。 覚え方: C・R・C = Cyclic・Redundancy・Check。 出典: 第5回 p.5。 [A20]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>CRC</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Cyclic Redundancy Check",
+          "note": "<b>正解: Cyclic Redundancy Check</b>　×Cycle Redundancy Check ×Cyclic Check Redundancy(語順違い) ×Major Industry Identifier(MIIの名称)<br>CRC = 巡回冗長検査。誤り検出の方式で、HDLCが採用する。 覚え方: C・R・C = Cyclic・Redundancy・Check。 出典: 第5回 p.5。 [A20]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>EDI</b> の正式名称は?",
-          "opts": [
-            "Electronic Numerical Integrator And Computer",
-            "Electronic Data Interchange",
-            "Electonic Data Interchange",
-            "Electronic Data Interchage",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Electronic Data Interchange",
-          "note": "<b>正解: Electronic Data Interchange</b>　×Electonic Data Interchange ×Electronic Data Interchage ×Electronic Numerical Integrator And Computer(ENIACの名称)<br>EDI = 企業間でデータを電子的にやり取りする仕組み(ISDNの移行先: インターネットEDI)。 覚え方: E・D・I = Electronic・Data・Interchange。 出典: 第5回 p.7。 [A21]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>EDI</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Electronic Data Interchange",
+          "note": "<b>正解: Electronic Data Interchange</b>　×Electonic Data Interchange ×Electronic Data Interchage ×Electronic Numerical Integrator And Computer(ENIACの名称)<br>EDI = 企業間でデータを電子的にやり取りする仕組み(ISDNの移行先: インターネットEDI)。 覚え方: E・D・I = Electronic・Data・Interchange。 出典: 第5回 p.7。 [A21]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>INS</b> の正式名称は?",
-          "opts": [
-            "Information Network System",
-            "Infomation Network System",
-            "Information Netwok System",
-            "Science Information NETwork",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Information Network System",
-          "note": "<b>正解: Information Network System</b>　×Infomation Network System ×Information Netwok System ×Science Information NETwork(SINETの名称)<br>INS = ISDNサービスの名称。2024年1月にサービス終了【2025年1月完全終了】。 覚え方: I・N・S = Information・Network・System。 出典: 第5回 p.7。 [A21]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>INS</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Information Network System",
+          "note": "<b>正解: Information Network System</b>　×Infomation Network System ×Information Netwok System ×Science Information NETwork(SINETの名称)<br>INS = ISDNサービスの名称。2024年1月にサービス終了【2025年1月完全終了】。 覚え方: I・N・S = Information・Network・System。 出典: 第5回 p.7。 [A21]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>SS</b> の正式名称は?",
-          "opts": [
-            "Single Start",
-            "Singel Star",
-            "Single Star",
-            "Passive Double Star",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Single Star",
-          "note": "<b>正解: Single Star</b>　×Singel Star ×Single Start ×Passive Double Star(PDSの名称)<br>SS = FTTHの光アクセス構成の一つ(PON=PDS構成と対になる方式)。 覚え方: S・S = Single・Star。 出典: 第5回 p.11。 [A23]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>SS</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Single Star",
+          "note": "<b>正解: Single Star</b>　×Singel Star ×Single Start ×Passive Double Star(PDSの名称)<br>SS = FTTHの光アクセス構成の一つ(PON=PDS構成と対になる方式)。 覚え方: S・S = Single・Star。 出典: 第5回 p.11。 [A23]"
         }
       ]
     },
@@ -859,74 +427,34 @@
       "title": "第5回の略語 セット13/14(5問5分): PDS・PON・UTP・STP・FDDI",
       "qs": [
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>PDS</b> の正式名称は?",
-          "opts": [
-            "Pasive Double Star",
-            "Passive Double Star",
-            "Passive Optical Network",
-            "Double Passive Star",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Passive Double Star",
-          "note": "<b>正解: Passive Double Star</b>　×Pasive Double Star ×Double Passive Star(語順違い) ×Passive Optical Network(PONの名称)<br>PDS = FTTHの光アクセス構成の一つ。PONと呼ばれる方式。 覚え方: P・D・S = Passive・Double・Star。 出典: 第5回 p.11。 [A23]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>PDS</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Passive Double Star",
+          "note": "<b>正解: Passive Double Star</b>　×Pasive Double Star ×Double Passive Star(語順違い) ×Passive Optical Network(PONの名称)<br>PDS = FTTHの光アクセス構成の一つ。PONと呼ばれる方式。 覚え方: P・D・S = Passive・Double・Star。 出典: 第5回 p.11。 [A23]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>PON</b> の正式名称は?",
-          "opts": [
-            "Pasive Optical Network",
-            "Passive Optical Network",
-            "Optical Passive Network",
-            "Optical Network Unit",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Passive Optical Network",
-          "note": "<b>正解: Passive Optical Network</b>　×Pasive Optical Network ×Optical Passive Network(語順違い) ×Optical Network Unit(ONUの名称)<br>PON = PDS構成の光アクセス。多重化は時分割多重方式。スライドは多重化方式を「自分割」と誤記(正しくは時分割)。 覚え方: P・O・N = Passive・Optical・Network。 出典: 第5回 p.11。 [A23]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>PON</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Passive Optical Network",
+          "note": "<b>正解: Passive Optical Network</b>　×Pasive Optical Network ×Optical Passive Network(語順違い) ×Optical Network Unit(ONUの名称)<br>PON = PDS構成の光アクセス。多重化は時分割多重方式。スライドは多重化方式を「自分割」と誤記(正しくは時分割)。 覚え方: P・O・N = Passive・Optical・Network。 出典: 第5回 p.11。 [A23]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>UTP</b> の正式名称は?",
-          "opts": [
-            "Unshielded Twisted Pair",
-            "Unsheilded Twisted Pair",
-            "Twisted Unshielded Pair",
-            "Shielded Twisted Pair",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Unshielded Twisted Pair",
-          "note": "<b>正解: Unshielded Twisted Pair</b>　×Unsheilded Twisted Pair ×Twisted Unshielded Pair(語順違い) ×Shielded Twisted Pair(STPの名称)<br>UTP = シールドがなく外部雑音に弱いツイストペアケーブル。 覚え方: U・T・P = Unshielded・Twisted・Pair。 出典: 第5回 p.18。 [C1]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>UTP</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Unshielded Twisted Pair",
+          "note": "<b>正解: Unshielded Twisted Pair</b>　×Unsheilded Twisted Pair ×Twisted Unshielded Pair(語順違い) ×Shielded Twisted Pair(STPの名称)<br>UTP = シールドがなく外部雑音に弱いツイストペアケーブル。 覚え方: U・T・P = Unshielded・Twisted・Pair。 出典: 第5回 p.18。 [C1]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>STP</b> の正式名称は?",
-          "opts": [
-            "Twisted Shielded Pair",
-            "Unshielded Twisted Pair",
-            "Shielded Twisted Pair",
-            "Sheilded Twisted Pair",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Shielded Twisted Pair",
-          "note": "<b>正解: Shielded Twisted Pair</b>　×Sheilded Twisted Pair ×Twisted Shielded Pair(語順違い) ×Unshielded Twisted Pair(UTPの名称)<br>STP = シールドがあり外部雑音に強いツイストペアケーブル。 覚え方: S・T・P = Shielded・Twisted・Pair。 出典: 第5回 p.18。 [C1]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>STP</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Shielded Twisted Pair",
+          "note": "<b>正解: Shielded Twisted Pair</b>　×Sheilded Twisted Pair ×Twisted Shielded Pair(語順違い) ×Unshielded Twisted Pair(UTPの名称)<br>STP = シールドがあり外部雑音に強いツイストペアケーブル。 覚え方: S・T・P = Shielded・Twisted・Pair。 出典: 第5回 p.18。 [C1]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>FDDI</b> の正式名称は?",
-          "opts": [
-            "Fiber Data Distributed Interface",
-            "Fiber Distributed Data Interface",
-            "High-level Data Link Control",
-            "Fiber Distrubuted Data Interface",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Fiber Distributed Data Interface",
-          "note": "<b>正解: Fiber Distributed Data Interface</b>　×Fiber Distrubuted Data Interface ×Fiber Data Distributed Interface(語順違い) ×High-level Data Link Control(HDLCの名称)<br>FDDI = リング型LANの例。 覚え方: F・D・D・I = Fiber・Distributed・Data・Interface。 出典: 第5回 p.22。 [A25]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>FDDI</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Fiber Distributed Data Interface",
+          "note": "<b>正解: Fiber Distributed Data Interface</b>　×Fiber Distrubuted Data Interface ×Fiber Data Distributed Interface(語順違い) ×High-level Data Link Control(HDLCの名称)<br>FDDI = リング型LANの例。 覚え方: F・D・D・I = Fiber・Distributed・Data・Interface。 出典: 第5回 p.22。 [A25]"
         }
       ]
     },
@@ -936,74 +464,34 @@
       "title": "第5回の略語 セット14/14(5問5分): CSMA・CSMA/CD・CSMA/CA・WEP・WPA",
       "qs": [
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>CSMA</b> の正式名称は?",
-          "opts": [
-            "Carrier Sense Multiple Access / Collision Detection",
-            "Carier Sense Multiple Access",
-            "Carrier Sense Multiple Access",
-            "Carrier Sence Multiple Access",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Carrier Sense Multiple Access",
-          "note": "<b>正解: Carrier Sense Multiple Access</b>　×Carier Sense Multiple Access ×Carrier Sence Multiple Access ×Carrier Sense Multiple Access / Collision Detection(CSMA/CDの名称)<br>CSMA = LANのアクセス制御方式の一つ。搬送波を検知してから送信する。 覚え方: C・S・M・A = Carrier・Sense・Multiple・Access。 出典: 第5回 p.23。 [A27]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>CSMA</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Carrier Sense Multiple Access",
+          "note": "<b>正解: Carrier Sense Multiple Access</b>　×Carier Sense Multiple Access ×Carrier Sence Multiple Access ×Carrier Sense Multiple Access / Collision Detection(CSMA/CDの名称)<br>CSMA = LANのアクセス制御方式の一つ。搬送波を検知してから送信する。 覚え方: C・S・M・A = Carrier・Sense・Multiple・Access。 出典: 第5回 p.23。 [A27]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>CSMA/CD</b> の『CD』の正式名称は?",
-          "opts": [
-            "Collision Detection",
-            "Collision Detecsion",
-            "Colision Detection",
-            "Collision Avoidance",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Collision Detection",
-          "note": "<b>正解: Collision Detection</b>　×Colision Detection ×Collision Detecsion ×Collision Avoidance(CSMA/CAの方の語)<br>CSMA/CD = CSMAに「衝突検出」を加えたアクセス制御方式(スライドでは Carrier Sense Multiple Access と Collision Detection を別々に展開)。一般には「Carrier Sense Multiple Access with Collision Detection」と書く。⚠️ 本番の表記は未確認。 覚え方: CD = Collision Detection。 出典: 第5回 p.23。 [A27]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>CSMA/CD</b> の『CD』の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Collision Detection",
+          "note": "<b>正解: Collision Detection</b>　×Colision Detection ×Collision Detecsion ×Collision Avoidance(CSMA/CAの方の語)<br>CSMA/CD = CSMAに「衝突検出」を加えたアクセス制御方式(スライドでは Carrier Sense Multiple Access と Collision Detection を別々に展開)。一般には「Carrier Sense Multiple Access with Collision Detection」と書く。⚠️ 本番の表記は未確認。 覚え方: CD = Collision Detection。 出典: 第5回 p.23。 [A27]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>CSMA/CA</b> の『CA』の正式名称は?",
-          "opts": [
-            "Collision Avoidence",
-            "Colision Avoidance",
-            "Collision Avoidance",
-            "Collision Detection",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Collision Avoidance",
-          "note": "<b>正解: Collision Avoidance</b>　×Colision Avoidance ×Collision Avoidence ×Collision Detection(CSMA/CDの方の語)<br>CSMA/CA = CSMAに「衝突回避」を加えたアクセス制御方式(黄色ハイライト。スライドでは Carrier Sense Multiple Access と Collision Avoidance を別々に展開)。一般には「Carrier Sense Multiple Access with Collision Avoidance」と書く。⚠️ 本番の表記は未確認。 覚え方: CA = Collision Avoidance。 出典: 第5回 p.23。 [A27]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>CSMA/CA</b> の『CA』の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Collision Avoidance",
+          "note": "<b>正解: Collision Avoidance</b>　×Colision Avoidance ×Collision Avoidence ×Collision Detection(CSMA/CDの方の語)<br>CSMA/CA = CSMAに「衝突回避」を加えたアクセス制御方式(黄色ハイライト。スライドでは Carrier Sense Multiple Access と Collision Avoidance を別々に展開)。一般には「Carrier Sense Multiple Access with Collision Avoidance」と書く。⚠️ 本番の表記は未確認。 覚え方: CA = Collision Avoidance。 出典: 第5回 p.23。 [A27]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>WEP</b> の正式名称は?",
-          "opts": [
-            "Wi-Fi Protected Access",
-            "Wired Equivalent Privacy",
-            "Wired Equivalant Privacy",
-            "Wiered Equivalent Privacy",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Wired Equivalent Privacy",
-          "note": "<b>正解: Wired Equivalent Privacy</b>　×Wiered Equivalent Privacy ×Wired Equivalant Privacy ×Wi-Fi Protected Access(WPAの名称)<br>WEP = 無線LANの暗号化方式の一つ(資料では×印)。 覚え方: W・E・P = Wired・Equivalent・Privacy。 出典: 第5回 p.30。 [C2]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>WEP</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Wired Equivalent Privacy",
+          "note": "<b>正解: Wired Equivalent Privacy</b>　×Wiered Equivalent Privacy ×Wired Equivalant Privacy ×Wi-Fi Protected Access(WPAの名称)<br>WEP = 無線LANの暗号化方式の一つ(資料では×印)。 覚え方: W・E・P = Wired・Equivalent・Privacy。 出典: 第5回 p.30。 [C2]"
         },
         {
-          "type": "single",
-          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>WPA</b> の正式名称は?",
-          "opts": [
-            "Media Access Control",
-            "Wi-Fi Protected Acess",
-            "Wi-Fi Protected Access",
-            "Wi-Fi Protcted Access",
-            "どれにも一致しない(自分の綴りが違った)"
-          ],
-          "ans": "Wi-Fi Protected Access",
-          "note": "<b>正解: Wi-Fi Protected Access</b>　×Wi-Fi Protected Acess ×Wi-Fi Protcted Access ×Media Access Control(MACの名称)<br>WPA = Wi-Fi関連の無線LAN暗号化方式の一つ(資料では×印。WPA2・WPA3が後続)。 覚え方: Wi-Fi(ハイフン付き)・Protected・Access。 出典: 第5回 p.30。 [C2]",
-          "noShuffle": true
+          "type": "selfgrade",
+          "q": "<b>WPA</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">紙に英語で書いてから、下のボタンで答えを見て自己採点</span>",
+          "answer": "Wi-Fi Protected Access",
+          "note": "<b>正解: Wi-Fi Protected Access</b>　×Wi-Fi Protected Acess ×Wi-Fi Protcted Access ×Media Access Control(MACの名称)<br>WPA = Wi-Fi関連の無線LAN暗号化方式の一つ(資料では×印。WPA2・WPA3が後続)。 覚え方: Wi-Fi(ハイフン付き)・Protected・Access。 出典: 第5回 p.30。 [C2]"
         }
       ]
     },
