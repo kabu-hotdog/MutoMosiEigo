@@ -10,7 +10,7 @@ metadata:
 ## スタック
 - **ランタイム**: Node.js + Express (`server.js`)
 - **DB**: Supabase PostgreSQL (`pool` = pg.Pool)
-- **デプロイ**: Render (`mutomosieigo.onrender.com`)
+- **デプロイ**: Vercel (`muto-mosi-eigo.vercel.app`)。Render は今後使わない(2026-11-21 ユーザー決定)
 - **フロント**: バニラ JS、ビルドツールなし
 - **認証**: 自前セッショントークン (`session_token` in users) + Supabase JWT 併用
 

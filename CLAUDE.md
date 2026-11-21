@@ -4,7 +4,7 @@
 
 - **ランタイム**: Node.js + Express
 - **DB**: Supabase PostgreSQL（`DATABASE_URL` 環境変数）
-- **デプロイ**: Render（`mutomosieigo.onrender.com`）
+- **デプロイ**: Vercel（`muto-mosi-eigo.vercel.app`）。**Render は今後使わない(2026-11-21 ユーザー決定)**。入口は `api/index.js`、設定は `vercel.json`
 - **パッケージ管理**: npm（`npm start` で起動）
 
 ## 開発
