@@ -27,6 +27,10 @@ details.ls-terms summary{cursor:pointer;font-weight:700;font-size:.95rem}
 .ls-term:first-of-type{margin-top:8px}
 .ls-term b{color:var(--teal)}
 .ls-term .full{color:var(--dim);font-size:.8rem;display:block}
+.ls-tp{position:fixed;left:0;right:0;bottom:0;z-index:70;max-height:55vh;overflow-y:auto;background:var(--card);border-top:2px solid var(--teal);box-shadow:0 -8px 24px rgba(0,0,0,.35);padding:0 16px 14px}
+.ls-tp[hidden]{display:none}
+.ls-tp .ls-tph{position:sticky;top:0;background:var(--card);display:flex;align-items:center;justify-content:space-between;padding:10px 0 6px;font-weight:700;font-size:.95rem}
+.ls-tp .ls-term:first-of-type{margin-top:0}
 .ls-block{margin-top:40px;scroll-margin-top:110px}
 .ls-bh{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px}
 .ls-bn{flex-shrink:0;font-size:.74rem;font-weight:800;color:var(--teal);background:var(--accent-soft);border:1px solid var(--accent-line);border-radius:999px;padding:3px 10px;margin-top:4px;white-space:nowrap}
@@ -381,6 +385,7 @@ function render() {
 
   var bar = el('div', 'ls-bar',
     '<span class="num" id="lsNum"></span><div class="track"><i id="lsTrack"></i></div>' +
+    ((D.terms && D.terms.length) ? '<button class="ls-btn ghost" id="lsTerms" type="button">用語</button>' : '') +
     '<button class="ls-btn ghost" id="lsCompact" type="button">要点だけ表示</button>' +
     '<button class="ls-btn ghost" id="lsReset" type="button">やり直し</button>');
   wrap.appendChild(bar);
@@ -393,6 +398,25 @@ function render() {
       '<summary>用語集(' + D.terms.length + ')</summary>' + D.terms.map(function (t) {
         return '<div class="ls-term"><b>' + t.name + '</b>' + (t.full ? '<span class="full">' + t.full + '</span>' : '') + (t.plain || '') + '</div>';
       }).join('')));
+  }
+
+  // 用語パネル: 本文を読みながら、一番上まで戻らずに用語を確認する(上部の「用語」ボタンで開閉)
+  var oldTp = document.getElementById('lsTermPanel'); if (oldTp) oldTp.remove();
+  if (D.terms && D.terms.length) {
+    var tp = el('div', 'ls-tp',
+      '<div class="ls-tph"><span>用語集(' + D.terms.length + ')</span><button class="ls-btn ghost" id="lsTermsClose" type="button">閉じる</button></div>' +
+      D.terms.map(function (t) {
+        return '<div class="ls-term"><b>' + t.name + '</b>' + (t.full ? '<span class="full">' + t.full + '</span>' : '') + (t.plain || '') + '</div>';
+      }).join(''));
+    tp.id = 'lsTermPanel'; tp.hidden = true;
+    document.body.appendChild(tp);
+    var tb = document.getElementById('lsTerms');
+    function toggleTerms(on) {
+      tp.hidden = on === undefined ? !tp.hidden : !on;
+      if (tb) { tb.classList.toggle('on', !tp.hidden); tb.textContent = tp.hidden ? '用語' : '用語を閉じる'; }
+    }
+    if (tb) tb.onclick = function () { toggleTerms(); };
+    document.getElementById('lsTermsClose').onclick = function () { toggleTerms(false); };
   }
 
   D.blocks.forEach(function (b, bi) {
