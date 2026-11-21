@@ -5,7 +5,7 @@
   "subject": "情報ネットワーク工学",
   "title": "情報ネットワーク工学 ・ 学習 第5回 アクセスネットワークと LAN",
   "storageKey": "ine_learn_05_v1",
-  "minutes": 40,
+  "minutes": 30,
   "goals": [
     "ベーシック手順と HDLC の違い(一方向/両方向、パリティ/CRC など)を言える",
     "ISDN(2B+D)・ADSL・FTTH・CATV の特徴と、バス・リング・スターの形、CSMA/CD と CSMA/CA の違いを言える",
@@ -125,30 +125,6 @@
           ],
           "ans": "B チャネル2本と D チャネル1本が使える",
           "note": "数字は本数。2B = B が2本、D は1本。第5回 p.7 [A21]"
-        },
-        {
-          "type": "single",
-          "q": "N-ISDN と B-ISDN の境目の速度は?",
-          "opts": [
-            "1.5Mbps",
-            "64kbps",
-            "10Mbps",
-            "100Mbps"
-          ],
-          "ans": "1.5Mbps",
-          "note": "N-ISDN は 1.5Mbps まで、B-ISDN は 1.5Mbps 以上。第5回 p.7 [A21][C5]"
-        },
-        {
-          "type": "single",
-          "q": "演習6.3 の「基本インターフェースでは2本使える」チャネルは B と D のどちら? その理由は?",
-          "opts": [
-            "B。2B+D の「2B」が B 2本という意味だから",
-            "D。2B+D の「D」は2本分あるから",
-            "B。B は呼制御用のチャネルだから",
-            "D。D は 64kbps で B より速いから"
-          ],
-          "ans": "B。2B+D の「2B」が B 2本という意味だから",
-          "note": "2本あるのは B、1本が D。演習6.3 の答えは ①D ②B。数字 ③16 ④64(kbps)は資料外の一般知識。第5回 p.7, p.13 [A21]"
         }
       ]
     },
@@ -182,30 +158,6 @@
           "ans": "ISDN",
           "noShuffle": false,
           "note": "乗り換え先は FTTH・CATV・WiMAX2 など。ISDN も ADSL と同じく終了したサービス。第5回 p.8, p.10 [A22]"
-        },
-        {
-          "type": "single",
-          "q": "CATV でインターネットにつなぐとき、家側で使う装置は?",
-          "opts": [
-            "STB",
-            "ONU",
-            "DSU",
-            "L2SW"
-          ],
-          "ans": "STB",
-          "note": "STB = Set-Top Box。ONU は光(FTTH)、DSU は ISDN 側の装置。ただし、装置と網の対応は教科書の図6.1にしか載っていない(資料外。教科書 図6.1)。第5回 p.3, p.12 [A24]"
-        },
-        {
-          "type": "single",
-          "q": "PON(PDS 構成)で、なぜ時分割多重が使われる?",
-          "opts": [
-            "1本の光ファイバを複数の利用者で分け合い、順番に使わせるため",
-            "光ファイバは1本しか作れないため",
-            "電話線の速度に合わせるため",
-            "ADSL と同じ電波を使うため"
-          ],
-          "ans": "1本の光ファイバを複数の利用者で分け合い、順番に使わせるため",
-          "note": "時分割 = 時間を区切って順番に使う。スライドは「自分割」と誤記(正しくは時分割)。「分け合うから」は PDS(Double Star)の形からの補足で資料外。第5回 p.11 [A23]"
         }
       ],
       "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/textbook/fig6-13.jpg\" alt=\"図6.13 ADSLの接続構成\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">教科書 図6.13 ADSLの接続構成</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/textbook/fig6-14.jpg\" alt=\"図6.14 xDSL\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">教科書 図6.14 xDSL</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/textbook/fig6-15.jpg\" alt=\"図6.15 光アクセスの構成法\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">教科書 図6.15 光アクセスの構成法</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/textbook/fig6-16.jpg\" alt=\"図6.16 PDS構成\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">教科書 図6.16 PDS構成</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/textbook/fig6-17.jpg\" alt=\"図6.17 PONでの多重化\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">教科書 図6.17 PONでの多重化</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/textbook/fig6-18.jpg\" alt=\"図6.18 CATVによるインターネット接続\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">教科書 図6.18 CATVによるインターネット接続</figcaption></figure>"
@@ -239,30 +191,6 @@
           ],
           "ans": "両方向の伝送ができる",
           "note": "残り3つはベーシック手順の特徴。第5回 p.5 [A20]"
-        },
-        {
-          "type": "single",
-          "q": "HDLC が誤り検出に使う方式は?",
-          "opts": [
-            "CRC(巡回冗長検査)",
-            "パリティビットだけ",
-            "誤り検出はしない",
-            "チェックサムだけ"
-          ],
-          "ans": "CRC(巡回冗長検査)",
-          "note": "CRC = Cyclic Redundancy Check。パリティだけなのはベーシック手順。第5回 p.5 [A20]"
-        },
-        {
-          "type": "single",
-          "q": "ベーシック手順は、なぜ HDLC より誤り検出が弱い?",
-          "opts": [
-            "パリティビットを付けるだけで判定するから",
-            "一方向にしか送れないから",
-            "1ブロックごとに応答を返すから",
-            "最小でも 7 ビット単位で送るから"
-          ],
-          "ans": "パリティビットを付けるだけで判定するから",
-          "note": "誤り検出の強さは検出方式で決まる。HDLC は CRC を使う。第5回 p.5 [A20]"
         }
       ]
     },
@@ -296,31 +224,6 @@
           ],
           "ans": "FDDI",
           "note": "バス型とスター型はイーサネット、リング型は FDDI。第5回 p.22 [A25]"
-        },
-        {
-          "type": "single",
-          "q": "家庭や一般企業等での標準使用カテゴリとされているのは?",
-          "opts": [
-            "カテゴリ6A",
-            "カテゴリ5e",
-            "カテゴリ6",
-            "カテゴリ8"
-          ],
-          "ans": "カテゴリ6A",
-          "note": "カテゴリ6A(UTP、10GBASE-T、100m)に黄色の吹き出しで「標準使用カテゴリ」とある。5e も赤枠で強調されているが標準とは書かれていない。第5回 p.18 [C1]",
-          "noShuffle": false
-        },
-        {
-          "type": "single",
-          "q": "STP が UTP より外部の雑音に強いのは、なぜ?",
-          "opts": [
-            "シールド(覆い)で外からの雑音を防ぐから",
-            "線が長く作られているから",
-            "信号を2倍の速さで送るから",
-            "電波ではなく光で送るから"
-          ],
-          "ans": "シールド(覆い)で外からの雑音を防ぐから",
-          "note": "S = Shielded。シールドがあるのが STP、ないのが UTP。光(光ファイバ)は別のケーブル。第5回 p.18 [C1][C9]"
         }
       ]
     },
@@ -353,30 +256,6 @@
           ],
           "ans": "Collision Avoidance",
           "note": "CSMA/CD の CD が Collision Detection。CSMA/CA は黄色で強調されている。第5回 p.23 [A27]"
-        },
-        {
-          "type": "single",
-          "q": "信号の衝突を「見つける」のは、CSMA/CD と CSMA/CA のどちら?",
-          "opts": [
-            "CSMA/CD(Collision Detection = 衝突の検出)",
-            "CSMA/CA(Collision Avoidance = 衝突の回避)",
-            "どちらも衝突を見つける",
-            "どちらも衝突を見つけない"
-          ],
-          "ans": "CSMA/CD(Collision Detection = 衝突の検出)",
-          "note": "Detection = 見つける、Avoidance = 避ける。CD→CA の順に黄色で強調されている。第5回 p.23 [A27]"
-        },
-        {
-          "type": "single",
-          "q": "CSMA が長距離のネットワークに向かない理由は?(演習7.1)",
-          "opts": [
-            "信号が届くまでの遅れが大きく、相手が送り始めたことに気づけずぶつかりやすいから",
-            "ケーブルが長いと信号が強くなりすぎるから",
-            "長距離では暗号化が必要になるから",
-            "スター型にできなくなるから"
-          ],
-          "ans": "信号が届くまでの遅れが大きく、相手が送り始めたことに気づけずぶつかりやすいから",
-          "note": "(資料外)演習7.1 の答えは資料に載っていない。一般的な説明。第5回 p.23, p.31 [A27]"
         }
       ]
     },
@@ -421,30 +300,6 @@
           ],
           "ans": "スイッチングハブ",
           "note": "リピータハブは全ホストに転送。ルータは IP アドレスで経路を決める。第5回 p.26, p.27 [A26]"
-        },
-        {
-          "type": "single",
-          "q": "MAC アドレスの説明として正しいのは?",
-          "opts": [
-            "48 ビットで、先頭の3オクテット(24 ビット)がベンダー ID",
-            "32 ビットで、先頭の3オクテット(8 ビット)がベンダー ID",
-            "48 ビットで、先頭の3オクテットが機種 ID",
-            "64 ビットで、区切りは「.」"
-          ],
-          "ans": "48 ビットで、先頭の3オクテット(24 ビット)がベンダー ID",
-          "note": "1オクテット = 8 ビットなので3オクテット = 24 ビット(スライドの「3オクテット(8bit)」は誤記)。次の1オクテットが機種 ID、最後の2オクテットがシリアル ID。第5回 p.24 [A18]"
-        },
-        {
-          "type": "single",
-          "q": "スイッチングハブは、なぜ宛先のホストだけに送れる?",
-          "opts": [
-            "MAC アドレステーブルで、ポートと MAC アドレスの対応を覚えているから",
-            "IP アドレスを見て経路を選ぶから",
-            "電気信号を増幅するから",
-            "全ホストに送って、宛先でないホストに破棄させるから"
-          ],
-          "ans": "MAC アドレステーブルで、ポートと MAC アドレスの対応を覚えているから",
-          "note": "最後の選択肢はリピータハブの動き。演習7.2「リピータハブとスイッチングハブの比較」の答えの柱。第5回 p.26, p.27, p.31 [A26]"
         }
       ]
     }

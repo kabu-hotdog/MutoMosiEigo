@@ -4,174 +4,230 @@
   "exam": "後期中間試験",
   "subject": "情報ネットワーク工学",
   "title": "情報ネットワーク工学 ・ ロードマップ",
-  "intro": "上から順にやる。迷ったら一番上の未完了から。\n学習は1日1回分が目安。\n正答率が5割を割った回は、その回の学習ページに戻る。\n前日は新しい問題をやらない。",
-  "storageKey": "ine_roadmap_v1",
+  "intro": "勉強は8回に分けた(1回あたり35〜55分)。上から順にやる。迷ったら一番上の未完了から。\n各回は「学習ページ → 略語 → セルフチェック」の順。学習ページは1日1回分が目安。\n6回しか取れない時は、6回目と7回目を1回にまとめて、⑥総合ミックスと④応用情報は飛ばしてよい。\n正答率が5割を割った回は、その回の学習ページに戻る。前日は新しい問題をやらない。",
+  "storageKey": "ine_roadmap_v2",
   "steps": [
     {
       "id": "L1",
-      "phase": "学習",
-      "label": "学習 第1回 (通信の歴史・略語・電話交換・携帯の世代)",
+      "phase": "1回目(約43分)",
+      "label": "学習 第1回 (通信の歴史・略語・電話交換)",
       "href": "/lesson.html?d=lessons/network-01/data.json",
-      "minutes": 40,
-      "why": "授業を聞いていなくても解けるように、まず本文で土台を作る",
+      "minutes": 20,
+      "why": "まず本文で土台を作る。授業を聞いていなくても解けるように",
       "done": {
         "lesson": "ine_learn_01_v1"
       }
     },
     {
+      "id": "A1",
+      "phase": "1回目(約43分)",
+      "label": "① 略語 セット1〜2",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-ryakugo/data.json#r1",
+      "minutes": 10,
+      "why": "綴りは紙に書いてから選ぶ"
+    },
+    {
+      "id": "B1",
+      "phase": "1回目(約43分)",
+      "label": "② セルフチェック 第1回",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-selfcheck/data.json#s1",
+      "minutes": 8,
+      "why": "Moodle そのままが一番本番に近い"
+    },
+    {
+      "id": "C1",
+      "phase": "1回目(約43分)",
+      "label": "③ 計算 回線数",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-keisan/data.json#r1",
+      "minutes": 5,
+      "why": "計算は手で解いて数字を合わせる"
+    },
+    {
       "id": "L2",
-      "phase": "学習",
+      "phase": "2回目(約50分)",
       "label": "学習 第2回 携帯電話の世代・インターネットの歴史・ディジタル化と変調",
       "href": "/lesson.html?d=lessons/network-02/data.json",
-      "minutes": 40,
-      "why": "前の回のまとめを5分思い出してから進む",
+      "minutes": 30,
+      "why": "前の回のまとめを3分思い出してから",
       "done": {
         "lesson": "ine_learn_02_v1"
       }
     },
     {
+      "id": "A2",
+      "phase": "2回目(約50分)",
+      "label": "① 略語 セット3〜5",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-ryakugo/data.json#r3",
+      "minutes": 12,
+      "why": "綴りは紙に書いてから選ぶ"
+    },
+    {
+      "id": "B2",
+      "phase": "2回目(約50分)",
+      "label": "② セルフチェック 第2回",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-selfcheck/data.json#s2",
+      "minutes": 8,
+      "why": "穴を見つける"
+    },
+    {
       "id": "L3",
-      "phase": "学習",
+      "phase": "3回目(約62分)",
       "label": "学習 第3回 変調・回線交換とパケット交換・OSI参照モデル",
       "href": "/lesson.html?d=lessons/network-03/data.json",
-      "minutes": 40,
-      "why": "前の回のまとめを5分思い出してから進む",
+      "minutes": 30,
+      "why": "前の回のまとめを3分思い出してから",
       "done": {
         "lesson": "ine_learn_03_v1"
       }
     },
     {
+      "id": "A3",
+      "phase": "3回目(約62分)",
+      "label": "① 略語 セット6〜8",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-ryakugo/data.json#r6",
+      "minutes": 12,
+      "why": "綴りは紙に書いてから選ぶ"
+    },
+    {
+      "id": "B3",
+      "phase": "3回目(約62分)",
+      "label": "② セルフチェック 第3回",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-selfcheck/data.json#s3",
+      "minutes": 8,
+      "why": "穴を見つける"
+    },
+    {
+      "id": "C3",
+      "phase": "3回目(約62分)",
+      "label": "③ 計算 標本化・伝送速度",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-keisan/data.json#r2",
+      "minutes": 12,
+      "why": "電卓なしで手で解く"
+    },
+    {
       "id": "L4",
-      "phase": "学習",
+      "phase": "4回目(約55分)",
       "label": "学習 第4回 OSI参照モデルとアクセスネットワーク",
       "href": "/lesson.html?d=lessons/network-04/data.json",
-      "minutes": 40,
-      "why": "前の回のまとめを5分思い出してから進む",
+      "minutes": 25,
+      "why": "前の回のまとめを3分思い出してから",
       "done": {
         "lesson": "ine_learn_04_v1"
       }
     },
     {
+      "id": "A4",
+      "phase": "4回目(約55分)",
+      "label": "① 略語 セット9〜10",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-ryakugo/data.json#r9",
+      "minutes": 10,
+      "why": "綴りは紙に書いてから選ぶ"
+    },
+    {
+      "id": "B4",
+      "phase": "4回目(約55分)",
+      "label": "② セルフチェック 第4回",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-selfcheck/data.json#s4",
+      "minutes": 8,
+      "why": "穴を見つける"
+    },
+    {
+      "id": "C4",
+      "phase": "4回目(約55分)",
+      "label": "③ 計算 ボーレート・BER",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-keisan/data.json#r4",
+      "minutes": 12,
+      "why": "単位に注意"
+    },
+    {
       "id": "L5",
-      "phase": "学習",
+      "phase": "5回目(約55分)",
       "label": "学習 第5回 アクセスネットワークと LAN",
       "href": "/lesson.html?d=lessons/network-05/data.json",
-      "minutes": 40,
-      "why": "前の回のまとめを5分思い出してから進む",
+      "minutes": 30,
+      "why": "前の回のまとめを3分思い出してから",
       "done": {
         "lesson": "ine_learn_05_v1"
       }
     },
     {
-      "id": "P1",
-      "phase": "演習1周目",
-      "label": "② セルフチェック(Moodle そのまま)",
-      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-selfcheck/data.json",
-      "minutes": 25,
-      "why": "Moodle そのままが一番本番に近い",
-      "done": {
-        "quiz": "ine_chukan_selfcheck_v2",
-        "total": 50
-      }
+      "id": "A5",
+      "phase": "5回目(約55分)",
+      "label": "① 略語 セット11〜12",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-ryakugo/data.json#r11",
+      "minutes": 9,
+      "why": "綴りは紙に書いてから選ぶ"
     },
     {
-      "id": "P2",
-      "phase": "演習1周目",
-      "label": "① 略語の正式名称",
-      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-ryakugo/data.json",
-      "minutes": 30,
-      "why": "綴りは紙に書いてから選ぶ",
-      "done": {
-        "quiz": "ine_chukan_ryakugo_v1",
-        "total": 210
-      }
+      "id": "B5",
+      "phase": "5回目(約55分)",
+      "label": "② セルフチェック 第5回",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-selfcheck/data.json#s5",
+      "minutes": 8,
+      "why": "穴を見つける"
     },
     {
-      "id": "P3",
-      "phase": "演習1周目",
+      "id": "C5",
+      "phase": "5回目(約55分)",
+      "label": "③ 計算 ISDN・アドレスの個数",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-keisan/data.json#r6",
+      "minutes": 8,
+      "why": "2B+D と 2^k"
+    },
+    {
+      "id": "D6",
+      "phase": "6回目(約33分)",
+      "label": "③ 計算 総合ミックス",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-keisan/data.json#r8",
+      "minutes": 8,
+      "why": "どの公式を使うか自分で決める"
+    },
+    {
+      "id": "E6",
+      "phase": "6回目(約33分)",
       "label": "⑤ 類題",
       "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-ruidai/data.json",
-      "minutes": 35,
-      "why": "本番の言い回しが変わっても解けるか試す",
-      "done": {
-        "quiz": "ine_chukan_ruidai_v1",
-        "total": 58
-      }
+      "minutes": 25,
+      "why": "本番の言い回しが変わっても解けるか試す"
     },
     {
-      "id": "P4",
-      "phase": "演習1周目",
-      "label": "③ 計算問題",
-      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-keisan/data.json",
-      "minutes": 40,
-      "why": "計算は手で解いて、数字を合わせる",
-      "done": {
-        "quiz": "ine_chukan_keisan_v1",
-        "total": 69
-      }
-    },
-    {
-      "id": "P5",
-      "phase": "演習1周目",
-      "label": "④ 応用情報の過去問",
-      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-ap/data.json",
-      "minutes": 20,
-      "why": "範囲内の過去問で、出し方に慣れる",
-      "done": {
-        "quiz": "mm_2026_4_kouki_chukan_network_ap_v1",
-        "total": 21
-      }
-    },
-    {
-      "id": "Q1",
-      "phase": "演習2周目",
+      "id": "F7",
+      "phase": "7回目(約44分)",
       "label": "⑥ 総合ミックス",
       "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-mix/data.json",
-      "minutes": 30,
-      "why": "ごちゃ混ぜで出されても思い出せるか確認",
-      "done": {
-        "quiz": "ine_chukan_mix_v1",
-        "total": 43
-      }
+      "minutes": 20,
+      "why": "ごちゃ混ぜで思い出せるか確認"
     },
     {
-      "id": "Q2",
-      "phase": "演習2周目",
-      "label": "① の誤答をやり直す",
-      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-ryakugo/data.json",
-      "minutes": 15,
-      "why": "間違えた略語だけに絞って覚え直す"
+      "id": "G7",
+      "phase": "7回目(約44分)",
+      "label": "④ 応用情報の過去問",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-ap/data.json",
+      "minutes": 12,
+      "why": "範囲内の過去問で出し方に慣れる"
     },
     {
-      "id": "Q3",
-      "phase": "演習2周目",
-      "label": "② の誤答をやり直す",
-      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-selfcheck/data.json",
-      "minutes": 15,
-      "why": "本番に近い問題の取りこぼしを潰す"
-    },
-    {
-      "id": "Q4",
-      "phase": "演習2周目",
-      "label": "⑤ の誤答をやり直す",
-      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-ruidai/data.json",
-      "minutes": 15,
-      "why": "類題の取りこぼしを潰す"
+      "id": "H7",
+      "phase": "7回目(約44分)",
+      "label": "① 略語 意味",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-ryakugo/data.json#r13",
+      "minutes": 12,
+      "why": "略語→意味。名前だけでなく中身も"
     },
     {
       "id": "R1",
-      "phase": "演習3周目",
+      "phase": "8回目(約35分)",
       "label": "全部の誤答だけをやり直す",
       "minutes": 30,
       "why": "まだ間違える問題だけが残る。そこに時間を使う"
     },
     {
       "id": "R2",
-      "phase": "演習3周目",
-      "label": "① 本番形式(5問5分)",
+      "phase": "8回目(約35分)",
+      "label": "① 略語 本番形式(5問5分)",
       "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-ryakugo/data.json",
       "minutes": 5,
-      "why": "時間を切って出す練習。本番の速さに慣れる"
+      "why": "時間を切って出す練習"
     },
     {
       "id": "D1",

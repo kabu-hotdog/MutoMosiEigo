@@ -3,12 +3,12 @@
   "grade": 4,
   "exam": "後期中間試験",
   "subject": "情報ネットワーク工学",
-  "title": "情報ネットワーク工学 ・ 学習 第1回 (通信の歴史・略語・電話交換・携帯の世代)",
+  "title": "情報ネットワーク工学 ・ 学習 第1回 (通信の歴史・略語・電話交換)",
   "storageKey": "ine_learn_01_v1",
-  "minutes": 40,
+  "minutes": 20,
   "goals": [
     "ADSL・HTTP などの略語を、英語の正式名称で綴りまで書ける",
-    "電信 → 電話 → IP電話の歴史と、携帯電話の世代ごとの多元接続方式(FDMA・TDMA/CDMA・CDMA・OFDMA)を言える",
+    "電信 → 電話 → IP電話の歴史を言える",
     "電話機 n 台を全部つなぐ回線数 (n-1)×n/2 を計算でき、交換機で回線が減る理由を説明できる"
   ],
   "katex": false,
@@ -47,11 +47,6 @@
       "name": "UDP",
       "full": "User Datagram Protocol",
       "plain": "受け取りの確認をせず、素早くデータを送る約束事(資料外。Moodle に出る)"
-    },
-    {
-      "name": "OFDMA",
-      "full": "Orthogonal Frequency Division Multiple Access",
-      "plain": "直交周波数分割多元接続。携帯電話の第3.9世代(LTE)で使う、電波の分け合い方"
     }
   ],
   "blocks": [
@@ -95,29 +90,6 @@
           ],
           "ans": "ベル(米)",
           "note": "1876年にベル(米)が電話機を発明。モールスは電信、マルコーニは無線電信。(第1回 p.9)"
-        },
-        {
-          "type": "single",
-          "q": "有線のネット接続の移り変わりとして正しい並びは?",
-          "opts": [
-            "ダイヤルアップ → ISDN → ADSL → FTTH",
-            "ADSL → ISDN → ダイヤルアップ → FTTH",
-            "FTTH → ADSL → ISDN → ダイヤルアップ",
-            "ISDN → ダイヤルアップ → FTTH → ADSL"
-          ],
-          "ans": "ダイヤルアップ → ISDN → ADSL → FTTH",
-          "note": "電話線+MODEM → ISDN → ADSL・CATV → 光(FTTH・CATV)の順。(第2回 p.8)"
-        },
-        {
-          "type": "single",
-          "q": "なぜ電信は「符号伝送」、電話は「音声伝送」と呼ばれる?",
-          "opts": [
-            "電信は文字を符号にして送り、電話は声そのものを送るから",
-            "電信は有線、電話は無線だから",
-            "電信は1本、電話は2本の線を使うから"
-          ],
-          "ans": "電信は文字を符号にして送り、電話は声そのものを送るから",
-          "note": "年表(第1回 p.9)に「符号伝送」「音声伝送」とある。符号=トン・ツーなどの決まった記号の組み合わせ(この一言の説明は資料外)。"
         }
       ]
     },
@@ -162,29 +134,6 @@
           ],
           "ans": "Hyper Text Transfer Protocol",
           "note": "Transfer の s を落とさない。Hyper と Text は別の単語。(第1回 p.8)"
-        },
-        {
-          "type": "single",
-          "q": "なぜ ADSL の頭に Asymmetric(非対称)が付く?",
-          "opts": [
-            "上りと下りの速さが違う(下りが速い)から",
-            "ISDN より遅い方式であることを表すから",
-            "利用者の家と電話局で回線の太さが違うから"
-          ],
-          "ans": "上りと下りの速さが違う(下りが速い)から",
-          "note": "Asymmetric は非対称の意味。下りを速く、上りを遅くした方式。光ファイバは上下とも速い。(第1回 p.8、第1回 p.9)"
-        },
-        {
-          "type": "single",
-          "q": "(先に紙に綴りを書いてから選ぶ)SMTP の正式名称は?",
-          "opts": [
-            "Simple Mail Transfer Protocol",
-            "Simple Mail Tranfer Protocol",
-            "Simple Male Transfer Protocol",
-            "Simple Mail Transmit Protocol"
-          ],
-          "ans": "Simple Mail Transfer Protocol",
-          "note": "Moodle の正解表記。Transfer の綴りは HTTP と同じ。(資料外。講義資料に正式名称は無く、Moodle で確認済み)"
         }
       ]
     },
@@ -250,96 +199,6 @@
           ],
           "ans": "499,500本",
           "note": "(1000-1)×1000/2 = 499,500。999,000 は2で割り忘れ。(第1回 p.11 例題1.1)"
-        },
-        {
-          "type": "single",
-          "q": "電話機1000台を、交換機を使ってつなぐと回線は何本?",
-          "opts": [
-            "1000本",
-            "999本",
-            "500本",
-            "499,500本"
-          ],
-          "ans": "1000本",
-          "note": "各電話機から交換機へ1本ずつなので台数と同じ。(第1回 p.11)"
-        },
-        {
-          "type": "single",
-          "q": "なぜ全部つなぐ式で、最後に2で割る?",
-          "opts": [
-            "A-B の1本を、A側と B側で2回数えているから",
-            "回線1本で2台分を受け持てるので、台数の半分で足りるから",
-            "交換機が半分の回線を代わりに受け持つから"
-          ],
-          "ans": "A-B の1本を、A側と B側で2回数えているから",
-          "note": "1台あたり n-1 本を n 台ぶん足すと、同じ線を両端で2回数える。"
-        }
-      ]
-    },
-    {
-      "id": "b4",
-      "title": "携帯電話は世代ごとに電波の分け合い方(多元接続)が変わった",
-      "pre": [
-        {
-          "type": "single",
-          "q": "携帯電話が、アナログからディジタルに変わったのは第何世代?(外れて当然)",
-          "opts": [
-            "第1世代",
-            "第2世代",
-            "第3世代"
-          ],
-          "ans": "第2世代",
-          "note": "第1世代(1980年代)はアナログ、第2世代(1990年代)からディジタル。"
-        },
-        {
-          "type": "single",
-          "q": "FDMA の F は何の頭文字?(外れて当然)",
-          "opts": [
-            "Frequency(周波数)",
-            "Fast(高速)",
-            "Fiber(光ファイバ)"
-          ],
-          "ans": "Frequency(周波数)",
-          "note": "Frequency division multiple access = 周波数分割多元接続。"
-        }
-      ],
-      "body": "携帯電話は約10年ごとに世代が変わった。そのたびに<b>多元接続</b>(1本の電波を大勢で分け合う方法。この一言は資料外)が進んだ。第1世代(1980年代)はアナログで <b>FDMA</b>(周波数で分ける)、第2世代(1990年代)はディジタルで <b>TDMA</b>(時間で分ける)/<b>CDMA</b>(符号で分ける)、第3世代(2000年代)は CDMA、第3.9世代(2010年代)は <b>OFDMA</b>(直交周波数分割)で、通信方式は LTE。<b>なぜ進んだ?</b> 速さ(1秒に送れるデータ量。kbps・Mbps はその単位)が 1.2kbps から 100Mbps に上がり、電話だけだったのがデータ通信・動画まで使えるようになったから。覚え方は、第3=CDMA、第3.9=OFDMA、LTE は第3.9世代。OFDMA の正式名称は Orthogonal Frequency Division Multiple Access。",
-      "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/textbook/table1-1.jpg\" alt=\"表1.1 携帯電話の通信方式の変遷\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">教科書 表1.1 携帯電話の通信方式の変遷</figcaption></figure>",
-      "check": [
-        {
-          "type": "single",
-          "q": "携帯電話の第3世代の多元接続方式は?",
-          "opts": [
-            "CDMA",
-            "TDMA",
-            "FDMA",
-            "OFDMA"
-          ],
-          "ans": "CDMA",
-          "note": "第3世代(2000年代)は CDMA(W-CDMA・CDMA2000)。TDMA は第2世代、FDMA は第1世代、OFDMA は第3.9世代。(第2回 p.4)"
-        },
-        {
-          "type": "single",
-          "q": "第3.9世代の通信方式は?",
-          "opts": [
-            "LTE",
-            "W-CDMA",
-            "CDMA2000",
-            "GSM"
-          ],
-          "ans": "LTE",
-          "note": "第3.9世代は LTE・WiMAX。W-CDMA・CDMA2000 は第3世代、GSM は第2世代。(第2回 p.4)"
-        },
-        {
-          "type": "single",
-          "q": "なぜ第1世代では電話しかできなかったのに、第3.9世代では動画まで見られるようになった?(資料の表から)",
-          "opts": [
-            "伝送速度が 1.2kbps から 21〜100Mbps に上がったから",
-            "基地局が増えて、電話がつながりやすくなったから",
-            "多元接続方式が FDMA から TDMA に変わっただけだから"
-          ],
-          "ans": "伝送速度が 1.2kbps から 21〜100Mbps に上がったから",
-          "note": "第1世代は 1.2kbps で電話のみ、第3.9世代は 21〜100Mbps でインターネット・SNS・動画・電話。(第2回 p.4)"
         }
       ]
     }
@@ -367,14 +226,6 @@
         "全部つなぐと (n-1)×n/2 本。交換機ありは n 本。1000台なら 499,500本と 1000本(499.5倍)"
       ],
       [
-        "携帯の世代",
-        "第1=FDMA、第2=TDMA/CDMA、第3=CDMA、第3.9=OFDMA(LTE)"
-      ],
-      [
-        "OFDMA",
-        "Orthogonal Frequency Division Multiple Access(直交周波数分割多元接続)"
-      ],
-      [
         "資料外の略語",
         "URL=Uniform Resource Locator / IP=Internet Protocol / DHCP=Dynamic Host Configuration Protocol / SMTP=Simple Mail Transfer Protocol / UDP=User Datagram Protocol"
       ]
@@ -398,18 +249,6 @@
         "(500-1)×500/2 = 499×500/2 = 124,750"
       ],
       "note": "(500-1)×500/2 = 124,750本。2で割り忘れると 249,500 になる。(第1回 p.11 例題1.1 と同じ形)"
-    },
-    {
-      "type": "single",
-      "q": "携帯電話の第3.9世代の多元接続方式は?",
-      "opts": [
-        "OFDMA",
-        "CDMA",
-        "TDMA",
-        "ADMA"
-      ],
-      "ans": "OFDMA",
-      "note": "第3.9世代(2010年代)は OFDMA(LTE・WiMAX)。CDMA は第3世代。ADMA という方式は無い。(第2回 p.4)"
     },
     {
       "type": "single",
