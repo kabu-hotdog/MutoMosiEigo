@@ -7,7 +7,9 @@ var CSS = `
 .rm-wrap *{box-sizing:border-box}
 .rm-eyebrow{font-size:.72rem;letter-spacing:.14em;color:var(--teal);font-weight:700}
 .rm-wrap h1{margin:6px 0 8px;font-size:1.55rem;line-height:1.3;font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif}
-.rm-intro{color:var(--muted);font-size:.92rem;margin:0 0 14px;white-space:pre-line}
+.rm-intro{color:var(--muted);font-size:.92rem;margin:0 0 14px}
+.rm-intro p{margin:0 0 9px;line-height:1.7}
+.rm-intro b{color:var(--teal);font-weight:700}
 .rm-total{display:flex;align-items:center;gap:10px;margin-bottom:6px}
 .rm-total .n{font-weight:700;color:var(--teal);white-space:nowrap;font-size:.92rem}
 .rm-track{flex:1;height:8px;background:var(--card2);border-radius:99px;overflow:hidden;min-width:80px}
@@ -90,7 +92,13 @@ function render() {
 
   wrap.appendChild(el('div', 'rm-eyebrow', 'ROADMAP'));
   wrap.appendChild(el('h1', '', D.title));
-  if (D.intro) wrap.appendChild(el('p', 'rm-intro', D.intro));
+  if (D.intro) {
+    var introHtml = String(D.intro).split('\n').filter(Boolean).map(function (ln) {
+      var esc = ln.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      return '<p>' + esc.replace(/^【([^】]+)】/, '<b>$1</b>　') + '</p>';
+    }).join('');
+    wrap.appendChild(el('div', 'rm-intro', introHtml));
+  }
   wrap.appendChild(el('div', 'rm-total',
     '<span class="n">' + doneN + ' / ' + steps.length + ' 完了</span><div class="rm-track"><i style="width:' + (steps.length ? doneN / steps.length * 100 : 0) + '%"></i></div>'));
 

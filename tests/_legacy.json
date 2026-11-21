@@ -62,7 +62,8 @@
     "storageKey": null,
     "totalItems": 0,
     "type": "summary",
-    "path": "/roadmap.html?d=roadmaps/network-2026-kouki-chukan.json"
+    "path": "/roadmap.html?d=roadmaps/network-2026-kouki-chukan.json",
+    "order": 0
   },
   {
     "year": 2026,
@@ -73,7 +74,8 @@
     "storageKey": null,
     "totalItems": 0,
     "type": "summary",
-    "path": "/lesson.html?d=lessons/network-01/data.json"
+    "path": "/lesson.html?d=lessons/network-01/data.json",
+    "order": 1
   },
   {
     "year": 2026,
@@ -84,7 +86,8 @@
     "storageKey": null,
     "totalItems": 0,
     "type": "summary",
-    "path": "/lesson.html?d=lessons/network-02/data.json"
+    "path": "/lesson.html?d=lessons/network-02/data.json",
+    "order": 2
   },
   {
     "year": 2026,
@@ -95,7 +98,8 @@
     "storageKey": null,
     "totalItems": 0,
     "type": "summary",
-    "path": "/lesson.html?d=lessons/network-03/data.json"
+    "path": "/lesson.html?d=lessons/network-03/data.json",
+    "order": 3
   },
   {
     "year": 2026,
@@ -106,7 +110,8 @@
     "storageKey": null,
     "totalItems": 0,
     "type": "summary",
-    "path": "/lesson.html?d=lessons/network-04/data.json"
+    "path": "/lesson.html?d=lessons/network-04/data.json",
+    "order": 4
   },
   {
     "year": 2026,
@@ -117,6 +122,7 @@
     "storageKey": null,
     "totalItems": 0,
     "type": "summary",
-    "path": "/lesson.html?d=lessons/network-05/data.json"
+    "path": "/lesson.html?d=lessons/network-05/data.json",
+    "order": 5
   }
 ]

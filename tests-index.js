@@ -66,11 +66,19 @@ function buildTestsIndex() {
       storageKey: data.storageKey != null ? data.storageKey : null,
       totalItems: countItems(data),
       type: data.type, // undefined は JSON 化で自動的に落ちる
+      order: data.order, // 同じ科目の中の並び順(小さいほど上)。無ければ後ろ
       path: '/quiz.html?d=tests/' + dir + '/data.json',
     });
   }
 
-  return out.concat(readLegacy());
+  // order を持つものを小さい順に先頭へ。order が無いものは元の順のまま後ろ(安定ソート)
+  const all = out.concat(readLegacy()).map((x, i) => [x, i]);
+  all.sort((a, b) => {
+    const ka = a[0].order == null ? Infinity : a[0].order;
+    const kb = b[0].order == null ? Infinity : b[0].order;
+    return ka === kb ? a[1] - b[1] : (ka < kb ? -1 : 1);
+  });
+  return all.map(x => x[0]);
 }
 
 module.exports = { buildTestsIndex, countItems };
