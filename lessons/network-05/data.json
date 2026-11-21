@@ -441,15 +441,14 @@
   "final": [
     {
       "type": "single",
-      "q": "【第5回 Q7】紙に「DoS」の正式名称を書いてから、自分の綴りと同じものを選ぼう。正しい綴りは?",
+      "q": "【第5回 Q7】「DoS」の正式名称はどれ?",
       "opts": [
         "Denial of Service attack",
         "Denial of Service",
-        "Denial of Services attack",
-        "どれにも一致しない(自分の綴りが違った)"
+        "Digital of Service attack",
+        "Denial of Subnet attack"
       ],
       "ans": "Denial of Service attack",
-      "noShuffle": true,
       "note": "Moodle の正解は attack まで含めた Denial of Service attack(attack が無いと不正解)。DoS の展開は講義資料にない(資料外・Moodle の正解表記)。第5回 Q7"
     },
     {

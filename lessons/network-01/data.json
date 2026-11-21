@@ -190,12 +190,12 @@
       "check": [
         {
           "type": "single",
-          "q": "(先に紙に綴りを書いてから選ぶ)HTTP の正式名称は?",
+          "q": "HTTP の正式名称は?",
           "opts": [
             "Hyper Text Transfer Protocol",
-            "Hyper Text Tranfer Protocol",
-            "Hyper Text Transfer Protocal",
-            "Hyper Text Transport Protocol"
+            "Hierarchy Text Transfer Protocol",
+            "Hyper Text Transport Protocol",
+            "Hyper Text Transfer Private"
           ],
           "ans": "Hyper Text Transfer Protocol",
           "note": "Transfer の s を落とさない。Protocol の綴り(Protocal ではない)にも注意。(第1回 p.8)"
@@ -317,50 +317,48 @@
     },
     {
       "type": "single",
-      "q": "(先に紙に綴りを書いてから選ぶ)URL の正式名称は?",
+      "q": "URL の正式名称は?",
       "opts": [
         "Uniform Resource Locator",
-        "Uniform Resource Locater",
         "Universal Resource Locator",
-        "Uniform Resource Location"
+        "Uniform Route Locator",
+        "Uniform Resource Load"
       ],
       "ans": "Uniform Resource Locator",
       "note": "Moodle の正解表記。Locator の語尾は -or。(資料外。講義資料に正式名称は無く、Moodle で確認済み)"
     },
     {
       "type": "single",
-      "q": "(先に紙に綴りを書いてから選ぶ)DHCP の正式名称は?",
+      "q": "DHCP の正式名称は?",
       "opts": [
         "Dynamic Host Configuration Protocol",
-        "Dynamic Host Configuaration Protocol",
-        "Dynamic Hosting Configuration Protocol",
-        "Dynamic Host Connection Protocol"
+        "Duplex Host Configuration Protocol",
+        "Dynamic Host Carrier Protocol",
+        "Dynamic Host Configuration Packet"
       ],
       "ans": "Dynamic Host Configuration Protocol",
       "note": "Moodle の正解表記。Configuration の綴りに注意。(資料外。講義資料に正式名称は無く、Moodle で確認済み)"
     },
     {
       "type": "single",
-      "q": "(先に紙に綴りを書いてから選ぶ)IP の正式名称は?",
+      "q": "IP の正式名称は?",
       "opts": [
         "Internet Protocol",
-        "Internet Protocal",
-        "Internal Protocol",
-        "Internetwork Protocol",
-        "どれにも一致しない(自分の綴りが違った)"
+        "Intranet Protocol",
+        "Internet Power",
+        "Impulse Protocol"
       ],
       "ans": "Internet Protocol",
-      "noShuffle": true,
       "note": "Internet の語尾は -net、Protocol の語尾は -col(-cal ではない)。(第1回 p.8 の略語表の範囲。綴りまで書けるようにする)"
     },
     {
       "type": "single",
-      "q": "(先に紙に綴りを書いてから選ぶ)UDP の正式名称は?",
+      "q": "UDP の正式名称は?",
       "opts": [
         "User Datagram Protocol",
-        "User Datagram Protcol",
-        "User Datagrum Protocol",
-        "Unit Datagram Protocol"
+        "Unicast Datagram Protocol",
+        "User Delivery Protocol",
+        "User Datagram Pair"
       ],
       "ans": "User Datagram Protocol",
       "note": "Moodle の正解表記。Datagram の綴りに注意。(資料外。UDP の語は第2回 p.7・第3回 p.14 に出るが、正式名称は講義資料に無く、Moodle で確認済み)"

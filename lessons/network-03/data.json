@@ -457,15 +457,14 @@
     },
     {
       "type": "single",
-      "q": "【第1回の復習】ADSL の正式名称はどれ?(紙に書いてから選ぶ)",
+      "q": "【第1回の復習】ADSL の正式名称はどれ?",
       "opts": [
         "Asymmetric Digital Subscriber Line",
-        "Asymmetric Digital Subscibber Line",
-        "Asymetric Digital Subscriber Line",
-        "どれにも一致しない(自分の綴りが違った)"
+        "Application Digital Subscriber Line",
+        "Asymmetric Digital System Line",
+        "Asymmetric Digital Subscriber Loop"
       ],
       "ans": "Asymmetric Digital Subscriber Line",
-      "noShuffle": true,
       "note": "Subscriber の r、Asymmetric の mm を落とさない。スライド(赤字の脱字訂正)も同じ。(第1回 p.8) [A1]"
     }
   ],
