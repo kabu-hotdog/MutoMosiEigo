@@ -522,5 +522,6 @@
       "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-keisan/data.json#r6"
     }
   ],
-  "footer": "出典: 情報ネットワーク工学 第5回講義資料(p.2〜p.31)、第2回・第4回講義資料。「資料外」と書いた部分は講義資料にない一般知識の補足。"
+  "footer": "出典: 情報ネットワーク工学 第5回講義資料(p.2〜p.31)、第2回・第4回講義資料。「資料外」と書いた部分は講義資料にない一般知識の補足。",
+  "roadmap": "roadmaps/network-2026-kouki-chukan.json"
 }

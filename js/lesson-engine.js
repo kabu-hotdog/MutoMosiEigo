@@ -83,6 +83,11 @@ details.ls-terms summary{cursor:pointer;font-weight:700;font-size:.95rem}
 .ls-sum th,.ls-sum td{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top;overflow-wrap:anywhere}
 .ls-sum td:first-child{font-weight:700;color:var(--teal);white-space:nowrap}
 .ls-write3{margin-top:12px;padding:12px 14px;background:var(--card2);border:1px dashed var(--line-strong,var(--line));border-radius:10px;font-size:.92rem}
+.nx-bar{display:flex;flex-direction:column;align-items:stretch;gap:8px;margin:26px 0 8px}
+.nx-btn{display:block;text-align:center;padding:14px 16px;border-radius:12px;background:var(--teal,#46d6c4);color:var(--on-accent,#04221e);font-weight:700;text-decoration:none;line-height:1.5}
+.nx-btn:hover{filter:brightness(1.07)}
+.nx-sub{text-align:center;font-size:.82rem;color:var(--muted);text-decoration:underline}
+.nx-bottom{margin-top:40px}
 .ls-next{display:flex;flex-direction:column;gap:8px;margin-top:12px}
 .ls-next a{display:block;padding:11px 14px;background:var(--card);border:1px solid var(--line);border-radius:10px;color:var(--teal);text-decoration:none;font-weight:700}
 .ls-next a:hover{border-color:var(--teal-d)}
@@ -475,7 +480,20 @@ function render() {
   fin.appendChild(el('div', 'ls-res')); fin.lastChild.id = 'res_final';
   wrap.appendChild(fin);
 
-  if (D.next && D.next.length) {
+  if (D.roadmap) {
+    // 模試と同じ「次に進む」ボタン。ロードマップの順から次のステップを引く
+    var nx = el('div', 'nx-bar nx-bottom'); nx.id = 'lsNext'; wrap.appendChild(nx);
+    var rmHref = '/roadmap.html?d=' + D.roadmap;
+    var cur = new URLSearchParams(location.search).get('d');
+    fetch('/' + D.roadmap).then(function (r) { return r.json(); }).then(function (j) {
+      var steps = j.steps || [], at = -1;
+      steps.forEach(function (s, i) { var m = String(s.href || '').match(/[?&]d=([^&#]+)/); if (at < 0 && m && decodeURIComponent(m[1]) === cur) at = i; });
+      var n = steps[at + 1];
+      nx.innerHTML = at >= 0 && n
+        ? '<a class="nx-btn" href="' + n.href + '">次に進む: ' + n.label + (n.minutes ? '(約' + n.minutes + '分)' : '') + ' →</a><a class="nx-sub" href="' + rmHref + '">ロードマップへ</a>'
+        : '<a class="nx-btn" href="' + rmHref + '">ロードマップへ戻る →</a>';
+    }).catch(function () { nx.innerHTML = '<a class="nx-btn" href="' + rmHref + '">ロードマップへ →</a>'; });
+  } else if (D.next && D.next.length) {
     wrap.appendChild(el('div', 'ls-next', D.next.map(function (n) { return '<a href="' + n.href + '">' + n.label + ' →</a>'; }).join('')));
   }
   if (D.footer) wrap.appendChild(el('div', 'ls-footer', D.footer));

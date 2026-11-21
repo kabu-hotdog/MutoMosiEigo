@@ -434,5 +434,6 @@
       "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-keisan/data.json#r7"
     }
   ],
-  "footer": "出典: 第4回講義資料 p.3〜p.14、第5回講義資料 p.3〜p.10・p.12・p.24、第3回講義資料 p.9〜p.10(PDFのページ番号)。(資料外)は講義資料に書かれていない補足。"
+  "footer": "出典: 第4回講義資料 p.3〜p.14、第5回講義資料 p.3〜p.10・p.12・p.24、第3回講義資料 p.9〜p.10(PDFのページ番号)。(資料外)は講義資料に書かれていない補足。",
+  "roadmap": "roadmaps/network-2026-kouki-chukan.json"
 }
