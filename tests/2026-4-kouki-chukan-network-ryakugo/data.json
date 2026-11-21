@@ -2,7 +2,7 @@
   "title": "情報ネットワーク工学 ・ ① 略語の正式名称",
   "subtitle": "書いてから選ぶ。本番は「略語→英語の正式名称を綴りまで記述」5問5分",
   "eyebrow": "情報ネットワーク工学 ・ 後期中間試験",
-  "description": "範囲(第1〜5回)の略語58語を、略語→英語の正式名称の形で練習します。回ごとのセット(5問ずつ)→「意味」の順。1問ずつ即採点と解説が出ます。ISOは範囲外、参考扱いの12語(LW・MW・SW・HF・VHF・UHF・MII・IIN・RaaS・eKYC・ENIAC・UNIVAC I)は絞るため出しません。",
+  "description": "範囲(第1〜5回)の略語64語を、略語→英語の正式名称の形で練習します。回ごとのセット(5問ずつ)→「意味」の順。1問ずつ即採点と解説が出ます。ISOは範囲外、参考扱いの12語(LW・MW・SW・HF・VHF・UHF・MII・IIN・RaaS・eKYC・ENIAC・UNIVAC I)は絞るため出しません。",
   "year": 2026,
   "grade": 4,
   "exam": "後期中間試験",
@@ -16,7 +16,7 @@
     {
       "id": "r1",
       "no": "01",
-      "title": "第1回 セット1/12(5問5分): ADSL・HTTP・URL・IP・DHCP",
+      "title": "第1回 セット1/13(5問5分): ADSL・HTTP・URL・IP・DHCP",
       "qs": [
         {
           "type": "single",
@@ -93,7 +93,7 @@
     {
       "id": "r2",
       "no": "02",
-      "title": "第1〜2回 セット2/12(5問5分): SMTP・UDP・OFDMA・FDMA・TDMA",
+      "title": "第1〜2回 セット2/13(5問5分): SMTP・UDP・OFDMA・FDMA・TDMA",
       "qs": [
         {
           "type": "single",
@@ -170,7 +170,7 @@
     {
       "id": "r3",
       "no": "03",
-      "title": "第2回 セット3/12(5問5分): CDMA・OFDM・SINET・FTTH・AM",
+      "title": "第2回 セット3/13(5問5分): CDMA・OFDM・SINET・FTTH・AM",
       "qs": [
         {
           "type": "single",
@@ -247,7 +247,7 @@
     {
       "id": "r4",
       "no": "04",
-      "title": "第2〜3回 セット4/12(5問5分): FM・PM・LTE・NRZ・RZ",
+      "title": "第2〜3回 セット4/13(5問5分): FM・PM・LTE・NRZ・RZ",
       "qs": [
         {
           "type": "single",
@@ -324,7 +324,7 @@
     {
       "id": "r5",
       "no": "05",
-      "title": "第3回 セット5/12(5問5分): AMI・ASK・FSK・PSK・QAM",
+      "title": "第3回 セット5/13(5問5分): AMI・ASK・FSK・PSK・QAM",
       "qs": [
         {
           "type": "single",
@@ -401,7 +401,7 @@
     {
       "id": "r6",
       "no": "06",
-      "title": "第3回 セット6/12(5問5分): BER・FDM・TDM・CDM・WDM",
+      "title": "第3回 セット6/13(5問5分): BER・FDM・TDM・CDM・WDM",
       "qs": [
         {
           "type": "single",
@@ -478,7 +478,7 @@
     {
       "id": "r7",
       "no": "07",
-      "title": "第3〜4回 セット7/12(5問5分): OSI・TCP・FQDN・SCP・DSU",
+      "title": "第3〜4回 セット7/13(5問5分): OSI・TCP・FQDN・SCP・DSU",
       "qs": [
         {
           "type": "single",
@@ -555,7 +555,7 @@
     {
       "id": "r8",
       "no": "08",
-      "title": "第4〜5回 セット8/12(5問5分): ONU・STB・HDLC・MAC・PPP",
+      "title": "第4〜5回 セット8/13(5問5分): ONU・STB・HDLC・MAC・PPP",
       "qs": [
         {
           "type": "single",
@@ -632,7 +632,7 @@
     {
       "id": "r9",
       "no": "09",
-      "title": "第5回 セット9/12(5問5分): CRC・ISDN・EDI・INS・SS",
+      "title": "第5回 セット9/13(5問5分): CRC・ISDN・EDI・INS・SS",
       "qs": [
         {
           "type": "single",
@@ -709,7 +709,7 @@
     {
       "id": "r10",
       "no": "10",
-      "title": "第5回 セット10/12(5問5分): PDS・PON・CATV・UTP・STP",
+      "title": "第5回 セット10/13(5問5分): PDS・PON・CATV・UTP・STP",
       "qs": [
         {
           "type": "single",
@@ -786,7 +786,7 @@
     {
       "id": "r11",
       "no": "11",
-      "title": "第5回 セット11/12(4問4分): FDDI・CSMA・CSMA/CD・CSMA/CA",
+      "title": "第5回 セット11/13(4問4分): FDDI・CSMA・CSMA/CD・CSMA/CA",
       "qs": [
         {
           "type": "single",
@@ -849,7 +849,7 @@
     {
       "id": "r12",
       "no": "12",
-      "title": "第5回 セット12/12(4問4分): WEP・WPA・ITU・DoS",
+      "title": "第5回 セット12/13(4問4分): WEP・WPA・ITU・DoS",
       "qs": [
         {
           "type": "single",
@@ -912,6 +912,97 @@
     {
       "id": "r13",
       "no": "13",
+      "title": "教科書の略語表 セット13/13(6問6分): LAN・DNS・WWW・HTML・VoIP・SIP",
+      "qs": [
+        {
+          "type": "single",
+          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>LAN</b> の正式名称は?",
+          "opts": [
+            "Local Aera Network",
+            "Local Area Network",
+            "Wide Area Network",
+            "Local Area Netwrok",
+            "どれにも一致しない(自分の綴りが違った)"
+          ],
+          "ans": "Local Area Network",
+          "note": "<b>正解: Local Area Network</b>　×Local Aera Network ×Wide Area Network ×Local Area Netwrok<br>LAN = 建物の中のコンピュータどうしを、比較的速い回線でつなぐネットワーク。 覚え方: L・A・N = Local・Area・Network(ローカル=狭い範囲)。 出典: 教科書 vii・viii頁の略語表(スライドに正式名称は無い)。",
+          "noShuffle": true
+        },
+        {
+          "type": "single",
+          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>DNS</b> の正式名称は?",
+          "opts": [
+            "Domain Name Sytem",
+            "Dynamic Name System",
+            "Domain Nama System",
+            "Domain Name System",
+            "どれにも一致しない(自分の綴りが違った)"
+          ],
+          "ans": "Domain Name System",
+          "note": "<b>正解: Domain Name System</b>　×Domain Name Sytem ×Dynamic Name System ×Domain Nama System<br>DNS = IP アドレスとドメイン名の対応を管理するしくみ。 覚え方: D・N・S = Domain・Name・System。 出典: 教科書 vii・viii頁の略語表(スライドに正式名称は無い)。",
+          "noShuffle": true
+        },
+        {
+          "type": "single",
+          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>WWW</b> の正式名称は?",
+          "opts": [
+            "World Wide Web",
+            "Word Wide Web",
+            "World Wild Web",
+            "World Wide Wep",
+            "どれにも一致しない(自分の綴りが違った)"
+          ],
+          "ans": "World Wide Web",
+          "note": "<b>正解: World Wide Web</b>　×Word Wide Web ×World Wild Web ×World Wide Wep<br>WWW = 世界中のサーバの情報を、Web ページとして見られるしくみ。 覚え方: W が3つ = World・Wide・Web。 出典: 教科書 vii・viii頁の略語表(スライドに正式名称は無い)。",
+          "noShuffle": true
+        },
+        {
+          "type": "single",
+          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>HTML</b> の正式名称は?",
+          "opts": [
+            "Hyper Text Markup Langage",
+            "Hyper Text Makeup Language",
+            "Hyper Text Markup Language",
+            "Hyper Text Markup Languege",
+            "どれにも一致しない(自分の綴りが違った)"
+          ],
+          "ans": "Hyper Text Markup Language",
+          "note": "<b>正解: Hyper Text Markup Language</b>　×Hyper Text Markup Langage ×Hyper Text Makeup Language ×Hyper Text Markup Languege<br>HTML = Web ページを作るための言語。 覚え方: H・T・M・L = Hyper Text・Markup・Language(Markup は Make up ではない)。 出典: 教科書 vii・viii頁の略語表(スライドに正式名称は無い)。",
+          "noShuffle": true
+        },
+        {
+          "type": "single",
+          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>VoIP</b> の正式名称は?",
+          "opts": [
+            "Voise over IP",
+            "Voice over IP",
+            "Voice ovre IP",
+            "Voice on IP",
+            "どれにも一致しない(自分の綴りが違った)"
+          ],
+          "ans": "Voice over IP",
+          "note": "<b>正解: Voice over IP</b>　×Voise over IP ×Voice ovre IP ×Voice on IP<br>VoIP = IP ネットワークの上で音声データを送る技術(IP電話)。教科書の表記は小文字(voice over IP)。 覚え方: Voice over IP = IP の上の声。 出典: 教科書 vii・viii頁の略語表(スライドに正式名称は無い)。",
+          "noShuffle": true
+        },
+        {
+          "type": "single",
+          "q": "<span style=\"font-size:.82em;color:var(--muted)\">まず、選択肢を見ないで、紙に英語の正式名称を手書きしてください。書き終わってから選択肢を見て、自分の答えと1文字残さず同じものを選んでください。1文字でも違えば、その選択肢は選ばず『どれにも一致しない』を選びます。</span><br><b>SIP</b> の正式名称は?",
+          "opts": [
+            "Session Initation Protocol",
+            "Session Initiative Protocol",
+            "Session Initiation Protocol",
+            "Session Initiation Protcol",
+            "どれにも一致しない(自分の綴りが違った)"
+          ],
+          "ans": "Session Initiation Protocol",
+          "note": "<b>正解: Session Initiation Protocol</b>　×Session Initation Protocol ×Session Initiative Protocol ×Session Initiation Protcol<br>SIP = VoIP で、接続(セッション)の開始・変更・終了を行う約束事。 覚え方: S・I・P = Session・Initiation・Protocol。 出典: 教科書 vii・viii頁の略語表(スライドに正式名称は無い)。",
+          "noShuffle": true
+        }
+      ]
+    },
+    {
+      "id": "r14",
+      "no": "14",
       "title": "意味 第1回の略語(3語): 略語→日本語の説明",
       "qs": [
         {
@@ -953,8 +1044,8 @@
       ]
     },
     {
-      "id": "r14",
-      "no": "14",
+      "id": "r15",
+      "no": "15",
       "title": "意味 第2回の略語(6語): 略語→日本語の説明",
       "qs": [
         {
@@ -1032,8 +1123,8 @@
       ]
     },
     {
-      "id": "r15",
-      "no": "15",
+      "id": "r16",
+      "no": "16",
       "title": "意味 第3回の略語(4語): 略語→日本語の説明",
       "qs": [
         {
@@ -1087,8 +1178,8 @@
       ]
     },
     {
-      "id": "r16",
-      "no": "16",
+      "id": "r17",
+      "no": "17",
       "title": "意味 第4回の略語(7語): 略語→日本語の説明",
       "qs": [
         {
@@ -1178,8 +1269,8 @@
       ]
     },
     {
-      "id": "r17",
-      "no": "17",
+      "id": "r18",
+      "no": "18",
       "title": "意味 第5回の略語(5語): 略語→日本語の説明",
       "qs": [
         {
