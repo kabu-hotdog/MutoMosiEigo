@@ -100,6 +100,11 @@ footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--line);color:v
 .fc-hint{font-size:.8rem;color:var(--dim);margin-top:10px}
 .fc-back{font-size:.98rem;color:var(--ink);line-height:1.85}
 .fc-actions{display:flex;gap:8px;margin-top:12px}
+.nx-bar{display:flex;flex-direction:column;align-items:stretch;gap:8px;margin:26px 0 8px}
+.nx-btn{display:block;text-align:center;padding:14px 16px;border-radius:12px;background:var(--teal,#46d6c4);color:var(--on-accent,#04221e);font-weight:700;text-decoration:none;line-height:1.5}
+.nx-btn:hover{filter:brightness(1.07)}
+.nx-sub{text-align:center;font-size:.82rem;color:var(--muted);text-decoration:underline}
+.nx-bottom{margin-top:40px}
 .sq-built{margin-top:10px;font-size:1.05rem;font-weight:700;line-height:1.9;overflow-wrap:anywhere}
 .sq-w{display:inline-block;padding:1px 9px;margin:0 2px;border-radius:8px;background:var(--card2);border:1px solid var(--line)}
 .sq-w.ok{color:var(--good)}.sq-w.bad{color:var(--bad)}.sq-w.cur{color:var(--muted);font-weight:400}
@@ -211,6 +216,51 @@ function renderAll() {
 
   updateScore();
   typeset(app);
+  addNextButtons();
+}
+
+// ---- 「次に進む」ボタン: data.roadmap のステップ順から作る ----
+let _rmSteps = null;
+function stepKey(href) {
+  const m = String(href || '').match(/[?&]d=([^&#]+)#?(.*)$/);
+  return m ? { d: decodeURIComponent(m[1]), h: m[2] || '' } : null;
+}
+function nextBox(from, rmHref) {
+  const nx = _rmSteps[from + 1];
+  const div = document.createElement('div');
+  div.className = 'nx-bar';
+  if (nx) {
+    div.innerHTML = `<a class="nx-btn" href="${nx.href || rmHref}">次に進む: ${nx.label}${nx.minutes ? `(約${nx.minutes}分)` : ''} →</a><a class="nx-sub" href="${rmHref}">ロードマップへ</a>`;
+  } else {
+    div.innerHTML = `<a class="nx-btn" href="${rmHref}">ロードマップへ戻る →</a>`;
+  }
+  return div;
+}
+function addNextButtons() {
+  if (!_data.roadmap || !_rmSteps) return;
+  document.querySelectorAll('.nx-bar').forEach(e => e.remove());
+  const cur = new URLSearchParams(location.search).get('d');
+  const rmHref = '/roadmap.html?d=' + _data.roadmap;
+  const mine = [];
+  _rmSteps.forEach((s, i) => { const k = stepKey(s.href); if (k && k.d === cur) mine.push({ i, h: k.h }); });
+  // セクションごとのステップ(#r1 など)は、そのセクションの終わりに
+  mine.filter(m => m.h).forEach(m => {
+    const sec = document.getElementById(m.h);
+    if (sec && sec.tagName === 'SECTION') sec.appendChild(nextBox(m.i, rmHref));
+  });
+  // テスト全体のステップ、または最後は、ページの一番下に
+  const whole = mine.filter(m => !m.h);
+  const last = whole.length ? whole[0].i : (mine.length ? mine[mine.length - 1].i : -2);
+  const app = document.getElementById('app');
+  const lastSec = app.lastElementChild;
+  if (lastSec && lastSec.querySelector(':scope > .nx-bar')) return; // 最後のセクションに既にある
+  const box = nextBox(last, rmHref);
+  box.classList.add('nx-bottom');
+  app.appendChild(box);
+}
+function loadRoadmapForNext() {
+  if (!_data.roadmap) return;
+  fetch('/' + _data.roadmap).then(r => r.json()).then(j => { _rmSteps = j.steps || []; addNextButtons(); }).catch(() => {});
 }
 
 function buildQuestion(q, qi, key, secId) {
@@ -611,6 +661,7 @@ window.initQuiz = function (data) {
   _data = data;
   _sections = data.sections;
   _storageKey = data.storageKey;
+  loadRoadmapForNext();
 
   // Inject theme vars + fonts + CSS
   const themeLink = document.createElement('link');
