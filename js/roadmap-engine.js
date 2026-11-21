@@ -49,11 +49,12 @@ function saveM() { try { localStorage.setItem(KEY, JSON.stringify(M)); } catch (
 //   1問 = キー "<sectionId>_<index>" に 1(正解)/-1(不正解)。末尾が "_数字" のキーだけが1問に対応する。
 //   numeric の小問は "<key>_p<n>"、選択は "<key>_pick" などで、末尾が数字だけでないので数えない。
 //   total は問題数(単語帳含む)。numeric は小問に1つでも不正解があると -1 になる(あとで直せば 1)。
-function quizStat(key, total) {
+function quizStat(key, total, sec) {
   var s = readJSON(key) || {};
   var answered = 0, correct = 0;
   Object.keys(s).forEach(function (k) {
     if (!/_\d+$/.test(k)) return;
+    if (sec && !([].concat(sec)).some(function (x) { return k.indexOf(x + '_') === 0; })) return;
     if (s[k] === 1) { answered++; correct++; }
     else if (s[k] === -1) answered++;
   });
@@ -68,7 +69,7 @@ function autoState(step) {
     return { kind: 'lesson', done: !!(s && s.learned) };
   }
   if (d.quiz) {
-    var q = quizStat(d.quiz, d.total);
+    var q = quizStat(d.quiz, d.total, d.section);
     return { kind: 'quiz', q: q, done: q.total > 0 && q.answered >= q.total };
   }
   return null;

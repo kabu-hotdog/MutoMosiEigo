@@ -24,7 +24,11 @@
       "label": "① 略語 第1回(教科書の略語表 20語)",
       "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-ryakugo1/data.json",
       "minutes": 20,
-      "why": "この20語が第1回で覚える略語。1語ずつ選んで答える"
+      "why": "この20語が第1回で覚える略語。1語ずつ選んで答える",
+      "done": {
+        "quiz": "ine_chukan_ryakugo1_v1",
+        "total": 20
+      }
     },
     {
       "id": "B1",
@@ -32,7 +36,12 @@
       "label": "② セルフチェック 授業第1回の範囲(11問)",
       "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-selfcheck/data.json#s1",
       "minutes": 9,
-      "why": "Moodle そのまま。第1回までに習った内容だけ"
+      "why": "Moodle そのまま。第1回までに習った内容だけ",
+      "done": {
+        "quiz": "ine_chukan_selfcheck_v4",
+        "total": 11,
+        "section": "s1"
+      }
     },
     {
       "id": "C1",
@@ -40,7 +49,12 @@
       "label": "③ 計算 回線数",
       "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-keisan/data.json#r1",
       "minutes": 5,
-      "why": "計算は手で解いて数字を合わせる"
+      "why": "計算は手で解いて数字を合わせる",
+      "done": {
+        "quiz": "ine_chukan_keisan_v2",
+        "total": 3,
+        "section": "r1"
+      }
     },
     {
       "id": "L2",
@@ -59,7 +73,11 @@
       "label": "① 略語 第2回",
       "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-ryakugo2/data.json",
       "minutes": 10,
-      "why": "学習ページの用語集に載っている語"
+      "why": "学習ページの用語集に載っている語",
+      "done": {
+        "quiz": "ine_chukan_ryakugo2_v1",
+        "total": 10
+      }
     },
     {
       "id": "B2",
@@ -67,7 +85,12 @@
       "label": "② セルフチェック 授業第2回の範囲(19問)",
       "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-selfcheck/data.json#s2",
       "minutes": 15,
-      "why": "Moodle そのまま。第2回までに習った内容だけ"
+      "why": "Moodle そのまま。第2回までに習った内容だけ",
+      "done": {
+        "quiz": "ine_chukan_selfcheck_v4",
+        "total": 19,
+        "section": "s2"
+      }
     },
     {
       "id": "C2",
@@ -75,7 +98,15 @@
       "label": "③ 計算 標本化・伝送速度",
       "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-keisan/data.json#r2",
       "minutes": 12,
-      "why": "電卓なしで手で解く"
+      "why": "電卓なしで手で解く",
+      "done": {
+        "quiz": "ine_chukan_keisan_v2",
+        "total": 7,
+        "section": [
+          "r2",
+          "r3"
+        ]
+      }
     },
     {
       "id": "L3",
@@ -94,7 +125,11 @@
       "label": "① 略語 第3回",
       "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-ryakugo3/data.json",
       "minutes": 12,
-      "why": "変調・多重化の略語"
+      "why": "変調・多重化の略語",
+      "done": {
+        "quiz": "ine_chukan_ryakugo3_v1",
+        "total": 12
+      }
     },
     {
       "id": "B3",
@@ -102,7 +137,12 @@
       "label": "② セルフチェック 授業第3回の範囲(10問)",
       "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-selfcheck/data.json#s3",
       "minutes": 8,
-      "why": "Moodle そのまま"
+      "why": "Moodle そのまま",
+      "done": {
+        "quiz": "ine_chukan_selfcheck_v4",
+        "total": 10,
+        "section": "s3"
+      }
     },
     {
       "id": "C3",
@@ -110,7 +150,15 @@
       "label": "③ 計算 ボーレート・BER",
       "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-keisan/data.json#r4",
       "minutes": 12,
-      "why": "単位に注意"
+      "why": "単位に注意",
+      "done": {
+        "quiz": "ine_chukan_keisan_v2",
+        "total": 6,
+        "section": [
+          "r4",
+          "r5"
+        ]
+      }
     },
     {
       "id": "L4",
@@ -129,7 +177,11 @@
       "label": "① 略語 第4回",
       "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-ryakugo4/data.json",
       "minutes": 7,
-      "why": "OSI・アクセスネットワークの略語"
+      "why": "OSI・アクセスネットワークの略語",
+      "done": {
+        "quiz": "ine_chukan_ryakugo4_v1",
+        "total": 7
+      }
     },
     {
       "id": "B4",
@@ -137,7 +189,12 @@
       "label": "② セルフチェック 授業第4回の範囲(10問)",
       "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-selfcheck/data.json#s4",
       "minutes": 8,
-      "why": "Moodle そのまま"
+      "why": "Moodle そのまま",
+      "done": {
+        "quiz": "ine_chukan_selfcheck_v4",
+        "total": 10,
+        "section": "s4"
+      }
     },
     {
       "id": "C4",
@@ -145,7 +202,12 @@
       "label": "③ 計算 アドレスの個数",
       "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-keisan/data.json#r7",
       "minutes": 6,
-      "why": "2^k"
+      "why": "2^k",
+      "done": {
+        "quiz": "ine_chukan_keisan_v2",
+        "total": 3,
+        "section": "r7"
+      }
     },
     {
       "id": "L5",
@@ -164,7 +226,11 @@
       "label": "① 略語 第5回",
       "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-ryakugo5/data.json",
       "minutes": 15,
-      "why": "LAN・無線・光アクセスの略語"
+      "why": "LAN・無線・光アクセスの略語",
+      "done": {
+        "quiz": "ine_chukan_ryakugo5_v1",
+        "total": 15
+      }
     },
     {
       "id": "C5",
@@ -172,7 +238,12 @@
       "label": "③ 計算 ISDN(2B+D)",
       "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-keisan/data.json#r6",
       "minutes": 6,
-      "why": "B と D の本数"
+      "why": "B と D の本数",
+      "done": {
+        "quiz": "ine_chukan_keisan_v2",
+        "total": 3,
+        "section": "r6"
+      }
     },
     {
       "id": "D6",
@@ -180,7 +251,12 @@
       "label": "③ 計算 総合ミックス",
       "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-keisan/data.json#r8",
       "minutes": 8,
-      "why": "どの公式を使うか自分で決める"
+      "why": "どの公式を使うか自分で決める",
+      "done": {
+        "quiz": "ine_chukan_keisan_v2",
+        "total": 5,
+        "section": "r8"
+      }
     },
     {
       "id": "E6",
@@ -188,7 +264,11 @@
       "label": "④ 類題",
       "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-ruidai/data.json",
       "minutes": 25,
-      "why": "本番の言い回しが変わっても解けるか試す"
+      "why": "本番の言い回しが変わっても解けるか試す",
+      "done": {
+        "quiz": "ine_chukan_ruidai_v3",
+        "total": 25
+      }
     },
     {
       "id": "F7",
@@ -196,7 +276,11 @@
       "label": "⑤ 総合ミックス",
       "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-mix/data.json",
       "minutes": 20,
-      "why": "ごちゃ混ぜで思い出せるか確認"
+      "why": "ごちゃ混ぜで思い出せるか確認",
+      "done": {
+        "quiz": "ine_chukan_mix_v3",
+        "total": 20
+      }
     },
     {
       "id": "G7",
@@ -204,7 +288,11 @@
       "label": "⑥ 応用情報の過去問",
       "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-ap/data.json",
       "minutes": 12,
-      "why": "範囲内の過去問で出し方に慣れる"
+      "why": "範囲内の過去問で出し方に慣れる",
+      "done": {
+        "quiz": "mm_2026_4_kouki_chukan_network_ap_v2",
+        "total": 6
+      }
     },
     {
       "id": "H7",
@@ -212,7 +300,11 @@
       "label": "① 略語 意味(第1〜5回)",
       "href": "/quiz.html?d=tests/2026-4-kouki-chukan-network-ryakugo-imi/data.json",
       "minutes": 12,
-      "why": "略語→意味。名前だけでなく中身も"
+      "why": "略語→意味。名前だけでなく中身も",
+      "done": {
+        "quiz": "ine_chukan_ryakugo_imi_v1",
+        "total": 25
+      }
     },
     {
       "id": "R1",
