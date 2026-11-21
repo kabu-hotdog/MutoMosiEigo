@@ -1,0 +1,791 @@
+{
+  "title": "情報ネットワーク工学 ・ ① 略語 第1回(教科書の略語表 20語)",
+  "subtitle": "20問(約20分)。1語ずつ順に選ぶ。本番は綴りを手書きするので、間違えた略語は紙にも書き直す",
+  "eyebrow": "情報ネットワーク工学 ・ 後期中間試験",
+  "description": "教科書の略語表(vii・viii頁)の20語を、略語→英語の正式名称の形で練習します。第1回で覚える略語は、この20語です。",
+  "year": 2026,
+  "grade": 4,
+  "exam": "後期中間試験",
+  "subject": "情報ネットワーク工学",
+  "storageKey": "ine_chukan_ryakugo1_v1",
+  "pointsPerQ": 100,
+  "katex": false,
+  "tip": "正式名称を<b>1語ずつ、頭文字が同じ別の単語(ネットワーク用語)の中から選びます</b>(Hyper → Text → Transfer → Protocol の順)。1語でも間違えたら不正解で、赤い語が直す所。本番は綴りを手書きするので、間違えた略語は紙にも書き直してください。1セット=5問=5分の目安。",
+  "footer": "<b>範囲の略語一覧(元は70語。ISOは範囲外、参考扱いの12語は出題から外した。一覧には残してある)</b>　略語=正式名称(出典) / ※=正式名称が資料に無くMoodleの正解を採用 / ⚠️=要確認<br><b>第1回</b> ADSL=Asymmetric Digital Subscriber Line(第1回 p.8・第5回 p.8) / HTTP=Hyper Text Transfer Protocol(第1回 p.8・第3回 p.14) / URL=Uniform Resource Locator(第1回 セルフチェック Q3)※ / IP=Internet Protocol(第1回 セルフチェック Q4)※ / DHCP=Dynamic Host Configuration Protocol(第1回 セルフチェック Q5)※ / SMTP=Simple Mail Transfer Protocol(第1回 セルフチェック Q7)※ / UDP=User Datagram Protocol(第1回 セルフチェック Q9)※<br><b>第2回</b> OFDMA=Orthogonal Frequency Division Multiple Access(第2回 p.4・p.5) / FDMA=Frequency Division Multiple Access(第2回 p.5) / TDMA=Time Division Multiple Access(第2回 p.5) / CDMA=Code Division Multiple Access(第2回 p.5) / OFDM=Orthogonal Frequency-Division Multiplexing(第2回 p.5) / ENIAC=Electronic Numerical Integrator And Computer(第2回 p.6) / UNIVAC I=UNIVersal Automatic Computer I(第2回 p.6)⚠️ / SINET=Science Information NETwork(第2回 p.7) / FTTH=Fiber To The Home(第2回 p.8・第5回 p.11) / AM=Amplitude Modulation(第2回 p.14) / FM=Frequency Modulation(第2回 p.14) / PM=Phase Modulation(第2回 p.14) / LW=Long Wave(第2回 p.15・第3回 p.3) / MW=Medium Wave(第2回 p.15・p.16) / SW=Short Wave(第2回 p.15・第3回 p.3) / HF=High Frequency(第2回 p.15・第3回 p.3) / VHF=Very High Frequency(第2回 p.15・p.16) / UHF=Ultra High Frequency(第2回 p.15・p.16) / LTE=Long Term Evolution(第2回 p.4)※<br><b>第3回</b> NRZ=Non Return to Zero(第3回 p.5) / RZ=Return to Zero(第3回 p.5) / AMI=Alternate Mark Inversion(第3回 p.5) / ASK=Amplitude Shift Keying(第3回 p.5) / FSK=Frequency Shift Keying(第3回 p.5)※ / PSK=Phase Shift Keying(第3回 p.5)※ / QAM=Quadrature Amplitude Modulation(第3回 p.5・p.6) / BER=Bit Error Rate(第3回 p.6) / FDM=Frequency Division Multiplexing(第3回 p.7) / TDM=Time Division Multiplexing(第3回 p.7) / CDM=Code Division Multiplexing(第3回 p.7) / WDM=Wave Division Multiplexing(第3回 p.7) / OSI=Open Systems Interconnection(第3回 p.12・第4回 p.3) / TCP=Transmission Control Protocol(第3回 p.14)※<br><b>第4回</b> FQDN=Fully Qualified Domain Name(第4回 p.9) / SCP=Session Control Protocol(第4回 p.10) / DSU=Digital Service Unit(第4回 p.14) / ONU=Optical Network Unit(第4回 p.14) / STB=Set-Top Box(第4回 p.14) / HDLC=High-level Data Link Control(第4回 p.15・第5回 p.4・p.5) / RaaS=Ransomware as a Service(第4回 p.19) / eKYC=electronic Know Your Customer(第4回 p.23) / MAC=Media Access Control(第5回 p.24)<br><b>第5回</b> PPP=Point to Point Protocol(第5回 p.2) / CRC=Cyclic Redundancy Check(第5回 p.5) / MII=Major Industry Identifier(第5回 p.6) / IIN=Issuer Identifier Number(第5回 p.6) / ISDN=Integrated Service Digital Network(第5回 p.7) / EDI=Electronic Data Interchange(第5回 p.7) / INS=Information Network System(第5回 p.7) / SS=Single Star(第5回 p.11) / PDS=Passive Double Star(第5回 p.11) / PON=Passive Optical Network(第5回 p.11) / CATV=CAble TeleVision(第5回 p.12) / UTP=Unshielded Twisted Pair(第5回 p.18) / STP=Shielded Twisted Pair(第5回 p.18) / FDDI=Fiber Distributed Data Interface(第5回 p.22) / CSMA=Carrier Sense Multiple Access(第5回 p.23) / CSMA/CD=Carrier Sense Multiple Access / Collision Detection(第5回 p.23)⚠️ / CSMA/CA=Carrier Sense Multiple Access / Collision Avoidance(第5回 p.23)⚠️ / WEP=Wired Equivalent Privacy(第5回 p.30) / WPA=Wi-Fi Protected Access(第5回 p.30) / ITU=International Telecommunication Union(第5回 セルフチェック Q6)※ / DoS=Denial of Service attack(第5回 セルフチェック Q7)※<br>出典の元は教員配布の講義資料(第1〜5回)と Moodle セルフチェックの正解。綴りは Moodle で正解になった表記を優先。",
+  "sections": [
+    {
+      "id": "r1",
+      "no": "01",
+      "title": "教科書の略語表 セット1/4(5問5分): LTE・LAN・OSI・ITU・ISDN",
+      "qs": [
+        {
+          "type": "seq",
+          "q": "<b>LTE</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Long",
+              "opts": [
+                "Long",
+                "Loop",
+                "Load",
+                "Line"
+              ]
+            },
+            {
+              "ans": "Term",
+              "opts": [
+                "Term",
+                "Time",
+                "Tunnel",
+                "Token"
+              ]
+            },
+            {
+              "ans": "Evolution",
+              "opts": [
+                "Evolution",
+                "Encryption",
+                "Echo",
+                "Edge"
+              ]
+            }
+          ],
+          "answer": "Long Term Evolution",
+          "note": "<b>正解: Long Term Evolution</b>　×Long Term Evolusion ×Long Time Evolution ×Long Wave(LWの名称)<br>LTE = 第3.9世代の携帯電話の通信方式(多元接続はOFDMA)。 覚え方: L・T・E = Long・Term・Evolution。 出典: 第2回 p.4(第1回 セルフチェック Q8・第5回 Q2、正式名称は資料外・Moodle正解)(正式名称は資料外)。 [A2][A4]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>LAN</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Local",
+              "opts": [
+                "Local",
+                "Loop",
+                "Logical",
+                "Link"
+              ]
+            },
+            {
+              "ans": "Area",
+              "opts": [
+                "Area",
+                "Asynchronous",
+                "Application",
+                "Address"
+              ]
+            },
+            {
+              "ans": "Network",
+              "opts": [
+                "Network",
+                "Name",
+                "Node",
+                "Narrow"
+              ]
+            }
+          ],
+          "answer": "Local Area Network",
+          "note": "<b>正解: Local Area Network</b>　×Local Aera Network ×Wide Area Network ×Local Area Netwrok<br>LAN = 建物の中のコンピュータどうしを、比較的速い回線でつなぐネットワーク。 覚え方: L・A・N = Local・Area・Network(ローカル=狭い範囲)。 出典: 教科書 vii・viii頁の略語表(スライドに正式名称は無い)。"
+        },
+        {
+          "type": "seq",
+          "q": "<b>OSI</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Open",
+              "opts": [
+                "Open",
+                "Online",
+                "Optical",
+                "Operating"
+              ]
+            },
+            {
+              "ans": "Systems",
+              "opts": [
+                "Systems",
+                "Services",
+                "Switches",
+                "Signals"
+              ]
+            },
+            {
+              "ans": "Interconnection",
+              "opts": [
+                "Interconnection",
+                "Infrastructure",
+                "Interval",
+                "Internet"
+              ]
+            }
+          ],
+          "answer": "Open Systems Interconnection",
+          "note": "<b>正解: Open Systems Interconnection</b>　×Open System Interconnection ×Systems Open Interconnection(語順違い) ×Transmission Control Protocol(TCPの名称)<br>OSI = 開放型システム間相互接続。各層の名称と働きを正確に憶える参照モデル。Systems は複数形(s が付く)。 覚え方: O・S・I = Open・Systems・Interconnection。 出典: 第3回 p.12・第4回 p.3。 [A12]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>ITU</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "International",
+              "opts": [
+                "International",
+                "Interval",
+                "Index",
+                "Identifier"
+              ]
+            },
+            {
+              "ans": "Telecommunication",
+              "opts": [
+                "Telecommunication",
+                "Terminal",
+                "Time",
+                "Trailer"
+              ]
+            },
+            {
+              "ans": "Union",
+              "opts": [
+                "Union",
+                "Universal",
+                "Unicast",
+                "Unshielded"
+              ]
+            }
+          ],
+          "answer": "International Telecommunication Union",
+          "note": "<b>正解: International Telecommunication Union</b>　×International Telecommunications Union ×Internatinal Telecommunication Union ×Denial of Service attack(DoSの名称)<br>ITU = 国際電気通信連合。Telecommunication は複数形にしない。 覚え方: I・T・U = International・Telecommunication・Union。 出典: 第5回 セルフチェック Q6(資料外・Moodle正解)(正式名称は資料外)。 [A2]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>ISDN</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Integrated",
+              "opts": [
+                "Integrated",
+                "Internet",
+                "Instruction",
+                "Identifier"
+              ]
+            },
+            {
+              "ans": "Service",
+              "opts": [
+                "Service",
+                "Sense",
+                "Server",
+                "Segment"
+              ]
+            },
+            {
+              "ans": "Digital",
+              "opts": [
+                "Digital",
+                "Delivery",
+                "Detection",
+                "Download"
+              ]
+            },
+            {
+              "ans": "Network",
+              "opts": [
+                "Network",
+                "Noise",
+                "Next",
+                "Narrow"
+              ]
+            }
+          ],
+          "answer": "Integrated Service Digital Network",
+          "note": "<b>正解: Integrated Service Digital Network</b>　×Intergrated Service Digital Network ×Integrated Digital Service Network(語順違い) ×Digital Service Unit(DSUの名称)<br>ISDN = 音声・データ・画像を1本の回線で扱うディジタルネットワーク(基本インターフェースは2B+D)。Service は単数形。 覚え方: I・S・D・N = Integrated・Service・Digital・Network。 出典: 第5回 p.7。 [A21]"
+        }
+      ]
+    },
+    {
+      "id": "r2",
+      "no": "02",
+      "title": "教科書の略語表 セット2/4(5問5分): ADSL・CATV・IP・TCP・UDP",
+      "qs": [
+        {
+          "type": "seq",
+          "q": "<b>ADSL</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Asymmetric",
+              "opts": [
+                "Asymmetric",
+                "Application",
+                "Antenna",
+                "Agent"
+              ]
+            },
+            {
+              "ans": "Digital",
+              "opts": [
+                "Digital",
+                "Datagram",
+                "Delivery",
+                "Delay"
+              ]
+            },
+            {
+              "ans": "Subscriber",
+              "opts": [
+                "Subscriber",
+                "Session",
+                "System",
+                "Socket"
+              ]
+            },
+            {
+              "ans": "Line",
+              "opts": [
+                "Line",
+                "Logical",
+                "Low",
+                "Loop"
+              ]
+            }
+          ],
+          "answer": "Asymmetric Digital Subscriber Line",
+          "note": "<b>正解: Asymmetric Digital Subscriber Line</b>　×Asymmetric Digital Subsciber Line ×Asymmetric Subscriber Digital Line(語順違い) ×Digital Service Unit(DSUの名称)<br>ADSL = 既存の電話回線を使う高速通信。局からの距離が遠いほど速度が下がる。スライド赤字の訂正: Subscriber の r を落とさない。 覚え方: A・D・S・L = Asymmetric・Digital・Subscriber・Line。 出典: 第1回 p.8・第5回 p.8。 [A1][A2][A22]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>CATV</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "CAble",
+              "opts": [
+                "CAble",
+                "CHannel",
+                "CArrier",
+                "CEll"
+              ]
+            },
+            {
+              "ans": "TeleVision",
+              "opts": [
+                "TeleVision",
+                "TeleText",
+                "TeleCom",
+                "TeleMetry"
+              ]
+            }
+          ],
+          "answer": "CAble TeleVision",
+          "note": "<b>正解: CAble TeleVision</b>　×Community Antenna Television(Moodleで不正解の名称) ×CAble TeleVison ×CAbel TeleVision<br>CATV = ケーブルテレビの回線を使うインターネット接続(装置はSTB)。★Moodleで間違えた問題。「Community Antenna Television」は Moodle で不正解。CA・T・V が大文字。 覚え方: CA(ble)・T(ele)・V(ision) と CA・T・V を大文字。 出典: 第5回 p.12(第5回 セルフチェック Q5)。 [A2][A23]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>IP</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Internet",
+              "opts": [
+                "Internet",
+                "Intranet",
+                "Impulse",
+                "Interference"
+              ]
+            },
+            {
+              "ans": "Protocol",
+              "opts": [
+                "Protocol",
+                "Port",
+                "Power",
+                "Phase"
+              ]
+            }
+          ],
+          "answer": "Internet Protocol",
+          "note": "<b>正解: Internet Protocol</b>　×Internet Protocal ×Intenet Protocol ×Dynamic Host Configuration Protocol(DHCPの名称)<br>IP = 第3層(ネットワーク層)でアドレスをもとに経路選択をするプロトコル。 覚え方: I・P = Internet・Protocol。 出典: 第1回 セルフチェック Q4(資料外・Moodle正解)・第3回 p.14(正式名称は資料外)。 [A2][A13]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>TCP</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Transmission",
+              "opts": [
+                "Transmission",
+                "Throughput",
+                "Transceiver",
+                "Trailer"
+              ]
+            },
+            {
+              "ans": "Control",
+              "opts": [
+                "Control",
+                "Channel",
+                "Client",
+                "Connection"
+              ]
+            },
+            {
+              "ans": "Protocol",
+              "opts": [
+                "Protocol",
+                "Packet",
+                "Point",
+                "Passive"
+              ]
+            }
+          ],
+          "answer": "Transmission Control Protocol",
+          "note": "<b>正解: Transmission Control Protocol</b>　×Transmision Control Protocol ×Transmission Protocol Control(語順違い) ×Session Control Protocol(SCPの名称)<br>TCP = 第4層(トランスポート層)のプロトコルで、データの単位は「セグメント」。 覚え方: T・C・P = Transmission・Control・Protocol。 出典: 第3回 p.14(第5回 セルフチェック Q4、正式名称は資料外・Moodle正解)(正式名称は資料外)。 [A2][A13]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>UDP</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "User",
+              "opts": [
+                "User",
+                "Unicast",
+                "Uplink",
+                "Unit"
+              ]
+            },
+            {
+              "ans": "Datagram",
+              "opts": [
+                "Datagram",
+                "Dynamic",
+                "Delivery",
+                "Division"
+              ]
+            },
+            {
+              "ans": "Protocol",
+              "opts": [
+                "Protocol",
+                "Payload",
+                "Packet",
+                "Pair"
+              ]
+            }
+          ],
+          "answer": "User Datagram Protocol",
+          "note": "<b>正解: User Datagram Protocol</b>　×User Datagramm Protocol ×Usar Datagram Protocol ×Transmission Control Protocol(TCPの名称)<br>UDP = 第4層(トランスポート層)のプロトコルで、データの単位は「データグラム」。 覚え方: U・D・P = User・Datagram・Protocol。 出典: 第1回 セルフチェック Q9(資料外・Moodle正解)・第3回 p.14(正式名称は資料外)。 [A2][A13]"
+        }
+      ]
+    },
+    {
+      "id": "r3",
+      "no": "03",
+      "title": "教科書の略語表 セット3/4(5問5分): DoS・DNS・DHCP・WWW・URL",
+      "qs": [
+        {
+          "type": "seq",
+          "q": "<b>DoS</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Denial",
+              "opts": [
+                "Denial",
+                "Digital",
+                "Download",
+                "Datagram"
+              ]
+            },
+            {
+              "ans": "of",
+              "opts": [
+                "of",
+                "on",
+                "or",
+                "off"
+              ]
+            },
+            {
+              "ans": "Service",
+              "opts": [
+                "Service",
+                "Subnet",
+                "Star",
+                "Secure"
+              ]
+            },
+            {
+              "ans": "attack",
+              "opts": [
+                "attack",
+                "access",
+                "alarm",
+                "array"
+              ]
+            }
+          ],
+          "answer": "Denial of Service attack",
+          "note": "<b>正解: Denial of Service attack</b>　×Denial of Service ×Denail of Service attack ×Ransomware as a Service(RaaSの名称)<br>DoS = サービスを使えなくして停止させる攻撃。★Moodleで間違えた問題。Moodle の正解は attack が付いた形(付けないと不正解)。 覚え方: Denial + of + Service + attack(DoS の o は of)。 出典: 第5回 セルフチェック Q7(資料外・Moodle正解)・DDoS は第4回 p.22(正式名称は資料外)。 [A2][C8]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>DNS</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Domain",
+              "opts": [
+                "Domain",
+                "Detection",
+                "Division",
+                "Device"
+              ]
+            },
+            {
+              "ans": "Name",
+              "opts": [
+                "Name",
+                "Network",
+                "Next",
+                "Net"
+              ]
+            },
+            {
+              "ans": "System",
+              "opts": [
+                "System",
+                "Subnet",
+                "Synchronous",
+                "Stream"
+              ]
+            }
+          ],
+          "answer": "Domain Name System",
+          "note": "<b>正解: Domain Name System</b>　×Domain Name Sytem ×Dynamic Name System ×Domain Nama System<br>DNS = IP アドレスとドメイン名の対応を管理するしくみ。 覚え方: D・N・S = Domain・Name・System。 出典: 教科書 vii・viii頁の略語表(スライドに正式名称は無い)。"
+        },
+        {
+          "type": "seq",
+          "q": "<b>DHCP</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Dynamic",
+              "opts": [
+                "Dynamic",
+                "Duplex",
+                "Domain",
+                "Download"
+              ]
+            },
+            {
+              "ans": "Host",
+              "opts": [
+                "Host",
+                "Hub",
+                "Hop",
+                "Home"
+              ]
+            },
+            {
+              "ans": "Configuration",
+              "opts": [
+                "Configuration",
+                "Cache",
+                "Carrier",
+                "Control"
+              ]
+            },
+            {
+              "ans": "Protocol",
+              "opts": [
+                "Protocol",
+                "Process",
+                "Payload",
+                "Packet"
+              ]
+            }
+          ],
+          "answer": "Dynamic Host Configuration Protocol",
+          "note": "<b>正解: Dynamic Host Configuration Protocol</b>　×Dynamic Host Configration Protocol ×Dynamic Host Protocol Configuration(語順違い) ×Simple Mail Transfer Protocol(SMTPの名称)<br>DHCP = ネットワークにつないだ端末へIPアドレス等を自動で割り当てるプロトコル。 覚え方: D・H・C・P = Dynamic・Host・Configuration・Protocol。 出典: 第1回 セルフチェック Q5(資料外・Moodle正解)(正式名称は資料外)。 [A2]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>WWW</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "World",
+              "opts": [
+                "World",
+                "Window",
+                "Wave",
+                "Wireless"
+              ]
+            },
+            {
+              "ans": "Wide",
+              "opts": [
+                "Wide",
+                "Wavelength",
+                "Wave",
+                "Wrapper"
+              ]
+            },
+            {
+              "ans": "Web",
+              "opts": [
+                "Web",
+                "Wired",
+                "Wavelength",
+                "Window"
+              ]
+            }
+          ],
+          "answer": "World Wide Web",
+          "note": "<b>正解: World Wide Web</b>　×Word Wide Web ×World Wild Web ×World Wide Wep<br>WWW = 世界中のサーバの情報を、Web ページとして見られるしくみ。 覚え方: W が3つ = World・Wide・Web。 出典: 教科書 vii・viii頁の略語表(スライドに正式名称は無い)。"
+        },
+        {
+          "type": "seq",
+          "q": "<b>URL</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Uniform",
+              "opts": [
+                "Uniform",
+                "Universal",
+                "Uplink",
+                "Unit"
+              ]
+            },
+            {
+              "ans": "Resource",
+              "opts": [
+                "Resource",
+                "Remote",
+                "Route",
+                "Rate"
+              ]
+            },
+            {
+              "ans": "Locator",
+              "opts": [
+                "Locator",
+                "Link",
+                "Logical",
+                "Load"
+              ]
+            }
+          ],
+          "answer": "Uniform Resource Locator",
+          "note": "<b>正解: Uniform Resource Locator</b>　×Uniform Resourse Locator ×Unifrom Resource Locator ×Internet Protocol(IPの名称)<br>URL = Web上の情報の場所(アドレス)を表す文字列。 覚え方: U・R・L = Uniform・Resource・Locator。 出典: 第1回 セルフチェック Q3(資料外・Moodle正解)(正式名称は資料外)。 [A2]"
+        }
+      ]
+    },
+    {
+      "id": "r4",
+      "no": "04",
+      "title": "教科書の略語表 セット4/4(5問5分): HTTP・HTML・SMTP・VoIP・SIP",
+      "qs": [
+        {
+          "type": "seq",
+          "q": "<b>HTTP</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Hyper",
+              "opts": [
+                "Hyper",
+                "Hierarchy",
+                "Hardware",
+                "Hybrid"
+              ]
+            },
+            {
+              "ans": "Text",
+              "opts": [
+                "Text",
+                "Transport",
+                "Time",
+                "Term"
+              ]
+            },
+            {
+              "ans": "Transfer",
+              "opts": [
+                "Transfer",
+                "Term",
+                "Transport",
+                "Time"
+              ]
+            },
+            {
+              "ans": "Protocol",
+              "opts": [
+                "Protocol",
+                "Privacy",
+                "Packet",
+                "Private"
+              ]
+            }
+          ],
+          "answer": "Hyper Text Transfer Protocol",
+          "note": "<b>正解: Hyper Text Transfer Protocol</b>　×Hyper Text Tranfer Protocol ×Hyper Text Protocol Transfer(語順違い) ×Simple Mail Transfer Protocol(SMTPの名称)<br>HTTP = 第7層(アプリケーション層)でWebページのやり取りに使うプロトコル。スライド赤字の訂正: Transfer の s を落とさない。Hyper Text は2語。 覚え方: H・T・T・P = Hyper・Text・Transfer・Protocol。 出典: 第1回 p.8・第3回 p.14。 [A1][A2]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>HTML</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Hyper",
+              "opts": [
+                "Hyper",
+                "Hardware",
+                "Hybrid",
+                "High"
+              ]
+            },
+            {
+              "ans": "Text",
+              "opts": [
+                "Text",
+                "Token",
+                "Television",
+                "Telecommunication"
+              ]
+            },
+            {
+              "ans": "Markup",
+              "opts": [
+                "Markup",
+                "Mesh",
+                "Mail",
+                "Multiple"
+              ]
+            },
+            {
+              "ans": "Language",
+              "opts": [
+                "Language",
+                "Loss",
+                "Logical",
+                "Local"
+              ]
+            }
+          ],
+          "answer": "Hyper Text Markup Language",
+          "note": "<b>正解: Hyper Text Markup Language</b>　×Hyper Text Markup Langage ×Hyper Text Makeup Language ×Hyper Text Markup Languege<br>HTML = Web ページを作るための言語。 覚え方: H・T・M・L = Hyper Text・Markup・Language(Markup は Make up ではない)。 出典: 教科書 vii・viii頁の略語表(スライドに正式名称は無い)。"
+        },
+        {
+          "type": "seq",
+          "q": "<b>SMTP</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Simple",
+              "opts": [
+                "Simple",
+                "Signal",
+                "Station",
+                "Stream"
+              ]
+            },
+            {
+              "ans": "Mail",
+              "opts": [
+                "Mail",
+                "Modulation",
+                "Mark",
+                "Memory"
+              ]
+            },
+            {
+              "ans": "Transfer",
+              "opts": [
+                "Transfer",
+                "Telecommunication",
+                "Time",
+                "Topology"
+              ]
+            },
+            {
+              "ans": "Protocol",
+              "opts": [
+                "Protocol",
+                "Pulse",
+                "Process",
+                "Phase"
+              ]
+            }
+          ],
+          "answer": "Simple Mail Transfer Protocol",
+          "note": "<b>正解: Simple Mail Transfer Protocol</b>　×Simple Mail Tranfer Protocol ×Simple Transfer Mail Protocol(語順違い) ×Hyper Text Transfer Protocol(HTTPの名称)<br>SMTP = 電子メールを送信するときのプロトコル(第7層)。 覚え方: S・M・T・P = Simple・Mail・Transfer・Protocol。 出典: 第1回 セルフチェック Q7(資料外・Moodle正解)・第3回 p.14(正式名称は資料外)。 [A2]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>VoIP</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Voice",
+              "opts": [
+                "Voice",
+                "Vector",
+                "Version",
+                "Variable"
+              ]
+            },
+            {
+              "ans": "over",
+              "opts": [
+                "over",
+                "out",
+                "only",
+                "off"
+              ]
+            },
+            {
+              "ans": "IP",
+              "opts": [
+                "IP",
+                "ID",
+                "ISP",
+                "IEEE"
+              ]
+            }
+          ],
+          "answer": "Voice over IP",
+          "note": "<b>正解: Voice over IP</b>　×Voise over IP ×Voice ovre IP ×Voice on IP<br>VoIP = IP ネットワークの上で音声データを送る技術(IP電話)。教科書の表記は小文字(voice over IP)。 覚え方: Voice over IP = IP の上の声。 出典: 教科書 vii・viii頁の略語表(スライドに正式名称は無い)。"
+        },
+        {
+          "type": "seq",
+          "q": "<b>SIP</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Session",
+              "opts": [
+                "Session",
+                "Simple",
+                "Secure",
+                "Signal"
+              ]
+            },
+            {
+              "ans": "Initiation",
+              "opts": [
+                "Initiation",
+                "Interface",
+                "Interference",
+                "Internet"
+              ]
+            },
+            {
+              "ans": "Protocol",
+              "opts": [
+                "Protocol",
+                "Physical",
+                "Point",
+                "Private"
+              ]
+            }
+          ],
+          "answer": "Session Initiation Protocol",
+          "note": "<b>正解: Session Initiation Protocol</b>　×Session Initation Protocol ×Session Initiative Protocol ×Session Initiation Protcol<br>SIP = VoIP で、接続(セッション)の開始・変更・終了を行う約束事。 覚え方: S・I・P = Session・Initiation・Protocol。 出典: 教科書 vii・viii頁の略語表(スライドに正式名称は無い)。"
+        }
+      ]
+    }
+  ],
+  "order": 10.1
+}

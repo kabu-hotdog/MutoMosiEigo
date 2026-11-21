@@ -1,0 +1,564 @@
+{
+  "title": "情報ネットワーク工学 ・ ① 略語 第5回",
+  "subtitle": "15問(約15分)。1語ずつ順に選ぶ。本番は綴りを手書きするので、間違えた略語は紙にも書き直す",
+  "eyebrow": "情報ネットワーク工学 ・ 後期中間試験",
+  "description": "第5回の学習ページの用語集に載っている略語(LAN・無線・光アクセス)を、略語→英語の正式名称の形で練習します。",
+  "year": 2026,
+  "grade": 4,
+  "exam": "後期中間試験",
+  "subject": "情報ネットワーク工学",
+  "storageKey": "ine_chukan_ryakugo5_v1",
+  "pointsPerQ": 100,
+  "katex": false,
+  "tip": "正式名称を<b>1語ずつ、頭文字が同じ別の単語(ネットワーク用語)の中から選びます</b>(Hyper → Text → Transfer → Protocol の順)。1語でも間違えたら不正解で、赤い語が直す所。本番は綴りを手書きするので、間違えた略語は紙にも書き直してください。1セット=5問=5分の目安。",
+  "footer": "<b>範囲の略語一覧(元は70語。ISOは範囲外、参考扱いの12語は出題から外した。一覧には残してある)</b>　略語=正式名称(出典) / ※=正式名称が資料に無くMoodleの正解を採用 / ⚠️=要確認<br><b>第1回</b> ADSL=Asymmetric Digital Subscriber Line(第1回 p.8・第5回 p.8) / HTTP=Hyper Text Transfer Protocol(第1回 p.8・第3回 p.14) / URL=Uniform Resource Locator(第1回 セルフチェック Q3)※ / IP=Internet Protocol(第1回 セルフチェック Q4)※ / DHCP=Dynamic Host Configuration Protocol(第1回 セルフチェック Q5)※ / SMTP=Simple Mail Transfer Protocol(第1回 セルフチェック Q7)※ / UDP=User Datagram Protocol(第1回 セルフチェック Q9)※<br><b>第2回</b> OFDMA=Orthogonal Frequency Division Multiple Access(第2回 p.4・p.5) / FDMA=Frequency Division Multiple Access(第2回 p.5) / TDMA=Time Division Multiple Access(第2回 p.5) / CDMA=Code Division Multiple Access(第2回 p.5) / OFDM=Orthogonal Frequency-Division Multiplexing(第2回 p.5) / ENIAC=Electronic Numerical Integrator And Computer(第2回 p.6) / UNIVAC I=UNIVersal Automatic Computer I(第2回 p.6)⚠️ / SINET=Science Information NETwork(第2回 p.7) / FTTH=Fiber To The Home(第2回 p.8・第5回 p.11) / AM=Amplitude Modulation(第2回 p.14) / FM=Frequency Modulation(第2回 p.14) / PM=Phase Modulation(第2回 p.14) / LW=Long Wave(第2回 p.15・第3回 p.3) / MW=Medium Wave(第2回 p.15・p.16) / SW=Short Wave(第2回 p.15・第3回 p.3) / HF=High Frequency(第2回 p.15・第3回 p.3) / VHF=Very High Frequency(第2回 p.15・p.16) / UHF=Ultra High Frequency(第2回 p.15・p.16) / LTE=Long Term Evolution(第2回 p.4)※<br><b>第3回</b> NRZ=Non Return to Zero(第3回 p.5) / RZ=Return to Zero(第3回 p.5) / AMI=Alternate Mark Inversion(第3回 p.5) / ASK=Amplitude Shift Keying(第3回 p.5) / FSK=Frequency Shift Keying(第3回 p.5)※ / PSK=Phase Shift Keying(第3回 p.5)※ / QAM=Quadrature Amplitude Modulation(第3回 p.5・p.6) / BER=Bit Error Rate(第3回 p.6) / FDM=Frequency Division Multiplexing(第3回 p.7) / TDM=Time Division Multiplexing(第3回 p.7) / CDM=Code Division Multiplexing(第3回 p.7) / WDM=Wave Division Multiplexing(第3回 p.7) / OSI=Open Systems Interconnection(第3回 p.12・第4回 p.3) / TCP=Transmission Control Protocol(第3回 p.14)※<br><b>第4回</b> FQDN=Fully Qualified Domain Name(第4回 p.9) / SCP=Session Control Protocol(第4回 p.10) / DSU=Digital Service Unit(第4回 p.14) / ONU=Optical Network Unit(第4回 p.14) / STB=Set-Top Box(第4回 p.14) / HDLC=High-level Data Link Control(第4回 p.15・第5回 p.4・p.5) / RaaS=Ransomware as a Service(第4回 p.19) / eKYC=electronic Know Your Customer(第4回 p.23) / MAC=Media Access Control(第5回 p.24)<br><b>第5回</b> PPP=Point to Point Protocol(第5回 p.2) / CRC=Cyclic Redundancy Check(第5回 p.5) / MII=Major Industry Identifier(第5回 p.6) / IIN=Issuer Identifier Number(第5回 p.6) / ISDN=Integrated Service Digital Network(第5回 p.7) / EDI=Electronic Data Interchange(第5回 p.7) / INS=Information Network System(第5回 p.7) / SS=Single Star(第5回 p.11) / PDS=Passive Double Star(第5回 p.11) / PON=Passive Optical Network(第5回 p.11) / CATV=CAble TeleVision(第5回 p.12) / UTP=Unshielded Twisted Pair(第5回 p.18) / STP=Shielded Twisted Pair(第5回 p.18) / FDDI=Fiber Distributed Data Interface(第5回 p.22) / CSMA=Carrier Sense Multiple Access(第5回 p.23) / CSMA/CD=Carrier Sense Multiple Access / Collision Detection(第5回 p.23)⚠️ / CSMA/CA=Carrier Sense Multiple Access / Collision Avoidance(第5回 p.23)⚠️ / WEP=Wired Equivalent Privacy(第5回 p.30) / WPA=Wi-Fi Protected Access(第5回 p.30) / ITU=International Telecommunication Union(第5回 セルフチェック Q6)※ / DoS=Denial of Service attack(第5回 セルフチェック Q7)※<br>出典の元は教員配布の講義資料(第1〜5回)と Moodle セルフチェックの正解。綴りは Moodle で正解になった表記を優先。",
+  "sections": [
+    {
+      "id": "r1",
+      "no": "01",
+      "title": "第5回の略語 セット1/3(5問5分): PPP・CRC・EDI・INS・SS",
+      "qs": [
+        {
+          "type": "seq",
+          "q": "<b>PPP</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Point",
+              "opts": [
+                "Point",
+                "Phase",
+                "Port",
+                "Private"
+              ]
+            },
+            {
+              "ans": "to",
+              "opts": [
+                "to",
+                "the",
+                "through",
+                "then"
+              ]
+            },
+            {
+              "ans": "Point",
+              "opts": [
+                "Point",
+                "Physical",
+                "Private",
+                "Proxy"
+              ]
+            },
+            {
+              "ans": "Protocol",
+              "opts": [
+                "Protocol",
+                "Pulse",
+                "Peer",
+                "Phase"
+              ]
+            }
+          ],
+          "answer": "Point to Point Protocol",
+          "note": "<b>正解: Point to Point Protocol</b>　×Point to Point Protocal ×Pont to Point Protocol ×Hyper Text Transfer Protocol(HTTPの名称)<br>PPP = ダイヤルアップ接続で使う2点間の通信プロトコル。 覚え方: P・P・P = Point・Point・Protocol。 出典: 第5回 p.2。 [B7]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>CRC</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Cyclic",
+              "opts": [
+                "Cyclic",
+                "Cache",
+                "Cell",
+                "Client"
+              ]
+            },
+            {
+              "ans": "Redundancy",
+              "opts": [
+                "Redundancy",
+                "Ring",
+                "Reply",
+                "Reliable"
+              ]
+            },
+            {
+              "ans": "Check",
+              "opts": [
+                "Check",
+                "Connection",
+                "Cloud",
+                "Computer"
+              ]
+            }
+          ],
+          "answer": "Cyclic Redundancy Check",
+          "note": "<b>正解: Cyclic Redundancy Check</b>　×Cycle Redundancy Check ×Cyclic Check Redundancy(語順違い) ×Major Industry Identifier(MIIの名称)<br>CRC = 巡回冗長検査。誤り検出の方式で、HDLCが採用する。 覚え方: C・R・C = Cyclic・Redundancy・Check。 出典: 第5回 p.5。 [A20]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>EDI</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Electronic",
+              "opts": [
+                "Electronic",
+                "Enhanced",
+                "Encryption",
+                "External"
+              ]
+            },
+            {
+              "ans": "Data",
+              "opts": [
+                "Data",
+                "Distributed",
+                "Datagram",
+                "Delivery"
+              ]
+            },
+            {
+              "ans": "Interchange",
+              "opts": [
+                "Interchange",
+                "Index",
+                "Impulse",
+                "Input"
+              ]
+            }
+          ],
+          "answer": "Electronic Data Interchange",
+          "note": "<b>正解: Electronic Data Interchange</b>　×Electonic Data Interchange ×Electronic Data Interchage ×Electronic Numerical Integrator And Computer(ENIACの名称)<br>EDI = 企業間でデータを電子的にやり取りする仕組み(ISDNの移行先: インターネットEDI)。 覚え方: E・D・I = Electronic・Data・Interchange。 出典: 第5回 p.7。 [A21]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>INS</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Information",
+              "opts": [
+                "Information",
+                "Input",
+                "Interference",
+                "Interface"
+              ]
+            },
+            {
+              "ans": "Network",
+              "opts": [
+                "Network",
+                "Name",
+                "Next",
+                "Native"
+              ]
+            },
+            {
+              "ans": "System",
+              "opts": [
+                "System",
+                "Sampling",
+                "Session",
+                "Secure"
+              ]
+            }
+          ],
+          "answer": "Information Network System",
+          "note": "<b>正解: Information Network System</b>　×Infomation Network System ×Information Netwok System ×Science Information NETwork(SINETの名称)<br>INS = ISDNサービスの名称。2024年1月にサービス終了【2025年1月完全終了】。 覚え方: I・N・S = Information・Network・System。 出典: 第5回 p.7。 [A21]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>SS</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Single",
+              "opts": [
+                "Single",
+                "Shielded",
+                "Secure",
+                "Station"
+              ]
+            },
+            {
+              "ans": "Star",
+              "opts": [
+                "Star",
+                "Secure",
+                "Simple",
+                "Subnet"
+              ]
+            }
+          ],
+          "answer": "Single Star",
+          "note": "<b>正解: Single Star</b>　×Singel Star ×Single Start ×Passive Double Star(PDSの名称)<br>SS = FTTHの光アクセス構成の一つ(PON=PDS構成と対になる方式)。 覚え方: S・S = Single・Star。 出典: 第5回 p.11。 [A23]"
+        }
+      ]
+    },
+    {
+      "id": "r2",
+      "no": "02",
+      "title": "第5回の略語 セット2/3(5問5分): PDS・PON・UTP・STP・FDDI",
+      "qs": [
+        {
+          "type": "seq",
+          "q": "<b>PDS</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Passive",
+              "opts": [
+                "Passive",
+                "Process",
+                "Port",
+                "Path"
+              ]
+            },
+            {
+              "ans": "Double",
+              "opts": [
+                "Double",
+                "Device",
+                "Data",
+                "Duplex"
+              ]
+            },
+            {
+              "ans": "Star",
+              "opts": [
+                "Star",
+                "Simple",
+                "Subnet",
+                "Stream"
+              ]
+            }
+          ],
+          "answer": "Passive Double Star",
+          "note": "<b>正解: Passive Double Star</b>　×Pasive Double Star ×Double Passive Star(語順違い) ×Passive Optical Network(PONの名称)<br>PDS = FTTHの光アクセス構成の一つ。PONと呼ばれる方式。 覚え方: P・D・S = Passive・Double・Star。 出典: 第5回 p.11。 [A23]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>PON</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Passive",
+              "opts": [
+                "Passive",
+                "Path",
+                "Physical",
+                "Pulse"
+              ]
+            },
+            {
+              "ans": "Optical",
+              "opts": [
+                "Optical",
+                "Orthogonal",
+                "Octet",
+                "Operating"
+              ]
+            },
+            {
+              "ans": "Network",
+              "opts": [
+                "Network",
+                "Name",
+                "Noise",
+                "Next"
+              ]
+            }
+          ],
+          "answer": "Passive Optical Network",
+          "note": "<b>正解: Passive Optical Network</b>　×Pasive Optical Network ×Optical Passive Network(語順違い) ×Optical Network Unit(ONUの名称)<br>PON = PDS構成の光アクセス。多重化は時分割多重方式。スライドは多重化方式を「自分割」と誤記(正しくは時分割)。 覚え方: P・O・N = Passive・Optical・Network。 出典: 第5回 p.11。 [A23]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>UTP</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Unshielded",
+              "opts": [
+                "Unshielded",
+                "Union",
+                "User",
+                "Upload"
+              ]
+            },
+            {
+              "ans": "Twisted",
+              "opts": [
+                "Twisted",
+                "Television",
+                "Trailer",
+                "Topology"
+              ]
+            },
+            {
+              "ans": "Pair",
+              "opts": [
+                "Pair",
+                "Privacy",
+                "Pulse",
+                "Port"
+              ]
+            }
+          ],
+          "answer": "Unshielded Twisted Pair",
+          "note": "<b>正解: Unshielded Twisted Pair</b>　×Unsheilded Twisted Pair ×Twisted Unshielded Pair(語順違い) ×Shielded Twisted Pair(STPの名称)<br>UTP = シールドがなく外部雑音に弱いツイストペアケーブル。 覚え方: U・T・P = Unshielded・Twisted・Pair。 出典: 第5回 p.18。 [C1]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>STP</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Shielded",
+              "opts": [
+                "Shielded",
+                "Switch",
+                "Subscriber",
+                "Signal"
+              ]
+            },
+            {
+              "ans": "Twisted",
+              "opts": [
+                "Twisted",
+                "Token",
+                "Telecommunication",
+                "Topology"
+              ]
+            },
+            {
+              "ans": "Pair",
+              "opts": [
+                "Pair",
+                "Phase",
+                "Process",
+                "Public"
+              ]
+            }
+          ],
+          "answer": "Shielded Twisted Pair",
+          "note": "<b>正解: Shielded Twisted Pair</b>　×Sheilded Twisted Pair ×Twisted Shielded Pair(語順違い) ×Unshielded Twisted Pair(UTPの名称)<br>STP = シールドがあり外部雑音に強いツイストペアケーブル。 覚え方: S・T・P = Shielded・Twisted・Pair。 出典: 第5回 p.18。 [C1]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>FDDI</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Fiber",
+              "opts": [
+                "Fiber",
+                "Frame",
+                "Frequency",
+                "Firewall"
+              ]
+            },
+            {
+              "ans": "Distributed",
+              "opts": [
+                "Distributed",
+                "Download",
+                "Division",
+                "Dynamic"
+              ]
+            },
+            {
+              "ans": "Data",
+              "opts": [
+                "Data",
+                "Domain",
+                "Digital",
+                "Device"
+              ]
+            },
+            {
+              "ans": "Interface",
+              "opts": [
+                "Interface",
+                "Index",
+                "Intranet",
+                "Instruction"
+              ]
+            }
+          ],
+          "answer": "Fiber Distributed Data Interface",
+          "note": "<b>正解: Fiber Distributed Data Interface</b>　×Fiber Distrubuted Data Interface ×Fiber Data Distributed Interface(語順違い) ×High-level Data Link Control(HDLCの名称)<br>FDDI = リング型LANの例。 覚え方: F・D・D・I = Fiber・Distributed・Data・Interface。 出典: 第5回 p.22。 [A25]"
+        }
+      ]
+    },
+    {
+      "id": "r3",
+      "no": "03",
+      "title": "第5回の略語 セット3/3(5問5分): CSMA・CSMA/CD・CSMA/CA・WEP・WPA",
+      "qs": [
+        {
+          "type": "seq",
+          "q": "<b>CSMA</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Carrier",
+              "opts": [
+                "Carrier",
+                "Cable",
+                "Code",
+                "Check"
+              ]
+            },
+            {
+              "ans": "Sense",
+              "opts": [
+                "Sense",
+                "Signal",
+                "Subnet",
+                "Station"
+              ]
+            },
+            {
+              "ans": "Multiple",
+              "opts": [
+                "Multiple",
+                "Metric",
+                "Modulation",
+                "Mode"
+              ]
+            },
+            {
+              "ans": "Access",
+              "opts": [
+                "Access",
+                "Array",
+                "Asynchronous",
+                "Automatic"
+              ]
+            }
+          ],
+          "answer": "Carrier Sense Multiple Access",
+          "note": "<b>正解: Carrier Sense Multiple Access</b>　×Carier Sense Multiple Access ×Carrier Sence Multiple Access ×Carrier Sense Multiple Access / Collision Detection(CSMA/CDの名称)<br>CSMA = LANのアクセス制御方式の一つ。搬送波を検知してから送信する。 覚え方: C・S・M・A = Carrier・Sense・Multiple・Access。 出典: 第5回 p.23。 [A27]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>CSMA/CD</b> の『CD』の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Collision",
+              "opts": [
+                "Collision",
+                "Cell",
+                "Circuit",
+                "Cyclic"
+              ]
+            },
+            {
+              "ans": "Detection",
+              "opts": [
+                "Detection",
+                "Duplex",
+                "Division",
+                "Device"
+              ]
+            }
+          ],
+          "answer": "Collision Detection",
+          "note": "<b>正解: Collision Detection</b>　×Colision Detection ×Collision Detecsion ×Collision Avoidance(CSMA/CAの方の語)<br>CSMA/CD = CSMAに「衝突検出」を加えたアクセス制御方式(スライドでは Carrier Sense Multiple Access と Collision Detection を別々に展開)。一般には「Carrier Sense Multiple Access with Collision Detection」と書く。⚠️ 本番の表記は未確認。 覚え方: CD = Collision Detection。 出典: 第5回 p.23。 [A27]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>CSMA/CA</b> の『CA』の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Collision",
+              "opts": [
+                "Collision",
+                "Channel",
+                "Configuration",
+                "Clock"
+              ]
+            },
+            {
+              "ans": "Avoidance",
+              "opts": [
+                "Avoidance",
+                "Application",
+                "Adapter",
+                "Automatic"
+              ]
+            }
+          ],
+          "answer": "Collision Avoidance",
+          "note": "<b>正解: Collision Avoidance</b>　×Colision Avoidance ×Collision Avoidence ×Collision Detection(CSMA/CDの方の語)<br>CSMA/CA = CSMAに「衝突回避」を加えたアクセス制御方式(黄色ハイライト。スライドでは Carrier Sense Multiple Access と Collision Avoidance を別々に展開)。一般には「Carrier Sense Multiple Access with Collision Avoidance」と書く。⚠️ 本番の表記は未確認。 覚え方: CA = Collision Avoidance。 出典: 第5回 p.23。 [A27]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>WEP</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Wired",
+              "opts": [
+                "Wired",
+                "Web",
+                "Wave",
+                "Wide"
+              ]
+            },
+            {
+              "ans": "Equivalent",
+              "opts": [
+                "Equivalent",
+                "Exchange",
+                "Element",
+                "Edge"
+              ]
+            },
+            {
+              "ans": "Privacy",
+              "opts": [
+                "Privacy",
+                "Power",
+                "Payload",
+                "Point"
+              ]
+            }
+          ],
+          "answer": "Wired Equivalent Privacy",
+          "note": "<b>正解: Wired Equivalent Privacy</b>　×Wiered Equivalent Privacy ×Wired Equivalant Privacy ×Wi-Fi Protected Access(WPAの名称)<br>WEP = 無線LANの暗号化方式の一つ(資料では×印)。 覚え方: W・E・P = Wired・Equivalent・Privacy。 出典: 第5回 p.30。 [C2]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>WPA</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Wi-Fi",
+              "opts": [
+                "Wi-Fi",
+                "Wireless",
+                "Wideband",
+                "Wired"
+              ]
+            },
+            {
+              "ans": "Protected",
+              "opts": [
+                "Protected",
+                "Private",
+                "Process",
+                "Passive"
+              ]
+            },
+            {
+              "ans": "Access",
+              "opts": [
+                "Access",
+                "Application",
+                "Authentication",
+                "Asynchronous"
+              ]
+            }
+          ],
+          "answer": "Wi-Fi Protected Access",
+          "note": "<b>正解: Wi-Fi Protected Access</b>　×Wi-Fi Protected Acess ×Wi-Fi Protcted Access ×Media Access Control(MACの名称)<br>WPA = Wi-Fi関連の無線LAN暗号化方式の一つ(資料では×印。WPA2・WPA3が後続)。 覚え方: Wi-Fi(ハイフン付き)・Protected・Access。 出典: 第5回 p.30。 [C2]"
+        }
+      ]
+    }
+  ],
+  "order": 10.5
+}

@@ -1,0 +1,286 @@
+{
+  "title": "情報ネットワーク工学 ・ ① 略語 第4回",
+  "subtitle": "7問(約7分)。1語ずつ順に選ぶ。本番は綴りを手書きするので、間違えた略語は紙にも書き直す",
+  "eyebrow": "情報ネットワーク工学 ・ 後期中間試験",
+  "description": "第4回の学習ページの用語集に載っている略語(OSI・アクセスネットワーク)を、略語→英語の正式名称の形で練習します。",
+  "year": 2026,
+  "grade": 4,
+  "exam": "後期中間試験",
+  "subject": "情報ネットワーク工学",
+  "storageKey": "ine_chukan_ryakugo4_v1",
+  "pointsPerQ": 100,
+  "katex": false,
+  "tip": "正式名称を<b>1語ずつ、頭文字が同じ別の単語(ネットワーク用語)の中から選びます</b>(Hyper → Text → Transfer → Protocol の順)。1語でも間違えたら不正解で、赤い語が直す所。本番は綴りを手書きするので、間違えた略語は紙にも書き直してください。1セット=5問=5分の目安。",
+  "footer": "<b>範囲の略語一覧(元は70語。ISOは範囲外、参考扱いの12語は出題から外した。一覧には残してある)</b>　略語=正式名称(出典) / ※=正式名称が資料に無くMoodleの正解を採用 / ⚠️=要確認<br><b>第1回</b> ADSL=Asymmetric Digital Subscriber Line(第1回 p.8・第5回 p.8) / HTTP=Hyper Text Transfer Protocol(第1回 p.8・第3回 p.14) / URL=Uniform Resource Locator(第1回 セルフチェック Q3)※ / IP=Internet Protocol(第1回 セルフチェック Q4)※ / DHCP=Dynamic Host Configuration Protocol(第1回 セルフチェック Q5)※ / SMTP=Simple Mail Transfer Protocol(第1回 セルフチェック Q7)※ / UDP=User Datagram Protocol(第1回 セルフチェック Q9)※<br><b>第2回</b> OFDMA=Orthogonal Frequency Division Multiple Access(第2回 p.4・p.5) / FDMA=Frequency Division Multiple Access(第2回 p.5) / TDMA=Time Division Multiple Access(第2回 p.5) / CDMA=Code Division Multiple Access(第2回 p.5) / OFDM=Orthogonal Frequency-Division Multiplexing(第2回 p.5) / ENIAC=Electronic Numerical Integrator And Computer(第2回 p.6) / UNIVAC I=UNIVersal Automatic Computer I(第2回 p.6)⚠️ / SINET=Science Information NETwork(第2回 p.7) / FTTH=Fiber To The Home(第2回 p.8・第5回 p.11) / AM=Amplitude Modulation(第2回 p.14) / FM=Frequency Modulation(第2回 p.14) / PM=Phase Modulation(第2回 p.14) / LW=Long Wave(第2回 p.15・第3回 p.3) / MW=Medium Wave(第2回 p.15・p.16) / SW=Short Wave(第2回 p.15・第3回 p.3) / HF=High Frequency(第2回 p.15・第3回 p.3) / VHF=Very High Frequency(第2回 p.15・p.16) / UHF=Ultra High Frequency(第2回 p.15・p.16) / LTE=Long Term Evolution(第2回 p.4)※<br><b>第3回</b> NRZ=Non Return to Zero(第3回 p.5) / RZ=Return to Zero(第3回 p.5) / AMI=Alternate Mark Inversion(第3回 p.5) / ASK=Amplitude Shift Keying(第3回 p.5) / FSK=Frequency Shift Keying(第3回 p.5)※ / PSK=Phase Shift Keying(第3回 p.5)※ / QAM=Quadrature Amplitude Modulation(第3回 p.5・p.6) / BER=Bit Error Rate(第3回 p.6) / FDM=Frequency Division Multiplexing(第3回 p.7) / TDM=Time Division Multiplexing(第3回 p.7) / CDM=Code Division Multiplexing(第3回 p.7) / WDM=Wave Division Multiplexing(第3回 p.7) / OSI=Open Systems Interconnection(第3回 p.12・第4回 p.3) / TCP=Transmission Control Protocol(第3回 p.14)※<br><b>第4回</b> FQDN=Fully Qualified Domain Name(第4回 p.9) / SCP=Session Control Protocol(第4回 p.10) / DSU=Digital Service Unit(第4回 p.14) / ONU=Optical Network Unit(第4回 p.14) / STB=Set-Top Box(第4回 p.14) / HDLC=High-level Data Link Control(第4回 p.15・第5回 p.4・p.5) / RaaS=Ransomware as a Service(第4回 p.19) / eKYC=electronic Know Your Customer(第4回 p.23) / MAC=Media Access Control(第5回 p.24)<br><b>第5回</b> PPP=Point to Point Protocol(第5回 p.2) / CRC=Cyclic Redundancy Check(第5回 p.5) / MII=Major Industry Identifier(第5回 p.6) / IIN=Issuer Identifier Number(第5回 p.6) / ISDN=Integrated Service Digital Network(第5回 p.7) / EDI=Electronic Data Interchange(第5回 p.7) / INS=Information Network System(第5回 p.7) / SS=Single Star(第5回 p.11) / PDS=Passive Double Star(第5回 p.11) / PON=Passive Optical Network(第5回 p.11) / CATV=CAble TeleVision(第5回 p.12) / UTP=Unshielded Twisted Pair(第5回 p.18) / STP=Shielded Twisted Pair(第5回 p.18) / FDDI=Fiber Distributed Data Interface(第5回 p.22) / CSMA=Carrier Sense Multiple Access(第5回 p.23) / CSMA/CD=Carrier Sense Multiple Access / Collision Detection(第5回 p.23)⚠️ / CSMA/CA=Carrier Sense Multiple Access / Collision Avoidance(第5回 p.23)⚠️ / WEP=Wired Equivalent Privacy(第5回 p.30) / WPA=Wi-Fi Protected Access(第5回 p.30) / ITU=International Telecommunication Union(第5回 セルフチェック Q6)※ / DoS=Denial of Service attack(第5回 セルフチェック Q7)※<br>出典の元は教員配布の講義資料(第1〜5回)と Moodle セルフチェックの正解。綴りは Moodle で正解になった表記を優先。",
+  "sections": [
+    {
+      "id": "r1",
+      "no": "01",
+      "title": "第4回の略語 セット1/2(4問4分): FQDN・SCP・DSU・ONU",
+      "qs": [
+        {
+          "type": "seq",
+          "q": "<b>FQDN</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Fully",
+              "opts": [
+                "Fully",
+                "Format",
+                "Firewall",
+                "Full"
+              ]
+            },
+            {
+              "ans": "Qualified",
+              "opts": [
+                "Qualified",
+                "Quantized",
+                "Quality",
+                "Queued"
+              ]
+            },
+            {
+              "ans": "Domain",
+              "opts": [
+                "Domain",
+                "Detection",
+                "Dynamic",
+                "Duplex"
+              ]
+            },
+            {
+              "ans": "Name",
+              "opts": [
+                "Name",
+                "Net",
+                "Narrow",
+                "Network"
+              ]
+            }
+          ],
+          "answer": "Fully Qualified Domain Name",
+          "note": "<b>正解: Fully Qualified Domain Name</b>　×Fully Qualifed Domain Name ×Fully Qualified Domein Name ×Session Control Protocol(SCPの名称)<br>FQDN = ホスト名+ドメイン名で表す階層構造の名前(例 www.yahoo.com)。 覚え方: F・Q・D・N = Fully・Qualified・Domain・Name。 出典: 第4回 p.9。 [A17]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>SCP</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Session",
+              "opts": [
+                "Session",
+                "Switch",
+                "Secure",
+                "Simple"
+              ]
+            },
+            {
+              "ans": "Control",
+              "opts": [
+                "Control",
+                "Channel",
+                "Carrier",
+                "Configuration"
+              ]
+            },
+            {
+              "ans": "Protocol",
+              "opts": [
+                "Protocol",
+                "Parity",
+                "Path",
+                "Packet"
+              ]
+            }
+          ],
+          "answer": "Session Control Protocol",
+          "note": "<b>正解: Session Control Protocol</b>　×Sesion Control Protocol ×Session Controll Protocol ×Transmission Control Protocol(TCPの名称)<br>SCP = 第5層(セッション層)で、同期点を挿入して転送をやり直せるようにする通信手順。 覚え方: S・C・P = Session・Control・Protocol。 出典: 第4回 p.10(例題5.1)。 [A16][A13]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>DSU</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Digital",
+              "opts": [
+                "Digital",
+                "Detection",
+                "Duplex",
+                "Delay"
+              ]
+            },
+            {
+              "ans": "Service",
+              "opts": [
+                "Service",
+                "Switch",
+                "Subscriber",
+                "Segment"
+              ]
+            },
+            {
+              "ans": "Unit",
+              "opts": [
+                "Unit",
+                "Utility",
+                "Universal",
+                "Uplink"
+              ]
+            }
+          ],
+          "answer": "Digital Service Unit",
+          "note": "<b>正解: Digital Service Unit</b>　×Digitial Service Unit ×Digital Servise Unit ×Integrated Service Digital Network(ISDNの名称)<br>DSU = ISDNのアクセスネットワークで使う装置。装置と回線の対応は図6.1(資料外)。Moodle の正解は DSU。 覚え方: D・S・U = Digital・Service・Unit。 出典: 第4回 p.14(第4回 セルフチェック Q9)。 [A24]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>ONU</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Optical",
+              "opts": [
+                "Optical",
+                "Overhead",
+                "Offset",
+                "Online"
+              ]
+            },
+            {
+              "ans": "Network",
+              "opts": [
+                "Network",
+                "Net",
+                "Node",
+                "Name"
+              ]
+            },
+            {
+              "ans": "Unit",
+              "opts": [
+                "Unit",
+                "Uniform",
+                "Unicast",
+                "User"
+              ]
+            }
+          ],
+          "answer": "Optical Network Unit",
+          "note": "<b>正解: Optical Network Unit</b>　×Optial Network Unit ×Optical Netwok Unit ×Passive Optical Network(PONの名称)<br>ONU = FTTH(光アクセス)で使う装置。装置と回線の対応は図6.1(資料外)。 覚え方: O・N・U = Optical・Network・Unit。 出典: 第4回 p.14(第4回 セルフチェック Q3)。 [A2][A24]"
+        }
+      ]
+    },
+    {
+      "id": "r2",
+      "no": "02",
+      "title": "第4回の略語 セット2/2(3問3分): STB・HDLC・MAC",
+      "qs": [
+        {
+          "type": "seq",
+          "q": "<b>STB</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Set-Top",
+              "opts": [
+                "Set-Top",
+                "Spread-Spectrum",
+                "Stop-and-Wait",
+                "Short-Haul"
+              ]
+            },
+            {
+              "ans": "Box",
+              "opts": [
+                "Box",
+                "Broadcast",
+                "Beacon",
+                "Bit"
+              ]
+            }
+          ],
+          "answer": "Set-Top Box",
+          "note": "<b>正解: Set-Top Box</b>　×Set-Tap Box ×Sit-Top Box ×Integrated Service Digital Network(ISDNの名称)<br>STB = CATVのアクセスネットワークで使う装置。★Moodleで間違えた問題の系統。Moodle の正解は STB(Modem は不正解)。ハイフンありの Set-Top。 覚え方: S・T・B = Set・Top・Box。 出典: 第4回 p.14(第4回 セルフチェック Q10)。 [A24]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>HDLC</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "High-level",
+              "opts": [
+                "High-level",
+                "Half-duplex",
+                "Hop-by-hop",
+                "Hard-wired"
+              ]
+            },
+            {
+              "ans": "Data",
+              "opts": [
+                "Data",
+                "Digital",
+                "Directory",
+                "Delivery"
+              ]
+            },
+            {
+              "ans": "Link",
+              "opts": [
+                "Link",
+                "Layer",
+                "Loss",
+                "Long"
+              ]
+            },
+            {
+              "ans": "Control",
+              "opts": [
+                "Control",
+                "Cloud",
+                "Circuit",
+                "Computer"
+              ]
+            }
+          ],
+          "answer": "High-level Data Link Control",
+          "note": "<b>正解: High-level Data Link Control</b>　×High-levle Data Link Control ×High-level Link Data Control(語順違い) ×Media Access Control(MACの名称)<br>HDLC = データリンク制御方式の一つ。両方向の伝送ができる。 覚え方: High-level・Data・Link・Control(ハイフン語は1文字)。 出典: 第4回 p.15・第5回 p.4・p.5。 [A20]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>MAC</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Media",
+              "opts": [
+                "Media",
+                "Metric",
+                "Multiple",
+                "Mail"
+              ]
+            },
+            {
+              "ans": "Access",
+              "opts": [
+                "Access",
+                "Adapter",
+                "Array",
+                "Authentication"
+              ]
+            },
+            {
+              "ans": "Control",
+              "opts": [
+                "Control",
+                "Cable",
+                "Code",
+                "Cyclic"
+              ]
+            }
+          ],
+          "answer": "Media Access Control",
+          "note": "<b>正解: Media Access Control</b>　×Medium Access Control ×Media Control Access(語順違い) ×Carrier Sense Multiple Access(CSMAの名称)<br>MAC = 第2層(データリンク層)で使うアドレス。48ビットで機器を識別する。Moodle の正解は Media(Medium は不正解)。 覚え方: M・A・C = Media・Access・Control。 出典: 第5回 p.24(第4回 セルフチェック Q7)。 [A2][A18]"
+        }
+      ]
+    }
+  ],
+  "order": 10.4
+}

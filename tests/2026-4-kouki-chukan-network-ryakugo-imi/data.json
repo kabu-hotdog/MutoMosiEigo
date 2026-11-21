@@ -1,0 +1,353 @@
+{
+  "title": "情報ネットワーク工学 ・ ① 略語 意味(第1〜5回)",
+  "subtitle": "略語→日本語の説明を選ぶ。名前だけでなく中身も言えるように",
+  "eyebrow": "情報ネットワーク工学 ・ 後期中間試験",
+  "description": "略語から日本語の説明を選びます。名前(綴り)だけでなく、中身も言えるように。範囲は第1〜5回の略語です。",
+  "year": 2026,
+  "grade": 4,
+  "exam": "後期中間試験",
+  "subject": "情報ネットワーク工学",
+  "storageKey": "ine_chukan_ryakugo_imi_v1",
+  "pointsPerQ": 100,
+  "katex": false,
+  "tip": "略語から、正しい日本語の説明を選びます。誤りの選択肢は、別の略語の説明です。",
+  "footer": "<b>範囲の略語一覧(元は70語。ISOは範囲外、参考扱いの12語は出題から外した。一覧には残してある)</b>　略語=正式名称(出典) / ※=正式名称が資料に無くMoodleの正解を採用 / ⚠️=要確認<br><b>第1回</b> ADSL=Asymmetric Digital Subscriber Line(第1回 p.8・第5回 p.8) / HTTP=Hyper Text Transfer Protocol(第1回 p.8・第3回 p.14) / URL=Uniform Resource Locator(第1回 セルフチェック Q3)※ / IP=Internet Protocol(第1回 セルフチェック Q4)※ / DHCP=Dynamic Host Configuration Protocol(第1回 セルフチェック Q5)※ / SMTP=Simple Mail Transfer Protocol(第1回 セルフチェック Q7)※ / UDP=User Datagram Protocol(第1回 セルフチェック Q9)※<br><b>第2回</b> OFDMA=Orthogonal Frequency Division Multiple Access(第2回 p.4・p.5) / FDMA=Frequency Division Multiple Access(第2回 p.5) / TDMA=Time Division Multiple Access(第2回 p.5) / CDMA=Code Division Multiple Access(第2回 p.5) / OFDM=Orthogonal Frequency-Division Multiplexing(第2回 p.5) / ENIAC=Electronic Numerical Integrator And Computer(第2回 p.6) / UNIVAC I=UNIVersal Automatic Computer I(第2回 p.6)⚠️ / SINET=Science Information NETwork(第2回 p.7) / FTTH=Fiber To The Home(第2回 p.8・第5回 p.11) / AM=Amplitude Modulation(第2回 p.14) / FM=Frequency Modulation(第2回 p.14) / PM=Phase Modulation(第2回 p.14) / LW=Long Wave(第2回 p.15・第3回 p.3) / MW=Medium Wave(第2回 p.15・p.16) / SW=Short Wave(第2回 p.15・第3回 p.3) / HF=High Frequency(第2回 p.15・第3回 p.3) / VHF=Very High Frequency(第2回 p.15・p.16) / UHF=Ultra High Frequency(第2回 p.15・p.16) / LTE=Long Term Evolution(第2回 p.4)※<br><b>第3回</b> NRZ=Non Return to Zero(第3回 p.5) / RZ=Return to Zero(第3回 p.5) / AMI=Alternate Mark Inversion(第3回 p.5) / ASK=Amplitude Shift Keying(第3回 p.5) / FSK=Frequency Shift Keying(第3回 p.5)※ / PSK=Phase Shift Keying(第3回 p.5)※ / QAM=Quadrature Amplitude Modulation(第3回 p.5・p.6) / BER=Bit Error Rate(第3回 p.6) / FDM=Frequency Division Multiplexing(第3回 p.7) / TDM=Time Division Multiplexing(第3回 p.7) / CDM=Code Division Multiplexing(第3回 p.7) / WDM=Wave Division Multiplexing(第3回 p.7) / OSI=Open Systems Interconnection(第3回 p.12・第4回 p.3) / TCP=Transmission Control Protocol(第3回 p.14)※<br><b>第4回</b> FQDN=Fully Qualified Domain Name(第4回 p.9) / SCP=Session Control Protocol(第4回 p.10) / DSU=Digital Service Unit(第4回 p.14) / ONU=Optical Network Unit(第4回 p.14) / STB=Set-Top Box(第4回 p.14) / HDLC=High-level Data Link Control(第4回 p.15・第5回 p.4・p.5) / RaaS=Ransomware as a Service(第4回 p.19) / eKYC=electronic Know Your Customer(第4回 p.23) / MAC=Media Access Control(第5回 p.24)<br><b>第5回</b> PPP=Point to Point Protocol(第5回 p.2) / CRC=Cyclic Redundancy Check(第5回 p.5) / MII=Major Industry Identifier(第5回 p.6) / IIN=Issuer Identifier Number(第5回 p.6) / ISDN=Integrated Service Digital Network(第5回 p.7) / EDI=Electronic Data Interchange(第5回 p.7) / INS=Information Network System(第5回 p.7) / SS=Single Star(第5回 p.11) / PDS=Passive Double Star(第5回 p.11) / PON=Passive Optical Network(第5回 p.11) / CATV=CAble TeleVision(第5回 p.12) / UTP=Unshielded Twisted Pair(第5回 p.18) / STP=Shielded Twisted Pair(第5回 p.18) / FDDI=Fiber Distributed Data Interface(第5回 p.22) / CSMA=Carrier Sense Multiple Access(第5回 p.23) / CSMA/CD=Carrier Sense Multiple Access / Collision Detection(第5回 p.23)⚠️ / CSMA/CA=Carrier Sense Multiple Access / Collision Avoidance(第5回 p.23)⚠️ / WEP=Wired Equivalent Privacy(第5回 p.30) / WPA=Wi-Fi Protected Access(第5回 p.30) / ITU=International Telecommunication Union(第5回 セルフチェック Q6)※ / DoS=Denial of Service attack(第5回 セルフチェック Q7)※<br>出典の元は教員配布の講義資料(第1〜5回)と Moodle セルフチェックの正解。綴りは Moodle で正解になった表記を優先。",
+  "sections": [
+    {
+      "id": "r1",
+      "no": "01",
+      "title": "意味 第1回の略語(3語): 略語→日本語の説明",
+      "qs": [
+        {
+          "type": "single",
+          "q": "【意味】略語 <b>ADSL</b> の説明として正しいものは?",
+          "opts": [
+            "既存の電話回線を使う高速通信。局からの距離が遠いほど速度が下がる",
+            "ISDNのアクセスネットワークで使う装置",
+            "音声・データ・画像を1本の回線で扱うディジタルネットワーク(基本インターフェースは2B+D)",
+            "光ファイバを家庭まで引き込むアクセス方式"
+          ],
+          "ans": "既存の電話回線を使う高速通信。局からの距離が遠いほど速度が下がる",
+          "note": "<b>ADSL = 既存の電話回線を使う高速通信。局からの距離が遠いほど速度が下がる</b>。正式名称は Asymmetric Digital Subscriber Line。誤りの選択肢は別の略語(DSU・ISDN・FTTH)の説明。 出典: 第1回 p.8・第5回 p.8。 [A1][A2][A22]"
+        },
+        {
+          "type": "single",
+          "q": "【意味】略語 <b>IP</b> の説明として正しいものは?",
+          "opts": [
+            "ネットワークにつないだ端末へIPアドレス等を自動で割り当てるプロトコル",
+            "第3層(ネットワーク層)でアドレスをもとに経路選択をするプロトコル",
+            "第4層(トランスポート層)のプロトコルで、データの単位は「データグラム」",
+            "電子メールを送信するときのプロトコル(第7層)"
+          ],
+          "ans": "第3層(ネットワーク層)でアドレスをもとに経路選択をするプロトコル",
+          "note": "<b>IP = 第3層(ネットワーク層)でアドレスをもとに経路選択をするプロトコル</b>。正式名称は Internet Protocol(資料外)。誤りの選択肢は別の略語(DHCP・SMTP・UDP)の説明。 出典: 第1回 セルフチェック Q4(資料外・Moodle正解)・第3回 p.14。 [A2][A13]"
+        },
+        {
+          "type": "single",
+          "q": "【意味】略語 <b>UDP</b> の説明として正しいものは?",
+          "opts": [
+            "第5層(セッション層)で、同期点を挿入して転送をやり直せるようにする通信手順",
+            "第4層(トランスポート層)のプロトコルで、データの単位は「セグメント」",
+            "ダイヤルアップ接続で使う2点間の通信プロトコル",
+            "第4層(トランスポート層)のプロトコルで、データの単位は「データグラム」"
+          ],
+          "ans": "第4層(トランスポート層)のプロトコルで、データの単位は「データグラム」",
+          "note": "<b>UDP = 第4層(トランスポート層)のプロトコルで、データの単位は「データグラム」</b>。正式名称は User Datagram Protocol(資料外)。誤りの選択肢は別の略語(TCP・SCP・PPP)の説明。 出典: 第1回 セルフチェック Q9(資料外・Moodle正解)・第3回 p.14。 [A2][A13]"
+        }
+      ]
+    },
+    {
+      "id": "r2",
+      "no": "02",
+      "title": "意味 第2回の略語(6語): 略語→日本語の説明",
+      "qs": [
+        {
+          "type": "single",
+          "q": "【意味】略語 <b>OFDMA</b> の説明として正しいものは?",
+          "opts": [
+            "周波数分割多元接続。周波数で利用者を分ける方式(第1世代)",
+            "時分割多元接続。時間で利用者を分ける方式(第2世代)",
+            "符号分割多元接続。符号で利用者を分ける方式(第3世代)",
+            "直交周波数分割多元接続。第3.9世代(LTE)の多元接続方式"
+          ],
+          "ans": "直交周波数分割多元接続。第3.9世代(LTE)の多元接続方式",
+          "note": "<b>OFDMA = 直交周波数分割多元接続。第3.9世代(LTE)の多元接続方式</b>。正式名称は Orthogonal Frequency Division Multiple Access。誤りの選択肢は別の略語(FDMA・TDMA・CDMA)の説明。 出典: 第2回 p.4・p.5(第1回 セルフチェック Q1・Q10)。 [A2][A3][A4]"
+        },
+        {
+          "type": "single",
+          "q": "【意味】略語 <b>FDMA</b> の説明として正しいものは?",
+          "opts": [
+            "符号分割多元接続。符号で利用者を分ける方式(第3世代)",
+            "周波数分割多重。多重化技術の一つ",
+            "周波数分割多元接続。周波数で利用者を分ける方式(第1世代)",
+            "時分割多元接続。時間で利用者を分ける方式(第2世代)"
+          ],
+          "ans": "周波数分割多元接続。周波数で利用者を分ける方式(第1世代)",
+          "note": "<b>FDMA = 周波数分割多元接続。周波数で利用者を分ける方式(第1世代)</b>。正式名称は Frequency Division Multiple Access。誤りの選択肢は同じ仲間の別の方式(TDMA・CDMA・FDM)の説明。「〜多元接続」は利用者を分ける方式、「〜多重」は1本の回線に信号を束ねる技術で、別物。 出典: 第2回 p.5(第5回 セルフチェック Q3)。 [A2][A3]"
+        },
+        {
+          "type": "single",
+          "q": "【意味】略語 <b>TDMA</b> の説明として正しいものは?",
+          "opts": [
+            "時分割多重。多重化技術の一つ",
+            "時分割多元接続。時間で利用者を分ける方式(第2世代)",
+            "周波数分割多元接続。周波数で利用者を分ける方式(第1世代)",
+            "符号分割多元接続。符号で利用者を分ける方式(第3世代)"
+          ],
+          "ans": "時分割多元接続。時間で利用者を分ける方式(第2世代)",
+          "note": "<b>TDMA = 時分割多元接続。時間で利用者を分ける方式(第2世代)</b>。正式名称は Time Division Multiple Access。誤りの選択肢は同じ仲間の別の方式(FDMA・CDMA・TDM)の説明。「〜多元接続」は利用者を分ける方式、「〜多重」は1本の回線に信号を束ねる技術で、別物。 出典: 第2回 p.5(第5回 セルフチェック Q10)。 [A2][A3]"
+        },
+        {
+          "type": "single",
+          "q": "【意味】略語 <b>CDMA</b> の説明として正しいものは?",
+          "opts": [
+            "符号分割多元接続。符号で利用者を分ける方式(第3世代)",
+            "周波数分割多元接続。周波数で利用者を分ける方式(第1世代)",
+            "時分割多元接続。時間で利用者を分ける方式(第2世代)",
+            "符号分割多重。多重化技術の一つ"
+          ],
+          "ans": "符号分割多元接続。符号で利用者を分ける方式(第3世代)",
+          "note": "<b>CDMA = 符号分割多元接続。符号で利用者を分ける方式(第3世代)</b>。正式名称は Code Division Multiple Access。誤りの選択肢は同じ仲間の別の方式(FDMA・TDMA・CDM)の説明。「〜多元接続」は利用者を分ける方式、「〜多重」は1本の回線に信号を束ねる技術で、別物。 出典: 第2回 p.5。 [A3]"
+        },
+        {
+          "type": "single",
+          "q": "【意味】略語 <b>FTTH</b> の説明として正しいものは?",
+          "opts": [
+            "第3.9世代の携帯電話の通信方式(多元接続はOFDMA)",
+            "ISDNのアクセスネットワークで使う装置",
+            "光アクセスで使う装置",
+            "光ファイバを家庭まで引き込むアクセス方式"
+          ],
+          "ans": "光ファイバを家庭まで引き込むアクセス方式",
+          "note": "<b>FTTH = 光ファイバを家庭まで引き込むアクセス方式</b>。正式名称は Fiber To The Home。誤りの選択肢は別の略語(LTE・DSU・ONU)の説明。 出典: 第2回 p.8・第5回 p.11。 [A23]"
+        },
+        {
+          "type": "single",
+          "q": "【意味】略語 <b>LTE</b> の説明として正しいものは?",
+          "opts": [
+            "CATVのアクセスネットワークで使う装置",
+            "第3.9世代の携帯電話の通信方式(多元接続はOFDMA)",
+            "FTTH(光アクセス)で使う装置",
+            "ISDNのアクセスネットワークで使う装置"
+          ],
+          "ans": "第3.9世代の携帯電話の通信方式(多元接続はOFDMA)",
+          "note": "<b>LTE = 第3.9世代の携帯電話の通信方式(多元接続はOFDMA)</b>。正式名称は Long Term Evolution(資料外)。誤りの選択肢は別の略語(DSU・ONU・STB)の説明。 出典: 第2回 p.4(第1回 セルフチェック Q8・第5回 Q2、正式名称は資料外・Moodle正解)。 [A2][A4]"
+        }
+      ]
+    },
+    {
+      "id": "r3",
+      "no": "03",
+      "title": "意味 第3回の略語(4語): 略語→日本語の説明",
+      "qs": [
+        {
+          "type": "single",
+          "q": "【意味】略語 <b>QAM</b> の説明として正しいものは?",
+          "opts": [
+            "振幅位相変調。ディジタル変調方式の一つ(64QAMなど)",
+            "信号の大きさに合わせて搬送波の振幅を変える変調。電気雑音の影響を受ける",
+            "搬送波の位相を変える変調",
+            "搬送波の周波数を変える変調。電気雑音の直接影響を受け難く高品質"
+          ],
+          "ans": "振幅位相変調。ディジタル変調方式の一つ(64QAMなど)",
+          "note": "<b>QAM = 振幅位相変調。ディジタル変調方式の一つ(64QAMなど)</b>。正式名称は Quadrature Amplitude Modulation。誤りの選択肢は別の略語(AM・FM・PM)の説明。 出典: 第3回 p.5・p.6。 [A9][A30]"
+        },
+        {
+          "type": "single",
+          "q": "【意味】略語 <b>BER</b> の説明として正しいものは?",
+          "opts": [
+            "ビット誤り率。伝送路の品質の評価尺度で、小さい方が良い",
+            "1秒間に信号が変化する回数(ボーレート)",
+            "1秒間に伝送できるビット数(ビットレート)",
+            "巡回冗長検査。誤り検出の方式の一つ"
+          ],
+          "ans": "ビット誤り率。伝送路の品質の評価尺度で、小さい方が良い",
+          "note": "<b>BER = ビット誤り率。伝送路の品質の評価尺度で、小さい方が良い</b>。正式名称は Bit Error Rate。誤りの選択肢は伝送・誤りに関する紛らわしい用語(ボーレート・ビットレート・巡回冗長検査)の説明。ボーレートとビットレートの説明は資料外の補足。 出典: 第3回 p.6。 [A9]"
+        },
+        {
+          "type": "single",
+          "q": "【意味】略語 <b>OSI</b> の説明として正しいものは?",
+          "opts": [
+            "開放型システム間相互接続。各層の名称と働きを正確に憶える参照モデル",
+            "第4層(トランスポート層)のプロトコルで、データの単位は「セグメント」",
+            "ホスト名+ドメイン名で表す階層構造の名前(例 www.yahoo.com)",
+            "第5層(セッション層)で、同期点を挿入して転送をやり直せるようにする通信手順"
+          ],
+          "ans": "開放型システム間相互接続。各層の名称と働きを正確に憶える参照モデル",
+          "note": "<b>OSI = 開放型システム間相互接続。各層の名称と働きを正確に憶える参照モデル</b>。正式名称は Open Systems Interconnection。誤りの選択肢は別の略語(TCP・FQDN・SCP)の説明。 出典: 第3回 p.12・第4回 p.3。 [A12]"
+        },
+        {
+          "type": "single",
+          "q": "【意味】略語 <b>TCP</b> の説明として正しいものは?",
+          "opts": [
+            "ダイヤルアップ接続で使う2点間の通信プロトコル",
+            "第4層(トランスポート層)のプロトコルで、データの単位は「セグメント」",
+            "第7層(アプリケーション層)でWebページのやり取りに使うプロトコル",
+            "第5層(セッション層)で、同期点を挿入して転送をやり直せるようにする通信手順"
+          ],
+          "ans": "第4層(トランスポート層)のプロトコルで、データの単位は「セグメント」",
+          "note": "<b>TCP = 第4層(トランスポート層)のプロトコルで、データの単位は「セグメント」</b>。正式名称は Transmission Control Protocol(資料外)。誤りの選択肢は別の略語(SCP・PPP・HTTP)の説明。 出典: 第3回 p.14(第5回 セルフチェック Q4、正式名称は資料外・Moodle正解)。 [A2][A13]"
+        }
+      ]
+    },
+    {
+      "id": "r4",
+      "no": "04",
+      "title": "意味 第4回の略語(7語): 略語→日本語の説明",
+      "qs": [
+        {
+          "type": "single",
+          "q": "【意味】略語 <b>FQDN</b> の説明として正しいものは?",
+          "opts": [
+            "ダイヤルアップ接続で使う2点間の通信プロトコル",
+            "ホスト名+ドメイン名で表す階層構造の名前(例 www.yahoo.com)",
+            "第5層(セッション層)で、同期点を挿入して転送をやり直せるようにする通信手順",
+            "第7層(アプリケーション層)でWebページのやり取りに使うプロトコル"
+          ],
+          "ans": "ホスト名+ドメイン名で表す階層構造の名前(例 www.yahoo.com)",
+          "note": "<b>FQDN = ホスト名+ドメイン名で表す階層構造の名前(例 www.yahoo.com)</b>。正式名称は Fully Qualified Domain Name。誤りの選択肢は別の略語(SCP・PPP・HTTP)の説明。 出典: 第4回 p.9。 [A17]"
+        },
+        {
+          "type": "single",
+          "q": "【意味】略語 <b>SCP</b> の説明として正しいものは?",
+          "opts": [
+            "第5層(セッション層)で、同期点を挿入して転送をやり直せるようにする通信手順",
+            "第7層(アプリケーション層)でWebページのやり取りに使うプロトコル",
+            "ダイヤルアップ接続で使う2点間の通信プロトコル",
+            "第4層(トランスポート層)のプロトコルで、データの単位は「セグメント」"
+          ],
+          "ans": "第5層(セッション層)で、同期点を挿入して転送をやり直せるようにする通信手順",
+          "note": "<b>SCP = 第5層(セッション層)で、同期点を挿入して転送をやり直せるようにする通信手順</b>。正式名称は Session Control Protocol。誤りの選択肢は別の略語(TCP・PPP・HTTP)の説明。 出典: 第4回 p.10(例題5.1)。 [A16][A13]"
+        },
+        {
+          "type": "single",
+          "q": "【意味】略語 <b>DSU</b> の説明として正しいものは?",
+          "opts": [
+            "ISDNのアクセスネットワークで使う装置",
+            "FTTH(光アクセス)で使う装置",
+            "音声・データ・画像を1本の回線で扱うディジタルネットワーク(基本インターフェースは2B+D)",
+            "既存の電話回線を使う高速通信。局からの距離が遠いほど速度が下がる"
+          ],
+          "ans": "ISDNのアクセスネットワークで使う装置",
+          "note": "<b>DSU = ISDNのアクセスネットワークで使う装置</b>。正式名称は Digital Service Unit。誤りの選択肢は別の略語(ISDN・ONU・ADSL)の説明。意味は(資料外)または名前からの読み取り。 出典: 第4回 p.14(第4回 セルフチェック Q9)。 [A24]"
+        },
+        {
+          "type": "single",
+          "q": "【意味】略語 <b>ONU</b> の説明として正しいものは?",
+          "opts": [
+            "FTTH(光アクセス)で使う装置",
+            "ISDNのアクセスネットワークで使う装置",
+            "CATVのアクセスネットワークで使う装置",
+            "PDS構成の光アクセス。多重化は時分割多重方式"
+          ],
+          "ans": "FTTH(光アクセス)で使う装置",
+          "note": "<b>ONU = FTTH(光アクセス)で使う装置</b>。正式名称は Optical Network Unit。誤りの選択肢は別の略語(DSU・STB・PON)の説明。DSU・STB も装置なので、どのアクセス網で使う装置かで区別する。意味は(資料外)または名前からの読み取り。 出典: 第4回 p.14(第4回 セルフチェック Q3)。 [A2][A24]"
+        },
+        {
+          "type": "single",
+          "q": "【意味】略語 <b>STB</b> の説明として正しいものは?",
+          "opts": [
+            "ISDNサービスの名称。2024年1月にサービス終了【2025年1月完全終了】",
+            "CATVのアクセスネットワークで使う装置",
+            "企業間でデータを電子的にやり取りする仕組み(ISDNの移行先: インターネットEDI)",
+            "音声・データ・画像を1本の回線で扱うディジタルネットワーク(基本インターフェースは2B+D)"
+          ],
+          "ans": "CATVのアクセスネットワークで使う装置",
+          "note": "<b>STB = CATVのアクセスネットワークで使う装置</b>。正式名称は Set-Top Box。誤りの選択肢は別の略語(ISDN・EDI・INS)の説明。意味は(資料外)または名前からの読み取り。 出典: 第4回 p.14(第4回 セルフチェック Q10)。 [A24]"
+        },
+        {
+          "type": "single",
+          "q": "【意味】略語 <b>HDLC</b> の説明として正しいものは?",
+          "opts": [
+            "リング型LANの例",
+            "第2層(データリンク層)で使うアドレス。48ビットで機器を識別する",
+            "データリンク制御方式の一つ。両方向の伝送ができる",
+            "巡回冗長検査。誤り検出の方式の一つ"
+          ],
+          "ans": "データリンク制御方式の一つ。両方向の伝送ができる",
+          "note": "<b>HDLC = データリンク制御方式の一つ。両方向の伝送ができる</b>。正式名称は High-level Data Link Control。誤りの選択肢は別の略語(CRC・FDDI・MAC)の説明。 出典: 第4回 p.15・第5回 p.4・p.5。 [A20]"
+        },
+        {
+          "type": "single",
+          "q": "【意味】略語 <b>MAC</b> の説明として正しいものは?",
+          "opts": [
+            "LANのアクセス制御方式の一つ。搬送波を検知してから送信する",
+            "CSMAに「衝突検出」を加えたアクセス制御方式",
+            "CSMAに「衝突回避」を加えたアクセス制御方式(黄色ハイライト)",
+            "第2層(データリンク層)で使うアドレス。48ビットで機器を識別する"
+          ],
+          "ans": "第2層(データリンク層)で使うアドレス。48ビットで機器を識別する",
+          "note": "<b>MAC = 第2層(データリンク層)で使うアドレス。48ビットで機器を識別する</b>。正式名称は Media Access Control。誤りの選択肢は別の略語(CSMA・CSMA/CD・CSMA/CA)の説明。 出典: 第5回 p.24(第4回 セルフチェック Q7)。 [A2][A18]"
+        }
+      ]
+    },
+    {
+      "id": "r5",
+      "no": "05",
+      "title": "意味 第5回の略語(5語): 略語→日本語の説明",
+      "qs": [
+        {
+          "type": "single",
+          "q": "【意味】略語 <b>CRC</b> の説明として正しいものは?",
+          "opts": [
+            "クレジットカード番号の最初の6桁(発行者識別番号)",
+            "クレジットカード番号の最初の1桁(主要産業識別子)",
+            "シールドがなく外部雑音に弱いツイストペアケーブル",
+            "巡回冗長検査。誤り検出の方式で、HDLCが採用する"
+          ],
+          "ans": "巡回冗長検査。誤り検出の方式で、HDLCが採用する",
+          "note": "<b>CRC = 巡回冗長検査。誤り検出の方式で、HDLCが採用する</b>。正式名称は Cyclic Redundancy Check。誤りの選択肢は別の略語(MII・IIN・UTP)の説明。 出典: 第5回 p.5。 [A20]"
+        },
+        {
+          "type": "single",
+          "q": "【意味】略語 <b>ISDN</b> の説明として正しいものは?",
+          "opts": [
+            "ISDNのアクセスネットワークで使う装置",
+            "音声・データ・画像を1本の回線で扱うディジタルネットワーク(基本インターフェースは2B+D)",
+            "既存の電話回線を使う高速通信。局からの距離が遠いほど速度が下がる",
+            "PDS構成の光アクセス。多重化は時分割多重方式"
+          ],
+          "ans": "音声・データ・画像を1本の回線で扱うディジタルネットワーク(基本インターフェースは2B+D)",
+          "note": "<b>ISDN = 音声・データ・画像を1本の回線で扱うディジタルネットワーク(基本インターフェースは2B+D)</b>。正式名称は Integrated Service Digital Network。誤りの選択肢は別の略語(DSU・PON・ADSL)の説明。 出典: 第5回 p.7。 [A21]"
+        },
+        {
+          "type": "single",
+          "q": "【意味】略語 <b>PON</b> の説明として正しいものは?",
+          "opts": [
+            "FTTH(光アクセス)で使う装置",
+            "ISDNサービスの名称。2024年1月にサービス終了【2025年1月完全終了】",
+            "音声・データ・画像を1本の回線で扱うディジタルネットワーク(基本インターフェースは2B+D)",
+            "PDS構成の光アクセス。多重化は時分割多重方式"
+          ],
+          "ans": "PDS構成の光アクセス。多重化は時分割多重方式",
+          "note": "<b>PON = PDS構成の光アクセス。多重化は時分割多重方式</b>。正式名称は Passive Optical Network。誤りの選択肢は別の略語(ONU・ISDN・INS)の説明。 出典: 第5回 p.11。 [A23]"
+        },
+        {
+          "type": "single",
+          "q": "【意味】略語 <b>CATV</b> の説明として正しいものは?",
+          "opts": [
+            "光ファイバを家庭まで引き込むアクセス方式",
+            "既存の電話回線を使う高速通信。局からの距離が遠いほど速度が下がる",
+            "第3.9世代の携帯電話の通信方式(多元接続はOFDMA)",
+            "ケーブルテレビの回線を使うインターネット接続(装置はSTB)"
+          ],
+          "ans": "ケーブルテレビの回線を使うインターネット接続(装置はSTB)",
+          "note": "<b>CATV = ケーブルテレビの回線を使うインターネット接続(装置はSTB)</b>。正式名称は CAble TeleVision。誤りの選択肢は別の略語(ADSL・FTTH・LTE)の説明。 出典: 第5回 p.12(第5回 セルフチェック Q5)。 [A2][A23]"
+        },
+        {
+          "type": "single",
+          "q": "【意味】略語 <b>CSMA/CD</b> の説明として正しいものは?",
+          "opts": [
+            "搬送波を検知してから送信する方式に「衝突回避」を加えたLANのアクセス制御方式(黄色ハイライト)",
+            "リング型LANの例",
+            "搬送波を検知してから送信する方式に「衝突検出」を加えたLANのアクセス制御方式",
+            "LANのアクセス制御方式の一つ。搬送波を検知してから送信する(衝突への対処は含まない基本形)"
+          ],
+          "ans": "搬送波を検知してから送信する方式に「衝突検出」を加えたLANのアクセス制御方式",
+          "note": "<b>CSMA/CD = 搬送波を検知してから送信する方式に「衝突検出」を加えたLANのアクセス制御方式</b>。正式名称は Carrier Sense Multiple Access / Collision Detection。誤りの選択肢は別の略語(CSMA・CSMA/CA・FDDI)の説明。検出(CD)と回避(CA)の違いを押さえる。 ⚠️ 綴り・区切りは要確認。 出典: 第5回 p.23。 [A27]"
+        }
+      ]
+    }
+  ],
+  "order": 10.6
+}

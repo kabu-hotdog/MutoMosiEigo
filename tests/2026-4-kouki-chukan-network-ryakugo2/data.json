@@ -1,0 +1,409 @@
+{
+  "title": "情報ネットワーク工学 ・ ① 略語 第2回",
+  "subtitle": "10問(約10分)。1語ずつ順に選ぶ。本番は綴りを手書きするので、間違えた略語は紙にも書き直す",
+  "eyebrow": "情報ネットワーク工学 ・ 後期中間試験",
+  "description": "第2回の学習ページの用語集に載っている略語(多元接続・変調)を、略語→英語の正式名称の形で練習します。",
+  "year": 2026,
+  "grade": 4,
+  "exam": "後期中間試験",
+  "subject": "情報ネットワーク工学",
+  "storageKey": "ine_chukan_ryakugo2_v1",
+  "pointsPerQ": 100,
+  "katex": false,
+  "tip": "正式名称を<b>1語ずつ、頭文字が同じ別の単語(ネットワーク用語)の中から選びます</b>(Hyper → Text → Transfer → Protocol の順)。1語でも間違えたら不正解で、赤い語が直す所。本番は綴りを手書きするので、間違えた略語は紙にも書き直してください。1セット=5問=5分の目安。",
+  "footer": "<b>範囲の略語一覧(元は70語。ISOは範囲外、参考扱いの12語は出題から外した。一覧には残してある)</b>　略語=正式名称(出典) / ※=正式名称が資料に無くMoodleの正解を採用 / ⚠️=要確認<br><b>第1回</b> ADSL=Asymmetric Digital Subscriber Line(第1回 p.8・第5回 p.8) / HTTP=Hyper Text Transfer Protocol(第1回 p.8・第3回 p.14) / URL=Uniform Resource Locator(第1回 セルフチェック Q3)※ / IP=Internet Protocol(第1回 セルフチェック Q4)※ / DHCP=Dynamic Host Configuration Protocol(第1回 セルフチェック Q5)※ / SMTP=Simple Mail Transfer Protocol(第1回 セルフチェック Q7)※ / UDP=User Datagram Protocol(第1回 セルフチェック Q9)※<br><b>第2回</b> OFDMA=Orthogonal Frequency Division Multiple Access(第2回 p.4・p.5) / FDMA=Frequency Division Multiple Access(第2回 p.5) / TDMA=Time Division Multiple Access(第2回 p.5) / CDMA=Code Division Multiple Access(第2回 p.5) / OFDM=Orthogonal Frequency-Division Multiplexing(第2回 p.5) / ENIAC=Electronic Numerical Integrator And Computer(第2回 p.6) / UNIVAC I=UNIVersal Automatic Computer I(第2回 p.6)⚠️ / SINET=Science Information NETwork(第2回 p.7) / FTTH=Fiber To The Home(第2回 p.8・第5回 p.11) / AM=Amplitude Modulation(第2回 p.14) / FM=Frequency Modulation(第2回 p.14) / PM=Phase Modulation(第2回 p.14) / LW=Long Wave(第2回 p.15・第3回 p.3) / MW=Medium Wave(第2回 p.15・p.16) / SW=Short Wave(第2回 p.15・第3回 p.3) / HF=High Frequency(第2回 p.15・第3回 p.3) / VHF=Very High Frequency(第2回 p.15・p.16) / UHF=Ultra High Frequency(第2回 p.15・p.16) / LTE=Long Term Evolution(第2回 p.4)※<br><b>第3回</b> NRZ=Non Return to Zero(第3回 p.5) / RZ=Return to Zero(第3回 p.5) / AMI=Alternate Mark Inversion(第3回 p.5) / ASK=Amplitude Shift Keying(第3回 p.5) / FSK=Frequency Shift Keying(第3回 p.5)※ / PSK=Phase Shift Keying(第3回 p.5)※ / QAM=Quadrature Amplitude Modulation(第3回 p.5・p.6) / BER=Bit Error Rate(第3回 p.6) / FDM=Frequency Division Multiplexing(第3回 p.7) / TDM=Time Division Multiplexing(第3回 p.7) / CDM=Code Division Multiplexing(第3回 p.7) / WDM=Wave Division Multiplexing(第3回 p.7) / OSI=Open Systems Interconnection(第3回 p.12・第4回 p.3) / TCP=Transmission Control Protocol(第3回 p.14)※<br><b>第4回</b> FQDN=Fully Qualified Domain Name(第4回 p.9) / SCP=Session Control Protocol(第4回 p.10) / DSU=Digital Service Unit(第4回 p.14) / ONU=Optical Network Unit(第4回 p.14) / STB=Set-Top Box(第4回 p.14) / HDLC=High-level Data Link Control(第4回 p.15・第5回 p.4・p.5) / RaaS=Ransomware as a Service(第4回 p.19) / eKYC=electronic Know Your Customer(第4回 p.23) / MAC=Media Access Control(第5回 p.24)<br><b>第5回</b> PPP=Point to Point Protocol(第5回 p.2) / CRC=Cyclic Redundancy Check(第5回 p.5) / MII=Major Industry Identifier(第5回 p.6) / IIN=Issuer Identifier Number(第5回 p.6) / ISDN=Integrated Service Digital Network(第5回 p.7) / EDI=Electronic Data Interchange(第5回 p.7) / INS=Information Network System(第5回 p.7) / SS=Single Star(第5回 p.11) / PDS=Passive Double Star(第5回 p.11) / PON=Passive Optical Network(第5回 p.11) / CATV=CAble TeleVision(第5回 p.12) / UTP=Unshielded Twisted Pair(第5回 p.18) / STP=Shielded Twisted Pair(第5回 p.18) / FDDI=Fiber Distributed Data Interface(第5回 p.22) / CSMA=Carrier Sense Multiple Access(第5回 p.23) / CSMA/CD=Carrier Sense Multiple Access / Collision Detection(第5回 p.23)⚠️ / CSMA/CA=Carrier Sense Multiple Access / Collision Avoidance(第5回 p.23)⚠️ / WEP=Wired Equivalent Privacy(第5回 p.30) / WPA=Wi-Fi Protected Access(第5回 p.30) / ITU=International Telecommunication Union(第5回 セルフチェック Q6)※ / DoS=Denial of Service attack(第5回 セルフチェック Q7)※<br>出典の元は教員配布の講義資料(第1〜5回)と Moodle セルフチェックの正解。綴りは Moodle で正解になった表記を優先。",
+  "sections": [
+    {
+      "id": "r1",
+      "no": "01",
+      "title": "第2回の略語 セット1/2(5問5分): OFDMA・FDMA・TDMA・CDMA・OFDM",
+      "qs": [
+        {
+          "type": "seq",
+          "q": "<b>OFDMA</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Orthogonal",
+              "opts": [
+                "Orthogonal",
+                "Optical",
+                "Operating",
+                "Overhead"
+              ]
+            },
+            {
+              "ans": "Frequency",
+              "opts": [
+                "Frequency",
+                "Filter",
+                "Forward",
+                "Fast"
+              ]
+            },
+            {
+              "ans": "Division",
+              "opts": [
+                "Division",
+                "Dynamic",
+                "Download",
+                "Domain"
+              ]
+            },
+            {
+              "ans": "Multiple",
+              "opts": [
+                "Multiple",
+                "Memory",
+                "Media",
+                "Mesh"
+              ]
+            },
+            {
+              "ans": "Access",
+              "opts": [
+                "Access",
+                "Address",
+                "Application",
+                "Analog"
+              ]
+            }
+          ],
+          "answer": "Orthogonal Frequency Division Multiple Access",
+          "note": "<b>正解: Orthogonal Frequency Division Multiple Access</b>　×Orthogonel Frequency Division Multiple Access ×Orthogonal Frequncy Division Multiple Access ×Frequency Division Multiple Access(FDMAの名称)<br>OFDMA = 直交周波数分割多元接続。第3.9世代(LTE)の多元接続方式。スライドは division multiple access が小文字だが、Moodle の正解は各語の頭が大文字。 覚え方: O・F・D・M・A = Orthogonal・Frequency・Division・Multiple・Access。 出典: 第2回 p.4・p.5(第1回 セルフチェック Q1・Q10)。 [A2][A3][A4]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>FDMA</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Frequency",
+              "opts": [
+                "Frequency",
+                "Fast",
+                "Forward",
+                "Firewall"
+              ]
+            },
+            {
+              "ans": "Division",
+              "opts": [
+                "Division",
+                "Domain",
+                "Delivery",
+                "Datagram"
+              ]
+            },
+            {
+              "ans": "Multiple",
+              "opts": [
+                "Multiple",
+                "Mobile",
+                "Memory",
+                "Modem"
+              ]
+            },
+            {
+              "ans": "Access",
+              "opts": [
+                "Access",
+                "Agent",
+                "Alarm",
+                "Adapter"
+              ]
+            }
+          ],
+          "answer": "Frequency Division Multiple Access",
+          "note": "<b>正解: Frequency Division Multiple Access</b>　×Frequncy Division Multiple Access ×Frequency Divison Multiple Access ×Orthogonal Frequency Division Multiple Access(OFDMAの名称)<br>FDMA = 周波数分割多元接続。周波数で利用者を分ける方式(第1世代)。Moodle の正解は各語の頭が大文字(スライドは小文字)。 覚え方: F・D・M・A = Frequency・Division・Multiple・Access。 出典: 第2回 p.5(第5回 セルフチェック Q3)。 [A2][A3]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>TDMA</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Time",
+              "opts": [
+                "Time",
+                "Tone",
+                "Transport",
+                "Term"
+              ]
+            },
+            {
+              "ans": "Division",
+              "opts": [
+                "Division",
+                "Duplex",
+                "Digital",
+                "Driver"
+              ]
+            },
+            {
+              "ans": "Multiple",
+              "opts": [
+                "Multiple",
+                "Mode",
+                "Mobile",
+                "Media"
+              ]
+            },
+            {
+              "ans": "Access",
+              "opts": [
+                "Access",
+                "Array",
+                "Address",
+                "Analog"
+              ]
+            }
+          ],
+          "answer": "Time Division Multiple Access",
+          "note": "<b>正解: Time Division Multiple Access</b>　×Time Divison Multiple Access ×Division Time Multiple Access(語順違い) ×Code Division Multiple Access(CDMAの名称)<br>TDMA = 時分割多元接続。時間で利用者を分ける方式(第2世代)。Moodle の正解は各語の頭が大文字(スライドは小文字)。 覚え方: T・D・M・A = Time・Division・Multiple・Access。 出典: 第2回 p.5(第5回 セルフチェック Q10)。 [A2][A3]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>CDMA</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Code",
+              "opts": [
+                "Code",
+                "Clock",
+                "Check",
+                "Carrier"
+              ]
+            },
+            {
+              "ans": "Division",
+              "opts": [
+                "Division",
+                "Datagram",
+                "Dynamic",
+                "Driver"
+              ]
+            },
+            {
+              "ans": "Multiple",
+              "opts": [
+                "Multiple",
+                "Mesh",
+                "Modulation",
+                "Metric"
+              ]
+            },
+            {
+              "ans": "Access",
+              "opts": [
+                "Access",
+                "Address",
+                "Asynchronous",
+                "Application"
+              ]
+            }
+          ],
+          "answer": "Code Division Multiple Access",
+          "note": "<b>正解: Code Division Multiple Access</b>　×Code Divison Multiple Access ×Cord Division Multiple Access ×Orthogonal Frequency Division Multiple Access(OFDMAの名称)<br>CDMA = 符号分割多元接続。符号で利用者を分ける方式(第3世代)。Moodle 未出題。FDMA・TDMA と同じ表記(各語の頭が大文字)で統一。スライドは小文字。 覚え方: C・D・M・A = Code・Division・Multiple・Access。 出典: 第2回 p.5。 [A3]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>OFDM</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Orthogonal",
+              "opts": [
+                "Orthogonal",
+                "Optical",
+                "Operating",
+                "Overhead"
+              ]
+            },
+            {
+              "ans": "Frequency-Division",
+              "opts": [
+                "Frequency-Division",
+                "Frequency-Hopping",
+                "Fixed-Division",
+                "Full-Duplex"
+              ]
+            },
+            {
+              "ans": "Multiplexing",
+              "opts": [
+                "Multiplexing",
+                "Multiple",
+                "Mark",
+                "Mask"
+              ]
+            }
+          ],
+          "answer": "Orthogonal Frequency-Division Multiplexing",
+          "note": "<b>正解: Orthogonal Frequency-Division Multiplexing</b>　×Orthogonel Frequency-Division Multiplexing ×Orthogonal Frequncy-Division Multiplexing ×Frequency Division Multiplexing(FDMの名称)<br>OFDM = 直交周波数分割多重方式。OFDMAの元になった方式。スライドの表記は Frequency-Division とハイフン付き(OFDMA は Moodle 表記でハイフン無し)。 覚え方: O・F・D・M = Orthogonal・Frequency・Division・Multiplexing。 出典: 第2回 p.5。 [A3]"
+        }
+      ]
+    },
+    {
+      "id": "r2",
+      "no": "02",
+      "title": "第2回の略語 セット2/2(5問5分): SINET・FTTH・AM・FM・PM",
+      "qs": [
+        {
+          "type": "seq",
+          "q": "<b>SINET</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Science",
+              "opts": [
+                "Science",
+                "Sampling",
+                "Single",
+                "Signal"
+              ]
+            },
+            {
+              "ans": "Information",
+              "opts": [
+                "Information",
+                "Index",
+                "Internet",
+                "Impulse"
+              ]
+            },
+            {
+              "ans": "NETwork",
+              "opts": [
+                "NETwork",
+                "NODe",
+                "NAMe",
+                "NEXt"
+              ]
+            }
+          ],
+          "answer": "Science Information NETwork",
+          "note": "<b>正解: Science Information NETwork</b>　×Sience Information NETwork ×Science Infomation NETwork ×Information Network System(INSの名称)<br>SINET = 2002年に登場した学術情報ネットワーク。NET の3文字だけ大文字。 覚え方: Science・Information・NET(work)。 出典: 第2回 p.7。 [略語表]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>FTTH</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Fiber",
+              "opts": [
+                "Fiber",
+                "Fixed",
+                "Field",
+                "Firewall"
+              ]
+            },
+            {
+              "ans": "To",
+              "opts": [
+                "To",
+                "The",
+                "Through",
+                "Then"
+              ]
+            },
+            {
+              "ans": "The",
+              "opts": [
+                "The",
+                "This",
+                "Then",
+                "Their"
+              ]
+            },
+            {
+              "ans": "Home",
+              "opts": [
+                "Home",
+                "Handshake",
+                "Host",
+                "Hybrid"
+              ]
+            }
+          ],
+          "answer": "Fiber To The Home",
+          "note": "<b>正解: Fiber To The Home</b>　×Fiver To The Home ×Fiber To The House ×Fiber Distributed Data Interface(FDDIの名称)<br>FTTH = 光ファイバを家庭まで引き込むアクセス方式。 覚え方: F・T・T・H = Fiber・To・The・Home。 出典: 第2回 p.8・第5回 p.11。 [A23]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>AM</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Amplitude",
+              "opts": [
+                "Amplitude",
+                "Alarm",
+                "Asynchronous",
+                "Access"
+              ]
+            },
+            {
+              "ans": "Modulation",
+              "opts": [
+                "Modulation",
+                "Mark",
+                "Mail",
+                "Message"
+              ]
+            }
+          ],
+          "answer": "Amplitude Modulation",
+          "note": "<b>正解: Amplitude Modulation</b>　×Amplitute Modulation ×Amplitude Modulaton ×Quadrature Amplitude Modulation(QAMの名称)<br>AM = 信号の大きさに合わせて搬送波の振幅を変える変調。電気雑音の影響を受ける。 覚え方: A・M = Amplitude・Modulation。 出典: 第2回 p.14。 [A30][A31]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>FM</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Frequency",
+              "opts": [
+                "Frequency",
+                "Full",
+                "Forward",
+                "Fast"
+              ]
+            },
+            {
+              "ans": "Modulation",
+              "opts": [
+                "Modulation",
+                "Mobile",
+                "Metric",
+                "Mail"
+              ]
+            }
+          ],
+          "answer": "Frequency Modulation",
+          "note": "<b>正解: Frequency Modulation</b>　×Frequncy Modulation ×Frequency Modulaton ×Phase Modulation(PMの名称)<br>FM = 搬送波の周波数を変える変調。電気雑音の直接影響を受け難く高品質。 覚え方: F・M = Frequency・Modulation。 出典: 第2回 p.14。 [A30][A31]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>PM</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Phase",
+              "opts": [
+                "Phase",
+                "Parity",
+                "Privacy",
+                "Passive"
+              ]
+            },
+            {
+              "ans": "Modulation",
+              "opts": [
+                "Modulation",
+                "Mesh",
+                "Modem",
+                "Media"
+              ]
+            }
+          ],
+          "answer": "Phase Modulation",
+          "note": "<b>正解: Phase Modulation</b>　×Phace Modulation ×Phase Modulaton ×Phase Shift Keying(PSKの名称)<br>PM = 搬送波の位相を変える変調。 覚え方: P・M = Phase・Modulation。 出典: 第2回 p.14。 [A30][A31]"
+        }
+      ]
+    }
+  ],
+  "order": 10.2
+}

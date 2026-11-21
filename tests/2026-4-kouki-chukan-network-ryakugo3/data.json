@@ -1,0 +1,468 @@
+{
+  "title": "情報ネットワーク工学 ・ ① 略語 第3回",
+  "subtitle": "12問(約12分)。1語ずつ順に選ぶ。本番は綴りを手書きするので、間違えた略語は紙にも書き直す",
+  "eyebrow": "情報ネットワーク工学 ・ 後期中間試験",
+  "description": "第3回の学習ページの用語集に載っている略語(符号化・変調・多重化)を、略語→英語の正式名称の形で練習します。",
+  "year": 2026,
+  "grade": 4,
+  "exam": "後期中間試験",
+  "subject": "情報ネットワーク工学",
+  "storageKey": "ine_chukan_ryakugo3_v1",
+  "pointsPerQ": 100,
+  "katex": false,
+  "tip": "正式名称を<b>1語ずつ、頭文字が同じ別の単語(ネットワーク用語)の中から選びます</b>(Hyper → Text → Transfer → Protocol の順)。1語でも間違えたら不正解で、赤い語が直す所。本番は綴りを手書きするので、間違えた略語は紙にも書き直してください。1セット=5問=5分の目安。",
+  "footer": "<b>範囲の略語一覧(元は70語。ISOは範囲外、参考扱いの12語は出題から外した。一覧には残してある)</b>　略語=正式名称(出典) / ※=正式名称が資料に無くMoodleの正解を採用 / ⚠️=要確認<br><b>第1回</b> ADSL=Asymmetric Digital Subscriber Line(第1回 p.8・第5回 p.8) / HTTP=Hyper Text Transfer Protocol(第1回 p.8・第3回 p.14) / URL=Uniform Resource Locator(第1回 セルフチェック Q3)※ / IP=Internet Protocol(第1回 セルフチェック Q4)※ / DHCP=Dynamic Host Configuration Protocol(第1回 セルフチェック Q5)※ / SMTP=Simple Mail Transfer Protocol(第1回 セルフチェック Q7)※ / UDP=User Datagram Protocol(第1回 セルフチェック Q9)※<br><b>第2回</b> OFDMA=Orthogonal Frequency Division Multiple Access(第2回 p.4・p.5) / FDMA=Frequency Division Multiple Access(第2回 p.5) / TDMA=Time Division Multiple Access(第2回 p.5) / CDMA=Code Division Multiple Access(第2回 p.5) / OFDM=Orthogonal Frequency-Division Multiplexing(第2回 p.5) / ENIAC=Electronic Numerical Integrator And Computer(第2回 p.6) / UNIVAC I=UNIVersal Automatic Computer I(第2回 p.6)⚠️ / SINET=Science Information NETwork(第2回 p.7) / FTTH=Fiber To The Home(第2回 p.8・第5回 p.11) / AM=Amplitude Modulation(第2回 p.14) / FM=Frequency Modulation(第2回 p.14) / PM=Phase Modulation(第2回 p.14) / LW=Long Wave(第2回 p.15・第3回 p.3) / MW=Medium Wave(第2回 p.15・p.16) / SW=Short Wave(第2回 p.15・第3回 p.3) / HF=High Frequency(第2回 p.15・第3回 p.3) / VHF=Very High Frequency(第2回 p.15・p.16) / UHF=Ultra High Frequency(第2回 p.15・p.16) / LTE=Long Term Evolution(第2回 p.4)※<br><b>第3回</b> NRZ=Non Return to Zero(第3回 p.5) / RZ=Return to Zero(第3回 p.5) / AMI=Alternate Mark Inversion(第3回 p.5) / ASK=Amplitude Shift Keying(第3回 p.5) / FSK=Frequency Shift Keying(第3回 p.5)※ / PSK=Phase Shift Keying(第3回 p.5)※ / QAM=Quadrature Amplitude Modulation(第3回 p.5・p.6) / BER=Bit Error Rate(第3回 p.6) / FDM=Frequency Division Multiplexing(第3回 p.7) / TDM=Time Division Multiplexing(第3回 p.7) / CDM=Code Division Multiplexing(第3回 p.7) / WDM=Wave Division Multiplexing(第3回 p.7) / OSI=Open Systems Interconnection(第3回 p.12・第4回 p.3) / TCP=Transmission Control Protocol(第3回 p.14)※<br><b>第4回</b> FQDN=Fully Qualified Domain Name(第4回 p.9) / SCP=Session Control Protocol(第4回 p.10) / DSU=Digital Service Unit(第4回 p.14) / ONU=Optical Network Unit(第4回 p.14) / STB=Set-Top Box(第4回 p.14) / HDLC=High-level Data Link Control(第4回 p.15・第5回 p.4・p.5) / RaaS=Ransomware as a Service(第4回 p.19) / eKYC=electronic Know Your Customer(第4回 p.23) / MAC=Media Access Control(第5回 p.24)<br><b>第5回</b> PPP=Point to Point Protocol(第5回 p.2) / CRC=Cyclic Redundancy Check(第5回 p.5) / MII=Major Industry Identifier(第5回 p.6) / IIN=Issuer Identifier Number(第5回 p.6) / ISDN=Integrated Service Digital Network(第5回 p.7) / EDI=Electronic Data Interchange(第5回 p.7) / INS=Information Network System(第5回 p.7) / SS=Single Star(第5回 p.11) / PDS=Passive Double Star(第5回 p.11) / PON=Passive Optical Network(第5回 p.11) / CATV=CAble TeleVision(第5回 p.12) / UTP=Unshielded Twisted Pair(第5回 p.18) / STP=Shielded Twisted Pair(第5回 p.18) / FDDI=Fiber Distributed Data Interface(第5回 p.22) / CSMA=Carrier Sense Multiple Access(第5回 p.23) / CSMA/CD=Carrier Sense Multiple Access / Collision Detection(第5回 p.23)⚠️ / CSMA/CA=Carrier Sense Multiple Access / Collision Avoidance(第5回 p.23)⚠️ / WEP=Wired Equivalent Privacy(第5回 p.30) / WPA=Wi-Fi Protected Access(第5回 p.30) / ITU=International Telecommunication Union(第5回 セルフチェック Q6)※ / DoS=Denial of Service attack(第5回 セルフチェック Q7)※<br>出典の元は教員配布の講義資料(第1〜5回)と Moodle セルフチェックの正解。綴りは Moodle で正解になった表記を優先。",
+  "sections": [
+    {
+      "id": "r1",
+      "no": "01",
+      "title": "第3回の略語 セット1/3(4問4分): NRZ・RZ・AMI・ASK",
+      "qs": [
+        {
+          "type": "seq",
+          "q": "<b>NRZ</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Non",
+              "opts": [
+                "Non",
+                "Network",
+                "Noise",
+                "Native"
+              ]
+            },
+            {
+              "ans": "Return",
+              "opts": [
+                "Return",
+                "Request",
+                "Relay",
+                "Response"
+              ]
+            },
+            {
+              "ans": "to",
+              "opts": [
+                "to",
+                "the",
+                "through",
+                "then"
+              ]
+            },
+            {
+              "ans": "Zero",
+              "opts": [
+                "Zero",
+                "Zone",
+                "Zigbee",
+                "Zip"
+              ]
+            }
+          ],
+          "answer": "Non Return to Zero",
+          "note": "<b>正解: Non Return to Zero</b>　×Non Retrun to Zero ×Not Return to Zero ×Return to Zero(RZの名称)<br>NRZ = ベースバンド方式の一つ。信号がゼロに戻らない符号。スライドは Non-Return とハイフン付きだが、Moodle の正解は半角スペース(Non Return to Zero)。 覚え方: N・R・Z = Non・Return・Zero。 出典: 第3回 p.5(第2回 セルフチェック Q9)。 [A2][A30]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>RZ</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Return",
+              "opts": [
+                "Return",
+                "Response",
+                "Redundancy",
+                "Reply"
+              ]
+            },
+            {
+              "ans": "to",
+              "opts": [
+                "to",
+                "the",
+                "through",
+                "then"
+              ]
+            },
+            {
+              "ans": "Zero",
+              "opts": [
+                "Zero",
+                "Zone",
+                "Zigbee",
+                "Zip"
+              ]
+            }
+          ],
+          "answer": "Return to Zero",
+          "note": "<b>正解: Return to Zero</b>　×Retrun to Zero ×Return too Zero ×Non Return to Zero(NRZの名称)<br>RZ = ベースバンド方式の一つ。信号が毎回ゼロに戻る符号。 覚え方: R・Z = Return・Zero。 出典: 第3回 p.5。 [A30]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>AMI</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Alternate",
+              "opts": [
+                "Alternate",
+                "Antenna",
+                "Array",
+                "Adapter"
+              ]
+            },
+            {
+              "ans": "Mark",
+              "opts": [
+                "Mark",
+                "Message",
+                "Mail",
+                "Modulation"
+              ]
+            },
+            {
+              "ans": "Inversion",
+              "opts": [
+                "Inversion",
+                "Interval",
+                "Infrastructure",
+                "Intranet"
+              ]
+            }
+          ],
+          "answer": "Alternate Mark Inversion",
+          "note": "<b>正解: Alternate Mark Inversion</b>　×Alternete Mark Inversion ×Alternate Mask Inversion ×Amplitude Shift Keying(ASKの名称)<br>AMI = ベースバンド方式の一つ。1(マーク)を交互に正負の極性にする符号。 覚え方: A・M・I = Alternate・Mark・Inversion。 出典: 第3回 p.5。 [A30]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>ASK</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Amplitude",
+              "opts": [
+                "Amplitude",
+                "Authentication",
+                "Asynchronous",
+                "Agent"
+              ]
+            },
+            {
+              "ans": "Shift",
+              "opts": [
+                "Shift",
+                "Segment",
+                "System",
+                "Subscriber"
+              ]
+            },
+            {
+              "ans": "Keying",
+              "opts": [
+                "Keying",
+                "Keyboard",
+                "Kilobit",
+                "Kernel"
+              ]
+            }
+          ],
+          "answer": "Amplitude Shift Keying",
+          "note": "<b>正解: Amplitude Shift Keying</b>　×Amplitute Shift Keying ×Amplitude Shift Keing ×Frequency Shift Keying(FSKの名称)<br>ASK = 振幅偏移変調。ディジタル変調方式の一つ。 覚え方: A・S・K = Amplitude・Shift・Keying。 出典: 第3回 p.5。 [A30]"
+        }
+      ]
+    },
+    {
+      "id": "r2",
+      "no": "02",
+      "title": "第3回の略語 セット2/3(4問4分): FSK・PSK・QAM・BER",
+      "qs": [
+        {
+          "type": "seq",
+          "q": "<b>FSK</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Frequency",
+              "opts": [
+                "Frequency",
+                "Full",
+                "Firewall",
+                "Fast"
+              ]
+            },
+            {
+              "ans": "Shift",
+              "opts": [
+                "Shift",
+                "Signal",
+                "Sense",
+                "Session"
+              ]
+            },
+            {
+              "ans": "Keying",
+              "opts": [
+                "Keying",
+                "Key",
+                "Keyboard",
+                "Kernel"
+              ]
+            }
+          ],
+          "answer": "Frequency Shift Keying",
+          "note": "<b>正解: Frequency Shift Keying</b>　×Frequncy Shift Keying ×Frequency Shift Keing ×Phase Shift Keying(PSKの名称)<br>FSK = 周波数偏移変調。ディジタル変調方式の一つ。 覚え方: F・S・K = Frequency・Shift・Keying。 出典: 第3回 p.5(スライドは頭文字Fが赤字。綴り全体は資料外)(正式名称は資料外)。 [A30]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>PSK</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Phase",
+              "opts": [
+                "Phase",
+                "Protocol",
+                "Process",
+                "Packet"
+              ]
+            },
+            {
+              "ans": "Shift",
+              "opts": [
+                "Shift",
+                "Single",
+                "Shielded",
+                "Station"
+              ]
+            },
+            {
+              "ans": "Keying",
+              "opts": [
+                "Keying",
+                "Kernel",
+                "Key",
+                "Keyboard"
+              ]
+            }
+          ],
+          "answer": "Phase Shift Keying",
+          "note": "<b>正解: Phase Shift Keying</b>　×Phace Shift Keying ×Phase Shift Keing ×Amplitude Shift Keying(ASKの名称)<br>PSK = 位相偏移変調。ディジタル変調方式の一つ。 覚え方: P・S・K = Phase・Shift・Keying。 出典: 第3回 p.5(スライドは頭文字Pが赤字。綴り全体は資料外)(正式名称は資料外)。 [A30]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>QAM</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Quadrature",
+              "opts": [
+                "Quadrature",
+                "Quota",
+                "Query",
+                "Queue"
+              ]
+            },
+            {
+              "ans": "Amplitude",
+              "opts": [
+                "Amplitude",
+                "Antenna",
+                "Authentication",
+                "Access"
+              ]
+            },
+            {
+              "ans": "Modulation",
+              "opts": [
+                "Modulation",
+                "Mobile",
+                "Multiple",
+                "Mail"
+              ]
+            }
+          ],
+          "answer": "Quadrature Amplitude Modulation",
+          "note": "<b>正解: Quadrature Amplitude Modulation</b>　×Quadrture Amplitude Modulation ×Quadrature Amplitute Modulation ×Amplitude Modulation(AMの名称)<br>QAM = 振幅位相変調。ディジタル変調方式の一つ(64QAMなど)。 覚え方: Q・A・M = Quadrature・Amplitude・Modulation。 出典: 第3回 p.5・p.6。 [A9][A30]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>BER</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Bit",
+              "opts": [
+                "Bit",
+                "Backbone",
+                "Binary",
+                "Beacon"
+              ]
+            },
+            {
+              "ans": "Error",
+              "opts": [
+                "Error",
+                "Extended",
+                "Ethernet",
+                "External"
+              ]
+            },
+            {
+              "ans": "Rate",
+              "opts": [
+                "Rate",
+                "Router",
+                "Resource",
+                "Reliable"
+              ]
+            }
+          ],
+          "answer": "Bit Error Rate",
+          "note": "<b>正解: Bit Error Rate</b>　×Bit Eror Rate ×Bit Rate Error(語順違い) ×Amplitude Modulation(AMの名称)<br>BER = ビット誤り率。伝送路の品質の評価尺度で、小さい方が良い。 覚え方: B・E・R = Bit・Error・Rate。 出典: 第3回 p.6。 [A9]"
+        }
+      ]
+    },
+    {
+      "id": "r3",
+      "no": "03",
+      "title": "第3回の略語 セット3/3(4問4分): FDM・TDM・CDM・WDM",
+      "qs": [
+        {
+          "type": "seq",
+          "q": "<b>FDM</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Frequency",
+              "opts": [
+                "Frequency",
+                "Field",
+                "Format",
+                "Forward"
+              ]
+            },
+            {
+              "ans": "Division",
+              "opts": [
+                "Division",
+                "Download",
+                "Device",
+                "Domain"
+              ]
+            },
+            {
+              "ans": "Multiplexing",
+              "opts": [
+                "Multiplexing",
+                "Mask",
+                "Multiple",
+                "Modem"
+              ]
+            }
+          ],
+          "answer": "Frequency Division Multiplexing",
+          "note": "<b>正解: Frequency Division Multiplexing</b>　×Frequncy Division Multiplexing ×Frequency Divison Multiplexing ×Orthogonal Frequency-Division Multiplexing(OFDMの名称)<br>FDM = 周波数分割多重。多重化技術の一つ。 覚え方: F・D・M = Frequency・Division・Multiplexing。 出典: 第3回 p.7。 [A30]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>TDM</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Time",
+              "opts": [
+                "Time",
+                "Trailer",
+                "Tunnel",
+                "Throughput"
+              ]
+            },
+            {
+              "ans": "Division",
+              "opts": [
+                "Division",
+                "Duplex",
+                "Directory",
+                "Domain"
+              ]
+            },
+            {
+              "ans": "Multiplexing",
+              "opts": [
+                "Multiplexing",
+                "Multiple",
+                "Mesh",
+                "Memory"
+              ]
+            }
+          ],
+          "answer": "Time Division Multiplexing",
+          "note": "<b>正解: Time Division Multiplexing</b>　×Time Divison Multiplexing ×Times Division Multiplexing ×Code Division Multiplexing(CDMの名称)<br>TDM = 時分割多重。多重化技術の一つ。 覚え方: T・D・M = Time・Division・Multiplexing。 出典: 第3回 p.7。 [A30]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>CDM</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Code",
+              "opts": [
+                "Code",
+                "Check",
+                "Cable",
+                "Connection"
+              ]
+            },
+            {
+              "ans": "Division",
+              "opts": [
+                "Division",
+                "Datagram",
+                "Digital",
+                "Directory"
+              ]
+            },
+            {
+              "ans": "Multiplexing",
+              "opts": [
+                "Multiplexing",
+                "Mark",
+                "Modem",
+                "Memory"
+              ]
+            }
+          ],
+          "answer": "Code Division Multiplexing",
+          "note": "<b>正解: Code Division Multiplexing</b>　×Code Divison Multiplexing ×Cord Division Multiplexing ×Wave Division Multiplexing(WDMの名称)<br>CDM = 符号分割多重。多重化技術の一つ。 覚え方: C・D・M = Code・Division・Multiplexing。 出典: 第3回 p.7。 [A30]"
+        },
+        {
+          "type": "seq",
+          "q": "<b>WDM</b> の正式名称は?<br><span style=\"font-size:.82em;color:var(--muted)\">1語ずつ、順に選ぶ</span>",
+          "parts": [
+            {
+              "ans": "Wave",
+              "opts": [
+                "Wave",
+                "World",
+                "Wired",
+                "Wide"
+              ]
+            },
+            {
+              "ans": "Division",
+              "opts": [
+                "Division",
+                "Dynamic",
+                "Download",
+                "Detection"
+              ]
+            },
+            {
+              "ans": "Multiplexing",
+              "opts": [
+                "Multiplexing",
+                "Multiple",
+                "Message",
+                "Mail"
+              ]
+            }
+          ],
+          "answer": "Wave Division Multiplexing",
+          "note": "<b>正解: Wave Division Multiplexing</b>　×Weve Division Multiplexing ×Wave Divison Multiplexing ×Orthogonal Frequency-Division Multiplexing(OFDMの名称)<br>WDM = 波長多重。光の波長で多重化する技術。 覚え方: W・D・M = Wave・Division・Multiplexing。 出典: 第3回 p.7。 [A30]"
+        }
+      ]
+    }
+  ],
+  "order": 10.3
+}
