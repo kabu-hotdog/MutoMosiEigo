@@ -4,6 +4,7 @@
 window.APP_NAV = [
   { key: 'home',    icon: '🏠', label: 'ホーム',       href: '/' },
   { key: 'test',    icon: '📋', label: 'テスト予測',   href: '/predict.html' },
+  { key: 'exam',    icon: '🗓', label: '試験時間割',   href: '/exam.html' },
   { key: 'scores',  icon: '📊', label: '成績',         href: '/scores.html' },
   { key: 'clrank',  icon: '🏆', label: 'クラス順位',   href: '/clrank.html' },
   { key: 'battle',  icon: '⚔️', label: 'バトル',       href: '/battle.html' },
