@@ -10,7 +10,7 @@
   "storageKey": "ine_chukan_mix_v3",
   "pointsPerQ": 100,
   "katex": false,
-  "tip": "各問はタップで即採点&一行解説。略語の正式名称は【1語ずつ順に選ぶ】: 似た綴りの選択肢から、1語目、2語目…と選びます。1語でも間違えたら不正解(赤い語が直す所)。間違えた略語は紙にも書き直すと本番に強くなります。解説の末尾の[A3]などは出題ヒント番号。間違えた問題は数問あけて、次の日にもう一度。",
+  "tip": "各問はタップで即採点&一行解説。略語の正式名称は【1語ずつ順に選ぶ】: 頭文字が同じ別の単語の中から、1語目、2語目…と選びます。1語でも間違えたら不正解(赤い語が直す所)。間違えた略語は紙にも書き直すと本番に強くなります。解説の末尾の[A3]などは出題ヒント番号。間違えた問題は数問あけて、次の日にもう一度。",
   "footer": "出典: 第1〜5回講義資料(森川先生)、Moodle セルフチェック第1〜5回の正解。(資料外)と付いた所は資料に無く、Moodle正解または一般知識で確定。",
   "sections": [
     {
@@ -63,45 +63,45 @@
               "ans": "Electronic",
               "opts": [
                 "Electronic",
-                "Electric",
-                "Elcetronic",
-                "Electranic"
+                "Encryption",
+                "Element",
+                "External"
               ]
             },
             {
               "ans": "Numerical",
               "opts": [
                 "Numerical",
-                "Numirical",
-                "Namerical",
-                "Numerikal"
+                "Native",
+                "Node",
+                "Network"
               ]
             },
             {
               "ans": "Integrator",
               "opts": [
                 "Integrator",
-                "Integrater",
-                "Integgrator",
-                "Integratol"
+                "Interval",
+                "Infrastructure",
+                "Identifier"
               ]
             },
             {
               "ans": "And",
               "opts": [
                 "And",
-                "An",
-                "Add",
-                "End"
+                "All",
+                "Any",
+                "Also"
               ]
             },
             {
               "ans": "Computer",
               "opts": [
                 "Computer",
-                "Conputer",
-                "Comquter",
-                "Comupter"
+                "Client",
+                "Connection",
+                "Channel"
               ]
             }
           ],

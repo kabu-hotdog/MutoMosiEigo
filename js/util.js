@@ -46,7 +46,7 @@
   function showPointToast(msg) {
     const t = document.createElement('div');
     t.textContent = msg;
-    t.style.cssText = 'position:fixed;bottom:24px;right:24px;background:#46d6c4;color:#0a1626;font-weight:700;padding:10px 20px;border-radius:99px;font-size:1rem;z-index:9999;pointer-events:none;transition:opacity .4s';
+    t.style.cssText = 'position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom));transform:translateX(-50%);max-width:calc(100vw - 32px);background:var(--ink);color:var(--bg);font:600 .875rem/1.4 var(--font-sans);padding:12px 18px;border-radius:12px;box-shadow:var(--shadow-3);z-index:9999;pointer-events:none;transition:opacity .4s;text-align:center';
     document.body.appendChild(t);
     setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.remove(), 400); }, 2500);
   }

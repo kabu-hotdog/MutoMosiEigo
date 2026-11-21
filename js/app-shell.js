@@ -19,6 +19,7 @@
 //   - key !== 'home' && key !== 'race' の項目は [data-auth] 付き（未ログイン時に隠す）
 //   - adminOnly の項目は [data-admin] 付き（管理者以外は隠す）
 (function () {
+  try { var _t = localStorage.getItem('mutou_theme'); if (_t && _t !== 'navy') document.documentElement.setAttribute('data-theme', _t); } catch (e) {}
   var SUPABASE_URL      = 'https://gwknnqceiozbmxrqjcae.supabase.co';
   var SUPABASE_ANON_KEY = 'sb_publishable_4MgSWSr8bbuUf5Vp_LSD6Q_SI-ciZ2B';
   var ADMIN_EMAIL = 'kabu6113450@gmail.com';
@@ -297,22 +298,22 @@
     avModal.innerHTML =
       '<div class="modal">' +
         '<h2>アイコンを選ぶ</h2>' +
-        '<div style="display:flex;gap:12px;margin-bottom:14px">' +
-          '<div style="background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 14px;flex:1;text-align:center">' +
-            '<div style="font-size:.65rem;color:var(--dim);margin-bottom:2px">🏆 シーズンpt</div>' +
-            '<div id="appshell-season-pts" style="font-size:1.1rem;font-weight:700;color:var(--teal)">―</div></div>' +
-          '<div style="background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 14px;flex:1;text-align:center">' +
-            '<div style="font-size:.65rem;color:var(--dim);margin-bottom:2px">📦 個人pt（累計）</div>' +
-            '<div id="appshell-lifetime-pts" style="font-size:1.1rem;font-weight:700;color:var(--amber)">―</div></div>' +
+        '<div class="pts-tiles">' +
+          '<div class="pts-tile">' +
+            '<div class="pts-tile-label">シーズンpt</div>' +
+            '<div class="pts-tile-value" id="appshell-season-pts">―</div></div>' +
+          '<div class="pts-tile">' +
+            '<div class="pts-tile-label">個人pt（累計）</div>' +
+            '<div class="pts-tile-value pts-tile-value--amber" id="appshell-lifetime-pts">―</div></div>' +
         '</div>' +
-        '<div style="margin-bottom:12px"><label style="font-size:.8rem;color:var(--muted);display:block;margin-bottom:4px">プレイヤーネーム</label>' +
-          '<input id="appshell-username-input" type="text" maxlength="20" style="width:100%;padding:6px 10px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-family:inherit;font-size:.95rem"></div>' +
+        '<div class="ui-field"><label class="ui-label" for="appshell-username-input">プレイヤーネーム</label>' +
+          '<input id="appshell-username-input" class="ui-input" type="text" maxlength="20"></div>' +
         '<div class="avatar avatar-lg" id="appshell-avatar-preview">🐸</div>' +
         '<div class="avatar-grid" id="appshell-avatar-grid"></div>' +
         '<div class="frame-section"><h3>フレームを選ぶ</h3><div class="frame-grid" id="appshell-frame-grid"></div></div>' +
         '<div class="modal-btns" style="margin-top:16px">' +
-          '<button type="button" id="appshell-avatar-save" style="background:var(--teal);color:#0a1626">保存</button>' +
-          '<button type="button" id="appshell-avatar-close" style="background:transparent;color:var(--dim);border:1px solid var(--line)">閉じる</button>' +
+          '<button type="button" id="appshell-avatar-save" class="ui-btn ui-btn--primary">保存</button>' +
+          '<button type="button" id="appshell-avatar-close" class="ui-btn ui-btn--ghost">閉じる</button>' +
         '</div>' +
         '<div class="modal-msg" id="appshell-avatar-msg"></div>' +
       '</div>';
@@ -383,8 +384,8 @@
   function saveAvatarModal() {
     var msg = avModal.querySelector('#appshell-avatar-msg');
     var newName = avModal.querySelector('#appshell-username-input').value.trim();
-    if (!newName) { msg.textContent = '名前を入力してください'; msg.style.color = 'red'; return; }
-    if (!window.api) { msg.textContent = '通信できません'; msg.style.color = 'red'; return; }
+    if (!newName) { msg.textContent = '名前を入力してください'; msg.style.color = 'var(--bad)'; return; }
+    if (!window.api) { msg.textContent = '通信できません'; msg.style.color = 'var(--bad)'; return; }
     window.api.put('/api/avatar', { avatar: selAvatar, frame: selFrame, username: newName }).then(function (data) {
       if (data && data.ok) {
         try {
@@ -395,9 +396,9 @@
         setTimeout(closeAvatarModal, 800);
         window.appShell.refreshAuth();
       } else {
-        msg.textContent = (data && data.error) || '保存に失敗しました'; msg.style.color = 'red';
+        msg.textContent = (data && data.error) || '保存に失敗しました'; msg.style.color = 'var(--bad)';
       }
-    }).catch(function () { msg.textContent = '通信エラー'; msg.style.color = 'red'; });
+    }).catch(function () { msg.textContent = '通信エラー'; msg.style.color = 'var(--bad)'; });
   }
 
   window.appShell = {

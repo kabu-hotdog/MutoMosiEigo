@@ -10,7 +10,7 @@
   "storageKey": "ine_chukan_ryakugo_v4",
   "pointsPerQ": 100,
   "katex": false,
-  "tip": "正式名称を<b>1語ずつ、似た綴りの選択肢から選びます</b>(Hyper → Text → Transfer → Protocol の順)。1語でも間違えたら不正解で、赤い語が正しい綴りの確認ポイント。本番は手書きなので、間違えた略語は紙にも書き直してください。1セット=5問=5分の目安。",
+  "tip": "正式名称を<b>1語ずつ、頭文字が同じ別の単語(ネットワーク用語)の中から選びます</b>(Hyper → Text → Transfer → Protocol の順)。1語でも間違えたら不正解で、赤い語が直す所。本番は綴りを手書きするので、間違えた略語は紙にも書き直してください。1セット=5問=5分の目安。",
   "footer": "<b>範囲の略語一覧(元は70語。ISOは範囲外、参考扱いの12語は出題から外した。一覧には残してある)</b>　略語=正式名称(出典) / ※=正式名称が資料に無くMoodleの正解を採用 / ⚠️=要確認<br><b>第1回</b> ADSL=Asymmetric Digital Subscriber Line(第1回 p.8・第5回 p.8) / HTTP=Hyper Text Transfer Protocol(第1回 p.8・第3回 p.14) / URL=Uniform Resource Locator(第1回 セルフチェック Q3)※ / IP=Internet Protocol(第1回 セルフチェック Q4)※ / DHCP=Dynamic Host Configuration Protocol(第1回 セルフチェック Q5)※ / SMTP=Simple Mail Transfer Protocol(第1回 セルフチェック Q7)※ / UDP=User Datagram Protocol(第1回 セルフチェック Q9)※<br><b>第2回</b> OFDMA=Orthogonal Frequency Division Multiple Access(第2回 p.4・p.5) / FDMA=Frequency Division Multiple Access(第2回 p.5) / TDMA=Time Division Multiple Access(第2回 p.5) / CDMA=Code Division Multiple Access(第2回 p.5) / OFDM=Orthogonal Frequency-Division Multiplexing(第2回 p.5) / ENIAC=Electronic Numerical Integrator And Computer(第2回 p.6) / UNIVAC I=UNIVersal Automatic Computer I(第2回 p.6)⚠️ / SINET=Science Information NETwork(第2回 p.7) / FTTH=Fiber To The Home(第2回 p.8・第5回 p.11) / AM=Amplitude Modulation(第2回 p.14) / FM=Frequency Modulation(第2回 p.14) / PM=Phase Modulation(第2回 p.14) / LW=Long Wave(第2回 p.15・第3回 p.3) / MW=Medium Wave(第2回 p.15・p.16) / SW=Short Wave(第2回 p.15・第3回 p.3) / HF=High Frequency(第2回 p.15・第3回 p.3) / VHF=Very High Frequency(第2回 p.15・p.16) / UHF=Ultra High Frequency(第2回 p.15・p.16) / LTE=Long Term Evolution(第2回 p.4)※<br><b>第3回</b> NRZ=Non Return to Zero(第3回 p.5) / RZ=Return to Zero(第3回 p.5) / AMI=Alternate Mark Inversion(第3回 p.5) / ASK=Amplitude Shift Keying(第3回 p.5) / FSK=Frequency Shift Keying(第3回 p.5)※ / PSK=Phase Shift Keying(第3回 p.5)※ / QAM=Quadrature Amplitude Modulation(第3回 p.5・p.6) / BER=Bit Error Rate(第3回 p.6) / FDM=Frequency Division Multiplexing(第3回 p.7) / TDM=Time Division Multiplexing(第3回 p.7) / CDM=Code Division Multiplexing(第3回 p.7) / WDM=Wave Division Multiplexing(第3回 p.7) / OSI=Open Systems Interconnection(第3回 p.12・第4回 p.3) / TCP=Transmission Control Protocol(第3回 p.14)※<br><b>第4回</b> FQDN=Fully Qualified Domain Name(第4回 p.9) / SCP=Session Control Protocol(第4回 p.10) / DSU=Digital Service Unit(第4回 p.14) / ONU=Optical Network Unit(第4回 p.14) / STB=Set-Top Box(第4回 p.14) / HDLC=High-level Data Link Control(第4回 p.15・第5回 p.4・p.5) / RaaS=Ransomware as a Service(第4回 p.19) / eKYC=electronic Know Your Customer(第4回 p.23) / MAC=Media Access Control(第5回 p.24)<br><b>第5回</b> PPP=Point to Point Protocol(第5回 p.2) / CRC=Cyclic Redundancy Check(第5回 p.5) / MII=Major Industry Identifier(第5回 p.6) / IIN=Issuer Identifier Number(第5回 p.6) / ISDN=Integrated Service Digital Network(第5回 p.7) / EDI=Electronic Data Interchange(第5回 p.7) / INS=Information Network System(第5回 p.7) / SS=Single Star(第5回 p.11) / PDS=Passive Double Star(第5回 p.11) / PON=Passive Optical Network(第5回 p.11) / CATV=CAble TeleVision(第5回 p.12) / UTP=Unshielded Twisted Pair(第5回 p.18) / STP=Shielded Twisted Pair(第5回 p.18) / FDDI=Fiber Distributed Data Interface(第5回 p.22) / CSMA=Carrier Sense Multiple Access(第5回 p.23) / CSMA/CD=Carrier Sense Multiple Access / Collision Detection(第5回 p.23)⚠️ / CSMA/CA=Carrier Sense Multiple Access / Collision Avoidance(第5回 p.23)⚠️ / WEP=Wired Equivalent Privacy(第5回 p.30) / WPA=Wi-Fi Protected Access(第5回 p.30) / ITU=International Telecommunication Union(第5回 セルフチェック Q6)※ / DoS=Denial of Service attack(第5回 セルフチェック Q7)※<br>出典の元は教員配布の講義資料(第1〜5回)と Moodle セルフチェックの正解。綴りは Moodle で正解になった表記を優先。",
   "sections": [
     {
@@ -26,9 +26,9 @@
               "ans": "Long",
               "opts": [
                 "Long",
-                "Lonng",
-                "Lung",
-                "Lnog"
+                "Loop",
+                "Load",
+                "Line"
               ]
             },
             {
@@ -36,17 +36,17 @@
               "opts": [
                 "Term",
                 "Time",
-                "Terrm",
-                "Tern"
+                "Tunnel",
+                "Token"
               ]
             },
             {
               "ans": "Evolution",
               "opts": [
                 "Evolution",
-                "Evolusion",
-                "Evolutiun",
-                "Evoltuion"
+                "Encryption",
+                "Echo",
+                "Edge"
               ]
             }
           ],
@@ -61,27 +61,27 @@
               "ans": "Local",
               "opts": [
                 "Local",
-                "Loccal",
-                "Rocal",
-                "Lucal"
+                "Loop",
+                "Logical",
+                "Link"
               ]
             },
             {
               "ans": "Area",
               "opts": [
                 "Area",
-                "Aera",
-                "Areo",
-                "Aree"
+                "Asynchronous",
+                "Application",
+                "Address"
               ]
             },
             {
               "ans": "Network",
               "opts": [
                 "Network",
-                "Netwrok",
-                "Natwork",
-                "Netwark"
+                "Name",
+                "Node",
+                "Narrow"
               ]
             }
           ],
@@ -96,27 +96,27 @@
               "ans": "Open",
               "opts": [
                 "Open",
-                "Opan",
-                "Oqen",
-                "Opem"
+                "Online",
+                "Optical",
+                "Operating"
               ]
             },
             {
               "ans": "Systems",
               "opts": [
                 "Systems",
-                "System",
-                "Sytsems",
-                "Systmes"
+                "Services",
+                "Switches",
+                "Signals"
               ]
             },
             {
               "ans": "Interconnection",
               "opts": [
                 "Interconnection",
-                "Intirconnection",
-                "Interconnaction",
-                "Intercconnection"
+                "Infrastructure",
+                "Interval",
+                "Internet"
               ]
             }
           ],
@@ -131,27 +131,27 @@
               "ans": "International",
               "opts": [
                 "International",
-                "Internatinal",
-                "Internotional",
-                "Internationar"
+                "Interval",
+                "Index",
+                "Identifier"
               ]
             },
             {
               "ans": "Telecommunication",
               "opts": [
                 "Telecommunication",
-                "Telecommunications",
-                "Telecommunecation",
-                "Teleconmunication"
+                "Terminal",
+                "Time",
+                "Trailer"
               ]
             },
             {
               "ans": "Union",
               "opts": [
                 "Union",
-                "Uinon",
-                "Unoin",
-                "Uniun"
+                "Universal",
+                "Unicast",
+                "Unshielded"
               ]
             }
           ],
@@ -166,36 +166,36 @@
               "ans": "Integrated",
               "opts": [
                 "Integrated",
-                "Intergrated",
-                "Integarted",
-                "Integreted"
+                "Internet",
+                "Instruction",
+                "Identifier"
               ]
             },
             {
               "ans": "Service",
               "opts": [
                 "Service",
-                "Serrvice",
-                "Servise",
-                "Servvice"
+                "Sense",
+                "Server",
+                "Segment"
               ]
             },
             {
               "ans": "Digital",
               "opts": [
                 "Digital",
-                "Digiatl",
-                "Degital",
-                "Diigtal"
+                "Delivery",
+                "Detection",
+                "Download"
               ]
             },
             {
               "ans": "Network",
               "opts": [
                 "Network",
-                "Netwwork",
-                "Ntework",
-                "Netwrok"
+                "Noise",
+                "Next",
+                "Narrow"
               ]
             }
           ],
@@ -217,36 +217,36 @@
               "ans": "Asymmetric",
               "opts": [
                 "Asymmetric",
-                "Asymmteric",
-                "Asymmetirc",
-                "Asymetric"
+                "Application",
+                "Antenna",
+                "Agent"
               ]
             },
             {
               "ans": "Digital",
               "opts": [
                 "Digital",
-                "Dgiital",
-                "Digitol",
-                "Digidal"
+                "Datagram",
+                "Delivery",
+                "Delay"
               ]
             },
             {
               "ans": "Subscriber",
               "opts": [
                 "Subscriber",
-                "Subsciber",
-                "Subcsriber",
-                "Subsrciber"
+                "Session",
+                "System",
+                "Socket"
               ]
             },
             {
               "ans": "Line",
               "opts": [
                 "Line",
-                "Lina",
-                "Lini",
-                "Lene"
+                "Logical",
+                "Low",
+                "Loop"
               ]
             }
           ],
@@ -261,18 +261,18 @@
               "ans": "CAble",
               "opts": [
                 "CAble",
-                "CAbel",
-                "Cadle",
-                "Kable"
+                "Channel",
+                "Carrier",
+                "Cell"
               ]
             },
             {
               "ans": "TeleVision",
               "opts": [
                 "TeleVision",
-                "TeleVison",
-                "Televission",
-                "Televition"
+                "Terminal",
+                "Telecommunication",
+                "Transmission"
               ]
             }
           ],
@@ -287,18 +287,18 @@
               "ans": "Internet",
               "opts": [
                 "Internet",
-                "Intenet",
-                "Internat",
-                "Internnet"
+                "Intranet",
+                "Impulse",
+                "Interference"
               ]
             },
             {
               "ans": "Protocol",
               "opts": [
                 "Protocol",
-                "Protocal",
-                "Protacol",
-                "Prutocol"
+                "Port",
+                "Power",
+                "Phase"
               ]
             }
           ],
@@ -313,27 +313,27 @@
               "ans": "Transmission",
               "opts": [
                 "Transmission",
-                "Transmision",
-                "Tranzmission",
-                "Transmissyon"
+                "Throughput",
+                "Transceiver",
+                "Trailer"
               ]
             },
             {
               "ans": "Control",
               "opts": [
                 "Control",
-                "Contral",
-                "Contrrol",
-                "Cotnrol"
+                "Channel",
+                "Client",
+                "Connection"
               ]
             },
             {
               "ans": "Protocol",
               "opts": [
                 "Protocol",
-                "Protocal",
-                "Pratocol",
-                "Protcool"
+                "Packet",
+                "Point",
+                "Passive"
               ]
             }
           ],
@@ -348,27 +348,27 @@
               "ans": "User",
               "opts": [
                 "User",
-                "Usar",
-                "Uzer",
-                "Usel"
+                "Unicast",
+                "Uplink",
+                "Unit"
               ]
             },
             {
               "ans": "Datagram",
               "opts": [
                 "Datagram",
-                "Datagramm",
-                "Batagram",
-                "Datgaram"
+                "Dynamic",
+                "Delivery",
+                "Division"
               ]
             },
             {
               "ans": "Protocol",
               "opts": [
                 "Protocol",
-                "Pratocol",
-                "Protoccol",
-                "Portocol"
+                "Payload",
+                "Packet",
+                "Pair"
               ]
             }
           ],
@@ -390,36 +390,36 @@
               "ans": "Denial",
               "opts": [
                 "Denial",
-                "Denail",
-                "Deniar",
-                "Dinial"
+                "Digital",
+                "Download",
+                "Datagram"
               ]
             },
             {
               "ans": "of",
               "opts": [
                 "of",
-                "as",
-                "off",
-                "or"
+                "on",
+                "or",
+                "off"
               ]
             },
             {
               "ans": "Service",
               "opts": [
                 "Service",
-                "Zervice",
-                "Servicce",
-                "Servici"
+                "Subnet",
+                "Star",
+                "Secure"
               ]
             },
             {
               "ans": "attack",
               "opts": [
                 "attack",
-                "attacc",
-                "atack",
-                "atttack"
+                "access",
+                "alarm",
+                "array"
               ]
             }
           ],
@@ -434,27 +434,27 @@
               "ans": "Domain",
               "opts": [
                 "Domain",
-                "Bomain",
-                "Dumain",
-                "Domaen"
+                "Detection",
+                "Division",
+                "Device"
               ]
             },
             {
               "ans": "Name",
               "opts": [
                 "Name",
-                "Nama",
-                "Namme",
-                "Neme"
+                "Network",
+                "Next",
+                "Net"
               ]
             },
             {
               "ans": "System",
               "opts": [
                 "System",
-                "Sytem",
-                "Ssytem",
-                "Sysstem"
+                "Subnet",
+                "Synchronous",
+                "Stream"
               ]
             }
           ],
@@ -469,36 +469,36 @@
               "ans": "Dynamic",
               "opts": [
                 "Dynamic",
-                "Bynamic",
-                "Dinamic",
-                "Dynammic"
+                "Duplex",
+                "Domain",
+                "Download"
               ]
             },
             {
               "ans": "Host",
               "opts": [
                 "Host",
-                "Hast",
-                "Hust",
-                "Hosst"
+                "Hub",
+                "Hop",
+                "Home"
               ]
             },
             {
               "ans": "Configuration",
               "opts": [
                 "Configuration",
-                "Configration",
-                "Configuartion",
-                "Conviguration"
+                "Cache",
+                "Carrier",
+                "Control"
               ]
             },
             {
               "ans": "Protocol",
               "opts": [
                 "Protocol",
-                "Prottocol",
-                "Protoccol",
-                "Pratocol"
+                "Process",
+                "Payload",
+                "Packet"
               ]
             }
           ],
@@ -513,27 +513,27 @@
               "ans": "World",
               "opts": [
                 "World",
-                "Word",
-                "Worrld",
-                "Warld"
+                "Window",
+                "Wave",
+                "Wireless"
               ]
             },
             {
               "ans": "Wide",
               "opts": [
                 "Wide",
-                "Wild",
-                "Widi",
-                "Wibe"
+                "Wavelength",
+                "Wave",
+                "Wrapper"
               ]
             },
             {
               "ans": "Web",
               "opts": [
                 "Web",
-                "Wep",
-                "Wib",
-                "Wab"
+                "Wired",
+                "Wavelength",
+                "Window"
               ]
             }
           ],
@@ -548,27 +548,27 @@
               "ans": "Uniform",
               "opts": [
                 "Uniform",
-                "Unifrom",
-                "Unifform",
-                "Unfiorm"
+                "Universal",
+                "Uplink",
+                "Unit"
               ]
             },
             {
               "ans": "Resource",
               "opts": [
                 "Resource",
-                "Resourse",
-                "Resoulce",
-                "Resuurce"
+                "Remote",
+                "Route",
+                "Rate"
               ]
             },
             {
               "ans": "Locator",
               "opts": [
                 "Locator",
-                "Loccator",
-                "Locatol",
-                "Locotor"
+                "Link",
+                "Logical",
+                "Load"
               ]
             }
           ],
@@ -590,36 +590,36 @@
               "ans": "Hyper",
               "opts": [
                 "Hyper",
-                "Hypel",
-                "Hyqer",
-                "Hyepr"
+                "Hierarchy",
+                "Hardware",
+                "Hybrid"
               ]
             },
             {
               "ans": "Text",
               "opts": [
                 "Text",
-                "Texxt",
-                "Dext",
-                "Taxt"
+                "Transport",
+                "Time",
+                "Term"
               ]
             },
             {
               "ans": "Transfer",
               "opts": [
                 "Transfer",
-                "Tranfer",
-                "Tlansfer",
-                "Tranzfer"
+                "Term",
+                "Transport",
+                "Time"
               ]
             },
             {
               "ans": "Protocol",
               "opts": [
                 "Protocol",
-                "Pratocol",
-                "Protocor",
-                "Protoocl"
+                "Privacy",
+                "Packet",
+                "Private"
               ]
             }
           ],
@@ -634,36 +634,36 @@
               "ans": "Hyper",
               "opts": [
                 "Hyper",
-                "Hyqer",
-                "Hyepr",
-                "Hpyer"
+                "Hardware",
+                "Hybrid",
+                "High"
               ]
             },
             {
               "ans": "Text",
               "opts": [
                 "Text",
-                "Tixt",
-                "Texd",
-                "Taxt"
+                "Token",
+                "Television",
+                "Telecommunication"
               ]
             },
             {
               "ans": "Markup",
               "opts": [
                 "Markup",
-                "Makeup",
-                "Markuq",
-                "Merkup"
+                "Mesh",
+                "Mail",
+                "Multiple"
               ]
             },
             {
               "ans": "Language",
               "opts": [
                 "Language",
-                "Langage",
-                "Languege",
-                "Lenguage"
+                "Loss",
+                "Logical",
+                "Local"
               ]
             }
           ],
@@ -678,36 +678,36 @@
               "ans": "Simple",
               "opts": [
                 "Simple",
-                "Simpple",
-                "Sipmle",
-                "Simpel"
+                "Signal",
+                "Station",
+                "Stream"
               ]
             },
             {
               "ans": "Mail",
               "opts": [
                 "Mail",
-                "Moil",
-                "Nail",
-                "Mial"
+                "Modulation",
+                "Mark",
+                "Memory"
               ]
             },
             {
               "ans": "Transfer",
               "opts": [
                 "Transfer",
-                "Tranfer",
-                "Tranfser",
-                "Transfir"
+                "Telecommunication",
+                "Time",
+                "Topology"
               ]
             },
             {
               "ans": "Protocol",
               "opts": [
                 "Protocol",
-                "Portocol",
-                "Protacol",
-                "Protokol"
+                "Pulse",
+                "Process",
+                "Phase"
               ]
             }
           ],
@@ -722,27 +722,27 @@
               "ans": "Voice",
               "opts": [
                 "Voice",
-                "Voise",
-                "Voicce",
-                "Voica"
+                "Vector",
+                "Version",
+                "Variable"
               ]
             },
             {
               "ans": "over",
               "opts": [
                 "over",
-                "ovre",
-                "on",
-                "ever"
+                "out",
+                "only",
+                "off"
               ]
             },
             {
               "ans": "IP",
               "opts": [
                 "IP",
-                "Iq",
                 "ID",
-                "IF"
+                "ISP",
+                "IEEE"
               ]
             }
           ],
@@ -757,27 +757,27 @@
               "ans": "Session",
               "opts": [
                 "Session",
-                "Sesion",
-                "Sesison",
-                "Sesseon"
+                "Simple",
+                "Secure",
+                "Signal"
               ]
             },
             {
               "ans": "Initiation",
               "opts": [
                 "Initiation",
-                "Initation",
-                "Initiative",
-                "Initiatiun"
+                "Interface",
+                "Interference",
+                "Internet"
               ]
             },
             {
               "ans": "Protocol",
               "opts": [
                 "Protocol",
-                "Protcol",
-                "Protacol",
-                "Portocol"
+                "Physical",
+                "Point",
+                "Private"
               ]
             }
           ],
@@ -799,45 +799,45 @@
               "ans": "Orthogonal",
               "opts": [
                 "Orthogonal",
-                "Orthogonel",
-                "Otrhogonal",
-                "Orthugonal"
+                "Optical",
+                "Operating",
+                "Overhead"
               ]
             },
             {
               "ans": "Frequency",
               "opts": [
                 "Frequency",
-                "Frequncy",
-                "Freqquency",
-                "Vrequency"
+                "Filter",
+                "Forward",
+                "Fast"
               ]
             },
             {
               "ans": "Division",
               "opts": [
                 "Division",
-                "Divizion",
-                "Dviision",
-                "Divvision"
+                "Dynamic",
+                "Download",
+                "Domain"
               ]
             },
             {
               "ans": "Multiple",
               "opts": [
                 "Multiple",
-                "Mulltiple",
-                "Murtiple",
-                "Multyple"
+                "Memory",
+                "Media",
+                "Mesh"
               ]
             },
             {
               "ans": "Access",
               "opts": [
                 "Access",
-                "Acciss",
-                "Accass",
-                "Accesss"
+                "Address",
+                "Application",
+                "Analog"
               ]
             }
           ],
@@ -852,36 +852,36 @@
               "ans": "Frequency",
               "opts": [
                 "Frequency",
-                "Frequncy",
-                "Ferquency",
-                "Freuqency"
+                "Fast",
+                "Forward",
+                "Firewall"
               ]
             },
             {
               "ans": "Division",
               "opts": [
                 "Division",
-                "Divison",
-                "Divition",
-                "Diivsion"
+                "Domain",
+                "Delivery",
+                "Datagram"
               ]
             },
             {
               "ans": "Multiple",
               "opts": [
                 "Multiple",
-                "Multipla",
-                "Mulltiple",
-                "Murtiple"
+                "Mobile",
+                "Memory",
+                "Modem"
               ]
             },
             {
               "ans": "Access",
               "opts": [
                 "Access",
-                "Accesz",
-                "Akcess",
-                "Acess"
+                "Agent",
+                "Alarm",
+                "Adapter"
               ]
             }
           ],
@@ -896,36 +896,36 @@
               "ans": "Time",
               "opts": [
                 "Time",
-                "Code",
-                "Tine",
-                "Tyme"
+                "Tone",
+                "Transport",
+                "Term"
               ]
             },
             {
               "ans": "Division",
               "opts": [
                 "Division",
-                "Divison",
-                "Bivision",
-                "Divisyon"
+                "Duplex",
+                "Digital",
+                "Driver"
               ]
             },
             {
               "ans": "Multiple",
               "opts": [
                 "Multiple",
-                "Multipple",
-                "Multipel",
-                "Murtiple"
+                "Mode",
+                "Mobile",
+                "Media"
               ]
             },
             {
               "ans": "Access",
               "opts": [
                 "Access",
-                "Accass",
-                "Accezs",
-                "Acciss"
+                "Array",
+                "Address",
+                "Analog"
               ]
             }
           ],
@@ -940,36 +940,36 @@
               "ans": "Code",
               "opts": [
                 "Code",
-                "Cord",
-                "Coda",
-                "Codi"
+                "Clock",
+                "Check",
+                "Carrier"
               ]
             },
             {
               "ans": "Division",
               "opts": [
                 "Division",
-                "Divison",
-                "Divisiom",
-                "Divission"
+                "Datagram",
+                "Dynamic",
+                "Driver"
               ]
             },
             {
               "ans": "Multiple",
               "opts": [
                 "Multiple",
-                "Multipre",
-                "Multtiple",
-                "Muldiple"
+                "Mesh",
+                "Modulation",
+                "Metric"
               ]
             },
             {
               "ans": "Access",
               "opts": [
                 "Access",
-                "Akcess",
-                "Ackess",
-                "Acces"
+                "Address",
+                "Asynchronous",
+                "Application"
               ]
             }
           ],
@@ -984,27 +984,27 @@
               "ans": "Orthogonal",
               "opts": [
                 "Orthogonal",
-                "Orthogonel",
-                "Ordhogonal",
-                "Orthoganal"
+                "Optical",
+                "Operating",
+                "Overhead"
               ]
             },
             {
               "ans": "Frequency-Division",
               "opts": [
                 "Frequency-Division",
-                "Frequncy-Division",
-                "Frequancy-division",
-                "Frequency-diviseon"
+                "Frequency-Hopping",
+                "Fixed-Division",
+                "Full-Duplex"
               ]
             },
             {
               "ans": "Multiplexing",
               "opts": [
                 "Multiplexing",
-                "Maltiplexing",
-                "Mlutiplexing",
-                "Multiplexyng"
+                "Multiple",
+                "Mark",
+                "Mask"
               ]
             }
           ],
@@ -1026,27 +1026,27 @@
               "ans": "Science",
               "opts": [
                 "Science",
-                "Sience",
-                "Sciense",
-                "Sceince"
+                "Sampling",
+                "Single",
+                "Signal"
               ]
             },
             {
               "ans": "Information",
               "opts": [
                 "Information",
-                "Infomation",
-                "Informatiun",
-                "Informotion"
+                "Index",
+                "Internet",
+                "Impulse"
               ]
             },
             {
               "ans": "NETwork",
               "opts": [
                 "NETwork",
-                "Ntework",
-                "Netwwork",
-                "Nitwork"
+                "Node",
+                "Name",
+                "Next"
               ]
             }
           ],
@@ -1061,36 +1061,36 @@
               "ans": "Fiber",
               "opts": [
                 "Fiber",
-                "Fiver",
-                "Viber",
-                "Fiebr"
+                "Fixed",
+                "Field",
+                "Firewall"
               ]
             },
             {
               "ans": "To",
               "opts": [
                 "To",
-                "Too",
-                "Two",
-                "Do"
+                "The",
+                "Through",
+                "Then"
               ]
             },
             {
               "ans": "The",
               "opts": [
                 "The",
+                "This",
                 "Then",
-                "They",
-                "Thee"
+                "Their"
               ]
             },
             {
               "ans": "Home",
               "opts": [
                 "Home",
-                "House",
-                "Homi",
-                "Hame"
+                "Handshake",
+                "Host",
+                "Hybrid"
               ]
             }
           ],
@@ -1105,18 +1105,18 @@
               "ans": "Amplitude",
               "opts": [
                 "Amplitude",
-                "Amplitute",
-                "Apmlitude",
-                "Amlpitude"
+                "Alarm",
+                "Asynchronous",
+                "Access"
               ]
             },
             {
               "ans": "Modulation",
               "opts": [
                 "Modulation",
-                "Modulaton",
-                "Modulaiton",
-                "Modulateon"
+                "Mark",
+                "Mail",
+                "Message"
               ]
             }
           ],
@@ -1131,18 +1131,18 @@
               "ans": "Frequency",
               "opts": [
                 "Frequency",
-                "Frequncy",
-                "Frequenky",
-                "Frequenccy"
+                "Full",
+                "Forward",
+                "Fast"
               ]
             },
             {
               "ans": "Modulation",
               "opts": [
                 "Modulation",
-                "Modulaton",
-                "Modulatiom",
-                "Modulatyon"
+                "Mobile",
+                "Metric",
+                "Mail"
               ]
             }
           ],
@@ -1157,18 +1157,18 @@
               "ans": "Phase",
               "opts": [
                 "Phase",
-                "Phace",
-                "Phasa",
-                "Phsae"
+                "Parity",
+                "Privacy",
+                "Passive"
               ]
             },
             {
               "ans": "Modulation",
               "opts": [
                 "Modulation",
-                "Modulaton",
-                "Modulatiom",
-                "Mudulation"
+                "Mesh",
+                "Modem",
+                "Media"
               ]
             }
           ],
@@ -1190,36 +1190,36 @@
               "ans": "Non",
               "opts": [
                 "Non",
-                "Not",
-                "Nun",
-                "Nan"
+                "Network",
+                "Noise",
+                "Native"
               ]
             },
             {
               "ans": "Return",
               "opts": [
                 "Return",
-                "Retrun",
-                "Returrn",
-                "Rteurn"
+                "Request",
+                "Relay",
+                "Response"
               ]
             },
             {
               "ans": "to",
               "opts": [
                 "to",
-                "too",
-                "two",
-                "do"
+                "the",
+                "through",
+                "then"
               ]
             },
             {
               "ans": "Zero",
               "opts": [
                 "Zero",
-                "Ziro",
-                "Zreo",
-                "Zerro"
+                "Zone",
+                "Zigbee",
+                "Zip"
               ]
             }
           ],
@@ -1234,27 +1234,27 @@
               "ans": "Return",
               "opts": [
                 "Return",
-                "Retrun",
-                "Rteurn",
-                "Retorn"
+                "Response",
+                "Redundancy",
+                "Reply"
               ]
             },
             {
               "ans": "to",
               "opts": [
                 "to",
-                "too",
-                "two",
-                "do"
+                "the",
+                "through",
+                "then"
               ]
             },
             {
               "ans": "Zero",
               "opts": [
                 "Zero",
-                "Zeru",
-                "Zelo",
-                "Zreo"
+                "Zone",
+                "Zigbee",
+                "Zip"
               ]
             }
           ],
@@ -1269,27 +1269,27 @@
               "ans": "Alternate",
               "opts": [
                 "Alternate",
-                "Alternete",
-                "Alternote",
-                "Altarnate"
+                "Antenna",
+                "Array",
+                "Adapter"
               ]
             },
             {
               "ans": "Mark",
               "opts": [
                 "Mark",
-                "Mask",
-                "Marrk",
-                "Merk"
+                "Message",
+                "Mail",
+                "Modulation"
               ]
             },
             {
               "ans": "Inversion",
               "opts": [
                 "Inversion",
-                "Invarsion",
-                "Inversoin",
-                "Innversion"
+                "Interval",
+                "Infrastructure",
+                "Intranet"
               ]
             }
           ],
@@ -1304,27 +1304,27 @@
               "ans": "Amplitude",
               "opts": [
                 "Amplitude",
-                "Amplitute",
-                "Ampltiude",
-                "Amlpitude"
+                "Authentication",
+                "Asynchronous",
+                "Agent"
               ]
             },
             {
               "ans": "Shift",
               "opts": [
                 "Shift",
-                "Sheft",
-                "Shifft",
-                "Shifd"
+                "Segment",
+                "System",
+                "Subscriber"
               ]
             },
             {
               "ans": "Keying",
               "opts": [
                 "Keying",
-                "Keing",
-                "Keyinng",
-                "Keyinj"
+                "Keyboard",
+                "Kilobit",
+                "Kernel"
               ]
             }
           ],
@@ -1346,27 +1346,27 @@
               "ans": "Frequency",
               "opts": [
                 "Frequency",
-                "Frequncy",
-                "Ferquency",
-                "Fraquency"
+                "Full",
+                "Firewall",
+                "Fast"
               ]
             },
             {
               "ans": "Shift",
               "opts": [
                 "Shift",
-                "Shfit",
-                "Zhift",
-                "Sheft"
+                "Signal",
+                "Sense",
+                "Session"
               ]
             },
             {
               "ans": "Keying",
               "opts": [
                 "Keying",
-                "Keing",
-                "Kyeing",
-                "Kiying"
+                "Key",
+                "Keyboard",
+                "Kernel"
               ]
             }
           ],
@@ -1381,27 +1381,27 @@
               "ans": "Phase",
               "opts": [
                 "Phase",
-                "Phace",
-                "Phasi",
-                "Phese"
+                "Protocol",
+                "Process",
+                "Packet"
               ]
             },
             {
               "ans": "Shift",
               "opts": [
                 "Shift",
-                "Shfit",
-                "Shifft",
-                "Shyft"
+                "Single",
+                "Shielded",
+                "Station"
               ]
             },
             {
               "ans": "Keying",
               "opts": [
                 "Keying",
-                "Keing",
-                "Keyinng",
-                "Keiing"
+                "Kernel",
+                "Key",
+                "Keyboard"
               ]
             }
           ],
@@ -1416,27 +1416,27 @@
               "ans": "Quadrature",
               "opts": [
                 "Quadrature",
-                "Quadrture",
-                "Quedrature",
-                "Quadlature"
+                "Quota",
+                "Query",
+                "Queue"
               ]
             },
             {
               "ans": "Amplitude",
               "opts": [
                 "Amplitude",
-                "Amplitute",
-                "Amplidude",
-                "Anplitude"
+                "Antenna",
+                "Authentication",
+                "Access"
               ]
             },
             {
               "ans": "Modulation",
               "opts": [
                 "Modulation",
-                "Moduladion",
-                "Modullation",
-                "Modulattion"
+                "Mobile",
+                "Multiple",
+                "Mail"
               ]
             }
           ],
@@ -1451,27 +1451,27 @@
               "ans": "Bit",
               "opts": [
                 "Bit",
-                "Byt",
-                "Bid",
-                "Dit"
+                "Backbone",
+                "Binary",
+                "Beacon"
               ]
             },
             {
               "ans": "Error",
               "opts": [
                 "Error",
-                "Eror",
-                "Errar",
-                "Errror"
+                "Extended",
+                "Ethernet",
+                "External"
               ]
             },
             {
               "ans": "Rate",
               "opts": [
                 "Rate",
-                "Rete",
-                "Rade",
-                "Late"
+                "Router",
+                "Resource",
+                "Reliable"
               ]
             }
           ],
@@ -1493,27 +1493,27 @@
               "ans": "Frequency",
               "opts": [
                 "Frequency",
-                "Frequncy",
-                "Ferquency",
-                "Frrequency"
+                "Field",
+                "Format",
+                "Forward"
               ]
             },
             {
               "ans": "Division",
               "opts": [
                 "Division",
-                "Divison",
-                "Diviseon",
-                "Divition"
+                "Download",
+                "Device",
+                "Domain"
               ]
             },
             {
               "ans": "Multiplexing",
               "opts": [
                 "Multiplexing",
-                "Multipleixng",
-                "Multtiplexing",
-                "Multiplexxing"
+                "Mask",
+                "Multiple",
+                "Modem"
               ]
             }
           ],
@@ -1528,27 +1528,27 @@
               "ans": "Time",
               "opts": [
                 "Time",
-                "Times",
-                "Code",
-                "Timme"
+                "Trailer",
+                "Tunnel",
+                "Throughput"
               ]
             },
             {
               "ans": "Division",
               "opts": [
                 "Division",
-                "Divison",
-                "Divition",
-                "Divesion"
+                "Duplex",
+                "Directory",
+                "Domain"
               ]
             },
             {
               "ans": "Multiplexing",
               "opts": [
                 "Multiplexing",
-                "Multiplaxing",
-                "Multipplexing",
-                "Multiplexyng"
+                "Multiple",
+                "Mesh",
+                "Memory"
               ]
             }
           ],
@@ -1563,27 +1563,27 @@
               "ans": "Code",
               "opts": [
                 "Code",
-                "Cord",
-                "Wave",
-                "Cade"
+                "Check",
+                "Cable",
+                "Connection"
               ]
             },
             {
               "ans": "Division",
               "opts": [
                 "Division",
-                "Divison",
-                "Devision",
-                "Divisyon"
+                "Datagram",
+                "Digital",
+                "Directory"
               ]
             },
             {
               "ans": "Multiplexing",
               "opts": [
                 "Multiplexing",
-                "Multiprexing",
-                "Multiplexinng",
-                "Multiplaxing"
+                "Mark",
+                "Modem",
+                "Memory"
               ]
             }
           ],
@@ -1598,27 +1598,27 @@
               "ans": "Wave",
               "opts": [
                 "Wave",
-                "Weve",
-                "Wvae",
-                "Wafe"
+                "World",
+                "Wired",
+                "Wide"
               ]
             },
             {
               "ans": "Division",
               "opts": [
                 "Division",
-                "Divison",
-                "Divisoin",
-                "Dviision"
+                "Dynamic",
+                "Download",
+                "Detection"
               ]
             },
             {
               "ans": "Multiplexing",
               "opts": [
                 "Multiplexing",
-                "Multiplaxing",
-                "Multipplexing",
-                "Multiplxeing"
+                "Multiple",
+                "Message",
+                "Mail"
               ]
             }
           ],
@@ -1640,36 +1640,36 @@
               "ans": "Fully",
               "opts": [
                 "Fully",
-                "Fulry",
-                "Fluly",
-                "Folly"
+                "Format",
+                "Firewall",
+                "Full"
               ]
             },
             {
               "ans": "Qualified",
               "opts": [
                 "Qualified",
-                "Qualifed",
-                "Qoalified",
-                "Qaulified"
+                "Quantized",
+                "Quality",
+                "Queued"
               ]
             },
             {
               "ans": "Domain",
               "opts": [
                 "Domain",
-                "Domein",
-                "Doamin",
-                "Domaim"
+                "Detection",
+                "Dynamic",
+                "Duplex"
               ]
             },
             {
               "ans": "Name",
               "opts": [
                 "Name",
-                "Nome",
-                "Nane",
-                "Mame"
+                "Net",
+                "Narrow",
+                "Network"
               ]
             }
           ],
@@ -1684,27 +1684,27 @@
               "ans": "Session",
               "opts": [
                 "Session",
-                "Sesion",
-                "Sessiun",
-                "Sesison"
+                "Switch",
+                "Secure",
+                "Simple"
               ]
             },
             {
               "ans": "Control",
               "opts": [
                 "Control",
-                "Controll",
-                "Contral",
-                "Cuntrol"
+                "Channel",
+                "Carrier",
+                "Configuration"
               ]
             },
             {
               "ans": "Protocol",
               "opts": [
                 "Protocol",
-                "Prootcol",
-                "Prodocol",
-                "Protokol"
+                "Parity",
+                "Path",
+                "Packet"
               ]
             }
           ],
@@ -1719,27 +1719,27 @@
               "ans": "Digital",
               "opts": [
                 "Digital",
-                "Digitial",
-                "Dgiital",
-                "Diggital"
+                "Detection",
+                "Duplex",
+                "Delay"
               ]
             },
             {
               "ans": "Service",
               "opts": [
                 "Service",
-                "Servise",
-                "Serfice",
-                "Servike"
+                "Switch",
+                "Subscriber",
+                "Segment"
               ]
             },
             {
               "ans": "Unit",
               "opts": [
                 "Unit",
-                "Unnit",
-                "Umit",
-                "Uint"
+                "Utility",
+                "Universal",
+                "Uplink"
               ]
             }
           ],
@@ -1754,27 +1754,27 @@
               "ans": "Optical",
               "opts": [
                 "Optical",
-                "Optial",
-                "Opitcal",
-                "Optcial"
+                "Overhead",
+                "Offset",
+                "Online"
               ]
             },
             {
               "ans": "Network",
               "opts": [
                 "Network",
-                "Netwok",
-                "Netwark",
-                "Netwurk"
+                "Net",
+                "Node",
+                "Name"
               ]
             },
             {
               "ans": "Unit",
               "opts": [
                 "Unit",
-                "Unyt",
-                "Uint",
-                "Umit"
+                "Uniform",
+                "Unicast",
+                "User"
               ]
             }
           ],
@@ -1796,18 +1796,18 @@
               "ans": "Set-Top",
               "opts": [
                 "Set-Top",
-                "Sit-Top",
-                "Set-Tap",
-                "Sed-top"
+                "Spread-Spectrum",
+                "Stop-and-Wait",
+                "Short-Haul"
               ]
             },
             {
               "ans": "Box",
               "opts": [
                 "Box",
-                "Bos",
-                "Dox",
-                "Bux"
+                "Broadcast",
+                "Beacon",
+                "Bit"
               ]
             }
           ],
@@ -1822,36 +1822,36 @@
               "ans": "High-level",
               "opts": [
                 "High-level",
-                "High-levle",
-                "Highh-level",
-                "High-livel"
+                "Half-duplex",
+                "Hop-by-hop",
+                "Hard-wired"
               ]
             },
             {
               "ans": "Data",
               "opts": [
                 "Data",
-                "Datta",
-                "Dada",
-                "Date"
+                "Digital",
+                "Directory",
+                "Delivery"
               ]
             },
             {
               "ans": "Link",
               "opts": [
                 "Link",
-                "Lynk",
-                "Linnk",
-                "Lnik"
+                "Layer",
+                "Loss",
+                "Long"
               ]
             },
             {
               "ans": "Control",
               "opts": [
                 "Control",
-                "Cnotrol",
-                "Conttrol",
-                "Comtrol"
+                "Cloud",
+                "Circuit",
+                "Computer"
               ]
             }
           ],
@@ -1866,27 +1866,27 @@
               "ans": "Media",
               "opts": [
                 "Media",
-                "Medium",
-                "Medya",
-                "Madia"
+                "Metric",
+                "Multiple",
+                "Mail"
               ]
             },
             {
               "ans": "Access",
               "opts": [
                 "Access",
-                "Ackess",
-                "Acess",
-                "Accesz"
+                "Adapter",
+                "Array",
+                "Authentication"
               ]
             },
             {
               "ans": "Control",
               "opts": [
                 "Control",
-                "Cantrol",
-                "Conntrol",
-                "Contlol"
+                "Cable",
+                "Code",
+                "Cyclic"
               ]
             }
           ],
@@ -1908,36 +1908,36 @@
               "ans": "Point",
               "opts": [
                 "Point",
-                "Pont",
-                "Poent",
-                "Poind"
+                "Phase",
+                "Port",
+                "Private"
               ]
             },
             {
               "ans": "to",
               "opts": [
                 "to",
-                "Text",
-                "too",
-                "two"
+                "the",
+                "through",
+                "then"
               ]
             },
             {
               "ans": "Point",
               "opts": [
                 "Point",
-                "Poimt",
-                "Qoint",
-                "Paint"
+                "Physical",
+                "Private",
+                "Proxy"
               ]
             },
             {
               "ans": "Protocol",
               "opts": [
                 "Protocol",
-                "Protocal",
-                "Protokol",
-                "Plotocol"
+                "Pulse",
+                "Peer",
+                "Phase"
               ]
             }
           ],
@@ -1952,27 +1952,27 @@
               "ans": "Cyclic",
               "opts": [
                 "Cyclic",
-                "Cycle",
-                "Cyklic",
-                "Cyyclic"
+                "Cache",
+                "Cell",
+                "Client"
               ]
             },
             {
               "ans": "Redundancy",
               "opts": [
                 "Redundancy",
-                "Redundanky",
-                "Rednudancy",
-                "Redumdancy"
+                "Ring",
+                "Reply",
+                "Reliable"
               ]
             },
             {
               "ans": "Check",
               "opts": [
                 "Check",
-                "Checc",
-                "Chcek",
-                "Chack"
+                "Connection",
+                "Cloud",
+                "Computer"
               ]
             }
           ],
@@ -1987,27 +1987,27 @@
               "ans": "Electronic",
               "opts": [
                 "Electronic",
-                "Electonic",
-                "Eletcronic",
-                "Ellectronic"
+                "Enhanced",
+                "Encryption",
+                "External"
               ]
             },
             {
               "ans": "Data",
               "opts": [
                 "Data",
-                "Dada",
-                "Dtaa",
-                "Bata"
+                "Distributed",
+                "Datagram",
+                "Delivery"
               ]
             },
             {
               "ans": "Interchange",
               "opts": [
                 "Interchange",
-                "Interchage",
-                "Interchnage",
-                "Interchanje"
+                "Index",
+                "Impulse",
+                "Input"
               ]
             }
           ],
@@ -2022,27 +2022,27 @@
               "ans": "Information",
               "opts": [
                 "Information",
-                "Infomation",
-                "Infornation",
-                "Informatian"
+                "Input",
+                "Interference",
+                "Interface"
               ]
             },
             {
               "ans": "Network",
               "opts": [
                 "Network",
-                "Netwok",
-                "Ntework",
-                "Networc"
+                "Name",
+                "Next",
+                "Native"
               ]
             },
             {
               "ans": "System",
               "opts": [
                 "System",
-                "Systim",
-                "Ssytem",
-                "Syystem"
+                "Sampling",
+                "Session",
+                "Secure"
               ]
             }
           ],
@@ -2057,18 +2057,18 @@
               "ans": "Single",
               "opts": [
                 "Single",
-                "Singel",
-                "Zingle",
-                "Signle"
+                "Shielded",
+                "Secure",
+                "Station"
               ]
             },
             {
               "ans": "Star",
               "opts": [
                 "Star",
-                "Start",
-                "Satr",
-                "Sdar"
+                "Secure",
+                "Simple",
+                "Subnet"
               ]
             }
           ],
@@ -2090,27 +2090,27 @@
               "ans": "Passive",
               "opts": [
                 "Passive",
-                "Pasive",
-                "Passivve",
-                "Passife"
+                "Process",
+                "Port",
+                "Path"
               ]
             },
             {
               "ans": "Double",
               "opts": [
                 "Double",
-                "Doable",
-                "Dauble",
-                "Doubel"
+                "Device",
+                "Data",
+                "Duplex"
               ]
             },
             {
               "ans": "Star",
               "opts": [
                 "Star",
-                "Sdar",
-                "Ster",
-                "Stor"
+                "Simple",
+                "Subnet",
+                "Stream"
               ]
             }
           ],
@@ -2125,27 +2125,27 @@
               "ans": "Passive",
               "opts": [
                 "Passive",
-                "Pasive",
-                "Pasisve",
-                "Paszive"
+                "Path",
+                "Physical",
+                "Pulse"
               ]
             },
             {
               "ans": "Optical",
               "opts": [
                 "Optical",
-                "Opticcal",
-                "Optcial",
-                "Opticol"
+                "Orthogonal",
+                "Octet",
+                "Operating"
               ]
             },
             {
               "ans": "Network",
               "opts": [
                 "Network",
-                "Nettwork",
-                "Natwork",
-                "Netwurk"
+                "Name",
+                "Noise",
+                "Next"
               ]
             }
           ],
@@ -2160,27 +2160,27 @@
               "ans": "Unshielded",
               "opts": [
                 "Unshielded",
-                "Unsheilded",
-                "Shielded",
-                "Unshieledd"
+                "Union",
+                "User",
+                "Upload"
               ]
             },
             {
               "ans": "Twisted",
               "opts": [
                 "Twisted",
-                "Twysted",
-                "Dwisted",
-                "Twitsed"
+                "Television",
+                "Trailer",
+                "Topology"
               ]
             },
             {
               "ans": "Pair",
               "opts": [
                 "Pair",
-                "Paer",
-                "Piar",
-                "Pail"
+                "Privacy",
+                "Pulse",
+                "Port"
               ]
             }
           ],
@@ -2195,27 +2195,27 @@
               "ans": "Shielded",
               "opts": [
                 "Shielded",
-                "Unshielded",
-                "Sheilded",
-                "Sihelded"
+                "Switch",
+                "Subscriber",
+                "Signal"
               ]
             },
             {
               "ans": "Twisted",
               "opts": [
                 "Twisted",
-                "Twistad",
-                "Twizted",
-                "Twistted"
+                "Token",
+                "Telecommunication",
+                "Topology"
               ]
             },
             {
               "ans": "Pair",
               "opts": [
                 "Pair",
-                "Pail",
-                "Poir",
-                "Qair"
+                "Phase",
+                "Process",
+                "Public"
               ]
             }
           ],
@@ -2230,36 +2230,36 @@
               "ans": "Fiber",
               "opts": [
                 "Fiber",
-                "Feber",
-                "Fyber",
-                "Fibar"
+                "Frame",
+                "Frequency",
+                "Firewall"
               ]
             },
             {
               "ans": "Distributed",
               "opts": [
                 "Distributed",
-                "Distrubuted",
-                "Dsitributed",
-                "Ditsributed"
+                "Download",
+                "Division",
+                "Dynamic"
               ]
             },
             {
               "ans": "Data",
               "opts": [
                 "Data",
-                "Deta",
-                "Date",
-                "Dato"
+                "Domain",
+                "Digital",
+                "Device"
               ]
             },
             {
               "ans": "Interface",
               "opts": [
                 "Interface",
-                "Interfase",
-                "Innterface",
-                "Interfoce"
+                "Index",
+                "Intranet",
+                "Instruction"
               ]
             }
           ],
@@ -2281,36 +2281,36 @@
               "ans": "Carrier",
               "opts": [
                 "Carrier",
-                "Carier",
-                "Cerrier",
-                "Carryer"
+                "Cable",
+                "Code",
+                "Check"
               ]
             },
             {
               "ans": "Sense",
               "opts": [
                 "Sense",
-                "Sence",
-                "Sensa",
-                "Sensse"
+                "Signal",
+                "Subnet",
+                "Station"
               ]
             },
             {
               "ans": "Multiple",
               "opts": [
                 "Multiple",
-                "Murtiple",
-                "Multipple",
-                "Mlutiple"
+                "Metric",
+                "Modulation",
+                "Mode"
               ]
             },
             {
               "ans": "Access",
               "opts": [
                 "Access",
-                "Accezs",
-                "Akcess",
-                "Acces"
+                "Array",
+                "Asynchronous",
+                "Automatic"
               ]
             }
           ],
@@ -2325,18 +2325,18 @@
               "ans": "Collision",
               "opts": [
                 "Collision",
-                "Colision",
-                "Collisian",
-                "Collisyon"
+                "Cell",
+                "Circuit",
+                "Cyclic"
               ]
             },
             {
               "ans": "Detection",
               "opts": [
                 "Detection",
-                "Detecsion",
-                "Ditection",
-                "Detectian"
+                "Duplex",
+                "Division",
+                "Device"
               ]
             }
           ],
@@ -2351,18 +2351,18 @@
               "ans": "Collision",
               "opts": [
                 "Collision",
-                "Colision",
-                "Colilsion",
-                "Collsiion"
+                "Channel",
+                "Configuration",
+                "Clock"
               ]
             },
             {
               "ans": "Avoidance",
               "opts": [
                 "Avoidance",
-                "Avoidence",
-                "Aovidance",
-                "Aviodance"
+                "Application",
+                "Adapter",
+                "Automatic"
               ]
             }
           ],
@@ -2377,27 +2377,27 @@
               "ans": "Wired",
               "opts": [
                 "Wired",
-                "Wi-Fi",
-                "Wiered",
-                "Wiled"
+                "Web",
+                "Wave",
+                "Wide"
               ]
             },
             {
               "ans": "Equivalent",
               "opts": [
                 "Equivalent",
-                "Equivalant",
-                "Equivolent",
-                "Eqquivalent"
+                "Exchange",
+                "Element",
+                "Edge"
               ]
             },
             {
               "ans": "Privacy",
               "opts": [
                 "Privacy",
-                "Privvacy",
-                "Privcay",
-                "Prviacy"
+                "Power",
+                "Payload",
+                "Point"
               ]
             }
           ],
@@ -2412,27 +2412,27 @@
               "ans": "Wi-Fi",
               "opts": [
                 "Wi-Fi",
-                "Wi-vi",
-                "Wif-i",
-                "Wi-fe"
+                "Wireless",
+                "Wideband",
+                "Wired"
               ]
             },
             {
               "ans": "Protected",
               "opts": [
                 "Protected",
-                "Protcted",
-                "Plotected",
-                "Protacted"
+                "Private",
+                "Process",
+                "Passive"
               ]
             },
             {
               "ans": "Access",
               "opts": [
                 "Access",
-                "Acess",
-                "Ackess",
-                "Accses"
+                "Application",
+                "Authentication",
+                "Asynchronous"
               ]
             }
           ],
