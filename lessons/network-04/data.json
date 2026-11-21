@@ -77,6 +77,16 @@
       "name": "IPsec",
       "full": "",
       "plain": "第3層(ネットワーク層)の暗号化に使う仕組み"
+    },
+    {
+      "name": "ping・tracert・ipconfig",
+      "full": "Windows のネットワーク確認コマンド",
+      "plain": "ping=相手まで届くか(疎通確認)、tracert=相手までの経路確認、ipconfig=自分のPCのネットワーク設定の確認(/all でMACアドレスも見られる)。第4回 p.8"
+    },
+    {
+      "name": "PPPoE・IPoE",
+      "full": "PPP over Ethernet / IP over Ethernet",
+      "plain": "IPv4とIPv6を相互に変換(カプセル化)してつなぐ仕組み。第4回 p.9"
     }
   ],
   "blocks": [
