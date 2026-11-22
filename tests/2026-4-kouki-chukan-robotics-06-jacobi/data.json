@@ -1,0 +1,665 @@
+{
+ "year": 2026,
+ "grade": 4,
+ "exam": "後期中間試験",
+ "subject": "ロボティクス",
+ "title": "ロボティクス ・ ⑥ ヤコビ行列と特異点",
+ "subtitle": "微分の道具、ヤコビ行列、2リンク、特異点、課題3・演習No.2 問9",
+ "eyebrow": "ロボティクス ・ 演習",
+ "description": "学習 第6回の範囲。微分・偏微分・行列式、ヤコビ行列の意味と作り方、2リンクのヤコビ行列、特異点、課題3・演習No.2 問9(有効数字3桁)。",
+ "storageKey": "robo_chukan_06_jacobi_v1",
+ "pointsPerQ": 100,
+ "katex": true,
+ "tip": "<b>答えは有効数字3桁。途中は有効4桁で、1段ごとに四捨五入。</b> 行列は選択肢から選ぶ。負の値は、符号を答えない問題(正の成分だけ聞く)。分からない時は「ヒント」、それでも無理なら「解答を見る」。",
+ "footer": "ロボティクス 後期中間試験(11/30) ・ 出題範囲: ロボティクス資料 p.18〜p.22、課題3、演習No.2 問9",
+ "sections": [
+  {
+   "id": "s0",
+   "no": "00",
+   "title": "微分・偏微分・行列式(先に道具)",
+   "qs": [
+    {
+     "type": "single",
+     "q": "$\\sin\\theta$ を $\\theta$ で微分すると?",
+     "opts": [
+      "$\\cos\\theta$",
+      "$-\\cos\\theta$",
+      "$-\\sin\\theta$"
+     ],
+     "ans": "$\\cos\\theta$",
+     "note": "(資料外・補足)",
+     "tag": "微分"
+    },
+    {
+     "type": "single",
+     "q": "$\\cos\\theta$ を $\\theta$ で微分すると?",
+     "opts": [
+      "$-\\sin\\theta$",
+      "$\\sin\\theta$",
+      "$-\\cos\\theta$"
+     ],
+     "ans": "$-\\sin\\theta$",
+     "note": "マイナスが付く。(資料外・補足)",
+     "tag": "微分"
+    },
+    {
+     "type": "single",
+     "q": "$\\dot{x}$(エックス・ドット)は?",
+     "opts": [
+      "$x$ を時間で微分したもの(速度)",
+      "$x$ を2倍したもの",
+      "$x$ の逆数"
+     ],
+     "ans": "$x$ を時間で微分したもの(速度)",
+     "note": "(資料 p.18。読み方は資料外・補足)",
+     "tag": "微分"
+    },
+    {
+     "type": "single",
+     "q": "$f=L_1\\sin\\theta_1+L_2\\sin\\theta_2$ を $\\theta_1$ で偏微分すると?",
+     "opts": [
+      "$L_1\\cos\\theta_1$",
+      "$L_1\\cos\\theta_1+L_2\\cos\\theta_2$",
+      "$L_2\\cos\\theta_2$"
+     ],
+     "ans": "$L_1\\cos\\theta_1$",
+     "note": "他の変数は定数とみなす。(資料外・補足)",
+     "tag": "微分"
+    },
+    {
+     "type": "single",
+     "q": "$f=L\\cos\\theta$ を $\\theta$ で偏微分すると?",
+     "opts": [
+      "$-L\\sin\\theta$",
+      "$L\\sin\\theta$",
+      "$-\\sin\\theta$"
+     ],
+     "ans": "$-L\\sin\\theta$",
+     "note": "$L$ は定数とみなす。(資料 p.19 の $\\partial x/\\partial\\theta$)",
+     "tag": "微分"
+    },
+    {
+     "type": "single",
+     "q": "$\\sin(\\theta_1+\\theta_2)$ を $\\theta_2$ で偏微分すると?",
+     "opts": [
+      "$\\cos(\\theta_1+\\theta_2)$",
+      "$-\\cos(\\theta_1+\\theta_2)$",
+      "$\\sin\\theta_1$"
+     ],
+     "ans": "$\\cos(\\theta_1+\\theta_2)$",
+     "note": "外側だけ微分(中身の係数は 1)。(資料外・補足)",
+     "tag": "微分"
+    },
+    {
+     "type": "numeric",
+     "q": "$\\det\\begin{bmatrix}2&1\\\\3&4\\end{bmatrix}=ad-bc$ は?(有効数字3桁)",
+     "parts": [
+      {
+       "ans": 5.0,
+       "unit": "",
+       "abs": 0.015,
+       "label": "行列式"
+      }
+     ],
+     "note": "$2\\times4-1\\times3=5.00$。",
+     "reveal": [
+      "$8-3=5$"
+     ],
+     "tag": "行列式"
+    }
+   ]
+  },
+  {
+   "id": "s1",
+   "no": "01",
+   "title": "ヤコビ行列とは(資料 p.18〜p.19)",
+   "qs": [
+    {
+     "type": "single",
+     "q": "ヤコビ行列 $\\boldsymbol{J}$ は、何と何を結ぶ?",
+     "opts": [
+      "関節の速度 $\\dot{\\boldsymbol{q}}$ と、手先の速度 $\\dot{\\boldsymbol{r}}$",
+      "関節の角度と、リンクの長さ",
+      "手先の位置と、重さ"
+     ],
+     "ans": "関節の速度 $\\dot{\\boldsymbol{q}}$ と、手先の速度 $\\dot{\\boldsymbol{r}}$",
+     "note": "$\\dot{\\boldsymbol{r}}=\\boldsymbol{J}\\dot{\\boldsymbol{q}}$。(資料 p.18)",
+     "tag": "ヤコビ行列"
+    },
+    {
+     "type": "single",
+     "q": "資料 p.18 の先生の強調「注意」は、何?",
+     "opts": [
+      "$q_1,q_2$ は時間の関数",
+      "$q_1,q_2$ は定数",
+      "$x,y$ は時間に関係しない"
+     ],
+     "ans": "$q_1,q_2$ は時間の関数",
+     "note": "関節変数は時間とともに変わる。だから時間で微分して速度が出る。(資料 p.18)",
+     "tag": "ヤコビ行列"
+    },
+    {
+     "type": "single",
+     "q": "ヤコビ行列の「行」は、何に対応?",
+     "opts": [
+      "手先の座標($x,y$)",
+      "関節変数($q_1,q_2$)",
+      "リンクの長さ"
+     ],
+     "ans": "手先の座標($x,y$)",
+     "note": "行は手先の座標、列は関節変数。(資料 p.18)",
+     "tag": "ヤコビ行列"
+    },
+    {
+     "type": "single",
+     "q": "ヤコビ行列の「列」は、何に対応?",
+     "opts": [
+      "関節変数($q_1,q_2$)",
+      "手先の座標($x,y$)",
+      "時間"
+     ],
+     "ans": "関節変数($q_1,q_2$)",
+     "note": "(資料 p.18)",
+     "tag": "ヤコビ行列"
+    },
+    {
+     "type": "single",
+     "q": "$x=L\\cos\\theta$、$y=L\\sin\\theta$ のヤコビ行列($\\boldsymbol{q}=[L,\\theta]^T$)は?(資料 p.19)",
+     "opts": [
+      "$\\begin{bmatrix}\\cos\\theta & L\\sin\\theta \\\\ \\sin\\theta & L\\cos\\theta\\end{bmatrix}$",
+      "$\\begin{bmatrix}-L\\sin\\theta & \\cos\\theta \\\\ L\\cos\\theta & \\sin\\theta\\end{bmatrix}$",
+      "$\\begin{bmatrix}\\cos\\theta & -L\\sin\\theta \\\\ \\sin\\theta & L\\cos\\theta\\end{bmatrix}$",
+      "$\\begin{bmatrix}\\cos\\theta & \\sin\\theta \\\\ -L\\sin\\theta & L\\cos\\theta\\end{bmatrix}$"
+     ],
+     "ans": "$\\begin{bmatrix}\\cos\\theta & -L\\sin\\theta \\\\ \\sin\\theta & L\\cos\\theta\\end{bmatrix}$",
+     "note": "(資料 p.19)",
+     "tag": "ヤコビ行列"
+    },
+    {
+     "type": "numeric",
+     "q": "回転1関節でリンクの長さが変わる(資料 p.19)。$x=L\\cos\\theta$、$y=L\\sin\\theta$。$L=3$、$\\theta=30^\\circ$、$\\dot{L}=2$、$\\dot{\\theta}=1$ のとき、$\\dot{x}$、$\\dot{y}$ を求めよ。(有効数字3桁。$\\cos 30^\\circ=0.8660$、$\\sin 30^\\circ=0.5000$)",
+     "parts": [
+      {
+       "ans": 0.232,
+       "unit": "",
+       "abs": 0.0015,
+       "label": "$\\dot{x}$"
+      },
+      {
+       "ans": 3.6,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$\\dot{y}$"
+      }
+     ],
+     "note": "$\\boldsymbol{J}=\\begin{bmatrix}\\cos\\theta&-L\\sin\\theta\\\\\\sin\\theta&L\\cos\\theta\\end{bmatrix}$。$\\dot{x}$=0.232、$\\dot{y}$=3.60。(途中は有効4桁、答えは3桁)",
+     "reveal": [
+      "$\\dot{x}=\\dot{L}\\cos\\theta-L\\dot{\\theta}\\sin\\theta=1.732-1.500=0.2320$",
+      "$\\dot{y}=\\dot{L}\\sin\\theta+L\\dot{\\theta}\\cos\\theta=1.000+2.598=3.598$"
+     ],
+     "hint": "$\\dot{x}=\\dot{L}\\cos\\theta-L\\dot{\\theta}\\sin\\theta$、$\\dot{y}=\\dot{L}\\sin\\theta+L\\dot{\\theta}\\cos\\theta$(ヤコビ行列 $\\boldsymbol{J}$ に $(\\dot{L},\\dot{\\theta})$ を掛ける)",
+     "tag": "可変長リンクの速度"
+    },
+    {
+     "type": "numeric",
+     "q": "回転1関節でリンクの長さが変わる(資料 p.19)。$x=L\\cos\\theta$、$y=L\\sin\\theta$。$L=2$、$\\theta=30^\\circ$、$\\dot{L}=3$、$\\dot{\\theta}=1$ のとき、$\\dot{x}$、$\\dot{y}$ を求めよ。(有効数字3桁。$\\cos 30^\\circ=0.8660$、$\\sin 30^\\circ=0.5000$)",
+     "parts": [
+      {
+       "ans": 1.6,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$\\dot{x}$"
+      },
+      {
+       "ans": 3.23,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$\\dot{y}$"
+      }
+     ],
+     "note": "$\\boldsymbol{J}=\\begin{bmatrix}\\cos\\theta&-L\\sin\\theta\\\\\\sin\\theta&L\\cos\\theta\\end{bmatrix}$。$\\dot{x}$=1.60、$\\dot{y}$=3.23。(途中は有効4桁、答えは3桁)",
+     "reveal": [
+      "$\\dot{x}=\\dot{L}\\cos\\theta-L\\dot{\\theta}\\sin\\theta=2.598-1.000=1.598$",
+      "$\\dot{y}=\\dot{L}\\sin\\theta+L\\dot{\\theta}\\cos\\theta=1.500+1.732=3.232$"
+     ],
+     "hint": "$\\dot{x}=\\dot{L}\\cos\\theta-L\\dot{\\theta}\\sin\\theta$、$\\dot{y}=\\dot{L}\\sin\\theta+L\\dot{\\theta}\\cos\\theta$(ヤコビ行列 $\\boldsymbol{J}$ に $(\\dot{L},\\dot{\\theta})$ を掛ける)",
+     "tag": "可変長リンクの速度"
+    },
+    {
+     "type": "numeric",
+     "q": "回転1関節でリンクの長さが変わる(資料 p.19)。$x=L\\cos\\theta$、$y=L\\sin\\theta$。$L=4$、$\\theta=30^\\circ$ のとき、ヤコビ行列の $J_{22}=\\partial y/\\partial\\theta$ を求めよ。(有効数字3桁。$\\cos 30^\\circ=0.8660$、$\\sin 30^\\circ=0.5000$)",
+     "parts": [
+      {
+       "ans": 3.46,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$J_{22}=\\partial y/\\partial\\theta$"
+      }
+     ],
+     "note": "$\\boldsymbol{J}=\\begin{bmatrix}\\cos\\theta&-L\\sin\\theta\\\\\\sin\\theta&L\\cos\\theta\\end{bmatrix}$。$J_{22}=\\partial y/\\partial\\theta$=3.46。(途中は有効4桁、答えは3桁)",
+     "reveal": [
+      "$J_{22}=L\\cos\\theta=3.464$"
+     ],
+     "hint": "$\\boldsymbol{J}=\\begin{bmatrix}\\cos\\theta&-L\\sin\\theta\\\\\\sin\\theta&L\\cos\\theta\\end{bmatrix}$",
+     "tag": "可変長リンクの速度"
+    }
+   ]
+  },
+  {
+   "id": "s2",
+   "no": "02",
+   "title": "2リンクのヤコビ行列(資料 p.19)",
+   "qs": [
+    {
+     "type": "single",
+     "q": "2リンクのヤコビ行列(資料 p.19)は?",
+     "opts": [
+      "$\\begin{bmatrix}-L_1\\sin\\theta_1-L_2\\sin(\\theta_1+\\theta_2) & -L_2\\sin(\\theta_1+\\theta_2) \\\\ L_1\\cos\\theta_1+L_2\\cos(\\theta_1+\\theta_2) & L_2\\cos(\\theta_1+\\theta_2)\\end{bmatrix}$",
+      "$\\begin{bmatrix}L_1\\cos\\theta_1+L_2\\cos(\\theta_1+\\theta_2) & L_2\\cos(\\theta_1+\\theta_2) \\\\ -L_1\\sin\\theta_1-L_2\\sin(\\theta_1+\\theta_2) & -L_2\\sin(\\theta_1+\\theta_2)\\end{bmatrix}$",
+      "$\\begin{bmatrix}-L_1\\sin\\theta_1-L_2\\sin(\\theta_1+\\theta_2) & L_1\\cos\\theta_1+L_2\\cos(\\theta_1+\\theta_2) \\\\ -L_2\\sin(\\theta_1+\\theta_2) & L_2\\cos(\\theta_1+\\theta_2)\\end{bmatrix}$",
+      "$\\begin{bmatrix}-L_1\\sin\\theta_1-L_2\\sin(\\theta_1+\\theta_2) & -L_2\\sin\\theta_2 \\\\ L_1\\cos\\theta_1+L_2\\cos(\\theta_1+\\theta_2) & L_2\\cos\\theta_2\\end{bmatrix}$"
+     ],
+     "ans": "$\\begin{bmatrix}-L_1\\sin\\theta_1-L_2\\sin(\\theta_1+\\theta_2) & -L_2\\sin(\\theta_1+\\theta_2) \\\\ L_1\\cos\\theta_1+L_2\\cos(\\theta_1+\\theta_2) & L_2\\cos(\\theta_1+\\theta_2)\\end{bmatrix}$",
+     "note": "(資料 p.19)",
+     "tag": "2リンク"
+    },
+    {
+     "type": "single",
+     "q": "$y=L_1\\sin\\theta_1+L_2\\sin(\\theta_1+\\theta_2)$ を $\\theta_2$ で偏微分すると?",
+     "opts": [
+      "$L_2\\cos(\\theta_1+\\theta_2)$",
+      "$L_1\\cos\\theta_1+L_2\\cos(\\theta_1+\\theta_2)$",
+      "$-L_2\\sin(\\theta_1+\\theta_2)$"
+     ],
+     "ans": "$L_2\\cos(\\theta_1+\\theta_2)$",
+     "note": "(資料 p.19)",
+     "tag": "2リンク"
+    },
+    {
+     "type": "single",
+     "q": "$x=L_1\\cos\\theta_1+L_2\\cos(\\theta_1+\\theta_2)$ を $\\theta_2$ で偏微分すると?",
+     "opts": [
+      "$-L_2\\sin(\\theta_1+\\theta_2)$",
+      "$L_2\\sin(\\theta_1+\\theta_2)$",
+      "$-L_1\\sin\\theta_1-L_2\\sin(\\theta_1+\\theta_2)$"
+     ],
+     "ans": "$-L_2\\sin(\\theta_1+\\theta_2)$",
+     "note": "(資料 p.19)",
+     "tag": "2リンク"
+    },
+    {
+     "type": "numeric",
+     "q": "資料 p.19 の2リンクのロボットアームで、$L_1=3$、$L_2=2$、$\\theta_1=30^\\circ$、$\\theta_2=30^\\circ$ のとき、$J_{21}=\\partial y/\\partial\\theta_1$、$J_{22}=\\partial y/\\partial\\theta_2$ を求めよ。(有効数字3桁。$\\cos 30^\\circ=0.8660$、$\\sin 30^\\circ=0.5000$、$\\cos 60^\\circ=0.5000$、$\\sin 60^\\circ=0.8660$)",
+     "parts": [
+      {
+       "ans": 3.6,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$J_{21}=\\partial y/\\partial\\theta_1$"
+      },
+      {
+       "ans": 1.0,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$J_{22}=\\partial y/\\partial\\theta_2$"
+      }
+     ],
+     "note": "$J_{21}=L_1\\cos\\theta_1+L_2\\cos(\\theta_1+\\theta_2)$、$J_{22}=L_2\\cos(\\theta_1+\\theta_2)$、$\\dot{y}=J_{21}\\dot{\\theta}_1+J_{22}\\dot{\\theta}_2$。$J_{21}=\\partial y/\\partial\\theta_1$=3.60、$J_{22}=\\partial y/\\partial\\theta_2$=1.00。(途中は有効4桁、答えは3桁)",
+     "reveal": [
+      "$J_{21}=L_1\\cos\\theta_1+L_2\\cos(\\theta_1+\\theta_2)=2.598+1.000=3.598$",
+      "$J_{22}=L_2\\cos(\\theta_1+\\theta_2)=1.000$"
+     ],
+     "hint": "$J_{21}=\\partial y/\\partial\\theta_1$、$J_{22}=\\partial y/\\partial\\theta_2$",
+     "tag": "2リンクのヤコビ行列"
+    },
+    {
+     "type": "numeric",
+     "q": "資料 p.19 の2リンクのロボットアームで、$L_1=4$、$L_2=3$、$\\theta_1=30^\\circ$、$\\theta_2=30^\\circ$ のとき、$J_{21}=\\partial y/\\partial\\theta_1$、$\\dot{y}$ を求めよ。ただし $\\dot{\\theta}_1=2$、$\\dot{\\theta}_2=1$。(有効数字3桁。$\\cos 30^\\circ=0.8660$、$\\sin 30^\\circ=0.5000$、$\\cos 60^\\circ=0.5000$、$\\sin 60^\\circ=0.8660$)",
+     "parts": [
+      {
+       "ans": 4.96,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$J_{21}=\\partial y/\\partial\\theta_1$"
+      },
+      {
+       "ans": 11.4,
+       "unit": "",
+       "abs": 0.15,
+       "label": "$\\dot{y}$"
+      }
+     ],
+     "note": "$J_{21}=L_1\\cos\\theta_1+L_2\\cos(\\theta_1+\\theta_2)$、$J_{22}=L_2\\cos(\\theta_1+\\theta_2)$、$\\dot{y}=J_{21}\\dot{\\theta}_1+J_{22}\\dot{\\theta}_2$。$J_{21}=\\partial y/\\partial\\theta_1$=4.96、$\\dot{y}$=11.4。(途中は有効4桁、答えは3桁)",
+     "reveal": [
+      "$J_{21}=L_1\\cos\\theta_1+L_2\\cos(\\theta_1+\\theta_2)=3.464+1.500=4.964$",
+      "$\\dot{y}=J_{21}\\dot{\\theta}_1+J_{22}\\dot{\\theta}_2=4.964\\times2+1.500\\times1=11.43$"
+     ],
+     "hint": "$J_{21}=\\partial y/\\partial\\theta_1$、$J_{22}=\\partial y/\\partial\\theta_2$",
+     "tag": "2リンクのヤコビ行列"
+    },
+    {
+     "type": "numeric",
+     "q": "資料 p.19 の2リンクのロボットアームで、$L_1=5$、$L_2=3$、$\\theta_1=30^\\circ$、$\\theta_2=30^\\circ$ のとき、$J_{22}=\\partial y/\\partial\\theta_2$、$\\dot{y}$ を求めよ。ただし $\\dot{\\theta}_1=1$、$\\dot{\\theta}_2=1$。(有効数字3桁。$\\cos 30^\\circ=0.8660$、$\\sin 30^\\circ=0.5000$、$\\cos 60^\\circ=0.5000$、$\\sin 60^\\circ=0.8660$)",
+     "parts": [
+      {
+       "ans": 1.5,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$J_{22}=\\partial y/\\partial\\theta_2$"
+      },
+      {
+       "ans": 7.33,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$\\dot{y}$"
+      }
+     ],
+     "note": "$J_{21}=L_1\\cos\\theta_1+L_2\\cos(\\theta_1+\\theta_2)$、$J_{22}=L_2\\cos(\\theta_1+\\theta_2)$、$\\dot{y}=J_{21}\\dot{\\theta}_1+J_{22}\\dot{\\theta}_2$。$J_{22}=\\partial y/\\partial\\theta_2$=1.50、$\\dot{y}$=7.33。(途中は有効4桁、答えは3桁)",
+     "reveal": [
+      "$J_{22}=L_2\\cos(\\theta_1+\\theta_2)=1.500$",
+      "$\\dot{y}=J_{21}\\dot{\\theta}_1+J_{22}\\dot{\\theta}_2=5.830\\times1+1.500\\times1=7.330$"
+     ],
+     "hint": "$J_{21}=\\partial y/\\partial\\theta_1$、$J_{22}=\\partial y/\\partial\\theta_2$",
+     "tag": "2リンクのヤコビ行列"
+    }
+   ]
+  },
+  {
+   "id": "s3",
+   "no": "03",
+   "title": "逆行列と特異点(資料 p.20〜p.21)",
+   "qs": [
+    {
+     "type": "single",
+     "q": "ヤコビ行列の逆行列が存在しない点を、何という?",
+     "opts": [
+      "特異点",
+      "原点",
+      "平衡点"
+     ],
+     "ans": "特異点",
+     "note": "(資料 p.20 先生の強調)",
+     "tag": "特異点"
+    },
+    {
+     "type": "single",
+     "q": "2リンクアームの特異点は、どんな関節角?",
+     "opts": [
+      "$\\sin\\theta_2=0$($\\theta_2=0,\\ \\pi$)",
+      "$\\cos\\theta_2=0$",
+      "$\\theta_1=0$"
+     ],
+     "ans": "$\\sin\\theta_2=0$($\\theta_2=0,\\ \\pi$)",
+     "note": "$\\det\\boldsymbol{J}=L_1L_2\\sin\\theta_2=0$。(資料 p.20)",
+     "tag": "特異点"
+    },
+    {
+     "type": "single",
+     "q": "特異点では、何ができなくなる?",
+     "opts": [
+      "先端の速度・加速度から、関節の速度・加速度を求めること",
+      "関節の角度から、手先の位置を求めること",
+      "リンクの長さを測ること"
+     ],
+     "ans": "先端の速度・加速度から、関節の速度・加速度を求めること",
+     "note": "(資料 p.20 先生の強調)",
+     "tag": "特異点"
+    },
+    {
+     "type": "single",
+     "q": "$\\theta_2=0$ の姿勢は?",
+     "opts": [
+      "腕を一直線に伸ばしきった姿勢",
+      "腕を折りたたんだ姿勢",
+      "腕を上に上げた姿勢"
+     ],
+     "ans": "腕を一直線に伸ばしきった姿勢",
+     "note": "$\\theta_2=\\pi$ が折りたたんだ姿勢(リンクが重なる)。図10.3 の (b) が伸びきり、(c) が折りたたみ。(資料外・補足。図の読み)",
+     "tag": "特異点"
+    },
+    {
+     "type": "single",
+     "q": "特異姿勢で、手先が動けない方向は?",
+     "opts": [
+      "リンクの長さ方向",
+      "リンクに直角の方向",
+      "どの方向にも動ける"
+     ],
+     "ans": "リンクの長さ方向",
+     "note": "図10.3 の矢印「運動できない方向」。(資料 p.21)",
+     "tag": "特異点"
+    },
+    {
+     "type": "single",
+     "q": "2×2 の逆行列の分母は?",
+     "opts": [
+      "行列式 $ad-bc$",
+      "$a+d$",
+      "$ab-cd$"
+     ],
+     "ans": "行列式 $ad-bc$",
+     "note": "$\\begin{bmatrix}a&b\\\\c&d\\end{bmatrix}^{-1}=\\dfrac{1}{ad-bc}\\begin{bmatrix}d&-b\\\\-c&a\\end{bmatrix}$。(資料外・補足)",
+     "tag": "特異点"
+    },
+    {
+     "type": "numeric",
+     "q": "2リンクのロボットアーム(資料 p.20)で、$L_1=3$、$L_2=2$、$\\theta_2=30^\\circ$ のとき、ヤコビ行列の行列式 $\\det\\boldsymbol{J}=L_1L_2\\sin\\theta_2$ を求めよ。(有効数字3桁。$\\sin 30^\\circ=0.5000$)",
+     "parts": [
+      {
+       "ans": 3.0,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$\\det\\boldsymbol{J}$"
+      }
+     ],
+     "note": "$\\det\\boldsymbol{J}=L_1L_2\\sin\\theta_2$。$\\det\\boldsymbol{J}$=3.00。(途中は有効4桁、答えは3桁)",
+     "reveal": [
+      "$3\\times2\\times0.5000=3.000$"
+     ],
+     "hint": "$\\det\\boldsymbol{J}=L_1L_2\\sin\\theta_2$",
+     "tag": "行列式と特異点"
+    },
+    {
+     "type": "numeric",
+     "q": "2リンクのロボットアーム(資料 p.20)で、$L_1=4$、$L_2=3$、$\\theta_2=45^\\circ$ のとき、ヤコビ行列の行列式 $\\det\\boldsymbol{J}=L_1L_2\\sin\\theta_2$ を求めよ。(有効数字3桁。$\\sin 45^\\circ=0.7071$)",
+     "parts": [
+      {
+       "ans": 8.49,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$\\det\\boldsymbol{J}$"
+      }
+     ],
+     "note": "$\\det\\boldsymbol{J}=L_1L_2\\sin\\theta_2$。$\\det\\boldsymbol{J}$=8.49。(途中は有効4桁、答えは3桁)",
+     "reveal": [
+      "$4\\times3\\times0.7071=8.485$"
+     ],
+     "hint": "$\\det\\boldsymbol{J}=L_1L_2\\sin\\theta_2$",
+     "tag": "行列式と特異点"
+    },
+    {
+     "type": "numeric",
+     "q": "2リンクのロボットアーム(資料 p.20)で、$L_1=3$、$L_2=2$、$\\theta_2=90^\\circ$ のとき、ヤコビ行列の行列式 $\\det\\boldsymbol{J}=L_1L_2\\sin\\theta_2$ を求めよ。(有効数字3桁。$\\sin 90^\\circ=1.000$)",
+     "parts": [
+      {
+       "ans": 6.0,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$\\det\\boldsymbol{J}$"
+      }
+     ],
+     "note": "$\\det\\boldsymbol{J}=L_1L_2\\sin\\theta_2$。$\\det\\boldsymbol{J}$=6.00。(途中は有効4桁、答えは3桁)",
+     "reveal": [
+      "$3\\times2\\times1.000=6.000$"
+     ],
+     "hint": "$\\det\\boldsymbol{J}=L_1L_2\\sin\\theta_2$",
+     "tag": "行列式と特異点"
+    },
+    {
+     "type": "numeric",
+     "q": "2リンクのロボットアーム(資料 p.20)で、$L_1=3$、$L_2=2$、$\\theta_2=0^\\circ$ のとき、ヤコビ行列の行列式 $\\det\\boldsymbol{J}=L_1L_2\\sin\\theta_2$ を求めよ。(有効数字3桁。$\\sin 0^\\circ=0$)",
+     "parts": [
+      {
+       "ans": 0.0,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$\\det\\boldsymbol{J}$"
+      }
+     ],
+     "note": "$\\sin 0^\\circ=0$ なので $\\det\\boldsymbol{J}=0.00$。特異点。",
+     "reveal": [
+      "$L_1L_2\\times0=0$"
+     ],
+     "hint": "$\\det\\boldsymbol{J}=L_1L_2\\sin\\theta_2$",
+     "tag": "行列式と特異点"
+    }
+   ]
+  },
+  {
+   "id": "s4",
+   "no": "04",
+   "title": "課題3・演習No.2 問9(3×3 のヤコビ行列)",
+   "qs": [
+    {
+     "type": "single",
+     "q": "位置の式に、ある関節変数が入っていないとき、その変数での偏微分は?",
+     "opts": [
+      "0",
+      "1",
+      "式のまま"
+     ],
+     "ans": "0",
+     "note": "(資料外・補足)",
+     "tag": "課題3"
+    },
+    {
+     "type": "single",
+     "q": "課題3 問1で、$y=L_1+L_3\\cos\\theta_2$ を $\\theta_1$ で偏微分すると?",
+     "opts": [
+      "0",
+      "$\\cos\\theta_2$",
+      "$L_3$"
+     ],
+     "ans": "0",
+     "note": "$y$ は $\\theta_1$ を含まない。(課題3 問1)",
+     "tag": "課題3"
+    },
+    {
+     "type": "single",
+     "q": "課題3 問1で、$y=L_1+L_3\\cos\\theta_2$ を $L_3$ で偏微分すると?",
+     "opts": [
+      "$\\cos\\theta_2$",
+      "$-L_3\\sin\\theta_2$",
+      "$L_1$"
+     ],
+     "ans": "$\\cos\\theta_2$",
+     "note": "(課題3 問1 の先生の解答)",
+     "tag": "課題3"
+    },
+    {
+     "type": "single",
+     "q": "課題3 問1のヤコビ行列は?",
+     "opts": [
+      "$\\begin{bmatrix}L_3\\cos\\theta_1\\sin\\theta_2 & L_2\\cos\\theta_2+L_3\\sin\\theta_1\\cos\\theta_2 & \\sin\\theta_1\\sin\\theta_2 \\\\ L_3 & -L_3\\sin\\theta_2 & \\cos\\theta_2 \\\\ -L_2\\sin\\theta_1-L_3\\sin\\theta_1\\sin\\theta_2 & L_3\\cos\\theta_1\\cos\\theta_2 & \\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
+      "$\\begin{bmatrix}L_3\\cos\\theta_1\\sin\\theta_2 & L_2\\cos\\theta_2+L_3\\sin\\theta_1\\cos\\theta_2 & \\sin\\theta_1\\sin\\theta_2 \\\\ 0 & -L_3\\sin\\theta_2 & \\cos\\theta_2 \\\\ -L_2\\sin\\theta_1-L_3\\sin\\theta_1\\sin\\theta_2 & L_3\\cos\\theta_1\\cos\\theta_2 & \\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
+      "$\\begin{bmatrix}L_3\\cos\\theta_1\\sin\\theta_2 & L_2\\cos\\theta_2+L_3\\sin\\theta_1\\cos\\theta_2 & \\sin\\theta_1\\sin\\theta_2 \\\\ 0 & L_3\\sin\\theta_2 & \\cos\\theta_2 \\\\ L_2\\sin\\theta_1+L_3\\sin\\theta_1\\sin\\theta_2 & L_3\\cos\\theta_1\\cos\\theta_2 & \\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
+      "$\\begin{bmatrix}L_3\\cos\\theta_1\\sin\\theta_2 & \\sin\\theta_1\\sin\\theta_2 & L_2\\cos\\theta_2+L_3\\sin\\theta_1\\cos\\theta_2 \\\\ 0 & \\cos\\theta_2 & -L_3\\sin\\theta_2 \\\\ -L_2\\sin\\theta_1-L_3\\sin\\theta_1\\sin\\theta_2 & \\cos\\theta_1\\sin\\theta_2 & L_3\\cos\\theta_1\\cos\\theta_2\\end{bmatrix}$"
+     ],
+     "ans": "$\\begin{bmatrix}L_3\\cos\\theta_1\\sin\\theta_2 & L_2\\cos\\theta_2+L_3\\sin\\theta_1\\cos\\theta_2 & \\sin\\theta_1\\sin\\theta_2 \\\\ 0 & -L_3\\sin\\theta_2 & \\cos\\theta_2 \\\\ -L_2\\sin\\theta_1-L_3\\sin\\theta_1\\sin\\theta_2 & L_3\\cos\\theta_1\\cos\\theta_2 & \\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
+     "note": "(課題3 問1)",
+     "tag": "課題3"
+    },
+    {
+     "type": "single",
+     "q": "演習No.2 問9のヤコビ行列(トラ解)は?",
+     "opts": [
+      "$\\begin{bmatrix}(L_2+L_3\\sin\\theta_2)\\cos\\theta_1 & L_3\\sin\\theta_1\\cos\\theta_2 & \\sin\\theta_1\\sin\\theta_2 \\\\ 0 & -L_3\\sin\\theta_2 & \\cos\\theta_2 \\\\ -(L_2+L_3\\sin\\theta_2)\\sin\\theta_1 & L_3\\cos\\theta_1\\cos\\theta_2 & \\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
+      "$\\begin{bmatrix}-(L_2+L_3\\sin\\theta_2)\\sin\\theta_1 & -L_3\\sin\\theta_1\\cos\\theta_2 & -\\sin\\theta_1\\sin\\theta_2 \\\\ 0 & L_3\\sin\\theta_2 & -\\cos\\theta_2 \\\\ (L_2+L_3\\sin\\theta_2)\\cos\\theta_1 & -L_3\\cos\\theta_1\\cos\\theta_2 & -\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
+      "$\\begin{bmatrix}-(L_2+L_3\\sin\\theta_2)\\cos\\theta_1 & -L_3\\sin\\theta_1\\cos\\theta_2 & -\\sin\\theta_1\\sin\\theta_2 \\\\ L_3 & L_3\\sin\\theta_2 & -\\cos\\theta_2 \\\\ (L_2+L_3\\sin\\theta_2)\\sin\\theta_1 & -L_3\\cos\\theta_1\\cos\\theta_2 & -\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
+      "$\\begin{bmatrix}-(L_2+L_3\\sin\\theta_2)\\cos\\theta_1 & -L_3\\sin\\theta_1\\cos\\theta_2 & -\\sin\\theta_1\\sin\\theta_2 \\\\ 0 & L_3\\sin\\theta_2 & -\\cos\\theta_2 \\\\ (L_2+L_3\\sin\\theta_2)\\sin\\theta_1 & -L_3\\cos\\theta_1\\cos\\theta_2 & -\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$"
+     ],
+     "ans": "$\\begin{bmatrix}-(L_2+L_3\\sin\\theta_2)\\cos\\theta_1 & -L_3\\sin\\theta_1\\cos\\theta_2 & -\\sin\\theta_1\\sin\\theta_2 \\\\ 0 & L_3\\sin\\theta_2 & -\\cos\\theta_2 \\\\ (L_2+L_3\\sin\\theta_2)\\sin\\theta_1 & -L_3\\cos\\theta_1\\cos\\theta_2 & -\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
+     "note": "(トラ解。先生の答えは写真に無い)",
+     "tag": "演習No.2 問9"
+    },
+    {
+     "type": "numeric",
+     "q": "課題3 問1(位置ベクトル ${}^{0}\\boldsymbol{P}_E=(L_2\\sin\\theta_2+L_3\\sin\\theta_1\\sin\\theta_2,\\ L_1+L_3\\cos\\theta_2,\\ L_2\\cos\\theta_1+L_3\\cos\\theta_1\\sin\\theta_2)$)で、$L_2=3$、$L_3=2$、$\\theta_1=30^\\circ$、$\\theta_2=60^\\circ$ のとき、ヤコビ行列の $\\partial x/\\partial\\theta_1$、$\\partial x/\\partial\\theta_2$ を求めよ。(有効数字3桁。$\\cos 30^\\circ=0.8660$、$\\sin 30^\\circ=0.5000$、$\\cos 60^\\circ=0.5000$、$\\sin 60^\\circ=0.8660$)",
+     "parts": [
+      {
+       "ans": 1.5,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$\\partial x/\\partial\\theta_1$"
+      },
+      {
+       "ans": 2.0,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$\\partial x/\\partial\\theta_2$"
+      }
+     ],
+     "note": "課題3 問1の先生の答えの式に代入する。$\\partial x/\\partial\\theta_1$=1.50、$\\partial x/\\partial\\theta_2$=2.00。(途中は有効4桁、答えは3桁)",
+     "reveal": [
+      "$\\partial x/\\partial\\theta_1$ $=$ $L_3\\cos\\theta_1\\sin\\theta_2$ $=1.500$",
+      "$\\partial x/\\partial\\theta_2$ $=$ $L_2\\cos\\theta_2+L_3\\sin\\theta_1\\cos\\theta_2$ $=2.000$"
+     ],
+     "hint": "先生の答え: $\\partial x/\\partial\\theta_1=L_3\\cos\\theta_1\\sin\\theta_2$、$\\partial x/\\partial\\theta_2=L_2\\cos\\theta_2+L_3\\sin\\theta_1\\cos\\theta_2$、$\\partial z/\\partial\\theta_2=L_3\\cos\\theta_1\\cos\\theta_2$、$\\partial x/\\partial L_3=\\sin\\theta_1\\sin\\theta_2$",
+     "tag": "課題3 問1のヤコビ行列の成分"
+    },
+    {
+     "type": "numeric",
+     "q": "課題3 問1(位置ベクトル ${}^{0}\\boldsymbol{P}_E=(L_2\\sin\\theta_2+L_3\\sin\\theta_1\\sin\\theta_2,\\ L_1+L_3\\cos\\theta_2,\\ L_2\\cos\\theta_1+L_3\\cos\\theta_1\\sin\\theta_2)$)で、$L_2=3$、$L_3=2$、$\\theta_1=45^\\circ$、$\\theta_2=60^\\circ$ のとき、ヤコビ行列の $\\partial z/\\partial\\theta_2$、$\\partial x/\\partial L_3$ を求めよ。(有効数字3桁。$\\cos 45^\\circ=0.7071$、$\\sin 45^\\circ=0.7071$、$\\cos 60^\\circ=0.5000$、$\\sin 60^\\circ=0.8660$)",
+     "parts": [
+      {
+       "ans": 0.707,
+       "unit": "",
+       "abs": 0.0015,
+       "label": "$\\partial z/\\partial\\theta_2$"
+      },
+      {
+       "ans": 0.612,
+       "unit": "",
+       "abs": 0.0015,
+       "label": "$\\partial x/\\partial L_3$"
+      }
+     ],
+     "note": "課題3 問1の先生の答えの式に代入する。$\\partial z/\\partial\\theta_2$=0.707、$\\partial x/\\partial L_3$=0.612。(途中は有効4桁、答えは3桁)",
+     "reveal": [
+      "$\\partial z/\\partial\\theta_2$ $=$ $L_3\\cos\\theta_1\\cos\\theta_2$ $=0.7070$",
+      "$\\partial x/\\partial L_3$ $=$ $\\sin\\theta_1\\sin\\theta_2$ $=0.6123$"
+     ],
+     "hint": "先生の答え: $\\partial x/\\partial\\theta_1=L_3\\cos\\theta_1\\sin\\theta_2$、$\\partial x/\\partial\\theta_2=L_2\\cos\\theta_2+L_3\\sin\\theta_1\\cos\\theta_2$、$\\partial z/\\partial\\theta_2=L_3\\cos\\theta_1\\cos\\theta_2$、$\\partial x/\\partial L_3=\\sin\\theta_1\\sin\\theta_2$",
+     "tag": "課題3 問1のヤコビ行列の成分"
+    },
+    {
+     "type": "numeric",
+     "q": "演習No.2 問9(位置ベクトル ${}^{0}\\boldsymbol{P}_E=(-L_2\\sin\\theta_1-L_3\\sin\\theta_1\\sin\\theta_2,\\ -L_3\\cos\\theta_2,\\ L_1-L_2\\cos\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2)$)で、$L_2=3$、$L_3=2$、$\\theta_1=30^\\circ$、$\\theta_2=60^\\circ$ のとき、ヤコビ行列の $\\partial z/\\partial\\theta_1$、$\\partial y/\\partial\\theta_2$ を求めよ。(有効数字3桁。$\\cos 30^\\circ=0.8660$、$\\sin 30^\\circ=0.5000$、$\\cos 60^\\circ=0.5000$、$\\sin 60^\\circ=0.8660$)",
+     "parts": [
+      {
+       "ans": 2.37,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$\\partial z/\\partial\\theta_1$"
+      },
+      {
+       "ans": 1.73,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$\\partial y/\\partial\\theta_2$"
+      }
+     ],
+     "note": "演習No.2 問9のトラ解の式に代入する。(先生の答えは写真に無い)$\\partial z/\\partial\\theta_1$=2.37、$\\partial y/\\partial\\theta_2$=1.73。(途中は有効4桁、答えは3桁)",
+     "reveal": [
+      "$\\partial z/\\partial\\theta_1$ $=$ $(L_2+L_3\\sin\\theta_2)\\sin\\theta_1$ $=2.366$",
+      "$\\partial y/\\partial\\theta_2$ $=$ $L_3\\sin\\theta_2$ $=1.732$"
+     ],
+     "hint": "$\\partial z/\\partial\\theta_1=(L_2+L_3\\sin\\theta_2)\\sin\\theta_1$、$\\partial y/\\partial\\theta_2=L_3\\sin\\theta_2$",
+     "tag": "演習No.2 問9のヤコビ行列の成分"
+    }
+   ]
+  }
+ ],
+ "order": 6,
+ "roadmap": "roadmaps/robotics-2026-kouki-chukan.json"
+}

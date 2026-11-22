@@ -63,6 +63,17 @@
    }
   },
   {
+   "id": "L6",
+   "phase": "学習",
+   "label": "学習 第6回 ヤコビ行列と特異点",
+   "href": "/lesson.html?d=lessons/robotics-06/data.json",
+   "minutes": 75,
+   "why": "関節の速度から手先の速度を出す行列と、動けなくなる特異点。偏微分の道具つき。",
+   "done": {
+    "lesson": "robo_learn_06_v1"
+   }
+  },
+  {
    "id": "P1",
    "phase": "演習1周目",
    "label": "① 構成とアームの種類",
@@ -120,6 +131,18 @@
    "done": {
     "quiz": "robo_chukan_05_jun_v1",
     "total": 29
+   }
+  },
+  {
+   "id": "P6",
+   "phase": "演習1周目",
+   "label": "⑥ ヤコビ行列と特異点",
+   "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-06-jacobi/data.json",
+   "minutes": 35,
+   "why": "学習のあとで、手を動かして確かめる。",
+   "done": {
+    "quiz": "robo_chukan_06_jacobi_v1",
+    "total": 39
    }
   },
   {
