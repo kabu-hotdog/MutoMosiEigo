@@ -1,0 +1,387 @@
+{
+ "year": 2026,
+ "grade": 4,
+ "exam": "後期中間試験",
+ "subject": "ロボティクス",
+ "title": "ロボティクス ・ 学習 第2回 座標系と座標変換",
+ "storageKey": "robo_learn_02_v1",
+ "minutes": 40,
+ "goals": [
+  "絶対座標と物体座標の違いを言える",
+  "座標変換の式(2.4)を書ける・読める",
+  "回転の正の向きを言え、2次元の回転の計算ができる"
+ ],
+ "katex": true,
+ "terms": [
+  {
+   "name": "絶対座標 Σabs",
+   "plain": "空間上の特定点に固定した座標。動かない基準。"
+  },
+  {
+   "name": "物体座標 Σobj",
+   "plain": "物体上の特定点に固定した座標(新たにつくる)。物体が動けば、絶対座標に対して動く。"
+  },
+  {
+   "name": "Σ(シグマ)",
+   "plain": "座標系(座標軸のセット)の名前に使う記号。(資料外・補足)"
+  },
+  {
+   "name": "位置ベクトル",
+   "plain": "原点から点へ向かう矢印。成分(x, y, z)で表す。左上の添字(abs / obj)は、どの座標系で見たかを表す。"
+  },
+  {
+   "name": "回転変換行列 R",
+   "plain": "3×3 の行列。物体座標系の向きを、絶対座標系の向きにそろえる(回転させる)。"
+  },
+  {
+   "name": "回転角の正の向き",
+   "plain": "軸の矢印の先(上)から見て、反時計回りが正。"
+  }
+ ],
+ "blocks": [
+  {
+   "id": "b1",
+   "title": "座標系は2種類。動かない絶対座標と、物体にくっついて動く物体座標",
+   "pre": [
+    {
+     "type": "single",
+     "q": "物体にくっついていて、物体と一緒に動く座標は、どれ?(知らなくて当然)",
+     "opts": [
+      "絶対座標",
+      "物体座標",
+      "どちらでもない"
+     ],
+     "ans": "物体座標",
+     "note": "物体座標 Σobj = 物体上の特定点に固定した座標。物体が動けば、絶対座標に対して動く。"
+    }
+   ],
+   "body": "ロボットの手先の位置を、数で表すには、<b>基準になる座標</b>が要る。資料は座標を2種類に分ける。<ul><li><b>絶対座標 $\\Sigma_{abs}$</b>: 空間上の<b>特定点に固定</b>した座標(動かない基準)</li><li><b>物体座標 $\\Sigma_{obj}$</b>: 物体上の<b>特定点に固定</b>した座標(新たにつくる)</li></ul>先生の赤字: <b>物体が動けば、物体座標は絶対座標に対して動くことになる</b>。$\\Sigma$(シグマ)は座標系の名前に使う記号。<br><br>下の図には、3つのベクトルがある。<ul><li>${}^{abs}\\boldsymbol{P}$: 絶対座標の原点から点 P へ。<b>絶対座標で見た</b>位置</li><li>${}^{obj}\\boldsymbol{P}$: 物体座標の原点から点 P へ。<b>物体座標で見た</b>位置</li><li>${}^{abs}\\boldsymbol{P}_0$: 物体座標の原点を、<b>絶対座標で表した</b>ベクトル(図では「abs P0」)</li></ul>読み方のコツ: <b>左上の小さい文字(abs / obj)は、どの座標系で見たかを表す</b>。",
+   "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/r04-vectors.jpg\" alt=\"絶対座標と物体座標\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">資料 p.4 2.3.1 物体と座標系(絶対座標 Σabs、物体座標 Σobj、点 P)</figcaption></figure>",
+   "check": [
+    {
+     "type": "single",
+     "q": "空間上の特定点に固定した座標は?",
+     "opts": [
+      "絶対座標",
+      "物体座標"
+     ],
+     "ans": "絶対座標",
+     "note": "絶対座標 $\\Sigma_{abs}$。物体座標は「物体上の特定点」に固定する。(資料 p.5)"
+    },
+    {
+     "type": "single",
+     "q": "物体座標の原点を、絶対座標で表したベクトルは?",
+     "opts": [
+      "${}^{abs}\\boldsymbol{P}$",
+      "${}^{obj}\\boldsymbol{P}$",
+      "${}^{abs}\\boldsymbol{P}_0$"
+     ],
+     "ans": "${}^{abs}\\boldsymbol{P}_0$",
+     "note": "${}^{abs}\\boldsymbol{P}_0$。左上の abs = 絶対座標で見た。添字の 0 = 物体座標の原点。(資料 p.4・p.5 式(2.3))"
+    },
+    {
+     "type": "single",
+     "q": "物体が動くと、物体座標は絶対座標に対してどうなる?",
+     "opts": [
+      "絶対座標に対して動く",
+      "絶対座標と同じ場所に止まる",
+      "絶対座標が一緒に動く"
+     ],
+     "ans": "絶対座標に対して動く",
+     "note": "物体座標は物体にくっついているから、物体が動けば動く。絶対座標は動かない基準。(資料 p.5 赤字)"
+    }
+   ]
+  },
+  {
+   "id": "b2",
+   "title": "変換の式: 物体座標で見た位置を、回して、原点の位置を足す",
+   "pre": [
+    {
+     "type": "single",
+     "q": "物体座標で見た点の位置を、絶対座標で見た位置に直すとき、必要なのは?(知らなくて当然)",
+     "opts": [
+      "回転と平行移動",
+      "拡大と縮小",
+      "回転だけ"
+     ],
+     "ans": "回転と平行移動",
+     "note": "座標系の間は、軸の回転と原点の平行移動で結べる(先生の赤字)。"
+    }
+   ],
+   "body": "物体座標から絶対座標への変換は、次の式(式(2.4))で書ける。$$ {}^{abs}\\boldsymbol{P}=\\boldsymbol{R}\\,{}^{obj}\\boldsymbol{P}+{}^{abs}\\boldsymbol{P}_0 $$ここで $\\boldsymbol{R}$ は <b>3×3 の行列</b>で、<b>回転変換行列</b>という。<br><br>先生の赤字: <b>座標系間の変換は、軸の回転と原点の平行移動で表現できる</b>。(資料外・補足)読み方: 「物体座標で見た位置に $\\boldsymbol{R}$ を掛けて、向きを絶対座標にそろえる。そこへ、物体の原点の位置 ${}^{abs}\\boldsymbol{P}_0$ を足すと、絶対座標で見た位置になる」。回転が無い(向きが同じ)ときは、足し算だけになる。",
+   "example": {
+    "steps": [
+     "向きが同じ(回転なし)の物体座標。物体座標の原点は、絶対座標で $(3,\\ 2)$ の位置。",
+     "点 P の物体座標は $(1,\\ 2)$。回転なしなので、そのまま原点の位置を足す。",
+     "$P_{xa}=1+3=4$、$P_{ya}=2+2=$ ?"
+    ],
+    "fill": {
+     "type": "numeric",
+     "q": "$P_{ya}$ はいくつ?(有効数字3桁。単位なし)",
+     "parts": [
+      {
+       "ans": 4.0,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$P_{ya}$"
+      }
+     ],
+     "note": "$P_{ya}=2+2=4.00$。",
+     "reveal": [
+      "$2+2=4$"
+     ]
+    }
+   },
+   "check": [
+    {
+     "type": "single",
+     "q": "物体座標から絶対座標への変換の式(式(2.4))は、どれ?",
+     "opts": [
+      "${}^{abs}\\boldsymbol{P}=\\boldsymbol{R}\\,{}^{obj}\\boldsymbol{P}+{}^{abs}\\boldsymbol{P}_0$",
+      "${}^{abs}\\boldsymbol{P}={}^{obj}\\boldsymbol{P}+\\boldsymbol{R}\\,{}^{abs}\\boldsymbol{P}_0$",
+      "${}^{obj}\\boldsymbol{P}=\\boldsymbol{R}\\,{}^{abs}\\boldsymbol{P}+{}^{abs}\\boldsymbol{P}_0$",
+      "${}^{abs}\\boldsymbol{P}=\\boldsymbol{R}\\,({}^{obj}\\boldsymbol{P}+{}^{abs}\\boldsymbol{P}_0)$"
+     ],
+     "ans": "${}^{abs}\\boldsymbol{P}=\\boldsymbol{R}\\,{}^{obj}\\boldsymbol{P}+{}^{abs}\\boldsymbol{P}_0$",
+     "note": "回転(R)は物体座標で見た位置だけにかける。原点の位置 ${}^{abs}\\boldsymbol{P}_0$ は、あとから足す。(資料 p.5 式(2.4))"
+    },
+    {
+     "type": "single",
+     "q": "式(2.4)の R は、何?",
+     "opts": [
+      "3×3 の回転変換行列",
+      "3×1 の位置ベクトル",
+      "物体座標の原点を表すベクトル"
+     ],
+     "ans": "3×3 の回転変換行列",
+     "note": "R は 3×3 の行列で、回転変換行列という。(資料 p.5)"
+    },
+    {
+     "type": "single",
+     "q": "座標系間の変換は、何と何で表現できる、と先生は書いた?",
+     "opts": [
+      "軸の回転と原点の平行移動",
+      "軸の拡大と原点の回転",
+      "点の拡大と軸の平行移動"
+     ],
+     "ans": "軸の回転と原点の平行移動",
+     "note": "先生の赤字「座標系間の変換は軸の回転と原点の平行移動で表現できる」。(資料 p.5)"
+    }
+   ]
+  },
+  {
+   "id": "b3",
+   "title": "回転の正の向きは「上から見て反時計回り」。2次元の回転は式(2.5)",
+   "pre": [
+    {
+     "type": "single",
+     "q": "$z$ 軸まわりの回転で、正の向きは?(知らなくて当然)",
+     "opts": [
+      "$z$ 軸の矢印の先から見て反時計回り",
+      "$z$ 軸の矢印の先から見て時計回り",
+      "決まっていない"
+     ],
+     "ans": "$z$ 軸の矢印の先から見て反時計回り",
+     "note": "資料 p.5「上から見ると反時計回りが正」。"
+    }
+   ],
+   "body": "<b>(1) 回転角の正の向き</b>: 軸の矢印の先(上)から見て、<b>反時計回りが正</b>。資料の手書き「逆向きから見る!」は、図が軸の反対側から描いてあると、向きが逆に見えるという注意。(資料外・補足)右手の親指を軸の矢印の向きにそろえたとき、残りの指が巻く向きが正。$z$ 軸まわりなら $x\\to y$ の向き、$x$ 軸まわりなら $y\\to z$、$y$ 軸まわりなら $z\\to x$。<br><br><b>(2) 2次元の回転</b>: 物体座標系 $\\Sigma_{obj}$ は、絶対座標系 $\\Sigma_{abs}$ を $\\theta$ 回転させたもの。点 P は、$\\Sigma_{abs}$ で $(P_{xa},P_{ya})$、$\\Sigma_{obj}$ で $(P_{xo},P_{yo})$ と表す。2つの関係(式(2.5))は$$P_{xa}=P_{xo}\\cos\\theta-P_{yo}\\sin\\theta,\\qquad P_{ya}=P_{xo}\\sin\\theta+P_{yo}\\cos\\theta$$行列で書くと(式(2.6))$$\\begin{bmatrix}P_{xa}\\\\P_{ya}\\end{bmatrix}=\\begin{bmatrix}\\cos\\theta&-\\sin\\theta\\\\\\sin\\theta&\\cos\\theta\\end{bmatrix}\\begin{bmatrix}P_{xo}\\\\P_{yo}\\end{bmatrix}$$(資料外・補足)なぜこの式か: $x_o$ 軸の向きは、絶対座標で $(\\cos\\theta,\\sin\\theta)$。$y_o$ 軸の向きは $(-\\sin\\theta,\\cos\\theta)$。$P_{yo}$ に掛かる $x$ 成分がマイナスなのは、$y_o$ 軸が $x_a$ 軸のマイナス側へ傾くから。<br><br><b>この模試のルール</b>: 答えは<b>有効数字3桁</b>。途中の計算は<b>有効数字4桁</b>で、1段ごとに四捨五入。",
+   "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/r05-angle.jpg\" alt=\"回転角の定義\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">資料 p.5 (1) 回転角の定義: 正の方向(「逆向きから見る!」)</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/r06-rot2d.jpg\" alt=\"2次元の回転\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">資料 p.6 (2) 回転変換【2次元】(赤が物体座標軸、黒が絶対座標軸)</figcaption></figure>",
+   "example": {
+    "steps": [
+     "$\\theta=30^\\circ$ のとき $\\cos 30^\\circ=0.8660$、$\\sin 30^\\circ=0.5000$。物体座標が $(P_{xo},P_{yo})=(3,1)$。",
+     "$P_{xa}=3\\times0.8660-1\\times0.5000=2.598-0.5000=2.098$ → <b>2.10</b>",
+     "$P_{ya}=3\\times0.5000+1\\times0.8660=1.500+0.8660=$ ?"
+    ],
+    "fill": {
+     "type": "numeric",
+     "q": "$P_{ya}$ はいくつ?(有効数字3桁)",
+     "parts": [
+      {
+       "ans": 2.37,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$P_{ya}$"
+      }
+     ],
+     "note": "$P_{ya}=1.500+0.8660=2.366$ → 2.37。",
+     "reveal": [
+      "$3\\times0.5000=1.500$、$1\\times0.8660=0.8660$",
+      "$1.500+0.8660=2.366$ → 2.37"
+     ]
+    }
+   },
+   "check": [
+    {
+     "type": "single",
+     "q": "$z$ 軸まわりの回転で、正の向きは?",
+     "opts": [
+      "$z$ 軸の矢印の先から見て反時計回り",
+      "$z$ 軸の矢印の先から見て時計回り",
+      "$x$ 軸の矢印の先から見て反時計回り"
+     ],
+     "ans": "$z$ 軸の矢印の先から見て反時計回り",
+     "note": "軸の矢印の先(上)から見て反時計回りが正。(資料 p.5)"
+    },
+    {
+     "type": "numeric",
+     "q": "物体座標系 $\\Sigma_{obj}$ は、絶対座標系 $\\Sigma_{abs}$ を $60^\\circ$ 回転させたものである。点 P の物体座標が $(P_{xo},P_{yo})=(2,0)$ のとき、絶対座標 $(P_{xa},P_{ya})$ を求めよ。(有効数字3桁。$\\cos 60^\\circ=0.5000$、$\\sin 60^\\circ=0.8660$ を使う)",
+     "parts": [
+      {
+       "ans": 1.0,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$P_{xa}$"
+      },
+      {
+       "ans": 1.73,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$P_{ya}$"
+      }
+     ],
+     "note": "$P_{xa}=1.00$、$P_{ya}=1.73$。回転の式(2.5)を使い、原点がずれている時は、最後に原点の位置を足す(式(2.4)の考え方)。(途中は有効4桁、答えは3桁に四捨五入)",
+     "reveal": [
+      "$P_{xa}=2\\times0.5000-0\\times0.8660=1.000-0=1.000$",
+      "$P_{ya}=2\\times0.8660+0\\times0.5000=1.732+0=1.732$"
+     ],
+     "hint": "$P_{xa}=P_{xo}\\cos\\theta-P_{yo}\\sin\\theta$、$P_{ya}=P_{xo}\\sin\\theta+P_{yo}\\cos\\theta$",
+     "tag": "確認"
+    },
+    {
+     "type": "single",
+     "q": "式(2.5)の $P_{xa}=P_{xo}\\cos\\theta-P_{yo}\\sin\\theta$ で、$P_{yo}$ の項にマイナスが付くのはなぜ?",
+     "opts": [
+      "$y_o$ 軸が、$x_a$ 軸のマイナス側へ傾くから",
+      "$P_{yo}$ は必ず負の値だから",
+      "$\\sin\\theta$ は必ず負だから"
+     ],
+     "ans": "$y_o$ 軸が、$x_a$ 軸のマイナス側へ傾くから",
+     "note": "$y_o$ 軸の向きは、絶対座標で $(-\\sin\\theta,\\cos\\theta)$。$x$ 成分が $-\\sin\\theta$ なので、$P_{yo}$ の項にマイナスが付く。(資料外・補足の考え方)"
+    }
+   ]
+  }
+ ],
+ "summary": {
+  "rows": [
+   [
+    "絶対座標 / 物体座標",
+    "空間上の特定点に固定(動かない) / 物体上の特定点に固定(物体と一緒に動く)"
+   ],
+   [
+    "左上の添字",
+    "abs = 絶対座標で見た、obj = 物体座標で見た"
+   ],
+   [
+    "式(2.4)",
+    "$ {}^{abs}\\boldsymbol{P}=\\boldsymbol{R}\\,{}^{obj}\\boldsymbol{P}+{}^{abs}\\boldsymbol{P}_0 $。R = 3×3 の回転変換行列"
+   ],
+   [
+    "重要(赤字)",
+    "座標系間の変換は、軸の回転と原点の平行移動で表現できる"
+   ],
+   [
+    "回転の正の向き",
+    "軸の矢印の先から見て、反時計回り"
+   ],
+   [
+    "2次元の回転(式(2.5))",
+    "$P_{xa}=P_{xo}\\cos\\theta-P_{yo}\\sin\\theta$、$P_{ya}=P_{xo}\\sin\\theta+P_{yo}\\cos\\theta$"
+   ],
+   [
+    "数値のルール",
+    "答えは有効数字3桁。途中は有効4桁、1段ごとに四捨五入"
+   ]
+  ],
+  "write3": "紙に3行、友達に説明するつもりで書く:「物体座標で見た点の位置を、絶対座標で見た位置に直すには、何をする?」"
+ },
+ "final": [
+  {
+   "type": "single",
+   "q": "空間上の特定点に固定した座標は?",
+   "opts": [
+    "絶対座標",
+    "物体座標"
+   ],
+   "ans": "絶対座標",
+   "note": "絶対座標 $\\Sigma_{abs}$。(資料 p.5)"
+  },
+  {
+   "type": "single",
+   "q": "物体座標の原点を、絶対座標で表したベクトルは?",
+   "opts": [
+    "${}^{abs}\\boldsymbol{P}$",
+    "${}^{obj}\\boldsymbol{P}$",
+    "${}^{abs}\\boldsymbol{P}_0$"
+   ],
+   "ans": "${}^{abs}\\boldsymbol{P}_0$",
+   "note": "${}^{abs}\\boldsymbol{P}_0$。(資料 p.5 式(2.3))"
+  },
+  {
+   "type": "single",
+   "q": "式(2.4)で、回転変換行列 R が掛かるのは?",
+   "opts": [
+    "${}^{obj}\\boldsymbol{P}$(物体座標で見た位置)",
+    "${}^{abs}\\boldsymbol{P}_0$(物体座標の原点)",
+    "${}^{abs}\\boldsymbol{P}$(絶対座標で見た位置)"
+   ],
+   "ans": "${}^{obj}\\boldsymbol{P}$(物体座標で見た位置)",
+   "note": "式(2.4): ${}^{abs}\\boldsymbol{P}=\\boldsymbol{R}\\,{}^{obj}\\boldsymbol{P}+{}^{abs}\\boldsymbol{P}_0$。R が掛かるのは物体座標で見た位置。(資料 p.5)"
+  },
+  {
+   "type": "single",
+   "q": "回転角の正の向きは?",
+   "opts": [
+    "軸の矢印の先から見て反時計回り",
+    "軸の矢印の先から見て時計回り",
+    "原点から見て時計回り"
+   ],
+   "ans": "軸の矢印の先から見て反時計回り",
+   "note": "上から見て反時計回りが正。(資料 p.5)"
+  },
+  {
+   "type": "numeric",
+   "q": "物体座標系 $\\Sigma_{obj}$ は、絶対座標系 $\\Sigma_{abs}$ を $45^\\circ$ 回転させたものである。点 P の物体座標が $(P_{xo},P_{yo})=(4,0)$ のとき、絶対座標 $(P_{xa},P_{ya})$ を求めよ。(有効数字3桁。$\\cos 45^\\circ=0.7071$、$\\sin 45^\\circ=0.7071$ を使う)",
+   "parts": [
+    {
+     "ans": 2.83,
+     "unit": "",
+     "abs": 0.015,
+     "label": "$P_{xa}$"
+    },
+    {
+     "ans": 2.83,
+     "unit": "",
+     "abs": 0.015,
+     "label": "$P_{ya}$"
+    }
+   ],
+   "note": "$P_{xa}=2.83$、$P_{ya}=2.83$。回転の式(2.5)を使い、原点がずれている時は、最後に原点の位置を足す(式(2.4)の考え方)。(途中は有効4桁、答えは3桁に四捨五入)",
+   "reveal": [
+    "$P_{xa}=4\\times0.7071-0\\times0.7071=2.828-0=2.828$",
+    "$P_{ya}=4\\times0.7071+0\\times0.7071=2.828+0=2.828$"
+   ],
+   "hint": "$P_{xa}=P_{xo}\\cos\\theta-P_{yo}\\sin\\theta$、$P_{ya}=P_{xo}\\sin\\theta+P_{yo}\\cos\\theta$",
+   "tag": "2次元の回転"
+  },
+  {
+   "type": "single",
+   "q": "物体が動くと、物体座標は絶対座標に対してどうなる?",
+   "opts": [
+    "絶対座標に対して動く",
+    "絶対座標と同じ場所に止まる",
+    "消える"
+   ],
+   "ans": "絶対座標に対して動く",
+   "note": "物体座標は物体にくっついているから動く。(資料 p.5 赤字)"
+  }
+ ],
+ "next": [
+  {
+   "label": "演習 ② 座標系と座標変換へ",
+   "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-02-zahyokei/data.json"
+  }
+ ],
+ "footer": "出典: ロボティクス資料 p.4〜p.6(2.3 座標系の表現と変換)。「(資料外・補足)」は資料に載っていない補足。図は授業資料からの切り出し。",
+ "roadmap": "roadmaps/robotics-2026-kouki-chukan.json"
+}

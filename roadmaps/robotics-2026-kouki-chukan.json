@@ -19,15 +19,38 @@
    }
   },
   {
+   "id": "L2",
+   "phase": "学習",
+   "label": "学習 第2回 座標系と座標変換",
+   "href": "/lesson.html?d=lessons/robotics-02/data.json",
+   "minutes": 40,
+   "why": "回転行列や同次変換の土台。絶対座標と物体座標、式(2.4)、2次元の回転の計算。",
+   "done": {
+    "lesson": "robo_learn_02_v1"
+   }
+  },
+  {
    "id": "P1",
    "phase": "演習1周目",
    "label": "① 構成とアームの種類",
    "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-01-kousei/data.json",
    "minutes": 15,
-   "why": "学習のあとで、説明と図から見分ける練習。",
+   "why": "学習のあとで、手を動かして確かめる。",
    "done": {
     "quiz": "robo_chukan_01_kousei_v1",
     "total": 22
+   }
+  },
+  {
+   "id": "P2",
+   "phase": "演習1周目",
+   "label": "② 座標系と座標変換",
+   "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-02-zahyokei/data.json",
+   "minutes": 20,
+   "why": "学習のあとで、手を動かして確かめる。",
+   "done": {
+    "quiz": "robo_chukan_02_zahyokei_v1",
+    "total": 20
    }
   },
   {
