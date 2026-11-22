@@ -1,0 +1,410 @@
+{
+ "year": 2026,
+ "grade": 4,
+ "exam": "後期中間試験",
+ "subject": "ロボティクス",
+ "title": "ロボティクス ・ 学習 第4回 同次変換行列",
+ "storageKey": "robo_learn_04_v1",
+ "minutes": 45,
+ "goals": [
+  "回転と並進を、式(2.4)の形で計算できる",
+  "同次変換行列 A の形(左上 R、右上 T、下は 0 0 0 1)を言える・作れる",
+  "A と、下に 1 を付けた座標で、座標を計算できる"
+ ],
+ "katex": true,
+ "terms": [
+  {
+   "name": "平行移動(並進)",
+   "plain": "座標系の向きを変えずに、原点だけをずらすこと。"
+  },
+  {
+   "name": "並進ベクトル T",
+   "plain": "原点がどれだけずれたか(x 方向、y 方向、z 方向)を、3つの数で表したもの。"
+  },
+  {
+   "name": "同次変換行列 A",
+   "plain": "回転と並進を、1回の掛け算で行えるように1つにまとめた 4×4 の行列。"
+  },
+  {
+   "name": "同次座標",
+   "plain": "座標 (x, y, z) の下に 1 を付けて、4つの数にした形。付ける数は 1 に決まっている。(資料外・補足)"
+  },
+  {
+   "name": "0 0 0 1(下の行)",
+   "plain": "同次変換行列の一番下の行。いつも「0 0 0 1」と決まっている。(資料 p.12)"
+  }
+ ],
+ "blocks": [
+  {
+   "id": "b1",
+   "title": "回転+並進: 回してから、原点のずれを足す(問題2)",
+   "pre": [
+    {
+     "type": "single",
+     "q": "座標系を平行移動(並進)させると、座標軸の向きはどうなる?(知らなくて当然)",
+     "opts": [
+      "変わらない",
+      "90° 回る",
+      "逆向きになる"
+     ],
+     "ans": "変わらない",
+     "note": "並進は、向きを変えずに原点だけをずらす。(資料 p.11)"
+    }
+   ],
+   "body": "<b>並進変換</b>(資料 p.11): 座標系 $\\Sigma_a$ を、$x$ 軸方向に $p_x$、$y$ 軸方向に $p_y$、$z$ 軸方向に $p_z$ 平行移動させて、座標系 $\\Sigma_b$ を作る。<b>座標軸の向きは変わらない</b>。原点だけが $(p_x,p_y,p_z)$ ずれる。$\\Sigma_b$ の座標を $\\Sigma_a$ の座標に直すには、足し算だけでよい(資料外・補足)。<br><br>回転と並進が両方あるときは、前回の式(2.4)の考え方を使う。<b>先に回転(行列を掛ける)、あとから並進(原点のずれを足す)</b>。$${}^{a}\\boldsymbol{P}=\\boldsymbol{R}\\,{}^{b}\\boldsymbol{P}+{}^{a}\\boldsymbol{T}_b$$ 右辺は $\\boldsymbol{R}\\,{}^{b}\\boldsymbol{P}+{}^{a}\\boldsymbol{T}_b$ と読む。<br>【問題2】(資料 p.11): $\\Sigma_b$ は、$\\Sigma_a$ を $z_a$ 軸まわりに $90^\\circ$ 回転させ、$x_a$ 方向に 2、$y_a$ 方向に 4、$z_a$ 方向に 4 移動させたもの。点 P の $\\Sigma_b$ での座標は ${}^{b}\\boldsymbol{P}=(3,2,2)$。$\\Sigma_a$ での座標 ${}^{a}\\boldsymbol{P}$ は?<br>① 回転の行列($\\cos 90^\\circ=0$、$\\sin 90^\\circ=1$): $\\boldsymbol{R}(z_a,90^\\circ)=\\begin{bmatrix}0&-1&0\\\\1&0&0\\\\0&0&1\\end{bmatrix}$<br>② 回転: $\\begin{bmatrix}0&-1&0\\\\1&0&0\\\\0&0&1\\end{bmatrix}\\begin{bmatrix}3\\\\2\\\\2\\end{bmatrix}=\\begin{bmatrix}-2\\\\3\\\\2\\end{bmatrix}$<br>③ 並進を足す: $\\begin{bmatrix}-2\\\\3\\\\2\\end{bmatrix}+\\begin{bmatrix}2\\\\4\\\\4\\end{bmatrix}=\\begin{bmatrix}0\\\\7\\\\6\\end{bmatrix}$。答え ${}^{a}\\boldsymbol{P}=(0,7,6)$。<br>(行列 × 座標の計算は、前回の復習: 各行と座標を、順に掛けて足す。)",
+   "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/r11-two-frames.jpg\" alt=\"2つの座標系 Σa と Σb\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">資料 p.11 【問題2】の図。Σb の原点は、Σa の原点から離れている。P は Σb で (3, 2, 2)</figcaption></figure>",
+   "example": {
+    "steps": [
+     "向きが同じで、原点だけが $x_a$ 方向に 1、$y_a$ 方向に 2、$z_a$ 方向に 3 ずれた座標系 $\\Sigma_b$。(回転なし)",
+     "$\\Sigma_b$ での点 P は $(4,\\ 5,\\ 6)$。回転なしなので、足し算だけ。",
+     "$P_x=4+1=5$、$P_y=5+2=7$、$P_z=6+3=$ ?"
+    ],
+    "fill": {
+     "type": "numeric",
+     "q": "$P_z$ はいくつ?(有効数字3桁)",
+     "parts": [
+      {
+       "ans": 9.0,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$P_z$"
+      }
+     ],
+     "note": "$P_z=6+3=9.00$。",
+     "reveal": [
+      "$6+3=9$"
+     ]
+    }
+   },
+   "check": [
+    {
+     "type": "single",
+     "q": "座標系を回転させず、原点だけをずらしたとき、$\\Sigma_b$ の座標を $\\Sigma_a$ の座標に直すには?",
+     "opts": [
+      "原点のずれを足す",
+      "原点のずれを掛ける",
+      "原点のずれを引いて 0 にする"
+     ],
+     "ans": "原点のずれを足す",
+     "note": "向きが同じなので、回転の行列は要らない。原点のずれを足すだけ。(資料外・補足)"
+    },
+    {
+     "type": "single",
+     "q": "回転と並進が両方あるとき、${}^{a}\\boldsymbol{P}$ は?",
+     "opts": [
+      "$\\boldsymbol{R}\\,{}^{b}\\boldsymbol{P}+{}^{a}\\boldsymbol{T}_b$",
+      "$\\boldsymbol{R}\\,({}^{b}\\boldsymbol{P}+{}^{a}\\boldsymbol{T}_b)$",
+      "${}^{b}\\boldsymbol{P}+\\boldsymbol{R}\\,{}^{a}\\boldsymbol{T}_b$"
+     ],
+     "ans": "$\\boldsymbol{R}\\,{}^{b}\\boldsymbol{P}+{}^{a}\\boldsymbol{T}_b$",
+     "note": "先に回転(R を掛ける)、あとから並進(T を足す)。(資料 p.11・式(2.4)の考え方)"
+    },
+    {
+     "type": "numeric",
+     "q": "座標系 $\\Sigma_b$ は、$\\Sigma_a$ を $z_a$ 軸まわりに $90^\\circ$ 回転させ、さらに $x_a$ 方向に $2$、$y_a$ 方向に $4$、$z_a$ 方向に $4$ 移動させたものである。$\\Sigma_b$ での点 P の座標が ${}^{b}\\boldsymbol{P}=(3,2,2)$ のとき、$\\Sigma_a$ での座標のうち ${}^{a}P_y$、${}^{a}P_z$ を求めよ。(有効数字3桁。$\\cos 90^\\circ=0$、$\\sin 90^\\circ=1.000$)",
+     "parts": [
+      {
+       "ans": 7.0,
+       "unit": "",
+       "abs": 0.015,
+       "label": "${}^{a}P_y$"
+      },
+      {
+       "ans": 6.0,
+       "unit": "",
+       "abs": 0.015,
+       "label": "${}^{a}P_z$"
+      }
+     ],
+     "note": "${}^{a}\\boldsymbol{P}=\\boldsymbol{R}(z_a,90^\\circ)\\,{}^{b}\\boldsymbol{P}+{}^{a}\\boldsymbol{T}_b$(式(2.4)の考え方)。${}^{a}P_y$=7.00、${}^{a}P_z$=6.00。(途中は有効4桁、答えは3桁)",
+     "reveal": [
+      "${}^{a}P_y$: 回転の部分 3.000 + 0 + 0 = 3.000、並進を足して 3.000 + 4 = 7.000 → 7.00",
+      "${}^{a}P_z$: 回転の部分 0 + 0 + 2.000 = 2.000、並進を足して 2.000 + 4 = 6.000 → 6.00"
+     ],
+     "hint": "各行について「$R$ の部分の行 × $(P_x,P_y,P_z)$ + 並進の成分」。",
+     "tag": "確認"
+    }
+   ]
+  },
+  {
+   "id": "b2",
+   "title": "同次変換行列 A: 回転と並進を、1回の掛け算にまとめる",
+   "pre": [
+    {
+     "type": "single",
+     "q": "回転は「掛け算」、並進は「足し算」。この2つを、1回の掛け算にまとめられたら、便利?(知らなくて当然)",
+     "opts": [
+      "便利(何度も続けて使える)",
+      "便利ではない",
+      "どちらでもない"
+     ],
+     "ans": "便利(何度も続けて使える)",
+     "note": "1つの行列にまとめれば、ロボットの関節をいくつもつなぐとき、行列を掛けるだけで済む。(次の回で使う。資料外・補足)"
+    }
+   ],
+   "body": "<b>通常の変換は、回転と並進の組み合わせで実現できる</b>(資料 p.12)。式 ${}^{abs}\\boldsymbol{P}=\\boldsymbol{R}\\,{}^{obj}\\boldsymbol{P}+{}^{abs}\\boldsymbol{P}_0$ を、次のように書き換える。$$\\begin{bmatrix}{}^{abs}\\boldsymbol{P}\\\\1\\end{bmatrix}=\\begin{bmatrix}\\boldsymbol{R}&{}^{abs}\\boldsymbol{P}_0\\\\0\\ 0\\ 0&1\\end{bmatrix}\\begin{bmatrix}{}^{obj}\\boldsymbol{P}\\\\1\\end{bmatrix}=\\boldsymbol{A}\\begin{bmatrix}{}^{obj}\\boldsymbol{P}\\\\1\\end{bmatrix}$$この <b>$\\boldsymbol{A}$ を同次変換行列</b>という。ポイント3つ:<ul><li><b>座標の下に $1$ を付けて、4つの数にする</b>。付ける数は <b>1 に決まっている</b>(資料の手書き「決まり」)。</li><li>行列 $\\boldsymbol{A}$ は <b>4×4</b>。<b>左上 3×3 が回転 $\\boldsymbol{R}$</b>、<b>右上 3×1 が並進(原点の位置)</b>、<b>一番下の行は $0\\ 0\\ 0\\ 1$</b>。</li><li>資料の書き込み「<b>1発で出す!</b>」: 回転と並進を、1つの行列にまとめて、一度で求める。</li></ul>(資料外・補足)なぜ 1 を付けるか: 掛け算をすると、上の3行は $\\boldsymbol{R}\\boldsymbol{P}+\\boldsymbol{T}\\times1$(回転+並進)、一番下の行は $0\\times P+1\\times1=1$ になる。1 を付けることで、並進の足し算が、掛け算の中に入る。回転と並進を1つにまとめると便利(関節をいくつもつなぐとき、行列を掛けるだけで済む)。<br><br>【例題】(資料 p.12)問題2 の同次変換行列: $\\boldsymbol{R}(z_a,90^\\circ)$ と、${}^{a}\\boldsymbol{T}_b=(2,4,4)$ を、上の形に入れると<br>${}^{a}\\boldsymbol{A}_b=$ $\\begin{bmatrix}0 & -1 & 0 & 2 \\\\ 1 & 0 & 0 & 4 \\\\ 0 & 0 & 1 & 4 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
+   "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/r12-homog.jpg\" alt=\"同次変換行列 A の形\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">資料 p.12 同次変換行列 A(赤い線で、左上=回転、右上=並進、下の行=0 0 0 1 に区切る)</figcaption></figure>",
+   "example": {
+    "steps": [
+     "$\\boldsymbol{R}(z_a,90^\\circ)=\\begin{bmatrix}0&-1&0\\\\1&0&0\\\\0&0&1\\end{bmatrix}$ を、4×4 の左上 3×3 に入れる。",
+     "${}^{a}\\boldsymbol{T}_b=(2,4,4)$ を、右上の 3×1(4列目の上3つ)に入れる。",
+     "一番下の行を $0\\ 0\\ 0\\ 1$ にする。できあがり: $\\begin{bmatrix}0 & -1 & 0 & 2 \\\\ 1 & 0 & 0 & 4 \\\\ 0 & 0 & 1 & 4 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$"
+    ],
+    "fill": {
+     "type": "single",
+     "q": "${}^{a}\\boldsymbol{A}_b$(回転 $\\boldsymbol{R}(z_a,90^\\circ)$、並進 $(2,4,4)$)は、どれ?",
+     "opts": [
+      "$\\begin{bmatrix}0 & -1 & 0 & 0 \\\\ 1 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 2 & 4 & 4 & 1\\end{bmatrix}$",
+      "$\\begin{bmatrix}0 & -1 & 0 & 2 \\\\ 1 & 0 & 0 & 4 \\\\ 0 & 0 & 1 & 4 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
+      "$\\begin{bmatrix}0 & -1 & 0 & 2 \\\\ 1 & 0 & 0 & 4 \\\\ 0 & 0 & 1 & 4 \\\\ 0 & 0 & 0 & 0\\end{bmatrix}$",
+      "$\\begin{bmatrix}0 & 1 & 0 & 2 \\\\ -1 & 0 & 0 & 4 \\\\ 0 & 0 & 1 & 4 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$"
+     ],
+     "ans": "$\\begin{bmatrix}0 & -1 & 0 & 2 \\\\ 1 & 0 & 0 & 4 \\\\ 0 & 0 & 1 & 4 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
+     "note": "左上が R、右上が T、一番下が $0\\ 0\\ 0\\ 1$。"
+    }
+   },
+   "check": [
+    {
+     "type": "single",
+     "q": "同次変換行列 $\\boldsymbol{A}$ の大きさは?",
+     "opts": [
+      "4×4",
+      "3×3",
+      "3×4"
+     ],
+     "ans": "4×4",
+     "note": "回転 3×3 の右に並進 3×1 を付け、下に1行足して 4×4。(資料 p.12)"
+    },
+    {
+     "type": "single",
+     "q": "同次変換行列 $\\boldsymbol{A}$ の、一番下の行は?",
+     "opts": [
+      "$0\\ 0\\ 0\\ 1$",
+      "$1\\ 1\\ 1\\ 1$",
+      "$0\\ 0\\ 0\\ 0$"
+     ],
+     "ans": "$0\\ 0\\ 0\\ 1$",
+     "note": "資料 p.12 の赤い線の下の行。いつも $0\\ 0\\ 0\\ 1$ に決まっている。"
+    },
+    {
+     "type": "single",
+     "q": "座標 $(P_x,P_y,P_z)$ に、同次変換行列を掛ける時、座標の下に付ける数は?",
+     "opts": [
+      "1",
+      "0",
+      "$P_x$"
+     ],
+     "ans": "1",
+     "note": "付ける数は 1 に決まっている。(資料 p.12「決まり」)"
+    }
+   ]
+  },
+  {
+   "id": "b3",
+   "title": "同次変換行列で座標を計算する(4×4 × 4つの数)",
+   "pre": [
+    {
+     "type": "single",
+     "q": "4×4 の行列に、4つの数を縦に並べたものを掛けると、結果は?(知らなくて当然)",
+     "opts": [
+      "4つの数を縦に並べたもの",
+      "1つの数",
+      "4×4 の行列"
+     ],
+     "ans": "4つの数を縦に並べたもの",
+     "note": "前回と同じ。各行と座標を、順に掛けて足す。結果は縦に4つの数。"
+    }
+   ],
+   "body": "4×4 の行列に、4つの数を縦に並べたものを掛けると、結果も4つの数を縦に並べたものになる。<br>計算の流れ: ① 座標の下に 1 を付ける。② 同次変換行列 $\\boldsymbol{A}$ を左から掛ける。③ 下の 1 を除いた上3つが、新しい座標。<br><br>【例題】(資料 p.12)${}^{b}\\boldsymbol{P}=(3,2,2)$ のとき:$$\\begin{bmatrix}{}^{a}\\boldsymbol{P}\\\\1\\end{bmatrix}={}^{a}\\boldsymbol{A}_b\\begin{bmatrix}{}^{b}\\boldsymbol{P}\\\\1\\end{bmatrix}=\\begin{bmatrix}0&-1&0&2\\\\1&0&0&4\\\\0&0&1&4\\\\0&0&0&1\\end{bmatrix}\\begin{bmatrix}3\\\\2\\\\2\\\\1\\end{bmatrix}=\\begin{bmatrix}0\\\\7\\\\6\\\\1\\end{bmatrix}$$1行目: $0\\times3+(-1)\\times2+0\\times2+2\\times1=0$。2行目: $1\\times3+0\\times2+0\\times2+4\\times1=7$。3行目: $0\\times3+0\\times2+1\\times2+4\\times1=6$。4行目: $0+0+0+1=1$。答え ${}^{a}\\boldsymbol{P}=(0,7,6)$(最初の「回転+並進」の計算と、同じ答え)。<br><br>見分け方(資料外・補足): 回転が無いときは左上が単位行列(対角が 1)、並進が無いとき(原点が同じ)は、4列目の上3つが全て 0。",
+   "example": {
+    "steps": [
+     "${}^{a}\\boldsymbol{A}_b=\\begin{bmatrix}1&0&0&1\\\\0&1&0&2\\\\0&0&1&3\\\\0&0&0&1\\end{bmatrix}$(回転なし、並進 $(1,2,3)$)。${}^{b}\\boldsymbol{P}=(4,5,6)$ → $(4,5,6,1)$ とする。",
+     "1行目 = $1\\times4+0\\times5+0\\times6+1\\times1=5$、2行目 = $0\\times4+1\\times5+0\\times6+2\\times1=7$",
+     "3行目 = $0\\times4+0\\times5+1\\times6+3\\times1=$ ?"
+    ],
+    "fill": {
+     "type": "numeric",
+     "q": "3行目はいくつ?(有効数字3桁)",
+     "parts": [
+      {
+       "ans": 9.0,
+       "unit": "",
+       "abs": 0.015,
+       "label": "3行目"
+      }
+     ],
+     "note": "$6+3=9.00$。",
+     "reveal": [
+      "$0+0+6+3=9$"
+     ]
+    }
+   },
+   "check": [
+    {
+     "type": "numeric",
+     "q": "同次変換行列 ${}^{a}\\boldsymbol{A}_b=\\begin{bmatrix}\\frac{\\sqrt{3}}{2} & - \\frac{1}{2} & 0 & 1 \\\\ \\frac{1}{2} & \\frac{\\sqrt{3}}{2} & 0 & 2 \\\\ 0 & 0 & 1 & 3 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$ で、$\\Sigma_b$ での点 P の座標が ${}^{b}\\boldsymbol{P}=(4,2,1)$ のとき、$\\Sigma_a$ での座標のうち ${}^{a}P_x$、${}^{a}P_y$ を求めよ。(有効数字3桁。$\\boldsymbol{P}$ の下に 1 を付けて 4 成分にして掛ける。$\\cos 30^\\circ=0.8660$、$\\sin 30^\\circ=0.5000$ を使う)",
+     "parts": [
+      {
+       "ans": 3.46,
+       "unit": "",
+       "abs": 0.015,
+       "label": "${}^{a}P_x$"
+      },
+      {
+       "ans": 5.73,
+       "unit": "",
+       "abs": 0.015,
+       "label": "${}^{a}P_y$"
+      }
+     ],
+     "note": "$\\begin{bmatrix}{}^{a}\\boldsymbol{P}\\\\1\\end{bmatrix}={}^{a}\\boldsymbol{A}_b\\begin{bmatrix}{}^{b}\\boldsymbol{P}\\\\1\\end{bmatrix}$。${}^{a}P_x$=3.46、${}^{a}P_y$=5.73。(途中は有効4桁、答えは3桁)",
+     "reveal": [
+      "${}^{a}P_x$: 回転の部分 3.464 + (-1.000) + 0 = 2.464、並進を足して 2.464 + 1 = 3.464 → 3.46",
+      "${}^{a}P_y$: 回転の部分 2.000 + 1.732 + 0 = 3.732、並進を足して 3.732 + 2 = 5.732 → 5.73"
+     ],
+     "hint": "各行について「$R$ の部分の行 × $(P_x,P_y,P_z)$ + 並進の成分」。",
+     "tag": "確認"
+    },
+    {
+     "type": "single",
+     "q": "同次変換行列で、回転が無い(向きが同じ)ときの左上 3×3 は?",
+     "opts": [
+      "単位行列(対角が 1、他は 0)",
+      "全て 0",
+      "全て 1"
+     ],
+     "ans": "単位行列(対角が 1、他は 0)",
+     "note": "回さないので、座標がそのまま出てくる行列(単位行列)。(資料外・補足)"
+    },
+    {
+     "type": "single",
+     "q": "同次変換行列で、並進が無い(原点が同じ)ときの、4列目の上3つは?",
+     "opts": [
+      "全て 0",
+      "全て 1",
+      "回転角の値"
+     ],
+     "ans": "全て 0",
+     "note": "原点のずれが無いので、並進ベクトルは $(0,0,0)$。(資料外・補足)"
+    }
+   ]
+  }
+ ],
+ "summary": {
+  "rows": [
+   [
+    "並進(平行移動)",
+    "向きは変わらず、原点だけがずれる。座標に原点のずれを足す"
+   ],
+   [
+    "回転+並進",
+    "${}^{a}\\boldsymbol{P}=\\boldsymbol{R}\\,{}^{b}\\boldsymbol{P}+{}^{a}\\boldsymbol{T}_b$(先に回転、あとから並進)"
+   ],
+   [
+    "同次変換行列 A",
+    "4×4。左上 3×3 = 回転 R、右上 3×1 = 並進 T、一番下の行 = $0\\ 0\\ 0\\ 1$"
+   ],
+   [
+    "使い方",
+    "座標の下に 1(決まり)を付けて 4つの数にし、A を左から掛ける。上3つが新しい座標"
+   ],
+   [
+    "先生の書き込み",
+    "「1発で出す!」: 回転と並進を、1つの行列で一度に求める"
+   ],
+   [
+    "例(問題2)",
+    "A は 左上 $\\boldsymbol{R}(z_a,90^\\circ)$、右上 $(2,4,4)$。${}^{b}\\boldsymbol{P}=(3,2,2)$ → ${}^{a}\\boldsymbol{P}=(0,7,6)$"
+   ],
+   [
+    "数値のルール",
+    "答えは有効数字3桁。途中は有効4桁、1段ごとに四捨五入"
+   ]
+  ],
+  "write3": "紙に3行、友達に説明するつもりで書く:「同次変換行列 A の4つの部分(左上・右上・下の行・座標の下の 1)は、それぞれ何か」"
+ },
+ "final": [
+  {
+   "type": "single",
+   "q": "同次変換行列 $\\boldsymbol{A}$ の大きさは?",
+   "opts": [
+    "4×4",
+    "3×3",
+    "3×4"
+   ],
+   "ans": "4×4",
+   "note": "(資料 p.12)"
+  },
+  {
+   "type": "single",
+   "q": "同次変換行列 $\\boldsymbol{A}$ の、一番下の行は?",
+   "opts": [
+    "$0\\ 0\\ 0\\ 1$",
+    "$1\\ 1\\ 1\\ 1$",
+    "$0\\ 0\\ 0\\ 0$"
+   ],
+   "ans": "$0\\ 0\\ 0\\ 1$",
+   "note": "(資料 p.12)"
+  },
+  {
+   "type": "single",
+   "q": "同次変換行列で、右上の 3×1 は何を表す?",
+   "opts": [
+    "並進(原点の位置)",
+    "回転",
+    "座標の大きさ"
+   ],
+   "ans": "並進(原点の位置)",
+   "note": "左上 3×3 が回転、右上 3×1 が並進。(資料 p.12)"
+  },
+  {
+   "type": "single",
+   "q": "回転と並進のある変換の式は?",
+   "opts": [
+    "$\\boldsymbol{R}\\,{}^{b}\\boldsymbol{P}+{}^{a}\\boldsymbol{T}_b$",
+    "$\\boldsymbol{R}\\,({}^{b}\\boldsymbol{P}+{}^{a}\\boldsymbol{T}_b)$",
+    "${}^{b}\\boldsymbol{P}+\\boldsymbol{R}\\,{}^{a}\\boldsymbol{T}_b$"
+   ],
+   "ans": "$\\boldsymbol{R}\\,{}^{b}\\boldsymbol{P}+{}^{a}\\boldsymbol{T}_b$",
+   "note": "先に回転、あとから並進。(資料 p.11)"
+  },
+  {
+   "type": "numeric",
+   "q": "座標系 $\\Sigma_b$ は、$\\Sigma_a$ を $z_a$ 軸まわりに $45^\\circ$ 回転させ、さらに $x_a$ 方向に $3$、$y_a$ 方向に $1$、$z_a$ 方向に $2$ 移動させたものである。$\\Sigma_b$ での点 P の座標が ${}^{b}\\boldsymbol{P}=(2,2,3)$ のとき、$\\Sigma_a$ での座標のうち ${}^{a}P_y$ を求めよ。(有効数字3桁。$\\cos 45^\\circ=0.7071$、$\\sin 45^\\circ=0.7071$)",
+   "parts": [
+    {
+     "ans": 3.83,
+     "unit": "",
+     "abs": 0.015,
+     "label": "${}^{a}P_y$"
+    }
+   ],
+   "note": "${}^{a}\\boldsymbol{P}=\\boldsymbol{R}(z_a,45^\\circ)\\,{}^{b}\\boldsymbol{P}+{}^{a}\\boldsymbol{T}_b$(式(2.4)の考え方)。${}^{a}P_y$=3.83。(途中は有効4桁、答えは3桁)",
+   "reveal": [
+    "${}^{a}P_y$: 回転の部分 1.414 + 1.414 + 0 = 2.828、並進を足して 2.828 + 1 = 3.828 → 3.83"
+   ],
+   "hint": "各行について「$R$ の部分の行 × $(P_x,P_y,P_z)$ + 並進の成分」。",
+   "tag": "座標の計算"
+  },
+  {
+   "type": "single",
+   "q": "${}^{a}\\boldsymbol{A}_b$(回転 $\\boldsymbol{R}(z_a,90^\\circ)$、並進 $(2,4,4)$)は?",
+   "opts": [
+    "$\\begin{bmatrix}0 & -1 & 0 & 0 \\\\ 1 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 2 & 4 & 4 & 1\\end{bmatrix}$",
+    "$\\begin{bmatrix}0 & -1 & 0 & 2 \\\\ 1 & 0 & 0 & 4 \\\\ 0 & 0 & 1 & 4 \\\\ 0 & 0 & 0 & 0\\end{bmatrix}$",
+    "$\\begin{bmatrix}0 & 1 & 0 & 2 \\\\ -1 & 0 & 0 & 4 \\\\ 0 & 0 & 1 & 4 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
+    "$\\begin{bmatrix}0 & -1 & 0 & 2 \\\\ 1 & 0 & 0 & 4 \\\\ 0 & 0 & 1 & 4 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$"
+   ],
+   "ans": "$\\begin{bmatrix}0 & -1 & 0 & 2 \\\\ 1 & 0 & 0 & 4 \\\\ 0 & 0 & 1 & 4 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
+   "note": "左上が R、右上が T、一番下が $0\\ 0\\ 0\\ 1$。(資料 p.12 例題)"
+  }
+ ],
+ "next": [
+  {
+   "label": "演習 ④ 同次変換行列へ",
+   "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-04-douji/data.json"
+  }
+ ],
+ "footer": "出典: ロボティクス資料 p.11〜p.12(2.3 並進変換・同次変換行列)。「(資料外・補足)」は資料に載っていない補足。図は授業資料からの切り出し。",
+ "roadmap": "roadmaps/robotics-2026-kouki-chukan.json"
+}

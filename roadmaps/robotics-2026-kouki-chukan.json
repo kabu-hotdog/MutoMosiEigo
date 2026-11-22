@@ -41,6 +41,17 @@
    }
   },
   {
+   "id": "L4",
+   "phase": "学習",
+   "label": "学習 第4回 同次変換行列",
+   "href": "/lesson.html?d=lessons/robotics-04/data.json",
+   "minutes": 45,
+   "why": "回転と並進を、4×4 の行列1つにまとめる。次の順運動学で、毎回使う道具。",
+   "done": {
+    "lesson": "robo_learn_04_v1"
+   }
+  },
+  {
    "id": "P1",
    "phase": "演習1周目",
    "label": "① 構成とアームの種類",
@@ -74,6 +85,18 @@
    "done": {
     "quiz": "robo_chukan_03_kaiten_v1",
     "total": 31
+   }
+  },
+  {
+   "id": "P4",
+   "phase": "演習1周目",
+   "label": "④ 同次変換行列",
+   "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-04-douji/data.json",
+   "minutes": 25,
+   "why": "学習のあとで、手を動かして確かめる。",
+   "done": {
+    "quiz": "robo_chukan_04_douji_v1",
+    "total": 22
    }
   },
   {
