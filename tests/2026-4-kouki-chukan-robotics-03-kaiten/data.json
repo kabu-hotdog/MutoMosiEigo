@@ -1,0 +1,408 @@
+{
+ "year": 2026,
+ "grade": 4,
+ "exam": "後期中間試験",
+ "subject": "ロボティクス",
+ "title": "ロボティクス ・ ③ 回転変換行列",
+ "subtitle": "z・x・y 軸まわりの回転行列、3次元の座標計算、合成回転",
+ "eyebrow": "ロボティクス ・ 演習",
+ "description": "学習 第3回の範囲。単位ベクトルから作る回転変換行列、3軸の行列の見分け方、3次元の座標計算(有効数字3桁)、合成回転の掛ける順。",
+ "storageKey": "robo_chukan_03_kaiten_v1",
+ "pointsPerQ": 100,
+ "katex": true,
+ "tip": "<b>答えは有効数字3桁。途中は有効4桁で、1段ごとに四捨五入。</b> 行列は選択肢から選ぶ。分からない時は「ヒント」、それでも無理なら「解答を見る」。",
+ "footer": "ロボティクス 後期中間試験(11/30) ・ 出題範囲: ロボティクス資料 p.7〜p.10、課題1、演習No.1",
+ "sections": [
+  {
+   "id": "s1",
+   "no": "01",
+   "title": "z軸まわりの回転と単位ベクトル",
+   "qs": [
+    {
+     "type": "single",
+     "q": "$z$ 軸まわりに回しても、変わらない成分は?",
+     "opts": [
+      "$z$ 成分",
+      "$x$ 成分",
+      "$y$ 成分"
+     ],
+     "ans": "$z$ 成分",
+     "note": "回る軸($z$)の向きは動かない。(資料 p.7)",
+     "tag": "z軸まわり"
+    },
+    {
+     "type": "single",
+     "q": "単位ベクトル $\\boldsymbol{i}$($x_0$ 軸の向き)の成分(z 軸まわり)は?",
+     "opts": [
+      "$(0,\\ 0,\\ 1)$",
+      "$(\\cos\\theta,\\ \\sin\\theta,\\ 0)$",
+      "$(-\\sin\\theta,\\ \\cos\\theta,\\ 0)$"
+     ],
+     "ans": "$(\\cos\\theta,\\ \\sin\\theta,\\ 0)$",
+     "note": "$x$ 成分 $\\cos\\theta$、$y$ 成分 $\\sin\\theta$、$z$ 成分 $0$。(資料 p.7 ①の枠)",
+     "tag": "z軸まわり"
+    },
+    {
+     "type": "single",
+     "q": "単位ベクトル $\\boldsymbol{j}$($y_0$ 軸の向き)の成分(z 軸まわり)は?",
+     "opts": [
+      "$(0,\\ 0,\\ 1)$",
+      "$(\\cos\\theta,\\ \\sin\\theta,\\ 0)$",
+      "$(-\\sin\\theta,\\ \\cos\\theta,\\ 0)$"
+     ],
+     "ans": "$(-\\sin\\theta,\\ \\cos\\theta,\\ 0)$",
+     "note": "$x$ 成分 $-\\sin\\theta$、$y$ 成分 $\\cos\\theta$、$z$ 成分 $0$。(資料 p.7 ②の枠)",
+     "tag": "z軸まわり"
+    },
+    {
+     "type": "single",
+     "q": "単位ベクトル $\\boldsymbol{k}$($z_0$ 軸の向き)の成分(z 軸まわり)は?",
+     "opts": [
+      "$(0,\\ 0,\\ 1)$",
+      "$(\\cos\\theta,\\ \\sin\\theta,\\ 0)$",
+      "$(-\\sin\\theta,\\ \\cos\\theta,\\ 0)$"
+     ],
+     "ans": "$(0,\\ 0,\\ 1)$",
+     "note": "$z$ 軸は動かないので $(0,0,1)$。(資料 p.7 ③の枠)",
+     "tag": "z軸まわり"
+    },
+    {
+     "type": "single",
+     "q": "回転変換行列の列は、何を並べたもの?",
+     "opts": [
+      "回転後の軸の単位ベクトルの成分",
+      "回転前の座標の値",
+      "回転角 θ の値"
+     ],
+     "ans": "回転後の軸の単位ベクトルの成分",
+     "note": "新しい軸 $x_0,y_0,z_0$ の向きを、元の座標の成分で表して、列に並べる。(資料 p.7 の考え方)",
+     "tag": "z軸まわり"
+    },
+    {
+     "type": "single",
+     "q": "資料 p.7 の式(2.7)には、誤植と思われる所がある。どこ?",
+     "opts": [
+      "左辺の3行目が $P_y$ になっている(正しくは $P_z$)",
+      "行列の 3×3 の成分が全て 0",
+      "式の左右が逆になっている"
+     ],
+     "ans": "左辺の3行目が $P_y$ になっている(正しくは $P_z$)",
+     "note": "左辺は $P_x,P_y,P_z$ の縦ベクトルのはずだが、3行目が $P_y$ と印刷されている。(資料 p.7)",
+     "tag": "z軸まわり"
+    }
+   ]
+  },
+  {
+   "id": "s2",
+   "no": "02",
+   "title": "x・y・z軸まわりの行列を選ぶ",
+   "qs": [
+    {
+     "type": "single",
+     "q": "$z$ 軸まわりに $\\theta$ 回転する $\\boldsymbol{R}(z,\\theta)$ は?",
+     "opts": [
+      "$\\begin{bmatrix}\\cos\\theta&-\\sin\\theta&0\\\\\\sin\\theta&\\cos\\theta&0\\\\0&0&1\\end{bmatrix}$",
+      "$\\begin{bmatrix}\\cos\\theta&\\sin\\theta&0\\\\-\\sin\\theta&\\cos\\theta&0\\\\0&0&1\\end{bmatrix}$",
+      "$\\begin{bmatrix}1&0&0\\\\0&\\cos\\theta&-\\sin\\theta\\\\0&\\sin\\theta&\\cos\\theta\\end{bmatrix}$",
+      "$\\begin{bmatrix}\\cos\\theta&-\\sin\\theta&0\\\\\\sin\\theta&\\cos\\theta&0\\\\0&1&0\\end{bmatrix}$"
+     ],
+     "ans": "$\\begin{bmatrix}\\cos\\theta&-\\sin\\theta&0\\\\\\sin\\theta&\\cos\\theta&0\\\\0&0&1\\end{bmatrix}$",
+     "note": "3行3列目が 1。残りは基本形。(式(2.8))",
+     "tag": "行列選び"
+    },
+    {
+     "type": "single",
+     "q": "$x$ 軸まわりに $\\theta$ 回転する $\\boldsymbol{R}(x,\\theta)$ は?",
+     "opts": [
+      "$\\begin{bmatrix}1&0&0\\\\0&\\cos\\theta&\\sin\\theta\\\\0&-\\sin\\theta&\\cos\\theta\\end{bmatrix}$",
+      "$\\begin{bmatrix}1&0&0\\\\0&\\cos\\theta&-\\sin\\theta\\\\0&\\sin\\theta&\\cos\\theta\\end{bmatrix}$",
+      "$\\begin{bmatrix}\\cos\\theta&0&\\sin\\theta\\\\0&1&0\\\\-\\sin\\theta&0&\\cos\\theta\\end{bmatrix}$",
+      "$\\begin{bmatrix}\\cos\\theta&-\\sin\\theta&0\\\\\\sin\\theta&\\cos\\theta&0\\\\0&0&1\\end{bmatrix}$"
+     ],
+     "ans": "$\\begin{bmatrix}1&0&0\\\\0&\\cos\\theta&-\\sin\\theta\\\\0&\\sin\\theta&\\cos\\theta\\end{bmatrix}$",
+     "note": "1行1列目が 1。(式(2.9))",
+     "tag": "行列選び"
+    },
+    {
+     "type": "single",
+     "q": "$y$ 軸まわりに $\\theta$ 回転する $\\boldsymbol{R}(y,\\theta)$ は?",
+     "opts": [
+      "$\\begin{bmatrix}\\cos\\theta&0&-\\sin\\theta\\\\0&1&0\\\\\\sin\\theta&0&\\cos\\theta\\end{bmatrix}$",
+      "$\\begin{bmatrix}1&0&0\\\\0&\\cos\\theta&-\\sin\\theta\\\\0&\\sin\\theta&\\cos\\theta\\end{bmatrix}$",
+      "$\\begin{bmatrix}\\cos\\theta&0&\\sin\\theta\\\\0&1&0\\\\-\\sin\\theta&0&\\cos\\theta\\end{bmatrix}$",
+      "$\\begin{bmatrix}\\cos\\theta&0&\\sin\\theta\\\\0&0&0\\\\-\\sin\\theta&0&\\cos\\theta\\end{bmatrix}$"
+     ],
+     "ans": "$\\begin{bmatrix}\\cos\\theta&0&\\sin\\theta\\\\0&1&0\\\\-\\sin\\theta&0&\\cos\\theta\\end{bmatrix}$",
+     "note": "2行2列目が 1。$\\sin\\theta$ は右上が $+$、左下が $-$。(式(2.10))",
+     "tag": "行列選び"
+    },
+    {
+     "type": "single",
+     "q": "回る軸の行と列は、どうなっている?",
+     "opts": [
+      "「1 と 0」(その軸の成分だけ 1)",
+      "全て $\\cos\\theta$",
+      "全て 0"
+     ],
+     "ans": "「1 と 0」(その軸の成分だけ 1)",
+     "note": "$x$ なら 1行1列目、$y$ なら 2行2列目、$z$ なら 3行3列目が 1。(資料外・補足)",
+     "tag": "行列選び"
+    },
+    {
+     "type": "single",
+     "q": "$y$ 軸まわりの行列だけ $\\sin\\theta$ の符号が逆に見えるのはなぜ?",
+     "opts": [
+      "$y$ 軸まわりの正の回転は、$z$ から $x$ へ向かう回転だから",
+      "$y$ 軸だけ回転の正の向きが逆だから",
+      "$\\sin\\theta$ は $y$ 軸のとき必ず負だから"
+     ],
+     "ans": "$y$ 軸まわりの正の回転は、$z$ から $x$ へ向かう回転だから",
+     "note": "正の向き: $z$ 軸なら $x\\to y$、$x$ 軸なら $y\\to z$、$y$ 軸なら $z\\to x$。(資料外・補足)",
+     "tag": "行列選び"
+    },
+    {
+     "type": "single",
+     "q": "演習No.1 問1: $y_0$ 軸まわりに $\\phi$ 回転したとき、回転後の $z_1$ 軸の向きは、元の座標で?",
+     "opts": [
+      "$(\\sin\\phi,\\ 0,\\ \\cos\\phi)$",
+      "$(-\\sin\\phi,\\ 0,\\ \\cos\\phi)$",
+      "$(0,\\ \\cos\\phi,\\ \\sin\\phi)$"
+     ],
+     "ans": "$(\\sin\\phi,\\ 0,\\ \\cos\\phi)$",
+     "note": "$z_1$ は $z_0$ から $x_0$ の正の側へ $\\phi$ 倒れる。$y_1=(0,1,0)$、$x_1=(\\cos\\phi,0,-\\sin\\phi)$ と並べると $\\boldsymbol{R}(y,\\phi)$ になる。(演習No.1 問1 のトラ解)",
+     "tag": "行列選び"
+    }
+   ]
+  },
+  {
+   "id": "s3",
+   "no": "03",
+   "title": "3次元の座標計算(有効数字3桁)",
+   "qs": [
+    {
+     "type": "numeric",
+     "q": "座標系 $(x_0,y_0,z_0)$ は、座標系 $(x,y,z)$ を $z$ 軸まわりに $30^\\circ$ 回転させたものである。点 P の $(x_0,y_0,z_0)$ 座標が $(4,2,5)$ のとき、$(x,y,z)$ 座標のうち $P_y$ を求めよ。(有効数字3桁。$\\cos 30^\\circ=0.8660$、$\\sin 30^\\circ=0.5000$ を使う)",
+     "parts": [
+      {
+       "ans": 3.73,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$P_y$"
+      }
+     ],
+     "note": "回転行列 $\\boldsymbol{R}(z,\\theta)$ に $(x_0,y_0,z_0)$ 座標を掛ける(p.7 式(2.7))。$P_y$=3.73。(途中は有効4桁、答えは3桁)",
+     "reveal": [
+      "$P_y$ = 各項を足す: 2.000 + 1.732 + 0 → 3.73"
+     ],
+     "hint": "$P_x=P_{x0}\\cos\\theta-P_{y0}\\sin\\theta$、$P_y=P_{x0}\\sin\\theta+P_{y0}\\cos\\theta$、$P_z=P_{z0}$",
+     "tag": "3次元の座標"
+    },
+    {
+     "type": "numeric",
+     "q": "座標系 $(x_0,y_0,z_0)$ は、座標系 $(x,y,z)$ を $z$ 軸まわりに $45^\\circ$ 回転させたものである。点 P の $(x_0,y_0,z_0)$ 座標が $(3,1,2)$ のとき、$(x,y,z)$ 座標のうち $P_y$ を求めよ。(有効数字3桁。$\\cos 45^\\circ=0.7071$、$\\sin 45^\\circ=0.7071$ を使う)",
+     "parts": [
+      {
+       "ans": 2.83,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$P_y$"
+      }
+     ],
+     "note": "回転行列 $\\boldsymbol{R}(z,\\theta)$ に $(x_0,y_0,z_0)$ 座標を掛ける(p.7 式(2.7))。$P_y$=2.83。(途中は有効4桁、答えは3桁)",
+     "reveal": [
+      "$P_y$ = 各項を足す: 2.121 + 0.7071 + 0 → 2.83"
+     ],
+     "hint": "$P_x=P_{x0}\\cos\\theta-P_{y0}\\sin\\theta$、$P_y=P_{x0}\\sin\\theta+P_{y0}\\cos\\theta$、$P_z=P_{z0}$",
+     "tag": "3次元の座標"
+    },
+    {
+     "type": "numeric",
+     "q": "座標系 $(x_0,y_0,z_0)$ は、座標系 $(x,y,z)$ を $x$ 軸まわりに $30^\\circ$ 回転させたものである。点 P の $(x_0,y_0,z_0)$ 座標が $(1,4,2)$ のとき、$(x,y,z)$ 座標のうち $P_z$ を求めよ。(有効数字3桁。$\\cos 30^\\circ=0.8660$、$\\sin 30^\\circ=0.5000$ を使う)",
+     "parts": [
+      {
+       "ans": 3.73,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$P_z$"
+      }
+     ],
+     "note": "回転行列 $\\boldsymbol{R}(x,\\theta)$ に $(x_0,y_0,z_0)$ 座標を掛ける(p.7 式(2.7))。$P_z$=3.73。(途中は有効4桁、答えは3桁)",
+     "reveal": [
+      "$P_z$ = 各項を足す: 0 + 2.000 + 1.732 → 3.73"
+     ],
+     "hint": "$P_x=P_{x0}$、$P_y=P_{y0}\\cos\\theta-P_{z0}\\sin\\theta$、$P_z=P_{y0}\\sin\\theta+P_{z0}\\cos\\theta$",
+     "tag": "3次元の座標"
+    },
+    {
+     "type": "numeric",
+     "q": "座標系 $(x_0,y_0,z_0)$ は、座標系 $(x,y,z)$ を $x$ 軸まわりに $60^\\circ$ 回転させたものである。点 P の $(x_0,y_0,z_0)$ 座標が $(3,2,1)$ のとき、$(x,y,z)$ 座標のうち $P_z$ を求めよ。(有効数字3桁。$\\cos 60^\\circ=0.5000$、$\\sin 60^\\circ=0.8660$ を使う)",
+     "parts": [
+      {
+       "ans": 2.23,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$P_z$"
+      }
+     ],
+     "note": "回転行列 $\\boldsymbol{R}(x,\\theta)$ に $(x_0,y_0,z_0)$ 座標を掛ける(p.7 式(2.7))。$P_z$=2.23。(途中は有効4桁、答えは3桁)",
+     "reveal": [
+      "$P_z$ = 各項を足す: 0 + 1.732 + 0.5000 → 2.23"
+     ],
+     "hint": "$P_x=P_{x0}$、$P_y=P_{y0}\\cos\\theta-P_{z0}\\sin\\theta$、$P_z=P_{y0}\\sin\\theta+P_{z0}\\cos\\theta$",
+     "tag": "3次元の座標"
+    },
+    {
+     "type": "numeric",
+     "q": "座標系 $(x_0,y_0,z_0)$ は、座標系 $(x,y,z)$ を $y$ 軸まわりに $45^\\circ$ 回転させたものである。点 P の $(x_0,y_0,z_0)$ 座標が $(3,2,1)$ のとき、$(x,y,z)$ 座標のうち $P_x$ を求めよ。(有効数字3桁。$\\cos 45^\\circ=0.7071$、$\\sin 45^\\circ=0.7071$ を使う)",
+     "parts": [
+      {
+       "ans": 2.83,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$P_x$"
+      }
+     ],
+     "note": "回転行列 $\\boldsymbol{R}(y,\\theta)$ に $(x_0,y_0,z_0)$ 座標を掛ける(p.7 式(2.7))。$P_x$=2.83。(途中は有効4桁、答えは3桁)",
+     "reveal": [
+      "$P_x$ = 各項を足す: 2.121 + 0 + 0.7071 → 2.83"
+     ],
+     "hint": "$P_x=P_{x0}\\cos\\theta+P_{z0}\\sin\\theta$、$P_y=P_{y0}$、$P_z=-P_{x0}\\sin\\theta+P_{z0}\\cos\\theta$",
+     "tag": "3次元の座標"
+    },
+    {
+     "type": "numeric",
+     "q": "座標系 $(x_0,y_0,z_0)$ は、座標系 $(x,y,z)$ を $y$ 軸まわりに $30^\\circ$ 回転させたものである。点 P の $(x_0,y_0,z_0)$ 座標が $(4,2,1)$ のとき、$(x,y,z)$ 座標のうち $P_x$ を求めよ。(有効数字3桁。$\\cos 30^\\circ=0.8660$、$\\sin 30^\\circ=0.5000$ を使う)",
+     "parts": [
+      {
+       "ans": 3.96,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$P_x$"
+      }
+     ],
+     "note": "回転行列 $\\boldsymbol{R}(y,\\theta)$ に $(x_0,y_0,z_0)$ 座標を掛ける(p.7 式(2.7))。$P_x$=3.96。(途中は有効4桁、答えは3桁)",
+     "reveal": [
+      "$P_x$ = 各項を足す: 3.464 + 0 + 0.5000 → 3.96"
+     ],
+     "hint": "$P_x=P_{x0}\\cos\\theta+P_{z0}\\sin\\theta$、$P_y=P_{y0}$、$P_z=-P_{x0}\\sin\\theta+P_{z0}\\cos\\theta$",
+     "tag": "3次元の座標"
+    },
+    {
+     "type": "numeric",
+     "q": "座標系 $(x_0,y_0,z_0)$ は、座標系 $(x,y,z)$ を $y$ 軸まわりに $60^\\circ$ 回転させたものである。点 P の $(x_0,y_0,z_0)$ 座標が $(2,3,4)$ のとき、$(x,y,z)$ 座標のうち $P_z$ を求めよ。(有効数字3桁。$\\cos 60^\\circ=0.5000$、$\\sin 60^\\circ=0.8660$ を使う)",
+     "parts": [
+      {
+       "ans": 0.268,
+       "unit": "",
+       "abs": 0.0015,
+       "label": "$P_z$"
+      }
+     ],
+     "note": "回転行列 $\\boldsymbol{R}(y,\\theta)$ に $(x_0,y_0,z_0)$ 座標を掛ける(p.7 式(2.7))。$P_z$=0.268。(途中は有効4桁、答えは3桁)",
+     "reveal": [
+      "$P_z$ = 各項を足す: (-1.732) + 0 + 2.000 → 0.268"
+     ],
+     "hint": "$P_x=P_{x0}\\cos\\theta+P_{z0}\\sin\\theta$、$P_y=P_{y0}$、$P_z=-P_{x0}\\sin\\theta+P_{z0}\\cos\\theta$",
+     "tag": "3次元の座標"
+    }
+   ]
+  },
+  {
+   "id": "s4",
+   "no": "04",
+   "title": "合成回転(掛ける順)",
+   "qs": [
+    {
+     "type": "single",
+     "q": "① $x$ 軸まわりに $\\alpha$、② 次に $z_a$ 軸まわりに $\\beta$ 回転したとき、${}^{abs}\\boldsymbol{R}_b$ は?",
+     "opts": [
+      "$\\boldsymbol{R}(x,\\alpha)\\,\\boldsymbol{R}(z_a,\\beta)$",
+      "$\\boldsymbol{R}(z_a,\\beta)\\,\\boldsymbol{R}(x,\\alpha)$",
+      "$\\boldsymbol{R}(x,\\alpha)+\\boldsymbol{R}(z_a,\\beta)$"
+     ],
+     "ans": "$\\boldsymbol{R}(x,\\alpha)\\,\\boldsymbol{R}(z_a,\\beta)$",
+     "note": "最初の回転を左、後の回転を右に掛ける。(資料 p.10)",
+     "tag": "掛ける順"
+    },
+    {
+     "type": "single",
+     "q": "2回の回転で、回す順番を入れ替えると結果はどうなる?",
+     "opts": [
+      "変わることがある",
+      "必ず同じ",
+      "必ず逆向きになる"
+     ],
+     "ans": "変わることがある",
+     "note": "行列の積は、順序を入れ替えると答えが変わる($AB\\ne BA$)。(資料外・補足)",
+     "tag": "掛ける順"
+    },
+    {
+     "type": "single",
+     "q": "資料 p.9 の印刷された $\\boldsymbol{R}(z_a,\\beta)$ は、式(2.8)と比べてどこが違う?",
+     "opts": [
+      "$\\sin$ の符号が逆",
+      "$\\cos$ の符号が逆",
+      "3行3列目が 0"
+     ],
+     "ans": "$\\sin$ の符号が逆",
+     "note": "課題1の解答は式(2.8)の符号を使っている。式(2.8)が正しい(印刷は誤植と思われる)。(資料 p.9)",
+     "tag": "掛ける順"
+    },
+    {
+     "type": "single",
+     "q": "【問題1】 ${}^{abs}\\boldsymbol{R}_b=\\boldsymbol{R}(y,30^\\circ)\\,\\boldsymbol{R}(x_a,-90^\\circ)$ は?",
+     "opts": [
+      "$\\begin{bmatrix}\\frac{\\sqrt{3}}{2} & 0 & \\frac{1}{2} \\\\ - \\frac{1}{2} & 0 & \\frac{\\sqrt{3}}{2} \\\\ 0 & -1 & 0\\end{bmatrix}$",
+      "$\\begin{bmatrix}\\frac{\\sqrt{3}}{2} & - \\frac{1}{2} & 0 \\\\ 0 & 0 & 1 \\\\ - \\frac{1}{2} & - \\frac{\\sqrt{3}}{2} & 0\\end{bmatrix}$",
+      "$\\begin{bmatrix}\\frac{\\sqrt{3}}{2} & 0 & - \\frac{1}{2} \\\\ - \\frac{1}{2} & 0 & - \\frac{\\sqrt{3}}{2} \\\\ 0 & 1 & 0\\end{bmatrix}$",
+      "$\\begin{bmatrix}- \\frac{\\sqrt{3}}{2} & \\frac{1}{2} & 0 \\\\ 0 & 0 & -1 \\\\ \\frac{1}{2} & \\frac{\\sqrt{3}}{2} & 0\\end{bmatrix}$"
+     ],
+     "ans": "$\\begin{bmatrix}\\frac{\\sqrt{3}}{2} & - \\frac{1}{2} & 0 \\\\ 0 & 0 & 1 \\\\ - \\frac{1}{2} & - \\frac{\\sqrt{3}}{2} & 0\\end{bmatrix}$",
+     "note": "$\\boldsymbol{R}(y,30^\\circ)$ を左に置いて掛ける。(資料 p.10)",
+     "tag": "合成"
+    },
+    {
+     "type": "single",
+     "q": "【課題1】 ${}^{abs}\\boldsymbol{R}_c=\\boldsymbol{R}(z,45^\\circ)\\,\\boldsymbol{R}(y_a,90^\\circ)\\,\\boldsymbol{R}(x_b,90^\\circ)$ は?",
+     "opts": [
+      "$\\begin{bmatrix}0 & 0 & 1 \\\\ \\frac{\\sqrt{2}}{2} & - \\frac{\\sqrt{2}}{2} & 0 \\\\ \\frac{\\sqrt{2}}{2} & \\frac{\\sqrt{2}}{2} & 0\\end{bmatrix}$",
+      "$\\begin{bmatrix}0 & 0 & -1 \\\\ \\frac{\\sqrt{2}}{2} & \\frac{\\sqrt{2}}{2} & 0 \\\\ \\frac{\\sqrt{2}}{2} & - \\frac{\\sqrt{2}}{2} & 0\\end{bmatrix}$",
+      "$\\begin{bmatrix}0 & - \\frac{\\sqrt{2}}{2} & - \\frac{\\sqrt{2}}{2} \\\\ 0 & - \\frac{\\sqrt{2}}{2} & \\frac{\\sqrt{2}}{2} \\\\ 1 & 0 & 0\\end{bmatrix}$",
+      "$\\begin{bmatrix}0 & \\frac{\\sqrt{2}}{2} & \\frac{\\sqrt{2}}{2} \\\\ 0 & \\frac{\\sqrt{2}}{2} & - \\frac{\\sqrt{2}}{2} \\\\ -1 & 0 & 0\\end{bmatrix}$"
+     ],
+     "ans": "$\\begin{bmatrix}0 & \\frac{\\sqrt{2}}{2} & \\frac{\\sqrt{2}}{2} \\\\ 0 & \\frac{\\sqrt{2}}{2} & - \\frac{\\sqrt{2}}{2} \\\\ -1 & 0 & 0\\end{bmatrix}$",
+     "note": "回した順に左から右へ掛ける。(課題1)",
+     "tag": "合成"
+    },
+    {
+     "type": "single",
+     "q": "① $z$ 軸まわりに $90^\\circ$、② 次に $x_a$ 軸まわりに $90^\\circ$ 回転した ${}^{abs}\\boldsymbol{R}_b$ は?",
+     "opts": [
+      "$\\begin{bmatrix}0 & 0 & 1 \\\\ 1 & 0 & 0 \\\\ 0 & 1 & 0\\end{bmatrix}$",
+      "$\\begin{bmatrix}0 & -1 & 0 \\\\ 0 & 0 & -1 \\\\ 1 & 0 & 0\\end{bmatrix}$",
+      "$\\begin{bmatrix}0 & 1 & 0 \\\\ 0 & 0 & 1 \\\\ 1 & 0 & 0\\end{bmatrix}$",
+      "$\\begin{bmatrix}0 & 0 & -1 \\\\ -1 & 0 & 0 \\\\ 0 & -1 & 0\\end{bmatrix}$"
+     ],
+     "ans": "$\\begin{bmatrix}0 & 0 & 1 \\\\ 1 & 0 & 0 \\\\ 0 & 1 & 0\\end{bmatrix}$",
+     "note": "$\\boldsymbol{R}(z,90^\\circ)\\,\\boldsymbol{R}(x_a,90^\\circ)$。",
+     "tag": "合成"
+    },
+    {
+     "type": "single",
+     "q": "演習No.1 問2(1): ① $x$ 軸まわりに $-30^\\circ$、② 次に $z_a$ 軸まわりに $90^\\circ$、③ 次に $y_b$ 軸まわりに $45^\\circ$ 回転した ${}^{abs}\\boldsymbol{R}_c$ は?",
+     "opts": [
+      "$\\begin{bmatrix}0 & - \\sqrt{\\frac{\\sqrt{3}}{4} + \\frac{1}{2}} & \\sqrt{\\frac{1}{2} - \\frac{\\sqrt{3}}{4}} \\\\ 1 & 0 & 0 \\\\ 0 & \\sqrt{\\frac{1}{2} - \\frac{\\sqrt{3}}{4}} & \\sqrt{\\frac{\\sqrt{3}}{4} + \\frac{1}{2}}\\end{bmatrix}$",
+      "$\\begin{bmatrix}0 & \\sqrt{\\frac{1}{2} - \\frac{\\sqrt{3}}{4}} & - \\sqrt{\\frac{\\sqrt{3}}{4} + \\frac{1}{2}} \\\\ -1 & 0 & 0 \\\\ 0 & \\sqrt{\\frac{\\sqrt{3}}{4} + \\frac{1}{2}} & \\sqrt{\\frac{1}{2} - \\frac{\\sqrt{3}}{4}}\\end{bmatrix}$",
+      "$\\begin{bmatrix}0 & -1 & 0 \\\\ \\sqrt{\\frac{1}{2} - \\frac{\\sqrt{3}}{4}} & 0 & \\sqrt{\\frac{\\sqrt{3}}{4} + \\frac{1}{2}} \\\\ - \\sqrt{\\frac{\\sqrt{3}}{4} + \\frac{1}{2}} & 0 & \\sqrt{\\frac{1}{2} - \\frac{\\sqrt{3}}{4}}\\end{bmatrix}$",
+      "$\\begin{bmatrix}0 & 1 & 0 \\\\ - \\sqrt{\\frac{1}{2} - \\frac{\\sqrt{3}}{4}} & 0 & - \\sqrt{\\frac{\\sqrt{3}}{4} + \\frac{1}{2}} \\\\ \\sqrt{\\frac{\\sqrt{3}}{4} + \\frac{1}{2}} & 0 & - \\sqrt{\\frac{1}{2} - \\frac{\\sqrt{3}}{4}}\\end{bmatrix}$"
+     ],
+     "ans": "$\\begin{bmatrix}0 & -1 & 0 \\\\ \\sqrt{\\frac{1}{2} - \\frac{\\sqrt{3}}{4}} & 0 & \\sqrt{\\frac{\\sqrt{3}}{4} + \\frac{1}{2}} \\\\ - \\sqrt{\\frac{\\sqrt{3}}{4} + \\frac{1}{2}} & 0 & \\sqrt{\\frac{1}{2} - \\frac{\\sqrt{3}}{4}}\\end{bmatrix}$",
+     "note": "${}^{abs}\\boldsymbol{R}_c=\\boldsymbol{R}(x,-30^\\circ)\\,\\boldsymbol{R}(z_a,90^\\circ)\\,\\boldsymbol{R}(y_b,45^\\circ)$。回した順に左から右へ。(トラ解。先生の答えは写真に無い)",
+     "tag": "合成"
+    }
+   ]
+  }
+ ],
+ "order": 3,
+ "roadmap": "roadmaps/robotics-2026-kouki-chukan.json"
+}
