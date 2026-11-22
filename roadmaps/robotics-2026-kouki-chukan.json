@@ -1,0 +1,41 @@
+{
+ "year": 2026,
+ "grade": 4,
+ "exam": "後期中間試験",
+ "subject": "ロボティクス",
+ "title": "ロボティクス ・ ロードマップ",
+ "intro": "上から順にやる。迷ったら一番上の未完了から。\n正答率が5割を割った回は、学習ページのそのブロックに戻る。",
+ "storageKey": "robo_roadmap_v1",
+ "steps": [
+  {
+   "id": "L1",
+   "phase": "学習",
+   "label": "学習 第1回 ロボットの構成とアームの種類",
+   "href": "/lesson.html?d=lessons/robotics-01/data.json",
+   "minutes": 35,
+   "why": "授業を聞いていなくても、用語と6種類のアームが分かるようにする最初の一歩。",
+   "done": {
+    "lesson": "robo_learn_01_v1"
+   }
+  },
+  {
+   "id": "P1",
+   "phase": "演習1周目",
+   "label": "① 構成とアームの種類",
+   "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-01-kousei/data.json",
+   "minutes": 15,
+   "why": "学習のあとで、説明と図から見分ける練習。",
+   "done": {
+    "quiz": "robo_chukan_01_kousei_v1",
+    "total": 22
+   }
+  },
+  {
+   "id": "E1",
+   "phase": "前日",
+   "label": "前日: 誤答だけ見直す",
+   "minutes": 15,
+   "why": "新しい問題はやらない。早く寝る。"
+  }
+ ]
+}
