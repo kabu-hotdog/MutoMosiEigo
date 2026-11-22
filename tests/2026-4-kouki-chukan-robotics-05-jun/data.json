@@ -19,52 +19,94 @@
    "title": "用語を全部(暗記・1語1問)",
    "qs": [
     {
-     "type": "selfgrade",
-     "q": "【用語】「順運動学(資料の表記は「順動力学」)」とは何か。紙に書いてから、答えを見る。",
-     "answer": "ロボットの各関節の変位と角度から、エンドエフェクタ(手先)の位置を求める問題。(資料 p.13 先生の手書き)",
-     "note": "学習ページの用語集と同じ。順運動学(資料の表記は「順動力学」)",
+     "type": "single",
+     "q": "【用語】「順運動学(資料の表記は「順動力学」)」の説明として正しいものは?",
+     "opts": [
+      "ロボットの各関節の変位と角度から、エンドエフェクタ(手先)の位置を求める問題。",
+      "関節は、曲がったり回ったりする所。リンクは、関節と関節の間の、かたい腕の部分。",
+      "ベースに近い方から 0, 1, 2, … と番号をつけた、各リンクに固定する座標系。",
+      "1つ前の座標系 Σi-1 で見た、座標系 Σi の位置と向き(回転+並進)を表す 4×4 の行列。"
+     ],
+     "ans": "ロボットの各関節の変位と角度から、エンドエフェクタ(手先)の位置を求める問題。",
+     "note": "「順運動学(資料の表記は「順動力学」)」=ロボットの各関節の変位と角度から、エンドエフェクタ(手先)の位置を求める問題。",
      "tag": "用語 順運動学(資料の表記は「順動力学」)"
     },
     {
-     "type": "selfgrade",
-     "q": "【用語】「関節 J / リンク L」とは何か。紙に書いてから、答えを見る。",
-     "answer": "関節は、曲がったり回ったりする所。リンクは、関節と関節の間の、かたい腕の部分。",
-     "note": "学習ページの用語集と同じ。関節 J / リンク L",
+     "type": "single",
+     "q": "【用語】「関節 J / リンク L」の説明として正しいものは?",
+     "opts": [
+      "ロボットの各関節の変位と角度から、エンドエフェクタ(手先)の位置を求める問題。",
+      "関節は、曲がったり回ったりする所。リンクは、関節と関節の間の、かたい腕の部分。",
+      "ベースに近い方から 0, 1, 2, … と番号をつけた、各リンクに固定する座標系。",
+      "1つ前の座標系 Σi-1 で見た、座標系 Σi の位置と向き(回転+並進)を表す 4×4 の行列。"
+     ],
+     "ans": "関節は、曲がったり回ったりする所。リンクは、関節と関節の間の、かたい腕の部分。",
+     "note": "「関節 J / リンク L」=関節は、曲がったり回ったりする所。リンクは、関節と関節の間の、かたい腕の部分。",
      "tag": "用語 関節 J / リンク L"
     },
     {
-     "type": "selfgrade",
-     "q": "【用語】「エンドエフェクタ」とは何か。紙に書いてから、答えを見る。",
-     "answer": "ロボットアームの先端(手先)。ここの位置を求めたい。",
-     "note": "学習ページの用語集と同じ。エンドエフェクタ",
+     "type": "single",
+     "q": "【用語】「エンドエフェクタ」の説明として正しいものは?",
+     "opts": [
+      "ロボットの根元(ベース)に固定した、動かない座標系。",
+      "ロボットの各関節の変位と角度から、エンドエフェクタ(手先)の位置を求める問題。",
+      "ロボットアームの先端(手先)。ここの位置を求めたい。",
+      "関節は、曲がったり回ったりする所。リンクは、関節と関節の間の、かたい腕の部分。"
+     ],
+     "ans": "ロボットアームの先端(手先)。ここの位置を求めたい。",
+     "note": "「エンドエフェクタ」=ロボットアームの先端(手先)。ここの位置を求めたい。",
      "tag": "用語 エンドエフェクタ"
     },
     {
-     "type": "selfgrade",
-     "q": "【用語】「ベース座標系 Σ0」とは何か。紙に書いてから、答えを見る。",
-     "answer": "ロボットの根元(ベース)に固定した、動かない座標系。",
-     "note": "学習ページの用語集と同じ。ベース座標系 Σ0",
+     "type": "single",
+     "q": "【用語】「ベース座標系 Σ0」の説明として正しいものは?",
+     "opts": [
+      "ロボットアームの先端(手先)。ここの位置を求めたい。",
+      "ロボットの各関節の変位と角度から、エンドエフェクタ(手先)の位置を求める問題。",
+      "関節は、曲がったり回ったりする所。リンクは、関節と関節の間の、かたい腕の部分。",
+      "ロボットの根元(ベース)に固定した、動かない座標系。"
+     ],
+     "ans": "ロボットの根元(ベース)に固定した、動かない座標系。",
+     "note": "「ベース座標系 Σ0」=ロボットの根元(ベース)に固定した、動かない座標系。",
      "tag": "用語 ベース座標系 Σ0"
     },
     {
-     "type": "selfgrade",
-     "q": "【用語】「座標系 Σi」とは何か。紙に書いてから、答えを見る。",
-     "answer": "ベースに近い方から 0, 1, 2, … と番号をつけた、各リンクに固定する座標系。",
-     "note": "学習ページの用語集と同じ。座標系 Σi",
+     "type": "single",
+     "q": "【用語】「座標系 Σi」の説明として正しいものは?",
+     "opts": [
+      "ベースに近い方から 0, 1, 2, … と番号をつけた、各リンクに固定する座標系。",
+      "ロボットの各関節の変位と角度から、エンドエフェクタ(手先)の位置を求める問題。",
+      "関節は、曲がったり回ったりする所。リンクは、関節と関節の間の、かたい腕の部分。",
+      "1つ前の座標系 Σi-1 で見た、座標系 Σi の位置と向き(回転+並進)を表す 4×4 の行列。"
+     ],
+     "ans": "ベースに近い方から 0, 1, 2, … と番号をつけた、各リンクに固定する座標系。",
+     "note": "「座標系 Σi」=ベースに近い方から 0, 1, 2, … と番号をつけた、各リンクに固定する座標系。",
      "tag": "用語 座標系 Σi"
     },
     {
-     "type": "selfgrade",
-     "q": "【用語】「同次変換行列 i-1Ai」とは何か。紙に書いてから、答えを見る。",
-     "answer": "1つ前の座標系 Σi-1 で見た、座標系 Σi の位置と向き(回転+並進)を表す 4×4 の行列。",
-     "note": "学習ページの用語集と同じ。同次変換行列 i-1Ai",
+     "type": "single",
+     "q": "【用語】「同次変換行列 i-1Ai」の説明として正しいものは?",
+     "opts": [
+      "ベースに近い方から 0, 1, 2, … と番号をつけた、各リンクに固定する座標系。",
+      "1つ前の座標系 Σi-1 で見た、座標系 Σi の位置と向き(回転+並進)を表す 4×4 の行列。",
+      "先端の座標系 Σn を、ベース座標系 Σ0 で表す同次変換行列。0A1 1A2 … n-1An を順に掛けて作る。",
+      "ロボットの各関節の変位と角度から、エンドエフェクタ(手先)の位置を求める問題。"
+     ],
+     "ans": "1つ前の座標系 Σi-1 で見た、座標系 Σi の位置と向き(回転+並進)を表す 4×4 の行列。",
+     "note": "「同次変換行列 i-1Ai」=1つ前の座標系 Σi-1 で見た、座標系 Σi の位置と向き(回転+並進)を表す 4×4 の行列。",
      "tag": "用語 同次変換行列 i-1Ai"
     },
     {
-     "type": "selfgrade",
-     "q": "【用語】「0An」とは何か。紙に書いてから、答えを見る。",
-     "answer": "先端の座標系 Σn を、ベース座標系 Σ0 で表す同次変換行列。0A1 1A2 … n-1An を順に掛けて作る。",
-     "note": "学習ページの用語集と同じ。0An",
+     "type": "single",
+     "q": "【用語】「0An」の説明として正しいものは?",
+     "opts": [
+      "1つ前の座標系 Σi-1 で見た、座標系 Σi の位置と向き(回転+並進)を表す 4×4 の行列。",
+      "ベースに近い方から 0, 1, 2, … と番号をつけた、各リンクに固定する座標系。",
+      "先端の座標系 Σn を、ベース座標系 Σ0 で表す同次変換行列。0A1 1A2 … n-1An を順に掛けて作る。",
+      "ロボットの各関節の変位と角度から、エンドエフェクタ(手先)の位置を求める問題。"
+     ],
+     "ans": "先端の座標系 Σn を、ベース座標系 Σ0 で表す同次変換行列。0A1 1A2 … n-1An を順に掛けて作る。",
+     "note": "「0An」=先端の座標系 Σn を、ベース座標系 Σ0 で表す同次変換行列。0A1 1A2 … n-1An を順に掛けて作る。",
      "tag": "用語 0An"
     }
    ]
@@ -211,38 +253,6 @@
      "ans": "$(L_3,\\ 0,\\ 0)$($x_2$ 方向に $L_3$)",
      "note": "(課題2 問2)",
      "tag": "課題2 問2"
-    },
-    {
-     "type": "numeric",
-     "q": "課題2 問2のロボットアームで、$L_1=3$、$L_2=2$、$L_3=4$、$\\theta_1=30^\\circ$、$\\theta_2=60^\\circ$ のとき、${}^{0}\\boldsymbol{P}_E$ の x、y、z 成分を求めよ。(有効数字3桁。$\\cos 30^\\circ=0.8660$、$\\sin 30^\\circ=0.5000$、$\\cos 60^\\circ=0.5000$、$\\sin 60^\\circ=0.8660$)",
-     "parts": [
-      {
-       "ans": 2.0,
-       "unit": "",
-       "abs": 0.015,
-       "label": "$P_x$"
-      },
-      {
-       "ans": 3.46,
-       "unit": "",
-       "abs": 0.015,
-       "label": "$P_y$"
-      },
-      {
-       "ans": 1.0,
-       "unit": "",
-       "abs": 0.015,
-       "label": "$P_z$"
-      }
-     ],
-     "note": "先生の答え: ${}^{0}\\boldsymbol{P}_E=(L_3\\cos\\theta_2,\\ L_3\\sin\\theta_1\\sin\\theta_2+L_2\\cos\\theta_1,\\ L_1+L_2\\sin\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2)$。$P_x$=2.00、$P_y$=3.46、$P_z$=1.00。(途中は有効4桁、答えは3桁)",
-     "reveal": [
-      "${}^{0}P_{Ex}=L_3\\cos\\theta_2=2.000$",
-      "${}^{0}P_{Ey}=L_3\\sin\\theta_1\\sin\\theta_2+L_2\\cos\\theta_1=3.464$",
-      "${}^{0}P_{Ez}=L_1+L_2\\sin\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2=1.000$"
-     ],
-     "hint": "先生の答え(課題2 問2): ${}^{0}\\boldsymbol{P}_E=(L_3\\cos\\theta_2,\\ L_3\\sin\\theta_1\\sin\\theta_2+L_2\\cos\\theta_1,\\ L_1+L_2\\sin\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2)$",
-     "tag": "課題2 問2の手先位置"
     }
    ]
   },
@@ -252,17 +262,42 @@
    "title": "課題の原題(順運動学)",
    "qs": [
     {
-     "type": "selfgrade",
-     "q": "【課題2 問1(2026.10.26)】下図の2つのリンク $l_1$ と $l_2$、2関節($\\theta,\\phi$)のロボットアームを考える。座標系 $\\Sigma_2(X_2,Y_2,Z_2)$ をベース座標系 $\\Sigma_0(X_0,Y_0,Z_0)$ で表す同次変換行列 ${}^{0}\\boldsymbol{A}_2$ を求めよ。次いで、座標系 $\\Sigma_0$ でのエンドエフェクタの位置ベクトル ${}^{0}\\boldsymbol{P}_E$ を求めよ。<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k2-q1-arm.jpg\" alt=\"課題2 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題2 問1 の図。J1 は $Y_0$ 軸まわりに $\\theta$、J2 は $X_1$ 軸まわりに $\\phi$。</figcaption></figure>(紙に書いてから「答えを見る」)",
-     "answer": "$$ {}^{0}\\boldsymbol{A}_2=\\begin{bmatrix}\\cos\\theta&\\sin\\theta\\sin\\phi&\\sin\\theta\\cos\\phi&0\\\\0&\\cos\\phi&-\\sin\\phi&l_1\\\\-\\sin\\theta&\\cos\\theta\\sin\\phi&\\cos\\theta\\cos\\phi&0\\\\0&0&0&1\\end{bmatrix},\\quad {}^{0}\\boldsymbol{P}_E=\\begin{bmatrix}l_2\\sin\\theta\\sin\\phi\\\\l_1+l_2\\cos\\phi\\\\l_2\\cos\\theta\\sin\\phi\\end{bmatrix}$$",
+     "type": "single",
+     "q": "【課題2 問1(2026.10.26)】下図の2つのリンク $l_1$ と $l_2$、2関節($\\theta,\\phi$)のロボットアームを考える。座標系 $\\Sigma_2(X_2,Y_2,Z_2)$ をベース座標系 $\\Sigma_0(X_0,Y_0,Z_0)$ で表す同次変換行列 ${}^{0}\\boldsymbol{A}_2$ を求めよ。次いで、座標系 $\\Sigma_0$ でのエンドエフェクタの位置ベクトル ${}^{0}\\boldsymbol{P}_E$ を求めよ。<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k2-q1-arm.jpg\" alt=\"課題2 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題2 問1 の図。J1 は $Y_0$ 軸まわりに $\\theta$、J2 は $X_1$ 軸まわりに $\\phi$。</figcaption></figure><br>(1) 同次変換行列 ${}^{0}\\boldsymbol{A}_2$ として正しいものはどれか。",
+     "opts": [
+      "$\\begin{bmatrix}\\cos\\theta&0&-\\sin\\theta&0\\\\\\sin\\theta\\sin\\phi&\\cos\\phi&\\cos\\theta\\sin\\phi&l_1\\\\\\sin\\theta\\cos\\phi&-\\sin\\phi&\\cos\\theta\\cos\\phi&0\\\\0&0&0&1\\end{bmatrix}$",
+      "$\\begin{bmatrix}\\cos\\theta&-\\sin\\theta\\sin\\phi&-\\sin\\theta\\cos\\phi&0\\\\0&\\cos\\phi&-\\sin\\phi&l_1\\\\\\sin\\theta&\\cos\\theta\\sin\\phi&\\cos\\theta\\cos\\phi&0\\\\0&0&0&1\\end{bmatrix}$",
+      "$\\begin{bmatrix}\\cos\\theta&\\sin\\theta\\sin\\phi&\\sin\\theta\\cos\\phi&0\\\\0&\\cos\\phi&-\\sin\\phi&l_1\\\\-\\sin\\theta&\\cos\\theta\\sin\\phi&\\cos\\theta\\cos\\phi&0\\\\0&0&0&1\\end{bmatrix}$",
+      "$\\begin{bmatrix}\\cos\\theta&-\\sin\\theta\\sin\\phi&\\sin\\theta\\cos\\phi&0\\\\0&\\cos\\phi&\\sin\\phi&l_1\\\\-\\sin\\theta&-\\cos\\theta\\sin\\phi&\\cos\\theta\\cos\\phi&0\\\\0&0&0&1\\end{bmatrix}$"
+     ],
+     "ans": "$\\begin{bmatrix}\\cos\\theta&\\sin\\theta\\sin\\phi&\\sin\\theta\\cos\\phi&0\\\\0&\\cos\\phi&-\\sin\\phi&l_1\\\\-\\sin\\theta&\\cos\\theta\\sin\\phi&\\cos\\theta\\cos\\phi&0\\\\0&0&0&1\\end{bmatrix}$",
      "note": "${}^{0}\\boldsymbol{A}_2={}^{0}\\boldsymbol{A}_1\\,{}^{1}\\boldsymbol{A}_2$、${}^{2}\\boldsymbol{P}_E=(0,l_2,0)$ に掛ける。(課題2 解答)",
      "tag": "課題2"
     },
     {
-     "type": "selfgrade",
-     "q": "【課題2 問2】左図の2つのリンク $l_1$ と $l_2$、2関節($\\theta_1,\\theta_2$)のロボットアームを考える。座標系 $\\Sigma_2(X_2,Y_2,Z_2)$ をベース座標系 $\\Sigma_0(X_0,Y_0,Z_0)$ で表す同次変換行列 ${}^{0}\\boldsymbol{A}_2$ を求めよ。次いで、座標系 $\\Sigma_0$ でのエンドエフェクタの位置ベクトル ${}^{0}\\boldsymbol{P}_E$ を求めよ。<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k2-q2-arm.jpg\" alt=\"課題2 問2 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題2 問2 の図。長さは図の $L_1,L_2,L_3$ を使う(問題文は $l_1,l_2$ と書いてあるが、図と解答は $L_1,L_2,L_3$)。</figcaption></figure>(紙に書いてから「答えを見る」)",
-     "answer": "$$ {}^{0}\\boldsymbol{P}_E=\\begin{bmatrix}L_3\\cos\\theta_2\\\\L_3\\sin\\theta_1\\sin\\theta_2+L_2\\cos\\theta_1\\\\L_1+L_2\\sin\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$$${}^{0}\\boldsymbol{A}_1=\\boldsymbol{R}(x_0,\\theta_1)$ と $z_0$ 方向に $L_1$、${}^{1}\\boldsymbol{A}_2=\\boldsymbol{R}(y_1,\\theta_2)$ と $y_1$ 方向に $L_2$、${}^{2}\\boldsymbol{P}_E=(L_3,0,0)$。",
-     "note": "根元から順に掛ける。(課題2 解答)",
+     "type": "single",
+     "q": "【課題2 問1(2026.10.26)】下図の2つのリンク $l_1$ と $l_2$、2関節($\\theta,\\phi$)のロボットアームを考える。座標系 $\\Sigma_2(X_2,Y_2,Z_2)$ をベース座標系 $\\Sigma_0(X_0,Y_0,Z_0)$ で表す同次変換行列 ${}^{0}\\boldsymbol{A}_2$ を求めよ。次いで、座標系 $\\Sigma_0$ でのエンドエフェクタの位置ベクトル ${}^{0}\\boldsymbol{P}_E$ を求めよ。<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k2-q1-arm.jpg\" alt=\"課題2 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題2 問1 の図。J1 は $Y_0$ 軸まわりに $\\theta$、J2 は $X_1$ 軸まわりに $\\phi$。</figcaption></figure><br>(2) エンドエフェクタの位置ベクトル ${}^{0}\\boldsymbol{P}_E$ として正しいものはどれか。",
+     "opts": [
+      "$\\begin{bmatrix}l_2\\sin\\theta\\sin\\phi\\\\l_1+l_2\\cos\\phi\\\\l_2\\cos\\theta\\sin\\phi\\end{bmatrix}$",
+      "$\\begin{bmatrix}l_2\\sin\\theta\\cos\\phi\\\\l_1+l_2\\sin\\phi\\\\l_2\\cos\\theta\\cos\\phi\\end{bmatrix}$",
+      "$\\begin{bmatrix}l_2\\cos\\theta\\sin\\phi\\\\l_1+l_2\\cos\\phi\\\\l_2\\sin\\theta\\sin\\phi\\end{bmatrix}$",
+      "$\\begin{bmatrix}-l_2\\sin\\theta\\sin\\phi\\\\l_1+l_2\\cos\\phi\\\\l_2\\cos\\theta\\sin\\phi\\end{bmatrix}$"
+     ],
+     "ans": "$\\begin{bmatrix}l_2\\sin\\theta\\sin\\phi\\\\l_1+l_2\\cos\\phi\\\\l_2\\cos\\theta\\sin\\phi\\end{bmatrix}$",
+     "note": "${}^{0}\\boldsymbol{A}_2={}^{0}\\boldsymbol{A}_1\\,{}^{1}\\boldsymbol{A}_2$、${}^{2}\\boldsymbol{P}_E=(0,l_2,0)$ に掛ける。(課題2 解答)",
+     "tag": "課題2"
+    },
+    {
+     "type": "single",
+     "q": "【課題2 問2】左図の2つのリンク $l_1$ と $l_2$、2関節($\\theta_1,\\theta_2$)のロボットアームを考える。座標系 $\\Sigma_2(X_2,Y_2,Z_2)$ をベース座標系 $\\Sigma_0(X_0,Y_0,Z_0)$ で表す同次変換行列 ${}^{0}\\boldsymbol{A}_2$ を求めたうえで、座標系 $\\Sigma_0$ でのエンドエフェクタの位置ベクトル ${}^{0}\\boldsymbol{P}_E$ として正しいものはどれか。<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k2-q2-arm.jpg\" alt=\"課題2 問2 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題2 問2 の図。長さは図の $L_1,L_2,L_3$ を使う(問題文は $l_1,l_2$ と書いてあるが、図と解答は $L_1,L_2,L_3$)。</figcaption></figure>",
+     "opts": [
+      "$\\begin{bmatrix}L_3\\cos\\theta_2\\\\L_3\\sin\\theta_1\\sin\\theta_2-L_2\\cos\\theta_1\\\\L_1-L_2\\sin\\theta_1+L_3\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
+      "$\\begin{bmatrix}L_3\\cos\\theta_2\\\\L_3\\cos\\theta_1\\sin\\theta_2+L_2\\sin\\theta_1\\\\L_1+L_2\\cos\\theta_1-L_3\\sin\\theta_1\\sin\\theta_2\\end{bmatrix}$",
+      "$\\begin{bmatrix}L_3\\sin\\theta_2\\\\L_3\\sin\\theta_1\\cos\\theta_2+L_2\\cos\\theta_1\\\\L_1+L_2\\sin\\theta_1-L_3\\cos\\theta_1\\cos\\theta_2\\end{bmatrix}$",
+      "$\\begin{bmatrix}L_3\\cos\\theta_2\\\\L_3\\sin\\theta_1\\sin\\theta_2+L_2\\cos\\theta_1\\\\L_1+L_2\\sin\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$"
+     ],
+     "ans": "$\\begin{bmatrix}L_3\\cos\\theta_2\\\\L_3\\sin\\theta_1\\sin\\theta_2+L_2\\cos\\theta_1\\\\L_1+L_2\\sin\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
+     "note": "${}^{0}\\boldsymbol{A}_1=\\boldsymbol{R}(x_0,\\theta_1)$ と $z_0$ 方向に $L_1$、${}^{1}\\boldsymbol{A}_2=\\boldsymbol{R}(y_1,\\theta_2)$ と $y_1$ 方向に $L_2$、${}^{2}\\boldsymbol{P}_E=(L_3,0,0)$。根元から順に掛ける。(課題2 解答)",
      "tag": "課題2"
     }
    ]

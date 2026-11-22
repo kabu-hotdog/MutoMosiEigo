@@ -6,11 +6,11 @@
  "title": "ロボティクス ・ ⑨ 演習プリントの原題(最後に解く)",
  "subtitle": "ロボティクス演習 No.1・No.2(11/19)を、問題文と数値をそのまま出す。試験は、このプリントとほぼ同じ形の見込み",
  "eyebrow": "ロボティクス ・ 演習プリント",
- "description": "ロボティクス演習 No.1・No.2 の原題。行列や式は紙に書いてから答えを見て自己採点。数値の問題はそのまま入力。",
+ "description": "ロボティクス演習 No.1・No.2 の原題。式や行列の答えは4択、数値の問題は答えを打ち込む。",
  "storageKey": "robo_chukan_09_genten_v1",
  "pointsPerQ": 100,
  "katex": true,
- "tip": "<b>本番は、このプリントとほぼ同じ形の見込み。</b>第1〜8回を一通りやってから、最後に解く。まず紙で解く。式・行列の問題は、紙に書いてから「答えを見る」で、合っていたか自分で○×をつける(「綴りまで」と出るが、式が1つも違わず合っていたかの意味)。数値の問題はそのまま入力。「トラ解」と書いてある答えは、先生の答えが資料に無いので、トラが解いたもの。",
+ "tip": "<b>本番は、このプリントとほぼ同じ形の見込み。</b>第1〜8回を一通りやってから、最後に解く。式や行列の答えは4択で選ぶ。数値の問題はそのまま入力。計算の途中は紙を使ってよい。「トラ解」と書いてある答えは、先生の答えが資料に無いので、トラが解いたもの。",
  "footer": "ロボティクス 後期中間試験(11/30) ・ 出題: ロボティクス演習 No.1・No.2(2026.11.19)",
  "sections": [
   {
@@ -19,24 +19,55 @@
    "title": "演習 No.1 の原題(2026.11.19)",
    "qs": [
     {
-     "type": "selfgrade",
-     "q": "【演習 No.1 問1(2026.11.19)】下記に直交座標系 $(x_0,y_0,z_0)$ において、$y_0$ 軸まわりに $\\phi$ 回転する場合の座標変換行列が $\\begin{bmatrix}\\cos\\phi&0&\\sin\\phi\\\\0&1&0\\\\-\\sin\\phi&0&\\cos\\phi\\end{bmatrix}$ となることを示せ。なお、$x_0,z_0$ 軸まわりの回転ではそれぞれ、$\\begin{bmatrix}1&0&0\\\\0&\\cos\\phi&-\\sin\\phi\\\\0&\\sin\\phi&\\cos\\phi\\end{bmatrix}$、$\\begin{bmatrix}\\cos\\phi&-\\sin\\phi&0\\\\\\sin\\phi&\\cos\\phi&0\\\\0&0&1\\end{bmatrix}$ である。<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/e1-q1-fig.jpg\" alt=\"演習No.1 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.1 問1 の図(左は $X$ 軸まわりの回転の参考図、右は $y_0$ 軸まわりに $\\phi$ 回転)。</figcaption></figure>(紙に書いてから「答えを見る」。先生の答えは資料に無いので、トラ解)",
-     "answer": "<b>トラ解</b>: 回転後の軸を元の座標の成分で書く。$y_1=(0,1,0)$、$z_1=(\\sin\\phi,0,\\cos\\phi)$($z_0$ から $x_0$ 側へ倒れる)、$x_1=(\\cos\\phi,0,-\\sin\\phi)$($x_0$ から $z_0$ の負の側へ倒れる)。回転行列の列は新しい軸の単位ベクトルなので $\\boldsymbol{R}(y,\\phi)=[x_1\\ y_1\\ z_1]$ となり、問題の行列と一致する。",
-     "note": "$y$ 軸まわりの正の回転は「$z$ から $x$ へ」向かう回転。(トラ解)",
+     "type": "single",
+     "q": "【演習 No.1 問1(2026.11.19)】下記に直交座標系 $(x_0,y_0,z_0)$ において、$y_0$ 軸まわりに $\\phi$ 回転する場合の座標変換行列が $\\begin{bmatrix}\\cos\\phi&0&\\sin\\phi\\\\0&1&0\\\\-\\sin\\phi&0&\\cos\\phi\\end{bmatrix}$ となることを示せ。なお、$x_0,z_0$ 軸まわりの回転ではそれぞれ、$\\begin{bmatrix}1&0&0\\\\0&\\cos\\phi&-\\sin\\phi\\\\0&\\sin\\phi&\\cos\\phi\\end{bmatrix}$、$\\begin{bmatrix}\\cos\\phi&-\\sin\\phi&0\\\\\\sin\\phi&\\cos\\phi&0\\\\0&0&1\\end{bmatrix}$ である。<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/e1-q1-fig.jpg\" alt=\"演習No.1 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.1 問1 の図(左は $X$ 軸まわりの回転の参考図、右は $y_0$ 軸まわりに $\\phi$ 回転)。</figcaption></figure><br>示すために使う、回転後の軸 $x_1,y_1,z_1$ を元の座標 $(x_0,y_0,z_0)$ の成分で書いたものとして正しいものはどれか。(回転行列の列が、この3つのベクトルになる)",
+     "opts": [
+      "$x_1=(\\cos\\phi,0,\\sin\\phi),\\ y_1=(0,1,0),\\ z_1=(-\\sin\\phi,0,\\cos\\phi)$",
+      "$x_1=(\\cos\\phi,\\sin\\phi,0),\\ y_1=(-\\sin\\phi,\\cos\\phi,0),\\ z_1=(0,0,1)$",
+      "$x_1=(\\sin\\phi,0,\\cos\\phi),\\ y_1=(0,1,0),\\ z_1=(\\cos\\phi,0,-\\sin\\phi)$",
+      "$x_1=(\\cos\\phi,0,-\\sin\\phi),\\ y_1=(0,1,0),\\ z_1=(\\sin\\phi,0,\\cos\\phi)$"
+     ],
+     "ans": "$x_1=(\\cos\\phi,0,-\\sin\\phi),\\ y_1=(0,1,0),\\ z_1=(\\sin\\phi,0,\\cos\\phi)$",
+     "note": "<b>トラ解</b>: 回転後の軸を元の座標の成分で書く。$y_1=(0,1,0)$、$z_1=(\\sin\\phi,0,\\cos\\phi)$($z_0$ から $x_0$ 側へ倒れる)、$x_1=(\\cos\\phi,0,-\\sin\\phi)$($x_0$ から $z_0$ の負の側へ倒れる)。回転行列の列は新しい軸の単位ベクトルなので $\\boldsymbol{R}(y,\\phi)=[x_1\\ y_1\\ z_1]$ となり、問題の行列と一致する。$y$ 軸まわりの正の回転は「$z$ から $x$ へ」向かう回転。(トラ解)",
      "tag": "演習No.1 問1"
     },
     {
-     "type": "selfgrade",
-     "q": "【演習 No.1 問2】次の問いに答えよ。(1) 以下に示す座標変換における、座標系 $\\Sigma_c$ から座標系 $\\Sigma_{abs}$ への回転変換行列 ${}^{abs}\\boldsymbol{R}_c$ を求めよ。<br>① 座標系 $\\Sigma_{abs}(x,y,z)$ をその $x$ 軸まわりに $-30^\\circ$ 回転させ、座標系 $\\Sigma_a(x_a,y_a,z_a)$ を生成。<br>② 次いで、座標系 $\\Sigma_a$ をその $z_a$ 軸まわりに $90^\\circ$ 回転させ、座標系 $\\Sigma_b(x_b,y_b,z_b)$ を生成。<br>③ 次いで、座標系 $\\Sigma_b$ をその $y_b$ 軸まわりに $45^\\circ$ 回転させ、座標系 $\\Sigma_c(x_c,y_c,z_c)$ を生成。<br>(2) 座標系 $\\Sigma_c$ で $(x_c,y_c,z_c)=(1,5,-3)$ の点を座標系 $\\Sigma_{abs}$ で表現せよ。<br>(紙に書いてから「答えを見る」。トラ解)",
-     "answer": "$$(1)\\ {}^{abs}\\boldsymbol{R}_c=\\boldsymbol{R}(x,-30^\\circ)\\boldsymbol{R}(z_a,90^\\circ)\\boldsymbol{R}(y_b,45^\\circ)=\\begin{bmatrix}0&-1&0\\\\\\frac{\\sqrt6-\\sqrt2}{4}&0&\\frac{\\sqrt6+\\sqrt2}{4}\\\\-\\frac{\\sqrt6+\\sqrt2}{4}&0&\\frac{\\sqrt6-\\sqrt2}{4}\\end{bmatrix}\\quad(2)\\ \\begin{bmatrix}-5\\\\-\\sqrt2-\\frac{\\sqrt6}{2}\\\\-\\sqrt6+\\frac{\\sqrt2}{2}\\end{bmatrix}\\approx\\begin{bmatrix}-5.000\\\\-2.639\\\\-1.742\\end{bmatrix}$$",
+     "type": "single",
+     "q": "【演習 No.1 問2】次の問いに答えよ。(1) 以下に示す座標変換における、座標系 $\\Sigma_c$ から座標系 $\\Sigma_{abs}$ への回転変換行列 ${}^{abs}\\boldsymbol{R}_c$ を求めよ。<br>① 座標系 $\\Sigma_{abs}(x,y,z)$ をその $x$ 軸まわりに $-30^\\circ$ 回転させ、座標系 $\\Sigma_a(x_a,y_a,z_a)$ を生成。<br>② 次いで、座標系 $\\Sigma_a$ をその $z_a$ 軸まわりに $90^\\circ$ 回転させ、座標系 $\\Sigma_b(x_b,y_b,z_b)$ を生成。<br>③ 次いで、座標系 $\\Sigma_b$ をその $y_b$ 軸まわりに $45^\\circ$ 回転させ、座標系 $\\Sigma_c(x_c,y_c,z_c)$ を生成。<br>(2) 座標系 $\\Sigma_c$ で $(x_c,y_c,z_c)=(1,5,-3)$ の点を座標系 $\\Sigma_{abs}$ で表現せよ。<br>(1) ${}^{abs}\\boldsymbol{R}_c=\\boldsymbol{R}(x,-30^\\circ)\\boldsymbol{R}(z_a,90^\\circ)\\boldsymbol{R}(y_b,45^\\circ)$ として正しいものはどれか。",
+     "opts": [
+      "$\\begin{bmatrix}0&-1&0\\\\\\frac{\\sqrt6-\\sqrt2}{4}&0&\\frac{\\sqrt6+\\sqrt2}{4}\\\\-\\frac{\\sqrt6+\\sqrt2}{4}&0&\\frac{\\sqrt6-\\sqrt2}{4}\\end{bmatrix}$",
+      "$\\begin{bmatrix}0&\\frac{\\sqrt6-\\sqrt2}{4}&-\\frac{\\sqrt6+\\sqrt2}{4}\\\\-1&0&0\\\\0&\\frac{\\sqrt6+\\sqrt2}{4}&\\frac{\\sqrt6-\\sqrt2}{4}\\end{bmatrix}$",
+      "$\\begin{bmatrix}0&1&0\\\\\\frac{\\sqrt6-\\sqrt2}{4}&0&\\frac{\\sqrt6+\\sqrt2}{4}\\\\-\\frac{\\sqrt6+\\sqrt2}{4}&0&\\frac{\\sqrt6-\\sqrt2}{4}\\end{bmatrix}$",
+      "$\\begin{bmatrix}0&-1&0\\\\\\frac{\\sqrt6+\\sqrt2}{4}&0&\\frac{\\sqrt6-\\sqrt2}{4}\\\\-\\frac{\\sqrt6-\\sqrt2}{4}&0&\\frac{\\sqrt6+\\sqrt2}{4}\\end{bmatrix}$"
+     ],
+     "ans": "$\\begin{bmatrix}0&-1&0\\\\\\frac{\\sqrt6-\\sqrt2}{4}&0&\\frac{\\sqrt6+\\sqrt2}{4}\\\\-\\frac{\\sqrt6+\\sqrt2}{4}&0&\\frac{\\sqrt6-\\sqrt2}{4}\\end{bmatrix}$",
      "note": "回転だけで平行移動が無いので、3×3 の ${}^{abs}\\boldsymbol{R}_c$ を掛ければよい。(トラ解)",
      "tag": "演習No.1 問2"
     },
     {
-     "type": "selfgrade",
-     "q": "【演習 No.1 問3】左図の4つのリンク $L_1,L_2,L_3$ と $L_4$、2関節($\\theta_1,\\theta_2$)のロボットアームを考える。座標系 $\\Sigma_3(x_3,y_3,z_3)$ をベース座標系 $\\Sigma_0(x_0,y_0,z_0)$ で表す同次変換行列 ${}^{0}\\boldsymbol{A}_3$ を求めよ。次いで、座標系 $\\Sigma_0$ でのエンドエフェクタの位置ベクトル ${}^{0}\\boldsymbol{P}_E$ を求めよ。<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/e1-q3-arm.jpg\" alt=\"演習No.1 問3 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.1 問3 の図。</figcaption></figure>(紙に書いてから「答えを見る」。先生の答えは資料に無いので、トラ解で、図の読みに依存する)",
-     "answer": "<b>トラ解</b>(${}^{0}\\boldsymbol{A}_1\\,{}^{1}\\boldsymbol{A}_2\\,{}^{2}\\boldsymbol{A}_3$ の積):$$ {}^{0}\\boldsymbol{P}_E=\\begin{bmatrix}L_1+L_3\\sin\\theta_1\\sin\\theta_2+L_4\\cos\\theta_1\\\\L_4\\sin\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2\\\\L_2+L_3\\cos\\theta_2\\end{bmatrix}$$検算: $\\theta_1=\\theta_2=0$ なら $(L_1+L_4,\\ 0,\\ L_2+L_3)$。",
-     "note": "図の読み: $\\Sigma_1$ は $x_0$ 方向に $L_1$ 並進して $z$ 軸まわり $\\theta_1$、$\\Sigma_2$ は $z_1$ 方向に $L_2$ 並進して $x_1$ 軸まわり $\\theta_2$、$\\Sigma_3$ は $z_2$ 方向に $L_3$、先端は $x_3$ 方向に $L_4$。(トラ解)",
+     "type": "single",
+     "q": "【演習 No.1 問2】次の問いに答えよ。(1) 以下に示す座標変換における、座標系 $\\Sigma_c$ から座標系 $\\Sigma_{abs}$ への回転変換行列 ${}^{abs}\\boldsymbol{R}_c$ を求めよ。<br>① 座標系 $\\Sigma_{abs}(x,y,z)$ をその $x$ 軸まわりに $-30^\\circ$ 回転させ、座標系 $\\Sigma_a(x_a,y_a,z_a)$ を生成。<br>② 次いで、座標系 $\\Sigma_a$ をその $z_a$ 軸まわりに $90^\\circ$ 回転させ、座標系 $\\Sigma_b(x_b,y_b,z_b)$ を生成。<br>③ 次いで、座標系 $\\Sigma_b$ をその $y_b$ 軸まわりに $45^\\circ$ 回転させ、座標系 $\\Sigma_c(x_c,y_c,z_c)$ を生成。<br>(2) 座標系 $\\Sigma_c$ で $(x_c,y_c,z_c)=(1,5,-3)$ の点を座標系 $\\Sigma_{abs}$ で表現せよ。<br>(2) 点を座標系 $\\Sigma_{abs}$ で表した座標として正しいものはどれか。",
+     "opts": [
+      "$\\begin{bmatrix}2\\sqrt6-\\frac{\\sqrt2}{2}\\\\-1\\\\\\frac{\\sqrt6}{2}+2\\sqrt2\\end{bmatrix}\\approx\\begin{bmatrix}4.190\\\\-1.000\\\\3.053\\end{bmatrix}$",
+      "$\\begin{bmatrix}5\\\\\\sqrt2+\\frac{\\sqrt6}{2}\\\\\\sqrt6-\\frac{\\sqrt2}{2}\\end{bmatrix}\\approx\\begin{bmatrix}5.000\\\\2.639\\\\1.742\\end{bmatrix}$",
+      "$\\begin{bmatrix}-5\\\\-\\sqrt2-\\frac{\\sqrt6}{2}\\\\-\\sqrt6+\\frac{\\sqrt2}{2}\\end{bmatrix}\\approx\\begin{bmatrix}-5.000\\\\-2.639\\\\-1.742\\end{bmatrix}$",
+      "$\\begin{bmatrix}-5\\\\-\\sqrt6+\\frac{\\sqrt2}{2}\\\\-\\sqrt2-\\frac{\\sqrt6}{2}\\end{bmatrix}\\approx\\begin{bmatrix}-5.000\\\\-1.742\\\\-2.639\\end{bmatrix}$"
+     ],
+     "ans": "$\\begin{bmatrix}-5\\\\-\\sqrt2-\\frac{\\sqrt6}{2}\\\\-\\sqrt6+\\frac{\\sqrt2}{2}\\end{bmatrix}\\approx\\begin{bmatrix}-5.000\\\\-2.639\\\\-1.742\\end{bmatrix}$",
+     "note": "回転だけで平行移動が無いので、3×3 の ${}^{abs}\\boldsymbol{R}_c$ を掛ければよい。(トラ解)",
+     "tag": "演習No.1 問2"
+    },
+    {
+     "type": "single",
+     "q": "【演習 No.1 問3】左図の4つのリンク $L_1,L_2,L_3$ と $L_4$、2関節($\\theta_1,\\theta_2$)のロボットアームを考える。座標系 $\\Sigma_3(x_3,y_3,z_3)$ をベース座標系 $\\Sigma_0(x_0,y_0,z_0)$ で表す同次変換行列 ${}^{0}\\boldsymbol{A}_3$ を求めたうえで、座標系 $\\Sigma_0$ でのエンドエフェクタの位置ベクトル ${}^{0}\\boldsymbol{P}_E$ として正しいものはどれか。(図の読みに依存する)<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/e1-q3-arm.jpg\" alt=\"演習No.1 問3 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.1 問3 の図。</figcaption></figure>",
+     "opts": [
+      "$\\begin{bmatrix}L_1+L_3\\sin\\theta_1\\sin\\theta_2+L_4\\cos\\theta_1\\\\L_4\\sin\\theta_1+L_3\\cos\\theta_1\\sin\\theta_2\\\\L_2+L_3\\cos\\theta_2\\end{bmatrix}$",
+      "$\\begin{bmatrix}L_1+L_3\\sin\\theta_1\\sin\\theta_2+L_4\\cos\\theta_1\\\\L_4\\sin\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2\\\\L_2+L_3\\cos\\theta_2\\end{bmatrix}$",
+      "$\\begin{bmatrix}L_1+L_3\\sin\\theta_1\\sin\\theta_2+L_4\\sin\\theta_1\\\\L_4\\cos\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2\\\\L_2+L_3\\cos\\theta_2\\end{bmatrix}$",
+      "$\\begin{bmatrix}L_1+L_3\\sin\\theta_1\\cos\\theta_2+L_4\\cos\\theta_1\\\\L_4\\sin\\theta_1-L_3\\cos\\theta_1\\cos\\theta_2\\\\L_2+L_3\\sin\\theta_2\\end{bmatrix}$"
+     ],
+     "ans": "$\\begin{bmatrix}L_1+L_3\\sin\\theta_1\\sin\\theta_2+L_4\\cos\\theta_1\\\\L_4\\sin\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2\\\\L_2+L_3\\cos\\theta_2\\end{bmatrix}$",
+     "note": "<b>トラ解</b>(${}^{0}\\boldsymbol{A}_1\\,{}^{1}\\boldsymbol{A}_2\\,{}^{2}\\boldsymbol{A}_3$ の積)。検算: $\\theta_1=\\theta_2=0$ なら $(L_1+L_4,\\ 0,\\ L_2+L_3)$。図の読み: $\\Sigma_1$ は $x_0$ 方向に $L_1$ 並進して $z$ 軸まわり $\\theta_1$、$\\Sigma_2$ は $z_1$ 方向に $L_2$ 並進して $x_1$ 軸まわり $\\theta_2$、$\\Sigma_3$ は $z_2$ 方向に $L_3$、先端は $x_3$ 方向に $L_4$。(トラ解)",
      "tag": "演習No.1 問3"
     },
     {
@@ -75,10 +106,16 @@
      "tag": "演習No.2 問5"
     },
     {
-     "type": "selfgrade",
-     "q": "【演習 No.2 問6】太さ一様で長さ $L$ のバットでボールを打つとき、ボールがバットの重心から $a$ の位置で当たった場合に、位置 $L/10$ で握った手に衝撃を受けなかった。このときの位置 $a$ の値を求めよ。【答え: $a=5L/24$】<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/e2-q6-fig.jpg\" alt=\"演習No.2 問6 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.2 問6 の図($L/10$ は上端から握る点Oまで、$a$ は重心Gから衝突点まで)。</figcaption></figure>(紙に書いてから「答えを見る」)",
-     "answer": "$v_G=\\dfrac{L^2}{12a}\\omega$。点Oは重心から $\\dfrac L2-\\dfrac L{10}=\\dfrac{2L}{5}$ の所なので $v_O=v_G-\\dfrac{2L}{5}\\omega=0$。よって $\\dfrac{L^2}{12a}=\\dfrac{2L}5$、$a=\\dfrac{5L}{24}$。",
-     "note": "課題5 問2 の逆の問い。(トラ解)",
+     "type": "single",
+     "q": "【演習 No.2 問6】太さ一様で長さ $L$ のバットでボールを打つとき、ボールがバットの重心から $a$ の位置で当たった場合に、位置 $L/10$ で握った手に衝撃を受けなかった。このときの位置 $a$ の値として正しいものはどれか。<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/e2-q6-fig.jpg\" alt=\"演習No.2 問6 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.2 問6 の図($L/10$ は上端から握る点Oまで、$a$ は重心Gから衝突点まで)。</figcaption></figure>",
+     "opts": [
+      "$a=\\dfrac{7L}{24}$",
+      "$a=\\dfrac{5L}{24}$",
+      "$a=\\dfrac{5L}{12}$",
+      "$a=\\dfrac{2L}{5}$"
+     ],
+     "ans": "$a=\\dfrac{5L}{24}$",
+     "note": "$v_G=\\dfrac{L^2}{12a}\\omega$。点Oは重心から $\\dfrac L2-\\dfrac L{10}=\\dfrac{2L}{5}$ の所なので $v_O=v_G-\\dfrac{2L}{5}\\omega=0$。よって $\\dfrac{L^2}{12a}=\\dfrac{2L}5$、$a=\\dfrac{5L}{24}$。課題5 問2 の逆の問い。(トラ解)",
      "tag": "演習No.2 問6"
     },
     {
@@ -128,9 +165,15 @@
      "tag": "演習No.2 問8"
     },
     {
-     "type": "selfgrade",
-     "q": "【演習 No.2 問9】ある3自由度ロボットアームのエンドエフェクタの位置が式①によって与えられる。式②に定義されるヤコビ行列 $\\boldsymbol{J}$ を求めよ。$$ {}^{0}\\boldsymbol{P}_E=\\begin{bmatrix}-L_2\\sin\\theta_1-L_3\\sin\\theta_1\\sin\\theta_2\\\\-L_3\\cos\\theta_2\\\\L_1-L_2\\cos\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}\\cdots①,\\quad\\begin{bmatrix}\\dot x\\\\\\dot y\\\\\\dot z\\end{bmatrix}=\\boldsymbol{J}\\begin{bmatrix}\\dot\\theta_1\\\\\\dot\\theta_2\\\\\\dot L_3\\end{bmatrix}\\cdots②$$(紙に書いてから「答えを見る」。トラ解)",
-     "answer": "$$\\boldsymbol{J}=\\begin{bmatrix}-(L_2+L_3\\sin\\theta_2)\\cos\\theta_1&-L_3\\sin\\theta_1\\cos\\theta_2&-\\sin\\theta_1\\sin\\theta_2\\\\0&L_3\\sin\\theta_2&-\\cos\\theta_2\\\\(L_2+L_3\\sin\\theta_2)\\sin\\theta_1&-L_3\\cos\\theta_1\\cos\\theta_2&-\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$$",
+     "type": "single",
+     "q": "【演習 No.2 問9】ある3自由度ロボットアームのエンドエフェクタの位置が式①によって与えられる。式②に定義されるヤコビ行列 $\\boldsymbol{J}$ として正しいものはどれか。$$ {}^{0}\\boldsymbol{P}_E=\\begin{bmatrix}-L_2\\sin\\theta_1-L_3\\sin\\theta_1\\sin\\theta_2\\\\-L_3\\cos\\theta_2\\\\L_1-L_2\\cos\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}\\cdots①,\\quad\\begin{bmatrix}\\dot x\\\\\\dot y\\\\\\dot z\\end{bmatrix}=\\boldsymbol{J}\\begin{bmatrix}\\dot\\theta_1\\\\\\dot\\theta_2\\\\\\dot L_3\\end{bmatrix}\\cdots②$$",
+     "opts": [
+      "$\\begin{bmatrix}-(L_2+L_3\\sin\\theta_2)\\cos\\theta_1&0&(L_2+L_3\\sin\\theta_2)\\sin\\theta_1\\\\-L_3\\sin\\theta_1\\cos\\theta_2&L_3\\sin\\theta_2&-L_3\\cos\\theta_1\\cos\\theta_2\\\\-\\sin\\theta_1\\sin\\theta_2&-\\cos\\theta_2&-\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
+      "$\\begin{bmatrix}-(L_2+L_3\\sin\\theta_2)\\cos\\theta_1&-L_3\\sin\\theta_1\\cos\\theta_2&-\\sin\\theta_1\\sin\\theta_2\\\\0&L_3\\sin\\theta_2&-\\cos\\theta_2\\\\(L_2+L_3\\sin\\theta_2)\\sin\\theta_1&-L_3\\cos\\theta_1\\cos\\theta_2&-\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
+      "$\\begin{bmatrix}-(L_2+L_3\\sin\\theta_2)\\cos\\theta_1&-L_3\\sin\\theta_1\\cos\\theta_2&-\\sin\\theta_1\\sin\\theta_2\\\\0&-L_3\\sin\\theta_2&-\\cos\\theta_2\\\\(L_2+L_3\\sin\\theta_2)\\sin\\theta_1&-L_3\\cos\\theta_1\\cos\\theta_2&-\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
+      "$\\begin{bmatrix}-(L_2+L_3\\sin\\theta_2)\\cos\\theta_1&L_3\\sin\\theta_1\\cos\\theta_2&-\\sin\\theta_1\\sin\\theta_2\\\\0&L_3\\sin\\theta_2&-\\cos\\theta_2\\\\(L_2+L_3\\sin\\theta_2)\\sin\\theta_1&L_3\\cos\\theta_1\\cos\\theta_2&-\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$"
+     ],
+     "ans": "$\\begin{bmatrix}-(L_2+L_3\\sin\\theta_2)\\cos\\theta_1&-L_3\\sin\\theta_1\\cos\\theta_2&-\\sin\\theta_1\\sin\\theta_2\\\\0&L_3\\sin\\theta_2&-\\cos\\theta_2\\\\(L_2+L_3\\sin\\theta_2)\\sin\\theta_1&-L_3\\cos\\theta_1\\cos\\theta_2&-\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
      "note": "検算: $\\theta_1=\\theta_2=0$ のとき $\\boldsymbol{J}=\\begin{bmatrix}-L_2&0&0\\\\0&0&-1\\\\0&-L_3&0\\end{bmatrix}$。(トラ解)",
      "tag": "演習No.2 問9"
     }

@@ -19,52 +19,94 @@
    "title": "用語を全部(暗記・1語1問)",
    "qs": [
     {
-     "type": "selfgrade",
-     "q": "【用語】「ヤコビ行列 J」とは何か。紙に書いてから、答えを見る。",
-     "answer": "関節の速度から、手先の速度への「変換行列」。手先の位置 r を関節変数 q で偏微分した、偏微分の行列。(資料 p.18)",
-     "note": "学習ページの用語集と同じ。ヤコビ行列 J",
+     "type": "single",
+     "q": "【用語】「ヤコビ行列 J」の説明として正しいものは?",
+     "opts": [
+      "関節の速度から、手先の速度への「変換行列」。手先の位置 r を関節変数 q で偏微分した、偏微分の行列。",
+      "ヤコビ行列の逆行列が存在しない点(det J = 0)。ここでは、手先の速度から関節の速度を求められない。",
+      "r = [x, y]ᵀ は手先の座標。ドット(˙)は「時間で微分したもの」で、q̇ は関節の速度。",
+      "2×2 の行列 [[a, b],[c, d]] なら ad − bc。0 になると、逆行列が無い。"
+     ],
+     "ans": "関節の速度から、手先の速度への「変換行列」。手先の位置 r を関節変数 q で偏微分した、偏微分の行列。",
+     "note": "「ヤコビ行列 J」=関節の速度から、手先の速度への「変換行列」。手先の位置 r を関節変数 q で偏微分した、偏微分の行列。",
      "tag": "用語 ヤコビ行列 J"
     },
     {
-     "type": "selfgrade",
-     "q": "【用語】「関節変数 q」とは何か。紙に書いてから、答えを見る。",
-     "answer": "関節の変位(角度や、伸びる長さ)。q = [q1, q2]。時間の関数。(資料 p.18)",
-     "note": "学習ページの用語集と同じ。関節変数 q",
+     "type": "single",
+     "q": "【用語】「関節変数 q」の説明として正しいものは?",
+     "opts": [
+      "J を掛けて単位行列になる行列。手先の速度から、必要な関節の速度を求めるのに使う。",
+      "関節の変位(角度や、伸びる長さ)。q = [q1, q2]。時間の関数。",
+      "他の変数は定数とみなして、q だけで微分すること。",
+      "r = [x, y]ᵀ は手先の座標。ドット(˙)は「時間で微分したもの」で、q̇ は関節の速度。"
+     ],
+     "ans": "関節の変位(角度や、伸びる長さ)。q = [q1, q2]。時間の関数。",
+     "note": "「関節変数 q」=関節の変位(角度や、伸びる長さ)。q = [q1, q2]。時間の関数。",
      "tag": "用語 関節変数 q"
     },
     {
-     "type": "selfgrade",
-     "q": "【用語】「r と q̇」とは何か。紙に書いてから、答えを見る。",
-     "answer": "r = [x, y]ᵀ は手先の座標。ドット(˙)は「時間で微分したもの」で、q̇ は関節の速度。(資料 p.18)",
-     "note": "学習ページの用語集と同じ。r と q̇",
+     "type": "single",
+     "q": "【用語】「r と q̇」の説明として正しいものは?",
+     "opts": [
+      "2×2 の行列 [[a, b],[c, d]] なら ad − bc。0 になると、逆行列が無い。",
+      "関節の速度から、手先の速度への「変換行列」。手先の位置 r を関節変数 q で偏微分した、偏微分の行列。",
+      "r = [x, y]ᵀ は手先の座標。ドット(˙)は「時間で微分したもの」で、q̇ は関節の速度。",
+      "ヤコビ行列の逆行列が存在しない点(det J = 0)。ここでは、手先の速度から関節の速度を求められない。"
+     ],
+     "ans": "r = [x, y]ᵀ は手先の座標。ドット(˙)は「時間で微分したもの」で、q̇ は関節の速度。",
+     "note": "「r と q̇」=r = [x, y]ᵀ は手先の座標。ドット(˙)は「時間で微分したもの」で、q̇ は関節の速度。",
      "tag": "用語 r と q̇"
     },
     {
-     "type": "selfgrade",
-     "q": "【用語】「偏微分 ∂f/∂q」とは何か。紙に書いてから、答えを見る。",
-     "answer": "他の変数は定数とみなして、q だけで微分すること。(資料外・補足)",
-     "note": "学習ページの用語集と同じ。偏微分 ∂f/∂q",
+     "type": "single",
+     "q": "【用語】「偏微分 ∂f/∂q」の説明として正しいものは?",
+     "opts": [
+      "関節の変位(角度や、伸びる長さ)。q = [q1, q2]。時間の関数。",
+      "J を掛けて単位行列になる行列。手先の速度から、必要な関節の速度を求めるのに使う。",
+      "r = [x, y]ᵀ は手先の座標。ドット(˙)は「時間で微分したもの」で、q̇ は関節の速度。",
+      "他の変数は定数とみなして、q だけで微分すること。"
+     ],
+     "ans": "他の変数は定数とみなして、q だけで微分すること。",
+     "note": "「偏微分 ∂f/∂q」=他の変数は定数とみなして、q だけで微分すること。",
      "tag": "用語 偏微分 ∂f/∂q"
     },
     {
-     "type": "selfgrade",
-     "q": "【用語】「行列式 det J」とは何か。紙に書いてから、答えを見る。",
-     "answer": "2×2 の行列 [[a, b],[c, d]] なら ad − bc。0 になると、逆行列が無い。(資料 p.20・資料外・補足)",
-     "note": "学習ページの用語集と同じ。行列式 det J",
+     "type": "single",
+     "q": "【用語】「行列式 det J」の説明として正しいものは?",
+     "opts": [
+      "2×2 の行列 [[a, b],[c, d]] なら ad − bc。0 になると、逆行列が無い。",
+      "r = [x, y]ᵀ は手先の座標。ドット(˙)は「時間で微分したもの」で、q̇ は関節の速度。",
+      "関節の速度から、手先の速度への「変換行列」。手先の位置 r を関節変数 q で偏微分した、偏微分の行列。",
+      "ヤコビ行列の逆行列が存在しない点(det J = 0)。ここでは、手先の速度から関節の速度を求められない。"
+     ],
+     "ans": "2×2 の行列 [[a, b],[c, d]] なら ad − bc。0 になると、逆行列が無い。",
+     "note": "「行列式 det J」=2×2 の行列 [[a, b],[c, d]] なら ad − bc。0 になると、逆行列が無い。",
      "tag": "用語 行列式 det J"
     },
     {
-     "type": "selfgrade",
-     "q": "【用語】「逆行列 J⁻¹」とは何か。紙に書いてから、答えを見る。",
-     "answer": "J を掛けて単位行列になる行列。手先の速度から、必要な関節の速度を求めるのに使う。(資料 p.20)",
-     "note": "学習ページの用語集と同じ。逆行列 J⁻¹",
+     "type": "single",
+     "q": "【用語】「逆行列 J⁻¹」の説明として正しいものは?",
+     "opts": [
+      "関節の変位(角度や、伸びる長さ)。q = [q1, q2]。時間の関数。",
+      "J を掛けて単位行列になる行列。手先の速度から、必要な関節の速度を求めるのに使う。",
+      "r = [x, y]ᵀ は手先の座標。ドット(˙)は「時間で微分したもの」で、q̇ は関節の速度。",
+      "2×2 の行列 [[a, b],[c, d]] なら ad − bc。0 になると、逆行列が無い。"
+     ],
+     "ans": "J を掛けて単位行列になる行列。手先の速度から、必要な関節の速度を求めるのに使う。",
+     "note": "「逆行列 J⁻¹」=J を掛けて単位行列になる行列。手先の速度から、必要な関節の速度を求めるのに使う。",
      "tag": "用語 逆行列 J⁻¹"
     },
     {
-     "type": "selfgrade",
-     "q": "【用語】「特異点」とは何か。紙に書いてから、答えを見る。",
-     "answer": "ヤコビ行列の逆行列が存在しない点(det J = 0)。ここでは、手先の速度から関節の速度を求められない。(資料 p.20 先生の強調)",
-     "note": "学習ページの用語集と同じ。特異点",
+     "type": "single",
+     "q": "【用語】「特異点」の説明として正しいものは?",
+     "opts": [
+      "関節の速度から、手先の速度への「変換行列」。手先の位置 r を関節変数 q で偏微分した、偏微分の行列。",
+      "r = [x, y]ᵀ は手先の座標。ドット(˙)は「時間で微分したもの」で、q̇ は関節の速度。",
+      "ヤコビ行列の逆行列が存在しない点(det J = 0)。ここでは、手先の速度から関節の速度を求められない。",
+      "2×2 の行列 [[a, b],[c, d]] なら ad − bc。0 になると、逆行列が無い。"
+     ],
+     "ans": "ヤコビ行列の逆行列が存在しない点(det J = 0)。ここでは、手先の速度から関節の速度を求められない。",
+     "note": "「特異点」=ヤコビ行列の逆行列が存在しない点(det J = 0)。ここでは、手先の速度から関節の速度を求められない。",
      "tag": "用語 特異点"
     }
    ]
@@ -269,16 +311,28 @@
    "title": "課題の原題(ヤコビ行列)",
    "qs": [
     {
-     "type": "selfgrade",
-     "q": "【課題3 問1(2026.11.2)】ある3つのリンク $L_1,L_2,L_3$ と2関節($\\theta_1,\\theta_2$)のロボットアームのエンドエフェクタの位置ベクトル ${}^{0}\\boldsymbol{P}_E$ が式①によって与えられる。式②に定義されるヤコビ行列 $\\boldsymbol{J}$ を求めよ。$$ {}^{0}\\boldsymbol{P}_E=\\begin{bmatrix}x\\\\y\\\\z\\end{bmatrix}=\\begin{bmatrix}L_2\\sin\\theta_2+L_3\\sin\\theta_1\\sin\\theta_2\\\\L_1+L_3\\cos\\theta_2\\\\L_2\\cos\\theta_1+L_3\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}\\cdots①,\\quad\\begin{bmatrix}\\dot x\\\\\\dot y\\\\\\dot z\\end{bmatrix}=\\boldsymbol{J}\\begin{bmatrix}\\dot\\theta_1\\\\\\dot\\theta_2\\\\\\dot L_3\\end{bmatrix}\\cdots②$$(紙に書いてから「答えを見る」)",
-     "answer": "$$\\boldsymbol{J}=\\begin{bmatrix}L_3\\cos\\theta_1\\sin\\theta_2&L_2\\cos\\theta_2+L_3\\sin\\theta_1\\cos\\theta_2&\\sin\\theta_1\\sin\\theta_2\\\\0&-L_3\\sin\\theta_2&\\cos\\theta_2\\\\-L_2\\sin\\theta_1-L_3\\sin\\theta_1\\sin\\theta_2&L_3\\cos\\theta_1\\cos\\theta_2&\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$$",
-     "note": "$x,y,z$ を $\\theta_1,\\theta_2,L_3$ で偏微分した9個を、行 $=x,y,z$、列 $=\\theta_1,\\theta_2,L_3$ の順に並べる。(課題3 解答)",
+     "type": "single",
+     "q": "【課題3 問1(2026.11.2)】ある3つのリンク $L_1,L_2,L_3$ と2関節($\\theta_1,\\theta_2$)のロボットアームのエンドエフェクタの位置ベクトル ${}^{0}\\boldsymbol{P}_E$ が式①によって与えられる。式②に定義されるヤコビ行列 $\\boldsymbol{J}$ として正しいものはどれか。$$ {}^{0}\\boldsymbol{P}_E=\\begin{bmatrix}x\\\\y\\\\z\\end{bmatrix}=\\begin{bmatrix}L_2\\sin\\theta_2+L_3\\sin\\theta_1\\sin\\theta_2\\\\L_1+L_3\\cos\\theta_2\\\\L_2\\cos\\theta_1+L_3\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}\\cdots①,\\quad\\begin{bmatrix}\\dot x\\\\\\dot y\\\\\\dot z\\end{bmatrix}=\\boldsymbol{J}\\begin{bmatrix}\\dot\\theta_1\\\\\\dot\\theta_2\\\\\\dot L_3\\end{bmatrix}\\cdots②$$",
+     "opts": [
+      "$\\begin{bmatrix}L_3\\cos\\theta_1\\sin\\theta_2&L_2\\cos\\theta_2+L_3\\sin\\theta_1\\cos\\theta_2&\\sin\\theta_1\\sin\\theta_2\\\\0&-L_3\\sin\\theta_2&\\cos\\theta_2\\\\-L_2\\sin\\theta_1-L_3\\sin\\theta_1\\sin\\theta_2&L_3\\cos\\theta_1\\cos\\theta_2&\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
+      "$\\begin{bmatrix}L_3\\cos\\theta_1\\sin\\theta_2&0&-L_2\\sin\\theta_1-L_3\\sin\\theta_1\\sin\\theta_2\\\\L_2\\cos\\theta_2+L_3\\sin\\theta_1\\cos\\theta_2&-L_3\\sin\\theta_2&L_3\\cos\\theta_1\\cos\\theta_2\\\\\\sin\\theta_1\\sin\\theta_2&\\cos\\theta_2&\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
+      "$\\begin{bmatrix}L_3\\cos\\theta_1\\sin\\theta_2&L_2\\cos\\theta_2+L_3\\sin\\theta_1\\cos\\theta_2&\\sin\\theta_1\\sin\\theta_2\\\\0&L_3\\sin\\theta_2&\\cos\\theta_2\\\\-L_2\\sin\\theta_1-L_3\\sin\\theta_1\\sin\\theta_2&L_3\\cos\\theta_1\\cos\\theta_2&\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
+      "$\\begin{bmatrix}L_3\\cos\\theta_1\\sin\\theta_2&L_2\\cos\\theta_2+L_3\\sin\\theta_1\\cos\\theta_2&\\sin\\theta_1\\sin\\theta_2\\\\0&-L_3\\sin\\theta_2&\\cos\\theta_2\\\\-L_2\\sin\\theta_1&L_3\\cos\\theta_1\\cos\\theta_2&\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$"
+     ],
+     "ans": "$\\begin{bmatrix}L_3\\cos\\theta_1\\sin\\theta_2&L_2\\cos\\theta_2+L_3\\sin\\theta_1\\cos\\theta_2&\\sin\\theta_1\\sin\\theta_2\\\\0&-L_3\\sin\\theta_2&\\cos\\theta_2\\\\-L_2\\sin\\theta_1-L_3\\sin\\theta_1\\sin\\theta_2&L_3\\cos\\theta_1\\cos\\theta_2&\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
+     "note": "$x,y,z$ を $\\theta_1,\\theta_2,L_3$ で偏微分した9個を、行 $=x,y,z$、列 $=\\theta_1,\\theta_2,L_3$ の順に並べる。転置すると行と列が逆になる。(課題3 解答)",
      "tag": "課題3"
     },
     {
-     "type": "selfgrade",
-     "q": "【課題3 問2】ある3つのリンク $l_1,l_2,l_3$ と3関節($\\theta_1,\\theta_2,\\theta_3$)のロボットアームのエンドエフェクタの位置ベクトル ${}^{0}\\boldsymbol{P}_E$ が式①によって与えられる。式②に定義されるヤコビ行列 $\\boldsymbol{J}$ を求めよ。$$ {}^{0}\\boldsymbol{P}_E=\\begin{bmatrix}l_3\\cos\\theta_1\\cos(\\theta_2+\\theta_3)+l_2\\cos\\theta_1\\cos\\theta_2\\\\l_3\\sin\\theta_1\\cos(\\theta_2+\\theta_3)+l_2\\sin\\theta_1\\cos\\theta_2\\\\-l_3\\sin(\\theta_2+\\theta_3)+l_1-l_2\\sin\\theta_2\\end{bmatrix}\\cdots①,\\quad\\begin{bmatrix}\\dot x\\\\\\dot y\\\\\\dot z\\end{bmatrix}=\\boldsymbol{J}\\begin{bmatrix}\\dot\\theta_1\\\\\\dot\\theta_2\\\\\\dot\\theta_3\\end{bmatrix}\\cdots②$$(紙に書いてから「答えを見る」)",
-     "answer": "$$\\boldsymbol{J}=\\begin{bmatrix}-l_2\\sin\\theta_1\\cos\\theta_2-l_3\\sin\\theta_1\\cos(\\theta_2+\\theta_3)&-l_2\\cos\\theta_1\\sin\\theta_2-l_3\\cos\\theta_1\\sin(\\theta_2+\\theta_3)&-l_3\\cos\\theta_1\\sin(\\theta_2+\\theta_3)\\\\l_2\\cos\\theta_1\\cos\\theta_2+l_3\\cos\\theta_1\\cos(\\theta_2+\\theta_3)&-l_2\\sin\\theta_1\\sin\\theta_2-l_3\\sin\\theta_1\\sin(\\theta_2+\\theta_3)&-l_3\\sin\\theta_1\\sin(\\theta_2+\\theta_3)\\\\0&-l_2\\cos\\theta_2-l_3\\cos(\\theta_2+\\theta_3)&-l_3\\cos(\\theta_2+\\theta_3)\\end{bmatrix}$$",
+     "type": "single",
+     "q": "【課題3 問2】ある3つのリンク $l_1,l_2,l_3$ と3関節($\\theta_1,\\theta_2,\\theta_3$)のロボットアームのエンドエフェクタの位置ベクトル ${}^{0}\\boldsymbol{P}_E$ が式①によって与えられる。式②に定義されるヤコビ行列 $\\boldsymbol{J}$ として正しいものはどれか。$$ {}^{0}\\boldsymbol{P}_E=\\begin{bmatrix}l_3\\cos\\theta_1\\cos(\\theta_2+\\theta_3)+l_2\\cos\\theta_1\\cos\\theta_2\\\\l_3\\sin\\theta_1\\cos(\\theta_2+\\theta_3)+l_2\\sin\\theta_1\\cos\\theta_2\\\\-l_3\\sin(\\theta_2+\\theta_3)+l_1-l_2\\sin\\theta_2\\end{bmatrix}\\cdots①,\\quad\\begin{bmatrix}\\dot x\\\\\\dot y\\\\\\dot z\\end{bmatrix}=\\boldsymbol{J}\\begin{bmatrix}\\dot\\theta_1\\\\\\dot\\theta_2\\\\\\dot\\theta_3\\end{bmatrix}\\cdots②$$",
+     "opts": [
+      "$\\begin{bmatrix}-l_2\\sin\\theta_1\\cos\\theta_2-l_3\\sin\\theta_1\\cos(\\theta_2+\\theta_3)&l_2\\cos\\theta_1\\cos\\theta_2+l_3\\cos\\theta_1\\cos(\\theta_2+\\theta_3)&0\\\\-l_2\\cos\\theta_1\\sin\\theta_2-l_3\\cos\\theta_1\\sin(\\theta_2+\\theta_3)&-l_2\\sin\\theta_1\\sin\\theta_2-l_3\\sin\\theta_1\\sin(\\theta_2+\\theta_3)&-l_2\\cos\\theta_2-l_3\\cos(\\theta_2+\\theta_3)\\\\-l_3\\cos\\theta_1\\sin(\\theta_2+\\theta_3)&-l_3\\sin\\theta_1\\sin(\\theta_2+\\theta_3)&-l_3\\cos(\\theta_2+\\theta_3)\\end{bmatrix}$",
+      "$\\begin{bmatrix}-l_2\\sin\\theta_1\\cos\\theta_2-l_3\\sin\\theta_1\\cos(\\theta_2+\\theta_3)&-l_2\\cos\\theta_1\\sin\\theta_2-l_3\\cos\\theta_1\\sin(\\theta_2+\\theta_3)&-l_3\\cos\\theta_1\\sin(\\theta_2+\\theta_3)\\\\l_2\\cos\\theta_1\\cos\\theta_2+l_3\\cos\\theta_1\\cos(\\theta_2+\\theta_3)&-l_2\\sin\\theta_1\\sin\\theta_2-l_3\\sin\\theta_1\\sin(\\theta_2+\\theta_3)&-l_3\\sin\\theta_1\\sin(\\theta_2+\\theta_3)\\\\0&l_2\\cos\\theta_2+l_3\\cos(\\theta_2+\\theta_3)&-l_3\\cos(\\theta_2+\\theta_3)\\end{bmatrix}$",
+      "$\\begin{bmatrix}-l_2\\sin\\theta_1\\cos\\theta_2-l_3\\sin\\theta_1\\cos(\\theta_2+\\theta_3)&-l_2\\cos\\theta_1\\sin\\theta_2-l_3\\cos\\theta_1\\sin(\\theta_2+\\theta_3)&-l_3\\cos\\theta_1\\sin(\\theta_2+\\theta_3)\\\\l_2\\cos\\theta_1\\cos\\theta_2+l_3\\cos\\theta_1\\cos(\\theta_2+\\theta_3)&-l_2\\sin\\theta_1\\sin\\theta_2-l_3\\sin\\theta_1\\sin(\\theta_2+\\theta_3)&-l_3\\sin\\theta_1\\sin(\\theta_2+\\theta_3)\\\\0&-l_2\\cos\\theta_2-l_3\\cos(\\theta_2+\\theta_3)&-l_3\\cos(\\theta_2+\\theta_3)\\end{bmatrix}$",
+      "$\\begin{bmatrix}-l_2\\sin\\theta_1\\cos\\theta_2-l_3\\sin\\theta_1\\cos(\\theta_2+\\theta_3)&-l_2\\cos\\theta_1\\sin\\theta_2-l_3\\cos\\theta_1\\sin(\\theta_2+\\theta_3)&-l_3\\cos\\theta_1\\sin\\theta_3\\\\l_2\\cos\\theta_1\\cos\\theta_2+l_3\\cos\\theta_1\\cos(\\theta_2+\\theta_3)&-l_2\\sin\\theta_1\\sin\\theta_2-l_3\\sin\\theta_1\\sin(\\theta_2+\\theta_3)&-l_3\\sin\\theta_1\\sin\\theta_3\\\\0&-l_2\\cos\\theta_2-l_3\\cos(\\theta_2+\\theta_3)&-l_3\\cos(\\theta_2+\\theta_3)\\end{bmatrix}$"
+     ],
+     "ans": "$\\begin{bmatrix}-l_2\\sin\\theta_1\\cos\\theta_2-l_3\\sin\\theta_1\\cos(\\theta_2+\\theta_3)&-l_2\\cos\\theta_1\\sin\\theta_2-l_3\\cos\\theta_1\\sin(\\theta_2+\\theta_3)&-l_3\\cos\\theta_1\\sin(\\theta_2+\\theta_3)\\\\l_2\\cos\\theta_1\\cos\\theta_2+l_3\\cos\\theta_1\\cos(\\theta_2+\\theta_3)&-l_2\\sin\\theta_1\\sin\\theta_2-l_3\\sin\\theta_1\\sin(\\theta_2+\\theta_3)&-l_3\\sin\\theta_1\\sin(\\theta_2+\\theta_3)\\\\0&-l_2\\cos\\theta_2-l_3\\cos(\\theta_2+\\theta_3)&-l_3\\cos(\\theta_2+\\theta_3)\\end{bmatrix}$",
      "note": "$\\theta_2+\\theta_3$ を含む項は、$\\theta_2$ でも $\\theta_3$ でも係数1で微分される。(課題3 解答)",
      "tag": "課題3"
     }
