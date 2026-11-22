@@ -4,7 +4,7 @@
  "exam": "後期中間試験",
  "subject": "ロボティクス",
  "title": "ロボティクス ・ ロードマップ",
- "intro": "上から順にやる。迷ったら一番上の未完了から。\n正答率が5割を割った回は、学習ページのそのブロックに戻る。",
+ "intro": "合計およそ4〜5時間の短縮版。上から順に、時間で切ってよい。迷ったら一番上の未完了から。\n正答率が5割を割った回は、学習ページのそのブロックに戻る。",
  "storageKey": "robo_roadmap_v1",
  "steps": [
   {
@@ -12,8 +12,8 @@
    "phase": "学習",
    "label": "学習 第1回 ロボットの構成とアームの種類",
    "href": "/lesson.html?d=lessons/robotics-01/data.json",
-   "minutes": 35,
-   "why": "授業を聞いていなくても、用語と6種類のアームが分かるようにする最初の一歩。",
+   "minutes": 10,
+   "why": "要点だけ。太字と例題の答えを追う。細かい所は飛ばしてよい。 授業を聞いていなくても、用語と6種類のアームが分かるようにする最初の一歩。",
    "done": {
     "lesson": "robo_learn_01_v1"
    }
@@ -23,8 +23,8 @@
    "phase": "学習",
    "label": "学習 第2回 座標系と座標変換",
    "href": "/lesson.html?d=lessons/robotics-02/data.json",
-   "minutes": 40,
-   "why": "回転行列や同次変換の土台。絶対座標と物体座標、式(2.4)、2次元の回転の計算。",
+   "minutes": 10,
+   "why": "要点だけ。太字と例題の答えを追う。細かい所は飛ばしてよい。 回転行列や同次変換の土台。絶対座標と物体座標、式(2.4)、2次元の回転の計算。",
    "done": {
     "lesson": "robo_learn_02_v1"
    }
@@ -34,8 +34,8 @@
    "phase": "学習",
    "label": "学習 第3回 回転変換行列",
    "href": "/lesson.html?d=lessons/robotics-03/data.json",
-   "minutes": 60,
-   "why": "3軸まわりの回転行列と、2回以上回す時の掛ける順。順運動学の土台。",
+   "minutes": 20,
+   "why": "要点だけ。太字と例題の答えを追う。細かい所は飛ばしてよい。 3軸まわりの回転行列と、2回以上回す時の掛ける順。順運動学の土台。",
    "done": {
     "lesson": "robo_learn_03_v1"
    }
@@ -45,8 +45,8 @@
    "phase": "学習",
    "label": "学習 第4回 同次変換行列",
    "href": "/lesson.html?d=lessons/robotics-04/data.json",
-   "minutes": 45,
-   "why": "回転と並進を、4×4 の行列1つにまとめる。次の順運動学で、毎回使う道具。",
+   "minutes": 15,
+   "why": "要点だけ。太字と例題の答えを追う。細かい所は飛ばしてよい。 回転と並進を、4×4 の行列1つにまとめる。次の順運動学で、毎回使う道具。",
    "done": {
     "lesson": "robo_learn_04_v1"
    }
@@ -56,8 +56,8 @@
    "phase": "学習",
    "label": "学習 第5回 順運動学",
    "href": "/lesson.html?d=lessons/robotics-05/data.json",
-   "minutes": 70,
-   "why": "ロボットの関節の角度から、手先の位置を求める。課題2・演習の中心。",
+   "minutes": 20,
+   "why": "要点だけ。太字と例題の答えを追う。細かい所は飛ばしてよい。 ロボットの関節の角度から、手先の位置を求める。課題2・演習の中心。",
    "done": {
     "lesson": "robo_learn_05_v1"
    }
@@ -67,8 +67,8 @@
    "phase": "学習",
    "label": "学習 第6回 ヤコビ行列と特異点",
    "href": "/lesson.html?d=lessons/robotics-06/data.json",
-   "minutes": 75,
-   "why": "関節の速度から手先の速度を出す行列と、動けなくなる特異点。偏微分の道具つき。",
+   "minutes": 20,
+   "why": "要点だけ。太字と例題の答えを追う。細かい所は飛ばしてよい。 関節の速度から手先の速度を出す行列と、動けなくなる特異点。偏微分の道具つき。",
    "done": {
     "lesson": "robo_learn_06_v1"
    }
@@ -78,8 +78,8 @@
    "phase": "学習",
    "label": "学習 第7回 剛体のエネルギー保存則",
    "href": "/lesson.html?d=lessons/robotics-07/data.json",
-   "minutes": 70,
-   "why": "位置・並進・回転のエネルギーで速度を求める。棒・円柱・球の例題。",
+   "minutes": 20,
+   "why": "要点だけ。太字と例題の答えを追う。細かい所は飛ばしてよい。 位置・並進・回転のエネルギーで速度を求める。棒・円柱・球の例題。",
    "done": {
     "lesson": "robo_learn_07_v1"
    }
@@ -89,8 +89,8 @@
    "phase": "学習",
    "label": "学習 第8回 衝突",
    "href": "/lesson.html?d=lessons/robotics-08/data.json",
-   "minutes": 90,
-   "why": "運動量保存・反発係数・角衝撃量。棒への衝突と打撃の中心。",
+   "minutes": 25,
+   "why": "要点だけ。太字と例題の答えを追う。細かい所は飛ばしてよい。 運動量保存・反発係数・角衝撃量。棒への衝突と打撃の中心。",
    "done": {
     "lesson": "robo_learn_08_v1"
    }
@@ -100,8 +100,8 @@
    "phase": "演習1周目",
    "label": "① 構成とアームの種類",
    "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-01-kousei/data.json",
-   "minutes": 20,
-   "why": "学習のあとで、手を動かして確かめる。",
+   "minutes": 5,
+   "why": "時間が来たらそこで切る。全問やらなくてよい。間違えた所だけ学習に戻る。",
    "done": {
     "quiz": "robo_chukan_01_kousei_v1",
     "total": 32
@@ -112,8 +112,8 @@
    "phase": "演習1周目",
    "label": "② 座標系と座標変換",
    "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-02-zahyokei/data.json",
-   "minutes": 20,
-   "why": "学習のあとで、手を動かして確かめる。",
+   "minutes": 5,
+   "why": "時間が来たらそこで切る。全問やらなくてよい。間違えた所だけ学習に戻る。",
    "done": {
     "quiz": "robo_chukan_02_zahyokei_v1",
     "total": 20
@@ -124,8 +124,8 @@
    "phase": "演習1周目",
    "label": "③ 回転変換行列",
    "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-03-kaiten/data.json",
-   "minutes": 30,
-   "why": "学習のあとで、手を動かして確かめる。",
+   "minutes": 10,
+   "why": "時間が来たらそこで切る。全問やらなくてよい。間違えた所だけ学習に戻る。",
    "done": {
     "quiz": "robo_chukan_03_kaiten_v1",
     "total": 32
@@ -136,8 +136,8 @@
    "phase": "演習1周目",
    "label": "④ 同次変換行列",
    "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-04-douji/data.json",
-   "minutes": 25,
-   "why": "学習のあとで、手を動かして確かめる。",
+   "minutes": 10,
+   "why": "時間が来たらそこで切る。全問やらなくてよい。間違えた所だけ学習に戻る。",
    "done": {
     "quiz": "robo_chukan_04_douji_v1",
     "total": 22
@@ -148,8 +148,8 @@
    "phase": "演習1周目",
    "label": "⑤ 順運動学",
    "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-05-jun/data.json",
-   "minutes": 30,
-   "why": "学習のあとで、手を動かして確かめる。",
+   "minutes": 10,
+   "why": "時間が来たらそこで切る。全問やらなくてよい。間違えた所だけ学習に戻る。",
    "done": {
     "quiz": "robo_chukan_05_jun_v1",
     "total": 31
@@ -160,8 +160,8 @@
    "phase": "演習1周目",
    "label": "⑥ ヤコビ行列と特異点",
    "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-06-jacobi/data.json",
-   "minutes": 35,
-   "why": "学習のあとで、手を動かして確かめる。",
+   "minutes": 10,
+   "why": "時間が来たらそこで切る。全問やらなくてよい。間違えた所だけ学習に戻る。",
    "done": {
     "quiz": "robo_chukan_06_jacobi_v1",
     "total": 41
@@ -172,8 +172,8 @@
    "phase": "演習1周目",
    "label": "⑦ エネルギー保存則",
    "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-07-energy/data.json",
-   "minutes": 30,
-   "why": "学習のあとで、手を動かして確かめる。",
+   "minutes": 10,
+   "why": "時間が来たらそこで切る。全問やらなくてよい。間違えた所だけ学習に戻る。",
    "done": {
     "quiz": "robo_chukan_07_energy_v1",
     "total": 36
@@ -184,8 +184,8 @@
    "phase": "演習1周目",
    "label": "⑧ 衝突",
    "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-08-shoutotsu/data.json",
-   "minutes": 45,
-   "why": "学習のあとで、手を動かして確かめる。",
+   "minutes": 15,
+   "why": "時間が来たらそこで切る。全問やらなくてよい。間違えた所だけ学習に戻る。",
    "done": {
     "quiz": "robo_chukan_08_shoutotsu_v1",
     "total": 65
@@ -196,7 +196,7 @@
    "phase": "原題",
    "label": "⑨ 演習プリント(No.1・No.2)の原題 ← 一番最後",
    "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-09-genten/data.json",
-   "minutes": 45,
+   "minutes": 40,
    "why": "第1〜8回を終えてから、最後に解く。本番は演習プリントとほぼ同じ形の見込み。まず紙で解いて、答えと照らす。",
    "done": {
     "quiz": "robo_chukan_09_genten_v1",
