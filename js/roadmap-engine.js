@@ -8,6 +8,15 @@ var CSS = `
 .rm-listlink{font-size:.8rem;margin-bottom:6px}.rm-listlink a{color:var(--muted);text-decoration:underline}
 .rm-eyebrow{font-size:.72rem;letter-spacing:.14em;color:var(--teal);font-weight:700}
 .rm-wrap h1{margin:6px 0 8px;font-size:1.55rem;line-height:1.3;font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif}
+.rm-pre{background:var(--card);border:1px solid var(--amber);border-radius:12px;padding:12px 14px 6px;margin:8px 0 16px}
+.rm-pre-tag{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.06em;color:var(--on-accent,#1a1200);background:var(--amber);border-radius:999px;padding:2px 10px}
+.rm-pre h2{margin:6px 0 6px;font-size:1.02rem;line-height:1.4}
+.rm-pre-lead{margin:0 0 8px;font-size:.88rem;color:var(--ink);line-height:1.65}
+.rm-pre ol{margin:0 0 6px;padding-left:1.3em;font-size:.86rem;line-height:1.7;color:var(--muted)}
+.rm-pre li{margin:0 0 5px}
+.rm-pre li b{color:var(--ink)}
+.rm-pre kbd{font-family:inherit;font-size:.78rem;background:var(--card2);border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:0 5px;margin:0 1px;white-space:nowrap;color:var(--ink)}
+.rm-pre-src{margin:2px 0 6px;font-size:.74rem;color:var(--dim)}
 .rm-intro{color:var(--muted);font-size:.92rem;margin:0 0 14px}
 .rm-intro p{margin:0 0 9px;line-height:1.7}
 .rm-intro b{color:var(--teal);font-weight:700}
@@ -145,6 +154,15 @@ function render() {
   wrap.appendChild(el('div', 'rm-eyebrow', 'ROADMAP'));
   if (D.subject) wrap.appendChild(el('div', 'rm-listlink', '<a href="/?list=' + encodeURIComponent(D.subject) + '">テストを1つずつ選ぶ(一覧)</a>　<a href="/">ホームへ</a>'));
   wrap.appendChild(el('h1', '', D.title));
+  // 前提知識(「ここで差がつく」)。ロードマップの一番最初に出す。JSON は自作なので HTML をそのまま使う
+  if (D.prereq) {
+    var pr = D.prereq;
+    var prHtml = '<div class="rm-pre-tag">前提知識・ここで差がつく</div><h2>' + (pr.title || '') + '</h2>' +
+      (pr.lead ? '<p class="rm-pre-lead">' + pr.lead + '</p>' : '') +
+      '<ol>' + (pr.items || []).map(function (it) { return '<li>' + it + '</li>'; }).join('') + '</ol>' +
+      (pr.src ? '<p class="rm-pre-src">' + pr.src + '</p>' : '');
+    wrap.appendChild(el('div', 'rm-pre', prHtml));
+  }
   if (D.intro) {
     var introHtml = String(D.intro).split('\n').filter(Boolean).map(function (ln) {
       var esc = ln.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');

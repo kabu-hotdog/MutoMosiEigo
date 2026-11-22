@@ -64,7 +64,7 @@
      "note": "行列(3×3)× 座標(3×1)= 座標(3×1)。座標を変換する、ということ。"
     }
    ],
-   "body": "この後ずっと使う計算を、先に確認する。<br><br><b>行列</b>は、数を表の形に並べたもの。横の並びを<b>行</b>、縦の並びを<b>列</b>という。3×3 の行列は 3行3列。<br><br><b>① 行列 × 座標(縦ベクトル)</b>: 行列の<b>各行</b>と座標の3つの数を、順に掛けて足す。結果は、また3つの数を縦に並べたもの。$$\\begin{bmatrix}2&0&1\\\\0&1&0\\\\1&0&3\\end{bmatrix}\\begin{bmatrix}1\\\\2\\\\3\\end{bmatrix}=\\begin{bmatrix}2\\times1+0\\times2+1\\times3\\\\0\\times1+1\\times2+0\\times3\\\\1\\times1+0\\times2+3\\times3\\end{bmatrix}=\\begin{bmatrix}5\\\\2\\\\10\\end{bmatrix}$$<br><b>② 行列 × 行列</b>: 結果の「$i$ 行 $j$ 列」の数 = 左の行列の $i$ 行 と、右の行列の $j$ 列 を、①と同じ要領で掛けて足したもの。<br>例: $\\begin{bmatrix}1&2&0\\\\0&1&0\\\\0&0&1\\end{bmatrix}\\begin{bmatrix}1&0&0\\\\3&1&0\\\\0&0&1\\end{bmatrix}$ の 1行1列は、左の1行 $(1,2,0)$ と 右の1列 $(1,3,0)$ から $1\\times1+2\\times3+0\\times0=7$。<br><br><b>③ 順序を入れ替えると、答えが変わる</b>: 上の2つを入れ替えて掛けると、1行1列は $1\\times1+0\\times0+0\\times0=1$ で、$7$ と違う。つまり行列の積は、順序を入れ替えると<b>答えが変わることがある</b>($AB\\ne BA$)。回転の順番が大事なのは、このため。<br><br><b>④ $\\cos$ と $\\sin$ の値</b>(この模試で使う4桁。覚えなくてよい。問題文に書いてある): $\\cos 30^\\circ=0.8660$、$\\sin 30^\\circ=0.5000$、$\\cos 45^\\circ=\\sin 45^\\circ=0.7071$、$\\cos 60^\\circ=0.5000$、$\\sin 60^\\circ=0.8660$、$\\cos 90^\\circ=0$、$\\sin 90^\\circ=1$。",
+   "body": "この後ずっと使う計算を、先に確認する。<br><br><b>行列</b>は、数を表の形に並べたもの。横の並びを<b>行</b>、縦の並びを<b>列</b>という。3×3 の行列は 3行3列。<br><br><b>① 行列 × 座標(縦ベクトル)</b>: 行列の<b>各行</b>と座標の3つの数を、順に掛けて足す。結果は、また3つの数を縦に並べたもの。$$\\begin{bmatrix}2&0&1\\\\0&1&0\\\\1&0&3\\end{bmatrix}\\begin{bmatrix}1\\\\2\\\\3\\end{bmatrix}=\\begin{bmatrix}2\\times1+0\\times2+1\\times3\\\\0\\times1+1\\times2+0\\times3\\\\1\\times1+0\\times2+3\\times3\\end{bmatrix}=\\begin{bmatrix}5\\\\2\\\\10\\end{bmatrix}$$<br><b>② 行列 × 行列</b>: 結果の「$i$ 行 $j$ 列」の数 = 左の行列の $i$ 行 と、右の行列の $j$ 列 を、①と同じ要領で掛けて足したもの。<br>例: $\\begin{bmatrix}1&2&0\\\\0&1&0\\\\0&0&1\\end{bmatrix}\\begin{bmatrix}1&0&0\\\\3&1&0\\\\0&0&1\\end{bmatrix}$ の 1行1列は、左の1行 $(1,2,0)$ と 右の1列 $(1,3,0)$ から $1\\times1+2\\times3+0\\times0=7$。<br><br><b>③ 順序を入れ替えると、答えが変わる</b>: 上の2つを入れ替えて掛けると、1行1列は $1\\times1+0\\times0+0\\times0=1$ で、$7$ と違う。つまり行列の積は、順序を入れ替えると<b>答えが変わることがある</b>($AB\\ne BA$)。回転の順番が大事なのは、このため。<br><br><b>④ $\\cos$ と $\\sin$ の値</b>(この模試で使う4桁。覚えなくてよい。問題文に書いてある): $\\cos 90^\\circ=0$、$\\sin 90^\\circ=1$ は覚えておくと速い。",
    "example": {
     "steps": [
      "$\\begin{bmatrix}2&0&1\\\\0&1&0\\\\1&0&3\\end{bmatrix}\\begin{bmatrix}1\\\\2\\\\3\\end{bmatrix}$ の 1行目 = $2\\times1+0\\times2+1\\times3=5$",
@@ -123,9 +123,9 @@
    "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/r07-rotz.jpg\" alt=\"z軸まわりの回転\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">資料 p.7 (3) 回転変換【3次元】 z 軸まわりに θ 回転(赤が回転後の軸 x0,y0,z0、青が単位ベクトル i,j,k)</figcaption></figure>",
    "example": {
     "steps": [
-     "$\\theta=30^\\circ$($\\cos 30^\\circ=0.8660$、$\\sin 30^\\circ=0.5000$)。新しい座標で、点 P は $(P_{x0},P_{y0},P_{z0})=(4,\\ 2,\\ 5)$。",
-     "$P_x=4\\times0.8660-2\\times0.5000=3.464-1.000=2.464$ → <b>2.46</b>",
-     "$P_y=4\\times0.5000+2\\times0.8660=2.000+1.732=$ ?(答えは有効数字3桁)"
+     "$\\theta=30^\\circ$。新しい座標で、点 P は $(P_{x0},P_{y0},P_{z0})=(4,\\ 2,\\ 5)$。",
+     "$P_x=4\\cos30^\\circ-2\\times\\sin30^\\circ=2.464$ → <b>2.46</b>",
+     "$P_y=4\\sin30^\\circ+2\\times\\cos30^\\circ=$ ?(答えは有効数字3桁)"
     ],
     "fill": {
      "type": "numeric",
@@ -140,7 +140,7 @@
      ],
      "note": "$P_y=2.000+1.732=3.732$ → 3.73。($P_z=5$ のまま)",
      "reveal": [
-      "$4\\times0.5000=2.000$、$2\\times0.8660=1.732$",
+      "$4\\sin30^\\circ$ と $2\\times\\cos30^\\circ$ を、電卓で計算して足す",
       "$2.000+1.732=3.732$ → 3.73"
      ]
     }
@@ -179,10 +179,10 @@
    "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/r08-rotxy.jpg\" alt=\"x軸まわり・y軸まわりの回転\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">資料 p.8 左: x 軸まわりに θ 回転 / 右: 同じ図を x 軸の先から見た図(資料の図は、式(2.9)に対応)</figcaption></figure>",
    "example": {
     "steps": [
-     "$x$ 軸まわりに $30^\\circ$($\\cos 30^\\circ=0.8660$、$\\sin 30^\\circ=0.5000$)。新しい座標で、点 P は $(P_{x0},P_{y0},P_{z0})=(1,\\ 4,\\ 2)$。",
+     "$x$ 軸まわりに $30^\\circ$。新しい座標で、点 P は $(P_{x0},P_{y0},P_{z0})=(1,\\ 4,\\ 2)$。",
      "$P_x=P_{x0}=1$($x$ 軸まわりなので変わらない)",
-     "$P_y=4\\times0.8660-2\\times0.5000=3.464-1.000=2.464$ → <b>2.46</b>",
-     "$P_z=4\\times0.5000+2\\times0.8660=2.000+1.732=$ ?"
+     "$P_y=4\\cos30^\\circ-2\\times\\sin30^\\circ=2.464$ → <b>2.46</b>",
+     "$P_z=4\\sin30^\\circ+2\\times\\cos30^\\circ=$ ?"
     ],
     "fill": {
      "type": "numeric",
@@ -197,7 +197,7 @@
      ],
      "note": "$P_z=2.000+1.732=3.732$ → 3.73。",
      "reveal": [
-      "$4\\times0.5000=2.000$、$2\\times0.8660=1.732$",
+      "$4\\sin30^\\circ$ と $2\\times\\cos30^\\circ$ を、電卓で計算して足す",
       "$2.000+1.732=3.732$ → 3.73"
      ]
     }

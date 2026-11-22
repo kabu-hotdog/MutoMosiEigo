@@ -63,7 +63,7 @@
    "example": {
     "steps": [
      "$f=3\\sin\\theta$ を $\\theta$ で微分すると、$3\\cos\\theta$。",
-     "$\\theta=60^\\circ$ のとき、$\\cos60^\\circ=0.5000$ なので、$3\\times0.5000=$ ?"
+     "$\\theta=60^\\circ$ のとき、$3\\cos60^\\circ=$ ?"
     ],
     "fill": {
      "type": "numeric",
@@ -76,9 +76,9 @@
        "label": "値"
       }
      ],
-     "note": "$3\\times0.5000=1.500$ → 1.50。",
+     "note": "$3\\cos60^\\circ=1.500$ → 1.50。",
      "reveal": [
-      "$3\\times0.5=1.5$"
+      "$3\\cos60^\\circ$ を電卓で計算する。"
      ]
     }
    },
@@ -116,9 +116,9 @@
    "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/r19-varlink.jpg\" alt=\"回転1関節、リンクの長さ可変\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">資料 p.19 (例) 回転1関節、リンクの長さ可変。長さ L(t)、角度 θ(t)。先端は x 方向 L cosθ、y 方向 L sinθ</figcaption></figure>",
    "example": {
     "steps": [
-     "$x=L\\cos\\theta$、$y=L\\sin\\theta$。$L=4$、$\\theta=30^\\circ$($\\cos30^\\circ=0.8660$、$\\sin30^\\circ=0.5000$)。",
-     "$\\boldsymbol{J}$ の 1行1列 $=\\partial x/\\partial L=\\cos\\theta=0.8660$、2行1列 $=\\partial y/\\partial L=\\sin\\theta=0.5000$。",
-     "2行2列 $=\\partial y/\\partial\\theta=L\\cos\\theta=4\\times0.8660=$ ?"
+     "$x=L\\cos\\theta$、$y=L\\sin\\theta$。$L=4$、$\\theta=30^\\circ$。",
+     "$\\boldsymbol{J}$ の 1行1列 $=\\partial x/\\partial L=\\cos\\theta=\\cos30^\\circ$、2行1列 $=\\partial y/\\partial L=\\sin\\theta=\\sin30^\\circ$。",
+     "2行2列 $=\\partial y/\\partial\\theta=L\\cos\\theta=4\\cos30^\\circ=$ ?"
     ],
     "fill": {
      "type": "numeric",
@@ -131,9 +131,9 @@
        "label": "$J_{22}$"
       }
      ],
-     "note": "$4\\times0.8660=3.464$ → 3.46。",
+     "note": "$4\\cos30^\\circ=3.464$ → 3.46。",
      "reveal": [
-      "$4\\times0.8660=3.464$ → 3.46"
+      "$4\\cos30^\\circ=3.464$ → 3.46"
      ]
     }
    },
@@ -171,9 +171,9 @@
    "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/r13-planar2.jpg\" alt=\"2自由度平面ロボットアーム\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">資料 p.13 (1) 2自由度平面ロボットアーム。左: 上から見た平面図 / 右: 立体図(θ1, θ2 は z 軸まわりの回転)</figcaption></figure>",
    "example": {
     "steps": [
-     "$L_1=3$、$L_2=2$、$\\theta_1=30^\\circ$、$\\theta_2=30^\\circ$($\\theta_1+\\theta_2=60^\\circ$)。$\\cos30^\\circ=0.8660$、$\\cos60^\\circ=0.5000$。",
-     "$J_{22}=\\partial y/\\partial\\theta_2=L_2\\cos(\\theta_1+\\theta_2)=2\\times0.5000=1.000$",
-     "$J_{21}=\\partial y/\\partial\\theta_1=L_1\\cos\\theta_1+L_2\\cos(\\theta_1+\\theta_2)=3\\times0.8660+1.000=2.598+1.000=$ ?"
+     "$L_1=3$、$L_2=2$、$\\theta_1=30^\\circ$、$\\theta_2=30^\\circ$($\\theta_1+\\theta_2=60^\\circ$)。",
+     "$J_{22}=\\partial y/\\partial\\theta_2=L_2\\cos(\\theta_1+\\theta_2)=2\\cos60^\\circ=1.000$",
+     "$J_{21}=\\partial y/\\partial\\theta_1=L_1\\cos\\theta_1+L_2\\cos(\\theta_1+\\theta_2)=3\\cos30^\\circ+2\\cos60^\\circ=$ ?"
     ],
     "fill": {
      "type": "numeric",
@@ -186,10 +186,10 @@
        "label": "$J_{21}$"
       }
      ],
-     "note": "$2.598+1.000=3.598$ → 3.60。",
+     "note": "$3\\cos30^\\circ+2\\cos60^\\circ=3.598$ → 3.60。",
      "reveal": [
-      "$3\\times0.8660=2.598$、$2\\times0.5=1.000$",
-      "$2.598+1.000=3.598$ → 3.60"
+      "$3\\cos30^\\circ$ と $2\\cos60^\\circ$ を、電卓で計算して足す",
+      "$3\\cos30^\\circ+2\\cos60^\\circ=3.598$ → 3.60"
      ]
     }
    },
@@ -228,8 +228,8 @@
    "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/r21-singular.jpg\" alt=\"特異姿勢(図10.3)\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">資料 p.21 図10.3 2自由度マニピュレータの特異姿勢。(a)通常の姿勢 (b)第1の特異姿勢 (c)第2の特異姿勢。矢印は「運動できない方向」</figcaption></figure>",
    "example": {
     "steps": [
-     "$L_1=3$、$L_2=2$、$\\theta_2=30^\\circ$($\\sin30^\\circ=0.5000$)。$\\det\\boldsymbol{J}=L_1L_2\\sin\\theta_2$。",
-     "$\\det\\boldsymbol{J}=3\\times2\\times0.5000=$ ?(0 でないので、逆行列はある)"
+     "$L_1=3$、$L_2=2$、$\\theta_2=30^\\circ$。$\\det\\boldsymbol{J}=L_1L_2\\sin\\theta_2$。",
+     "$\\det\\boldsymbol{J}=3\\times2\\times\\sin30^\\circ=$ ?(0 でないので、逆行列はある)"
     ],
     "fill": {
      "type": "numeric",
@@ -242,9 +242,9 @@
        "label": "$\\det\\boldsymbol{J}$"
       }
      ],
-     "note": "$3\\times2\\times0.5=3.000$ → 3.00。0 でないので逆行列がある。",
+     "note": "$3\\times2\\times\\sin30^\\circ=3.000$ → 3.00。0 でないので逆行列がある。",
      "reveal": [
-      "$3\\times2=6$、$6\\times0.5=3$"
+      "$3\\times2=6$、$6\\times\\sin30^\\circ$ を計算する"
      ]
     }
    },
@@ -282,7 +282,7 @@
    "example": {
     "steps": [
      "${}^{0}\\boldsymbol{P}_E$ の $y$ 成分が $L_1+L_3\\cos\\theta_2$ のとき、$L_3$ で偏微分すると $\\cos\\theta_2$($L_1$ は定数なので 0)。",
-     "$\\theta_2=60^\\circ$($\\cos60^\\circ=0.5000$)なら、$\\partial y/\\partial L_3=$ ?"
+     "$\\theta_2=60^\\circ$ なら、$\\partial y/\\partial L_3=$ ?"
     ],
     "fill": {
      "type": "numeric",
@@ -295,9 +295,9 @@
        "label": "値"
       }
      ],
-     "note": "$\\cos60^\\circ=0.5000$ → 0.500。",
+     "note": "$\\cos60^\\circ$ を計算して → 0.500。",
      "reveal": [
-      "$\\cos60^\\circ=0.5$"
+      "$\\cos60^\\circ$ を電卓で計算する。"
      ]
     }
    },

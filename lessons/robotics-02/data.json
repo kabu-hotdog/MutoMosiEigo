@@ -145,9 +145,9 @@
    "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/r05-angle.jpg\" alt=\"回転角の定義\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">資料 p.5 (1) 回転角の定義: 正の方向(「逆向きから見る!」)</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/r06-rot2d.jpg\" alt=\"2次元の回転\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">資料 p.6 (2) 回転変換【2次元】(赤が物体座標軸、黒が絶対座標軸)</figcaption></figure>",
    "example": {
     "steps": [
-     "$\\theta=30^\\circ$ のとき $\\cos 30^\\circ=0.8660$、$\\sin 30^\\circ=0.5000$。物体座標が $(P_{xo},P_{yo})=(3,1)$。",
-     "$P_{xa}=3\\times0.8660-1\\times0.5000=2.598-0.5000=2.098$ → <b>2.10</b>",
-     "$P_{ya}=3\\times0.5000+1\\times0.8660=1.500+0.8660=$ ?"
+     "$\\theta=30^\\circ$ のとき。物体座標が $(P_{xo},P_{yo})=(3,1)$。",
+     "$P_{xa}=3\\cos30^\\circ-1\\times\\sin30^\\circ=2.098$ → <b>2.10</b>",
+     "$P_{ya}=3\\sin30^\\circ+1\\times\\cos30^\\circ=$ ?"
     ],
     "fill": {
      "type": "numeric",
@@ -160,10 +160,10 @@
        "label": "$P_{ya}$"
       }
      ],
-     "note": "$P_{ya}=1.500+0.8660=2.366$ → 2.37。",
+     "note": "$P_{ya}=3\\sin30^\\circ+1\\times\\cos30^\\circ=2.366$ → 2.37。",
      "reveal": [
-      "$3\\times0.5000=1.500$、$1\\times0.8660=0.8660$",
-      "$1.500+0.8660=2.366$ → 2.37"
+      "$3\\sin30^\\circ$ と $1\\times\\cos30^\\circ$ を、電卓で計算して足す",
+      "$3\\sin30^\\circ+1\\times\\cos30^\\circ=2.366$ → 2.37"
      ]
     }
    },

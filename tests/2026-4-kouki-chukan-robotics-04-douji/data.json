@@ -119,8 +119,8 @@
      ],
      "note": "${}^{a}\\boldsymbol{P}=\\boldsymbol{R}(z_a,90^\\circ)\\,{}^{b}\\boldsymbol{P}+{}^{a}\\boldsymbol{T}_b$(式(2.4))。${}^{a}P_y$=7.00、${}^{a}P_z$=6.00。(途中は有効4桁、答えは3桁)",
      "reveal": [
-      "$\\begin{bmatrix}{}^{a}P_x\\\\{}^{a}P_y\\\\{}^{a}P_z\\end{bmatrix}=\\begin{bmatrix}0&-1.000&0\\\\1.000&0&0\\\\0&0&1\\end{bmatrix}\\begin{bmatrix}3\\\\2\\\\2\\end{bmatrix}+\\begin{bmatrix}2\\\\4\\\\4\\end{bmatrix}$",
-      "回転の部分を、各行を掛けて足す: $\\begin{bmatrix}0&-1.000&0\\\\1.000&0&0\\\\0&0&1\\end{bmatrix}\\begin{bmatrix}3\\\\2\\\\2\\end{bmatrix}=\\begin{bmatrix}0 + (-2.000) + 0\\\\3.000 + 0 + 0\\\\0 + 0 + 2.000\\end{bmatrix}=\\begin{bmatrix}-2.000\\\\3.000\\\\2.000\\end{bmatrix}$",
+      "$\\begin{bmatrix}{}^{a}P_x\\\\{}^{a}P_y\\\\{}^{a}P_z\\end{bmatrix}=\\begin{bmatrix}\\cos 90^\\circ&-\\sin 90^\\circ&0\\\\\\sin 90^\\circ&\\cos 90^\\circ&0\\\\0&0&1\\end{bmatrix}\\begin{bmatrix}3\\\\2\\\\2\\end{bmatrix}+\\begin{bmatrix}2\\\\4\\\\4\\end{bmatrix}$",
+      "回転の部分を、各行を掛けて足す: $\\begin{bmatrix}\\cos 90^\\circ&-\\sin 90^\\circ&0\\\\\\sin 90^\\circ&\\cos 90^\\circ&0\\\\0&0&1\\end{bmatrix}\\begin{bmatrix}3\\\\2\\\\2\\end{bmatrix}=\\begin{bmatrix}3\\times\\cos 90^\\circ + 2\\times(-\\sin 90^\\circ)\\\\3\\times\\sin 90^\\circ + 2\\times\\cos 90^\\circ\\\\2\\times1\\end{bmatrix}=\\begin{bmatrix}-2.000\\\\3.000\\\\2.000\\end{bmatrix}$",
       "並進を足す: $\\begin{bmatrix}-2.000\\\\3.000\\\\2.000\\end{bmatrix}+\\begin{bmatrix}2\\\\4\\\\4\\end{bmatrix}=\\begin{bmatrix}0\\\\7.000\\\\6.000\\end{bmatrix}$"
      ],
      "hint": "式(2.4): $\\begin{bmatrix}{}^{a}P_x\\\\{}^{a}P_y\\\\{}^{a}P_z\\end{bmatrix}=\\boldsymbol{R}\\begin{bmatrix}{}^{b}P_x\\\\{}^{b}P_y\\\\{}^{b}P_z\\end{bmatrix}+\\begin{bmatrix}T_x\\\\T_y\\\\T_z\\end{bmatrix}$、$\\boldsymbol{R}=\\begin{bmatrix}\\cos\\theta&-\\sin\\theta&0\\\\\\sin\\theta&\\cos\\theta&0\\\\0&0&1\\end{bmatrix}$(回転角は $90^\\circ$)",

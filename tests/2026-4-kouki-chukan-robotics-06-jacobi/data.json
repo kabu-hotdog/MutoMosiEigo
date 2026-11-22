@@ -85,8 +85,8 @@
      ],
      "note": "$\\boldsymbol{J}=\\begin{bmatrix}\\cos\\theta&-L\\sin\\theta\\\\\\sin\\theta&L\\cos\\theta\\end{bmatrix}$。$\\dot{x}$=0.232、$\\dot{y}$=3.60。(途中は有効4桁、答えは3桁)",
      "reveal": [
-      "$\\begin{bmatrix}\\dot{x}\\\\\\dot{y}\\end{bmatrix}=\\boldsymbol{J}\\begin{bmatrix}\\dot{L}\\\\\\dot{\\theta}\\end{bmatrix}=\\begin{bmatrix}0.8660&-1.500\\\\0.5000&2.598\\end{bmatrix}\\begin{bmatrix}2\\\\1\\end{bmatrix}$",
-      "各行を掛けて足す: $=\\begin{bmatrix}0.8660\\times2-1.500\\times1\\\\0.5000\\times2+2.598\\times1\\end{bmatrix}=\\begin{bmatrix}0.2320\\\\3.598\\end{bmatrix}$"
+      "$\\begin{bmatrix}\\dot{x}\\\\\\dot{y}\\end{bmatrix}=\\boldsymbol{J}\\begin{bmatrix}\\dot{L}\\\\\\dot{\\theta}\\end{bmatrix}=\\begin{bmatrix}\\cos 30^\\circ&-3\\sin 30^\\circ\\\\\\sin 30^\\circ&3\\cos 30^\\circ\\end{bmatrix}\\begin{bmatrix}2\\\\1\\end{bmatrix}$",
+      "各行を掛けて足す: $=\\begin{bmatrix}\\cos 30^\\circ\\times2-3\\sin 30^\\circ\\times1\\\\\\sin 30^\\circ\\times2+3\\cos 30^\\circ\\times1\\end{bmatrix}=\\begin{bmatrix}0.2320\\\\3.598\\end{bmatrix}$"
      ],
      "hint": "$\\begin{bmatrix}\\dot{x}\\\\\\dot{y}\\end{bmatrix}=\\boldsymbol{J}\\begin{bmatrix}\\dot{L}\\\\\\dot{\\theta}\\end{bmatrix}$、$\\boldsymbol{J}=\\begin{bmatrix}\\cos\\theta&-L\\sin\\theta\\\\\\sin\\theta&L\\cos\\theta\\end{bmatrix}$(資料 p.19)",
      "tag": "可変長リンクの速度"
@@ -168,7 +168,7 @@
      ],
      "note": "$\\det\\boldsymbol{J}=L_1L_2\\sin\\theta_2$。$\\det\\boldsymbol{J}$=3.00。(途中は有効4桁、答えは3桁)",
      "reveal": [
-      "$3\\times2\\times0.5000=3.000$"
+      "$3\\times2\\times\\sin 30^\\circ=3.000$"
      ],
      "hint": "$\\det\\boldsymbol{J}=L_1L_2\\sin\\theta_2$",
      "tag": "行列式と特異点"

@@ -118,9 +118,9 @@
    "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/r13-planar2.jpg\" alt=\"2自由度平面ロボットアーム\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">資料 p.13 (1) 2自由度平面ロボットアーム。左: 上から見た平面図 / 右: 立体図(θ1, θ2 は z 軸まわりの回転)</figcaption></figure>",
    "example": {
     "steps": [
-     "$L_1=3$、$L_2=2$、$\\theta_1=30^\\circ$、$\\theta_2=60^\\circ$($\\theta_1+\\theta_2=90^\\circ$)。$\\cos30^\\circ=0.8660$、$\\sin30^\\circ=0.5000$、$\\cos90^\\circ=0$、$\\sin90^\\circ=1$。",
-     "$x=3\\times0.8660+2\\times0=2.598+0=2.598$ → <b>2.60</b>",
-     "$y=3\\times0.5000+2\\times1=1.500+2=$ ?"
+     "$L_1=3$、$L_2=2$、$\\theta_1=30^\\circ$、$\\theta_2=60^\\circ$($\\theta_1+\\theta_2=90^\\circ$)。",
+     "$x=3\\cos30^\\circ+2\\cos90^\\circ=2.598$ → <b>2.60</b>",
+     "$y=3\\sin30^\\circ+2\\sin90^\\circ=$ ?"
     ],
     "fill": {
      "type": "numeric",
@@ -135,7 +135,7 @@
      ],
      "note": "$y=1.500+2.000=3.500$ → 3.50。",
      "reveal": [
-      "$3\\times0.5=1.5$、$2\\times1=2$",
+      "$3\\cos60^\\circ$ を電卓で計算する。、$2\\times1=2$",
       "$1.5+2=3.5$ → 3.50"
      ]
     }

@@ -234,5 +234,19 @@
    "minutes": 15,
    "why": "新しい問題はやらない。早く寝る。"
   }
- ]
+ ],
+ "prereq": {
+  "title": "試験で使う関数電卓 CASIO fx-375ES A",
+  "lead": "<b>この電卓に、行列・ベクトルの計算モードは無い</b>(MATRIX・VECTOR は fx-915ES / 995ES だけ。fx-375ES A の説明書にも無い)。行列は「<b>1行ずつ、掛けて足す</b>」を電卓でやる。差がつくのは、下の設定と使い方。",
+  "items": [
+   "<b>角度は「度」に</b>: <kbd>SHIFT</kbd><kbd>MODE</kbd><kbd>3</kbd>(Deg)。画面の上に <b>D</b> が出ていればよい。ラジアンのままだと sin 30° が違う値になる。(微分・積分の中で三角関数を使う時だけ Rad)",
+   "<b>有効数字3桁で表示</b>: <kbd>SHIFT</kbd><kbd>MODE</kbd><kbd>7</kbd>(Sci) → <kbd>3</kbd>。3桁に四捨五入して出る(例 1.73×10⁰)。戻すには <kbd>SHIFT</kbd><kbd>MODE</kbd><kbd>8</kbd>(Norm) → <kbd>1</kbd>。答えが √ や分数で出たら <kbd>S⇔D</kbd> で小数に。",
+   "<b>行列×縦ベクトルは、1行ずつ</b>: 1行 = 3つの積の和。例 2cos30° − 0×sin30° を、そのまま打つ。同じ cos・sin を何度も使う時は、変数に入れる。cos 30 → A: <kbd>cos</kbd> 30 <kbd>)</kbd> <kbd>SHIFT</kbd><kbd>RCL</kbd><kbd>(−)</kbd>(A)。式の中では <kbd>ALPHA</kbd><kbd>(−)</kbd> で A を呼ぶ。",
+   "<b>前の式を使い回す</b>: <kbd>▲</kbd> で前の式を呼び出し、数字だけ直して再計算。変数入りの式(例 4sinX+2sin(X+Y))を打って <kbd>CALC</kbd> を押すと、値を入れるだけで答えが出る。θ だけ変えて何回も解く時に速い。",
+   "<b>2次元の回転は Pol( と Rec( で一発</b>: 先に <kbd>SHIFT</kbd><kbd>+</kbd>(Pol() で Pol(2,0) → 長さ X=2、角度 Y=0。次に <kbd>SHIFT</kbd><kbd>−</kbd>(Rec() で Rec(X, Y+30) → X=1.73、Y=1.00(回転後の x, y)。角度は度。結果は変数 X・Y に入る。",
+   "<b>衝突は連立方程式モード</b>: <kbd>MODE</kbd><kbd>5</kbd>(EQN) → <kbd>1</kbd>(aX+bY=c)。運動量保存と反発係数の式を2本の1次式にして係数を入れ、<kbd>=</kbd> で v₁'・v₂' が出る。",
+   "<b>式=0 を解くソルブ</b>: 式を <kbd>ALPHA</kbd><kbd>CALC</kbd>(=) 付きで打ち、<kbd>SHIFT</kbd><kbd>CALC</kbd>(SOLVE) → 他の値を入れ、最後に求めたい変数の初期値を入れて <kbd>=</kbd>。エネルギー保存則から l や v を逆算する時に使う。解が出ない時は、初期値を答えに近い数に変える。"
+  ],
+  "src": "出典: カシオ fx-375ES A 取扱説明書(p.10〜12・26・28〜30・36・37・55〜56)"
+ }
 }
