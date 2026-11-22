@@ -1038,6 +1038,16 @@ app.post('/api/admin/reset-test-score', auth, async (req, res) => {
   res.json({ ok: true, username: rows[0].username });
 });
 
+// 進捗を全部まとめて取得(別のブラウザで開いた時に、トップ・ロードマップの表示を戻すため)
+app.get('/api/progress', auth, async (req, res) => {
+  const { rows } = await pool.query(
+    'SELECT quiz_key, state_json FROM quiz_progress WHERE user_id=$1', [req.user.id]
+  );
+  const all = {};
+  rows.forEach(r => { try { all[r.quiz_key] = JSON.parse(r.state_json); } catch (e) {} });
+  res.json({ all });
+});
+
 // クイズ進捗を取得
 app.get('/api/progress/:quizKey', auth, async (req, res) => {
   const { quizKey } = req.params;

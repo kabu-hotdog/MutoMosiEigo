@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Outfit:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/js/prefs.js"></script>
 <link rel="stylesheet" href="/styles/theme.css">
 <style>
 body{
@@ -619,16 +620,16 @@ function applyExamArchive() {
 
 // ── テーマ ────────────────────────────────────────────────
 const THEME_LABELS = { navy:'ネイビー', purple:'パープル', forest:'フォレスト', charcoal:'チャコール' };
-function applyTheme(key) {
+function applyTheme(key, fromLoad) {
   document.documentElement.setAttribute('data-theme', key === 'navy' ? '' : key);
-  localStorage.setItem('mutou_theme', key);
+  if (fromLoad) localStorage.setItem('mutou_theme', key); else prefsSet('mutou_theme', key); // 個人設定: アカウントにも保存
   document.querySelectorAll('.theme-dot').forEach(d => {
     d.classList.toggle('active', d.dataset.theme === key);
   });
   const lbl = document.getElementById('theme-label');
   if (lbl) lbl.textContent = THEME_LABELS[key] || '';
 }
-function loadTheme() { applyTheme(localStorage.getItem('mutou_theme') || 'navy'); }
+function loadTheme() { applyTheme(localStorage.getItem('mutou_theme') || 'navy', true); }
 
 // ── アーカイブトグル ──────────────────────────────────────
 function toggleShowArchived() {
@@ -1289,7 +1290,7 @@ function toggleNotif() {
   panel.classList.toggle('open');
   if (panel.classList.contains('open')) {
     lockScroll();
-    localStorage.setItem(NOTIF_KEY, '1');
+    prefsSet(NOTIF_KEY, '1');
     document.getElementById('notif-badge').style.display = 'none';
   } else {
     unlockScroll();
@@ -1307,6 +1308,17 @@ document.addEventListener('click', e => {
   }
 });
 
+// ── 個人データをアカウントと同期(別のブラウザでも進捗・設定が戻る) ──
+async function syncPersonalData() {
+  try {
+    const changed = await prefsSync();
+    if (!changed) return;
+    loadTheme();
+    renderFolders();
+    if (localStorage.getItem(NOTIF_KEY)) document.getElementById('notif-badge').style.display = 'none';
+  } catch (e) {}
+}
+
 // ── Supabase Auth 初期化 ─────────────────────────────────
 supabaseClient.auth.getSession().then(async ({ data: { session } }) => {
   if (session) {
@@ -1321,12 +1333,14 @@ supabaseClient.auth.getSession().then(async ({ data: { session } }) => {
   }
   updateAuthBar();
   initSurveyBanner();
+  syncPersonalData();
 
   supabaseClient.auth.onAuthStateChange(async (event, session) => {
     if (event === 'SIGNED_IN' && session) {
       authToken = session.access_token;
       await syncUser(authToken);
       initSurveyBanner();
+      syncPersonalData();
     } else if (event === 'SIGNED_OUT') {
       if (!localStorage.getItem('muto_session')) {
         authToken = null; authUser = null; authEmail = null; authPoints = 0; authLifetimePoints = 0;

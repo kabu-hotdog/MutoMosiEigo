@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>クラス順位予測 ・ 武藤模試</title>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/js/prefs.js"></script>
 <link rel="stylesheet" href="/styles/theme.css">
 <style>
   body{margin:0;background:var(--bg);color:var(--ink);font-family:'Fraunces',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
@@ -103,6 +104,7 @@ async function loadClrankPage() {
     const data = await fetch('/api/class-rank').then(r => r.json());
     const newMax      = data.max_score || 300;
     const newConf     = data.confirmed || {};
+    try { await prefsSync(); } catch (e) {} // 自己ベストはアカウントから戻す
     const prevMax     = parseInt(localStorage.getItem('clrank_max_score') || '0');
 
     _clrankPositions = (data.positions && !Array.isArray(data.positions)) ? data.positions : {};
@@ -120,7 +122,7 @@ async function loadClrankPage() {
     }
 
     _clrankMaxScore = newMax;
-    localStorage.setItem('clrank_max_score', newMax);
+    prefsSet('clrank_max_score', newMax);
 
     const scores = Object.values(_clrankConfirmed);
     if (scores.length) {
