@@ -74,6 +74,17 @@
    }
   },
   {
+   "id": "L7",
+   "phase": "学習",
+   "label": "学習 第7回 剛体のエネルギー保存則",
+   "href": "/lesson.html?d=lessons/robotics-07/data.json",
+   "minutes": 70,
+   "why": "位置・並進・回転のエネルギーで速度を求める。棒・円柱・球の例題。",
+   "done": {
+    "lesson": "robo_learn_07_v1"
+   }
+  },
+  {
    "id": "P1",
    "phase": "演習1周目",
    "label": "① 構成とアームの種類",
@@ -143,6 +154,18 @@
    "done": {
     "quiz": "robo_chukan_06_jacobi_v1",
     "total": 39
+   }
+  },
+  {
+   "id": "P7",
+   "phase": "演習1周目",
+   "label": "⑦ エネルギー保存則",
+   "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-07-energy/data.json",
+   "minutes": 30,
+   "why": "学習のあとで、手を動かして確かめる。",
+   "done": {
+    "quiz": "robo_chukan_07_energy_v1",
+    "total": 35
    }
   },
   {

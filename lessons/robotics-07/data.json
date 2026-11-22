@@ -1,0 +1,527 @@
+{
+ "year": 2026,
+ "grade": 4,
+ "exam": "後期中間試験",
+ "subject": "ロボティクス",
+ "title": "ロボティクス ・ 学習 第7回 剛体のエネルギー保存則",
+ "storageKey": "robo_learn_07_v1",
+ "minutes": 70,
+ "goals": [
+  "位置・並進・回転のエネルギーを使い分けられる",
+  "「高さは重心で考える」「すべらず転がる v=rω」を使って、速度を求められる",
+  "棒・円柱・球の例題を、エネルギー保存則で解ける"
+ ],
+ "katex": true,
+ "terms": [
+  {
+   "name": "位置エネルギー mgh",
+   "plain": "高い所にある物体がもつエネルギー。h は高さ(重心の高さで考える)。"
+  },
+  {
+   "name": "運動エネルギー(並進) ½mv²",
+   "plain": "動いている物体がもつエネルギー。v は速度。"
+  },
+  {
+   "name": "運動エネルギー(回転) ½Iω²",
+   "plain": "回転している物体がもつエネルギー。I は回転軸まわりの慣性モーメント、ω は角速度。(資料11/9 p.4)"
+  },
+  {
+   "name": "慣性モーメント I",
+   "plain": "回りにくさ。同じ物体でも、回す軸が違うと値が違う。(資料外・補足)"
+  },
+  {
+   "name": "角速度 ω",
+   "plain": "どれだけの速さで回っているか(rad/s)。(資料外・補足)"
+  },
+  {
+   "name": "周速度 v = rω",
+   "plain": "半径 r の所を、角速度 ω で回っているときの、回る点の速さ。(資料11/9 p.15)"
+  },
+  {
+   "name": "すべらずころがる",
+   "plain": "接している点で、すべらないで転がること。このとき、重心の速度 v と回転の周速度 rω が等しい(v = rω)。(資料11/9 p.15)"
+  },
+  {
+   "name": "エネルギー保存則",
+   "plain": "摩擦などで失われなければ、「最初のエネルギーの合計 = あとのエネルギーの合計」。(資料11/9 p.7〜)"
+  }
+ ],
+ "blocks": [
+  {
+   "id": "b0",
+   "title": "先に道具: エネルギー3種類と、慣性モーメント",
+   "pre": [
+    {
+     "type": "single",
+     "q": "高い所から物を落とすと、位置エネルギーは何に変わる?(知らなくて当然)",
+     "opts": [
+      "運動エネルギー",
+      "重さ",
+      "高さ"
+     ],
+     "ans": "運動エネルギー",
+     "note": "位置エネルギーが減った分、運動エネルギーが増える。これがエネルギー保存則。"
+    }
+   ],
+   "body": "この回では、エネルギーの出入りで速度を求める。まず、使う道具。<ul><li><b>位置エネルギー</b> $mgh$(質量 × 重力加速度 × 高さ)。この模試では $g=9.81\\ \\mathrm{m/s^2}$。<b>高さは、重心の位置で考える</b>(資料11/9 p.7 の赤字「重要」)。</li><li><b>並進の運動エネルギー</b> $\\dfrac12mv^2$(動いている物体)。</li><li><b>回転の運動エネルギー</b> $T=\\dfrac12I\\omega^2$(回転している物体、資料11/9 p.4)。$I$ は<b>回転軸まわり</b>の慣性モーメント(資料の赤字)、$\\omega$ は角速度。</li></ul><b>慣性モーメント $I$</b> は「回りにくさ」(資料外・補足)。同じ棒でも、回す軸が端か重心かで値が違う。資料に出てくる値:<ul><li>棒の端Aまわり: $I_A=\\dfrac{ml^2}{3}$(教科書P.75)</li><li>円柱: $I=\\dfrac{mr^2}{2}$(教科書P.76)</li><li>球: $I=\\dfrac{2mr^2}{5}$(資料11/9 p.30、課題4 問4)</li></ul>(模試では、使う $I$ を問題文に書く。覚えるかどうかは資料に指示がない。)<br><br><b>周速度</b>: 半径 $r$ の所を角速度 $\\omega$ で回る点の速さは $v=r\\omega$(資料11/9 p.15)。<b>すべらずころがる</b>ときは、重心の速度 $v$ と周速度 $r\\omega$ が等しい: $v=r\\omega$(資料の赤字)。ここから $\\omega=v/r$。<br><br><b>エネルギー保存則</b>: 最初の状態「静止①」のエネルギー $E_1$ = あとの状態「運動②」のエネルギー $E_2$。$E_1=E_2$ を立てて、未知の速度を解く。",
+   "example": {
+    "steps": [
+     "質量 $m=2\\ \\mathrm{kg}$ の物体が、速度 $v=3\\ \\mathrm{m/s}$ で並進している。",
+     "運動エネルギーは $\\dfrac12mv^2=\\dfrac12\\times2\\times3^2=\\dfrac12\\times2\\times9=$ ?"
+    ],
+    "fill": {
+     "type": "numeric",
+     "q": "運動エネルギーはいくつ?(単位 J。有効数字3桁)",
+     "parts": [
+      {
+       "ans": 9.0,
+       "unit": "J",
+       "abs": 0.015,
+       "label": "運動エネルギー"
+      }
+     ],
+     "note": "$\\dfrac12\\times2\\times9=9.00\\ \\mathrm{J}$。",
+     "reveal": [
+      "$\\dfrac12\\times2=1$、$1\\times9=9$"
+     ]
+    }
+   },
+   "check": [
+    {
+     "type": "single",
+     "q": "エネルギー保存則で、高さを測るのは、物体のどこ?",
+     "opts": [
+      "重心",
+      "一番上の端",
+      "一番下の端"
+     ],
+     "ans": "重心",
+     "note": "高さは重心の位置で考える。(資料11/9 p.7・p.13 の赤字「重要」)"
+    },
+    {
+     "type": "single",
+     "q": "回転の運動エネルギー $T=\\frac12I\\omega^2$ の $I$ は、何まわりの慣性モーメント?",
+     "opts": [
+      "回転軸まわり",
+      "重心まわり(いつでも)",
+      "床まわり"
+     ],
+     "ans": "回転軸まわり",
+     "note": "「回転軸まわり」は資料11/9 p.4 の赤字。(資料11/16 p.6 でも「点Aまわり」)"
+    },
+    {
+     "type": "numeric",
+     "q": "質量 $m=2\\ \\mathrm{kg}$ の物体が、高さ $h=3\\ \\mathrm{m}$ にあるときの位置エネルギー $mgh$ はいくつか。($g=9.81\\ \\mathrm{m/s^2}$。有効数字3桁)",
+     "parts": [
+      {
+       "ans": 58.9,
+       "unit": "J",
+       "abs": 0.15,
+       "label": "$mgh$"
+      }
+     ],
+     "note": "$mgh$。答え 58.9。(途中は有効4桁、答えは3桁)",
+     "reveal": [
+      "$mgh=2\\times9.81\\times3=58.86$ J"
+     ],
+     "hint": "$mgh$ に代入する。",
+     "tag": "位置エネルギー"
+    }
+   ]
+  },
+  {
+   "id": "b1",
+   "title": "例題1: 水平な棒が、鉛直まで回るときのB端の速度",
+   "pre": [
+    {
+     "type": "single",
+     "q": "棒の一端Aを止めて、水平な状態からはなすと、重心はどう動く?(知らなくて当然)",
+     "opts": [
+      "下がる",
+      "上がる",
+      "動かない"
+     ],
+     "ans": "下がる",
+     "note": "重力で回って、棒の重心は下がる。位置エネルギーが運動エネルギーに変わる。"
+    }
+   ],
+   "body": "【例題1】(資料11/9 p.6)質量 $m$、長さ $l$ の棒ABのA端を回転自由にして止め、水平な状態で静止させる。手をはなして重力で回転させる。棒が鉛直になったときの B端の速度 $v_B$ を求めよ(棒はAを中心とした回転運動をする)。<ol><li><b>①(静止)のエネルギー</b>: 重心Gは、Aから $l/2$ の所。鉛直になると、重心は $l/2$ だけ下がる。<b>高さは重心で考える</b>(赤字「重要」)。$E_1=mg\\times\\dfrac l2=\\dfrac{mgl}{2}$</li><li><b>②(運動)のエネルギー</b>: 棒はAを中心とした回転運動。$E_2=\\dfrac12I_A\\omega^2$。$I_A=\\dfrac{ml^2}{3}$ なので $E_2=\\dfrac12\\times\\dfrac{ml^2}{3}\\times\\omega^2=\\dfrac{ml^2}{6}\\omega^2$</li><li><b>エネルギー保存則 $E_1=E_2$</b>: $\\dfrac{mgl}{2}=\\dfrac{ml^2}{6}\\omega^2$。$\\omega$ について解くと $\\omega=\\sqrt{\\dfrac{3g}{l}}$</li><li><b>B端の速度</b>(赤字): $v_B=l\\omega=l\\times\\sqrt{\\dfrac{3g}{l}}=\\sqrt{3gl}$</li></ol>(資料外・補足)B端は半径 $l$ の円を回るので、速さは $v=l\\omega$(周速度)。<br><br>数値の例(この模試のルール: $g=9.81$、途中は有効4桁): $l=2\\ \\mathrm{m}$ なら、$3\\times9.81=29.43$、$29.43\\times2=58.86$、$\\sqrt{58.86}=7.672$ → $v_B=7.67\\ \\mathrm{m/s}$。<br>まとめ: $E_1$ は $\\dfrac{mgl}{2}$、B端の速度は $\\sqrt{3gl}$。<br><br>【演習No.1 問4】棒が鉛直になったときのB端の速度が $10\\ \\mathrm{m/s}$ のとき、棒の長さ $l$ は? $v_B^2=3gl$ より $l=\\dfrac{v_B^2}{3g}=\\dfrac{10^2}{3\\times9.81}=\\dfrac{100}{29.43}=3.398$ → $3.40\\ \\mathrm{m}$(問題の答えと一致)。",
+   "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/c01-bar.jpg\" alt=\"例題1 の棒\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">資料11/9 p.6 例題1。棒ABのA端を回転自由にして止め、水平(静止①)から鉛直(運動②)になるまで回す</figcaption></figure>",
+   "example": {
+    "steps": [
+     "$l=2\\ \\mathrm{m}$、$g=9.81$。例題1 の結果は $v_B=\\sqrt{3gl}$。",
+     "$3g=3\\times9.81=29.43$、$3gl=29.43\\times2=58.86$。",
+     "$v_B=\\sqrt{58.86}=$ ?(単位 m/s)"
+    ],
+    "fill": {
+     "type": "numeric",
+     "q": "質量 $m$、長さ $l=2\\ \\mathrm{m}$ の棒ABのA端を回転自由にして止め、水平な状態で静止させる。手をはなして重力で回転させたとき、棒が鉛直になった瞬間のB端の速度 $v_B$ はいくつか。(棒のA端まわりの慣性モーメントは $I_A=ml^2/3$。$g=9.81\\ \\mathrm{m/s^2}$。有効数字3桁)",
+     "parts": [
+      {
+       "ans": 7.67,
+       "unit": "m/s",
+       "abs": 0.015,
+       "label": "$v_B$"
+      }
+     ],
+     "note": "$v_B=\\sqrt{3gl}$。答え 7.67。(途中は有効4桁、答えは3桁)",
+     "reveal": [
+      "$v_B=\\sqrt{3gl}=\\sqrt{3\\times9.81\\times2}=\\sqrt{29.43\\times2}=\\sqrt{58.86}=7.672$ m/s"
+     ],
+     "hint": "$mg\\dfrac{l}{2}=\\dfrac12I_A\\omega^2$、$v_B=l\\omega$。",
+     "tag": "例題"
+    }
+   },
+   "check": [
+    {
+     "type": "single",
+     "q": "例題1 で、静止①(水平)のエネルギー $E_1$ は?",
+     "opts": [
+      "$\\dfrac{mgl}{2}$",
+      "$mgl$",
+      "$\\dfrac{ml^2}{6}\\omega^2$"
+     ],
+     "ans": "$\\dfrac{mgl}{2}$",
+     "note": "重心が $l/2$ だけ下がる。$E_1=mg\\times\\dfrac l2$。(資料11/9 p.7)"
+    },
+    {
+     "type": "single",
+     "q": "例題1 で、B端の速度 $v_B$ は?",
+     "opts": [
+      "$\\sqrt{3gl}$",
+      "$\\sqrt{gl}$",
+      "$\\sqrt{2gl}$"
+     ],
+     "ans": "$\\sqrt{3gl}$",
+     "note": "$v_B=l\\omega=\\sqrt{3gl}$。(資料11/9 p.9)"
+    },
+    {
+     "type": "numeric",
+     "q": "例題1 の棒(長さ $l=3\\ \\mathrm{m}$)が水平から鉛直になった瞬間の角速度 $\\omega$ はいくつか。(棒のA端まわりの慣性モーメントは $I_A=ml^2/3$。$g=9.81\\ \\mathrm{m/s^2}$。有効数字3桁)",
+     "parts": [
+      {
+       "ans": 3.13,
+       "unit": "rad/s",
+       "abs": 0.015,
+       "label": "$\\omega$"
+      }
+     ],
+     "note": "$\\omega=\\sqrt{3g/l}$。答え 3.13。(途中は有効4桁、答えは3桁)",
+     "reveal": [
+      "$\\omega=\\sqrt{3g/l}=\\sqrt{29.43/3}=\\sqrt{9.810}=3.132$ rad/s"
+     ],
+     "hint": "$\\dfrac{mgl}{2}=\\dfrac{ml^2}{6}\\omega^2$ から $\\omega^2=3g/l$。",
+     "tag": "確認"
+    }
+   ]
+  },
+  {
+   "id": "b2",
+   "title": "例題8.7: 斜面を転がり落ちる円柱は、並進と回転の両方にエネルギーを使う",
+   "pre": [
+    {
+     "type": "single",
+     "q": "円柱が斜面をすべらずに転がり落ちるとき、運動エネルギーはどうなる?(知らなくて当然)",
+     "opts": [
+      "並進と回転の両方がある",
+      "並進だけ",
+      "回転だけ"
+     ],
+     "ans": "並進と回転の両方がある",
+     "note": "進みながら回るので、並進と回転の両方。(資料11/9 p.14)"
+    }
+   ],
+   "body": "【例題8.7】(資料11/9 p.12、教科書P.113)質量 $m$、半径 $r$ の円柱が、静止状態から斜面(傾き $\\alpha$)に沿って $s$ だけ転がり落ちたときの速度 $v$ を求める。<ol><li><b>①のエネルギー</b>: 高さ $h=s\\sin\\alpha$(<b>高さは重心の位置で考える</b>)。$E_1=mgh=mgs\\sin\\alpha$</li><li><b>②のエネルギー</b>: 並進運動(速度 $v$)と回転運動(角速度 $\\omega$)の両方がある。$E_2=\\dfrac12mv^2+\\dfrac12I\\omega^2$</li><li><b>すべらずころがる</b>から $v=r\\omega$。ゆえに $\\omega=\\dfrac vr$</li><li>円柱の慣性モーメント $I=\\dfrac{mr^2}{2}$ を代入: $E_2=\\dfrac12mv^2+\\dfrac12\\times\\dfrac{mr^2}{2}\\times\\left(\\dfrac vr\\right)^2=\\dfrac34mv^2$</li><li><b>エネルギー保存則</b>: $mgs\\sin\\alpha=\\dfrac34mv^2$。$v$ について解くと $v=2\\sqrt{\\dfrac{gs\\sin\\alpha}{3}}$</li></ol>(資料外・補足)位置エネルギーの $\\frac14$ が回転に使われる($\\frac12mv^2$ が並進、$\\frac14mv^2$ が回転)。すべって落ちる場合の $v=\\sqrt{2gs\\sin\\alpha}$ より、遅くなる。<br>まとめ: 進みながら回るので、運動エネルギーは並進と回転の両方がある。合計は $\\dfrac34mv^2$。<br>数値の例: $s=2\\ \\mathrm{m}$、$\\alpha=30^\\circ$、$g=9.81$ なら、$v=\\sqrt{4gs\\sin\\alpha/3}=\\sqrt{13.08}=3.617$ → $3.62\\ \\mathrm{m/s}$。",
+   "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/c02-cylinder.jpg\" alt=\"例題8.7 斜面を転がる円柱\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">資料11/9 p.12 例題8.7(教科書P.113)。円柱が斜面を、静止①から s だけ転がり落ちた所(運動②)</figcaption></figure>",
+   "example": {
+    "steps": [
+     "$s=2\\ \\mathrm{m}$、$\\alpha=30^\\circ$($\\sin30^\\circ=0.5000$)、$g=9.81$。$v^2=\\dfrac{4gs\\sin\\alpha}{3}$。",
+     "$gs=9.81\\times2=19.62$、$\\times\\sin\\alpha=19.62\\times0.5=9.810$、$\\times4=39.24$、$\\div3=13.08$。",
+     "$v=\\sqrt{13.08}=$ ?(単位 m/s)"
+    ],
+    "fill": {
+     "type": "numeric",
+     "q": "質量 $m$、半径 $r$ の円柱が、傾き $\\alpha=30^\\circ$ の斜面を、静止状態から斜面に沿って $s=2\\ \\mathrm{m}$ だけ、すべらずに転がり落ちたときの重心の速度 $v$ はいくつか。(円柱の慣性モーメントは $I=mr^2/2$。$g=9.81\\ \\mathrm{m/s^2}$。$\\sin 30^\\circ=0.5000$。有効数字3桁)",
+     "parts": [
+      {
+       "ans": 3.62,
+       "unit": "m/s",
+       "abs": 0.015,
+       "label": "$v$"
+      }
+     ],
+     "note": "$v=\\sqrt{\\dfrac{4gs\\sin\\alpha}{3}}$。答え 3.62。(途中は有効4桁、答えは3桁)",
+     "reveal": [
+      "$v=\\sqrt{4gs\\sin\\alpha/3}$: $gs=19.62$、$\\times\\sin\\alpha=9.810$、$\\times4=39.24$、$\\div3=13.08$、$\\sqrt{\\ }=3.617$ m/s"
+     ],
+     "hint": "$mgs\\sin\\alpha=\\dfrac34mv^2$ から $v^2=\\dfrac{4gs\\sin\\alpha}{3}$。",
+     "tag": "例題"
+    }
+   },
+   "check": [
+    {
+     "type": "single",
+     "q": "例題8.7 で、すべらずころがる円柱の運動エネルギー $E_2$ は?",
+     "opts": [
+      "$\\dfrac34mv^2$",
+      "$\\dfrac12mv^2$",
+      "$mv^2$"
+     ],
+     "ans": "$\\dfrac34mv^2$",
+     "note": "$\\dfrac12mv^2+\\dfrac14mv^2=\\dfrac34mv^2$。(資料11/9 p.16)"
+    },
+    {
+     "type": "single",
+     "q": "「すべらずころがる」とき、成り立つ式は?",
+     "opts": [
+      "$v=r\\omega$",
+      "$v=\\omega/r$",
+      "$v=r+\\omega$"
+     ],
+     "ans": "$v=r\\omega$",
+     "note": "重心の速度 $v$ と、周速度 $r\\omega$ が等しい。(資料11/9 p.15)"
+    },
+    {
+     "type": "numeric",
+     "q": "質量 $m$、半径 $r$ の円柱が、傾き $\\alpha=30^\\circ$ の斜面を、静止状態から斜面に沿って $s=3\\ \\mathrm{m}$ だけ、すべらずに転がり落ちたときの重心の速度 $v$ はいくつか。(円柱の慣性モーメントは $I=mr^2/2$。$g=9.81\\ \\mathrm{m/s^2}$。$\\sin 30^\\circ=0.5000$。有効数字3桁)",
+     "parts": [
+      {
+       "ans": 4.43,
+       "unit": "m/s",
+       "abs": 0.015,
+       "label": "$v$"
+      }
+     ],
+     "note": "$v=\\sqrt{\\dfrac{4gs\\sin\\alpha}{3}}$。答え 4.43。(途中は有効4桁、答えは3桁)",
+     "reveal": [
+      "$v=\\sqrt{4gs\\sin\\alpha/3}$: $gs=29.43$、$\\times\\sin\\alpha=14.72$、$\\times4=58.88$、$\\div3=19.63$、$\\sqrt{\\ }=4.431$ m/s"
+     ],
+     "hint": "$mgs\\sin\\alpha=\\dfrac34mv^2$ から $v^2=\\dfrac{4gs\\sin\\alpha}{3}$。",
+     "tag": "確認"
+    }
+   ]
+  },
+  {
+   "id": "b3",
+   "title": "球とループ: 球の運動エネルギーは 7/10 mv²。高さは重心で",
+   "pre": [
+    {
+     "type": "single",
+     "q": "球がすべらずに転がるとき、運動エネルギーの合計は、並進だけ($\\frac12mv^2$)より?(知らなくて当然)",
+     "opts": [
+      "大きい(回転の分が足される)",
+      "小さい",
+      "同じ"
+     ],
+     "ans": "大きい(回転の分が足される)",
+     "note": "回転の分 $\\frac12I\\omega^2$ が足される。(資料11/9 p.14)"
+    }
+   ],
+   "body": "<b>球</b>の慣性モーメントは $I=\\dfrac{2mr^2}{5}$。すべらずころがる($v=r\\omega$)ので、運動エネルギーの合計は$$\\frac12mv^2+\\frac12I\\omega^2=\\frac12mv^2+\\frac12\\times\\frac25mr^2\\times\\left(\\frac vr\\right)^2=\\frac{7}{10}mv^2$$(課題4 問4 の式①)。並進だけ($\\frac12mv^2$)より大きい(回転の分が足される)。円柱の $\\frac34mv^2$ と比べて、球は回りにくさの割合が違うので、$\\frac{7}{10}$ になる。<br><br><b>【演習No.2 問5】</b>(球が斜面を転がる): 水平面と $30^\\circ$ の斜面上の高さ $h=1\\ \\mathrm{m}$ の所に、半径 $r=30\\ \\mathrm{cm}$ の球を静止させ、すべらずに転がらせる。水平面に達したときの速度 $v$ は?<br>⚠️ 図の $h$ は、<b>球が斜面に接する点の高さ</b>(接点から引いた水平線と水平面の間)。<b>高さは重心で考える</b>ので、重心の落差は $h$ ではない。静止時の重心は接点より $r\\cos30^\\circ$ だけ高く、水平面に着いたときの重心は水平面より $r$ だけ高い。落差 $h'=h+r\\cos30^\\circ-r=h-r(1-\\cos30^\\circ)$。使う落差は、重心の落差 $h-r(1-\\cos30^\\circ)$ で、図の $h$ そのままではない。<br>$h'=1-0.3\\times(1-0.8660)=1-0.04020=0.9598\\ \\mathrm{m}$。エネルギー保存則 $mgh'=\\dfrac{7}{10}mv^2$ から $v=\\sqrt{\\dfrac{10}{7}gh'}=\\sqrt{\\dfrac{10}{7}\\times9.81\\times0.9598}=3.667$ → $3.67\\ \\mathrm{m/s}$(問題の答えと一致)。(資料外・補足)もし「重心の落差が $h$」と書いてあれば、$v=\\sqrt{\\frac{10}{7}gh}$($h=1$ なら 3.74 m/s)で、別の問題になる。<br><br><b>【課題4 問4】</b>半径 $r$ の球が、位置Aからレールを進み、半径 $R$ の円周を完全に1回転するには、位置Aの速度 $v_A$ をどれだけにすればよいか。球はすべらずに転がる。<ol><li>球の運動エネルギーは $\\dfrac{7}{10}mv^2$。</li><li><b>エネルギー保存則</b>(Aから円の最高点Bまで、球の中心は $2(R-r)$ だけ上がる): $\\dfrac{7}{10}mv_A^2=\\dfrac{7}{10}mv_B^2+2mg(R-r)$。これより $v_B^2=v_A^2-\\dfrac{20}{7}g(R-r)$</li><li><b>1回転の条件</b>(最高点で軌道から離れない): $\\dfrac{mv_B^2}{R-r}\\ge mg$、つまり $v_B^2\\ge g(R-r)$</li><li>②と③より $v_A^2-\\dfrac{20}{7}g(R-r)\\ge g(R-r)$、$v_A\\ge\\sqrt{\\dfrac{27}{7}g(R-r)}$</li></ol>(資料外・補足)最高点でも、球が軌道を押す力が 0 以上であることが、1回転の条件。点Bは、図には書かれていない(円の最高点)。",
+   "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/c04-sphere-slope.jpg\" alt=\"演習No.2 問5 の斜面と球\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.2 問5の図。h は、球が斜面に接する点の高さ(接点から引いた水平線と、水平面の間)。θ=30°</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/c03-loop.jpg\" alt=\"課題4 問4 のレールと円周\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題4 問4の図。球が位置Aから水平のレールを進み、半径 R の円周を1回転する</figcaption></figure>",
+   "example": {
+    "steps": [
+     "課題4 問4 で、$R-r=1\\ \\mathrm{m}$、$g=9.81$ のとき、$v_A\\ge\\sqrt{\\dfrac{27}{7}g(R-r)}$。",
+     "$\\dfrac{27}{7}=3.857$、$3.857\\times9.81=37.84$、$37.84\\times1=37.84$。",
+     "$v_A=\\sqrt{37.84}=$ ?(単位 m/s)"
+    ],
+    "fill": {
+     "type": "numeric",
+     "q": "課題4 問4の、半径 $r$ の球がレールの半径 $R$ の円周上を完全に1回転する問題で、$R-r=1\\ \\mathrm{m}$ のとき、位置Aの速度 $v_A$ の最小値(ぎりぎり1回転できる速度)はいくつか。(球はすべらずに転がる。$g=9.81\\ \\mathrm{m/s^2}$。有効数字3桁)",
+     "parts": [
+      {
+       "ans": 6.15,
+       "unit": "m/s",
+       "abs": 0.015,
+       "label": "$v_A$"
+      }
+     ],
+     "note": "$v_A\\ge\\sqrt{\\dfrac{27}{7}g(R-r)}$ の等号の値。答え 6.15。(途中は有効4桁、答えは3桁)",
+     "reveal": [
+      "$v_A=\\sqrt{\\dfrac{27}{7}g(R-r)}$: $27/7=3.857$、$\\times g=37.84$、$\\times(R-r)=37.84$、$\\sqrt{\\ }=6.151$ m/s"
+     ],
+     "hint": "球は転がるので、運動エネルギーは $\\dfrac{7}{10}mv^2$。最高点では $v_B^2\\ge g(R-r)$。",
+     "tag": "例題"
+    }
+   },
+   "check": [
+    {
+     "type": "single",
+     "q": "すべらずころがる球の、運動エネルギーの合計は?",
+     "opts": [
+      "$\\dfrac{7}{10}mv^2$",
+      "$\\dfrac34mv^2$",
+      "$\\dfrac12mv^2$"
+     ],
+     "ans": "$\\dfrac{7}{10}mv^2$",
+     "note": "球($I=\\frac25mr^2$)。(課題4 問4 の式①)"
+    },
+    {
+     "type": "single",
+     "q": "演習No.2 問5 で、エネルギー保存則に使う落差は?",
+     "opts": [
+      "重心の落差 $h-r(1-\\cos30^\\circ)$",
+      "図の $h$ そのまま",
+      "球の半径 $r$"
+     ],
+     "ans": "重心の落差 $h-r(1-\\cos30^\\circ)$",
+     "note": "高さは重心で考える。$h$ は接点の高さ。(演習No.2 問5)"
+    },
+    {
+     "type": "numeric",
+     "q": "水平面と $30^\\circ$ の角をなす斜面上の、高さ $h=1\\ \\mathrm{m}$ の所に、半径 $r=30\\ \\mathrm{cm}$ の球を静止させ、球を斜面に沿ってすべることなく転がらせる。水平面に達したときの速度 $v$ を求めよ。(図の $h$ は、<b>球が斜面に接する点の高さ</b>。球の慣性モーメントは $I=2mr^2/5$。$g=9.81\\ \\mathrm{m/s^2}$。$\\cos 30^\\circ=0.8660$。有効数字3桁)",
+     "parts": [
+      {
+       "ans": 3.67,
+       "unit": "m/s",
+       "abs": 0.015,
+       "label": "$v$"
+      }
+     ],
+     "note": "重心の落差 $h'=h-r(1-\\cos\\theta)$、$v=\\sqrt{\\dfrac{10}{7}gh'}$。答え 3.67。(途中は有効4桁、答えは3桁)",
+     "reveal": [
+      "重心の落差: $h'=h-r(1-\\cos30^\\circ)=1-0.3000\\times(1-0.8660)=1-0.04020=0.9598$ m",
+      "$v=\\sqrt{\\dfrac{10}{7}gh'}$: $10g=98.10$、$\\times h'=94.16$、$\\div7=13.45$、$\\sqrt{\\ }=3.667$ m/s"
+     ],
+     "hint": "高さは、重心の位置で考える。接点の高さ $h$ のまま使うのではない。",
+     "tag": "確認"
+    }
+   ]
+  }
+ ],
+ "summary": {
+  "rows": [
+   [
+    "3種類のエネルギー",
+    "位置 $mgh$(高さは重心で)、並進 $\\frac12mv^2$、回転 $\\frac12I\\omega^2$($I$ は回転軸まわり)"
+   ],
+   [
+    "エネルギー保存則",
+    "最初(静止①)のエネルギー = あと(運動②)のエネルギー。$g=9.81\\ \\mathrm{m/s^2}$"
+   ],
+   [
+    "慣性モーメント",
+    "棒の端 $ml^2/3$、円柱 $mr^2/2$、球 $2mr^2/5$(使う値は問題文に書く)"
+   ],
+   [
+    "すべらずころがる",
+    "$v=r\\omega$($\\omega=v/r$)"
+   ],
+   [
+    "例題1(棒)",
+    "$\\dfrac{mgl}{2}=\\dfrac{ml^2}{6}\\omega^2$、$\\omega=\\sqrt{3g/l}$、$v_B=\\sqrt{3gl}$"
+   ],
+   [
+    "例題8.7(円柱)",
+    "$mgs\\sin\\alpha=\\dfrac34mv^2$、$v=2\\sqrt{gs\\sin\\alpha/3}$"
+   ],
+   [
+    "球(課題4 問4・演習No.2 問5)",
+    "運動エネルギー $\\dfrac{7}{10}mv^2$。1回転は $v_A\\ge\\sqrt{\\frac{27}{7}g(R-r)}$。問5は重心の落差 $h-r(1-\\cos\\theta)$ で $3.67\\ \\mathrm{m/s}$"
+   ],
+   [
+    "数値のルール",
+    "答えは有効数字3桁。途中は有効4桁、1段ごとに四捨五入"
+   ]
+  ],
+  "write3": "紙に3行、友達に説明するつもりで書く:「棒や円柱が回りながら落ちるとき、なぜ位置エネルギーだけでは速度が出ないのか。何を足すのか」"
+ },
+ "final": [
+  {
+   "type": "single",
+   "q": "エネルギー保存則で、高さを測るのは、物体のどこ?",
+   "opts": [
+    "重心",
+    "一番上の端",
+    "一番下の端"
+   ],
+   "ans": "重心",
+   "note": "(資料11/9 p.7 の赤字「重要」)"
+  },
+  {
+   "type": "single",
+   "q": "例題1 で、B端の速度 $v_B$ は?",
+   "opts": [
+    "$\\sqrt{3gl}$",
+    "$\\sqrt{gl}$",
+    "$\\sqrt{2gl}$"
+   ],
+   "ans": "$\\sqrt{3gl}$",
+   "note": "(資料11/9 p.9)"
+  },
+  {
+   "type": "single",
+   "q": "すべらずころがる円柱の運動エネルギー $E_2$ は?",
+   "opts": [
+    "$\\dfrac34mv^2$",
+    "$\\dfrac12mv^2$",
+    "$mv^2$"
+   ],
+   "ans": "$\\dfrac34mv^2$",
+   "note": "(資料11/9 p.16)"
+  },
+  {
+   "type": "numeric",
+   "q": "質量 $m$、長さ $l=3\\ \\mathrm{m}$ の棒ABのA端を回転自由にして止め、水平な状態で静止させる。手をはなして重力で回転させたとき、棒が鉛直になった瞬間のB端の速度 $v_B$ はいくつか。(棒のA端まわりの慣性モーメントは $I_A=ml^2/3$。$g=9.81\\ \\mathrm{m/s^2}$。有効数字3桁)",
+   "parts": [
+    {
+     "ans": 9.4,
+     "unit": "m/s",
+     "abs": 0.015,
+     "label": "$v_B$"
+    }
+   ],
+   "note": "$v_B=\\sqrt{3gl}$。答え 9.40。(途中は有効4桁、答えは3桁)",
+   "reveal": [
+    "$v_B=\\sqrt{3gl}=\\sqrt{3\\times9.81\\times3}=\\sqrt{29.43\\times3}=\\sqrt{88.29}=9.396$ m/s"
+   ],
+   "hint": "$mg\\dfrac{l}{2}=\\dfrac12I_A\\omega^2$、$v_B=l\\omega$。",
+   "tag": "例題1"
+  },
+  {
+   "type": "numeric",
+   "q": "質量 $m$、半径 $r$ の円柱が、傾き $\\alpha=30^\\circ$ の斜面を、静止状態から斜面に沿って $s=2\\ \\mathrm{m}$ だけ、すべらずに転がり落ちたときの重心の速度 $v$ はいくつか。(円柱の慣性モーメントは $I=mr^2/2$。$g=9.81\\ \\mathrm{m/s^2}$。$\\sin 30^\\circ=0.5000$。有効数字3桁)",
+   "parts": [
+    {
+     "ans": 3.62,
+     "unit": "m/s",
+     "abs": 0.015,
+     "label": "$v$"
+    }
+   ],
+   "note": "$v=\\sqrt{\\dfrac{4gs\\sin\\alpha}{3}}$。答え 3.62。(途中は有効4桁、答えは3桁)",
+   "reveal": [
+    "$v=\\sqrt{4gs\\sin\\alpha/3}$: $gs=19.62$、$\\times\\sin\\alpha=9.810$、$\\times4=39.24$、$\\div3=13.08$、$\\sqrt{\\ }=3.617$ m/s"
+   ],
+   "hint": "$mgs\\sin\\alpha=\\dfrac34mv^2$ から $v^2=\\dfrac{4gs\\sin\\alpha}{3}$。",
+   "tag": "例題8.7"
+  },
+  {
+   "type": "numeric",
+   "q": "水平面と $30^\\circ$ の角をなす斜面上の、高さ $h=1\\ \\mathrm{m}$ の所に、半径 $r=30\\ \\mathrm{cm}$ の球を静止させ、球を斜面に沿ってすべることなく転がらせる。水平面に達したときの速度 $v$ を求めよ。(図の $h$ は、<b>球が斜面に接する点の高さ</b>。球の慣性モーメントは $I=2mr^2/5$。$g=9.81\\ \\mathrm{m/s^2}$。$\\cos 30^\\circ=0.8660$。有効数字3桁)",
+   "parts": [
+    {
+     "ans": 3.67,
+     "unit": "m/s",
+     "abs": 0.015,
+     "label": "$v$"
+    }
+   ],
+   "note": "重心の落差 $h'=h-r(1-\\cos\\theta)$、$v=\\sqrt{\\dfrac{10}{7}gh'}$。答え 3.67。(途中は有効4桁、答えは3桁)",
+   "reveal": [
+    "重心の落差: $h'=h-r(1-\\cos30^\\circ)=1-0.3000\\times(1-0.8660)=1-0.04020=0.9598$ m",
+    "$v=\\sqrt{\\dfrac{10}{7}gh'}$: $10g=98.10$、$\\times h'=94.16$、$\\div7=13.45$、$\\sqrt{\\ }=3.667$ m/s"
+   ],
+   "hint": "高さは、重心の位置で考える。接点の高さ $h$ のまま使うのではない。",
+   "tag": "演習No.2 問5"
+  }
+ ],
+ "next": [
+  {
+   "label": "演習 ⑦ エネルギー保存則へ",
+   "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-07-energy/data.json"
+  }
+ ],
+ "footer": "出典: ロボティクス授業資料(11月9日)p.3〜p.17、課題4 問4、演習No.1 問4、演習No.2 問5。「(資料外・補足)」は資料に載っていない補足。図は授業資料からの切り出し。",
+ "roadmap": "roadmaps/robotics-2026-kouki-chukan.json"
+}
