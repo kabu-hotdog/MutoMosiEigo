@@ -100,11 +100,11 @@
    "phase": "演習1周目",
    "label": "① 構成とアームの種類",
    "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-01-kousei/data.json",
-   "minutes": 15,
+   "minutes": 20,
    "why": "学習のあとで、手を動かして確かめる。",
    "done": {
     "quiz": "robo_chukan_01_kousei_v1",
-    "total": 22
+    "total": 32
    }
   },
   {
@@ -189,6 +189,18 @@
    "done": {
     "quiz": "robo_chukan_08_shoutotsu_v1",
     "total": 57
+   }
+  },
+  {
+   "id": "P9",
+   "phase": "原題",
+   "label": "⑨ 課題・演習の原題(問題文そのまま)",
+   "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-09-genten/data.json",
+   "minutes": 60,
+   "why": "本番は演習プリントとほぼ同じ形の見込み。まず紙で解いて、答えと照らす。",
+   "done": {
+    "quiz": "robo_chukan_09_genten_v1",
+    "total": 23
    }
   },
   {
