@@ -32,42 +32,6 @@
     },
     {
      "type": "single",
-     "q": "資料の「順動力学」は、何のこと?",
-     "opts": [
-      "順運動学",
-      "逆運動学",
-      "動力の計算"
-     ],
-     "ans": "順運動学",
-     "note": "資料では「順動力学」と印刷されているが、内容は順運動学。(資料外・補足)",
-     "tag": "用語"
-    },
-    {
-     "type": "single",
-     "q": "エンドエフェクタとは?",
-     "opts": [
-      "ロボットアームの先端(手先)",
-      "ロボットの根元",
-      "関節と関節の間の腕"
-     ],
-     "ans": "ロボットアームの先端(手先)",
-     "note": "手先の位置を求めるのが順運動学。(資料 p.13)",
-     "tag": "用語"
-    },
-    {
-     "type": "single",
-     "q": "座標系の番号は、どの順につける?",
-     "opts": [
-      "ベースに近い方から 0, 1, 2, …",
-      "先端から 0, 1, 2, …",
-      "ばらばらでよい"
-     ],
-     "ans": "ベースに近い方から 0, 1, 2, …",
-     "note": "(資料 p.13)",
-     "tag": "用語"
-    },
-    {
-     "type": "single",
      "q": "式(2.12)の ${}^{0}\\boldsymbol{A}_n$ は?",
      "opts": [
       "${}^{0}\\boldsymbol{A}_1\\,{}^{1}\\boldsymbol{A}_2\\,{}^{2}\\boldsymbol{A}_3\\cdots{}^{n-1}\\boldsymbol{A}_n$",
@@ -76,30 +40,6 @@
      ],
      "ans": "${}^{0}\\boldsymbol{A}_1\\,{}^{1}\\boldsymbol{A}_2\\,{}^{2}\\boldsymbol{A}_3\\cdots{}^{n-1}\\boldsymbol{A}_n$",
      "note": "根元から先端へ左から右。(資料 p.13)",
-     "tag": "式(2.12)"
-    },
-    {
-     "type": "single",
-     "q": "エンドエフェクタの位置を、ベース座標で出す最後の計算は?",
-     "opts": [
-      "先端の位置ベクトル(下に 1)に ${}^{0}\\boldsymbol{A}_n$ を掛ける",
-      "${}^{0}\\boldsymbol{A}_n$ を足す",
-      "${}^{0}\\boldsymbol{A}_n$ の逆を引く"
-     ],
-     "ans": "先端の位置ベクトル(下に 1)に ${}^{0}\\boldsymbol{A}_n$ を掛ける",
-     "note": "$\\begin{bmatrix}{}^{0}\\boldsymbol{P}_E\\\\1\\end{bmatrix}={}^{0}\\boldsymbol{A}_n\\begin{bmatrix}{}^{n}\\boldsymbol{P}_E\\\\1\\end{bmatrix}$。(資料 p.15)",
-     "tag": "式(2.12)"
-    },
-    {
-     "type": "single",
-     "q": "関節がある回転の軸を、図から読む。${}^{i-1}\\boldsymbol{A}_i$ は何でできている?",
-     "opts": [
-      "回転と並進",
-      "回転だけ",
-      "並進だけ"
-     ],
-     "ans": "回転と並進",
-     "note": "左上が回転、右上が並進。(資料 p.12・p.14)",
      "tag": "式(2.12)"
     }
    ]
@@ -119,44 +59,6 @@
      ],
      "ans": "$\\theta_1+\\theta_2$",
      "note": "(資料 p.14)",
-     "tag": "平面2リンク"
-    },
-    {
-     "type": "single",
-     "q": "平面2リンクの ${}^{1}\\boldsymbol{A}_2$($z_1$ 軸まわりに $\\theta_2$ 回転、$x_1$ 方向に $L_1$ 移動)は?",
-     "opts": [
-      "$\\begin{bmatrix}\\cos\\theta_2 & -\\sin\\theta_2 & 0 & L_1 \\\\ \\sin\\theta_2 & \\cos\\theta_2 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
-      "$\\begin{bmatrix}\\cos\\theta_2 & -\\sin\\theta_2 & 0 & 0 \\\\ \\sin\\theta_2 & \\cos\\theta_2 & 0 & L_1 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
-      "$\\begin{bmatrix}\\cos\\theta_2 & -\\sin\\theta_2 & 0 & 0 \\\\ \\sin\\theta_2 & \\cos\\theta_2 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
-      "$\\begin{bmatrix}\\cos\\theta_2 & \\sin\\theta_2 & 0 & L_1 \\\\ -\\sin\\theta_2 & \\cos\\theta_2 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$"
-     ],
-     "ans": "$\\begin{bmatrix}\\cos\\theta_2 & -\\sin\\theta_2 & 0 & L_1 \\\\ \\sin\\theta_2 & \\cos\\theta_2 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
-     "note": "(資料 p.14)",
-     "tag": "平面2リンク"
-    },
-    {
-     "type": "single",
-     "q": "平面2リンクの ${}^{0}\\boldsymbol{A}_2$(資料 p.14)は?",
-     "opts": [
-      "$\\begin{bmatrix}\\cos(\\theta_1+\\theta_2) & -\\sin(\\theta_1+\\theta_2) & 0 & L_1\\sin\\theta_1 \\\\ \\sin(\\theta_1+\\theta_2) & \\cos(\\theta_1+\\theta_2) & 0 & L_1\\cos\\theta_1 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
-      "$\\begin{bmatrix}\\cos(\\theta_1+\\theta_2) & -\\sin(\\theta_1+\\theta_2) & 0 & L_1 \\\\ \\sin(\\theta_1+\\theta_2) & \\cos(\\theta_1+\\theta_2) & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
-      "$\\begin{bmatrix}\\cos\\theta_1\\cos\\theta_2 & -\\sin\\theta_1\\sin\\theta_2 & 0 & L_1\\cos\\theta_1 \\\\ \\sin\\theta_1\\sin\\theta_2 & \\cos\\theta_1\\cos\\theta_2 & 0 & L_1\\sin\\theta_1 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
-      "$\\begin{bmatrix}\\cos(\\theta_1+\\theta_2) & -\\sin(\\theta_1+\\theta_2) & 0 & L_1\\cos\\theta_1 \\\\ \\sin(\\theta_1+\\theta_2) & \\cos(\\theta_1+\\theta_2) & 0 & L_1\\sin\\theta_1 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$"
-     ],
-     "ans": "$\\begin{bmatrix}\\cos(\\theta_1+\\theta_2) & -\\sin(\\theta_1+\\theta_2) & 0 & L_1\\cos\\theta_1 \\\\ \\sin(\\theta_1+\\theta_2) & \\cos(\\theta_1+\\theta_2) & 0 & L_1\\sin\\theta_1 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
-     "note": "回転は $\\theta_1+\\theta_2$、並進は第1リンクの先。",
-     "tag": "平面2リンク"
-    },
-    {
-     "type": "single",
-     "q": "平面2リンクで、直接求めた式と、同次変換で求めた式は?",
-     "opts": [
-      "同じ答え",
-      "違う答え",
-      "同次変換の方が必ず大きい"
-     ],
-     "ans": "同じ答え",
-     "note": "(資料 p.14〜p.15)",
      "tag": "平面2リンク"
     },
     {
@@ -183,81 +85,6 @@
      ],
      "hint": "角度は、$\\theta_1$ と、$\\theta_1+\\theta_2$ の2つを使う。",
      "tag": "平面2リンクの手先位置"
-    },
-    {
-     "type": "numeric",
-     "q": "資料 p.13 の2自由度平面ロボットアームで、$L_1=3$、$L_2=2$、$\\theta_1=30^\\circ$、$\\theta_2=60^\\circ$ のとき、先端(エンドエフェクタ)の位置 $(x,y)$ を求めよ。(有効数字3桁。$\\cos 30^\\circ=0.8660$、$\\sin 30^\\circ=0.5000$、$\\cos 90^\\circ=0$、$\\sin 90^\\circ=1.000$)",
-     "parts": [
-      {
-       "ans": 2.6,
-       "unit": "",
-       "abs": 0.015,
-       "label": "$x$"
-      },
-      {
-       "ans": 3.5,
-       "unit": "",
-       "abs": 0.015,
-       "label": "$y$"
-      }
-     ],
-     "note": "$x=L_1\\cos\\theta_1+L_2\\cos(\\theta_1+\\theta_2)$、$y=L_1\\sin\\theta_1+L_2\\sin(\\theta_1+\\theta_2)$。(資料 p.14)$x$=2.60、$y$=3.50。(途中は有効4桁、答えは3桁)",
-     "reveal": [
-      "$x=L_1\\cos\\theta_1+L_2\\cos(\\theta_1+\\theta_2)=2.598+0=2.598$",
-      "$y=L_1\\sin\\theta_1+L_2\\sin(\\theta_1+\\theta_2)=1.500+2.000=3.500$"
-     ],
-     "hint": "角度は、$\\theta_1$ と、$\\theta_1+\\theta_2$ の2つを使う。",
-     "tag": "平面2リンクの手先位置"
-    },
-    {
-     "type": "numeric",
-     "q": "資料 p.13 の2自由度平面ロボットアームで、$L_1=4$、$L_2=2$、$\\theta_1=45^\\circ$、$\\theta_2=45^\\circ$ のとき、先端(エンドエフェクタ)の位置 $(x,y)$ を求めよ。(有効数字3桁。$\\cos 45^\\circ=0.7071$、$\\sin 45^\\circ=0.7071$、$\\cos 90^\\circ=0$、$\\sin 90^\\circ=1.000$)",
-     "parts": [
-      {
-       "ans": 2.83,
-       "unit": "",
-       "abs": 0.015,
-       "label": "$x$"
-      },
-      {
-       "ans": 4.83,
-       "unit": "",
-       "abs": 0.015,
-       "label": "$y$"
-      }
-     ],
-     "note": "$x=L_1\\cos\\theta_1+L_2\\cos(\\theta_1+\\theta_2)$、$y=L_1\\sin\\theta_1+L_2\\sin(\\theta_1+\\theta_2)$。(資料 p.14)$x$=2.83、$y$=4.83。(途中は有効4桁、答えは3桁)",
-     "reveal": [
-      "$x=L_1\\cos\\theta_1+L_2\\cos(\\theta_1+\\theta_2)=2.828+0=2.828$",
-      "$y=L_1\\sin\\theta_1+L_2\\sin(\\theta_1+\\theta_2)=2.828+2.000=4.828$"
-     ],
-     "hint": "角度は、$\\theta_1$ と、$\\theta_1+\\theta_2$ の2つを使う。",
-     "tag": "平面2リンクの手先位置"
-    },
-    {
-     "type": "numeric",
-     "q": "資料 p.13 の2自由度平面ロボットアームで、$L_1=5$、$L_2=3$、$\\theta_1=60^\\circ$、$\\theta_2=30^\\circ$ のとき、先端(エンドエフェクタ)の位置 $(x,y)$ を求めよ。(有効数字3桁。$\\cos 60^\\circ=0.5000$、$\\sin 60^\\circ=0.8660$、$\\cos 90^\\circ=0$、$\\sin 90^\\circ=1.000$)",
-     "parts": [
-      {
-       "ans": 2.5,
-       "unit": "",
-       "abs": 0.015,
-       "label": "$x$"
-      },
-      {
-       "ans": 7.33,
-       "unit": "",
-       "abs": 0.015,
-       "label": "$y$"
-      }
-     ],
-     "note": "$x=L_1\\cos\\theta_1+L_2\\cos(\\theta_1+\\theta_2)$、$y=L_1\\sin\\theta_1+L_2\\sin(\\theta_1+\\theta_2)$。(資料 p.14)$x$=2.50、$y$=7.33。(途中は有効4桁、答えは3桁)",
-     "reveal": [
-      "$x=L_1\\cos\\theta_1+L_2\\cos(\\theta_1+\\theta_2)=2.500+0=2.500$",
-      "$y=L_1\\sin\\theta_1+L_2\\sin(\\theta_1+\\theta_2)=4.330+3.000=7.330$"
-     ],
-     "hint": "角度は、$\\theta_1$ と、$\\theta_1+\\theta_2$ の2つを使う。",
-     "tag": "平面2リンクの手先位置"
     }
    ]
   },
@@ -276,45 +103,6 @@
      ],
      "ans": "$Y_0$ 軸まわりに $\\theta$",
      "note": "(課題2 問1)",
-     "tag": "課題2 問1"
-    },
-    {
-     "type": "single",
-     "q": "課題2 問1の ${}^{0}\\boldsymbol{A}_1$ は?",
-     "opts": [
-      "$\\begin{bmatrix}\\cos\\theta & -\\sin\\theta & 0 & 0 \\\\ \\sin\\theta & \\cos\\theta & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
-      "$\\begin{bmatrix}\\cos\\theta & 0 & -\\sin\\theta & 0 \\\\ 0 & 1 & 0 & 0 \\\\ \\sin\\theta & 0 & \\cos\\theta & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
-      "$\\begin{bmatrix}\\cos\\theta & 0 & \\sin\\theta & 0 \\\\ 0 & 1 & 0 & 0 \\\\ -\\sin\\theta & 0 & \\cos\\theta & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
-      "$\\begin{bmatrix}1 & 0 & 0 & 0 \\\\ 0 & \\cos\\theta & -\\sin\\theta & 0 \\\\ 0 & \\sin\\theta & \\cos\\theta & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$"
-     ],
-     "ans": "$\\begin{bmatrix}\\cos\\theta & 0 & \\sin\\theta & 0 \\\\ 0 & 1 & 0 & 0 \\\\ -\\sin\\theta & 0 & \\cos\\theta & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
-     "note": "$y$ 軸まわりの回転。(課題2 問1)",
-     "tag": "課題2 問1"
-    },
-    {
-     "type": "single",
-     "q": "課題2 問1の ${}^{1}\\boldsymbol{A}_2$ は?",
-     "opts": [
-      "$\\begin{bmatrix}1 & 0 & 0 & 0 \\\\ 0 & \\cos\\phi & -\\sin\\phi & 0 \\\\ 0 & \\sin\\phi & \\cos\\phi & l_1 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
-      "$\\begin{bmatrix}1 & 0 & 0 & 0 \\\\ 0 & \\cos\\phi & -\\sin\\phi & l_1 \\\\ 0 & \\sin\\phi & \\cos\\phi & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
-      "$\\begin{bmatrix}1 & 0 & 0 & 0 \\\\ 0 & \\cos\\phi & \\sin\\phi & l_1 \\\\ 0 & -\\sin\\phi & \\cos\\phi & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
-      "$\\begin{bmatrix}\\cos\\phi & 0 & \\sin\\phi & 0 \\\\ 0 & 1 & 0 & l_1 \\\\ -\\sin\\phi & 0 & \\cos\\phi & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$"
-     ],
-     "ans": "$\\begin{bmatrix}1 & 0 & 0 & 0 \\\\ 0 & \\cos\\phi & -\\sin\\phi & l_1 \\\\ 0 & \\sin\\phi & \\cos\\phi & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
-     "note": "$X_1$ 軸まわりに $\\phi$、$Y_1$ 方向に $l_1$。(課題2 問1)",
-     "tag": "課題2 問1"
-    },
-    {
-     "type": "single",
-     "q": "課題2 問1の ${}^{0}\\boldsymbol{P}_E$ は?",
-     "opts": [
-      "$\\begin{bmatrix}l_2\\sin\\theta\\sin\\phi \\\\ l_1+l_2\\cos\\phi \\\\ l_2\\cos\\theta\\sin\\phi\\end{bmatrix}$",
-      "$\\begin{bmatrix}l_2\\sin\\theta\\cos\\phi \\\\ l_1+l_2\\sin\\phi \\\\ l_2\\cos\\theta\\cos\\phi\\end{bmatrix}$",
-      "$\\begin{bmatrix}l_2\\sin\\theta\\sin\\phi \\\\ l_2\\cos\\phi \\\\ l_2\\cos\\theta\\sin\\phi\\end{bmatrix}$",
-      "$\\begin{bmatrix}l_1\\sin\\theta\\sin\\phi \\\\ l_1+l_2\\cos\\phi \\\\ l_2\\cos\\theta\\sin\\phi\\end{bmatrix}$"
-     ],
-     "ans": "$\\begin{bmatrix}l_2\\sin\\theta\\sin\\phi \\\\ l_1+l_2\\cos\\phi \\\\ l_2\\cos\\theta\\sin\\phi\\end{bmatrix}$",
-     "note": "${}^{0}\\boldsymbol{P}_E=(l_2\\sin\\theta\\sin\\phi,\\ l_1+l_2\\cos\\phi,\\ l_2\\cos\\theta\\sin\\phi)$。(課題2 問1)",
      "tag": "課題2 問1"
     },
     {
@@ -348,63 +136,6 @@
      ],
      "hint": "先生の答え: ${}^{0}\\boldsymbol{P}_E=(l_2\\sin\\theta\\sin\\phi,\\ l_1+l_2\\cos\\phi,\\ l_2\\cos\\theta\\sin\\phi)$",
      "tag": "課題2 問1の手先位置"
-    },
-    {
-     "type": "numeric",
-     "q": "課題2 問1のロボットアームで、$l_1=3$、$l_2=2$、$\\theta=45^\\circ$、$\\phi=90^\\circ$ のとき、${}^{0}\\boldsymbol{P}_E$ の x、y 成分を求めよ。(有効数字3桁。$\\cos 45^\\circ=0.7071$、$\\sin 45^\\circ=0.7071$、$\\cos 90^\\circ=0$、$\\sin 90^\\circ=1.000$)",
-     "parts": [
-      {
-       "ans": 1.41,
-       "unit": "",
-       "abs": 0.015,
-       "label": "$P_x$"
-      },
-      {
-       "ans": 3.0,
-       "unit": "",
-       "abs": 0.015,
-       "label": "$P_y$"
-      }
-     ],
-     "note": "${}^{0}\\boldsymbol{P}_E=(l_2\\sin\\theta\\sin\\phi,\\ l_1+l_2\\cos\\phi,\\ l_2\\cos\\theta\\sin\\phi)$。(課題2 問1)$P_x$=1.41、$P_y$=3.00。(途中は有効4桁、答えは3桁)",
-     "reveal": [
-      "${}^{0}P_{Ex}=l_2\\sin\\theta\\sin\\phi=1.414$",
-      "${}^{0}P_{Ey}=l_1+l_2\\cos\\phi=3.000$"
-     ],
-     "hint": "先生の答え: ${}^{0}\\boldsymbol{P}_E=(l_2\\sin\\theta\\sin\\phi,\\ l_1+l_2\\cos\\phi,\\ l_2\\cos\\theta\\sin\\phi)$",
-     "tag": "課題2 問1の手先位置"
-    },
-    {
-     "type": "numeric",
-     "q": "課題2 問1のロボットアームで、$l_1=4$、$l_2=2$、$\\theta=60^\\circ$、$\\phi=30^\\circ$ のとき、${}^{0}\\boldsymbol{P}_E$ の x、y、z 成分を求めよ。(有効数字3桁。$\\cos 30^\\circ=0.8660$、$\\sin 30^\\circ=0.5000$、$\\cos 60^\\circ=0.5000$、$\\sin 60^\\circ=0.8660$)",
-     "parts": [
-      {
-       "ans": 0.866,
-       "unit": "",
-       "abs": 0.0015,
-       "label": "$P_x$"
-      },
-      {
-       "ans": 5.73,
-       "unit": "",
-       "abs": 0.015,
-       "label": "$P_y$"
-      },
-      {
-       "ans": 0.5,
-       "unit": "",
-       "abs": 0.0015,
-       "label": "$P_z$"
-      }
-     ],
-     "note": "${}^{0}\\boldsymbol{P}_E=(l_2\\sin\\theta\\sin\\phi,\\ l_1+l_2\\cos\\phi,\\ l_2\\cos\\theta\\sin\\phi)$。(課題2 問1)$P_x$=0.866、$P_y$=5.73、$P_z$=0.500。(途中は有効4桁、答えは3桁)",
-     "reveal": [
-      "${}^{0}P_{Ex}=l_2\\sin\\theta\\sin\\phi=0.8660$",
-      "${}^{0}P_{Ey}=l_1+l_2\\cos\\phi=5.732$",
-      "${}^{0}P_{Ez}=l_2\\cos\\theta\\sin\\phi=0.5000$"
-     ],
-     "hint": "先生の答え: ${}^{0}\\boldsymbol{P}_E=(l_2\\sin\\theta\\sin\\phi,\\ l_1+l_2\\cos\\phi,\\ l_2\\cos\\theta\\sin\\phi)$",
-     "tag": "課題2 問1の手先位置"
     }
    ]
   },
@@ -422,45 +153,6 @@
       "$(0,\\ 0,\\ L_3)$"
      ],
      "ans": "$(L_3,\\ 0,\\ 0)$($x_2$ 方向に $L_3$)",
-     "note": "(課題2 問2)",
-     "tag": "課題2 問2"
-    },
-    {
-     "type": "single",
-     "q": "課題2 問2の ${}^{0}\\boldsymbol{A}_1$ は?",
-     "opts": [
-      "$\\begin{bmatrix}1 & 0 & 0 & 0 \\\\ 0 & \\cos\\theta_1 & -\\sin\\theta_1 & 0 \\\\ 0 & \\sin\\theta_1 & \\cos\\theta_1 & L_1 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
-      "$\\begin{bmatrix}1 & 0 & 0 & 0 \\\\ 0 & \\cos\\theta_1 & -\\sin\\theta_1 & L_1 \\\\ 0 & \\sin\\theta_1 & \\cos\\theta_1 & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
-      "$\\begin{bmatrix}\\cos\\theta_1 & -\\sin\\theta_1 & 0 & 0 \\\\ \\sin\\theta_1 & \\cos\\theta_1 & 0 & 0 \\\\ 0 & 0 & 1 & L_1 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
-      "$\\begin{bmatrix}1 & 0 & 0 & 0 \\\\ 0 & \\cos\\theta_1 & \\sin\\theta_1 & 0 \\\\ 0 & -\\sin\\theta_1 & \\cos\\theta_1 & L_1 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$"
-     ],
-     "ans": "$\\begin{bmatrix}1 & 0 & 0 & 0 \\\\ 0 & \\cos\\theta_1 & -\\sin\\theta_1 & 0 \\\\ 0 & \\sin\\theta_1 & \\cos\\theta_1 & L_1 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
-     "note": "$x_0$ 軸まわりに $\\theta_1$、$z_0$ 方向に $L_1$。(課題2 問2)",
-     "tag": "課題2 問2"
-    },
-    {
-     "type": "single",
-     "q": "課題2 問2の ${}^{1}\\boldsymbol{A}_2$ は?",
-     "opts": [
-      "$\\begin{bmatrix}\\cos\\theta_2 & 0 & \\sin\\theta_2 & L_2 \\\\ 0 & 1 & 0 & 0 \\\\ -\\sin\\theta_2 & 0 & \\cos\\theta_2 & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
-      "$\\begin{bmatrix}\\cos\\theta_2 & 0 & -\\sin\\theta_2 & 0 \\\\ 0 & 1 & 0 & L_2 \\\\ \\sin\\theta_2 & 0 & \\cos\\theta_2 & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
-      "$\\begin{bmatrix}\\cos\\theta_2 & 0 & \\sin\\theta_2 & 0 \\\\ 0 & 1 & 0 & L_2 \\\\ -\\sin\\theta_2 & 0 & \\cos\\theta_2 & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
-      "$\\begin{bmatrix}\\cos\\theta_2 & -\\sin\\theta_2 & 0 & 0 \\\\ \\sin\\theta_2 & \\cos\\theta_2 & 0 & L_2 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$"
-     ],
-     "ans": "$\\begin{bmatrix}\\cos\\theta_2 & 0 & \\sin\\theta_2 & 0 \\\\ 0 & 1 & 0 & L_2 \\\\ -\\sin\\theta_2 & 0 & \\cos\\theta_2 & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
-     "note": "$y_1$ 軸まわりに $\\theta_2$、$y_1$ 方向に $L_2$。(課題2 問2)",
-     "tag": "課題2 問2"
-    },
-    {
-     "type": "single",
-     "q": "課題2 問2の ${}^{0}\\boldsymbol{P}_E$ は?",
-     "opts": [
-      "$\\begin{bmatrix}L_3\\cos\\theta_2 \\\\ L_3\\sin\\theta_1\\sin\\theta_2+L_2\\cos\\theta_1 \\\\ L_1+L_2\\sin\\theta_1+L_3\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
-      "$\\begin{bmatrix}L_3\\cos\\theta_2 \\\\ L_3\\sin\\theta_1\\sin\\theta_2+L_2\\cos\\theta_1 \\\\ L_1+L_2\\sin\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
-      "$\\begin{bmatrix}L_3\\sin\\theta_2 \\\\ L_3\\sin\\theta_1\\cos\\theta_2+L_2\\cos\\theta_1 \\\\ L_1+L_2\\sin\\theta_1-L_3\\cos\\theta_1\\cos\\theta_2\\end{bmatrix}$",
-      "$\\begin{bmatrix}L_3\\cos\\theta_2 \\\\ L_3\\sin\\theta_1\\sin\\theta_2+L_2\\sin\\theta_1 \\\\ L_1+L_2\\cos\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$"
-     ],
-     "ans": "$\\begin{bmatrix}L_3\\cos\\theta_2 \\\\ L_3\\sin\\theta_1\\sin\\theta_2+L_2\\cos\\theta_1 \\\\ L_1+L_2\\sin\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
      "note": "(課題2 問2)",
      "tag": "課題2 問2"
     },
@@ -495,70 +187,6 @@
      ],
      "hint": "先生の答え(課題2 問2): ${}^{0}\\boldsymbol{P}_E=(L_3\\cos\\theta_2,\\ L_3\\sin\\theta_1\\sin\\theta_2+L_2\\cos\\theta_1,\\ L_1+L_2\\sin\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2)$",
      "tag": "課題2 問2の手先位置"
-    },
-    {
-     "type": "numeric",
-     "q": "課題2 問2のロボットアームで、$L_1=4$、$L_2=3$、$L_3=2$、$\\theta_1=45^\\circ$、$\\theta_2=60^\\circ$ のとき、${}^{0}\\boldsymbol{P}_E$ の x、y、z 成分を求めよ。(有効数字3桁。$\\cos 45^\\circ=0.7071$、$\\sin 45^\\circ=0.7071$、$\\cos 60^\\circ=0.5000$、$\\sin 60^\\circ=0.8660$)",
-     "parts": [
-      {
-       "ans": 1.0,
-       "unit": "",
-       "abs": 0.015,
-       "label": "$P_x$"
-      },
-      {
-       "ans": 3.35,
-       "unit": "",
-       "abs": 0.015,
-       "label": "$P_y$"
-      },
-      {
-       "ans": 4.9,
-       "unit": "",
-       "abs": 0.015,
-       "label": "$P_z$"
-      }
-     ],
-     "note": "先生の答え: ${}^{0}\\boldsymbol{P}_E=(L_3\\cos\\theta_2,\\ L_3\\sin\\theta_1\\sin\\theta_2+L_2\\cos\\theta_1,\\ L_1+L_2\\sin\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2)$。$P_x$=1.00、$P_y$=3.35、$P_z$=4.90。(途中は有効4桁、答えは3桁)",
-     "reveal": [
-      "${}^{0}P_{Ex}=L_3\\cos\\theta_2=1.000$",
-      "${}^{0}P_{Ey}=L_3\\sin\\theta_1\\sin\\theta_2+L_2\\cos\\theta_1=3.346$",
-      "${}^{0}P_{Ez}=L_1+L_2\\sin\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2=4.896$"
-     ],
-     "hint": "先生の答え(課題2 問2): ${}^{0}\\boldsymbol{P}_E=(L_3\\cos\\theta_2,\\ L_3\\sin\\theta_1\\sin\\theta_2+L_2\\cos\\theta_1,\\ L_1+L_2\\sin\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2)$",
-     "tag": "課題2 問2の手先位置"
-    },
-    {
-     "type": "numeric",
-     "q": "演習No.1 問3のロボットアーム(図を見て、向きを確認する)で、$L_1=1$、$L_2=2$、$L_3=3$、$L_4=4$、$\\theta_1=30^\\circ$、$\\theta_2=30^\\circ$ のとき、${}^{0}\\boldsymbol{P}_E$ の x、y、z 成分を求めよ。(有効数字3桁。$\\cos 30^\\circ=0.8660$、$\\sin 30^\\circ=0.5000$)",
-     "parts": [
-      {
-       "ans": 5.21,
-       "unit": "",
-       "abs": 0.015,
-       "label": "$P_x$"
-      },
-      {
-       "ans": 0.701,
-       "unit": "",
-       "abs": 0.0015,
-       "label": "$P_y$"
-      },
-      {
-       "ans": 4.6,
-       "unit": "",
-       "abs": 0.015,
-       "label": "$P_z$"
-      }
-     ],
-     "note": "${}^{0}\\boldsymbol{P}_E=(L_1+L_3\\sin\\theta_1\\sin\\theta_2+L_4\\cos\\theta_1,\\ L_4\\sin\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2,\\ L_2+L_3\\cos\\theta_2)$。(トラ解。先生の答えは写真に無い)$P_x$=5.21、$P_y$=0.701、$P_z$=4.60。(途中は有効4桁、答えは3桁)",
-     "reveal": [
-      "${}^{0}P_{Ex}=L_1+L_3\\sin\\theta_1\\sin\\theta_2+L_4\\cos\\theta_1=5.214$",
-      "${}^{0}P_{Ey}=L_4\\sin\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2=0.7010$",
-      "${}^{0}P_{Ez}=L_2+L_3\\cos\\theta_2=4.598$"
-     ],
-     "hint": "同次変換を掛け合わせた結果は、解答に書いてある。",
-     "tag": "演習No.1 問3の手先位置"
     }
    ]
   },
