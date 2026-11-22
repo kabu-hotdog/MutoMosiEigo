@@ -140,23 +140,6 @@
      "ans": "列",
      "note": "横が行、縦が列。(資料外・補足)",
      "tag": "行列の計算"
-    },
-    {
-     "type": "numeric",
-     "q": "$\\begin{bmatrix}2&0&1\\\\0&1&0\\\\1&0&3\\end{bmatrix}\\begin{bmatrix}1\\\\2\\\\3\\end{bmatrix}$ の 1行目は?(有効数字3桁)",
-     "parts": [
-      {
-       "ans": 5.0,
-       "unit": "",
-       "abs": 0.015,
-       "label": "1行目"
-      }
-     ],
-     "note": "$2\\times1+0\\times2+1\\times3=5.00$。",
-     "reveal": [
-      "$2+0+3=5$ → 5.00"
-     ],
-     "tag": "行列の計算"
     }
    ]
   },
@@ -196,63 +179,6 @@
      "ans": "$\\begin{bmatrix}\\cos\\theta&-\\sin\\theta&0\\\\\\sin\\theta&\\cos\\theta&0\\\\0&0&1\\end{bmatrix}$",
      "note": "3行3列目が 1。残りは基本形。(式(2.8))",
      "tag": "行列選び"
-    }
-   ]
-  },
-  {
-   "id": "s3",
-   "no": "03",
-   "title": "3次元の座標計算(有効数字3桁)",
-   "qs": [
-    {
-     "type": "numeric",
-     "q": "座標系 $(x_0,y_0,z_0)$ は、座標系 $(x,y,z)$ を $z$ 軸まわりに $30^\\circ$ 回転させたものである。点 P の $(x_0,y_0,z_0)$ 座標が $(4,2,5)$ のとき、$(x,y,z)$ 座標のうち $P_y$ を求めよ。(有効数字3桁。$\\cos 30^\\circ=0.8660$、$\\sin 30^\\circ=0.5000$ を使う)",
-     "parts": [
-      {
-       "ans": 3.73,
-       "unit": "",
-       "abs": 0.015,
-       "label": "$P_y$"
-      }
-     ],
-     "note": "回転行列 $\\boldsymbol{R}(z,\\theta)$ に $(x_0,y_0,z_0)$ 座標を掛ける(p.7 式(2.7))。$P_y$=3.73。(途中は有効4桁、答えは3桁)",
-     "reveal": [
-      "$P_y$ = 各項を足す: 2.000 + 1.732 + 0 → 3.73"
-     ],
-     "hint": "$P_x=P_{x0}\\cos\\theta-P_{y0}\\sin\\theta$、$P_y=P_{x0}\\sin\\theta+P_{y0}\\cos\\theta$、$P_z=P_{z0}$",
-     "tag": "3次元の座標"
-    }
-   ]
-  },
-  {
-   "id": "s4",
-   "no": "04",
-   "title": "合成回転(掛ける順)",
-   "qs": [
-    {
-     "type": "single",
-     "q": "① $x$ 軸まわりに $\\alpha$、② 次に $z_a$ 軸まわりに $\\beta$ 回転したとき、${}^{abs}\\boldsymbol{R}_b$ は?",
-     "opts": [
-      "$\\boldsymbol{R}(x,\\alpha)\\,\\boldsymbol{R}(z_a,\\beta)$",
-      "$\\boldsymbol{R}(z_a,\\beta)\\,\\boldsymbol{R}(x,\\alpha)$",
-      "$\\boldsymbol{R}(x,\\alpha)+\\boldsymbol{R}(z_a,\\beta)$"
-     ],
-     "ans": "$\\boldsymbol{R}(x,\\alpha)\\,\\boldsymbol{R}(z_a,\\beta)$",
-     "note": "最初の回転を左、後の回転を右に掛ける。(資料 p.10)",
-     "tag": "掛ける順"
-    },
-    {
-     "type": "single",
-     "q": "【問題1】 ${}^{abs}\\boldsymbol{R}_b=\\boldsymbol{R}(y,30^\\circ)\\,\\boldsymbol{R}(x_a,-90^\\circ)$ は?",
-     "opts": [
-      "$\\begin{bmatrix}\\frac{\\sqrt{3}}{2} & 0 & \\frac{1}{2} \\\\ - \\frac{1}{2} & 0 & \\frac{\\sqrt{3}}{2} \\\\ 0 & -1 & 0\\end{bmatrix}$",
-      "$\\begin{bmatrix}\\frac{\\sqrt{3}}{2} & - \\frac{1}{2} & 0 \\\\ 0 & 0 & 1 \\\\ - \\frac{1}{2} & - \\frac{\\sqrt{3}}{2} & 0\\end{bmatrix}$",
-      "$\\begin{bmatrix}\\frac{\\sqrt{3}}{2} & 0 & - \\frac{1}{2} \\\\ - \\frac{1}{2} & 0 & - \\frac{\\sqrt{3}}{2} \\\\ 0 & 1 & 0\\end{bmatrix}$",
-      "$\\begin{bmatrix}- \\frac{\\sqrt{3}}{2} & \\frac{1}{2} & 0 \\\\ 0 & 0 & -1 \\\\ \\frac{1}{2} & \\frac{\\sqrt{3}}{2} & 0\\end{bmatrix}$"
-     ],
-     "ans": "$\\begin{bmatrix}\\frac{\\sqrt{3}}{2} & - \\frac{1}{2} & 0 \\\\ 0 & 0 & 1 \\\\ - \\frac{1}{2} & - \\frac{\\sqrt{3}}{2} & 0\\end{bmatrix}$",
-     "note": "$\\boldsymbol{R}(y,30^\\circ)$ を左に置いて掛ける。(資料 p.10)",
-     "tag": "合成"
     }
    ]
   },
