@@ -184,7 +184,7 @@
    "check": [
     {
      "type": "numeric",
-     "q": "同次変換行列 ${}^{a}\\boldsymbol{A}_b=\\begin{bmatrix}\\frac{\\sqrt{3}}{2} & - \\frac{1}{2} & 0 & 1 \\\\ \\frac{1}{2} & \\frac{\\sqrt{3}}{2} & 0 & 2 \\\\ 0 & 0 & 1 & 3 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$ で、$\\Sigma_b$ での点 P の座標が ${}^{b}\\boldsymbol{P}=(4,2,1)$ のとき、$\\Sigma_a$ での座標のうち ${}^{a}P_x$、${}^{a}P_y$ を求めよ。(有効数字3桁。$\\boldsymbol{P}$ の下に 1 を付けて 4 成分にして掛ける。$\\cos 30^\\circ=0.8660$、$\\sin 30^\\circ=0.5000$ を使う)",
+     "q": "同次変換行列 ${}^{a}\\boldsymbol{A}_b=\\begin{bmatrix}\\frac{\\sqrt{3}}{2} & - \\frac{1}{2} & 0 & 1 \\\\ \\frac{1}{2} & \\frac{\\sqrt{3}}{2} & 0 & 2 \\\\ 0 & 0 & 1 & 3 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$ で、$\\Sigma_b$ での点 P の座標が ${}^{b}\\boldsymbol{P}=\\begin{bmatrix}4\\\\2\\\\1\\end{bmatrix}$ のとき、$\\Sigma_a$ での座標 ${}^{a}\\boldsymbol{P}$ を求めよ。(有効数字3桁。$\\boldsymbol{P}$ の下に 1 を付けて 4 成分にして掛ける。$\\cos 30^\\circ=0.8660$、$\\sin 30^\\circ=0.5000$ を使う)",
      "parts": [
       {
        "ans": 3.46,
@@ -197,14 +197,20 @@
        "unit": "",
        "abs": 0.015,
        "label": "${}^{a}P_y$"
+      },
+      {
+       "ans": 4.0,
+       "unit": "",
+       "abs": 0.015,
+       "label": "${}^{a}P_z$"
       }
      ],
-     "note": "$\\begin{bmatrix}{}^{a}\\boldsymbol{P}\\\\1\\end{bmatrix}={}^{a}\\boldsymbol{A}_b\\begin{bmatrix}{}^{b}\\boldsymbol{P}\\\\1\\end{bmatrix}$。${}^{a}P_x$=3.46、${}^{a}P_y$=5.73。(途中は有効4桁、答えは3桁)",
+     "note": "$\\begin{bmatrix}{}^{a}\\boldsymbol{P}\\\\1\\end{bmatrix}={}^{a}\\boldsymbol{A}_b\\begin{bmatrix}{}^{b}\\boldsymbol{P}\\\\1\\end{bmatrix}$。${}^{a}P_x$=3.46、${}^{a}P_y$=5.73、${}^{a}P_z$=4.00。(途中は有効4桁、答えは3桁)",
      "reveal": [
-      "${}^{a}P_x$: 回転の部分 3.464 + (-1.000) + 0 = 2.464、並進を足して 2.464 + 1 = 3.464 → 3.46",
-      "${}^{a}P_y$: 回転の部分 2.000 + 1.732 + 0 = 3.732、並進を足して 3.732 + 2 = 5.732 → 5.73"
+      "$\\begin{bmatrix}{}^{a}P_x\\\\{}^{a}P_y\\\\{}^{a}P_z\\\\1\\end{bmatrix}=\\begin{bmatrix}\\frac{\\sqrt{3}}{2} & - \\frac{1}{2} & 0 & 1 \\\\ \\frac{1}{2} & \\frac{\\sqrt{3}}{2} & 0 & 2 \\\\ 0 & 0 & 1 & 3 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}\\begin{bmatrix}4\\\\2\\\\1\\\\1\\end{bmatrix}$",
+      "各行を掛けて足す: $=\\begin{bmatrix}3.464 + (-1.000) + 0 + 1\\\\2.000 + 1.732 + 0 + 2\\\\0 + 0 + 1.000 + 3\\\\1\\end{bmatrix}=\\begin{bmatrix}3.464\\\\5.732\\\\4.000\\\\1\\end{bmatrix}$"
      ],
-     "hint": "各行について「$R$ の部分の行 × $(P_x,P_y,P_z)$ + 並進の成分」。",
+     "hint": "$\\begin{bmatrix}{}^{a}\\boldsymbol{P}\\\\1\\end{bmatrix}={}^{a}\\boldsymbol{A}_b\\begin{bmatrix}{}^{b}\\boldsymbol{P}\\\\1\\end{bmatrix}$(下に 1 を付けた4つの数に、4×4 の行列を掛ける)",
      "tag": "確認"
     }
    ]
