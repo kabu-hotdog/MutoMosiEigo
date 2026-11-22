@@ -561,6 +561,27 @@
      "tag": "演習No.1 問3の手先位置"
     }
    ]
+  },
+  {
+   "id": "g",
+   "no": "原",
+   "title": "課題の原題(順運動学)",
+   "qs": [
+    {
+     "type": "selfgrade",
+     "q": "【課題2 問1(2026.10.26)】下図の2つのリンク $l_1$ と $l_2$、2関節($\\theta,\\phi$)のロボットアームを考える。座標系 $\\Sigma_2(X_2,Y_2,Z_2)$ をベース座標系 $\\Sigma_0(X_0,Y_0,Z_0)$ で表す同次変換行列 ${}^{0}\\boldsymbol{A}_2$ を求めよ。次いで、座標系 $\\Sigma_0$ でのエンドエフェクタの位置ベクトル ${}^{0}\\boldsymbol{P}_E$ を求めよ。<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k2-q1-arm.jpg\" alt=\"課題2 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題2 問1 の図。J1 は $Y_0$ 軸まわりに $\\theta$、J2 は $X_1$ 軸まわりに $\\phi$。</figcaption></figure>(紙に書いてから「答えを見る」)",
+     "answer": "$$ {}^{0}\\boldsymbol{A}_2=\\begin{bmatrix}\\cos\\theta&\\sin\\theta\\sin\\phi&\\sin\\theta\\cos\\phi&0\\\\0&\\cos\\phi&-\\sin\\phi&l_1\\\\-\\sin\\theta&\\cos\\theta\\sin\\phi&\\cos\\theta\\cos\\phi&0\\\\0&0&0&1\\end{bmatrix},\\quad {}^{0}\\boldsymbol{P}_E=\\begin{bmatrix}l_2\\sin\\theta\\sin\\phi\\\\l_1+l_2\\cos\\phi\\\\l_2\\cos\\theta\\sin\\phi\\end{bmatrix}$$",
+     "note": "${}^{0}\\boldsymbol{A}_2={}^{0}\\boldsymbol{A}_1\\,{}^{1}\\boldsymbol{A}_2$、${}^{2}\\boldsymbol{P}_E=(0,l_2,0)$ に掛ける。(課題2 解答)",
+     "tag": "課題2"
+    },
+    {
+     "type": "selfgrade",
+     "q": "【課題2 問2】左図の2つのリンク $l_1$ と $l_2$、2関節($\\theta_1,\\theta_2$)のロボットアームを考える。座標系 $\\Sigma_2(X_2,Y_2,Z_2)$ をベース座標系 $\\Sigma_0(X_0,Y_0,Z_0)$ で表す同次変換行列 ${}^{0}\\boldsymbol{A}_2$ を求めよ。次いで、座標系 $\\Sigma_0$ でのエンドエフェクタの位置ベクトル ${}^{0}\\boldsymbol{P}_E$ を求めよ。<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k2-q2-arm.jpg\" alt=\"課題2 問2 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題2 問2 の図。長さは図の $L_1,L_2,L_3$ を使う(問題文は $l_1,l_2$ と書いてあるが、図と解答は $L_1,L_2,L_3$)。</figcaption></figure>(紙に書いてから「答えを見る」)",
+     "answer": "$$ {}^{0}\\boldsymbol{P}_E=\\begin{bmatrix}L_3\\cos\\theta_2\\\\L_3\\sin\\theta_1\\sin\\theta_2+L_2\\cos\\theta_1\\\\L_1+L_2\\sin\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$$${}^{0}\\boldsymbol{A}_1=\\boldsymbol{R}(x_0,\\theta_1)$ と $z_0$ 方向に $L_1$、${}^{1}\\boldsymbol{A}_2=\\boldsymbol{R}(y_1,\\theta_2)$ と $y_1$ 方向に $L_2$、${}^{2}\\boldsymbol{P}_E=(L_3,0,0)$。",
+     "note": "根元から順に掛ける。(課題2 解答)",
+     "tag": "課題2"
+    }
+   ]
   }
  ],
  "order": 5,

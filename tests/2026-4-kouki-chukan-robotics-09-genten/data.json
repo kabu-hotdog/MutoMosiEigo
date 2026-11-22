@@ -3,62 +3,20 @@
  "grade": 4,
  "exam": "後期中間試験",
  "subject": "ロボティクス",
- "title": "ロボティクス ・ ⑨ 課題・演習の原題",
- "subtitle": "課題1〜5と演習No.1・No.2を、問題文と数値をそのまま出す(試験は演習プリントとほぼ同じ形の見込み)",
- "eyebrow": "ロボティクス ・ 原題",
- "description": "授業の課題プリント・演習プリントの問題を、原文のまま出す。行列や式は紙に書いてから答えを見て自己採点。数値の問題はそのまま入力。",
+ "title": "ロボティクス ・ ⑨ 演習プリントの原題(最後に解く)",
+ "subtitle": "ロボティクス演習 No.1・No.2(11/19)を、問題文と数値をそのまま出す。試験は、このプリントとほぼ同じ形の見込み",
+ "eyebrow": "ロボティクス ・ 演習プリント",
+ "description": "ロボティクス演習 No.1・No.2 の原題。行列や式は紙に書いてから答えを見て自己採点。数値の問題はそのまま入力。",
  "storageKey": "robo_chukan_09_genten_v1",
  "pointsPerQ": 100,
  "katex": true,
- "tip": "<b>本番は演習プリントとほぼ同じ形の見込み。</b>まず紙に解く。式・行列の問題は、紙に書いてから「答えを見る」で、合っていたか自分で○×をつける(「綴りまで」と出るが、式が1つも違わず合っていたかの意味)。数値の問題はそのまま入力。「トラ解」と書いてある答えは、先生の答えが資料に無いので、トラが解いたもの。",
- "footer": "ロボティクス 後期中間試験(11/30) ・ 出題: 課題1〜5(10/22〜11/16)、演習No.1・No.2(11/19)、教科書 第7章 演習問題7.8・7.10・7.14",
+ "tip": "<b>本番は、このプリントとほぼ同じ形の見込み。</b>第1〜8回を一通りやってから、最後に解く。まず紙で解く。式・行列の問題は、紙に書いてから「答えを見る」で、合っていたか自分で○×をつける(「綴りまで」と出るが、式が1つも違わず合っていたかの意味)。数値の問題はそのまま入力。「トラ解」と書いてある答えは、先生の答えが資料に無いので、トラが解いたもの。",
+ "footer": "ロボティクス 後期中間試験(11/30) ・ 出題: ロボティクス演習 No.1・No.2(2026.11.19)",
  "sections": [
   {
    "id": "s1",
    "no": "01",
-   "title": "課題1〜3(座標変換・順運動学・ヤコビ行列)の原題",
-   "qs": [
-    {
-     "type": "selfgrade",
-     "q": "【課題1 問1(2026.10.22)】以下に示す座標変換における、座標系 $\\Sigma_c$ から座標系 $\\Sigma_{abs}$ への回転変換行列 ${}^{abs}\\boldsymbol{R}_c$ を求めよ。<br>① 座標系 $\\Sigma_{abs}(x,y,z)$ をその $z$ 軸まわりに $45^\\circ$ 回転させ、座標系 $\\Sigma_a(x_a,y_a,z_a)$ を生成。<br>② 次いで、座標系 $\\Sigma_a$ をその $y_a$ 軸まわりに $90^\\circ$ 回転させ、座標系 $\\Sigma_b(x_b,y_b,z_b)$ を生成。<br>③ 次いで、座標系 $\\Sigma_b$ をその $x_b$ 軸まわりに $90^\\circ$ 回転させ、座標系 $\\Sigma_c(x_c,y_c,z_c)$ を生成。<br>(紙に書いてから「答えを見る」)",
-     "answer": "$$ {}^{abs}\\boldsymbol{R}_c=\\boldsymbol{R}(z,45^\\circ)\\boldsymbol{R}(y_a,90^\\circ)\\boldsymbol{R}(x_b,90^\\circ)=\\begin{bmatrix}0&\\frac{\\sqrt2}{2}&\\frac{\\sqrt2}{2}\\\\0&\\frac{\\sqrt2}{2}&-\\frac{\\sqrt2}{2}\\\\-1&0&0\\end{bmatrix}$$",
-     "note": "回した順に左から右へ掛ける。各回転は「回した後の軸」の名前で書く。(課題1 解答)",
-     "tag": "課題1"
-    },
-    {
-     "type": "selfgrade",
-     "q": "【課題2 問1(2026.10.26)】下図の2つのリンク $l_1$ と $l_2$、2関節($\\theta,\\phi$)のロボットアームを考える。座標系 $\\Sigma_2(X_2,Y_2,Z_2)$ をベース座標系 $\\Sigma_0(X_0,Y_0,Z_0)$ で表す同次変換行列 ${}^{0}\\boldsymbol{A}_2$ を求めよ。次いで、座標系 $\\Sigma_0$ でのエンドエフェクタの位置ベクトル ${}^{0}\\boldsymbol{P}_E$ を求めよ。<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k2-q1-arm.jpg\" alt=\"課題2 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題2 問1 の図。J1 は $Y_0$ 軸まわりに $\\theta$、J2 は $X_1$ 軸まわりに $\\phi$。</figcaption></figure>(紙に書いてから「答えを見る」)",
-     "answer": "$$ {}^{0}\\boldsymbol{A}_2=\\begin{bmatrix}\\cos\\theta&\\sin\\theta\\sin\\phi&\\sin\\theta\\cos\\phi&0\\\\0&\\cos\\phi&-\\sin\\phi&l_1\\\\-\\sin\\theta&\\cos\\theta\\sin\\phi&\\cos\\theta\\cos\\phi&0\\\\0&0&0&1\\end{bmatrix},\\quad {}^{0}\\boldsymbol{P}_E=\\begin{bmatrix}l_2\\sin\\theta\\sin\\phi\\\\l_1+l_2\\cos\\phi\\\\l_2\\cos\\theta\\sin\\phi\\end{bmatrix}$$",
-     "note": "${}^{0}\\boldsymbol{A}_2={}^{0}\\boldsymbol{A}_1\\,{}^{1}\\boldsymbol{A}_2$、${}^{2}\\boldsymbol{P}_E=(0,l_2,0)$ に掛ける。(課題2 解答)",
-     "tag": "課題2"
-    },
-    {
-     "type": "selfgrade",
-     "q": "【課題2 問2】左図の2つのリンク $l_1$ と $l_2$、2関節($\\theta_1,\\theta_2$)のロボットアームを考える。座標系 $\\Sigma_2(X_2,Y_2,Z_2)$ をベース座標系 $\\Sigma_0(X_0,Y_0,Z_0)$ で表す同次変換行列 ${}^{0}\\boldsymbol{A}_2$ を求めよ。次いで、座標系 $\\Sigma_0$ でのエンドエフェクタの位置ベクトル ${}^{0}\\boldsymbol{P}_E$ を求めよ。<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k2-q2-arm.jpg\" alt=\"課題2 問2 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題2 問2 の図。長さは図の $L_1,L_2,L_3$ を使う(問題文は $l_1,l_2$ と書いてあるが、図と解答は $L_1,L_2,L_3$)。</figcaption></figure>(紙に書いてから「答えを見る」)",
-     "answer": "$$ {}^{0}\\boldsymbol{P}_E=\\begin{bmatrix}L_3\\cos\\theta_2\\\\L_3\\sin\\theta_1\\sin\\theta_2+L_2\\cos\\theta_1\\\\L_1+L_2\\sin\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$$${}^{0}\\boldsymbol{A}_1=\\boldsymbol{R}(x_0,\\theta_1)$ と $z_0$ 方向に $L_1$、${}^{1}\\boldsymbol{A}_2=\\boldsymbol{R}(y_1,\\theta_2)$ と $y_1$ 方向に $L_2$、${}^{2}\\boldsymbol{P}_E=(L_3,0,0)$。",
-     "note": "根元から順に掛ける。(課題2 解答)",
-     "tag": "課題2"
-    },
-    {
-     "type": "selfgrade",
-     "q": "【課題3 問1(2026.11.2)】ある3つのリンク $L_1,L_2,L_3$ と2関節($\\theta_1,\\theta_2$)のロボットアームのエンドエフェクタの位置ベクトル ${}^{0}\\boldsymbol{P}_E$ が式①によって与えられる。式②に定義されるヤコビ行列 $\\boldsymbol{J}$ を求めよ。$$ {}^{0}\\boldsymbol{P}_E=\\begin{bmatrix}x\\\\y\\\\z\\end{bmatrix}=\\begin{bmatrix}L_2\\sin\\theta_2+L_3\\sin\\theta_1\\sin\\theta_2\\\\L_1+L_3\\cos\\theta_2\\\\L_2\\cos\\theta_1+L_3\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}\\cdots①,\\quad\\begin{bmatrix}\\dot x\\\\\\dot y\\\\\\dot z\\end{bmatrix}=\\boldsymbol{J}\\begin{bmatrix}\\dot\\theta_1\\\\\\dot\\theta_2\\\\\\dot L_3\\end{bmatrix}\\cdots②$$(紙に書いてから「答えを見る」)",
-     "answer": "$$\\boldsymbol{J}=\\begin{bmatrix}L_3\\cos\\theta_1\\sin\\theta_2&L_2\\cos\\theta_2+L_3\\sin\\theta_1\\cos\\theta_2&\\sin\\theta_1\\sin\\theta_2\\\\0&-L_3\\sin\\theta_2&\\cos\\theta_2\\\\-L_2\\sin\\theta_1-L_3\\sin\\theta_1\\sin\\theta_2&L_3\\cos\\theta_1\\cos\\theta_2&\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$$",
-     "note": "$x,y,z$ を $\\theta_1,\\theta_2,L_3$ で偏微分した9個を、行 $=x,y,z$、列 $=\\theta_1,\\theta_2,L_3$ の順に並べる。(課題3 解答)",
-     "tag": "課題3"
-    },
-    {
-     "type": "selfgrade",
-     "q": "【課題3 問2】ある3つのリンク $l_1,l_2,l_3$ と3関節($\\theta_1,\\theta_2,\\theta_3$)のロボットアームのエンドエフェクタの位置ベクトル ${}^{0}\\boldsymbol{P}_E$ が式①によって与えられる。式②に定義されるヤコビ行列 $\\boldsymbol{J}$ を求めよ。$$ {}^{0}\\boldsymbol{P}_E=\\begin{bmatrix}l_3\\cos\\theta_1\\cos(\\theta_2+\\theta_3)+l_2\\cos\\theta_1\\cos\\theta_2\\\\l_3\\sin\\theta_1\\cos(\\theta_2+\\theta_3)+l_2\\sin\\theta_1\\cos\\theta_2\\\\-l_3\\sin(\\theta_2+\\theta_3)+l_1-l_2\\sin\\theta_2\\end{bmatrix}\\cdots①,\\quad\\begin{bmatrix}\\dot x\\\\\\dot y\\\\\\dot z\\end{bmatrix}=\\boldsymbol{J}\\begin{bmatrix}\\dot\\theta_1\\\\\\dot\\theta_2\\\\\\dot\\theta_3\\end{bmatrix}\\cdots②$$(紙に書いてから「答えを見る」)",
-     "answer": "$$\\boldsymbol{J}=\\begin{bmatrix}-l_2\\sin\\theta_1\\cos\\theta_2-l_3\\sin\\theta_1\\cos(\\theta_2+\\theta_3)&-l_2\\cos\\theta_1\\sin\\theta_2-l_3\\cos\\theta_1\\sin(\\theta_2+\\theta_3)&-l_3\\cos\\theta_1\\sin(\\theta_2+\\theta_3)\\\\l_2\\cos\\theta_1\\cos\\theta_2+l_3\\cos\\theta_1\\cos(\\theta_2+\\theta_3)&-l_2\\sin\\theta_1\\sin\\theta_2-l_3\\sin\\theta_1\\sin(\\theta_2+\\theta_3)&-l_3\\sin\\theta_1\\sin(\\theta_2+\\theta_3)\\\\0&-l_2\\cos\\theta_2-l_3\\cos(\\theta_2+\\theta_3)&-l_3\\cos(\\theta_2+\\theta_3)\\end{bmatrix}$$",
-     "note": "$\\theta_2+\\theta_3$ を含む項は、$\\theta_2$ でも $\\theta_3$ でも係数1で微分される。(課題3 解答)",
-     "tag": "課題3"
-    }
-   ]
-  },
-  {
-   "id": "s2",
-   "no": "02",
-   "title": "演習No.1・No.2(座標・運動学・ヤコビ行列)の原題",
+   "title": "演習 No.1 の原題(2026.11.19)",
    "qs": [
     {
      "type": "selfgrade",
@@ -82,108 +40,6 @@
      "tag": "演習No.1 問3"
     },
     {
-     "type": "selfgrade",
-     "q": "【演習 No.2 問9】ある3自由度ロボットアームのエンドエフェクタの位置が式①によって与えられる。式②に定義されるヤコビ行列 $\\boldsymbol{J}$ を求めよ。$$ {}^{0}\\boldsymbol{P}_E=\\begin{bmatrix}-L_2\\sin\\theta_1-L_3\\sin\\theta_1\\sin\\theta_2\\\\-L_3\\cos\\theta_2\\\\L_1-L_2\\cos\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}\\cdots①,\\quad\\begin{bmatrix}\\dot x\\\\\\dot y\\\\\\dot z\\end{bmatrix}=\\boldsymbol{J}\\begin{bmatrix}\\dot\\theta_1\\\\\\dot\\theta_2\\\\\\dot L_3\\end{bmatrix}\\cdots②$$(紙に書いてから「答えを見る」。トラ解)",
-     "answer": "$$\\boldsymbol{J}=\\begin{bmatrix}-(L_2+L_3\\sin\\theta_2)\\cos\\theta_1&-L_3\\sin\\theta_1\\cos\\theta_2&-\\sin\\theta_1\\sin\\theta_2\\\\0&L_3\\sin\\theta_2&-\\cos\\theta_2\\\\(L_2+L_3\\sin\\theta_2)\\sin\\theta_1&-L_3\\cos\\theta_1\\cos\\theta_2&-\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$$",
-     "note": "検算: $\\theta_1=\\theta_2=0$ のとき $\\boldsymbol{J}=\\begin{bmatrix}-L_2&0&0\\\\0&0&-1\\\\0&-L_3&0\\end{bmatrix}$。(トラ解)",
-     "tag": "演習No.2 問9"
-    }
-   ]
-  },
-  {
-   "id": "s3",
-   "no": "03",
-   "title": "課題4・5(衝突)の原題",
-   "qs": [
-    {
-     "type": "selfgrade",
-     "q": "【課題4 問1(2026.11.9)】質量 $m_1,m_2$ の2物体A、Bが、速度 $v_1,v_2$ で一直線上を同じ向きで運動している。なお、$v_1>v_2$ である。この2物体が衝突し、衝突後も2物体は同一直線上を運動した。衝突後の物体A、Bの速度 $v_1',v_2'$ が次式となることを示せ。ただし、$e$ は反発係数である。$$v_1'=\\frac{(m_1-m_2e)v_1+m_2(1+e)v_2}{m_1+m_2},\\quad v_2'=\\frac{m_1(1+e)v_1+(m_2-m_1e)v_2}{m_1+m_2}$$<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k4-q1-fig.jpg\" alt=\"課題4 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題4 問1 の図(衝突前と衝突後)。</figcaption></figure>(紙に書いてから「答えを見る」)",
-     "answer": "運動量保存則より $m_1v_1+m_2v_2=m_1v_1'+m_2v_2'$ ……①。反発係数 $e=\\dfrac{v_2'-v_1'}{v_1-v_2}$ ……② より $e(v_1-v_2)=-v_1'+v_2'$ ……③。①$-m_2\\times$③ より $(m_1-em_2)v_1+m_2(1+e)v_2=(m_1+m_2)v_1'$、$v_1'=\\dfrac{(m_1-m_2e)v_1+m_2(1+e)v_2}{m_1+m_2}$。①$+m_1\\times$③ より $m_1(1+e)v_1+(m_2-em_1)v_2=(m_1+m_2)v_2'$、$v_2'=\\dfrac{m_1(1+e)v_1+(m_2-m_1e)v_2}{m_1+m_2}$。",
-     "note": "式(2)と式(3)の連立。(課題4 解答)",
-     "tag": "課題4 問1"
-    },
-    {
-     "type": "numeric",
-     "q": "【課題4 問2】静止している物体Aに、質量 2kg の物体Bが 1.5m/s の速度で衝突したとき、物体Bは静止して物体Aが動き出した。物体Aの衝突後の速度と質量を求めよ。なお、反発係数 $e=0.75$ とする。【答え: $v_A'=1.13$ m/s、$m_A=2.67$ kg】(単位つきで、3桁)",
-     "parts": [
-      {
-       "ans": 1.13,
-       "unit": "m/s",
-       "abs": 0.015,
-       "label": "$v_A'$"
-      },
-      {
-       "ans": 2.67,
-       "unit": "kg",
-       "abs": 0.015,
-       "label": "$m_A$"
-      }
-     ],
-     "note": "運動量保存則 $m_Bv_B=m_Av_A'$、$e=\\dfrac{v_A'}{v_B}$。$v_A'=0.75\\times1.5=1.125$、$m_A=\\dfrac{2\\times1.5}{1.125}=2.667$。(課題4 解答。途中で丸めない)",
-     "tag": "課題4 問2"
-    },
-    {
-     "type": "numeric",
-     "q": "【課題4 問3】球を $H=2$ m の高さから初速度 $v_0=5$ m/s で床に投げおろしたら、また高さ $H=2$ m まで跳ね上がった。このときの反発係数 $e$ の値を求めよ。(重力加速度 $g=9.81\\ \\mathrm{m/s^2}$)【答え: $e=0.782$】",
-     "parts": [
-      {
-       "ans": 0.782,
-       "unit": "",
-       "abs": 0.0015,
-       "label": "$e$"
-      }
-     ],
-     "note": "$e=\\sqrt{\\dfrac{2gH}{v_0^2+2gH}}=\\sqrt{\\dfrac{39.24}{64.24}}=0.7816$。(課題4 解答)",
-     "tag": "課題4 問3"
-    },
-    {
-     "type": "selfgrade",
-     "q": "【課題4 問4】図のように、半径 $r$ の球が位置Aからレールに沿って移動して半径 $R$ の円周上を完全に1回転させるには、位置Aの速度 $v_A$ をいかほどにすればよいか。なお、球は滑らず転がるものとする。<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/c03-loop.jpg\" alt=\"課題4 問4 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題4 問4 の図。</figcaption></figure>【答え: $v_A\\ge\\sqrt{\\frac{27}{7}g(R-r)}$】(紙に書いてから「答えを見る」)",
-     "answer": "$v=r\\omega$ より運動エネルギーは $\\dfrac12mv^2+\\dfrac12\\cdot\\dfrac25mr^2\\left(\\dfrac vr\\right)^2=\\dfrac{7}{10}mv^2$ ……①。エネルギー保存則 $\\dfrac{7}{10}mv_A^2=\\dfrac{7}{10}mv_B^2+2mg(R-r)$ から $v_B^2=v_A^2-\\dfrac{20}{7}g(R-r)$ ……②。1回転の条件 $\\dfrac{mv_B^2}{R-r}\\ge mg$ から $v_B^2\\ge g(R-r)$ ……③。②③より $v_A\\ge\\sqrt{\\dfrac{27}{7}g(R-r)}$。",
-     "note": "最高点の点Bは図には書かれていない(円の最高点)。(課題4 解答)",
-     "tag": "課題4 問4"
-    },
-    {
-     "type": "numeric",
-     "q": "【課題5 問1(2026.11.16)】下図のように一様な太さ、長さ $L=1$ m、質量 $m_2=1$ kg の静止している棒に質量 $m_1$ の球が速さ $v_1=8$ m/s で衝突し、衝突後の棒の重心の速度は $v_G=2$ m/s、角速度は $\\omega=9$ rad/s となった。衝突位置 $a$、衝突後の球の速度 $v_1'$、球の質量 $m_1$ を求めよ。ただし、反発係数を $e=0.6$ とする。【答え: $a=0.375$ m、$v_1'=0.575$ m/s、$m_1=0.269$ kg】<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k5-q1-rod.jpg\" alt=\"課題5 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題5 問1 の図($a$ は重心Gから衝突点まで)。</figcaption></figure>",
-     "parts": [
-      {
-       "ans": 0.375,
-       "unit": "m",
-       "abs": 0.0015,
-       "label": "$a$"
-      },
-      {
-       "ans": 0.575,
-       "unit": "m/s",
-       "abs": 0.0015,
-       "label": "$v_1'$"
-      },
-      {
-       "ans": 0.269,
-       "unit": "kg",
-       "abs": 0.0015,
-       "label": "$m_1$"
-      }
-     ],
-     "note": "$Ft=m_2v_G=2$、$a=\\dfrac{m_2L^2}{12Ft}\\omega=0.375$、$v_2'=v_G+a\\omega=5.375$、$v_1'=v_2'-ev_1=0.575$、$m_1=\\dfrac{-Ft}{v_1'-v_1}=0.2694$。(課題5 解答)",
-     "tag": "課題5 問1"
-    },
-    {
-     "type": "selfgrade",
-     "q": "【課題5 問2】太さ一様で長さ $L$ のバットでボールを打つとき、ボールがバットの先端から $L/10$ の位置で当たった場合に、手に衝撃を受けないためには、どこを握ればよいか。【答え: $b=7L/24$】<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k5-q2-bat.jpg\" alt=\"課題5 問2 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題5 問2 の図($b$ は上端から握る点Oまで、$a$ は重心から衝突点まで)。</figcaption></figure>(紙に書いてから「答えを見る」)",
-     "answer": "棒の並進 $Ft=mv_G$、回転 $Fat=I\\omega=\\dfrac{mL^2}{12}\\omega$ より $v_G=\\dfrac{L^2}{12a}\\omega$ ……③。点Oの速度 $v_O=v_G-(L/2-b)\\omega=0$ より $v_G=(L/2-b)\\omega$ ……④。③④より $\\dfrac{L^2}{12a}=\\dfrac L2-b$。$a=\\dfrac L2-\\dfrac L{10}=\\dfrac{2L}{5}$ を入れて $b=\\dfrac{7}{24}L$。",
-     "note": "(課題5 解答)",
-     "tag": "課題5 問2"
-    }
-   ]
-  },
-  {
-   "id": "s4",
-   "no": "04",
-   "title": "演習No.1 問4・演習No.2 問5〜8(工業力学)の原題",
-   "qs": [
-    {
      "type": "numeric",
      "q": "【演習 No.1 問4】まっすぐな棒ABの一端Aを回転自由にして止め、これを水平な状態からはなし、棒が鉛直になったときB端の速度が 10m/s であった。棒の長さを求めよ。なお、重力加速度 $g=9.81\\ [\\mathrm{m/s^2}]$ を用いること。【答え: 3.40m】",
      "parts": [
@@ -196,7 +52,14 @@
      ],
      "note": "例題1 の $v_B=\\sqrt{3gl}$ から $l=\\dfrac{v_B^2}{3g}=\\dfrac{100}{29.43}=3.398$。(トラ解)",
      "tag": "演習No.1 問4"
-    },
+    }
+   ]
+  },
+  {
+   "id": "s2",
+   "no": "02",
+   "title": "演習 No.2 の原題(2026.11.19)",
+   "qs": [
     {
      "type": "numeric",
      "q": "【演習 No.2 問5】図のように、水平面と $30^\\circ$ の角をなす斜面上の高さ $h=1$ m のところに半径 $r=30$ cm の球を静止させる。そして、球を斜面に沿ってすべることなく転がらせ、水平面に達したときの速度 $v$ を求めよ。なお、重力加速度 $g=9.81\\ [\\mathrm{m/s^2}]$ を用いること。【答え: 3.67m/s】<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/c04-sphere-slope.jpg\" alt=\"演習No.2 問5 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.2 問5 の図。$h$ は球が斜面に接する点の高さ。</figcaption></figure>",
@@ -263,74 +126,13 @@
      ],
      "note": "$Ft=m_2v_G=2$、$a=\\dfrac{m_2L^2\\omega}{12Ft}=0.375$、$v_2'=v_G+a\\omega=10.75$、$v_1'=v_2'-ev_1=5.75$、$m_1=\\dfrac{2}{10-5.75}=0.471$。(トラ解)",
      "tag": "演習No.2 問8"
-    }
-   ]
-  },
-  {
-   "id": "s5",
-   "no": "05",
-   "title": "教科書 第7章 演習問題(おまけ)",
-   "qs": [
-    {
-     "type": "numeric",
-     "q": "【教科書 演習問題7.8】球Aが 10m/s の速度で静止している球Bに衝突したところ、A、Bの速度がそれぞれ 3m/s、8m/s になった。A、B間のはねかえりの係数 $e$ の値を求めよ。(3桁で)",
-     "parts": [
-      {
-       "ans": 0.5,
-       "unit": "",
-       "abs": 0.0015,
-       "label": "$e$"
-      }
-     ],
-     "note": "$e=\\dfrac{v_B'-v_A'}{v_A-v_B}=\\dfrac{8-3}{10-0}=0.5$。(トラ解)",
-     "tag": "教科書7.8"
     },
     {
-     "type": "numeric",
-     "q": "【教科書 演習問題7.10】ゴム球を 3m の高さから水平な床の上に落としたとき、球のはね上がる高さを求めよ。ただし、はねかえりの係数を $e=0.80$ とする。また、このゴム球が静止するまでに動く距離を求めよ。(2つとも3桁で。動く距離は、上下に動いた道のりの合計)",
-     "parts": [
-      {
-       "ans": 1.92,
-       "unit": "m",
-       "abs": 0.015,
-       "label": "はね上がる高さ"
-      },
-      {
-       "ans": 13.7,
-       "unit": "m",
-       "abs": 0.15,
-       "label": "静止するまでに動く距離"
-      }
-     ],
-     "note": "1回はね返ると、速さが $e$ 倍、高さが $e^2$ 倍。高さ $e^2H=0.64\\times3=1.92$。道のりは $H+2e^2H+2e^4H+\\cdots=H\\dfrac{1+e^2}{1-e^2}=3\\times\\dfrac{1.640}{0.3600}=13.67$。(トラ解。教科書の答えは未確認)",
-     "tag": "教科書7.10"
-    },
-    {
-     "type": "numeric",
-     "q": "【教科書 演習問題7.14】質量 1.0kg、長さ 80cm の丸棒の重心から 35cm の点を質量 1.2kg のハンマーで 5.0m/s の速さで打った。はねかえりの係数を $e=0.55$ として、打撃後のハンマーの速さと棒の打撃点の速さを求めよ。(棒は支えのない自由な棒。重心から 35cm なので、棒の端から $a=5$ cm。重心まわりの慣性モーメントは $I_G=m_2l^2/12$。3桁で)",
-     "parts": [
-      {
-       "ans": 3.44,
-       "unit": "m/s",
-       "abs": 0.015,
-       "label": "打撃後のハンマーの速さ $v_1'$"
-      },
-      {
-       "ans": 6.19,
-       "unit": "m/s",
-       "abs": 0.015,
-       "label": "棒の打撃点の速さ $v_2'$"
-      }
-     ],
-     "note": "例題7.9 と同じ型(ハンマーが球、棒の下端から $a=0.05$ m)。$v_1'=\\dfrac{12m_1(l/2-a)^2+(m_1-em_2)l^2}{12m_1(l/2-a)^2+(m_1+m_2)l^2}v_1$、$v_G=\\dfrac{m_1(v_1-v_1')}{m_2}$、$\\omega=\\dfrac{12v_G(l/2-a)}{l^2}$、$v_2'=v_G+(l/2-a)\\omega$。答え $v_1'$=3.44、$v_2'$=6.19。(途中は有効4桁、答えは3桁)",
-     "reveal": [
-      "$l/2-a=0.3500$、$(l/2-a)^2=0.1225$",
-      "$v_1'=\\dfrac{1.764+0.4160}{1.764+1.408}\\times v_1=0.6873\\times5.0=3.437$ m/s",
-      "$v_G=\\dfrac{m_1(v_1-v_1')}{m_2}=1.876$ m/s、$\\omega=\\dfrac{12v_G(l/2-a)}{l^2}=12.31$ rad/s",
-      "$v_2'=v_G+(l/2-a)\\omega=1.876+0.3500\\times12.31=6.185$ m/s"
-     ],
-     "hint": "球の並進 $-Ft=m_1(v_1'-v_1)$、棒の並進 $Ft=m_2v_G$、棒の回転 $F(l/2-a)t=\\frac{m_2l^2}{12}\\omega$、反発係数。",
-     "tag": "教科書7.14"
+     "type": "selfgrade",
+     "q": "【演習 No.2 問9】ある3自由度ロボットアームのエンドエフェクタの位置が式①によって与えられる。式②に定義されるヤコビ行列 $\\boldsymbol{J}$ を求めよ。$$ {}^{0}\\boldsymbol{P}_E=\\begin{bmatrix}-L_2\\sin\\theta_1-L_3\\sin\\theta_1\\sin\\theta_2\\\\-L_3\\cos\\theta_2\\\\L_1-L_2\\cos\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}\\cdots①,\\quad\\begin{bmatrix}\\dot x\\\\\\dot y\\\\\\dot z\\end{bmatrix}=\\boldsymbol{J}\\begin{bmatrix}\\dot\\theta_1\\\\\\dot\\theta_2\\\\\\dot L_3\\end{bmatrix}\\cdots②$$(紙に書いてから「答えを見る」。トラ解)",
+     "answer": "$$\\boldsymbol{J}=\\begin{bmatrix}-(L_2+L_3\\sin\\theta_2)\\cos\\theta_1&-L_3\\sin\\theta_1\\cos\\theta_2&-\\sin\\theta_1\\sin\\theta_2\\\\0&L_3\\sin\\theta_2&-\\cos\\theta_2\\\\(L_2+L_3\\sin\\theta_2)\\sin\\theta_1&-L_3\\cos\\theta_1\\cos\\theta_2&-\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$$",
+     "note": "検算: $\\theta_1=\\theta_2=0$ のとき $\\boldsymbol{J}=\\begin{bmatrix}-L_2&0&0\\\\0&0&-1\\\\0&-L_3&0\\end{bmatrix}$。(トラ解)",
+     "tag": "演習No.2 問9"
     }
    ]
   }

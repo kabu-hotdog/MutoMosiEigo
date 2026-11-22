@@ -483,6 +483,20 @@
      "tag": "合成"
     }
    ]
+  },
+  {
+   "id": "g",
+   "no": "原",
+   "title": "課題・演習の原題(回転変換行列)",
+   "qs": [
+    {
+     "type": "selfgrade",
+     "q": "【課題1 問1(2026.10.22)】以下に示す座標変換における、座標系 $\\Sigma_c$ から座標系 $\\Sigma_{abs}$ への回転変換行列 ${}^{abs}\\boldsymbol{R}_c$ を求めよ。<br>① 座標系 $\\Sigma_{abs}(x,y,z)$ をその $z$ 軸まわりに $45^\\circ$ 回転させ、座標系 $\\Sigma_a(x_a,y_a,z_a)$ を生成。<br>② 次いで、座標系 $\\Sigma_a$ をその $y_a$ 軸まわりに $90^\\circ$ 回転させ、座標系 $\\Sigma_b(x_b,y_b,z_b)$ を生成。<br>③ 次いで、座標系 $\\Sigma_b$ をその $x_b$ 軸まわりに $90^\\circ$ 回転させ、座標系 $\\Sigma_c(x_c,y_c,z_c)$ を生成。<br>(紙に書いてから「答えを見る」)",
+     "answer": "$$ {}^{abs}\\boldsymbol{R}_c=\\boldsymbol{R}(z,45^\\circ)\\boldsymbol{R}(y_a,90^\\circ)\\boldsymbol{R}(x_b,90^\\circ)=\\begin{bmatrix}0&\\frac{\\sqrt2}{2}&\\frac{\\sqrt2}{2}\\\\0&\\frac{\\sqrt2}{2}&-\\frac{\\sqrt2}{2}\\\\-1&0&0\\end{bmatrix}$$",
+     "note": "回した順に左から右へ掛ける。各回転は「回した後の軸」の名前で書く。(課題1 解答)",
+     "tag": "課題1"
+    }
+   ]
   }
  ],
  "order": 3,

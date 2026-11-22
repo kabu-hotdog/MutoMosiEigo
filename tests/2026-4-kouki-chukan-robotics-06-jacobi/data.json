@@ -658,6 +658,27 @@
      "tag": "演習No.2 問9のヤコビ行列の成分"
     }
    ]
+  },
+  {
+   "id": "g",
+   "no": "原",
+   "title": "課題の原題(ヤコビ行列)",
+   "qs": [
+    {
+     "type": "selfgrade",
+     "q": "【課題3 問1(2026.11.2)】ある3つのリンク $L_1,L_2,L_3$ と2関節($\\theta_1,\\theta_2$)のロボットアームのエンドエフェクタの位置ベクトル ${}^{0}\\boldsymbol{P}_E$ が式①によって与えられる。式②に定義されるヤコビ行列 $\\boldsymbol{J}$ を求めよ。$$ {}^{0}\\boldsymbol{P}_E=\\begin{bmatrix}x\\\\y\\\\z\\end{bmatrix}=\\begin{bmatrix}L_2\\sin\\theta_2+L_3\\sin\\theta_1\\sin\\theta_2\\\\L_1+L_3\\cos\\theta_2\\\\L_2\\cos\\theta_1+L_3\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}\\cdots①,\\quad\\begin{bmatrix}\\dot x\\\\\\dot y\\\\\\dot z\\end{bmatrix}=\\boldsymbol{J}\\begin{bmatrix}\\dot\\theta_1\\\\\\dot\\theta_2\\\\\\dot L_3\\end{bmatrix}\\cdots②$$(紙に書いてから「答えを見る」)",
+     "answer": "$$\\boldsymbol{J}=\\begin{bmatrix}L_3\\cos\\theta_1\\sin\\theta_2&L_2\\cos\\theta_2+L_3\\sin\\theta_1\\cos\\theta_2&\\sin\\theta_1\\sin\\theta_2\\\\0&-L_3\\sin\\theta_2&\\cos\\theta_2\\\\-L_2\\sin\\theta_1-L_3\\sin\\theta_1\\sin\\theta_2&L_3\\cos\\theta_1\\cos\\theta_2&\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$$",
+     "note": "$x,y,z$ を $\\theta_1,\\theta_2,L_3$ で偏微分した9個を、行 $=x,y,z$、列 $=\\theta_1,\\theta_2,L_3$ の順に並べる。(課題3 解答)",
+     "tag": "課題3"
+    },
+    {
+     "type": "selfgrade",
+     "q": "【課題3 問2】ある3つのリンク $l_1,l_2,l_3$ と3関節($\\theta_1,\\theta_2,\\theta_3$)のロボットアームのエンドエフェクタの位置ベクトル ${}^{0}\\boldsymbol{P}_E$ が式①によって与えられる。式②に定義されるヤコビ行列 $\\boldsymbol{J}$ を求めよ。$$ {}^{0}\\boldsymbol{P}_E=\\begin{bmatrix}l_3\\cos\\theta_1\\cos(\\theta_2+\\theta_3)+l_2\\cos\\theta_1\\cos\\theta_2\\\\l_3\\sin\\theta_1\\cos(\\theta_2+\\theta_3)+l_2\\sin\\theta_1\\cos\\theta_2\\\\-l_3\\sin(\\theta_2+\\theta_3)+l_1-l_2\\sin\\theta_2\\end{bmatrix}\\cdots①,\\quad\\begin{bmatrix}\\dot x\\\\\\dot y\\\\\\dot z\\end{bmatrix}=\\boldsymbol{J}\\begin{bmatrix}\\dot\\theta_1\\\\\\dot\\theta_2\\\\\\dot\\theta_3\\end{bmatrix}\\cdots②$$(紙に書いてから「答えを見る」)",
+     "answer": "$$\\boldsymbol{J}=\\begin{bmatrix}-l_2\\sin\\theta_1\\cos\\theta_2-l_3\\sin\\theta_1\\cos(\\theta_2+\\theta_3)&-l_2\\cos\\theta_1\\sin\\theta_2-l_3\\cos\\theta_1\\sin(\\theta_2+\\theta_3)&-l_3\\cos\\theta_1\\sin(\\theta_2+\\theta_3)\\\\l_2\\cos\\theta_1\\cos\\theta_2+l_3\\cos\\theta_1\\cos(\\theta_2+\\theta_3)&-l_2\\sin\\theta_1\\sin\\theta_2-l_3\\sin\\theta_1\\sin(\\theta_2+\\theta_3)&-l_3\\sin\\theta_1\\sin(\\theta_2+\\theta_3)\\\\0&-l_2\\cos\\theta_2-l_3\\cos(\\theta_2+\\theta_3)&-l_3\\cos(\\theta_2+\\theta_3)\\end{bmatrix}$$",
+     "note": "$\\theta_2+\\theta_3$ を含む項は、$\\theta_2$ でも $\\theta_3$ でも係数1で微分される。(課題3 解答)",
+     "tag": "課題3"
+    }
+   ]
   }
  ],
  "order": 6,
