@@ -106,7 +106,7 @@ h1{
 .folder-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;padding:20px 0 32px}
 .folder-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 16px 14px;display:flex;flex-direction:column;gap:5px;cursor:pointer;transition:all .15s;user-select:none}
 .folder-card:hover{border-color:var(--teal);transform:translateY(-2px)}
-.folder-icon{font-size:2rem;line-height:1;margin-bottom:2px}
+.folder-icon{width:46px;height:46px;display:flex;align-items:center;justify-content:center;font-size:1.65rem;line-height:1;margin-bottom:4px;border-radius:13px;background:linear-gradient(135deg,color-mix(in srgb,var(--tint) 30%,transparent),color-mix(in srgb,var(--tint) 10%,transparent));border:1px solid color-mix(in srgb,var(--tint) 45%,transparent)}
 .folder-name{font-size:.95rem;font-weight:700;color:var(--ink);line-height:1.2}
 .folder-count{font-size:.72rem;color:var(--dim)}
 .subject-nav{display:flex;align-items:center;gap:10px;padding:16px 0 4px;flex-wrap:wrap}
@@ -577,12 +577,15 @@ h1{
 <script>
 const EXAM_ORDER = ["前期中間試験","再試験","前期末試験","後期中間試験","学年末試験"];
 const SUBJECT_ICONS = {
-  '科学技術英語Ⅰ': '📖',
-  '加工学':         '⚙️',
-  '制御工学Ⅰ':     '🎛️',
-  '熱流体工学Ⅰ':   '🔥',
-  '電気電子工学Ⅱ': '⚡',
-  '人工知能概論':   '🤖',
+  '科学技術英語Ⅰ':       ['📚', '#6C8EF5'],
+  '加工学':               ['🛠️', '#F0A04B'],
+  '制御工学Ⅰ':           ['🎚️', '#8B6CF0'],
+  '熱流体工学Ⅰ':         ['🌊', '#3BB5D6'],
+  '電気電子工学Ⅱ':       ['⚡', '#F2C230'],
+  '人工知能概論':         ['🧠', '#E26CA5'],
+  'ロボティクス':         ['🦾', '#2FB59A'],
+  '情報ネットワーク工学': ['🌐', '#4A90D9'],
+  '応用物理':             ['🪐', '#9A6CD6'],
 };
 
 let tests = [];
@@ -661,9 +664,9 @@ function renderFolders() {
       }
     });
     const pct = totalItems ? Math.round(done / totalItems * 100) : 0;
-    const icon = SUBJECT_ICONS[s] || '📁';
+    const [icon, tint] = SUBJECT_ICONS[s] || ['📁', '#8A94A6'];
     return `<div class="folder-card" data-subj="${esc(s)}" onclick="openSubject(this.dataset.subj)" style="${allArchived ? 'opacity:.55' : ''}">
-      <div class="folder-icon">${icon}</div>
+      <div class="folder-icon" style="--tint:${tint}">${icon}</div>
       <div class="folder-name">${esc(s)}${allArchived ? ' <span style="font-size:.6rem;color:var(--dim)">📦</span>' : ''}</div>
       <div class="folder-count">${stests.length} 教材</div>
       <div class="progress-bar-wrap" style="margin-top:6px"><div class="progress-bar" style="width:${pct}%"></div></div>
