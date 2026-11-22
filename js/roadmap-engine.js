@@ -43,8 +43,23 @@ function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.cl
 function readJSON(key) {
   try { var v = JSON.parse(localStorage.getItem(key) || 'null'); return (v && typeof v === 'object') ? v : null; } catch (e) { return null; }
 }
-function loadM() { M = readJSON(KEY) || {}; M.manual = M.manual || {}; }
-function saveM() { try { localStorage.setItem(KEY, JSON.stringify(M)); } catch (e) {} }
+function loadM() { M = readJSON(KEY) || {}; M.manual = M.manual || {}; M.ach = M.ach || {}; }
+// ach = 一度でも自動で完了になった印。クイズの回答や学習済みの記録が消えても、チェックは消さない。
+function saveM() {
+  try { localStorage.setItem(KEY, JSON.stringify(M)); } catch (e) {}
+  if (window.progressSave) window.progressSave(KEY, M); // ログイン中ならサーバーにも控えを残す
+}
+// サーバーの控えと合流(足すだけ。手元のチェックは消さない)
+async function syncM() {
+  if (!window.progressLoad || !KEY) return;
+  var s = await window.progressLoad(KEY);
+  if (!s || typeof s !== 'object') return;
+  loadM();
+  var chg = false;
+  Object.keys(s.ach || {}).forEach(function (k) { if (s.ach[k] && !M.ach[k]) { M.ach[k] = true; chg = true; } });
+  Object.keys(s.manual || {}).forEach(function (k) { if (M.manual[k] === undefined) { M.manual[k] = s.manual[k]; chg = true; } });
+  if (chg) { saveM(); render(); }
+}
 
 // クイズの保存形式(quiz-engine の _state):
 //   1問 = キー "<sectionId>_<index>" に 1(正解)/-1(不正解)。末尾が "_数字" のキーだけが1問に対応する。
@@ -83,12 +98,15 @@ function render() {
   app.appendChild(wrap);
   var steps = D.steps || [];
 
+  var ach = false;
   var states = steps.map(function (st) {
     var a = autoState(st);
     var man = M.manual[st.id];
-    var checked = (man !== undefined) ? !!man : !!(a && a.done);
+    if (a && a.done && !M.ach[st.id]) { M.ach[st.id] = true; ach = true; }
+    var checked = (man !== undefined) ? !!man : !!((a && a.done) || M.ach[st.id]);
     return { a: a, man: man, checked: checked };
   });
+  if (ach) saveM();
   var doneN = states.filter(function (s) { return s.checked; }).length;
   var nextIdx = states.findIndex(function (s) { return !s.checked; });
 
@@ -113,7 +131,7 @@ function render() {
     var chk = el('input', 'rm-chk'); chk.type = 'checkbox'; chk.checked = s.checked;
     chk.setAttribute('aria-label', st.label + ' を完了にする');
     chk.addEventListener('change', function () {
-      M.manual[st.id] = chk.checked; saveM(); render();
+      loadM(); M.manual[st.id] = chk.checked; saveM(); render();
     });
     var main = el('div', 'rm-main');
     var nameHtml = st.href ? '<a href="' + st.href + '">' + st.label + '</a>' : '<span>' + st.label + '</span>';
@@ -135,7 +153,7 @@ function render() {
       if (s.man !== undefined) info += '<button class="rm-link" type="button">自動に戻す</button>';
       var auto = el('div', 'rm-auto', info);
       var back = auto.querySelector('.rm-link');
-      if (back) back.addEventListener('click', function () { delete M.manual[st.id]; saveM(); render(); });
+      if (back) back.addEventListener('click', function () { loadM(); delete M.manual[st.id]; saveM(); render(); });
       main.appendChild(auto);
     }
     row.appendChild(chk); row.appendChild(main);
@@ -153,6 +171,8 @@ window.initRoadmap = function (data) {
   // 別タブで進めた分を、戻ってきた時に反映する
   document.addEventListener('visibilitychange', function () { if (!document.hidden) { loadM(); render(); } });
   window.addEventListener('focus', function () { loadM(); render(); });
+  window._quizSync = syncM; // progress.js が読み込み終わったら呼ばれる
+  syncM();
 };
 
 })();
