@@ -2,7 +2,7 @@ const express = require('express');
 const { Pool } = require('pg');
 const { createClient } = require('@supabase/supabase-js');
 const crypto = require('crypto');
-const { buildTestsIndex } = require('./tests-index');
+const { buildTestsIndex, buildRoadmapsIndex } = require('./tests-index');
 
 function genSalt()  { return crypto.randomBytes(16).toString('hex'); }
 function genToken() { return crypto.randomBytes(32).toString('hex'); }
@@ -1814,6 +1814,15 @@ app.get('/api/tests', (req, res) => {
     res.json(buildTestsIndex());
   } catch (e) {
     console.error('[api/tests] ' + ((e && e.stack) || e));
+    res.status(500).json({ error: String(e) });
+  }
+});
+
+app.get('/api/roadmaps', (req, res) => {
+  try {
+    res.json(buildRoadmapsIndex());
+  } catch (e) {
+    console.error('[api/roadmaps] ' + ((e && e.stack) || e));
     res.status(500).json({ error: String(e) });
   }
 });

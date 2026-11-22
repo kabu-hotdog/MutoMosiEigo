@@ -35,32 +35,58 @@
 <script src="/js/app-shell.js"></script>
 <script>
 try { appShell.mount(document.getElementById('app-shell-bar'), { nav: window.APP_NAV }); } catch (e) { console.warn(e); }
-// 4つ目は模試(ロードマップ)へのリンク。無い教科は null(模試はまだ作っていない)
+// 時間割の行: [日付(未発表はnull), 科目, 時限]。試験名は EXAM_NAME。
+// 模試へのリンクは自動: /api/roadmaps(ロードマップ)→ 無ければ /api/tests(テスト)の先頭。
+// 模試を作って roadmaps/ か tests/ に入れれば、次に開いた時に自動でリンクが出る。手で書かない。
+var EXAM_NAME = '後期中間試験';
 var EXAMS = [
-  ['2026-11-30', 'ロボティクス', '要確認', '/roadmap.html?d=roadmaps/robotics-2026-kouki-chukan.json'],
-  ['2026-12-02', '制御工学Ⅱ', '要確認', null],
-  ['2026-12-04', '科学技術英語Ⅱ', '要確認', null],
-  ['2026-12-11', '情報ネットワーク工学', '要確認', '/roadmap.html?d=roadmaps/network-2026-kouki-chukan.json'],
-  ['2026-12-14', '材料力学演習', '3限', null],
-  ['2026-12-17', '熱流体工学Ⅱ', '要確認', null],
-  [null, '第二外国語', '未発表', null],
-  [null, 'プログラミング応用', '未発表', null]
+  ['2026-11-30', 'ロボティクス', '要確認'],
+  ['2026-12-02', '制御工学Ⅱ', '要確認'],
+  ['2026-12-04', '科学技術英語Ⅱ', '要確認'],
+  ['2026-12-11', '情報ネットワーク工学', '要確認'],
+  ['2026-12-14', '材料力学演習', '3限'],
+  ['2026-12-17', '熱流体工学Ⅱ', '要確認'],
+  [null, '第二外国語', '未発表'],
+  [null, 'プログラミング応用', '未発表']
 ];
 var W = ['日','月','火','水','木','金','土'];
 var now = new Date(); now.setHours(0,0,0,0);
-var nextDone = false, html = '';
-EXAMS.forEach(function (e) {
-  var d = e[0] ? new Date(e[0] + 'T00:00:00') : null, cls = '', date = '未発表', left = '';
-  if (d) {
-    var n = Math.round((d - now) / 864e5);
-    date = (d.getMonth() + 1) + '/' + d.getDate() + '(' + W[d.getDay()] + ')';
-    if (n < 0) { cls = 'past'; left = '終了'; }
-    else { left = n === 0 ? '今日' : 'あと' + n + '日'; if (!nextDone) { cls = 'next'; nextDone = true; } }
-  }
-  var subj = e[3] ? '<a href="' + e[3] + '">' + e[1] + ' <span class="mo">模試 ›</span></a>' : e[1];
-  html += '<tr class="' + cls + '"><td>' + date + '</td><td>' + subj + '</td><td>' + e[2] + '</td><td class="left">' + left + '</td></tr>';
+var ROADMAPS = [], TESTS = [];
+
+function findMockLink(subject) {
+  var r = ROADMAPS.find(function (x) { return x.exam === EXAM_NAME && x.subject === subject; });
+  if (r) return r.path;
+  var t = TESTS.find(function (x) { return x.exam === EXAM_NAME && x.subject === subject; });
+  return t ? t.path : null;
+}
+
+function render() {
+  var nextDone = false, html = '';
+  EXAMS.forEach(function (e) {
+    var d = e[0] ? new Date(e[0] + 'T00:00:00') : null, cls = '', date = '未発表', left = '';
+    if (d) {
+      var n = Math.round((d - now) / 864e5);
+      date = (d.getMonth() + 1) + '/' + d.getDate() + '(' + W[d.getDay()] + ')';
+      if (n < 0) { cls = 'past'; left = '終了'; }
+      else { left = n === 0 ? '今日' : 'あと' + n + '日'; if (!nextDone) { cls = 'next'; nextDone = true; } }
+    }
+    var link = findMockLink(e[1]);
+    var subj = link ? '<a href="' + link + '">' + e[1] + ' <span class="mo">模試 ›</span></a>' : e[1];
+    html += '<tr class="' + cls + '"><td>' + date + '</td><td>' + subj + '</td><td>' + e[2] + '</td><td class="left">' + left + '</td></tr>';
+  });
+  document.getElementById('rows').innerHTML = html;
+}
+
+render();
+// 索引が取れなくても表は出したまま(リンクだけ無し)
+Promise.all([
+  fetch('/api/roadmaps').then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; }),
+  fetch('/api/tests').then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; })
+]).then(function (res) {
+  ROADMAPS = Array.isArray(res[0]) ? res[0] : [];
+  TESTS = Array.isArray(res[1]) ? res[1] : [];
+  render();
 });
-document.getElementById('rows').innerHTML = html;
 </script>
 </body>
 </html>

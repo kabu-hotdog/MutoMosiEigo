@@ -81,4 +81,38 @@ function buildTestsIndex() {
   return all.map(x => x[0]);
 }
 
-module.exports = { buildTestsIndex, countItems };
+// roadmaps/*.json を走査してロードマップ索引を作る（GET /api/roadmaps が使用）。
+// 時間割ページが「教科 → 模試(ロードマップ)」のリンクを自動で張るために使う。
+// 名前が _ で始まるもの（_sample.json など）は除外。
+const ROADMAPS_DIR = path.join(__dirname, 'roadmaps');
+
+function buildRoadmapsIndex() {
+  const out = [];
+  let files;
+  try {
+    files = fs.readdirSync(ROADMAPS_DIR);
+  } catch (e) {
+    return out;
+  }
+  for (const f of files) {
+    if (!f.endsWith('.json') || f.startsWith('_')) continue;
+    let data;
+    try {
+      data = JSON.parse(fs.readFileSync(path.join(ROADMAPS_DIR, f), 'utf8'));
+    } catch (e) {
+      console.warn('[tests-index] skip roadmaps/' + f + ': ' + e.message);
+      continue;
+    }
+    out.push({
+      year: data.year,
+      grade: data.grade,
+      exam: data.exam,
+      subject: data.subject,
+      title: data.title,
+      path: '/roadmap.html?d=roadmaps/' + f,
+    });
+  }
+  return out;
+}
+
+module.exports = { buildTestsIndex, buildRoadmapsIndex, countItems };
