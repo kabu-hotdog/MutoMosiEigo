@@ -106,7 +106,21 @@ function loadState() {
   try { S = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { S = {}; }
   S.q = S.q || {}; S.blocks = S.blocks || {}; S.pre = S.pre || {};
 }
-function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+function save() {
+  try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {}
+  if (window.progressSave) window.progressSave(KEY, S); // ログイン中ならサーバーにも控えを残す
+}
+function mergeInto(dst, src) {
+  var chg = false;
+  Object.keys(src || {}).forEach(function (k) {
+    var v = src[k];
+    if (v && typeof v === 'object' && !Array.isArray(v)) {
+      if (!dst[k] || typeof dst[k] !== 'object') { dst[k] = {}; }
+      if (mergeInto(dst[k], v)) chg = true;
+    } else if (v && !dst[k]) { dst[k] = v; chg = true; }
+  });
+  return chg;
+}
 
 function typeset(root) {
   if (!window.renderMathInElement) return;
@@ -502,6 +516,7 @@ function render() {
   $('#lsReset').addEventListener('click', function () {
     if (!confirm('この回の進み具合を消してやり直しますか?')) return;
     try { localStorage.removeItem(KEY); } catch (e) {}
+    if (window.progressSaveNow) window.progressSaveNow(KEY, {});
     S = {}; loadState(); render();
   });
 
@@ -526,6 +541,16 @@ window.initLesson = function (data) {
   var st = document.createElement('style'); st.textContent = CSS; document.head.appendChild(st);
   loadState();
   render();
+  // 別のブラウザで進めた分を、サーバーの控えから足す(progress.js が読み込み終わったら呼ばれる)
+  var _syncLesson = async function () {
+    if (!window.progressLoad) return;
+    var s = await window.progressLoad(KEY);
+    if (!s || typeof s !== 'object' || !Object.keys(s).length) return;
+    loadState();
+    if (mergeInto(S, s)) { save(); render(); }
+  };
+  window._quizSync = _syncLesson;
+  _syncLesson();
   if (data.katex && !window.renderMathInElement) {
     addScript('https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js', function () {
       addScript('https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js', function () {

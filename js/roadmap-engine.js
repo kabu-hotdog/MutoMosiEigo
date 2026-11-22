@@ -60,6 +60,38 @@ async function syncM() {
   Object.keys(s.manual || {}).forEach(function (k) { if (M.manual[k] === undefined) { M.manual[k] = s.manual[k]; chg = true; } });
   if (chg) { saveM(); render(); }
 }
+// 別のブラウザで進めた分: 各ステップの学習・クイズの控えもサーバーから引いて、手元に足す(消さない)
+function mergeInto(dst, src) {
+  var chg = false;
+  Object.keys(src || {}).forEach(function (k) {
+    var v = src[k];
+    if (v && typeof v === 'object' && !Array.isArray(v)) {
+      if (!dst[k] || typeof dst[k] !== 'object') { dst[k] = {}; }
+      if (mergeInto(dst[k], v)) chg = true;
+    } else if (v && !dst[k]) { dst[k] = v; chg = true; }
+  });
+  return chg;
+}
+async function syncSteps() {
+  if (!window.progressLoad || !D) return;
+  var keys = [];
+  (D.steps || []).forEach(function (st) {
+    var d = st.done || {};
+    if (d.lesson) keys.push(d.lesson);
+    if (d.quiz) keys.push(d.quiz);
+  });
+  var chg = false;
+  await Promise.all(keys.map(async function (k) {
+    try {
+      if (localStorage.getItem(k + '_reset')) return; // 手元で「やり直し」した直後は上書きしない
+      var s = await window.progressLoad(k);
+      if (!s || typeof s !== 'object' || !Object.keys(s).length) return;
+      var cur = readJSON(k) || {};
+      if (mergeInto(cur, s)) { localStorage.setItem(k, JSON.stringify(cur)); chg = true; }
+    } catch (e) {}
+  }));
+  if (chg) { loadM(); render(); }
+}
 
 // クイズの保存形式(quiz-engine の _state):
 //   1問 = キー "<sectionId>_<index>" に 1(正解)/-1(不正解)。末尾が "_数字" のキーだけが1問に対応する。
@@ -171,8 +203,9 @@ window.initRoadmap = function (data) {
   // 別タブで進めた分を、戻ってきた時に反映する
   document.addEventListener('visibilitychange', function () { if (!document.hidden) { loadM(); render(); } });
   window.addEventListener('focus', function () { loadM(); render(); });
-  window._quizSync = syncM; // progress.js が読み込み終わったら呼ばれる
-  syncM();
+  var _sync = function () { syncM(); syncSteps(); };
+  window._quizSync = _sync; // progress.js が読み込み終わったら呼ばれる
+  _sync();
 };
 
 })();
