@@ -52,6 +52,17 @@
    }
   },
   {
+   "id": "L5",
+   "phase": "学習",
+   "label": "学習 第5回 順運動学",
+   "href": "/lesson.html?d=lessons/robotics-05/data.json",
+   "minutes": 70,
+   "why": "ロボットの関節の角度から、手先の位置を求める。課題2・演習の中心。",
+   "done": {
+    "lesson": "robo_learn_05_v1"
+   }
+  },
+  {
    "id": "P1",
    "phase": "演習1周目",
    "label": "① 構成とアームの種類",
@@ -97,6 +108,18 @@
    "done": {
     "quiz": "robo_chukan_04_douji_v1",
     "total": 22
+   }
+  },
+  {
+   "id": "P5",
+   "phase": "演習1周目",
+   "label": "⑤ 順運動学",
+   "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-05-jun/data.json",
+   "minutes": 30,
+   "why": "学習のあとで、手を動かして確かめる。",
+   "done": {
+    "quiz": "robo_chukan_05_jun_v1",
+    "total": 29
    }
   },
   {
