@@ -2,6 +2,18 @@
   {
     "year": 2026,
     "grade": 4,
+    "exam": "後期中間試験",
+    "subject": "ロボティクス",
+    "title": "ロボティクス ・ ロードマップ(ここから)",
+    "storageKey": null,
+    "totalItems": 0,
+    "type": "summary",
+    "path": "/roadmap.html?d=roadmaps/robotics-2026-kouki-chukan.json",
+    "order": 0
+  },
+  {
+    "year": 2026,
+    "grade": 4,
     "exam": "前期末試験",
     "subject": "人工知能概論",
     "title": "人工知能概論 ・ ⑤ 模擬試験（本番形式）",

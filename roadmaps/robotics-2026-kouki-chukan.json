@@ -4,12 +4,12 @@
  "exam": "後期中間試験",
  "subject": "ロボティクス",
  "title": "ロボティクス ・ ロードマップ",
- "intro": "合計およそ4〜5時間の短縮版。上から順に、時間で切ってよい。迷ったら一番上の未完了から。\n正答率が5割を割った回は、学習ページのそのブロックに戻る。",
+ "intro": "合計およそ4〜5時間。各回とも「学習で理解する→演習で確かめる」の順。第8回まで終えたら、最後に演習プリントの原題。時間で切ってよい。迷ったら一番上の未完了から。\n正答率が5割を割った回は、学習ページのそのブロックに戻る。",
  "storageKey": "robo_roadmap_v1",
  "steps": [
   {
    "id": "L1",
-   "phase": "学習",
+   "phase": "第1回(約15分)",
    "label": "学習 第1回 ロボットの構成とアームの種類",
    "href": "/lesson.html?d=lessons/robotics-01/data.json",
    "minutes": 10,
@@ -19,8 +19,20 @@
    }
   },
   {
+   "id": "P1",
+   "phase": "第1回(約15分)",
+   "label": "① 構成とアームの種類",
+   "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-01-kousei/data.json",
+   "minutes": 5,
+   "why": "いま学習したところを、手を動かして確かめる。時間が来たら切ってよい。間違えた所だけ学習に戻る。",
+   "done": {
+    "quiz": "robo_chukan_01_kousei_v1",
+    "total": 8
+   }
+  },
+  {
    "id": "L2",
-   "phase": "学習",
+   "phase": "第2回(約15分)",
    "label": "学習 第2回 座標系と座標変換",
    "href": "/lesson.html?d=lessons/robotics-02/data.json",
    "minutes": 10,
@@ -30,8 +42,20 @@
    }
   },
   {
+   "id": "P2",
+   "phase": "第2回(約15分)",
+   "label": "② 座標系と座標変換",
+   "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-02-zahyokei/data.json",
+   "minutes": 5,
+   "why": "いま学習したところを、手を動かして確かめる。時間が来たら切ってよい。間違えた所だけ学習に戻る。",
+   "done": {
+    "quiz": "robo_chukan_02_zahyokei_v1",
+    "total": 8
+   }
+  },
+  {
    "id": "L3",
-   "phase": "学習",
+   "phase": "第3回(約30分)",
    "label": "学習 第3回 回転変換行列",
    "href": "/lesson.html?d=lessons/robotics-03/data.json",
    "minutes": 20,
@@ -41,8 +65,20 @@
    }
   },
   {
+   "id": "P3",
+   "phase": "第3回(約30分)",
+   "label": "③ 回転変換行列",
+   "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-03-kaiten/data.json",
+   "minutes": 10,
+   "why": "いま学習したところを、手を動かして確かめる。時間が来たら切ってよい。間違えた所だけ学習に戻る。",
+   "done": {
+    "quiz": "robo_chukan_03_kaiten_v1",
+    "total": 8
+   }
+  },
+  {
    "id": "L4",
-   "phase": "学習",
+   "phase": "第4回(約25分)",
    "label": "学習 第4回 同次変換行列",
    "href": "/lesson.html?d=lessons/robotics-04/data.json",
    "minutes": 15,
@@ -52,8 +88,20 @@
    }
   },
   {
+   "id": "P4",
+   "phase": "第4回(約25分)",
+   "label": "④ 同次変換行列",
+   "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-04-douji/data.json",
+   "minutes": 10,
+   "why": "いま学習したところを、手を動かして確かめる。時間が来たら切ってよい。間違えた所だけ学習に戻る。",
+   "done": {
+    "quiz": "robo_chukan_04_douji_v1",
+    "total": 6
+   }
+  },
+  {
    "id": "L5",
-   "phase": "学習",
+   "phase": "第5回(約30分)",
    "label": "学習 第5回 順運動学",
    "href": "/lesson.html?d=lessons/robotics-05/data.json",
    "minutes": 20,
@@ -63,8 +111,20 @@
    }
   },
   {
+   "id": "P5",
+   "phase": "第5回(約30分)",
+   "label": "⑤ 順運動学",
+   "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-05-jun/data.json",
+   "minutes": 10,
+   "why": "いま学習したところを、手を動かして確かめる。時間が来たら切ってよい。間違えた所だけ学習に戻る。",
+   "done": {
+    "quiz": "robo_chukan_05_jun_v1",
+    "total": 10
+   }
+  },
+  {
    "id": "L6",
-   "phase": "学習",
+   "phase": "第6回(約30分)",
    "label": "学習 第6回 ヤコビ行列と特異点",
    "href": "/lesson.html?d=lessons/robotics-06/data.json",
    "minutes": 20,
@@ -74,8 +134,20 @@
    }
   },
   {
+   "id": "P6",
+   "phase": "第6回(約30分)",
+   "label": "⑥ ヤコビ行列と特異点",
+   "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-06-jacobi/data.json",
+   "minutes": 10,
+   "why": "いま学習したところを、手を動かして確かめる。時間が来たら切ってよい。間違えた所だけ学習に戻る。",
+   "done": {
+    "quiz": "robo_chukan_06_jacobi_v1",
+    "total": 12
+   }
+  },
+  {
    "id": "L7",
-   "phase": "学習",
+   "phase": "第7回(約30分)",
    "label": "学習 第7回 剛体のエネルギー保存則",
    "href": "/lesson.html?d=lessons/robotics-07/data.json",
    "minutes": 20,
@@ -85,8 +157,20 @@
    }
   },
   {
+   "id": "P7",
+   "phase": "第7回(約30分)",
+   "label": "⑦ エネルギー保存則",
+   "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-07-energy/data.json",
+   "minutes": 10,
+   "why": "いま学習したところを、手を動かして確かめる。時間が来たら切ってよい。間違えた所だけ学習に戻る。",
+   "done": {
+    "quiz": "robo_chukan_07_energy_v1",
+    "total": 10
+   }
+  },
+  {
    "id": "L8",
-   "phase": "学習",
+   "phase": "第8回(約40分)",
    "label": "学習 第8回 衝突",
    "href": "/lesson.html?d=lessons/robotics-08/data.json",
    "minutes": 25,
@@ -96,96 +180,12 @@
    }
   },
   {
-   "id": "P1",
-   "phase": "演習1周目",
-   "label": "① 構成とアームの種類",
-   "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-01-kousei/data.json",
-   "minutes": 5,
-   "why": "時間が来たらそこで切る。全問やらなくてよい。間違えた所だけ学習に戻る。",
-   "done": {
-    "quiz": "robo_chukan_01_kousei_v1",
-    "total": 8
-   }
-  },
-  {
-   "id": "P2",
-   "phase": "演習1周目",
-   "label": "② 座標系と座標変換",
-   "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-02-zahyokei/data.json",
-   "minutes": 5,
-   "why": "時間が来たらそこで切る。全問やらなくてよい。間違えた所だけ学習に戻る。",
-   "done": {
-    "quiz": "robo_chukan_02_zahyokei_v1",
-    "total": 8
-   }
-  },
-  {
-   "id": "P3",
-   "phase": "演習1周目",
-   "label": "③ 回転変換行列",
-   "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-03-kaiten/data.json",
-   "minutes": 10,
-   "why": "時間が来たらそこで切る。全問やらなくてよい。間違えた所だけ学習に戻る。",
-   "done": {
-    "quiz": "robo_chukan_03_kaiten_v1",
-    "total": 8
-   }
-  },
-  {
-   "id": "P4",
-   "phase": "演習1周目",
-   "label": "④ 同次変換行列",
-   "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-04-douji/data.json",
-   "minutes": 10,
-   "why": "時間が来たらそこで切る。全問やらなくてよい。間違えた所だけ学習に戻る。",
-   "done": {
-    "quiz": "robo_chukan_04_douji_v1",
-    "total": 6
-   }
-  },
-  {
-   "id": "P5",
-   "phase": "演習1周目",
-   "label": "⑤ 順運動学",
-   "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-05-jun/data.json",
-   "minutes": 10,
-   "why": "時間が来たらそこで切る。全問やらなくてよい。間違えた所だけ学習に戻る。",
-   "done": {
-    "quiz": "robo_chukan_05_jun_v1",
-    "total": 10
-   }
-  },
-  {
-   "id": "P6",
-   "phase": "演習1周目",
-   "label": "⑥ ヤコビ行列と特異点",
-   "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-06-jacobi/data.json",
-   "minutes": 10,
-   "why": "時間が来たらそこで切る。全問やらなくてよい。間違えた所だけ学習に戻る。",
-   "done": {
-    "quiz": "robo_chukan_06_jacobi_v1",
-    "total": 12
-   }
-  },
-  {
-   "id": "P7",
-   "phase": "演習1周目",
-   "label": "⑦ エネルギー保存則",
-   "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-07-energy/data.json",
-   "minutes": 10,
-   "why": "時間が来たらそこで切る。全問やらなくてよい。間違えた所だけ学習に戻る。",
-   "done": {
-    "quiz": "robo_chukan_07_energy_v1",
-    "total": 10
-   }
-  },
-  {
    "id": "P8",
-   "phase": "演習1周目",
+   "phase": "第8回(約40分)",
    "label": "⑧ 衝突",
    "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-08-shoutotsu/data.json",
    "minutes": 15,
-   "why": "時間が来たらそこで切る。全問やらなくてよい。間違えた所だけ学習に戻る。",
+   "why": "いま学習したところを、手を動かして確かめる。時間が来たら切ってよい。間違えた所だけ学習に戻る。",
    "done": {
     "quiz": "robo_chukan_08_shoutotsu_v1",
     "total": 18
