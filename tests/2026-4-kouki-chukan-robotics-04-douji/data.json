@@ -102,7 +102,7 @@
    "qs": [
     {
      "type": "numeric",
-     "q": "座標系 $\\Sigma_b$ は、$\\Sigma_a$ を $z_a$ 軸まわりに $90^\\circ$ 回転させ、さらに $x_a$ 方向に $2$、$y_a$ 方向に $4$、$z_a$ 方向に $4$ 移動させたものである。$\\Sigma_b$ での点 P の座標が ${}^{b}\\boldsymbol{P}=\\begin{bmatrix}3\\\\2\\\\2\\end{bmatrix}$ のとき、$\\Sigma_a$ での座標 ${}^{a}\\boldsymbol{P}$ を、回転行列と並進を使って求めよ。答えるのは ${}^{a}P_y$・${}^{a}P_z$ 成分だけ(ほかは 0 か負)。(有効数字3桁。$\\cos 90^\\circ=0$、$\\sin 90^\\circ=1.000$)",
+     "q": "座標系 $\\Sigma_b$ は、$\\Sigma_a$ を $z_a$ 軸まわりに $90^\\circ$ 回転させ、さらに $x_a$ 方向に $2$、$y_a$ 方向に $4$、$z_a$ 方向に $4$ 移動させたものである。$\\Sigma_b$ での点 P の座標が ${}^{b}\\boldsymbol{P}=\\begin{bmatrix}3\\\\2\\\\2\\end{bmatrix}$ のとき、$\\Sigma_a$ での座標 ${}^{a}\\boldsymbol{P}$ を、回転行列と並進を使って求めよ。答えるのは ${}^{a}P_y$・${}^{a}P_z$ 成分だけ(ほかは 0 か負)。(有効数字3桁)",
      "parts": [
       {
        "ans": 7.0,

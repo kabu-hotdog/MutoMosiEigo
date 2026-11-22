@@ -95,7 +95,7 @@
    "qs": [
     {
      "type": "numeric",
-     "q": "座標系 $(x_0,y_0,z_0)$ は、座標系 $(x,y,z)$ を $z$ 軸まわりに $30^\\circ$ 回転させたものである。点 P の $(x_0,y_0,z_0)$ 座標が $\\begin{bmatrix}P_{x0}\\\\P_{y0}\\\\P_{z0}\\end{bmatrix}=\\begin{bmatrix}4\\\\2\\\\5\\end{bmatrix}$ のとき、$(x,y,z)$ 座標 $\\begin{bmatrix}P_x\\\\P_y\\\\P_z\\end{bmatrix}$ を、回転行列を使って求めよ。(有効数字3桁。$\\cos 30^\\circ=0.8660$、$\\sin 30^\\circ=0.5000$ を使う)",
+     "q": "座標系 $(x_0,y_0,z_0)$ は、座標系 $(x,y,z)$ を $z$ 軸まわりに $30^\\circ$ 回転させたものである。点 P の $(x_0,y_0,z_0)$ 座標が $\\begin{bmatrix}P_{x0}\\\\P_{y0}\\\\P_{z0}\\end{bmatrix}=\\begin{bmatrix}4\\\\2\\\\5\\end{bmatrix}$ のとき、$(x,y,z)$ 座標 $\\begin{bmatrix}P_x\\\\P_y\\\\P_z\\end{bmatrix}$ を、回転行列を使って求めよ。(有効数字3桁)",
      "parts": [
       {
        "ans": 2.46,

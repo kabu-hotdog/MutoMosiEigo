@@ -88,7 +88,7 @@
    "qs": [
     {
      "type": "numeric",
-     "q": "物体座標系 $\\Sigma_{obj}$ は、絶対座標系 $\\Sigma_{abs}$ を $30^\\circ$ 回転させたものである。点 P の物体座標が $\\begin{bmatrix}P_{xo}\\\\P_{yo}\\end{bmatrix}=\\begin{bmatrix}2\\\\0\\end{bmatrix}$ のとき、絶対座標 $\\begin{bmatrix}P_{xa}\\\\P_{ya}\\end{bmatrix}$ を、回転行列を使って求めよ。(有効数字3桁。$\\cos 30^\\circ=0.8660$、$\\sin 30^\\circ=0.5000$ を使う)",
+     "q": "物体座標系 $\\Sigma_{obj}$ は、絶対座標系 $\\Sigma_{abs}$ を $30^\\circ$ 回転させたものである。点 P の物体座標が $\\begin{bmatrix}P_{xo}\\\\P_{yo}\\end{bmatrix}=\\begin{bmatrix}2\\\\0\\end{bmatrix}$ のとき、絶対座標 $\\begin{bmatrix}P_{xa}\\\\P_{ya}\\end{bmatrix}$ を、回転行列を使って求めよ。(有効数字3桁)",
      "parts": [
       {
        "ans": 1.73,
@@ -113,7 +113,7 @@
     },
     {
      "type": "numeric",
-     "q": "物体座標系 $\\Sigma_{obj}$ は、絶対座標系 $\\Sigma_{abs}$ を $30^\\circ$ 回転させ、原点を絶対座標で $\\begin{bmatrix}1\\\\1\\end{bmatrix}$ の位置に置いたものである。点 P の物体座標が $\\begin{bmatrix}2\\\\0\\end{bmatrix}$ のとき、P の絶対座標 $\\begin{bmatrix}P_{xa}\\\\P_{ya}\\end{bmatrix}$ を求めよ。(2次元で考える。回転行列を掛けて、原点の位置を足す。有効数字3桁。$\\cos 30^\\circ=0.8660$、$\\sin 30^\\circ=0.5000$ を使う)",
+     "q": "物体座標系 $\\Sigma_{obj}$ は、絶対座標系 $\\Sigma_{abs}$ を $30^\\circ$ 回転させ、原点を絶対座標で $\\begin{bmatrix}1\\\\1\\end{bmatrix}$ の位置に置いたものである。点 P の物体座標が $\\begin{bmatrix}2\\\\0\\end{bmatrix}$ のとき、P の絶対座標 $\\begin{bmatrix}P_{xa}\\\\P_{ya}\\end{bmatrix}$ を求めよ。(2次元で考える。回転行列を掛けて、原点の位置を足す。有効数字3桁)",
      "parts": [
       {
        "ans": 2.73,

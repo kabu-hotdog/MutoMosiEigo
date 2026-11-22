@@ -68,7 +68,7 @@
     },
     {
      "type": "numeric",
-     "q": "回転1関節でリンクの長さが変わる(資料 p.19)。$x=L\\cos\\theta$、$y=L\\sin\\theta$。$L=3$、$\\theta=30^\\circ$、$\\dot{L}=2$、$\\dot{\\theta}=1$ のとき、$\\begin{bmatrix}\\dot{x}\\\\\\dot{y}\\end{bmatrix}$ を、ヤコビ行列 $\\boldsymbol{J}$ を使って求めよ。(有効数字3桁。$\\cos 30^\\circ=0.8660$、$\\sin 30^\\circ=0.5000$)",
+     "q": "回転1関節でリンクの長さが変わる(資料 p.19)。$x=L\\cos\\theta$、$y=L\\sin\\theta$。$L=3$、$\\theta=30^\\circ$、$\\dot{L}=2$、$\\dot{\\theta}=1$ のとき、$\\begin{bmatrix}\\dot{x}\\\\\\dot{y}\\end{bmatrix}$ を、ヤコビ行列 $\\boldsymbol{J}$ を使って求めよ。(有効数字3桁)",
      "parts": [
       {
        "ans": 0.232,
@@ -113,7 +113,7 @@
     },
     {
      "type": "numeric",
-     "q": "資料 p.19 の2リンクのロボットアームで、$L_1=3$、$L_2=2$、$\\theta_1=30^\\circ$、$\\theta_2=30^\\circ$ のとき、$J_{21}=\\partial y/\\partial\\theta_1$、$J_{22}=\\partial y/\\partial\\theta_2$ を求めよ。(有効数字3桁。$\\cos 30^\\circ=0.8660$、$\\sin 30^\\circ=0.5000$、$\\cos 60^\\circ=0.5000$、$\\sin 60^\\circ=0.8660$)",
+     "q": "資料 p.19 の2リンクのロボットアームで、$L_1=3$、$L_2=2$、$\\theta_1=30^\\circ$、$\\theta_2=30^\\circ$ のとき、$J_{21}=\\partial y/\\partial\\theta_1$、$J_{22}=\\partial y/\\partial\\theta_2$ を求めよ。(有効数字3桁)",
      "parts": [
       {
        "ans": 3.6,
@@ -157,7 +157,7 @@
     },
     {
      "type": "numeric",
-     "q": "2リンクのロボットアーム(資料 p.20)で、$L_1=3$、$L_2=2$、$\\theta_2=30^\\circ$ のとき、ヤコビ行列の行列式 $\\det\\boldsymbol{J}=L_1L_2\\sin\\theta_2$ を求めよ。(有効数字3桁。$\\sin 30^\\circ=0.5000$)",
+     "q": "2リンクのロボットアーム(資料 p.20)で、$L_1=3$、$L_2=2$、$\\theta_2=30^\\circ$ のとき、ヤコビ行列の行列式 $\\det\\boldsymbol{J}=L_1L_2\\sin\\theta_2$ を求めよ。(有効数字3桁)",
      "parts": [
       {
        "ans": 3.0,
