@@ -34,7 +34,7 @@
    "phase": "学習",
    "label": "学習 第3回 回転変換行列",
    "href": "/lesson.html?d=lessons/robotics-03/data.json",
-   "minutes": 45,
+   "minutes": 60,
    "why": "3軸まわりの回転行列と、2回以上回す時の掛ける順。順運動学の土台。",
    "done": {
     "lesson": "robo_learn_03_v1"
@@ -69,11 +69,11 @@
    "phase": "演習1周目",
    "label": "③ 回転変換行列",
    "href": "/quiz.html?d=tests/2026-4-kouki-chukan-robotics-03-kaiten/data.json",
-   "minutes": 25,
+   "minutes": 30,
    "why": "学習のあとで、手を動かして確かめる。",
    "done": {
     "quiz": "robo_chukan_03_kaiten_v1",
-    "total": 26
+    "total": 31
    }
   },
   {

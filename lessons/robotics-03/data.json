@@ -5,14 +5,23 @@
  "subject": "ロボティクス",
  "title": "ロボティクス ・ 学習 第3回 回転変換行列",
  "storageKey": "robo_learn_03_v1",
- "minutes": 45,
+ "minutes": 60,
  "goals": [
+  "行列 × 座標、行列 × 行列の計算ができる",
   "z・x・y 軸まわりの回転変換行列を選べる・書ける",
   "回転後の座標から、元の座標を計算できる",
   "2回以上の回転を、正しい順に掛けて合成できる"
  ],
  "katex": true,
  "terms": [
+  {
+   "name": "行・列",
+   "plain": "行列の横の並びが行、縦の並びが列。3×3 の行列は 3行3列。(資料外・補足)"
+  },
+  {
+   "name": "行列の積",
+   "plain": "左の行と右の列を、順に掛けて足して作る。順序を入れ替えると答えが変わる。(資料外・補足)"
+  },
   {
    "name": "回転変換行列 R(軸, θ)",
    "plain": "3×3 の行列。ある軸のまわりに θ だけ回した座標系で見た位置を、元の座標系で見た位置に直す。"
@@ -39,6 +48,90 @@
   }
  ],
  "blocks": [
+  {
+   "id": "b0",
+   "title": "先に道具: 行列の掛け算(ベクトルとの積、行列どうしの積)",
+   "pre": [
+    {
+     "type": "single",
+     "q": "3×3 の行列を、3つの数を縦に並べたもの(座標)に掛けると、結果はどうなる?(知らなくて当然)",
+     "opts": [
+      "3つの数を縦に並べたもの",
+      "1つの数",
+      "3×3 の行列"
+     ],
+     "ans": "3つの数を縦に並べたもの",
+     "note": "行列(3×3)× 座標(3×1)= 座標(3×1)。座標を変換する、ということ。"
+    }
+   ],
+   "body": "この後ずっと使う計算を、先に確認する。<br><br><b>行列</b>は、数を表の形に並べたもの。横の並びを<b>行</b>、縦の並びを<b>列</b>という。3×3 の行列は 3行3列。<br><br><b>① 行列 × 座標(縦ベクトル)</b>: 行列の<b>各行</b>と座標の3つの数を、順に掛けて足す。結果は、また3つの数を縦に並べたもの。$$\\begin{bmatrix}2&0&1\\\\0&1&0\\\\1&0&3\\end{bmatrix}\\begin{bmatrix}1\\\\2\\\\3\\end{bmatrix}=\\begin{bmatrix}2\\times1+0\\times2+1\\times3\\\\0\\times1+1\\times2+0\\times3\\\\1\\times1+0\\times2+3\\times3\\end{bmatrix}=\\begin{bmatrix}5\\\\2\\\\10\\end{bmatrix}$$<br><b>② 行列 × 行列</b>: 結果の「$i$ 行 $j$ 列」の数 = 左の行列の $i$ 行 と、右の行列の $j$ 列 を、①と同じ要領で掛けて足したもの。<br>例: $\\begin{bmatrix}1&2&0\\\\0&1&0\\\\0&0&1\\end{bmatrix}\\begin{bmatrix}1&0&0\\\\3&1&0\\\\0&0&1\\end{bmatrix}$ の 1行1列は、左の1行 $(1,2,0)$ と 右の1列 $(1,3,0)$ から $1\\times1+2\\times3+0\\times0=7$。<br><br><b>③ 順序を入れ替えると、答えが変わる</b>: 上の2つを入れ替えて掛けると、1行1列は $1\\times1+0\\times0+0\\times0=1$ で、$7$ と違う。つまり行列の積は、順序を入れ替えると<b>答えが変わることがある</b>($AB\\ne BA$)。回転の順番が大事なのは、このため。<br><br><b>④ $\\cos$ と $\\sin$ の値</b>(この模試で使う4桁。覚えなくてよい。問題文に書いてある): $\\cos 30^\\circ=0.8660$、$\\sin 30^\\circ=0.5000$、$\\cos 45^\\circ=\\sin 45^\\circ=0.7071$、$\\cos 60^\\circ=0.5000$、$\\sin 60^\\circ=0.8660$、$\\cos 90^\\circ=0$、$\\sin 90^\\circ=1$。",
+   "example": {
+    "steps": [
+     "$\\begin{bmatrix}2&0&1\\\\0&1&0\\\\1&0&3\\end{bmatrix}\\begin{bmatrix}1\\\\2\\\\3\\end{bmatrix}$ の 1行目 = $2\\times1+0\\times2+1\\times3=5$",
+     "2行目 = $0\\times1+1\\times2+0\\times3=2$",
+     "3行目 = $1\\times1+0\\times2+3\\times3=$ ?"
+    ],
+    "fill": {
+     "type": "numeric",
+     "q": "3行目はいくつ?(有効数字3桁)",
+     "parts": [
+      {
+       "ans": 10.0,
+       "unit": "",
+       "abs": 0.15,
+       "label": "3行目"
+      }
+     ],
+     "note": "$1\\times1+0\\times2+3\\times3=1+9=10.0$。",
+     "reveal": [
+      "$1\\times1=1$、$0\\times2=0$、$3\\times3=9$",
+      "$1+0+9=10$ → 10.0"
+     ]
+    }
+   },
+   "check": [
+    {
+     "type": "single",
+     "q": "行列で、横の並びを何という?",
+     "opts": [
+      "行",
+      "列",
+      "成分"
+     ],
+     "ans": "行",
+     "note": "横の並びが行、縦の並びが列。3×3 は 3行3列。(資料外・補足)"
+    },
+    {
+     "type": "numeric",
+     "q": "$\\begin{bmatrix}1&2&0\\\\0&1&0\\\\0&0&1\\end{bmatrix}\\begin{bmatrix}1&0&0\\\\3&1&0\\\\0&0&1\\end{bmatrix}$ の 2行2列の数は?(有効数字3桁)",
+     "parts": [
+      {
+       "ans": 1.0,
+       "unit": "",
+       "abs": 0.015,
+       "label": "2行2列"
+      }
+     ],
+     "note": "左の2行 $(0,1,0)$ と 右の2列 $(0,1,0)$: $0\\times0+1\\times1+0\\times0=1.00$。",
+     "reveal": [
+      "左の2行 $(0,1,0)$、右の2列 $(0,1,0)$",
+      "$0+1+0=1$ → 1.00"
+     ],
+     "tag": "確認"
+    },
+    {
+     "type": "single",
+     "q": "行列 $A,B$ の積で、順序を入れ替えて $BA$ にすると?",
+     "opts": [
+      "答えが変わることがある",
+      "必ず $AB$ と同じ",
+      "必ず 0 になる"
+     ],
+     "ans": "答えが変わることがある",
+     "note": "$AB\\ne BA$。回転の順番が大事なのは、このため。"
+    }
+   ]
+  },
   {
    "id": "b1",
    "title": "z軸まわりの回転: 新しい軸の向きを、元の座標で数えると行列になる",
@@ -222,7 +315,7 @@
      "note": "行列の積は、順序を入れ替えると答えが変わる($AB\\ne BA$)。軸を回す順番が違えば、最終の向きも違う。(資料外・補足)"
     }
    ],
-   "body": "2回以上、軸を回す場合(資料 p.9〜p.10)。例: ① 座標系 $(x,y,z)$ を $x$ 軸まわりに $\\alpha$ 回転 → $(x_a,y_a,z_a)$、② 次に、その $z_a$ 軸まわりに $\\beta$ 回転 → $(x_b,y_b,z_b)$。<ul><li>①の変換: $\\boldsymbol{R}(x,\\alpha)$(式(2.9))</li><li>②の変換: $\\boldsymbol{R}(z_a,\\beta)$(式(2.8))</li></ul>$(x_b,y_b,z_b)$ から $(x,y,z)$ への変換は、<b>最初の回転を左、後の回転を右</b>に並べて掛ける。つまり $\\boldsymbol{R}(x,\\alpha)\\,\\boldsymbol{R}(z_a,\\beta)$。回す順番を入れ替えると、結果は<b>変わることがある</b>($AB\\ne BA$)。$$\\begin{bmatrix}P_x\\\\P_y\\\\P_z\\end{bmatrix}=\\boldsymbol{R}(x,\\alpha)\\,\\boldsymbol{R}(z_a,\\beta)\\begin{bmatrix}P_{xb}\\\\P_{yb}\\\\P_{zb}\\end{bmatrix}$$<b>${}^{abs}\\boldsymbol{R}_b=\\boldsymbol{R}(x,\\alpha)\\,\\boldsymbol{R}(z_a,\\beta)$</b> と定義する(${}^{abs}\\boldsymbol{R}_b$: $\\Sigma_b$ から $\\Sigma_{abs}$ への回転変換行列)。<br><br>ルール3つ: <b>①回した順に左から右へ掛ける</b>。<b>②各回転は、そのとき回した座標系の軸($y_a$、$x_b$ など)の名前で書く</b>。<b>③ $90^\\circ$ なら $\\cos 90^\\circ=0$、$\\sin 90^\\circ=1$ なので、成分は $0,\\pm1$ だけ</b>。<br><br>⚠️ 資料 p.9 の印刷された $\\boldsymbol{R}(z_a,\\beta)$ は、$\\sin$ の符号が式(2.8)と逆。課題1の先生の解答は式(2.8)の符号を使っているので、<b>式(2.8)が正しい</b>(誤植と思われる)。<br><br>【問題1】(資料 p.10): 掛け算の順は $\\boldsymbol{R}(y,30^\\circ)\\,\\boldsymbol{R}(x_a,-90^\\circ)$。$\\Sigma_{abs}$ を $y$ 軸まわりに $30^\\circ$ 回転 → $\\Sigma_a$、次に $x_a$ 軸まわりに $-90^\\circ$ 回転 → $\\Sigma_b$。${}^{abs}\\boldsymbol{R}_b=\\boldsymbol{R}(y,30^\\circ)\\,\\boldsymbol{R}(x_a,-90^\\circ)$ なので、${}^{abs}\\boldsymbol{R}_b=$ $\\begin{bmatrix}\\frac{\\sqrt{3}}{2} & - \\frac{1}{2} & 0 \\\\ 0 & 0 & 1 \\\\ - \\frac{1}{2} & - \\frac{\\sqrt{3}}{2} & 0\\end{bmatrix}$ ($\\cos(-90^\\circ)=0$、$\\sin(-90^\\circ)=-1$)<br>(資料の手書きの途中式は、逆向きの積になっている。資料の定義と課題1の解答に合わせて、上の向きで掛ける。)<br><br>(例)①$z$軸まわりに$90^\\circ$、②次に$x_a$軸まわりに$90^\\circ$なら、$\\begin{bmatrix}0 & 0 & 1 \\\\ 1 & 0 & 0 \\\\ 0 & 1 & 0\\end{bmatrix}$(下の例題)。<br><br>【課題1】: $z$ 軸まわりに $45^\\circ$、次に $y_a$ 軸まわりに $90^\\circ$、次に $x_b$ 軸まわりに $90^\\circ$ 回転したとき、${}^{abs}\\boldsymbol{R}_c=\\boldsymbol{R}(z,45^\\circ)\\,\\boldsymbol{R}(y_a,90^\\circ)\\,\\boldsymbol{R}(x_b,90^\\circ)$。計算の結果は<br>${}^{abs}\\boldsymbol{R}_c=$ $\\begin{bmatrix}0 & \\frac{\\sqrt{2}}{2} & \\frac{\\sqrt{2}}{2} \\\\ 0 & \\frac{\\sqrt{2}}{2} & - \\frac{\\sqrt{2}}{2} \\\\ -1 & 0 & 0\\end{bmatrix}$",
+   "body": "2回以上、軸を回す場合(資料 p.9〜p.10)。例: ① 座標系 $(x,y,z)$ を $x$ 軸まわりに $\\alpha$ 回転 → $(x_a,y_a,z_a)$、② 次に、その $z_a$ 軸まわりに $\\beta$ 回転 → $(x_b,y_b,z_b)$。<ul><li>①の変換: $\\boldsymbol{R}(x,\\alpha)$(式(2.9))</li><li>②の変換: $\\boldsymbol{R}(z_a,\\beta)$(式(2.8))</li></ul>$(x_b,y_b,z_b)$ から $(x,y,z)$ への変換は、<b>最初の回転を左、後の回転を右</b>に並べて掛ける。つまり $\\boldsymbol{R}(x,\\alpha)\\,\\boldsymbol{R}(z_a,\\beta)$。回す順番を入れ替えると、結果は<b>変わることがある</b>($AB\\ne BA$)。$$\\begin{bmatrix}P_x\\\\P_y\\\\P_z\\end{bmatrix}=\\boldsymbol{R}(x,\\alpha)\\,\\boldsymbol{R}(z_a,\\beta)\\begin{bmatrix}P_{xb}\\\\P_{yb}\\\\P_{zb}\\end{bmatrix}$$<b>${}^{abs}\\boldsymbol{R}_b=\\boldsymbol{R}(x,\\alpha)\\,\\boldsymbol{R}(z_a,\\beta)$</b> と定義する(${}^{abs}\\boldsymbol{R}_b$: $\\Sigma_b$ から $\\Sigma_{abs}$ への回転変換行列)。<br><br><b>なぜ左から右か</b>(資料外・補足): 点の座標が $\\Sigma_b$ で $(P_{xb},P_{yb},P_{zb})$ だとする。まず右端の行列を掛けて、1つ前の座標 $\\Sigma_a$ に直す。次に、その左の行列を掛けて、さらに1つ前の座標 $\\Sigma_{abs}$ に直す。<b>右の行列から先に掛かり、元の座標へ1つずつ戻っていくから</b>、だから、一番最初に回した行列が一番左に来る。<br><br>ルール3つ:<b>①回した順に左から右へ掛ける</b>。<b>②各回転は、そのとき回した座標系の軸($y_a$、$x_b$ など)の名前で書く</b>。<b>③ $90^\\circ$ なら $\\cos 90^\\circ=0$、$\\sin 90^\\circ=1$ なので、成分は $0,\\pm1$ だけ</b>。<br><br>⚠️ 資料 p.9 の印刷された $\\boldsymbol{R}(z_a,\\beta)$ は、$\\sin$ の符号が式(2.8)と逆。課題1の先生の解答は式(2.8)の符号を使っているので、<b>式(2.8)が正しい</b>(誤植と思われる)。<br><br>【問題1】(資料 p.10): 掛け算の順は $\\boldsymbol{R}(y,30^\\circ)\\,\\boldsymbol{R}(x_a,-90^\\circ)$。$\\Sigma_{abs}$ を $y$ 軸まわりに $30^\\circ$ 回転 → $\\Sigma_a$、次に $x_a$ 軸まわりに $-90^\\circ$ 回転 → $\\Sigma_b$。${}^{abs}\\boldsymbol{R}_b=\\boldsymbol{R}(y,30^\\circ)\\,\\boldsymbol{R}(x_a,-90^\\circ)$ なので、${}^{abs}\\boldsymbol{R}_b=$ $\\begin{bmatrix}\\frac{\\sqrt{3}}{2} & - \\frac{1}{2} & 0 \\\\ 0 & 0 & 1 \\\\ - \\frac{1}{2} & - \\frac{\\sqrt{3}}{2} & 0\\end{bmatrix}$ ($\\cos(-90^\\circ)=0$、$\\sin(-90^\\circ)=-1$)<br>(資料の手書きの途中式は、逆向きの積になっている。資料の定義と課題1の解答に合わせて、上の向きで掛ける。)<br><br>(例)①$z$軸まわりに$90^\\circ$、②次に$x_a$軸まわりに$90^\\circ$なら、$\\begin{bmatrix}0 & 0 & 1 \\\\ 1 & 0 & 0 \\\\ 0 & 1 & 0\\end{bmatrix}$(下の例題)。<br><br>【課題1】: $z$ 軸まわりに $45^\\circ$、次に $y_a$ 軸まわりに $90^\\circ$、次に $x_b$ 軸まわりに $90^\\circ$ 回転したとき、${}^{abs}\\boldsymbol{R}_c=\\boldsymbol{R}(z,45^\\circ)\\,\\boldsymbol{R}(y_a,90^\\circ)\\,\\boldsymbol{R}(x_b,90^\\circ)$。計算の結果は<br>${}^{abs}\\boldsymbol{R}_c=$ $\\begin{bmatrix}0 & \\frac{\\sqrt{2}}{2} & \\frac{\\sqrt{2}}{2} \\\\ 0 & \\frac{\\sqrt{2}}{2} & - \\frac{\\sqrt{2}}{2} \\\\ -1 & 0 & 0\\end{bmatrix}$",
    "example": {
     "steps": [
      "① $z$ 軸まわりに $90^\\circ$、② 次に $x_a$ 軸まわりに $90^\\circ$ 回転する。${}^{abs}\\boldsymbol{R}_b=\\boldsymbol{R}(z,90^\\circ)\\,\\boldsymbol{R}(x_a,90^\\circ)$(最初の回転を左)。",
@@ -245,14 +338,14 @@
    "check": [
     {
      "type": "single",
-     "q": "① $x$ 軸まわりに $\\alpha$、② 次に $z_a$ 軸まわりに $\\beta$ 回転したとき、${}^{abs}\\boldsymbol{R}_b$ は?",
+     "q": "合成回転で、一番最初に回した行列が一番左に来るのは、なぜ?",
      "opts": [
-      "$\\boldsymbol{R}(x,\\alpha)\\,\\boldsymbol{R}(z_a,\\beta)$",
-      "$\\boldsymbol{R}(z_a,\\beta)\\,\\boldsymbol{R}(x,\\alpha)$",
-      "$\\boldsymbol{R}(x,\\alpha)+\\boldsymbol{R}(z_a,\\beta)$"
+      "右の行列から先に掛かり、元の座標へ1つずつ戻っていくから",
+      "左の行列から先に掛かるから",
+      "行列の積は、順序を入れ替えても同じだから"
      ],
-     "ans": "$\\boldsymbol{R}(x,\\alpha)\\,\\boldsymbol{R}(z_a,\\beta)$",
-     "note": "最初の回転を左、後の回転を右に並べて掛ける。(資料 p.10)"
+     "ans": "右の行列から先に掛かり、元の座標へ1つずつ戻っていくから",
+     "note": "$\\Sigma_b$ の座標に、右端の行列を掛けると $\\Sigma_a$ の座標、その左の行列を掛けると $\\Sigma_{abs}$ の座標になる。(資料外・補足の考え方)"
     },
     {
      "type": "single",
@@ -284,6 +377,14 @@
  "summary": {
   "rows": [
    [
+    "行列 × 座標",
+    "行列の各行と、座標の3つの数を、順に掛けて足す。結果も3つの数"
+   ],
+   [
+    "行列の積",
+    "(i 行 j 列)= 左の i 行 × 右の j 列。順序を入れ替えると答えが変わる(AB≠BA)"
+   ],
+   [
     "単位ベクトルの成分",
     "回転後の軸の向きを、元の座標の成分で数え、列に並べると回転変換行列になる"
    ],
@@ -305,7 +406,7 @@
    ],
    [
     "合成回転",
-    "回した順に左から右へ掛ける。各回転は、そのとき回した座標系の軸の名前で書く"
+    "回した順に左から右へ掛ける(右の行列から先に掛かり、元の座標へ1つずつ戻るから)。各回転は、そのとき回した座標系の軸の名前で書く"
    ],
    [
     "90° の成分",
