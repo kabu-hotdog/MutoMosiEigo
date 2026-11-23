@@ -203,7 +203,10 @@ function render() {
       if (s.man !== undefined) info += '<button class="rm-link" type="button">自動に戻す</button>';
       var auto = el('div', 'rm-auto', info);
       var back = auto.querySelector('.rm-link');
-      if (back) back.addEventListener('click', function () { loadM(); delete M.manual[st.id]; saveM(); render(); });
+      if (back) back.addEventListener('click', function () { loadM();
+        // 手動でチェックしていたなら、自動に戻してもチェックは残す(ach = 一度完了した印)
+        if (M.manual[st.id] === true) M.ach[st.id] = true;
+        delete M.manual[st.id]; saveM(); render(); });
       main.appendChild(auto);
     }
     row.appendChild(chk); row.appendChild(main);

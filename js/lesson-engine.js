@@ -342,13 +342,11 @@ function showFinalResult() {
   var r = rate(D.final.map(function (_, i) { return 'f' + i; }));
   var box = document.getElementById('res_final');
   if (!r || !box) return;
-  var pass = r.p >= 0.8;
-  if (pass) S.learned = 1;
+  // 他の演習と同じ: 回末の全問に答えたら学習済み(正答率は問わない)。rate() は全問答えるまで null。
+  S.learned = 1;
   S.finalRes = { c: r.c, n: r.n };
   save();
-  box.innerHTML = pass
-    ? '<span class="pass">学習済み ✓</span>　初回 ' + r.c + ' / ' + r.n + '。ロードマップにチェックが付く。'
-    : '<span class="fail">初回 ' + r.c + ' / ' + r.n + '(8割に届かず)。間違えたブロックを読み直して、もう一度ここへ。</span>';
+  box.innerHTML = '<span class="pass">学習済み ✓</span>　初回 ' + r.c + ' / ' + r.n + '。ロードマップにチェックが付く。';
   updateBar();
 }
 
