@@ -1,0 +1,276 @@
+{
+  "year": 2026,
+  "grade": 4,
+  "exam": "後期中間試験",
+  "subject": "制御工学Ⅱ",
+  "title": "制御工学 ・ ロードマップ",
+  "intro": "【目的】12/2(水)1限の制御工学Ⅱ(森川先生)後期中間試験で、授業を聞いていなくても高得点まで届くこと。上から順にやれば、土台から本番の形式まで届くように作ってある。\n【範囲】制御工学Ⅱの第1〜4回(第5章 時間応答、第6章 周波数特性の前半)と、制御工学Ⅰの土台(伝達関数・ラプラス変換・最終値定理・ブロック線図の最低限)。範囲はこのあと増える(第5回以降は資料が来てから追加する。一次遅れのボード線図などはその時に出す)。増えたら同じ型でテーマを足すので、このページに新しいステップが出る。前期(Ⅰ)の試験範囲そのものは、今回は対象外。\n【全体】5つのテーマ(①〜⑤)に分けた。各テーマは「学習ページで理解する → 小テスト(問1型 → 計算 → 本番型)」の順。最後の⑤は全回を混ぜた総合。合計でおよそ6時間8分(368分。問1型の文は1文0.5分、計算は1問3分、連鎖は1セット数分、学習ページは10〜20分で見積もった)。制御工学は難しいので、多少長くてもよい。毎日やらなくていい。取れる日に1テーマだけやる。\n【問1が最大の山】本番の問1は、5択で用語や説明文の正誤を答える10問(30点)。ここが運ゲーで落としやすい。だから各テーマの小テストの最初に「問1型」を置いた(1問に説明文が5つ入っている)。①〜④で各回の文を1つずつ潰し、⑤で似た概念を混ぜて見分ける練習をする。\n【残り7割は記述】問2以降は、途中経過を示す記述が中心の見込み。小テストの「計算」と「本番型」は、紙で解いて答えだけ入力する形にしてある。式の立て方は、解説で確かめる。紙は必須。\n【電卓】関数電卓は使える。試験で使うのは CASIO fx-375ES A。角度は度(Deg)にする(SHIFT MODE 3)。log や tan⁻¹ の値は問題文や解説に書いていないので、式のまま電卓で出す。有効数字は3桁、途中は4桁で丸める。\n【つまずいた時】小テストの正答率が5割を割ったテーマは、学習ページのそのブロックに戻る。戻るのは間違えた所だけでいい。\n【時間がない日】学習ページの「要点だけ表示」を押すと、本文を省いて用語集とまとめ表だけが出る。\n【任意】前期のⅠのテストは、一番下に置いた。今回の範囲ではないので、時間が余った時だけでよい。前日は新しい問題をやらず、間違えた所だけ見直して早く寝る。",
+  "storageKey": "seigyo_roadmap_v1",
+  "steps": [
+    {
+      "id": "L1",
+      "phase": "テーマ① 土台と一次遅れ要素(第1回・約70分)",
+      "label": "学習 ① 土台と一次遅れ要素",
+      "href": "/lesson.html?d=lessons/seigyo2-01/data.json",
+      "minutes": 15,
+      "why": "最初に「過渡特性・特性値・一次遅れ」の土台を読む。ここが以後の全部の前提になるので、授業を聞いていなくてもここから入る。ブロックごとの確認の問いに答えながら進み、太字と例題の流れを追えばよい。",
+      "done": {
+        "lesson": "seigyo2_learn_01_v1"
+      }
+    },
+    {
+      "id": "P1a",
+      "phase": "テーマ① 土台と一次遅れ要素(第1回・約70分)",
+      "label": "① 土台と一次遅れ要素 小テスト 1/3 問1型(選択)",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-seigyogaku2-t1-ichijiokure/data.json",
+      "minutes": 20,
+      "why": "問1の練習。1問に説明文が5つ入っていて、正しい・誤りを見分ける。まず問1型を先にやり、運ゲーで落とす所を減らす。",
+      "done": {
+        "quiz": "seigyo2_chukan_t1_ichijiokure_v1",
+        "section": "s1",
+        "total": 7
+      }
+    },
+    {
+      "id": "P1b",
+      "phase": "テーマ① 土台と一次遅れ要素(第1回・約70分)",
+      "label": "① 土台と一次遅れ要素 小テスト 2/3 計算(紙で解いて答えだけ入力)",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-seigyogaku2-t1-ichijiokure/data.json",
+      "minutes": 20,
+      "why": "本番の記述(途中経過を示す問)の練習。紙で式を立てて解き、答えだけ打ち込む。値が要る所は、電卓(fx-375ES A)で出す。",
+      "done": {
+        "quiz": "seigyo2_chukan_t1_ichijiokure_v1",
+        "section": "s2",
+        "total": 6
+      }
+    },
+    {
+      "id": "P1c",
+      "phase": "テーマ① 土台と一次遅れ要素(第1回・約70分)",
+      "label": "① 土台と一次遅れ要素 小テスト 3/3 本番型(連鎖)",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-seigyogaku2-t1-ichijiokure/data.json",
+      "minutes": 15,
+      "why": "本番の大問の形。1つの例を使い、伝達関数 → 応答 → 特性値、のように前の答えを次で使う連鎖。紙で順に解き、答えだけ入力する。",
+      "done": {
+        "quiz": "seigyo2_chukan_t1_ichijiokure_v1",
+        "section": "s3",
+        "total": 6
+      }
+    },
+    {
+      "id": "L2",
+      "phase": "テーマ② 積分・微分要素と応答の関係(第2回前半・約57分)",
+      "label": "学習 ② 積分・微分要素と応答の関係",
+      "href": "/lesson.html?d=lessons/seigyo2-02/data.json",
+      "minutes": 12,
+      "why": "積分要素と微分要素の応答を、一次遅れとの違いを意識して読む。前の回の言葉(過渡応答・特性値)をそのまま使うので、①のあとに置いている。",
+      "done": {
+        "lesson": "seigyo2_learn_02_v1"
+      }
+    },
+    {
+      "id": "P2a",
+      "phase": "テーマ② 積分・微分要素と応答の関係(第2回前半・約57分)",
+      "label": "② 積分・微分要素と応答の関係 小テスト 1/3 問1型(選択)",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-seigyogaku2-t2-sekibun-bibun/data.json",
+      "minutes": 10,
+      "why": "問1の練習。1問に説明文が5つ入っていて、正しい・誤りを見分ける。まず問1型を先にやり、運ゲーで落とす所を減らす。",
+      "done": {
+        "quiz": "seigyo2_chukan_t2_sekibun_bibun_v1",
+        "section": "s1",
+        "total": 5
+      }
+    },
+    {
+      "id": "P2b",
+      "phase": "テーマ② 積分・微分要素と応答の関係(第2回前半・約57分)",
+      "label": "② 積分・微分要素と応答の関係 小テスト 2/3 計算(紙で解いて答えだけ入力)",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-seigyogaku2-t2-sekibun-bibun/data.json",
+      "minutes": 20,
+      "why": "本番の記述(途中経過を示す問)の練習。紙で式を立てて解き、答えだけ打ち込む。値が要る所は、電卓(fx-375ES A)で出す。",
+      "done": {
+        "quiz": "seigyo2_chukan_t2_sekibun_bibun_v1",
+        "section": "s2",
+        "total": 7
+      }
+    },
+    {
+      "id": "P2c",
+      "phase": "テーマ② 積分・微分要素と応答の関係(第2回前半・約57分)",
+      "label": "② 積分・微分要素と応答の関係 小テスト 3/3 本番型(連鎖)",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-seigyogaku2-t2-sekibun-bibun/data.json",
+      "minutes": 15,
+      "why": "本番の大問の形。1つの例を使い、伝達関数 → 応答 → 特性値、のように前の答えを次で使う連鎖。紙で順に解き、答えだけ入力する。",
+      "done": {
+        "quiz": "seigyo2_chukan_t2_sekibun_bibun_v1",
+        "section": "s3",
+        "total": 8
+      }
+    },
+    {
+      "id": "L3",
+      "phase": "テーマ③ 二次遅れ要素と任意入力(第2回後半・第3回・約91分)",
+      "label": "学習 ③ 二次遅れ要素と任意入力",
+      "href": "/lesson.html?d=lessons/seigyo2-03/data.json",
+      "minutes": 16,
+      "why": "二次遅れ要素(根・ζ・特性量)と、任意の入力への応答(畳み込み)を読む。式が増える回だが、「ζで応答の形が変わる」を軸に追えば整理できる。",
+      "done": {
+        "lesson": "seigyo2_learn_03_v1"
+      }
+    },
+    {
+      "id": "P3a",
+      "phase": "テーマ③ 二次遅れ要素と任意入力(第2回後半・第3回・約91分)",
+      "label": "③ 二次遅れ要素と任意入力 小テスト 1/3 問1型(選択)",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-seigyogaku2-t3-nijiokure/data.json",
+      "minutes": 25,
+      "why": "問1の練習。1問に説明文が5つ入っていて、正しい・誤りを見分ける。まず問1型を先にやり、運ゲーで落とす所を減らす。",
+      "done": {
+        "quiz": "seigyo2_chukan_t3_nijiokure_v1",
+        "section": "s1",
+        "total": 10
+      }
+    },
+    {
+      "id": "P3b",
+      "phase": "テーマ③ 二次遅れ要素と任意入力(第2回後半・第3回・約91分)",
+      "label": "③ 二次遅れ要素と任意入力 小テスト 2/3 計算(紙で解いて答えだけ入力)",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-seigyogaku2-t3-nijiokure/data.json",
+      "minutes": 35,
+      "why": "本番の記述(途中経過を示す問)の練習。紙で式を立てて解き、答えだけ打ち込む。値が要る所は、電卓(fx-375ES A)で出す。",
+      "done": {
+        "quiz": "seigyo2_chukan_t3_nijiokure_v1",
+        "section": "s2",
+        "total": 12
+      }
+    },
+    {
+      "id": "P3c",
+      "phase": "テーマ③ 二次遅れ要素と任意入力(第2回後半・第3回・約91分)",
+      "label": "③ 二次遅れ要素と任意入力 小テスト 3/3 本番型(連鎖)",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-seigyogaku2-t3-nijiokure/data.json",
+      "minutes": 15,
+      "why": "本番の大問の形。1つの例を使い、伝達関数 → 応答 → 特性値、のように前の答えを次で使う連鎖。紙で順に解き、答えだけ入力する。",
+      "done": {
+        "quiz": "seigyo2_chukan_t3_nijiokure_v1",
+        "section": "s3",
+        "total": 9
+      }
+    },
+    {
+      "id": "L4",
+      "phase": "テーマ④ 周波数応答・dB・図式表示(第3回後半〜第4回・約105分)",
+      "label": "学習 ④ 周波数応答・dB・図式表示",
+      "href": "/lesson.html?d=lessons/seigyo2-04/data.json",
+      "minutes": 20,
+      "why": "時間の話から周波数の話に切り替わる回。G(jω)・ゲイン・位相・dB・ボード線図などの図式表示を、定義から読む。dB の計算は電卓の練習も兼ねる。",
+      "done": {
+        "lesson": "seigyo2_learn_04_v1"
+      }
+    },
+    {
+      "id": "P4a",
+      "phase": "テーマ④ 周波数応答・dB・図式表示(第3回後半〜第4回・約105分)",
+      "label": "④ 周波数応答・dB・図式表示 小テスト 1/3 問1型(選択)",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-seigyogaku2-t4-shuhasu/data.json",
+      "minutes": 20,
+      "why": "問1の練習。1問に説明文が5つ入っていて、正しい・誤りを見分ける。まず問1型を先にやり、運ゲーで落とす所を減らす。",
+      "done": {
+        "quiz": "seigyo2_chukan_t4_shuhasu_v1",
+        "section": "s1",
+        "total": 7
+      }
+    },
+    {
+      "id": "P4b",
+      "phase": "テーマ④ 周波数応答・dB・図式表示(第3回後半〜第4回・約105分)",
+      "label": "④ 周波数応答・dB・図式表示 小テスト 2/3 計算(紙で解いて答えだけ入力)",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-seigyogaku2-t4-shuhasu/data.json",
+      "minutes": 45,
+      "why": "本番の記述(途中経過を示す問)の練習。紙で式を立てて解き、答えだけ打ち込む。値が要る所は、電卓(fx-375ES A)で出す。",
+      "done": {
+        "quiz": "seigyo2_chukan_t4_shuhasu_v1",
+        "section": "s2",
+        "total": 18
+      }
+    },
+    {
+      "id": "P4c",
+      "phase": "テーマ④ 周波数応答・dB・図式表示(第3回後半〜第4回・約105分)",
+      "label": "④ 周波数応答・dB・図式表示 小テスト 3/3 本番型(連鎖)",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-seigyogaku2-t4-shuhasu/data.json",
+      "minutes": 20,
+      "why": "本番の大問の形。1つの例を使い、伝達関数 → 応答 → 特性値、のように前の答えを次で使う連鎖。紙で順に解き、答えだけ入力する。",
+      "done": {
+        "quiz": "seigyo2_chukan_t4_shuhasu_v1",
+        "section": "s3",
+        "total": 9
+      }
+    },
+    {
+      "id": "L5",
+      "phase": "テーマ⑤ 総合(似た概念の見分け)(全回・約45分)",
+      "label": "学習 ⑤ 総合(似た概念の見分け)",
+      "href": "/lesson.html?d=lessons/seigyo2-05/data.json",
+      "minutes": 10,
+      "why": "似ていて間違えやすい概念(インパルス応答と微積分の関係、行き過ぎ量など)を並べて違いを見分ける。①〜④を終えてから読む。",
+      "done": {
+        "lesson": "seigyo2_learn_05_v1"
+      }
+    },
+    {
+      "id": "P5a",
+      "phase": "テーマ⑤ 総合(似た概念の見分け)(全回・約45分)",
+      "label": "⑤ 総合(似た概念の見分け) 小テスト 1/3 問1型(全回を混ぜる)",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-seigyogaku2-t5-sogo/data.json",
+      "minutes": 10,
+      "why": "問1の最終練習。全回の似た概念を混ぜた説明文で、①〜④で出ていない新しい組み合わせ。違いを見分ける力を確かめる。",
+      "done": {
+        "quiz": "seigyo2_chukan_t5_sogo_v1",
+        "section": "s1",
+        "total": 5
+      }
+    },
+    {
+      "id": "P5b",
+      "phase": "テーマ⑤ 総合(似た概念の見分け)(全回・約45分)",
+      "label": "⑤ 総合(似た概念の見分け) 小テスト 2/3 総合(判定・選択・具体例)",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-seigyogaku2-t5-sogo/data.json",
+      "minutes": 10,
+      "why": "クルーズコントロールのような具体例に当てはめる問や、似た概念を見分ける問。紙で考えて答えを入力する。",
+      "done": {
+        "quiz": "seigyo2_chukan_t5_sogo_v1",
+        "section": "s2",
+        "total": 6
+      }
+    },
+    {
+      "id": "P5c",
+      "phase": "テーマ⑤ 総合(似た概念の見分け)(全回・約45分)",
+      "label": "⑤ 総合(似た概念の見分け) 小テスト 3/3 本番型(RL回路の連鎖)",
+      "href": "/quiz.html?d=tests/2026-4-kouki-chukan-seigyogaku2-t5-sogo/data.json",
+      "minutes": 15,
+      "why": "本番の大問の形。RL 回路で、伝達関数 → 応答 → 波形・一次微分要素へ前の答えをつなぐ。紙で順に解き、答えだけ入力する。",
+      "done": {
+        "quiz": "seigyo2_chukan_t5_sogo_v1",
+        "section": "s3",
+        "total": 10
+      }
+    },
+    {
+      "id": "R1",
+      "phase": "任意(前期の復習・今回の範囲ではない)",
+      "label": "前期の制御工学Ⅰ のテスト一覧(任意・今回の範囲ではない)",
+      "href": "/?list=%E5%88%B6%E5%BE%A1%E5%B7%A5%E5%AD%A6%E2%85%A0",
+      "minutes": 0,
+      "why": "【任意】これは前期(制御工学Ⅰ)の模試で、12/2 の試験範囲ではない。ラプラス変換やブロック線図の土台が不安な時だけ、ここから選んで解く。上のステップが終わっていれば、やらなくてよい。"
+    },
+    {
+      "id": "E1",
+      "phase": "前日",
+      "label": "前日: 誤答だけ見直す",
+      "minutes": 15,
+      "why": "新しい問題はやらない。間違えた所と、学習ページの「要点だけ表示」だけ見直して、早く寝る。"
+    }
+  ]
+}

@@ -136,5 +136,77 @@
     "type": "summary",
     "path": "/lesson.html?d=lessons/network-05/data.json",
     "order": 5
+  },
+  {
+    "year": 2026,
+    "grade": 4,
+    "exam": "後期中間試験",
+    "subject": "制御工学Ⅱ",
+    "title": "制御工学 ・ ロードマップ(ここから)",
+    "storageKey": null,
+    "totalItems": 0,
+    "type": "summary",
+    "path": "/roadmap.html?d=roadmaps/seigyo-2026-kouki-chukan.json",
+    "order": 0
+  },
+  {
+    "year": 2026,
+    "grade": 4,
+    "exam": "後期中間試験",
+    "subject": "制御工学Ⅱ",
+    "title": "制御工学Ⅱ ・ 学習 第1回 過渡特性と一次遅れ要素",
+    "storageKey": null,
+    "totalItems": 0,
+    "type": "summary",
+    "path": "/lesson.html?d=lessons/seigyo2-01/data.json",
+    "order": 0.5
+  },
+  {
+    "year": 2026,
+    "grade": 4,
+    "exam": "後期中間試験",
+    "subject": "制御工学Ⅱ",
+    "title": "制御工学Ⅱ ・ 学習 第2回前半 積分・微分要素",
+    "storageKey": null,
+    "totalItems": 0,
+    "type": "summary",
+    "path": "/lesson.html?d=lessons/seigyo2-02/data.json",
+    "order": 1.5
+  },
+  {
+    "year": 2026,
+    "grade": 4,
+    "exam": "後期中間試験",
+    "subject": "制御工学Ⅱ",
+    "title": "制御工学Ⅱ ・ 学習 第2回後半・第3回 二次遅れと任意入力",
+    "storageKey": null,
+    "totalItems": 0,
+    "type": "summary",
+    "path": "/lesson.html?d=lessons/seigyo2-03/data.json",
+    "order": 2.5
+  },
+  {
+    "year": 2026,
+    "grade": 4,
+    "exam": "後期中間試験",
+    "subject": "制御工学Ⅱ",
+    "title": "制御工学Ⅱ ・ 学習 第3回後半〜第4回 周波数応答・dB・図式表示",
+    "storageKey": null,
+    "totalItems": 0,
+    "type": "summary",
+    "path": "/lesson.html?d=lessons/seigyo2-04/data.json",
+    "order": 3.5
+  },
+  {
+    "year": 2026,
+    "grade": 4,
+    "exam": "後期中間試験",
+    "subject": "制御工学Ⅱ",
+    "title": "制御工学Ⅱ ・ 学習 総合 似た概念の見分け方と RL 回路",
+    "storageKey": null,
+    "totalItems": 0,
+    "type": "summary",
+    "path": "/lesson.html?d=lessons/seigyo2-05/data.json",
+    "order": 4.5
   }
 ]

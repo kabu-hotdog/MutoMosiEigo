@@ -1,0 +1,469 @@
+{
+ "year": 2026,
+ "grade": 4,
+ "exam": "後期中間試験",
+ "subject": "制御工学Ⅱ",
+ "title": "制御工学Ⅱ ・ 学習 第3回後半〜第4回 周波数応答・dB・図式表示",
+ "storageKey": "seigyo2_learn_04_v1",
+ "minutes": 20,
+ "goals": [
+  "周波数応答と周波数伝達関数(s=jω、ゲインと位相)を説明し、大きさと位相を計算できる",
+  "デシベルの式と、1・10・0.1・2 などの値を計算できる",
+  "図式表示4種とボード線図用紙の設定、比例・微分・積分要素の周波数特性を説明できる"
+ ],
+ "katex": true,
+ "terms": [
+  {
+   "name": "周波数応答",
+   "plain": "入力を正弦関数(信号)に限定し、十分に時間が経過した後の定常状態での応答。(角)周波数の関数として表す。(第3回 p.18)"
+  },
+  {
+   "name": "周波数伝達関数 G(jω)",
+   "plain": "伝達関数 G(s) の s を jω で置換した関数(正弦関数が入力の場合に限定)。ゲインと位相ずれを同時に含む。G(jω)=A(ω)+jB(ω)。(第3回 p.19〜20)"
+  },
+  {
+   "name": "ゲイン(利得・大きさ・振幅)と位相",
+   "plain": "G(jω) の絶対値がゲイン、偏角が位相。(第4回 p.8、教科書 p.70)"
+  },
+  {
+   "name": "デシベル G_dB",
+   "plain": "G_dB=20log10|G(jω)| [dB]。ゲインの大きさを対数で表す。1→0 dB、10→20 dB、0.1→−20 dB。(第4回 p.9、教科書 p.71)"
+  },
+  {
+   "name": "図式表示4種",
+   "plain": "ベクトル軌跡(ω:0〜∞)、ナイキスト線図(ω:−∞〜∞)、ボード線図(ωを対数の横軸にゲインdBと位相)、ゲイン−位相線図(横軸位相・縦軸ゲインdB)。(第4回 p.8)"
+  },
+  {
+   "name": "ニコルス線図",
+   "plain": "ゲイン位相線図に、閉ループのゲイン一定(M軌跡)と位相一定(N軌跡)を書き加えた線図。(第4回 p.11、教科書 p.72・p.139)"
+  },
+  {
+   "name": "デケード(decade)",
+   "plain": "ω が10倍になる区間。20 dB/dec は、ω が10倍ごとにゲインが 20 dB ずつ増える傾き。(Ⅰ教科書 p.82)"
+  }
+ ],
+ "blocks": [
+  {
+   "id": "b1",
+   "title": "周波数応答と周波数伝達関数",
+   "pre": [
+    {
+     "type": "single",
+     "q": "正弦波を入力して十分に時間がたったあとの応答を、(角)周波数の関数で表したものを何という?(知らなくて当然)",
+     "opts": [
+      "周波数応答",
+      "インパルス応答",
+      "過渡応答"
+     ],
+     "ans": "周波数応答",
+     "note": "入力を正弦関数に限定し、十分に時間が経過した定常状態での応答が周波数応答。(第3回 p.18)"
+    }
+   ],
+   "body": "<b>第5章と第6章</b>(第3回 p.17):第5章の<b>過渡特性</b>は<b>時間</b>に対する特性(時間応答)、第6章の<b>周波数特性</b>は<b>(角)周波数</b>に対する特性の状況。<br><br><b>周波数応答</b>(p.18):特定の入力として<b>正弦関数(信号)に限定</b>し、<b>十分に時間が経過した後の定常状態</b>での応答。(角)周波数の関数として表現され、制御系の解析・設計に極めて有用。<br><br><b>周波数伝達関数</b>(p.19〜20):<ul><li>伝達関数 $G(s)$ は $s$ の関数で、<b>どのような入力信号にも対応</b>できる。</li><li>入力を正弦関数に限定すると $\\sigma=0$ となり、$s=0+j\\omega=j\\omega$。$s$ 平面では虚軸($j\\omega$ 軸)上。</li><li><b>周波数伝達関数 $G(j\\omega)$</b> は、$G(s)$ の $s$ を $j\\omega$ で置換した関数(正弦関数が入力の場合に限定)。</li><li>$G(j\\omega)$ は<b>ゲイン(大きさ、振幅)と位相ずれを同時に含み</b>、入出力の関係を表す。$G(j\\omega)=A(\\omega)+jB(\\omega)$(実部 $A$、虚部 $B$)。</li></ul><b>ゲインと位相</b>(教科書 p.70):$G(j\\omega)$ の<b>絶対値がゲイン</b>、<b>偏角が位相</b>。$\\lvert G\\rvert=\\sqrt{A^2+B^2}$、$\\phi=\\tan^{-1}\\dfrac BA$($A\\gt0$ のとき)。定常状態では、出力も同じ周波数の正弦波になり、大きさが $\\lvert G\\rvert$ 倍、位相が $\\phi$ だけずれる(Ⅰ教科書 p.88 例題5.3 の考え方)。図面上に描くと直観的で大局的に把握しやすい。<br><br><b>例題4.4(1)</b>(教科書 p.70):$G(s)=\\dfrac K{(s+a)(s+b)}$ で $s=j\\omega$ とおくと、分母は $(j\\omega+a)(j\\omega+b)=(ab-\\omega^2)+j\\omega(a+b)$($j^2=-1$)。$\\lvert G(j\\omega)\\rvert=\\dfrac K{\\sqrt{(ab-\\omega^2)^2+\\omega^2(a+b)^2}}$、位相は分母の位相なので $\\phi(\\omega)=-\\tan^{-1}\\dfrac{\\omega(a+b)}{ab-\\omega^2}$。<br><b>例題4.4(2)</b>:$G(s)=\\dfrac{100(s+3)}{(s+1)(s+20)}$ の位相は $\\phi(\\omega)=\\tan^{-1}\\dfrac\\omega3-\\tan^{-1}\\omega-\\tan^{-1}\\dfrac\\omega{20}$。<b>分子の項は足し、分母の項は引く</b>。",
+   "example": {
+    "steps": [
+     "$G(s)=\\dfrac{12}{(s+1)(s+2)}$($K=12$、$a=1$、$b=2$)で、$\\omega=1$ rad/s の周波数応答を求める。",
+     "$s=j\\omega$ とおくと分母は $(ab-\\omega^2)+j\\omega(a+b)=(2-1)+j3=1+j3$。",
+     "大きさは $\\lvert 1+j3\\rvert=\\sqrt{1+9}=\\sqrt{10}=3.162$。位相は分母の位相を引いて $-\\tan^{-1}\\dfrac31$。",
+     "ゲイン $\\lvert G(j1)\\rvert=\\dfrac{12}{3.162}$ は?"
+    ],
+    "fill": {
+     "type": "numeric",
+     "q": "$G(s)=\\dfrac{12}{(s+1)(s+2)}$ の $\\omega=1$ rad/s でのゲイン $\\lvert G(j1)\\rvert$ は?(有効数字3桁)",
+     "parts": [
+      {
+       "ans": 3.79,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$\\lvert G(j1)\\rvert$"
+      }
+     ],
+     "note": "$12\\div3.162=3.79$。(教科書 p.70 例題4.4(1))",
+     "reveal": [
+      "分母 $=1+j3$、大きさ $\\sqrt{10}=3.162$",
+      "$12/3.162=3.79$"
+     ]
+    }
+   },
+   "check": [
+    {
+     "type": "single",
+     "q": "周波数応答では、入力をどんな関数に限定する?",
+     "opts": [
+      "正弦関数",
+      "単位ステップ関数",
+      "単位インパルス関数"
+     ],
+     "ans": "正弦関数",
+     "note": "周波数応答は入力を正弦関数(信号)に限定し、定常状態での応答。(第3回 p.18)"
+    },
+    {
+     "type": "single",
+     "q": "$G(j\\omega)$ の絶対値は、何を表す?",
+     "opts": [
+      "ゲイン",
+      "位相",
+      "時定数"
+     ],
+     "ans": "ゲイン",
+     "note": "絶対値がゲイン、偏角が位相。(教科書 p.70)"
+    },
+    {
+     "type": "single",
+     "q": "$G(s)=\\dfrac{100(s+3)}{(s+1)(s+20)}$ の位相で、分母の因子 $(s+1)$、$(s+20)$ の項はどう扱う?",
+     "opts": [
+      "引く",
+      "足す",
+      "掛ける"
+     ],
+     "ans": "引く",
+     "note": "分子の項は足し、分母の項は引く。(教科書 p.70 例題4.4(2))"
+    }
+   ]
+  },
+  {
+   "id": "b2",
+   "title": "デシベル(dB)の計算",
+   "pre": [
+    {
+     "type": "single",
+     "q": "ゲインの大きさ(倍率)が10倍のとき、デシベル値はいくつ?(知らなくて当然)",
+     "opts": [
+      "20 dB",
+      "10 dB",
+      "100 dB"
+     ],
+     "ans": "20 dB",
+     "note": "$G_{dB}=20\\log_{10}\\lvert G\\rvert$ に 10 を入れると $20\\log_{10}10=20$ dB。(第4回 p.9)"
+    }
+   ],
+   "body": "<b>ゲインの別名</b>(第4回 p.8):<b>利得</b>、大きさ、振幅。<br><b>デシベル値</b>(第4回 p.9、教科書 p.71 式4.35):$G_{dB}=20\\log_{10}\\lvert G(j\\omega)\\rvert$ [dB]。$\\lvert G\\rvert$ の<b>常用対数を20倍</b>したもの。$\\omega$ の変化範囲を広くとるとゲインも大幅に変化するので、<b>対数をとるほうが図示に便利</b>。位相はラジアン[rad]あるいは度[deg]で表す。<br><br><b>授業の演習</b>(第4回 p.9):実数 $1,\\ 10,\\ 0.1,\\ 2,\\ \\sqrt2,\\ \\dfrac12,\\ \\dfrac1{\\sqrt2}$ のデシベル値を求める。(値は電卓の log キーで確かめる)<ul><li>$1$ は $0$ dB。$10$ は $20$ dB。$0.1=10^{-1}$ は $-20$ dB。($100$ は $40$ dB)</li><li>$2$ は約 6 dB。$\\sqrt2$($2$ の $1/2$ 乗)はその半分の約 3 dB。</li><li><b>逆数にすると符号だけが逆</b>:$\\dfrac12$ は約 $-6$ dB、$\\dfrac1{\\sqrt2}$ は約 $-3$ dB。<b>1 より小さい実数のデシベル値は負</b>。</li></ul><b>デシベルから倍率へ</b>:$\\lvert G\\rvert=10^{G_{dB}/20}$(上の式を逆にしたもの)。<br><br><b>積の形のボード線図</b>(教科書 p.71〜72 式4.36〜4.38、図4.15):$G(j\\omega)=G_1(j\\omega)G_2(j\\omega)$ のとき、極形式 $G_1=\\lvert G_1\\rvert\\angle\\phi_1$、$G_2=\\lvert G_2\\rvert\\angle\\phi_2$ では$G=\\lvert G_1\\rvert\\lvert G_2\\rvert\\angle(\\phi_1+\\phi_2)$(<b>大きさは掛け、位相は足す</b>)。dB にすると掛け算が足し算になり、$g_{dB}=g_1+g_2$、$\\phi=\\phi_1+\\phi_2$。ボード線図上で個々の特性を<b>加え合わせればよい</b>ので、高次のシステムの表現に適する。電気回路の実験などでもよく使われる。",
+   "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/seigyo/seigyo_tb_fig4_15.png\" alt=\"図4.15 ボード線図上の加え合わせ\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">教科書 p.72 図4.15 ボード線図上の加え合わせ(g=g1+g2、φ=φ1+φ2)</figcaption></figure>",
+   "example": {
+    "steps": [
+     "電圧増幅器の入力が 0.10 V、出力が 0.40 V。倍率は $\\lvert G\\rvert=\\dfrac{0.40}{0.10}=4.0$ 倍。",
+     "$G_{dB}=20\\log_{10}\\lvert G\\rvert=20\\log_{10}4$。電卓の log キーで $\\log_{10}4$ を出して20倍する。",
+     "4 は 2 の2乗なので、2 の dB(約 6 dB)のちょうど2倍になるはず。値は?"
+    ],
+    "fill": {
+     "type": "numeric",
+     "q": "倍率 $\\lvert G\\rvert=4$ のデシベル値 $G_{dB}=20\\log_{10}4$ は?(有効数字3桁)",
+     "parts": [
+      {
+       "ans": 12.0,
+       "unit": "dB",
+       "abs": 0.15,
+       "label": "$G_{dB}$"
+      }
+     ],
+     "note": "電卓で $20\\log_{10}4$ を計算すると 12.0 dB(2 の約 6 dB の2倍)。(第4回 p.9)",
+     "reveal": [
+      "$\\log_{10}4$ を電卓で出す",
+      "その20倍 → 12.0"
+     ]
+    }
+   },
+   "check": [
+    {
+     "type": "single",
+     "q": "ゲインのデシベル値の式は?",
+     "opts": [
+      "$G_{dB}=20\\log_{10}\\lvert G(j\\omega)\\rvert$",
+      "$G_{dB}=10\\log_{10}\\lvert G(j\\omega)\\rvert$",
+      "$G_{dB}=20\\ln\\lvert G(j\\omega)\\rvert$"
+     ],
+     "ans": "$G_{dB}=20\\log_{10}\\lvert G(j\\omega)\\rvert$",
+     "note": "常用対数を20倍。10倍でも自然対数でもない。(第4回 p.9、教科書 p.71)"
+    },
+    {
+     "type": "single",
+     "q": "実数 $0.1$ のデシベル値は?",
+     "opts": [
+      "$-20$ dB",
+      "$+20$ dB",
+      "$-10$ dB"
+     ],
+     "ans": "$-20$ dB",
+     "note": "$0.1=10^{-1}$ なので $-20$ dB。1 より小さい実数は負。(第4回 p.9)"
+    },
+    {
+     "type": "single",
+     "q": "$G=G_1G_2$ のとき、ボード線図のゲイン $g_{dB}$ は?",
+     "opts": [
+      "$g_1+g_2$",
+      "$g_1\\times g_2$",
+      "$g_1-g_2$"
+     ],
+     "ans": "$g_1+g_2$",
+     "note": "dB にすると掛け算が足し算になる。位相も $\\phi_1+\\phi_2$ の和。(教科書 p.72 (4.38))"
+    }
+   ]
+  },
+  {
+   "id": "b3",
+   "title": "図式表示とボード線図用紙",
+   "pre": [
+    {
+     "type": "single",
+     "q": "ω の変化範囲が広くゲインも大幅に変わるとき、図示に便利にするには、ゲインの何をとる?(知らなくて当然)",
+     "opts": [
+      "対数",
+      "平方根",
+      "逆数"
+     ],
+     "ans": "対数",
+     "note": "変化範囲が広いと |G| も大幅に変わるので、対数をとるほうが図示に便利。(教科書 p.71)"
+    }
+   ],
+   "body": "<b>周波数特性の図式表示</b>(第4回 p.8、教科書 p.70〜73・p.139):<ul><li><b>ベクトル軌跡</b>:$G(j\\omega)$ の<b>実部を横軸、虚部を縦軸</b>にとったベクトルで表し、$\\omega$ を <b>0〜∞</b> に変えたときの先端の軌跡(図4.13。原点からの長さが $\\lvert G(j\\omega_1)\\rvert$、実軸からの角が $\\phi_1$)。回路理論でもよく使われ、フィードバック制御系の安定性を論ずるとき概形がよく使われる(ナイキストの安定判別法)。</li><li><b>ナイキスト線図</b>:$\\omega$ を <b>−∞〜∞</b> に変えたときの軌跡(スライドの区別。教科書はベクトル軌跡をナイキスト線図とも呼ぶ)。</li><li><b>ボード線図</b>:$\\omega$ を横軸(<b>対数目盛</b>)、ゲインの<b>デシベル値と位相</b>を縦軸にとった二組の線図(図4.14)。</li><li><b>ゲイン−位相線図</b>:<b>位相を横軸</b>、<b>ゲインのデシベル値を縦軸</b>にとり、$\\omega$ をパラメータとして対応させる。ゲイン定数 $K$ が変わっても、線図は<b>そのままの形で上下に移動</b>するだけ(図4.16)。</li><li><b>ニコルス線図</b>:ゲイン位相線図に、直結フィードバック制御系の<b>閉ループ</b>でのゲイン一定を表す <b>M軌跡</b> と位相一定を表す <b>N軌跡</b> を書き加えた線図(図7.9、教科書 p.139)。制御系の性能評価・設計に有用。</li></ul><b>各種グラフ用紙</b>(第4回 p.10):片対数方眼紙(Semi-Log)、両対数方眼紙(Log-Log)、円方眼紙、スミスチャート、等角方眼紙(Isometric Graph)、ニコルス線図(Nichols' Chart)。別々の用紙。<br><br><b>ボード線図用紙を作る</b>(第4回 p.11〜12):横軸の対数目盛は<b>左端 0.01〜右端 1000</b>(10の5乗で<b>5桁分</b>)、<b>5 cm が一桁</b>(全長 25 cm)。<b>上段にゲイン</b>(+40〜0〜−40 dB)、<b>下段に位相</b>(+90〜0〜−90°)。位置は、左端からの桁数×5 cm(0.01→1 は2桁で 10 cm)。<br>配布のボード線図用紙は、ゲイン $-60$〜$60$ dB(10 dB 刻み)、位相 $90$〜$-270^\\circ$(45°刻み)、横軸 0.01〜1000 rad/s。ニコルス線図演習用紙は、縦軸 $g_{dB}$ が $-24$〜$36$ dB、横軸 $\\phi(\\omega)$ が $-210$〜$0^\\circ$(図7.9 と同じ範囲)。図4.16 のゲイン位相線図の方眼は、縦軸 $40$〜$-30$ dB(10 dB 刻み)、横軸 $-270$〜$0^\\circ$(30°刻み)。",
+   "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/seigyo/seigyo_tb_fig4_13.png\" alt=\"図4.13 G(jω)のベクトル軌跡\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">教科書 p.70〜71 図4.13 ベクトル軌跡</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/seigyo/seigyo_tb_fig4_14.png\" alt=\"図4.14 ボード線図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">教科書 p.71 図4.14 ボード線図((a)ゲイン特性・(b)位相特性。横軸は log ω)</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/seigyo/seigyo_tb_fig4_16.png\" alt=\"図4.16 ゲイン位相線図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">教科書 p.73 図4.16 ゲイン位相線図の方眼(縦軸 g_dB、横軸 φ(ω))</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/seigyo/seigyo_tb_fig7_9.png\" alt=\"図7.9 ニコルス線図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">教科書 p.139 図7.9 ニコルス線図(dB ラベルの曲線群が M軌跡、度ラベルの曲線群が N軌跡)</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/seigyo/seigyo_bode_setup.png\" alt=\"ボード線図用紙の設定\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">第4回 p.12 ボード線図用紙としての設定(上段ゲイン +40〜−40 dB、下段位相 +90〜−90°、横軸 0.01〜1000)</figcaption></figure>",
+   "example": {
+    "steps": [
+     "自作のボード線図用紙:左端 0.01〜右端 1000、5 cm が一桁。",
+     "$\\omega=1$ の目盛は、0.01 → 0.1 → 1 と2桁進んだ位置にある。",
+     "1桁が 5 cm なので、左端からの距離は $5\\ \\text{cm}\\times2$。何 cm?"
+    ],
+    "fill": {
+     "type": "numeric",
+     "q": "左端 0.01 から $\\omega=1$ の目盛までの距離 [cm] は?(有効数字3桁)",
+     "parts": [
+      {
+       "ans": 10.0,
+       "unit": "cm",
+       "abs": 0.15,
+       "label": "距離"
+      }
+     ],
+     "note": "0.01 → 1 は2桁分で $5\\times2=10.0$ cm。(第4回 p.11)",
+     "reveal": [
+      "0.01→0.1→1 で2桁",
+      "$5\\times2=10.0$"
+     ]
+    }
+   },
+   "check": [
+    {
+     "type": "single",
+     "q": "ボード線図の横軸の目盛は?",
+     "opts": [
+      "対数目盛",
+      "等間隔の目盛",
+      "逆数の目盛"
+     ],
+     "ans": "対数目盛",
+     "note": "ボード線図は $\\omega$ を横軸(対数目盛)にとり、ゲインのデシベル値と位相を縦軸にとる。(第4回 p.8)"
+    },
+    {
+     "type": "single",
+     "q": "ゲイン−位相線図の横軸にとるものは?",
+     "opts": [
+      "位相",
+      "ゲイン",
+      "角周波数"
+     ],
+     "ans": "位相",
+     "note": "ゲイン−位相線図は位相を横軸、ゲインのデシベル値を縦軸にとる。(第4回 p.8、教科書 p.72)"
+    },
+    {
+     "type": "single",
+     "q": "ニコルス線図に描き加えられるM軌跡・N軌跡は、何の伝達関数についてのものか。",
+     "opts": [
+      "閉ループ",
+      "開ループ",
+      "入力信号"
+     ],
+     "ans": "閉ループ",
+     "note": "閉ループでのゲイン一定(M軌跡)と位相一定(N軌跡)。(第4回 p.11、教科書 p.72)"
+    }
+   ]
+  },
+  {
+   "id": "b4",
+   "title": "比例・微分・積分要素の周波数特性",
+   "pre": [
+    {
+     "type": "single",
+     "q": "ω が10倍になる区間を、周波数特性では何という?(知らなくて当然)",
+     "opts": [
+      "1デケード",
+      "1オクターブ",
+      "1ヘルツ"
+     ],
+     "ans": "1デケード",
+     "note": "decade(デケード)は10倍。(Ⅰ教科書 p.82)"
+    }
+   ],
+   "body": "<b>比例要素</b>(第4回 p.13):$G(s)=K$ に $s=j\\omega$ を代入しても $G(j\\omega)=K$(実数で $\\omega$ によらず一定)。ゲインは $K$、位相は $0^\\circ$、ボード線図ではゲインも位相も水平線。<br><br><b>微分要素</b>($G(s)=s$、Ⅰ教科書 p.81〜82):<ul><li>$G(j\\omega)=j\\omega$:<b>実部はなく虚部だけ</b>。ナイキスト線図は原点から虚軸の正の向きにのびる半直線で、位相は $\\omega$ に関係なくつねに $90^\\circ$ 進み。</li><li>$\\lvert G(j\\omega)\\rvert=\\omega$、$\\phi(\\omega)=+90^\\circ$。$g_{dB}=20\\log\\lvert G\\rvert=20\\log\\omega$。</li><li>ボード線図:ゲインは右上がりの直線($+20$ dB/dec)で、$\\omega=0.1$ で $-20$ dB、$1$ で $0$ dB、$10$ で $+20$ dB。位相は $+90^\\circ$ で一定。</li></ul><b>ゲインの傾き</b>:$\\omega$ が10倍となるごとに 20 dB ずつ増加する割合を、1デケードあたり 20 dB の傾きと呼び、<b>20 dB/dec</b> と書く。<br><br><b>積分要素</b>($G(s)=\\dfrac1s$):<ul><li>$G(j\\omega)=\\dfrac1{j\\omega}=-\\dfrac j\\omega$。ナイキスト線図は虚軸の負の側で、位相は $\\omega$ に関係なくつねに $90^\\circ$ 遅れ。</li><li>$\\lvert G(j\\omega)\\rvert=\\dfrac1\\omega$、$\\phi(\\omega)=-90^\\circ$。$g_{dB}=-20\\log\\omega$。</li><li>ボード線図:ゲインは1デケードあたり $-20$ dB($-20$ dB/dec)で減少、位相は $-90^\\circ$ で一定。$\\omega=0.1$ で $+20$ dB、$1$ で $0$ dB、$10$ で $-20$ dB。</li></ul><b>例題5.1</b>(Ⅰ教科書 p.83):$\\dfrac{50}{s}$ と $K$ を直列接続した系 $G(s)=\\dfrac{50K}{s}$、$\\lvert G(j\\omega)\\rvert=\\dfrac{50K}{\\omega}$。$\\omega=500$ rad/s でゲイン 1 にするには $\\dfrac{50K}{500}=1$ より $K=10$。",
+   "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/seigyo/seigyo_tb_fig5_4.png\" alt=\"図5.4 微分要素の周波数応答\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">Ⅰ教科書 p.81 図5.4 微分要素の周波数応答((a)ナイキスト線図、(b)ボード線図)</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/seigyo/seigyo_tb_fig5_5.png\" alt=\"図5.5 積分要素の周波数応答\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">Ⅰ教科書 p.82 図5.5 積分要素の周波数応答((a)ナイキスト線図、(b)ボード線図)</figcaption></figure>",
+   "example": {
+    "steps": [
+     "微分要素 $G(s)=s$、$G(j\\omega)=j\\omega$、$\\lvert G\\rvert=\\omega$。",
+     "$\\omega=100$ rad/s のとき $\\lvert G\\rvert=100$。",
+     "$g_{dB}=20\\log_{10}100$。$100=10^2$ なので $20\\times2$。値は?"
+    ],
+    "fill": {
+     "type": "numeric",
+     "q": "微分要素の $\\omega=100$ rad/s でのゲイン $g_{dB}$ は?(有効数字3桁)",
+     "parts": [
+      {
+       "ans": 40.0,
+       "unit": "dB",
+       "abs": 0.15,
+       "label": "$g_{dB}$"
+      }
+     ],
+     "note": "$20\\log_{10}100=20\\times2=40.0$ dB。$\\omega=1$ の 0 dB から2デケード上がるので $20\\times2$ とも一致。(Ⅰ教科書 p.82)",
+     "reveal": [
+      "$100=10^2$",
+      "$20\\times2=40.0$"
+     ]
+    }
+   },
+   "check": [
+    {
+     "type": "single",
+     "q": "積分要素の位相は?",
+     "opts": [
+      "$-90^\\circ$",
+      "$+90^\\circ$",
+      "$0^\\circ$"
+     ],
+     "ans": "$-90^\\circ$",
+     "note": "積分要素は位相 $-90^\\circ$(遅れ)で一定。$+90^\\circ$ は微分要素。(Ⅰ教科書 p.82)"
+    },
+    {
+     "type": "single",
+     "q": "微分要素のボード線図のゲインの傾きは?",
+     "opts": [
+      "$+20$ dB/dec",
+      "$-20$ dB/dec",
+      "0 dB/dec"
+     ],
+     "ans": "$+20$ dB/dec",
+     "note": "微分要素は右上がり 20 dB/dec。$-20$ dB/dec は積分要素。(Ⅰ教科書 p.81〜83)"
+    },
+    {
+     "type": "single",
+     "q": "1デケードとは、$\\omega$ がどれだけ変わる区間?",
+     "opts": [
+      "$\\omega$ が10倍",
+      "$\\omega$ が2倍",
+      "$\\omega$ が100倍"
+     ],
+     "ans": "$\\omega$ が10倍",
+     "note": "decade は10倍。(Ⅰ教科書 p.82)"
+    }
+   ]
+  }
+ ],
+ "summary": {
+  "rows": [
+   [
+    "周波数応答",
+    "入力を正弦関数に限定、十分時間がたった定常状態での応答。(角)周波数の関数。G(jω) は G(s) の s を jω で置換(σ=0)。ゲインと位相ずれを同時に含む。G=A+jB"
+   ],
+   [
+    "ゲインと位相",
+    "絶対値=ゲイン(利得・大きさ・振幅)、偏角=位相。分子の因子は足し、分母の因子は引く(位相)。分母 (ab−ω²)+jω(a+b)"
+   ],
+   [
+    "dB",
+    "G_dB=20log10|G|。1→0、10→20、0.1→−20 dB。2→約6、√2→約3 dB。逆数で符号逆。積は dB の和、位相も和(大きさは掛け位相は足す)"
+   ],
+   [
+    "図式表示",
+    "ベクトル軌跡(ω:0〜∞、実部横軸・虚部縦軸)、ナイキスト線図(ω:−∞〜∞)、ボード線図(ω対数横軸、ゲインdBと位相)、ゲイン−位相線図(位相横軸、K で上下移動)、ニコルス線図(閉ループ M・N軌跡)"
+   ],
+   [
+    "ボード線図用紙",
+    "0.01〜1000(5桁)、5cmが一桁(全長25cm)。上段ゲイン+40〜−40dB、下段位相+90〜−90°。配布:ゲイン−60〜60dB(10dB刻み)、位相90〜−270°(45°刻み)"
+   ],
+   [
+    "比例・微分・積分",
+    "K:ゲインK・位相0°。jω:|G|=ω、+90°、20dB/dec。1/jω:|G|=1/ω、−90°、−20dB/dec。1デケード=ωが10倍。例題5.1:50K/500=1 → K=10"
+   ]
+  ],
+  "write3": "紙に3行、友達に説明するつもりで書く:「G(jω) はどう作り、ゲインと位相はどう出すか。dB の式と1,10,0.1,2 の値。図式表示4種とボード線図用紙の設定。」"
+ },
+ "final": [
+  {
+   "type": "single",
+   "q": "$G(j\\omega)$ の偏角が表すものは?",
+   "opts": [
+    "位相",
+    "ゲイン",
+    "時定数"
+   ],
+   "ans": "位相",
+   "note": "絶対値がゲイン、偏角が位相。(教科書 p.70)"
+  },
+  {
+   "type": "single",
+   "q": "実数 $1$ のデシベル値は?",
+   "opts": [
+    "0 dB",
+    "1 dB",
+    "20 dB"
+   ],
+   "ans": "0 dB",
+   "note": "$\\log_{10}1=0$ なので 0 dB。(第4回 p.9)"
+  },
+  {
+   "type": "single",
+   "q": "ボード線図用紙の対数目盛は、左端 0.01〜右端 1000 で、1桁は何 cm?",
+   "opts": [
+    "5 cm",
+    "1 cm",
+    "10 cm"
+   ],
+   "ans": "5 cm",
+   "note": "5 cm が対数目盛の一桁。全体は5桁で 25 cm。(第4回 p.11)"
+  },
+  {
+   "type": "single",
+   "q": "微分要素 $G(j\\omega)=j\\omega$ の位相は?",
+   "opts": [
+    "$+90^\\circ$",
+    "$-90^\\circ$",
+    "$0^\\circ$"
+   ],
+   "ans": "$+90^\\circ$",
+   "note": "$\\omega$ によらずつねに $90^\\circ$ 進み。$-90^\\circ$ は積分要素。(Ⅰ教科書 p.81〜82)"
+  },
+  {
+   "type": "single",
+   "q": "ゲイン定数 $K$ が変わると、ゲイン位相線図はどうなる?",
+   "opts": [
+    "そのままの形で上下に移動する",
+    "形そのものが変わる",
+    "左右に移動する"
+   ],
+   "ans": "そのままの形で上下に移動する",
+   "note": "ゲインを dB で縦軸にとるので、$K$ の変化は上下の移動だけ。(教科書 p.72)"
+  },
+  {
+   "type": "numeric",
+   "q": "実数 $0.1$ のデシベル値の大きさ(絶対値)は?",
+   "parts": [
+    {
+     "ans": 20.0,
+     "unit": "dB",
+     "abs": 0.15,
+     "label": "大きさ"
+    }
+   ],
+   "note": "$0.1=10^{-1}$ なので $-20$ dB、大きさ 20.0。(第4回 p.9)",
+   "reveal": [
+    "$20\\log_{10}0.1=-20$",
+    "大きさ 20.0"
+   ]
+  }
+ ],
+ "next": [
+  {
+   "label": "演習 ④ 周波数応答・dB・図式表示へ",
+   "href": "/quiz.html?d=tests/2026-4-kouki-chukan-seigyogaku2-t4-shuhasu/data.json"
+  }
+ ],
+ "footer": "出典: 制御工学Ⅱ 第3回 p.17〜20、第4回 p.4〜13、配布資料(ボード線図用紙・ニコルス線図演習用紙・各種グラフ用紙)、自動制御理論 p.70〜73・p.139、制御工学Ⅰ教科書 p.81〜83。図は資料からの切り出し。"
+}

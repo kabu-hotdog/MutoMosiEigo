@@ -1,0 +1,524 @@
+{
+ "year": 2026,
+ "grade": 4,
+ "exam": "後期中間試験",
+ "subject": "制御工学Ⅱ",
+ "title": "制御工学Ⅱ ・ ⑤ 総合(混合)",
+ "subtitle": "似た概念の取り違えを潰す問1型、どの式・どの図を使うか選ぶ判定、RL回路の演習解答例(最後にまとめ)",
+ "eyebrow": "制御工学Ⅱ ・ 総合演習",
+ "description": "全回の混同しやすい組(インパルス応答と微積分、自己平衡性と無定位性、時定数と固有角周波数、行き過ぎ量と行き過ぎ時間、図式表示4種、ゲインの別名)を混ぜた問1型 → 判定・選択・具体例 → 本番型(演習解答例③ RL回路)。",
+ "storageKey": "seigyo2_chukan_t5_sogo_v1",
+ "pointsPerQ": 100,
+ "katex": true,
+ "tip": "<b>問1型は、説明それぞれの正誤を、学習ページの対比表で判断する。</b>同じ言葉の別の量(時定数と固有角周波数、行き過ぎ量と行き過ぎ時間など)が混ざっているので、定義を取り違えていないか1文ずつ確かめる。判定・選択は「どの式、どの図を使うか」を自分で選ぶ。本番型(RL 回路)は<b>紙に書いて解き、答えだけ入力</b>する(途中は有効4桁。値は電卓。負になる答えは出さない)。分からない時は「ヒント」、それでも無理なら「解答を見る」。",
+ "footer": "制御工学Ⅱ 後期中間試験(12/2) ・ 出題範囲: 第1〜4回(特に第1回 p.4〜15、第2回 p.6・p.12〜21、第3回 p.9・p.20、第4回 p.3・p.8〜11)、配布資料(第3回_二次遅れ要素の過渡特性)、自動制御理論 p.70〜72、制御工学Ⅰ ノート(RL 回路)",
+ "sections": [
+  {
+   "id": "s1",
+   "no": "01",
+   "title": "問1型: 似た概念を混ぜて確かめる",
+   "qs": [
+    {
+     "type": "single",
+     "q": "<div>次のア〜エの説明のうち、誤っているものはいくつあるか。</div><div style=\"margin-top:6px\"><b>ア.</b> 単位インパルス関数 $\\delta(t)$ を入力すると出力は $Y(s)=G(s)\\cdot1=G(s)$ となり、インパルス応答は伝達関数 $G(s)$ そのものを逆変換した時間関数である。</div><div style=\"margin-top:6px\"><b>イ.</b> 最大行き過ぎ量は $A_p=P_m=\\varepsilon^{-\\frac{2\\zeta}{\\sqrt{1-\\zeta^2}}\\pi}$ である。</div><div style=\"margin-top:6px\"><b>ウ.</b> 二次遅れ要素の減衰固有角周波数 $\\omega_d$ は、固有角周波数 $\\omega_n$ を $\\sqrt{1-\\zeta^2}$ で割ったものである。</div><div style=\"margin-top:6px\"><b>エ.</b> ボード線図は、位相を横軸、ゲインのデシベル値を縦軸にとり、$\\omega$ を変化させたときの対応を描く線図である。</div><div style=\"font-size:12px;opacity:.75;margin-top:6px\">($\\varepsilon$ は自然対数の底。$\\varepsilon=e$)</div>",
+     "opts": [
+      "0つ",
+      "1つ",
+      "2つ",
+      "3つ",
+      "4つ"
+     ],
+     "ans": "3つ",
+     "note": "答え: 誤りは3つ(イ・ウ・エ)。<br><b>ア</b> ○ $\\mathcal{L}[\\delta(t)]=1$ なので $Y=G\\cdot1$。(第1回 p.5)<br><b>イ</b> × 係数 2 は付かない。$2\\zeta$ が付くのは振幅減衰比 $\\lambda$ の式。(第2回 p.21、配布 第3回_二次遅れ p.2)<br><b>ウ</b> × 割るのではなく掛ける($\\zeta\\lt1$ なので $\\omega_d$ は $\\omega_n$ より小さい)。(第2回 p.21)<br><b>エ</b> × 位相が横軸でゲイン[dB]が縦軸の線図はゲイン−位相線図。ボード線図の横軸は $\\omega$。(第4回 p.8)",
+     "tag": "問1型 誤りの数",
+     "kp": [
+      "K1-004",
+      "K2-032",
+      "K2-030",
+      "K4-008"
+     ],
+     "noShuffle": true,
+     "nErr": 3,
+     "kpOrder": [
+      "K1-004",
+      "K2-032",
+      "K2-030",
+      "K4-008"
+     ]
+    },
+    {
+     "type": "single",
+     "q": "<div>次のア〜エの説明のうち、誤っているものはどれか。</div><div style=\"margin-top:6px\"><b>ア.</b> 自己平衡性とは、一定不変の入力に対して、出力が定常値に落ち着く性質である。</div><div style=\"margin-top:6px\"><b>イ.</b> ベクトル軌跡は、$\\omega$ を $0\\sim\\infty$ に変化させたとき、複素平面上に $G(j\\omega)$ が描く軌跡である。</div><div style=\"margin-top:6px\"><b>ウ.</b> 二次遅れ要素の行き過ぎ時間は $T_p=\\dfrac{2\\pi}{\\omega_d}$ である。</div><div style=\"margin-top:6px\"><b>エ.</b> 二次遅れ要素の時定数は $T=\\dfrac{1}{\\zeta\\omega_n}$ である。</div>",
+     "opts": [
+      "ア",
+      "イ",
+      "ウ",
+      "エ"
+     ],
+     "ans": "ウ",
+     "note": "答え: ウ。<br><b>ア</b> ○ 一定の入力に対して出力が定常値に落ち着くのが自己平衡性。(第1回 p.10)<br><b>イ</b> ○ ベクトル軌跡は $\\omega:0\\to\\infty$。(第4回 p.8)<br><b>ウ</b> × $2\\pi/\\omega_d$ は振動周期 $\\tau$。行き過ぎ時間は $\\pi/\\omega_d$。(第2回 p.21)<br><b>エ</b> ○ 時定数は $\\zeta\\omega_n$ の逆数。(第2回 p.21、第3回 p.9)",
+     "tag": "問1型 誤りはどれ",
+     "kp": [
+      "K1-012",
+      "K4-006",
+      "K2-033",
+      "K2-035"
+     ],
+     "noShuffle": true,
+     "nErr": 1,
+     "kpOrder": [
+      "K1-012",
+      "K4-006",
+      "K2-033",
+      "K2-035"
+     ]
+    },
+    {
+     "type": "single",
+     "q": "<div>次のア〜エの説明のうち、誤っているものはいくつあるか。</div><div style=\"margin-top:6px\"><b>ア.</b> 振幅減衰比は、振幅が等比級数的に減少するときの公比で、$\\lambda=\\varepsilon^{-\\frac{2\\zeta}{\\sqrt{1-\\zeta^2}}\\pi}$ と表される。</div><div style=\"margin-top:6px\"><b>イ.</b> 微分要素 $G(s)=Ks$ のインパルス応答 $\\mathcal{L}^{-1}[Ks\\cdot1]$ は、授業の資料では「計算不可能」とされている。</div><div style=\"margin-top:6px\"><b>ウ.</b> 従来の固有角周波数 $\\omega_n$ は、$\\omega_d$ との対比の意味で、非減衰固有角周波数ともいう。</div><div style=\"margin-top:6px\"><b>エ.</b> ゲイン−位相線図は、位相を横軸、ゲインのデシベル値を縦軸にとり、$\\omega$ を変化させたときの位相とゲインを対応させて描く線図である。</div><div style=\"font-size:12px;opacity:.75;margin-top:6px\">($\\varepsilon$ は自然対数の底。$\\varepsilon=e$)</div>",
+     "opts": [
+      "0つ",
+      "1つ",
+      "2つ",
+      "3つ",
+      "4つ"
+     ],
+     "ans": "0つ",
+     "note": "答え: 誤りは0つ(すべて正しい)。<br><b>ア</b> ○ 指数に $2\\zeta$ が付く(等比級数の公比)。(第2回 p.21)<br><b>イ</b> ○ インパルス入力 $1$ に $Ks$ を掛けた $\\mathcal{L}^{-1}[Ks]$ は計算不可能(青字)。(第2回 p.14)<br><b>ウ</b> ○ 減衰が無いときの角周波数が $\\omega_n$(非減衰)、減衰があるときが $\\omega_d$。(第2回 p.21)<br><b>エ</b> ○ 位相が横軸、ゲイン[dB]が縦軸。(第4回 p.8)",
+     "tag": "問1型 誤りの数",
+     "kp": [
+      "K2-029",
+      "K2-013",
+      "K2-031",
+      "K4-009"
+     ],
+     "noShuffle": true,
+     "nErr": 0,
+     "kpOrder": [
+      "K2-029",
+      "K2-013",
+      "K2-031",
+      "K4-009"
+     ]
+    },
+    {
+     "type": "single",
+     "q": "<div>次のア〜エの説明について、それぞれの正誤(○正しい、×誤り)の組合せとして正しいものはどれか。</div><div style=\"margin-top:6px\"><b>ア.</b> ニコルス線図は、ゲイン−位相線図に、直結フィードバック制御系の閉ループでのゲイン一定を表す M軌跡と、位相一定を表す N軌跡を書き加えた線図である。</div><div style=\"margin-top:6px\"><b>イ.</b> 一次遅れ要素 $G(s)=\\dfrac{K}{1+Ts}$ に単位ステップ関数を加えた出力は、$y(t)=K\\varepsilon^{-t/T}$ で、$K$ から始まって 0 に近づく。</div><div style=\"margin-top:6px\"><b>ウ.</b> 最大行き過ぎ量は $P_m$ で表され、$A_p$ や $O_s$ と書くこともある(同じ量)。</div><div style=\"margin-top:6px\"><b>エ.</b> 無定位性とは、一定不変の入力に対して出力が定常値に落ち着く性質で、自己平衡性と同じ意味である。</div><div style=\"font-size:12px;opacity:.75;margin-top:6px\">($\\varepsilon$ は自然対数の底。$\\varepsilon=e$)</div>",
+     "opts": [
+      "ア× イ× ウ○ エ×",
+      "ア○ イ× ウ○ エ○",
+      "ア○ イ○ ウ× エ×",
+      "ア○ イ× ウ× エ×",
+      "ア○ イ× ウ○ エ×"
+     ],
+     "ans": "ア○ イ× ウ○ エ×",
+     "note": "答え: ア○ イ× ウ○ エ×。<br><b>ア</b> ○ ゲイン一定が M軌跡、位相一定が N軌跡。(第4回 p.11)<br><b>イ</b> × $K\\varepsilon^{-t/T}$ は「$u(t)$ から $\\varepsilon^{-t/T}$ を引く」の引く項だけで、$t=0$ で $K$ から始まるのは誤り(一次遅れは 0 から始まる)。(第1回 p.9)<br><b>ウ</b> ○ $P_m=A_p=O_s$ は同じ最大行き過ぎ量。(第1回 p.8)<br><b>エ</b> × 落ち着く性質は自己平衡性(第1回 p.10)。無定位性は、その自己平衡性がない性質で、逆の意味。(第2回 p.6)",
+     "tag": "問1型 正誤の組合せ",
+     "kp": [
+      "K4-014",
+      "K1-010",
+      "K1-008",
+      "K2-005"
+     ],
+     "noShuffle": true,
+     "nErr": 2,
+     "kpOrder": [
+      "K4-014",
+      "K1-010",
+      "K1-008",
+      "K2-005"
+     ]
+    },
+    {
+     "type": "single",
+     "q": "<div>次のア〜エの説明のうち、正しいものはどれか。</div><div style=\"margin-top:6px\"><b>ア.</b> 二次遅れ要素の振動周期は $\\tau=\\dfrac{2\\pi}{\\omega_n}$ である。</div><div style=\"margin-top:6px\"><b>イ.</b> ゲインは利得ともいい、大きさ・振幅と同じ量を表す。</div><div style=\"margin-top:6px\"><b>ウ.</b> 単位ステップ関数を微分すると単位ランプ関数、積分すると単位インパルス関数になる。応答も同じ関係で、インディシャル応答を微分するとランプ応答、積分するとインパルス応答になる。</div><div style=\"margin-top:6px\"><b>エ.</b> ナイキスト線図は、$\\omega$ を横軸(対数目盛)にとり、ゲインのデシベル値と位相を縦軸にとった線図である。</div>",
+     "opts": [
+      "ア",
+      "イ",
+      "ウ",
+      "エ"
+     ],
+     "ans": "イ",
+     "note": "答え: イ。<br><b>ア</b> × $\\omega_n$ ではなく $\\omega_d$ を使う(減衰があるぶん周期は長い)。(第2回 p.21)<br><b>イ</b> ○ ゲイン=利得=大きさ=振幅。(第4回 p.8)<br><b>ウ</b> × 向きが逆。ランプを微分するとステップ、ステップを微分するとインパルス(積分はその逆)。インディシャル応答を微分したものはインパルス応答。(第1回 p.15)<br><b>エ</b> × 横軸 $\\omega$(対数目盛)でゲイン[dB]と位相を縦軸にとるのはボード線図。ナイキスト線図は複素平面上の軌跡。(第4回 p.8)",
+     "tag": "問1型 正しいのはどれ",
+     "kp": [
+      "K2-034",
+      "K4-010",
+      "K1-017",
+      "K4-007"
+     ],
+     "noShuffle": true,
+     "nErr": 3,
+     "kpOrder": [
+      "K2-034",
+      "K4-010",
+      "K1-017",
+      "K4-007"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s2",
+   "no": "02",
+   "title": "総合: 判定・選択・具体例",
+   "qs": [
+    {
+     "type": "single",
+     "q": "次のア〜オの伝達関数(定数 $T$ は正)のうち、<b>一次微分要素</b>にあたるものはどれか。",
+     "opts": [
+      "$\\dfrac{1}{1+Ts}$",
+      "$\\dfrac{Ts}{1+Ts}$",
+      "$\\dfrac1s$",
+      "$s$",
+      "$1+Ts$"
+     ],
+     "ans": "$\\dfrac{Ts}{1+Ts}$",
+     "note": "分子に $s$ があり、分母が $1+Ts$ の形が一次微分要素(演習解答例③: $K=1$、$T=L/R$)。$\\dfrac{1}{1+Ts}$ は一次遅れ要素(分子は定数)、$\\dfrac1s$ は積分要素、$s$ は微分要素、$1+Ts$ は一次進み要素(第4回 p.3、ノート Ⅰ)。分子の $s$ と分母の $1+Ts$ の両方を見て判定する。",
+     "tag": "判定: 一次微分要素の形",
+     "kp": [
+      "K4-004"
+     ]
+    },
+    {
+     "type": "single",
+     "q": "一次遅れ要素 $G(s)=\\dfrac{2}{1+3s}$ に、単位ランプ関数 $r(t)$ の4倍の入力 $x(t)=4\\,r(t)$ を加えた。出力の像関数 $Y(s)$ はどれか。",
+     "opts": [
+      "$G(s)\\cdot\\dfrac{4}{s^2}$",
+      "$G(s)\\cdot\\dfrac{4}{s}$",
+      "$G(s)\\cdot4$",
+      "$G(s)\\cdot\\dfrac{1}{s^2}$",
+      "$G(s)\\cdot4s^2$"
+     ],
+     "ans": "$G(s)\\cdot\\dfrac{4}{s^2}$",
+     "note": "単位ランプ関数のラプラス変換は $1/s^2$ なので、4倍の入力は $X(s)=4/s^2$。$Y(s)=G(s)X(s)=G(s)\\cdot\\dfrac{4}{s^2}$。$G\\cdot\\frac4s$ は4倍の単位ステップ入力($u(t)$ は $1/s$)、$G\\cdot4$ は4倍の単位インパルス入力($\\delta(t)$ は 1)、$G\\cdot\\frac1{s^2}$ は倍率 4 を落としたもの。(第1回 p.5〜7)",
+     "tag": "判定: 入力の種類から Y(s) を選ぶ",
+     "kp": [
+      "K1-006",
+      "K1-003"
+     ]
+    },
+    {
+     "type": "single",
+     "q": "次のア〜エの要素に、一定の大きさの入力(単位ステップ関数)を加え続けた。出力が定常値に落ち着く(<b>自己平衡性がある</b>)のはどれか。ただし二次遅れ要素の $\\zeta$ は減衰率である。",
+     "opts": [
+      "一次遅れ要素 $G(s)=\\dfrac{3}{1+2s}$",
+      "積分要素 $G(s)=\\dfrac{3}{s}$",
+      "二次遅れ要素で $\\zeta=0$ のもの",
+      "二次遅れ要素で $\\zeta=-0.2$ のもの"
+     ],
+     "ans": "一次遅れ要素 $G(s)=\\dfrac{3}{1+2s}$",
+     "note": "一次遅れ要素のインディシャル応答は $K\\{u(t)-\\varepsilon^{-t/T}\\}$ で、$t\\to\\infty$ で定常値 $K$($=3$)に落ち着く → 自己平衡性あり。積分要素は $K\\cdot r(t)$ と増え続ける(無定位)。$\\zeta=0$ は持続振動、$\\zeta\\lt0$ は発散振動で、どちらも落ち着かない。(第1回 p.9・p.10、第2回 p.6・p.19)",
+     "tag": "判定: 自己平衡性があるのはどれ",
+     "kp": [
+      "K1-012",
+      "K2-005"
+     ]
+    },
+    {
+     "type": "single",
+     "q": "<div style='font-size:13px;opacity:.85'>周波数応答の図式表示を2つ示す(教科書 p.71〜72 から切り出し)。</div><div style='margin-top:6px'><b>図ア</b></div><img src=\"/lessons/img/seigyo/seigyo_t5_bode.png\" alt=\"図ア\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><div style='margin-top:6px'><b>図イ</b>(方眼だけを示す。線は描かれていない)</div><img src=\"/lessons/img/seigyo/seigyo_t5_gainphase_grid.png\" alt=\"図イ\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><div style='margin-top:6px'>図ア、図イの名称の組合せとして正しいものはどれか。</div>",
+     "opts": [
+      "図ア: ボード線図、図イ: ゲイン−位相線図",
+      "図ア: ゲイン−位相線図、図イ: ボード線図",
+      "図ア: ベクトル軌跡、図イ: ニコルス線図",
+      "図ア: ナイキスト線図、図イ: ボード線図",
+      "図ア: ボード線図、図イ: ニコルス線図"
+     ],
+     "ans": "図ア: ボード線図、図イ: ゲイン−位相線図",
+     "note": "図ア: 横軸が $\\log\\omega$ で、ゲイン[dB]と位相の2枚 → ボード線図。図イ: 横軸が位相 $\\phi(\\omega)$[deg]、縦軸がゲイン $g_{dB}$[dB] → ゲイン−位相線図。ニコルス線図ならこの方眼に M軌跡・N軌跡が書き加えられている(この図には無い)。(第4回 p.8・p.11、自動制御理論 p.71〜72 図4.14・図4.16)",
+     "tag": "判定: 図式表示の図を見分ける",
+     "kp": [
+      "K4-008",
+      "K4-009"
+     ]
+    },
+    {
+     "type": "numeric",
+     "q": "$G(s)=\\dfrac{10s}{5+s}$ は一次微分要素である。これに単位ステップ関数 $u(t)$ を加える。(1) 分母を $1+Ts$ の形にそろえたときの時定数 $T$ [s]、(2) $t=0$ の出力 $y(0)$、(3) $t=T$ の出力 $y(T)$ を求めよ。(有効数字3桁。$\\varepsilon$ は自然対数の底。$\\varepsilon=e$)",
+     "parts": [
+      {
+       "ans": 0.2,
+       "unit": "s",
+       "abs": 0.0015,
+       "label": "(1) $T$"
+      },
+      {
+       "ans": 10.0,
+       "unit": "",
+       "abs": 0.15,
+       "label": "(2) $y(0)$"
+      },
+      {
+       "ans": 3.68,
+       "unit": "",
+       "abs": 0.015,
+       "label": "(3) $y(T)$"
+      }
+     ],
+     "note": "分母 $5+s=5(1+0.2s)$ なので $T=0.2$ s。$Y(s)=\\dfrac{10s}{5+s}\\cdot\\dfrac1s=\\dfrac{10}{5+s}$ を逆変換して $y(t)=10\\,\\varepsilon^{-5t}=10\\,\\varepsilon^{-t/0.2}$。$y(0)=10$、$y(0.2)=10\\varepsilon^{-1}=3.68$(係数の $0.368$ 倍)。(ノート Ⅰ 11、第4回 p.3)",
+     "reveal": [
+      "$5+s=5(1+0.2s)$ → $T=0.200$ s",
+      "$Y=\\dfrac{10}{5+s}$ → $y=10\\varepsilon^{-5t}$",
+      "(2) $y(0)=10.0$",
+      "(3) $10\\varepsilon^{-1}=10\\times0.368=3.68$"
+     ],
+     "hint": "$G(s)\\cdot\\dfrac1s$ で分子の $s$ が約分される。$\\dfrac{10}{5+s}$ の逆変換は $10\\varepsilon^{-5t}$。",
+     "tag": "判定→計算: 一次微分要素の応答",
+     "kp": [
+      "KB-072"
+     ]
+    },
+    {
+     "type": "single",
+     "q": "乗用車のクルーズコントロールを考える。目標値(設定速度)を 80 km/h から 100 km/h に切り替えると、操作量(スロットルの開き)が変わり、制御量(車速)が 80 km/h から変化して 100 km/h に落ち着いた。次のア〜エのうち、<b>過渡特性</b>にあたるものはどれか。",
+     "opts": [
+      "切り替えてから、車速が 100 km/h に落ち着くまでの間の、車速の時間的な変化のようす",
+      "切り替える前に、一定の 80 km/h で走っているときの車速",
+      "切り替えてから十分に時間がたち、一定になったときの車速",
+      "一定になったあとの、車速と設定速度 100 km/h との差"
+     ],
+     "ans": "切り替えてから、車速が 100 km/h に落ち着くまでの間の、車速の時間的な変化のようす",
+     "note": "過渡特性は、ある定常状態(80 km/h で一定)から別の定常状態(100 km/h で一定)に推移する間(過渡状態)の時間特性。他の3つは、どれも一定になった状態(定常状態)での特性なので定常特性。(第1回 p.4。設定の数値は問題で与えた具体例)",
+     "tag": "具体例に当てはめる(クルーズコントロールの過渡特性)",
+     "kp": [
+      "K1-001",
+      "K1-002"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s3",
+   "no": "03",
+   "title": "本番型: RL 回路の連鎖",
+   "qs": [
+    {
+     "type": "single",
+     "q": "<div style='font-size:13px;opacity:.85'>抵抗 $R=5.0\\ \\Omega$ とコイル $L=2.0\\ \\text{H}$ の直列回路に電源電圧 $v(t)$ を加える(第4回 p.3 演習解答例の RL 回路と同じ考え方。数値は問題で与える)。電流を $i$ とすると $v=Ri+L\\dfrac{di}{dt}$、ラプラス変換して $V=(R+Ls)I$。コイルの電圧は $V_L=LsI$。紙に書いて解き、答えだけ入力する。</div><div style='margin-top:6px'><b>演習① 伝達関数(3点)── ①-1</b> 出力を電流 $i$ としたときの伝達関数 $G_i(s)=\\dfrac{I(s)}{V(s)}$ はどれか。</div>",
+     "opts": [
+      "$\\dfrac{1}{Ls+R}$",
+      "$Ls+R$",
+      "$\\dfrac{Ls}{Ls+R}$",
+      "$\\dfrac{R}{Ls+R}$",
+      "$\\dfrac{L}{Ls+R}$"
+     ],
+     "ans": "$\\dfrac{1}{Ls+R}$",
+     "note": "$V=(R+Ls)I$ より $G_i=\\dfrac{I}{V}=\\dfrac{1}{Ls+R}$。入力と出力を逆にすると $Ls+R$。分子に $Ls$ が付く $\\dfrac{Ls}{Ls+R}$ は、出力がコイルの電圧のとき(次の問い)。(ノート Ⅰ 例題4-2、第4回 p.3)",
+     "tag": "連鎖①-1 出力が電流のとき",
+     "kp": [
+      "KB-058"
+     ]
+    },
+    {
+     "type": "single",
+     "q": "<div style='font-size:13px;opacity:.85'>(同じ回路で)</div><div style='margin-top:6px'><b>①-2</b> 出力を<b>コイルの電圧</b> $v_L$ としたとき、伝達関数 $G(s)=\\dfrac{V_L(s)}{V(s)}$ はどれか。</div>",
+     "opts": [
+      "$\\dfrac{Ls}{R+Ls}$",
+      "$\\dfrac{1}{R+Ls}$",
+      "$\\dfrac{R}{R+Ls}$",
+      "$\\dfrac{R+Ls}{Ls}$",
+      "$Ls$"
+     ],
+     "ans": "$\\dfrac{Ls}{R+Ls}$",
+     "note": "$G(s)=\\dfrac{LsI}{(R+Ls)I}=\\dfrac{Ls}{R+Ls}$(電流 $I$ が約分される)。(第4回 p.3 演習解答例①)",
+     "tag": "連鎖①-2 出力がコイル電圧のとき",
+     "kp": [
+      "K4-002"
+     ]
+    },
+    {
+     "type": "numeric",
+     "q": "<div style='font-size:13px;opacity:.85'>(同じ回路で、出力はコイルの電圧)</div><div style='margin-top:6px'><b>①-3</b> $G(s)=\\dfrac{Ls}{R+Ls}$ の分子・分母を $R$ で割ると $\\dfrac{\\frac LR\\cdot s}{1+\\frac LR\\cdot s}$ の形になる。(1) $T=\\dfrac LR$ [s]、(2) $\\dfrac RL$ [1/s] を求めよ。(有効数字3桁)</div>",
+     "parts": [
+      {
+       "ans": 0.4,
+       "unit": "s",
+       "abs": 0.0015,
+       "label": "(1) $T=L/R$"
+      },
+      {
+       "ans": 2.5,
+       "unit": "1/s",
+       "abs": 0.015,
+       "label": "(2) $R/L$"
+      }
+     ],
+     "note": "(1) $T=\\dfrac{2.0}{5.0}=0.400$ s。(2) $\\dfrac RL=\\dfrac{5.0}{2.0}=2.50$ 1/s($T$ の逆数)。(第4回 p.3 演習解答例①)",
+     "reveal": [
+      "$L/R=2.0/5.0=0.400$",
+      "$R/L=5.0/2.0=2.50$"
+     ],
+     "hint": "分子分母を $R$ で割ると $\\dfrac{(L/R)s}{1+(L/R)s}$。",
+     "tag": "連鎖①-3 時定数 T=L/R",
+     "kp": [
+      "K4-002"
+     ]
+    },
+    {
+     "type": "single",
+     "q": "<div style='font-size:13px;opacity:.85'>(同じ回路で、出力はコイルの電圧)</div><div style='margin-top:6px'><b>演習② インディシャル応答(3点)── ②-1</b> 単位ステップ入力 $u(t)$ に対する応答 $y(t)=\\mathcal{L}^{-1}\\left[\\dfrac{Ls}{R+Ls}\\cdot\\dfrac1s\\right]$ はどれか。</div>",
+     "opts": [
+      "$\\varepsilon^{-\\frac RLt}$",
+      "$1-\\varepsilon^{-\\frac RLt}$",
+      "$\\varepsilon^{-\\frac LRt}$",
+      "$\\dfrac LR\\varepsilon^{-\\frac RLt}$",
+      "$\\dfrac RL\\varepsilon^{-\\frac RLt}$"
+     ],
+     "ans": "$\\varepsilon^{-\\frac RLt}$",
+     "note": "$\\dfrac{Ls}{R+Ls}\\cdot\\dfrac1s=\\dfrac{L}{R+Ls}=\\dfrac{L/R}{1+\\frac LR s}$。$\\mathcal{L}^{-1}\\left[\\dfrac{K'}{1+Ts}\\right]=\\dfrac{K'}{T}\\varepsilon^{-t/T}$ に $K'=T=\\dfrac LR$ を入れると係数は 1 で $\\varepsilon^{-\\frac RLt}$。$1-\\varepsilon^{\\cdots}$ は一次遅れ要素の形。(第4回 p.3 演習解答例②)",
+     "tag": "連鎖②-1 インディシャル応答の式",
+     "kp": [
+      "K4-003"
+     ]
+    },
+    {
+     "type": "numeric",
+     "q": "<div style='font-size:13px;opacity:.85'>(同じ回路で、$R=5.0\\ \\Omega$、$L=2.0$ H。$y(t)=\\varepsilon^{-\\frac RLt}=\\varepsilon^{-2.5t}$)</div><div style='margin-top:6px'><b>②-2</b> (1) $y(0)$、(2) $t=0.80$ s の $y$、(3) $t=1.2$ s の $y$ を求めよ。(有効数字3桁。電卓の $e^x$ を使う)</div><div style=\"font-size:12px;opacity:.75;margin-top:6px\">($\\varepsilon$ は自然対数の底。$\\varepsilon=e$)</div>",
+     "parts": [
+      {
+       "ans": 1.0,
+       "unit": "",
+       "abs": 0.015,
+       "label": "(1) $y(0)$"
+      },
+      {
+       "ans": 0.135,
+       "unit": "",
+       "abs": 0.0015,
+       "label": "(2) $y(0.80)$"
+      },
+      {
+       "ans": 0.0498,
+       "unit": "",
+       "abs": 0.00015,
+       "label": "(3) $y(1.2)$"
+      }
+     ],
+     "note": "(1) $\\varepsilon^{0}=1$。(2) $\\varepsilon^{-2.5\\times0.80}=\\varepsilon^{-2}=0.135$。(3) $\\varepsilon^{-2.5\\times1.2}=\\varepsilon^{-3}=0.0498$。時間が進むほど 0 に近づく。(第4回 p.3 演習解答例②)",
+     "reveal": [
+      "(1) 指数が 0 → 1.00",
+      "(2) $-2.5\\times0.80=-2$ → $\\varepsilon^{-2}=0.135$",
+      "(3) $-2.5\\times1.2=-3$ → $\\varepsilon^{-3}=0.0498$"
+     ],
+     "hint": "指数 $-\\dfrac RLt$ に $\\dfrac RL=2.5$ と $t$ を入れてから、$e^x$ キーで計算する。",
+     "tag": "連鎖②-2 y(t) の値",
+     "kp": [
+      "K4-003"
+     ]
+    },
+    {
+     "type": "single",
+     "q": "<div style='font-size:13px;opacity:.85'>(同じ回路で、出力はコイルの電圧。$G(s)=\\dfrac{\\frac LR\\cdot s}{1+\\frac LR\\cdot s}$)</div><div style='margin-top:6px'><b>演習③ 要素と波形(4点)── ③-1</b> この要素の種類と、$K$、$T$ の組合せとして正しいものはどれか。</div>",
+     "opts": [
+      "一次微分要素、$K=1$、$T=L/R$",
+      "一次遅れ要素、$K=L/R$、$T=L/R$",
+      "一次遅れ要素、$K=1$、$T=R/L$",
+      "一次微分要素、$K=L/R$、$T=R/L$",
+      "積分要素、$K=L/R$"
+     ],
+     "ans": "一次微分要素、$K=1$、$T=L/R$",
+     "note": "分子に $s$ があるので微分要素(一次遅れ要素は分子が定数)。分母が $1+\\frac LR s$ の形なので $T=L/R$、分子の係数が $\\frac LR s=T\\cdot s$ なので $K=1$。(第4回 p.3 演習解答例③)",
+     "tag": "連鎖③-1 要素の判定",
+     "kp": [
+      "K4-004"
+     ]
+    },
+    {
+     "type": "single",
+     "q": "<div style='font-size:13px;opacity:.85'>(同じ回路で、出力はコイルの電圧。単位ステップ入力)</div><div style='margin-top:6px'><b>③-2</b> 出力 $y(t)$ の波形の説明として正しいものはどれか。</div>",
+     "opts": [
+      "$t=0$ で $y=1$ から始まり、$t=T=L/R$ で $0.368$ まで下がり、以後 0 に近づく指数減衰",
+      "$t=0$ で $y=0$ から始まり、$t=T=L/R$ で $0.632$ に達し、以後 1 に近づく",
+      "$t=0$ で $y=1$ から始まり、$t=T=L/R$ で $0.632$ まで下がり、以後 0 に近づく",
+      "$t=0$ で $y=0$ から始まり、時間に比例して増え続ける",
+      "$t=0$ で $y=1$ から始まり、$1$ のまま変わらない"
+     ],
+     "ans": "$t=0$ で $y=1$ から始まり、$t=T=L/R$ で $0.368$ まで下がり、以後 0 に近づく指数減衰",
+     "note": "$y(t)=\\varepsilon^{-t/T}$ なので $y(0)=1$、$y(T)=\\varepsilon^{-1}=0.368$、以後 0 に近づく。0 から始まって 1 に近づく(0.632)のは一次遅れ要素の形。時間に比例して増え続けるのは積分要素のランプ応答。(第4回 p.3 演習解答例③)<div style='margin-top:6px'><img src=\"/lessons/img/seigyo/seigyo_diff_element_ans.png\" alt=\"演習解答例③の波形\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"></div>",
+     "tag": "連鎖③-2 波形",
+     "kp": [
+      "K4-005"
+     ]
+    },
+    {
+     "type": "single",
+     "q": "<div style='font-size:13px;opacity:.85'>(同じ回路で、$R=5.0\\ \\Omega$、$L=2.0$ H。電源は大きさ $E=10$ V のステップ電圧 $Eu(t)$。出力を<b>電流</b> $i(t)$ とする)</div><div style='margin-top:6px'><b>演習④ 出力を電流にすると ── ④-1</b> $L\\dfrac{di}{dt}+Ri=Eu(t)$ の解 $i(t)$ はどれか。</div>",
+     "opts": [
+      "$\\dfrac ER\\left(1-\\varepsilon^{-\\frac RLt}\\right)$",
+      "$\\dfrac ER\\varepsilon^{-\\frac RLt}$",
+      "$\\dfrac EL\\left(1-\\varepsilon^{-\\frac RLt}\\right)$",
+      "$E\\varepsilon^{-\\frac RLt}$",
+      "$\\dfrac ER\\left(1-\\varepsilon^{-\\frac LRt}\\right)$"
+     ],
+     "ans": "$\\dfrac ER\\left(1-\\varepsilon^{-\\frac RLt}\\right)$",
+     "note": "$I(s)=\\dfrac{E}{s(Ls+R)}$ を部分分数に展開して逆変換すると $i(t)=\\dfrac ER\\left(1-\\varepsilon^{-\\frac RLt}\\right)$。$\\dfrac ER$ が定常解(定常状態ではコイルの電圧降下が 0 なので $E/R$。$E/L$ ではない)、$\\varepsilon^{-\\frac RLt}$ の項が過渡解。(ノート Ⅰ 4・5)",
+     "tag": "連鎖④-1 RL の電流",
+     "kp": [
+      "KB-081"
+     ]
+    },
+    {
+     "type": "numeric",
+     "q": "<div style='font-size:13px;opacity:.85'>(④-1 の電流 $i(t)=\\dfrac ER(1-\\varepsilon^{-\\frac RLt})$、$E=10$ V、$R=5.0\\ \\Omega$、$L=2.0$ H。時定数は $\\tau=L/R=0.40$ s)</div><div style='margin-top:6px'><b>④-2</b> (1) 定常電流 $E/R$ [A]、(2) $t=L/R$ のときの電流 [A]、(3) そのときのコイルの電圧 $v_L=E\\varepsilon^{-\\frac RLt}$ [V]、を求めよ。(有効数字3桁)</div><div style=\"font-size:12px;opacity:.75;margin-top:6px\">($\\varepsilon$ は自然対数の底。$\\varepsilon=e$)</div>",
+     "parts": [
+      {
+       "ans": 2.0,
+       "unit": "A",
+       "abs": 0.015,
+       "label": "(1) 定常電流"
+      },
+      {
+       "ans": 1.26,
+       "unit": "A",
+       "abs": 0.015,
+       "label": "(2) $t=L/R$ の電流"
+      },
+      {
+       "ans": 3.68,
+       "unit": "V",
+       "abs": 0.015,
+       "label": "(3) $t=L/R$ の $v_L$"
+      }
+     ],
+     "note": "(1) $E/R=10/5.0=2.00$ A。(2) $t=L/R$ で指数が $-1$ なので $i=2.00\\times(1-\\varepsilon^{-1})=2.00\\times0.632=1.26$ A(定常値の約0.632倍)。(3) $v_L=10\\times\\varepsilon^{-1}=3.68$ V(入力 $E$ の約0.368倍)。出力が電流なら 0 から定常値へ(0.632)、出力がコイル電圧なら $E$ から 0 へ(0.368)。(ノート Ⅰ 5、第4回 p.3)",
+     "reveal": [
+      "(1) $10/5.0=2.00$",
+      "(2) $\\varepsilon^{-1}=0.368$ なので $1-0.368=0.632$、$2.00\\times0.632=1.26$",
+      "(3) $10\\times\\varepsilon^{-1}=3.68$"
+     ],
+     "hint": "$t=L/R$ なら指数 $-\\dfrac RLt=-1$。$\\varepsilon^{-1}$ を電卓で出す。",
+     "tag": "連鎖④-2 定常値・0.632・0.368",
+     "kp": [
+      "KB-082"
+     ]
+    },
+    {
+     "type": "sort",
+     "q": "<b>⑤ 手順</b> RL 回路のコイル電圧の応答を求めて波形を描く手順を、正しい順に並べよ。(上から1番目、2番目…の順にタップ)",
+     "items": [
+      "$Y(s)=G(s)\\cdot\\dfrac1s$ を逆変換して、インディシャル応答 $y(t)$ を求める",
+      "回路の式をラプラス変換し、(出力)÷(入力)で伝達関数 $G(s)$ を作る",
+      "$t=0$ の値と $t=T$ の値(0.368)を押さえて、波形を描く",
+      "分子分母を $R$ で割って $\\dfrac{Ts}{1+Ts}$ の形に直し、一次微分要素と判定して $K=1$、$T=L/R$ を読む"
+     ],
+     "ans": [
+      "回路の式をラプラス変換し、(出力)÷(入力)で伝達関数 $G(s)$ を作る",
+      "分子分母を $R$ で割って $\\dfrac{Ts}{1+Ts}$ の形に直し、一次微分要素と判定して $K=1$、$T=L/R$ を読む",
+      "$Y(s)=G(s)\\cdot\\dfrac1s$ を逆変換して、インディシャル応答 $y(t)$ を求める",
+      "$t=0$ の値と $t=T$ の値(0.368)を押さえて、波形を描く"
+     ],
+     "note": "①伝達関数 → ②要素の判定と $K$、$T$ → ③インディシャル応答 → ④波形(1 から出発、$t=T$ で 0.368)。(第4回 p.3 演習解答例①②③)",
+     "tag": "連鎖⑤ 手順",
+     "kp": [
+      "K4-002",
+      "K4-003",
+      "K4-004",
+      "K4-005"
+     ]
+    }
+   ]
+  }
+ ],
+ "order": 5
+}

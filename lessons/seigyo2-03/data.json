@@ -1,0 +1,563 @@
+{
+ "year": 2026,
+ "grade": 4,
+ "exam": "後期中間試験",
+ "subject": "制御工学Ⅱ",
+ "title": "制御工学Ⅱ ・ 学習 第2回後半・第3回 二次遅れと任意入力",
+ "storageKey": "seigyo2_learn_03_v1",
+ "minutes": 16,
+ "goals": [
+  "二次遅れ要素の式から ωn・ζ・根を求め、表5.1 の5状態に分類できる",
+  "ωd・Tp・τ・行き過ぎ量 Os・時定数 T を式で言い、計算できる",
+  "インパルス応答・包絡線・ωn の効果と、畳み込み積分(任意入力の応答)を説明できる"
+ ],
+ "katex": true,
+ "terms": [
+  {
+   "name": "二次遅れ要素",
+   "plain": "G(s)=Kωn²/(s²+2ζωn s+ωn²) の要素。ωn は固有角周波数、ζ は減衰率(減衰係数)。(第2回 p.17、教科書 p.93)"
+  },
+  {
+   "name": "固有角周波数 ωn",
+   "plain": "二次遅れ要素の ωn。スライドは「固有角周波数」、教科書は「固有周波数」。ωd との対比で「非減衰固有角周波数」ともいう。(第2回 p.21、教科書 p.93)"
+  },
+  {
+   "name": "減衰率 ζ",
+   "plain": "振動の減衰性を支配する定数(行き過ぎ量 Os は ζ の関数)。ζ の値で応答が変わる。(教科書 p.97)"
+  },
+  {
+   "name": "過制動・臨界制動・不足制動・持続振動・発散振動",
+   "plain": "表5.1 の応答の分類。ζ＞1 過制動、ζ=1 臨界制動、0＜ζ＜1 不足制動、ζ=0 持続振動、ζ＜0 発散振動。(第2回 p.19)"
+  },
+  {
+   "name": "減衰固有角周波数 ωd",
+   "plain": "ωd=ωn√(1−ζ²)。不足制動の振動の角周波数。(第2回 p.21)"
+  },
+  {
+   "name": "最大行き過ぎ量 Ap=Pm=Os",
+   "plain": "ピークが目標値を超える量。スライドは Ap=Pm、教科書は Os。どれも同じ量で ε^(−πζ/√(1−ζ²))。(第2回 p.21、教科書 p.97)"
+  },
+  {
+   "name": "行き過ぎ時間 Tp・振動周期 τ",
+   "plain": "Tp=π/ωd(最初のピークの時刻)、τ=2π/ωd(振動周期)。(第2回 p.21)"
+  },
+  {
+   "name": "包絡線",
+   "plain": "振動の外側を囲む線。ステップ応答は定常値1の上下、インパルス応答は0の上下で、どちらも ε^(−ζωn t) で減衰する。(第3回 p.14)"
+  },
+  {
+   "name": "畳み込み積分(重畳積分)",
+   "plain": "インパルス応答 g(t) と入力 x(t) から任意の入力への応答を求める積分。記号は * または ⊗。ラプラス変換すると積 G(s)X(s)。(第3回 p.16)"
+  }
+ ],
+ "blocks": [
+  {
+   "id": "b1",
+   "title": "二次遅れの式と根: ωn・ζ・解の公式",
+   "pre": [
+    {
+     "type": "single",
+     "q": "二次遅れ要素の分母 $s^2+2\\zeta\\omega_ns+\\omega_n^2=0$ の根を求めるのに使う公式は?(知らなくて当然)",
+     "opts": [
+      "解の公式",
+      "部分分数展開の公式",
+      "畳み込み積分の式"
+     ],
+     "ans": "解の公式",
+     "note": "二次方程式の根は解の公式で求め、因数分解してから部分分数に展開する。(第2回 p.18)"
+    }
+   ],
+   "body": "<b>二次遅れ要素</b>の伝達関数(教科書 p.93 式5.51):$G(s)=\\dfrac{K\\omega_n^2}{s^2+2\\zeta\\omega_ns+\\omega_n^2}$。$\\omega_n$ は<b>固有角周波数</b>、$\\zeta$ は<b>減衰率(減衰係数)</b>(第2回 p.17、ノート11)。教科書は $\\omega_n$ を「固有周波数」と呼ぶが、スライドは「固有角周波数」。このテストはスライドの呼び名に合わせる。($\\varepsilon$ は自然対数の底で $\\varepsilon=e$。スライドは $\\varepsilon$、教科書は $e$)<br><br><b>RLC回路の例</b>(教科書 p.93):$\\omega_n=\\dfrac1{\\sqrt{LC}}$、$\\zeta=\\dfrac R2\\sqrt{\\dfrac CL}$。$R$ が大きいほど $\\zeta$ が大きい。$\\zeta\\gt1$ は $R^2\\gt4\\dfrac LC$ と同じ条件なので、$R^2\\gt4\\dfrac LC$ で非振動(過制動)、$R^2=4\\dfrac LC$ で臨界制動、$R^2\\lt4\\dfrac LC$ で振動(不足制動)(ノート6)。<br><br><b>応答の求め方</b>(第2回 p.17〜18):<ul><li><b>インディシャル応答</b>(入力 $u(t)$、ラプラス変換 $\\dfrac1s$):$y=\\mathcal{L}^{-1}\\left[G(s)\\cdot\\dfrac1s\\right]$。</li><li><b>インパルス応答</b>(入力 $\\delta(t)$、ラプラス変換 1):$y=\\mathcal{L}^{-1}\\left[G(s)\\cdot1\\right]$(スライドは式を示すだけで結果式はない。第2回 p.22)。</li></ul><b>手順</b>:分母に<b>解の公式</b>を適用 → 因数分解 → <b>部分分数に展開</b> → 係数を求める → 逆変換(p.18)。分母 $s^2+2\\zeta\\omega_ns+\\omega_n^2=0$ の根は $s_1,s_2=-\\left(\\zeta\\pm\\sqrt{\\zeta^2-1}\\right)\\omega_n$(全体にマイナス、根号の中は $\\zeta^2-1$)。<b>根号の中の符号・値</b>によって、逆変換したときの応答の形が変わる(p.18)。根号の中が正なら相異なる実根、0 なら重根、負なら共役複素根(不足制動)。<br><br>根を使うと、ステップ応答は $y(t)=1+\\dfrac1{s_1-s_2}\\left(s_2\\varepsilon^{s_1t}-s_1\\varepsilon^{s_2t}\\right)$(教科書 p.93 式5.56。第2項の符号はプラス)。",
+   "example": {
+    "steps": [
+     "$G(s)=\\dfrac{16}{s^2+10s+16}$ とする($K=1$)。",
+     "標準形と見比べると $\\omega_n^2=16$ で $\\omega_n=4$、$2\\zeta\\omega_n=10$ で $\\zeta=\\dfrac{10}{8}=1.25$。",
+     "根号の中は $\\zeta^2-1=1.5625-1=0.5625$ で、$\\sqrt{0.5625}=0.75$。",
+     "根は $s=-(1.25\\pm0.75)\\times4$ で、$-8$ と $-2$(因数分解 $(s+2)(s+8)$ と一致)。絶対値の小さいほうの根の大きさは?"
+    ],
+    "fill": {
+     "type": "numeric",
+     "q": "$G(s)=\\dfrac{16}{s^2+10s+16}$ の根のうち、絶対値の小さいほうの大きさは?(有効数字3桁)",
+     "parts": [
+      {
+       "ans": 2.0,
+       "unit": "1/s",
+       "abs": 0.015,
+       "label": "大きさ"
+      }
+     ],
+     "note": "$-(1.25-0.75)\\times4=-2.00$。大きさは $2.00$。(第2回 p.18)",
+     "reveal": [
+      "$s=-(\\zeta\\pm\\sqrt{\\zeta^2-1})\\omega_n$ で $\\zeta=1.25$、$\\omega_n=4$",
+      "$-(1.25-0.75)\\times4=-2.00$"
+     ]
+    }
+   },
+   "check": [
+    {
+     "type": "single",
+     "q": "二次遅れ要素の分母 $s^2+\\boxed{\\ ?\\ }\\,s+\\omega_n^2$ の、$s$ の係数は?",
+     "opts": [
+      "$2\\zeta\\omega_n$",
+      "$\\zeta\\omega_n$",
+      "$2\\omega_n$"
+     ],
+     "ans": "$2\\zeta\\omega_n$",
+     "note": "$G(s)=\\dfrac{K\\omega_n^2}{s^2+2\\zeta\\omega_ns+\\omega_n^2}$。係数は $2\\zeta\\omega_n$。(第2回 p.17、教科書 p.93)"
+    },
+    {
+     "type": "single",
+     "q": "二次遅れ要素のインディシャル応答を求めるには、$G(s)$ に何を掛けて逆ラプラス変換する?",
+     "opts": [
+      "$\\dfrac1s$",
+      "$1$",
+      "$\\dfrac1{s^2}$"
+     ],
+     "ans": "$\\dfrac1s$",
+     "note": "入力 $u(t)$ のラプラス変換は $\\dfrac1s$。$1$ を掛けるのはインパルス入力(インパルス応答)。(第2回 p.17、p.22)"
+    },
+    {
+     "type": "single",
+     "q": "根号の中 $\\zeta^2-1$ が負のとき、根は?",
+     "opts": [
+      "共役複素根",
+      "相異なる実根",
+      "重根"
+     ],
+     "ans": "共役複素根",
+     "note": "根号の中が負なら $j$ が出て共役複素根(不足制動)。正なら相異なる実根、0 なら重根。(第2回 p.18〜19)"
+    }
+   ]
+  },
+  {
+   "id": "b2",
+   "title": "減衰率の5状態(表5.1)と波形",
+   "pre": [
+    {
+     "type": "single",
+     "q": "減衰が強すぎて、振動せずにゆっくり落ち着く応答の名前は?(知らなくて当然)",
+     "opts": [
+      "過制動(過減衰)",
+      "不足制動(不足減衰)",
+      "持続振動"
+     ],
+     "ans": "過制動(過減衰)",
+     "note": "減衰が強すぎる(減衰率 $\\zeta\\gt1$)のが過制動(過減衰)。振動が残るのは不足制動(不足減衰)。(第2回 p.19)"
+    }
+   ],
+   "body": "<b>表5.1 減衰率 $\\zeta$ とステップ応答の状態</b>(教科書 p.96、スライド 第2回 p.19):<ul><li>$\\zeta\\gt1$:$s_{1,2}=\\left(-\\zeta\\pm\\sqrt{\\zeta^2-1}\\right)\\omega_n$(相異なる実根)→ <b>過制動(過減衰)</b></li><li>$\\zeta=1$:$s_1,s_2=-\\omega_n$(重根)→ <b>臨界制動(臨界減衰)</b></li><li>$0\\lt\\zeta\\lt1$:$s_{1,2}=\\left(-\\zeta\\pm j\\sqrt{1-\\zeta^2}\\right)\\omega_n$(共役複素根)→ <b>不足制動(不足減衰)</b></li><li>$\\zeta=0$:$s_1,s_2=\\pm j\\omega_n$(虚根)→ <b>持続振動</b></li><li>$\\zeta\\lt0$(値がマイナス)→ <b>発散振動</b>(スライドの青字の追記)</li></ul><b>応答の式</b>(教科書 p.94〜95):<ul><li>$\\zeta\\gt1$(実根なので双曲線関数):(式5.57)<br>$$\\begin{aligned}y(t)=1-\\varepsilon^{-\\zeta\\omega_nt}\\Bigl\\{\\\\&\\cosh\\sqrt{\\zeta^2-1}\\,\\omega_nt\\\\&+\\dfrac{\\zeta}{\\sqrt{\\zeta^2-1}}\\\\&\\times\\sinh\\sqrt{\\zeta^2-1}\\,\\omega_nt\\Bigr\\}\\end{aligned}$$</li><li>$\\zeta=1$(重根で(5.56)は $0/0$ になるので(5.52)に戻って部分分数展開):$y(t)=1-\\varepsilon^{-\\omega_nt}(1+\\omega_nt)$(式5.60)</li><li>$0\\lt\\zeta\\lt1$($\\cosh jA=\\cos A$、$\\sinh jA=j\\sin A$ を使う):(式5.61)<br>$$\\begin{aligned}y(t)=1-\\varepsilon^{-\\zeta\\omega_nt}\\Bigl(\\\\&\\cos\\sqrt{1-\\zeta^2}\\,\\omega_nt\\\\&+\\dfrac{\\zeta}{\\sqrt{1-\\zeta^2}}\\\\&\\times\\sin\\sqrt{1-\\zeta^2}\\,\\omega_nt\\Bigr)\\end{aligned}$$振動の角周波数は $\\sqrt{1-\\zeta^2}\\,\\omega_n$。</li><li>$\\zeta=0$:$y(t)=1-\\cos\\omega_nt$(式5.63)。</li></ul><b>図5.9(インディシャル応答、第2回 p.20・配布資料)</b>:$0\\lt\\zeta\\lt1$ では最大行き過ぎ量は $\\zeta$ が小さいほど大きい($\\zeta=0.2$ のピークは約1.5、$0.4$ は約1.25、$0.8$ はほぼ1.0)。$\\zeta=0$ は定常値1.0の周りを 0〜2.0 の範囲で持続振動する。$\\zeta\\ge1$($1.0,1.2,1.4,1.6$)は行き過ぎがなく、$\\zeta$ が大きいほど定常値にゆっくり近づく。<br><br><b>図5.18(教科書 p.95、横軸 $\\omega_nt$)</b>:$\\zeta=0$ は最大2.0の持続振動、$\\zeta$ が小さいほど山が高く、$\\zeta=1.0$ と $2.0$ は山がなく(2.0 のほうがゆっくり)目標値1に近づく。<br>教科書の評価:$\\zeta\\gt1$ は目標値に単調に漸近するが、落ち着くまでに長く時間がかかり速応性が悪すぎるので、普通は $\\zeta\\gt1$ に設定しない。$0\\lt\\zeta\\lt1$ は応答は速いが減衰が小さく目標値のまわりで振動し、$\\zeta$ が小さいほど減衰性が悪く、目標値に達する(立ち上がる)のに時間がかかり(教科書 p.96)、$\\zeta=0$ では振動が持続して減衰しない。制御系の設計では $0\\lt\\zeta\\lt1$ に設定し、サーボ系では $\\zeta=0.6\\sim0.8$ 程度が多い(p.95〜96)。",
+   "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/seigyo/seigyo_table5_1.png\" alt=\"表5.1 減衰率とステップ応答の状態\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">第2回 p.19 表5.1 減衰率とステップ応答の状態(青字・黄マーカーは先生の追記:過減衰・臨界減衰・不足減衰、ζ＜0 は発散振動)</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/seigyo/seigyo_fig5_9.png\" alt=\"図5.9 二次遅れ要素のインディシャル応答\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">配布資料 第5章-3 図5.9 インディシャル応答(ζ=0〜1.6、横軸 ωn t)</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/seigyo/seigyo_tb_fig5_18.png\" alt=\"図5.18 2次遅れ要素のステップ応答\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">教科書 p.95 図5.18 2次遅れ要素のステップ応答(ζ=0,0.1,0.2,0.4,0.6,1.0,2.0。写真から切り出し)</figcaption></figure>",
+   "example": {
+    "steps": [
+     "$\\zeta=1$、$\\omega_n=3.0$ rad/s の二次遅れ要素。根は重根 $s_1=s_2=-\\omega_n=-3.0$、臨界制動。",
+     "ステップ応答は $y(t)=1-\\varepsilon^{-\\omega_nt}(1+\\omega_nt)$。",
+     "$t=\\dfrac13$ s のとき $\\omega_nt=1$ なので $y=1-\\varepsilon^{-1}\\times2=1-0.3679\\times2$。値は?"
+    ],
+    "fill": {
+     "type": "numeric",
+     "q": "$\\zeta=1$、$\\omega_n=3.0$ rad/s のステップ応答 $y=1-\\varepsilon^{-\\omega_nt}(1+\\omega_nt)$ の、$\\omega_nt=1$ での値は?(有効数字3桁)",
+     "parts": [
+      {
+       "ans": 0.264,
+       "unit": "",
+       "abs": 0.0015,
+       "label": "$y$"
+      }
+     ],
+     "note": "$1-0.3679\\times2=0.2642$ → $0.264$。(教科書 p.94 (5.60))",
+     "reveal": [
+      "$\\omega_nt=1$ なので $\\varepsilon^{-1}=0.3679$、$1+\\omega_nt=2$",
+      "$y=1-0.3679\\times2=0.264$"
+     ]
+    }
+   },
+   "check": [
+    {
+     "type": "single",
+     "q": "$\\zeta=1$ のときのステップ応答の名前は?",
+     "opts": [
+      "臨界制動(臨界減衰)",
+      "過制動(過減衰)",
+      "不足制動(不足減衰)"
+     ],
+     "ans": "臨界制動(臨界減衰)",
+     "note": "$\\zeta=1$ は重根 $-\\omega_n$ で臨界制動。$\\zeta\\gt1$ は過制動、$0\\lt\\zeta\\lt1$ は不足制動。(表5.1、第2回 p.19)"
+    },
+    {
+     "type": "single",
+     "q": "減衰率の値がマイナス($\\zeta\\lt0$)のときのステップ応答は?",
+     "opts": [
+      "発散振動",
+      "持続振動",
+      "過制動"
+     ],
+     "ans": "発散振動",
+     "note": "$\\zeta\\lt0$ は発散振動。持続振動は $\\zeta=0$。(第2回 p.19)"
+    },
+    {
+     "type": "single",
+     "q": "図5.9 で、$0\\lt\\zeta\\lt1$ の範囲の最大行き過ぎ量は?",
+     "opts": [
+      "$\\zeta$ が小さいほど大きい",
+      "$\\zeta$ が大きいほど大きい",
+      "$\\zeta$ によらず同じ"
+     ],
+     "ans": "$\\zeta$ が小さいほど大きい",
+     "note": "$\\zeta$ が小さいほどピークが高い($\\zeta=0.2$ で約1.5、$\\zeta=0$ で2.0)。(第2回 p.20)"
+    }
+   ]
+  },
+  {
+   "id": "b3",
+   "title": "特性量: ωd・Tp・τ・行き過ぎ量・時定数",
+   "pre": [
+    {
+     "type": "single",
+     "q": "振動の角周波数が $\\omega_d$ [rad/s] のとき、1周期 $\\tau$ [s] は?(知らなくて当然)",
+     "opts": [
+      "$\\tau=\\dfrac{2\\pi}{\\omega_d}$",
+      "$\\tau=2\\pi\\omega_d$",
+      "$\\tau=\\dfrac{\\omega_d}{2\\pi}$"
+     ],
+     "ans": "$\\tau=\\dfrac{2\\pi}{\\omega_d}$",
+     "note": "1周期で $2\\pi$ rad 進むので $\\tau=\\dfrac{2\\pi}{\\omega_d}$。(第2回 p.21)"
+    }
+   ],
+   "body": "<b>不足制動($0\\lt\\zeta\\lt1$)の特性量</b>(第2回 p.21、配布資料 第5章-4):<ul><li><b>減衰固有角周波数</b> $\\omega_d=\\omega_n\\sqrt{1-\\zeta^2}$($1-\\zeta^2$ の平方根を掛ける)。従来の $\\omega_n$ は対比の意味で<b>非減衰固有角周波数</b>という。</li><li><b>行き過ぎ時間</b> $T_p=\\dfrac{\\pi}{\\omega_d}$(最初のピークの時刻。教科書式(5.64)で $n=1$)。</li><li><b>振動周期</b> $\\tau=\\dfrac{2\\pi}{\\omega_d}=\\dfrac{2\\pi}{\\omega_n\\sqrt{1-\\zeta^2}}$($T_p$ の2倍)。</li><li><b>最大行き過ぎ量</b> $A_p=P_m=O_s=\\varepsilon^{-\\frac{\\zeta}{\\sqrt{1-\\zeta^2}}\\pi}$。スライドは $A_p=P_m$、教科書は $O_s$ で、<b>どれも同じ量</b>。指数に2は付かない。</li><li><b>振幅減衰比</b> $\\lambda=\\varepsilon^{-\\frac{2\\zeta}{\\sqrt{1-\\zeta^2}}\\pi}$(振幅が等比級数的に減少するときの公比)。こちらは指数に $2\\zeta$ が付く(数値の計算問題は出さない)。</li><li><b>時定数</b> $T=\\dfrac1{\\zeta\\omega_n}$(振動成分の包絡線が最終値の63%になるまでの時間。教科書 p.97)。$\\omega_d$ ではなく $\\zeta\\omega_n$ の逆数。</li></ul><b>図5.19 の導き方</b>(教科書 p.96〜97):ステップ応答の概形で、目標値(=1)を中心とする振動の振幅を $A_1,A_2,\\dots$、極値の時刻を $t_1,t_2,\\dots$ とする。$y(t)$ の時間微分を 0 とおくと $t_n=\\dfrac{n\\pi}{\\sqrt{1-\\zeta^2}\\,\\omega_n}\\ (n=1,2,\\dots)$(式5.64)。これを代入して $y(t_n)=1-(-1)^n\\exp\\!\\left(-\\dfrac{n\\pi\\zeta}{\\sqrt{1-\\zeta^2}}\\right)$、振幅は $A_n=\\exp\\!\\left(-\\dfrac{n\\pi\\zeta}{\\sqrt{1-\\zeta^2}}\\right)$(式5.65)で、$n$ が大きいほど小さくなる。とくに $A_1$ を<b>行き過ぎ量</b> $O_s=\\exp\\!\\left(-\\dfrac{\\pi\\zeta}{\\sqrt{1-\\zeta^2}}\\right)$ という。覚えやすい値:$\\zeta=0.4$ で約0.25(25%)、$\\zeta=0.6$ で約0.1(10%)、$\\zeta=0.707$ で約0.05(5%)。$O_s$ は $\\zeta$ の関数($\\omega_n$ は入らない)で、$\\zeta$ は振動の減衰性を支配するので<b>減衰率</b>と呼ばれ、応答の形や安定性を支配する定数である(式5.66)。($\\varepsilon$ は自然対数の底で $\\varepsilon=e$。スライドは $\\varepsilon$、教科書は $e$)",
+   "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/seigyo/seigyo_tb_fig5_19.png\" alt=\"図5.19 ステップ応答の概形\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">教科書 p.96 図5.19 ステップ応答の概形(0＜ζ＜1)。A₁,A₂,A₃ は目標値1からの振幅、t₁,t₂,t₃ は極値の時刻、点線は包絡線</figcaption></figure>",
+   "example": {
+    "steps": [
+     "$\\omega_n=10.0$ rad/s、$\\zeta=0.60$ とする。",
+     "$\\omega_d=\\omega_n\\sqrt{1-\\zeta^2}=10.0\\times\\sqrt{0.6400}=10.0\\times0.8000=8.00$ rad/s。",
+     "$T_p=\\dfrac{\\pi}{\\omega_d}=\\dfrac{\\pi}{8.00}$、$\\tau=2T_p$。$T_p$ の値は?"
+    ],
+    "fill": {
+     "type": "numeric",
+     "q": "$\\omega_n=10.0$ rad/s、$\\zeta=0.60$ のときの行き過ぎ時間 $T_p=\\dfrac{\\pi}{\\omega_d}$ は?(有効数字3桁)",
+     "parts": [
+      {
+       "ans": 0.393,
+       "unit": "s",
+       "abs": 0.0015,
+       "label": "$T_p$"
+      }
+     ],
+     "note": "$\\omega_d=8.00$、$T_p=\\dfrac{\\pi}{8.00}=0.393$ s。(第2回 p.21)",
+     "reveal": [
+      "$\\omega_d=10.0\\times0.8000=8.00$",
+      "$\\pi/8.00=0.393$"
+     ]
+    }
+   },
+   "check": [
+    {
+     "type": "single",
+     "q": "減衰固有角周波数 $\\omega_d$ の式は?",
+     "opts": [
+      "$\\omega_d=\\omega_n\\sqrt{1-\\zeta^2}$",
+      "$\\omega_d=\\omega_n/\\sqrt{1-\\zeta^2}$",
+      "$\\omega_d=\\omega_n\\sqrt{\\zeta^2-1}$"
+     ],
+     "ans": "$\\omega_d=\\omega_n\\sqrt{1-\\zeta^2}$",
+     "note": "ルートの中は $1-\\zeta^2$、掛け算。(第2回 p.21)"
+    },
+    {
+     "type": "single",
+     "q": "二次遅れ要素の時定数 $T$ は?",
+     "opts": [
+      "$\\dfrac1{\\zeta\\omega_n}$",
+      "$\\dfrac1{\\omega_n\\sqrt{1-\\zeta^2}}$",
+      "$\\zeta\\omega_n$"
+     ],
+     "ans": "$\\dfrac1{\\zeta\\omega_n}$",
+     "note": "時定数は $\\zeta\\omega_n$ の逆数。$\\dfrac1{\\omega_n\\sqrt{1-\\zeta^2}}$ は $\\dfrac1{\\omega_d}$。(教科書 p.97、第2回 p.21)"
+    },
+    {
+     "type": "single",
+     "q": "スライドの $A_p=P_m$ と教科書の $O_s$ の関係は?",
+     "opts": [
+      "どれも同じ量",
+      "別々の量",
+      "$O_s$ だけ時間の量"
+     ],
+     "ans": "どれも同じ量",
+     "note": "$A_p=P_m=O_s$ はすべて最大行き過ぎ量(同じ量)。(第2回 p.21、教科書 p.97)"
+    }
+   ]
+  },
+  {
+   "id": "b4",
+   "title": "インパルス応答と包絡線・ωn の効果",
+   "pre": [
+    {
+     "type": "single",
+     "q": "インディシャル応答の定常値は1。では、インパルス応答は時間がたつと何に近づく?(知らなくて当然)",
+     "opts": [
+      "0",
+      "1",
+      "$\\infty$"
+     ],
+     "ans": "0",
+     "note": "インパルス(瞬間の入力)の影響はやがて消え、安定な要素なら 0 に近づく。(第3回 p.13)"
+    }
+   ],
+   "body": "<b>インパルス応答も減衰率 $\\zeta$ で変わる</b>(第3回 p.12、赤字):インディシャル応答と同様に、$\\zeta$ によって過制動・臨界制動・不足制動・持続振動・発散振動に変化する。<br><br><b>図5.12(インパルス応答、縦軸 $g(t)/\\omega_n$)</b>(第3回 p.13、配布資料):$\\zeta=0$ は $\\pm1.0$ の範囲で持続振動する。$\\zeta$ が大きいほどピークが低くなる($\\zeta=0.2$ で約0.76、$0.4$ で約0.6、$1.6$ で約0.26〜0.27)、$\\zeta\\ge1$ は振動せず 0 に近づく。<br><br><b>包絡線</b>(第3回 p.14、配布資料 第5章-4):<ul><li>ステップ応答の包絡線:$1\\pm\\dfrac{\\varepsilon^{-\\zeta\\omega_nt}}{\\sqrt{1-\\zeta^2}}$。<b>定常値1の周り</b>を減衰振動する。</li><li>インパルス応答の包絡線:$\\pm\\dfrac{\\omega_n}{\\sqrt{1-\\zeta^2}}\\varepsilon^{-\\zeta\\omega_nt}$。<b>0の周り</b>を減衰振動する。</li></ul><b>図3.4($\\zeta=0.4$ 固定)</b>(第3回 p.15):$\\omega_n$ が大きいほど立ち上がりが速く、ピークが早い($\\omega_n=2$ が最も速く、$\\omega_n=0.5$ が最も遅い)。$\\zeta$ を一定にして $\\omega_n$ だけを大きくすると、ピークの時刻は早まるが、行き過ぎ量は変わらない($O_s$ は $\\zeta$ だけの関数)。<br><br><b>(おまけ)二次要素の周波数応答</b>(教科書 p.97):$s=j\\omega$ を代入($s^2=-\\omega^2$)して $G(j\\omega)=\\dfrac{1}{1-(\\omega/\\omega_n)^2+j\\,2\\zeta\\,\\omega/\\omega_n}$。$\\omega/\\omega_n$ は固有角周波数で基準化したもの。$\\omega\\to0$ のとき $|G(j\\omega)|\\to1$、位相 $\\phi(\\omega)\\to0^\\circ$。($\\varepsilon$ は自然対数の底で $\\varepsilon=e$。スライドは $\\varepsilon$、教科書は $e$)",
+   "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/seigyo/seigyo_fig5_12.png\" alt=\"図5.12 二次遅れ要素のインパルス応答\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">配布資料 第5章-3 図5.12 インパルス応答(縦軸 g(t)/ωn、ζ=0〜1.6)</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/seigyo/seigyo_envelope.png\" alt=\"ステップ応答・インパルス応答の包絡線\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">配布資料 第5章-4 (b)ステップ応答の包絡線 / (b)インパルス応答の包絡線(点線が包絡線)</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/seigyo/seigyo_fig3_4.png\" alt=\"図3.4 ωn の値による変化\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">第3回 p.15・配布資料 第5章-4 図3.4 ωn の値による変化(ζ=0.4 固定、ωn=2,1,0.5)</figcaption></figure>",
+   "example": {
+    "steps": [
+     "$\\omega_n=4.0$ rad/s、$\\zeta=0.60$ とする。",
+     "インパルス応答の包絡線は $\\pm\\dfrac{\\omega_n}{\\sqrt{1-\\zeta^2}}\\varepsilon^{-\\zeta\\omega_nt}$。",
+     "$t=0$ では $\\varepsilon^{0}=1$ なので、上側の包絡線の値は $\\dfrac{\\omega_n}{\\sqrt{1-\\zeta^2}}=\\dfrac{4.0}{0.8000}$。値は?"
+    ],
+    "fill": {
+     "type": "numeric",
+     "q": "$\\omega_n=4.0$ rad/s、$\\zeta=0.60$ のインパルス応答の包絡線の、$t=0$ での値(上側)は?(有効数字3桁)",
+     "parts": [
+      {
+       "ans": 5.0,
+       "unit": "",
+       "abs": 0.015,
+       "label": "値"
+      }
+     ],
+     "note": "$\\dfrac{4.0}{\\sqrt{1-0.36}}=\\dfrac{4.0}{0.8000}=5.00$。(第3回 p.14)",
+     "reveal": [
+      "$\\varepsilon^{-\\zeta\\omega_n\\cdot0}=1$",
+      "$4.0/0.8000=5.00$"
+     ]
+    }
+   },
+   "check": [
+    {
+     "type": "single",
+     "q": "インパルス応答の包絡線は、どこを中心に減衰振動する?",
+     "opts": [
+      "0の周り",
+      "定常値1の周り",
+      "$\\omega_n$ の周り"
+     ],
+     "ans": "0の周り",
+     "note": "インパルス応答の包絡線 $\\pm\\dfrac{\\omega_n}{\\sqrt{1-\\zeta^2}}\\varepsilon^{-\\zeta\\omega_nt}$ は0が中心。定常値1の周りなのはステップ応答の包絡線。(第3回 p.14)"
+    },
+    {
+     "type": "single",
+     "q": "$\\zeta=0.4$ 一定で $\\omega_n$ を大きくすると?",
+     "opts": [
+      "立ち上がりが速く、ピークが早い",
+      "立ち上がりが遅くなる",
+      "ピークの高さが大きくなる"
+     ],
+     "ans": "立ち上がりが速く、ピークが早い",
+     "note": "図3.4:$\\omega_n=2$ が最も速い。ピークの高さは同じ。(第3回 p.15)"
+    },
+    {
+     "type": "single",
+     "q": "図5.12 のインパルス応答で、$\\zeta$ を大きくすると?",
+     "opts": [
+      "ピークが低くなる",
+      "ピークが高くなる",
+      "ピークの高さは変わらない"
+     ],
+     "ans": "ピークが低くなる",
+     "note": "$\\zeta$ が大きいほどピークが低く、$\\zeta\\ge1$ は振動せず0に近づく。(第3回 p.13)"
+    }
+   ]
+  },
+  {
+   "id": "b5",
+   "title": "任意入力の応答: 畳み込み積分",
+   "pre": [
+    {
+     "type": "single",
+     "q": "一次遅れ要素 $G(s)=\\dfrac1{s+1}$ のインパルス応答は $g(t)=\\varepsilon^{-t}$。任意の入力 $x(t)$ への出力を、$g(t)$ を使って求めるなら、どんな計算?(知らなくて当然)",
+     "opts": [
+      "積分で重ね合わせる",
+      "$g(t)$ と $x(t)$ を掛けるだけ",
+      "$g(t)$ と $x(t)$ を足すだけ"
+     ],
+     "ans": "積分で重ね合わせる",
+     "note": "各時刻の入力が作るインパルス応答を、遅れを付けて重ね合わせる計算で、畳み込み積分という。(第3回 p.16)"
+    }
+   ],
+   "body": "<b>任意の入力に対する応答は、畳み込み積分(重畳積分)で数値解析的に計算する</b>(教科書 p.34〜、第3回 p.16)。<ul><li><b>式(3.26)</b>(教科書 p.37):$y(t)=\\displaystyle\\int_{-\\infty}^{\\infty}x(\\tau)\\,g(t-\\tau)\\,d\\tau$。インパルス応答 $g$ の引数は $t-\\tau$(遅れたインパルスの応答を積分で重ね合わせる)。この積分形式を<b>たたみ込み積分</b>という。</li><li><b>式(3.27)</b>:$t-\\tau=\\tau'$ と置き換えると $y(t)=\\displaystyle\\int_{-\\infty}^{\\infty}g(\\tau)\\,x(t-\\tau)\\,d\\tau$。同じ $y(t)$ の別の書き方。</li><li><b>式(3.28)</b>:実際の入力は $x(t)=0\\ (t\\lt0)$、因果性が満足されていれば $g(t)=0\\ (t\\lt0)$。よって $y(t)=\\displaystyle\\int_0^{t}x(\\tau)\\,g(t-\\tau)\\,d\\tau$。</li><li><b>式(3.29)</b>:(3.28)で置き換えると $y(t)=\\displaystyle\\int_0^{t}g(\\tau)\\,x(t-\\tau)\\,d\\tau$。$g(t)$ と $x(t)$ を<b>交換しても成り立つ</b>。</li></ul>実用上の式(3.28)(3.29)では、積分範囲が<b>両側性から片側性</b>に変わる($-\\infty\\sim\\infty$ から $0\\sim t$ へ。第3回 p.16)。<br><br><b>演算記号</b>は $*$ または $\\otimes$(スライドの赤字):$y(t)=g(t)*x(t)=g(t)\\otimes x(t)=x(t)*g(t)$。掛け算ではない。<br><b>畳み込み積分のラプラス変換</b>は積:$Y(s)=G(s)X(s)=\\mathcal{L}[g(t)*x(t)]$。逆に $Y=GX$ の逆変換が畳み込み。<br><br><b>ステップ応答の定義</b>(教科書 p.38 式3.30):単位ステップ関数は $u(t)=1\\ (t\\ge0)$、$0\\ (t\\lt0)$。これを入力したときの出力がステップ応答。入力がある一定値から別の一定値に瞬時に変わったときの応答も、ステップ応答と呼ぶ(単位入力でなくてよい)。($\\varepsilon$ は自然対数の底で $\\varepsilon=e$。スライドは $\\varepsilon$、教科書は $e$)",
+   "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/seigyo/seigyo_delta_fig38.png\" alt=\"図3.8 単位インパルス関数\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">教科書 図3.8 単位インパルス関数 δ(t)(インパルス応答 g(t) は、これを入力したときの出力)</figcaption></figure>",
+   "example": {
+    "steps": [
+     "$g(t)=2\\varepsilon^{-t}\\ (t\\ge0)$ のシステムに、$x(t)=u(t)$(単位ステップ)を加える。",
+     "(3.29):$y(t)=\\displaystyle\\int_0^{t}g(\\tau)\\,x(t-\\tau)\\,d\\tau=\\int_0^{t}2\\varepsilon^{-\\tau}\\,d\\tau$($x(t-\\tau)=1$)。",
+     "$=2\\left(1-\\varepsilon^{-t}\\right)$。$t=1.0$ s での値は?"
+    ],
+    "fill": {
+     "type": "numeric",
+     "q": "$y(t)=2\\left(1-\\varepsilon^{-t}\\right)$ の、$t=1.0$ s での値は?(有効数字3桁)",
+     "parts": [
+      {
+       "ans": 1.26,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$y(1.0)$"
+      }
+     ],
+     "note": "$2\\times(1-0.3679)=1.264$ → $1.26$。(教科書 p.38 (3.29))",
+     "reveal": [
+      "$\\varepsilon^{-1}=0.3679$",
+      "$2\\times(1-0.3679)=1.26$"
+     ]
+    }
+   },
+   "check": [
+    {
+     "type": "single",
+     "q": "畳み込み積分の演算記号は?",
+     "opts": [
+      "$*$ または $\\otimes$",
+      "$\\times$",
+      "$\\int$ だけ"
+     ],
+     "ans": "$*$ または $\\otimes$",
+     "note": "スライドの赤字:演算記号は $*$ と $\\otimes$。掛け算 $\\times$ ではない。(第3回 p.16)"
+    },
+    {
+     "type": "single",
+     "q": "畳み込み $g(t)*x(t)$ のラプラス変換は?",
+     "opts": [
+      "$G(s)X(s)$",
+      "$G(s)+X(s)$",
+      "$G(s)/X(s)$"
+     ],
+     "ans": "$G(s)X(s)$",
+     "note": "畳み込みのラプラス変換は積 $G(s)X(s)$。(第3回 p.16)"
+    },
+    {
+     "type": "single",
+     "q": "式(3.26)から実用上の式(3.28)(3.29)になると、積分範囲は?",
+     "opts": [
+      "両側性から片側性",
+      "片側性から両側性",
+      "変わらない"
+     ],
+     "ans": "両側性から片側性",
+     "note": "$-\\infty\\sim\\infty$ から $0\\sim t$ へ。因果性($t\\lt0$ で $g(t)=0$)による。(第3回 p.16、教科書 p.37〜38)"
+    }
+   ]
+  }
+ ],
+ "summary": {
+  "rows": [
+   [
+    "二次遅れ要素",
+    "G=Kωn²/(s²+2ζωn s+ωn²)。ωn は固有角周波数、ζ は減衰率。根は −(ζ±√(ζ²−1))ωn。インディシャル=G·1/s、インパルス=G·1 を逆変換"
+   ],
+   [
+    "表5.1(ζの5状態)",
+    "ζ＞1 過制動(実根)、ζ=1 臨界制動(重根 −ωn)、0＜ζ＜1 不足制動(共役複素根)、ζ=0 持続振動(±jωn)、ζ＜0 発散振動"
+   ],
+   [
+    "図5.9・5.18 の波形",
+    "0＜ζ＜1 は ζ が小さいほど行き過ぎ大。ζ=0 は 0〜2.0 の持続振動。ζ≧1 は行き過ぎなし(大きいほど遅い)。ζ＞1 は遅いので普通は使わず、サーボ系は ζ=0.6〜0.8"
+   ],
+   [
+    "ステップ応答の式",
+    "ζ＞1 は cosh・sinh、ζ=1 は 1−ε^(−ωn t)(1+ωn t)、0＜ζ＜1 は cos・sin(角周波数 ωn√(1−ζ²))、ζ=0 は 1−cos ωn t"
+   ],
+   [
+    "特性量",
+    "ωd=ωn√(1−ζ²)、Tp=π/ωd、τ=2π/ωd、Ap=Pm=Os=ε^(−πζ/√(1−ζ²))(ζ=0.4 で約25%、0.6 で約10%)、時定数 T=1/(ζωn)(63%)、λ は指数に 2ζ"
+   ],
+   [
+    "極値(5.64〜5.66)",
+    "tn=nπ/(√(1−ζ²)ωn)、An=exp(−nπζ/√(1−ζ²))、y(tn)=1−(−1)ⁿAn。Os は ζ の関数(ωn は入らない)"
+   ],
+   [
+    "インパルス応答・包絡線・ωn",
+    "インパルス応答も ζ で変わる(図5.12)。ζ が大きいほどピーク低。包絡線:ステップ 1±ε^(−ζωn t)/√(1−ζ²)(1の周り)、インパルス ±ωn/√(1−ζ²)·ε^(−ζωn t)(0の周り)。ωn 大 → 速い(ピークの高さは同じ)"
+   ],
+   [
+    "畳み込み積分",
+    "任意入力の応答。(3.26)両側性 → (3.28)(3.29)片側性 y=∫0→t g(τ)x(t−τ)dτ、g と x は交換可。記号は * と ⊗。ラプラス変換は積 G(s)X(s)"
+   ]
+  ],
+  "write3": "紙に3行、友達に説明するつもりで書く:「表5.1 の5状態を ζ の値と根で言う。ωd・Tp・Os・時定数 T はどんな式か。任意の入力の応答はどう求めるか。」"
+ },
+ "final": [
+  {
+   "type": "single",
+   "q": "$0\\lt\\zeta\\lt1$ のステップ応答の名前は?",
+   "opts": [
+    "不足制動(不足減衰)",
+    "過制動(過減衰)",
+    "臨界制動(臨界減衰)"
+   ],
+   "ans": "不足制動(不足減衰)",
+   "note": "$0\\lt\\zeta\\lt1$ は共役複素根で不足制動。(表5.1、第2回 p.19)"
+  },
+  {
+   "type": "single",
+   "q": "$\\zeta=0$(根は $\\pm j\\omega_n$)のときのステップ応答は?",
+   "opts": [
+    "持続振動",
+    "臨界制動",
+    "発散振動"
+   ],
+   "ans": "持続振動",
+   "note": "$\\zeta=0$ は純虚数の根で持続振動($y=1-\\cos\\omega_nt$)。重根は $\\zeta=1$。(教科書 p.95、表5.1)"
+  },
+  {
+   "type": "numeric",
+   "q": "$\\omega_n=5.00$ rad/s、$\\zeta=0.60$ の二次遅れ要素の減衰固有角周波数 $\\omega_d$ は?(有効数字3桁)",
+   "parts": [
+    {
+     "ans": 4.0,
+     "unit": "rad/s",
+     "abs": 0.015,
+     "label": "$\\omega_d$"
+    }
+   ],
+   "note": "$\\omega_d=\\omega_n\\sqrt{1-\\zeta^2}=5.00\\times0.8000=4.00$。(第2回 p.21)",
+   "reveal": [
+    "$\\sqrt{1-0.60^2}=\\sqrt{0.6400}=0.8000$",
+    "$5.00\\times0.8000=4.00$"
+   ]
+  },
+  {
+   "type": "single",
+   "q": "二次遅れ要素の時定数は?",
+   "opts": [
+    "$T=\\dfrac1{\\zeta\\omega_n}$",
+    "$T=\\zeta\\omega_n$",
+    "$T=\\dfrac{\\pi}{\\omega_d}$"
+   ],
+   "ans": "$T=\\dfrac1{\\zeta\\omega_n}$",
+   "note": "時定数は $\\zeta\\omega_n$ の逆数。$\\dfrac\\pi{\\omega_d}$ は行き過ぎ時間。(教科書 p.97、第2回 p.21)"
+  },
+  {
+   "type": "single",
+   "q": "ステップ応答の包絡線 $1\\pm\\dfrac{\\varepsilon^{-\\zeta\\omega_nt}}{\\sqrt{1-\\zeta^2}}$ は、どこの周りで振動する?",
+   "opts": [
+    "定常値1の周り",
+    "0の周り",
+    "$\\zeta$ の周り"
+   ],
+   "ans": "定常値1の周り",
+   "note": "ステップ応答の包絡線は定常値1が中心。0が中心なのはインパルス応答の包絡線。(第3回 p.14)"
+  },
+  {
+   "type": "single",
+   "q": "畳み込み $g(t)*x(t)$ のラプラス変換は?",
+   "opts": [
+    "$G(s)X(s)$",
+    "$G(s)+X(s)$",
+    "$G(s)/X(s)$"
+   ],
+   "ans": "$G(s)X(s)$",
+   "note": "畳み込みのラプラス変換は積。(第3回 p.16)"
+  }
+ ],
+ "next": [
+  {
+   "label": "演習 ③ 二次遅れ要素と任意入力へ",
+   "href": "/quiz.html?d=tests/2026-4-kouki-chukan-seigyogaku2-t3-nijiokure/data.json"
+  }
+ ],
+ "footer": "出典: 制御工学Ⅱ 第2回 p.17〜22、第3回 p.5〜16、配布資料 第3回_二次遅れ要素の過渡特性、自動制御理論 p.34〜38・p.93〜97、制御工学Ⅰのノート 6・11。「(おまけ)」は範囲の端。図は資料からの切り出し。"
+}

@@ -1,0 +1,485 @@
+{
+ "year": 2026,
+ "grade": 4,
+ "exam": "後期中間試験",
+ "subject": "制御工学Ⅱ",
+ "title": "制御工学Ⅱ ・ 学習 第2回前半 積分・微分要素",
+ "storageKey": "seigyo2_learn_02_v1",
+ "minutes": 12,
+ "goals": [
+  "積分要素 K/s と微分要素 Ks の3応答(インパルス・インディシャル・ランプ)を式で言える",
+  "RC回路・コイル・コンデンサを、出力のとり方から微分・積分要素に分類できる",
+  "応答の微積分関係(積分すると次の応答)を使える"
+ ],
+ "katex": true,
+ "terms": [
+  {
+   "name": "積分要素",
+   "plain": "伝達関数が G(s)=K/s の要素。K を積分すると 1/s が出る。(ノート8、第2回 p.5)"
+  },
+  {
+   "name": "微分要素",
+   "plain": "伝達関数が G(s)=Ks の要素。微分すると s が出る。(ノート8、第2回 p.12)"
+  },
+  {
+   "name": "加速度関数(信号)",
+   "plain": "r²(t) の形の信号。積分要素のランプ応答 (K/2)r²(t) に現れる。(第2回 p.10)"
+  },
+  {
+   "name": "無定位性",
+   "plain": "自己平衡性がない性質。操作量の一定値に対して制御量の一定値が対応しない性質(定位性のない性質)。(第2回 p.6)"
+  },
+  {
+   "name": "微分回路",
+   "plain": "直列RC回路で出力を抵抗両端の電圧にとり、v_R≪v_C が成り立つ回路。出力は入力の微分に比例し、G(s)=RCs=Ks。(教科書 p.78)"
+  },
+  {
+   "name": "積分回路",
+   "plain": "直列RC回路で出力をコンデンサ両端の電圧にとり、v_R≫v_C が成り立つ回路。出力は入力の積分に比例し、G(s)=1/(RCs)=K/s。(教科書 p.79)"
+  },
+  {
+   "name": "インダクタ・キャパシタの s 領域の比",
+   "plain": "インダクタは V(s)/I(s)=Ls(微分)、キャパシタは V(s)/I(s)=1/(Cs)(積分)。(教科書 p.80)"
+  },
+  {
+   "name": "応答の微積分関係",
+   "plain": "インパルス→インディシャル→ランプの向きが積分、逆向きが微分。入力の関数も応答も同じ関係。(第1回 p.15、第2回 p.4)"
+  }
+ ],
+ "blocks": [
+  {
+   "id": "b1",
+   "title": "積分要素 $G=K/s$ の3応答: 階段・直線・放物線",
+   "pre": [
+    {
+     "type": "single",
+     "q": "積分要素 $G(s)=\\dfrac Ks$ に単位ステップ入力(ラプラス変換 $\\dfrac1s$)を加えたとき、出力のラプラス変換 $Y(s)$ は?(知らなくて当然)",
+     "opts": [
+      "$\\dfrac K{s^2}$",
+      "$\\dfrac Ks$",
+      "$\\dfrac K{s^3}$"
+     ],
+     "ans": "$\\dfrac K{s^2}$",
+     "note": "$Y(s)=G(s)\\cdot\\dfrac1s=\\dfrac Ks\\cdot\\dfrac1s=\\dfrac K{s^2}$。$\\dfrac Ks$ はインパルス入力、$\\dfrac K{s^3}$ はランプ入力のとき。(第2回 p.5)"
+    }
+   ],
+   "body": "<b>積分要素</b>は $G(s)=\\dfrac Ks$($K$: ゲイン定数)。$K$ を積分すると $\\dfrac1s$ が出るので、分母に $s$ がある(ノート8)。応答は、$G(s)$ に入力のラプラス変換 $1$・$\\dfrac1s$・$\\dfrac1{s^2}$ を掛けて逆変換して求める(第2回 p.5〜10)。<ul><li><b>インディシャル応答</b>(入力 $u(t)$): $y(t)=\\mathcal{L}^{-1}\\left[\\dfrac Ks\\cdot\\dfrac1s\\right]=\\mathcal{L}^{-1}\\left[\\dfrac K{s^2}\\right]=K\\cdot r(t)$。原点を通る傾き $K$ の<b>直線</b>(p.5)。$K=1$ のときは $y(t)=t\\,u(t)$(教科書 p.80〜81 (5.17))。</li><li><b>インパルス応答</b>(入力 $\\delta(t)$): $y(t)=\\mathcal{L}^{-1}\\left[\\dfrac Ks\\cdot1\\right]=K\\cdot u(t)$。時刻によらず一定値 $K$ の<b>階段</b>(p.7)。</li><li><b>ランプ応答</b>(入力 $r(t)$): $y(t)=\\mathcal{L}^{-1}\\left[\\dfrac Ks\\cdot\\dfrac1{s^2}\\right]=\\mathcal{L}^{-1}\\left[\\dfrac K{s^3}\\right]=\\dfrac K2\\,r^2(t)$。<b>放物線</b>で、$r^2(t)$ は<b>加速度関数(信号)</b>(p.10。スライドの赤枠)。係数 $\\dfrac12$ を忘れない。</li></ul>(資料外・補足)インパルス応答 $Ku(t)$ → インディシャル応答 $Kr(t)$ → ランプ応答 $\\dfrac K2r^2(t)$ と、1段ずつ積分した形になっている。<br><br><b>無定位性</b>(第2回 p.6): 自己平衡性がない性質のこと。つまり、操作量の一定値に対して制御量の一定値が対応しない性質(定位性のない性質)。一次遅れ要素のステップ応答は一定値に落ち着く(自己平衡性がある。第1回 p.10)のに対し、積分要素のステップ応答は一定値に落ち着かず増え続ける。",
+   "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/seigyo/seigyo_integ_ramp_accel.png\" alt=\"積分要素のランプ応答(第2回 p.10)\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">第2回 p.10 積分要素のランプ応答: G(s)=K/s、y(t)=(K/2)r²(t)。赤枠が加速度関数(信号)</figcaption></figure>",
+   "example": {
+    "steps": [
+     "$G(s)=\\dfrac2s$($K=2$)とする。",
+     "インパルス応答は $\\dfrac2s\\cdot1=\\dfrac2s$ の逆変換で $y=2\\,u(t)$(一定値 2)。",
+     "インディシャル応答は $\\dfrac2s\\cdot\\dfrac1s=\\dfrac2{s^2}$ の逆変換で $y=2\\,r(t)=2t$(傾き 2 の直線)。",
+     "ランプ応答は $\\dfrac2s\\cdot\\dfrac1{s^2}=\\dfrac2{s^3}$ の逆変換で $y=\\dfrac22\\,r^2(t)=t^2$。$t=3.0$ s での値は?"
+    ],
+    "fill": {
+     "type": "numeric",
+     "q": "$G(s)=\\dfrac2s$ のランプ応答 $y=\\dfrac K2r^2(t)$ の、$t=3.0$ s での値は?(有効数字3桁)",
+     "parts": [
+      {
+       "ans": 9.0,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$y(3.0)$"
+      }
+     ],
+     "note": "$y=\\dfrac22\\times3.0^2=9.00$。(第2回 p.10)",
+     "reveal": [
+      "$\\dfrac K2=\\dfrac22=1$",
+      "$r^2(t)=3.0^2=9.00$ なので $y=9.00$"
+     ]
+    }
+   },
+   "check": [
+    {
+     "type": "single",
+     "q": "積分要素 $G(s)=\\dfrac Ks$ のインパルス応答は?",
+     "opts": [
+      "$K\\cdot u(t)$",
+      "$K\\cdot r(t)$",
+      "$K\\cdot \\delta(t)$"
+     ],
+     "ans": "$K\\cdot u(t)$",
+     "note": "$\\dfrac Ks\\cdot1=\\dfrac Ks$ の逆変換が $K\\cdot u(t)$。$K\\cdot r(t)$ はインディシャル応答、$K\\delta(t)$ は微分要素のインディシャル応答。(第2回 p.7)"
+    },
+    {
+     "type": "single",
+     "q": "積分要素のランプ応答は?",
+     "opts": [
+      "$\\dfrac K2\\,r^2(t)$",
+      "$K\\,r^2(t)$",
+      "$K\\cdot r(t)$"
+     ],
+     "ans": "$\\dfrac K2\\,r^2(t)$",
+     "note": "$\\dfrac K{s^3}$ の逆変換は $\\dfrac K2t^2$。係数 $\\dfrac12$ がつく。$K\\cdot r(t)$ はインディシャル応答。(第2回 p.10)"
+    },
+    {
+     "type": "single",
+     "q": "$r^2(t)$ の形の信号を何という?",
+     "opts": [
+      "加速度関数(信号)",
+      "単位ステップ関数",
+      "単位インパルス関数"
+     ],
+     "ans": "加速度関数(信号)",
+     "note": "$r^2(t)$ は加速度関数(信号)。単位ステップ関数は $u(t)$、単位インパルス関数は $\\delta(t)$。(第2回 p.10)"
+    }
+   ]
+  },
+  {
+   "id": "b2",
+   "title": "微分要素 $G=Ks$ の応答: $K\\delta(t)$・計算不可能・$Ku(t)$",
+   "pre": [
+    {
+     "type": "single",
+     "q": "微分要素 $G(s)=Ks$ に単位ステップ入力(ラプラス変換 $\\dfrac1s$)を加えたとき、出力のラプラス変換 $Y(s)$ は?(知らなくて当然)",
+     "opts": [
+      "$K$",
+      "$\\dfrac K{s}$",
+      "$Ks^2$"
+     ],
+     "ans": "$K$",
+     "note": "$Y(s)=Ks\\cdot\\dfrac1s=K$($s$ が約分される)。(第2回 p.12)"
+    }
+   ],
+   "body": "<b>微分要素</b>は $G(s)=Ks$(微分すると $s$ が出る。ノート8)。ゲイン定数 $K=1$ とおけば $G(s)=s$(教科書 p.79 (5.10))。なお教科書 p.78 は、$G(s)$ が微分要素 $s$ を含んでいても、$n\\ge m$(分母の次数が分子以上)なので、実際に微分動作を行うことを意味しているのではない、と断っている。<ul><li><b>インディシャル応答</b>(入力 $u(t)$): $y(t)=\\mathcal{L}^{-1}\\left[Ks\\cdot\\dfrac1s\\right]=\\mathcal{L}^{-1}[K]=K\\cdot\\delta(t)$(p.12)。$t=0$ に立つ<b>矢印</b>(教科書 図5.3(a)、$K=1$ で $y=\\delta(t)$。p.80 (5.16))。</li><li><b>インパルス応答</b>(入力 $\\delta(t)$): $y(t)=\\mathcal{L}^{-1}[Ks\\cdot1]$ は<b>計算不可能</b>(p.14 の青字)。(資料外・補足)$s$ の逆変換は $\\delta(t)$ の微分の形になり、本講義では扱わない。</li><li><b>ランプ応答</b>(入力 $r(t)$): $y(t)=\\mathcal{L}^{-1}\\left[Ks\\cdot\\dfrac1{s^2}\\right]=\\mathcal{L}^{-1}\\left[\\dfrac Ks\\right]=K\\cdot u(t)$。時刻によらず一定値 $K$(p.15)。</li></ul>(資料外・補足)微分要素のランプ応答 $Ku(t)$ は、積分要素のインパルス応答 $Ku(t)$ と同じ形になる。",
+   "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/seigyo/seigyo_tb_fig5_3.png\" alt=\"図5.3 微分要素および積分要素のステップ応答\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">教科書 p.81 図5.3 (a)微分要素のステップ応答 y(t)=δ(t) と、(b)積分要素のステップ応答 y(t)=t u(t)(どちらも入力 u(t) と一緒に描いてある)</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/seigyo/seigyo_diff_impulse_nocalc.png\" alt=\"微分要素のインパルス応答は計算不可能(第2回 p.14)\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">第2回 p.14 微分要素のインパルス応答: L⁻¹[Ks・1] は『計算不可能』(青字)</figcaption></figure>",
+   "example": {
+    "steps": [
+     "$G(s)=2.5s$($K=2.5$)とする。",
+     "インディシャル応答は $2.5s\\cdot\\dfrac1s=2.5$ の逆変換で $y=2.5\\,\\delta(t)$。",
+     "インパルス応答は $\\mathcal{L}^{-1}[2.5s\\cdot1]$ で、計算不可能。",
+     "ランプ応答は $2.5s\\cdot\\dfrac1{s^2}=\\dfrac{2.5}s$ の逆変換で $y=2.5\\,u(t)$。$t=4.0$ s での値は?"
+    ],
+    "fill": {
+     "type": "numeric",
+     "q": "$G(s)=2.5s$ のランプ応答 $y=K\\cdot u(t)$ の、$t=4.0$ s での値は?(有効数字3桁)",
+     "parts": [
+      {
+       "ans": 2.5,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$y(4.0)$"
+      }
+     ],
+     "note": "$y=2.5\\,u(t)$ は一定値なので $t=4.0$ でも $2.50$。(第2回 p.15)",
+     "reveal": [
+      "$u(t)=1$($t\\gt0$)",
+      "$y=2.5\\times1=2.50$"
+     ]
+    }
+   },
+   "check": [
+    {
+     "type": "single",
+     "q": "微分要素 $G(s)=Ks$ のランプ応答は?",
+     "opts": [
+      "$K\\cdot u(t)$",
+      "$K\\cdot r(t)$",
+      "$K\\cdot \\delta(t)$"
+     ],
+     "ans": "$K\\cdot u(t)$",
+     "note": "$Ks\\cdot\\dfrac1{s^2}=\\dfrac Ks$ の逆変換が $K\\cdot u(t)$。$K\\cdot r(t)$ は積分要素のインディシャル応答。(第2回 p.15)"
+    },
+    {
+     "type": "single",
+     "q": "微分要素 $G(s)=Ks$ のインパルス応答は?",
+     "opts": [
+      "計算不可能",
+      "$K\\cdot \\delta(t)$",
+      "$K\\cdot u(t)$"
+     ],
+     "ans": "計算不可能",
+     "note": "$\\mathcal{L}^{-1}[Ks\\cdot1]$ は計算不可能(青字)。$K\\delta(t)$ はインディシャル応答、$K\\cdot u(t)$ はランプ応答。(第2回 p.14)"
+    },
+    {
+     "type": "single",
+     "q": "微分要素 $G(s)=Ks$ のインディシャル応答は?",
+     "opts": [
+      "$K\\cdot \\delta(t)$",
+      "$K\\cdot u(t)$",
+      "$K\\cdot r(t)$"
+     ],
+     "ans": "$K\\cdot \\delta(t)$",
+     "note": "$Ks\\cdot\\dfrac1s=K$ の逆変換が $K\\delta(t)$。(第2回 p.12)"
+    }
+   ]
+  },
+  {
+   "id": "b3",
+   "title": "RC回路とコイル・コンデンサ: 出力のとり方で微分・積分が決まる",
+   "pre": [
+    {
+     "type": "single",
+     "q": "コイルの電圧 $v_L=L\\dfrac{di}{dt}$ をラプラス変換して(初期値 0)電流 $I$ で表すと?(知らなくて当然)",
+     "opts": [
+      "$V_L=LsI$",
+      "$V_L=\\dfrac{I}{Ls}$",
+      "$V_L=LI$"
+     ],
+     "ans": "$V_L=LsI$",
+     "note": "$\\dfrac{d}{dt}$ は $s$ に置き換わるので $V_L=LsI$。(ノート8)"
+    }
+   ],
+   "body": "<b>微分回路</b>(教科書 図5.1、p.78): 直列RC回路で、<b>出力を抵抗 $R$ の両端の電圧</b> $v_o=v_R$ にとる。$v_R(t)\\ll v_C(t)$ が成り立つと $v_i\\simeq v_C$ となり、$v_o=Ri=RC\\dfrac{dv_C}{dt}\\simeq RC\\dfrac{dv_i}{dt}$。出力は近似的に入力の<b>微分</b>に比例する。伝達関数は $G(s)=\\dfrac{V_o(s)}{V_i(s)}=RCs=Ks$($K=RC$)。<br><br><b>積分回路</b>(図5.2、p.79): 同じ直列RC回路で、<b>出力をコンデンサ両端の電圧</b> $v_o=v_C$ にとる(コンデンサ $C$ の両端)。微分回路とは逆の関係 $v_R(t)\\gg v_C(t)$ が成り立つと $v_i\\simeq v_R=Ri$ となり、$v_o=\\dfrac1C\\int i\\,dt\\simeq\\dfrac1{RC}\\int v_i\\,dt$。出力は近似的に入力の<b>積分</b>に比例する。伝達関数は $G(s)=\\dfrac{V_o(s)}{V_i(s)}=\\dfrac1{RCs}=\\dfrac Ks$($K=\\dfrac1{RC}$)。(資料外・補足)同じRC回路でも厳密な伝達関数は $\\dfrac1{1+RCs}$(一次遅れ。教科書 p.84)で、積分回路は $v_R\\gg v_C$ のときの近似。<br><br><b>素子の端子電圧</b>(ノート4・8): 抵抗 $v_R=Ri$、コイル $v_L=L\\dfrac{di}{dt}$、コンデンサ $v_C=\\dfrac1C\\int i\\,dt$。ラプラス変換して $s$ 領域の比をとると、インダクタは $\\dfrac{V(s)}{I(s)}=Ls$(微分)、キャパシタは $\\dfrac{V(s)}{I(s)}=\\dfrac1{Cs}$(積分)(教科書 p.80)。<b>入力を電流 $I$、出力を電圧</b>にとると、<ul><li>コイル: $V_L=LsI$ より $G(s)=Ls$ の<b>微分要素</b>($K=L$)</li><li>コンデンサ: $V_C=\\dfrac{I}{Cs}$ より $G(s)=\\dfrac1{Cs}$ の<b>積分要素</b>($K=\\dfrac1C$)</li><li>抵抗: $V_R=RI$ より $G(s)=R$ の比例要素($K=R$)。入力を電圧・出力を電流にすると $K=\\dfrac1R$(入出力のとり方で $K$ の値が変わる。ノート7・11)</li></ul>ただし、現実のインダクタやキャパシタには損失があり、等価的に抵抗を含む。そのため理想的な微分素子・積分素子は存在せず、現実にあるのは<b>近似回路</b>である(教科書 p.80)。",
+   "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/seigyo/seigyo_tb_fig5_1.png\" alt=\"図5.1 微分回路\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">教科書 p.78 図5.1 微分回路(出力は抵抗の両端 v_R、v_R≪v_C)</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/seigyo/seigyo_tb_fig5_2.png\" alt=\"図5.2 積分回路\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">教科書 p.79 図5.2 積分回路(出力はコンデンサの両端 v_C、v_R≫v_C)</figcaption></figure>",
+   "example": {
+    "steps": [
+     "コンデンサ $C=0.20$ F に電流 $i$ を流し、端子電圧 $v_C$ を出力とする。",
+     "$v_C=\\dfrac1C\\int i\\,dt$ をラプラス変換して $V_C=\\dfrac{I}{Cs}$。",
+     "$G(s)=\\dfrac{V_C(s)}{I(s)}=\\dfrac{1}{Cs}=\\dfrac{5}{s}$ の積分要素($K=\\dfrac1C$)。",
+     "ゲイン定数 $K=\\dfrac1C$ の値は?"
+    ],
+    "fill": {
+     "type": "numeric",
+     "q": "$C=0.20$ F のコンデンサ(電流→電圧)の $G(s)=\\dfrac Ks$ の $K=\\dfrac1C$ は?(有効数字3桁)",
+     "parts": [
+      {
+       "ans": 5.0,
+       "unit": "",
+       "abs": 0.015,
+       "label": "$K$"
+      }
+     ],
+     "note": "$K=\\dfrac1C=\\dfrac1{0.20}=5.00$。(ノート8)",
+     "reveal": [
+      "$K=\\dfrac1C$",
+      "$\\dfrac1{0.20}=5.00$"
+     ]
+    }
+   },
+   "check": [
+    {
+     "type": "single",
+     "q": "積分回路(直列RC回路)で、出力にとる電圧は?",
+     "opts": [
+      "コンデンサ両端の電圧",
+      "抵抗両端の電圧",
+      "電源の電圧"
+     ],
+     "ans": "コンデンサ両端の電圧",
+     "note": "積分回路は出力をコンデンサ両端にとる(図5.2)。抵抗両端にとるのは微分回路(図5.1)。(教科書 p.78〜79)"
+    },
+    {
+     "type": "single",
+     "q": "微分回路が近似的に成り立つ条件は?",
+     "opts": [
+      "$v_R(t)\\ll v_C(t)$",
+      "$v_R(t)\\gg v_C(t)$",
+      "$v_R(t)=v_C(t)$"
+     ],
+     "ans": "$v_R(t)\\ll v_C(t)$",
+     "note": "$v_R\\ll v_C$ なら $v_i\\simeq v_C$ で微分回路(5.7)。$v_R\\gg v_C$ は積分回路(5.12)。(教科書 p.78〜79)"
+    },
+    {
+     "type": "single",
+     "q": "コンデンサの電流を入力・電圧を出力とした伝達関数は?",
+     "opts": [
+      "$\\dfrac1{Cs}$",
+      "$Cs$",
+      "$C$"
+     ],
+     "ans": "$\\dfrac1{Cs}$",
+     "note": "$V_C=\\dfrac I{Cs}$ より $G=\\dfrac1{Cs}$(積分要素、$K=\\dfrac1C$)。$Ls$ はコイルの微分要素。(ノート8)"
+    }
+   ]
+  },
+  {
+   "id": "b4",
+   "title": "応答の微積分関係: 積分すると次の応答、微分すると前の応答",
+   "pre": [
+    {
+     "type": "single",
+     "q": "単位インパルス関数を時間で積分すると、どの関数になる?(知らなくて当然)",
+     "opts": [
+      "単位ステップ関数",
+      "単位ランプ関数",
+      "単位インパルス関数のまま"
+     ],
+     "ans": "単位ステップ関数",
+     "note": "$\\int\\delta(t)dt=u(t)$。インパルス→ステップ→ランプの向きが積分。(第2回 p.4)"
+    }
+   ],
+   "body": "第2回 p.4(第1回 p.15 と同じ図)の矢印: 入力の関数は、<b>単位インパルス関数 → 単位ステップ関数 → 単位ランプ関数</b>の向きが<b>積分</b>、逆向きが<b>微分</b>。応答も同じで、<b>インパルス応答 → インディシャル応答 → ランプ応答</b>の向きが積分、逆向きが微分。先生は「一次遅れ要素の各応答式を用いて、微積分の対応関係を実際に確認する」と予告している。<br><br><b>積分要素 $G=\\dfrac Ks$</b>: インパルス応答 $Ku(t)$ を積分するとインディシャル応答 $Kr(t)$、それを積分するとランプ応答 $\\dfrac K2r^2(t)$。<br><b>微分要素 $G=Ks$</b>: インディシャル応答 $K\\delta(t)$ を積分するとランプ応答 $Ku(t)$。インパルス応答はその1つ前で、計算不可能。<br>(資料外・補足)微分要素のランプ応答 $Ku(t)$ は、積分要素のインパルス応答 $Ku(t)$ と同じ形になる。<br><br><b>一次遅れ要素で確認</b>(第1回 p.15、資料外の確認計算): インパルス応答 $\\dfrac KT\\varepsilon^{-t/T}$ を $0$ から $t$ まで積分すると $K\\left(1-\\varepsilon^{-t/T}\\right)$ になり、これはインディシャル応答。さらにインディシャル応答を積分すると $K\\left\\{t-T\\left(1-\\varepsilon^{-t/T}\\right)\\right\\}$、つまりランプ応答になる。逆にランプ応答を微分するとインディシャル応答、それを微分するとインパルス応答。($\\varepsilon$ は自然対数の底で $\\varepsilon=e$)",
+   "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/seigyo/seigyo_diff_int_relation.png\" alt=\"各応答の関係(第2回 p.4)\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">第2回 p.4 各応答の関係(第1回 p.15 と同じ。下向き矢印=積分、上向き矢印=微分)</figcaption></figure>",
+   "example": {
+    "steps": [
+     "積分要素 $G(s)=\\dfrac6s$($K=6$)のランプ応答は $y_r(t)=\\dfrac62\\,t^2=3t^2$。",
+     "$y_r$ を微分する: $\\dfrac{dy_r}{dt}=6t$。これはインディシャル応答 $6\\,r(t)=6t$ と同じ。",
+     "さらに $6t$ を微分すると $6$。これはインパルス応答 $6\\,u(t)$ と同じ。",
+     "$y_r=3t^2$ の $t=2.0$ s での傾きは?"
+    ],
+    "fill": {
+     "type": "numeric",
+     "q": "$y_r(t)=3t^2$ の $t=2.0$ s での傾き $\\dfrac{dy_r}{dt}=6t$ は?(有効数字3桁)",
+     "parts": [
+      {
+       "ans": 12.0,
+       "unit": "",
+       "abs": 0.15,
+       "label": "$\\dfrac{dy_r}{dt}$"
+      }
+     ],
+     "note": "$6\\times2.0=12.0$。これは $t=2.0$ でのインディシャル応答の値 $6t=12.0$ と同じ。",
+     "reveal": [
+      "$\\dfrac{d}{dt}3t^2=6t$",
+      "$6\\times2.0=12.0$"
+     ]
+    }
+   },
+   "check": [
+    {
+     "type": "single",
+     "q": "ランプ応答を時間で微分すると、どの応答になる?",
+     "opts": [
+      "インディシャル応答",
+      "インパルス応答",
+      "ランプ応答のまま"
+     ],
+     "ans": "インディシャル応答",
+     "note": "ランプ→インディシャル→インパルスの向きが微分。(第2回 p.4)"
+    },
+    {
+     "type": "single",
+     "q": "微分要素のランプ応答 $Ku(t)$ は、どの応答と同じ形?",
+     "opts": [
+      "積分要素のインパルス応答",
+      "積分要素のインディシャル応答",
+      "微分要素のインディシャル応答"
+     ],
+     "ans": "積分要素のインパルス応答",
+     "note": "積分要素のインパルス応答も $Ku(t)$。積分要素のインディシャル応答は $Kr(t)$、微分要素のインディシャル応答は $K\\delta(t)$。(第2回 p.7、p.15)"
+    },
+    {
+     "type": "single",
+     "q": "一次遅れ要素のインパルス応答 $\\dfrac KT\\varepsilon^{-t/T}$ を積分すると?",
+     "opts": [
+      "$K\\left(1-\\varepsilon^{-t/T}\\right)$",
+      "$\\dfrac KT\\left(1-\\varepsilon^{-t/T}\\right)$",
+      "$K\\varepsilon^{-t/T}$"
+     ],
+     "ans": "$K\\left(1-\\varepsilon^{-t/T}\\right)$",
+     "note": "$\\displaystyle\\int_0^t\\dfrac KT\\varepsilon^{-t/T}dt=K\\left(1-\\varepsilon^{-t/T}\\right)$ でインディシャル応答。(第1回 p.15)"
+    }
+   ]
+  }
+ ],
+ "summary": {
+  "rows": [
+   [
+    "積分要素 G=K/s",
+    "インパルス応答 K u(t)(一定)、インディシャル応答 K r(t)(直線)、ランプ応答 (K/2)r²(t)(放物線)。r²(t) は加速度関数"
+   ],
+   [
+    "微分要素 G=Ks",
+    "インディシャル応答 Kδ(t)(矢印)、インパルス応答 計算不可能、ランプ応答 K u(t)(一定)"
+   ],
+   [
+    "無定位性",
+    "自己平衡性がない性質(積分要素は一定値に落ち着かず増え続ける)"
+   ],
+   [
+    "微分回路",
+    "直列RCで出力は抵抗両端。v_R≪v_C。出力は入力の微分に比例。G=RCs=Ks"
+   ],
+   [
+    "積分回路",
+    "直列RCで出力はコンデンサ両端。v_R≫v_C。出力は入力の積分に比例。G=1/(RCs)=K/s"
+   ],
+   [
+    "素子(電流→電圧)",
+    "コイル G=Ls(微分、K=L)、コンデンサ G=1/(Cs)(積分、K=1/C)、抵抗 G=R(比例)。抵抗は入出力を入れ替えると K=1/R"
+   ],
+   [
+    "理想の素子はない",
+    "現実の素子には損失があり、理想的な微分素子・積分素子は存在しない(近似回路)"
+   ],
+   [
+    "応答の微積分関係",
+    "インパルス→インディシャル→ランプの向きが積分、逆が微分。一次遅れで ∫(K/T)ε^(−t/T)dt=K(1−ε^(−t/T))"
+   ]
+  ],
+  "write3": "紙に3行、友達に説明するつもりで書く:「積分要素と微分要素の、インディシャル応答はそれぞれ何か。RC回路は出力をどこにとると微分回路・積分回路になるか。」"
+ },
+ "final": [
+  {
+   "type": "single",
+   "q": "積分要素 $G(s)=\\dfrac Ks$ のインディシャル応答は?",
+   "opts": [
+    "$K\\cdot r(t)$",
+    "$K\\cdot u(t)$",
+    "$K\\cdot \\delta(t)$"
+   ],
+   "ans": "$K\\cdot r(t)$",
+   "note": "$\\dfrac K{s^2}$ の逆変換は $K\\cdot r(t)$(傾き $K$ の直線)。(第2回 p.5)"
+  },
+  {
+   "type": "single",
+   "q": "無定位性とは、どんな性質?",
+   "opts": [
+    "自己平衡性がない性質",
+    "一定不変の入力に対して出力が定常値に落ち着く性質",
+    "出力が振動する性質"
+   ],
+   "ans": "自己平衡性がない性質",
+   "note": "無定位性=自己平衡性がない(操作量の一定値に対して制御量の一定値が対応しない)性質。落ち着く性質は自己平衡性。(第2回 p.6、第1回 p.10)"
+  },
+  {
+   "type": "numeric",
+   "q": "積分要素 $G(s)=\\dfrac8s$ のランプ応答 $y=\\dfrac K2r^2(t)$ の、$t=0.50$ s での値は?(有効数字3桁)",
+   "parts": [
+    {
+     "ans": 1.0,
+     "unit": "",
+     "abs": 0.015,
+     "label": "$y(0.50)$"
+    }
+   ],
+   "note": "$y=\\dfrac82\\times0.50^2=1.00$。(第2回 p.10)",
+   "reveal": [
+    "$\\dfrac K2=4$",
+    "$r^2(t)=0.50^2=0.25$ なので $y=1.00$"
+   ]
+  },
+  {
+   "type": "single",
+   "q": "微分要素 $G(s)=Ks$ のインパルス応答 $\\mathcal{L}^{-1}[Ks\\cdot1]$ は?",
+   "opts": [
+    "計算不可能",
+    "$K\\cdot \\delta(t)$",
+    "$K\\cdot u(t)$"
+   ],
+   "ans": "計算不可能",
+   "note": "計算不可能(青字)。$K\\delta(t)$ はインディシャル応答、$K\\cdot u(t)$ はランプ応答。(第2回 p.14)"
+  },
+  {
+   "type": "single",
+   "q": "直列RC回路で、出力を抵抗の両端の電圧にとった回路は?",
+   "opts": [
+    "微分回路",
+    "積分回路",
+    "比例回路"
+   ],
+   "ans": "微分回路",
+   "note": "出力が抵抗両端なら微分回路($G=RCs$、$v_R\\ll v_C$)。コンデンサ両端なら積分回路。(教科書 p.78〜79)"
+  },
+  {
+   "type": "single",
+   "q": "インディシャル応答を時間で積分すると、どの応答になる?",
+   "opts": [
+    "ランプ応答",
+    "インパルス応答",
+    "インディシャル応答のまま"
+   ],
+   "ans": "ランプ応答",
+   "note": "インパルス→インディシャル→ランプの向きが積分。(第2回 p.4)"
+  }
+ ],
+ "next": [
+  {
+   "label": "演習 ② 積分・微分要素へ",
+   "href": "/quiz.html?d=tests/2026-4-kouki-chukan-seigyogaku2-t2-sekibun-bibun/data.json"
+  }
+ ],
+ "footer": "出典: 制御工学Ⅱ 第1回 p.15、第2回 p.4〜p.16、自動制御理論 p.77〜81・p.84、制御工学Ⅰのノート 4・7・8・11。「(資料外・補足)」は資料に載っていない補足。図は資料からの切り出し。"
+}
