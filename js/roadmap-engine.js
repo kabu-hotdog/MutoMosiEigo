@@ -143,7 +143,11 @@ function render() {
   var states = steps.map(function (st) {
     var a = autoState(st);
     var man = M.manual[st.id];
-    if (a && a.done && !M.ach[st.id]) { M.ach[st.id] = true; ach = true; }
+    if (a && a.done && !M.ach[st.id]) {
+      M.ach[st.id] = true; ach = true;
+      // 手で外していても、あとで自動で完了になったらチェックを付け直す
+      if (man === false) { delete M.manual[st.id]; man = undefined; }
+    }
     var checked = (man !== undefined) ? !!man : !!((a && a.done) || M.ach[st.id]);
     return { a: a, man: man, checked: checked };
   });
@@ -198,16 +202,9 @@ function render() {
         info = '<span>' + q.answered + ' / ' + q.total + ' 問</span><span class="track"><i style="width:' + pct + '%"></i></span>' +
           (acc !== null ? '<span class="' + (acc < 50 && q.answered >= 5 ? 'rm-warn' : '') + '">正答率 ' + acc + '%' + (acc < 50 && q.answered >= 5 ? '(学習ページに戻る)' : '') + '</span>' : '');
       } else {
-        info = '<span>' + (s.a.done ? '学習済み(自動)' : '回末チェックで初回8割 → 自動でチェック') + '</span>';
+        info = '<span>' + (s.a.done ? '学習済み(自動)' : '回末チェックに全問答えると自動でチェック') + '</span>';
       }
-      if (s.man !== undefined) info += '<button class="rm-link" type="button">自動に戻す</button>';
-      var auto = el('div', 'rm-auto', info);
-      var back = auto.querySelector('.rm-link');
-      if (back) back.addEventListener('click', function () { loadM();
-        // 手動でチェックしていたなら、自動に戻してもチェックは残す(ach = 一度完了した印)
-        if (M.manual[st.id] === true) M.ach[st.id] = true;
-        delete M.manual[st.id]; saveM(); render(); });
-      main.appendChild(auto);
+      main.appendChild(el('div', 'rm-auto', info));
     }
     row.appendChild(chk); row.appendChild(main);
     wrap.appendChild(row);
