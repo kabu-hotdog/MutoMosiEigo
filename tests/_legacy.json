@@ -196,17 +196,5 @@
     "type": "summary",
     "path": "/lesson.html?d=lessons/seigyo2-04/data.json",
     "order": 3.5
-  },
-  {
-    "year": 2026,
-    "grade": 4,
-    "exam": "後期中間試験",
-    "subject": "制御工学Ⅱ",
-    "title": "制御工学Ⅱ ・ 学習 総合 似た概念の見分け方と RL 回路",
-    "storageKey": null,
-    "totalItems": 0,
-    "type": "summary",
-    "path": "/lesson.html?d=lessons/seigyo2-05/data.json",
-    "order": 4.5
   }
 ]
