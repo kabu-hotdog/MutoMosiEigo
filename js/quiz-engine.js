@@ -23,7 +23,7 @@ h1{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(2rem,6vw,3rem);l
 .resetbtn{font-family:inherit;font-size:.78rem;color:var(--muted);background:none;border:1px solid var(--line);border-radius:8px;padding:5px 11px;cursor:pointer;transition:.2s}
 .resetbtn:hover{color:var(--ink);border-color:var(--teal-d)}
 nav.toc{display:flex;gap:8px;flex-wrap:wrap;padding:22px 0 6px}
-nav.toc a{font-size:.82rem;color:var(--muted);text-decoration:none;padding:7px 13px;border:1px solid var(--line);border-radius:99px;background:var(--card);transition:.2s;white-space:nowrap}
+nav.toc a{font-size:.82rem;color:var(--muted);text-decoration:none;padding:7px 13px;border:1px solid var(--line);border-radius:99px;background:var(--card);transition:.2s;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
 nav.toc a:hover{color:var(--ink);border-color:var(--teal-d);transform:translateY(-1px)}
 section{margin-top:44px;scroll-margin-top:64px}
 .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
@@ -35,7 +35,7 @@ section{margin-top:44px;scroll-margin-top:64px}
 .q.wrong{border-color:var(--rose)}
 .q-top{display:flex;gap:12px;align-items:flex-start}
 .qn{font-family:"JetBrains Mono",monospace;font-size:.78rem;color:var(--teal);background:rgba(70,214,196,.1);border:1px solid var(--line);border-radius:7px;padding:3px 8px;flex-shrink:0;margin-top:2px;min-width:34px;text-align:center}
-.q-body{flex:1}
+.q-body{flex:1;min-width:0;max-width:100%}
 .prompt{font-size:1.02rem;margin-bottom:4px}
 .opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px}
 .opt{font-family:inherit;font-size:.95rem;color:var(--ink);background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:9px 14px;cursor:pointer;transition:.16s;text-align:left}
@@ -71,18 +71,19 @@ section{margin-top:44px;scroll-margin-top:64px}
 .tip{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:10px;padding:12px 15px;margin-bottom:18px;font-size:.9rem;color:var(--muted)}
 .tip b{color:var(--amber)}
 footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--line);color:var(--dim);font-size:.82rem;text-align:center}
-@media(max-width:560px){.q-top{flex-direction:column;gap:7px}}
+@media(max-width:560px){.q-top{flex-direction:column;gap:7px;align-items:stretch}}
 /* PC: 幅を広げ、問題を2列に。計算問題は左=問題と図、右=答え欄・ヒント・解答 */
 @media(min-width:1000px){
 .wrap{max-width:1180px}
 section{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:16px;align-items:start}
 section>*{grid-column:1/-1}
 section>.q{grid-column:auto;margin-bottom:16px}
-section>.q.q-num,section>.q.q-fc{grid-column:1/-1}
+section>.q.q-num,section>.q.q-fc,section>.q:has(.katex),section>.q:has(.num-svg){grid-column:1/-1}
 .num-cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:28px;align-items:start}
 .num-side{min-width:0}
 .num-main{min-width:0;position:sticky;top:70px}
 }
+.q .prompt,.q .num-hint,.q .num-reveal,.q .fb,.q .opt{max-width:100%;overflow-x:auto}
 .q.kb-cur{outline:2px solid var(--teal-d);outline-offset:2px}
 .kb-help{display:none}
 @media(hover:hover) and (pointer:fine) and (min-width:1000px){.kb-help{display:block;margin:0 0 14px;font-size:.82rem;color:var(--dim)}.kb-help kbd{font-family:"JetBrains Mono",monospace;font-size:.78rem;border:1px solid var(--line);border-radius:5px;padding:1px 6px;background:var(--card2);color:var(--ink)}}
@@ -374,12 +375,12 @@ function buildQuestion(q, qi, key, secId) {
       if (q.reveal) inner += `<button class="btn ghost" onclick="numReveal('${key}','${secId}')">📖 解答を見る</button>`;
       inner += `</div>`;
     }
+    inner += `</div></div>`; // num-side と num-cols を閉じる。ヒント・解答は全幅で下に出す
     if (q.hint) inner += `<div class="num-hint" id="nh_${key}" hidden>${q.hint}</div>`;
     if (q.reveal) {
       const rv = Array.isArray(q.reveal) ? q.reveal : [q.reveal];
       inner += `<div class="num-reveal" id="nr_${key}" ${_state[key + '_revealed'] ? '' : 'hidden'}>${rv.map(s => `<div>${s}</div>`).join('')}</div>`;
     }
-    inner += `</div></div>`;
 
   } else if (q.type === 'flashcard') {
     const known = _state[key] === 1;
@@ -818,6 +819,7 @@ window.initQuiz = function (data) {
     addScript('https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js', function () {
       addScript('https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js', function () {
         typeset(document.getElementById('app'));
+        const tipEl = document.querySelector('.tip'); if (tipEl) typeset(tipEl); // 使い方の中の数式
         scrollToHash();
       });
     });

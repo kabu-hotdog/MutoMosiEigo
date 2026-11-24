@@ -79,6 +79,7 @@ details.ls-terms summary{cursor:pointer;font-weight:700;font-size:.95rem}
 .ls-res{margin-top:12px;font-size:.92rem}
 .ls-res .pass{color:var(--good);font-weight:800}
 .ls-res .fail{color:var(--amber);font-weight:700}
+.ls-sum{overflow-x:auto}
 .ls-sum table{width:100%;border-collapse:collapse;font-size:.9rem}
 .ls-sum th,.ls-sum td{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top;overflow-wrap:anywhere}
 .ls-sum td:first-child{font-weight:700;color:var(--teal);white-space:nowrap}
@@ -94,6 +95,7 @@ details.ls-terms summary{cursor:pointer;font-weight:700;font-size:.95rem}
 .ls-footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--dim);font-size:.8rem}
 .ls-wrap.compact .ls-body,.ls-wrap.compact .ls-fig,.ls-wrap.compact .ls-example,.ls-wrap.compact .ls-pre{display:none}
 .ls-wrap .katex-display{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-body,.ls-q .prompt,.ls-example,.ls-opt,.ls-hintbox,.ls-fb{max-width:100%;overflow-x:auto}
 @media(max-width:480px){.ls-hero h1{font-size:1.3rem}.ls-bh{flex-wrap:wrap}}
 @media(min-width:1000px){
 .ls-wrap{max-width:1120px}
