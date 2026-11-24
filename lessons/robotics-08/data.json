@@ -57,6 +57,7 @@
  "blocks": [
   {
    "id": "b0",
+   "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/c8-impulse.jpg\" alt=\"力積\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">資料11/9 p.19 力積: 球に力 F が加わって v0 → v</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/c8-angimp.jpg\" alt=\"角衝撃量\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">資料11/16 p.6 角衝撃量: 点Aまわりに回る棒(N=トルク、ω0 → ω)</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/c8-actreact.jpg\" alt=\"作用反作用\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">資料11/16 p.10 作用反作用: 球は −Ft、棒は Ft を受ける</figcaption></figure>",
    "title": "先に道具: 運動量・力積と、2つの式から2つの未知数を出す方法",
    "pre": [
     {
@@ -111,6 +112,7 @@
   },
   {
    "id": "b1",
+   "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/c8-coll.jpg\" alt=\"並進の衝突\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">資料11/9 p.20 衝突前(v1>v2)→衝突→衝突後(v1'<v2')</figcaption></figure>",
    "title": "並進の衝突: 運動量保存則と反発係数(例題7.5、課題4)",
    "pre": [
     {
@@ -165,6 +167,7 @@
   },
   {
    "id": "b2",
+   "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/c8-b715.jpg\" alt=\"問題7.15\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">資料11/16 p.13 問題7.15: 上端Aが支えられた棒に球が衝突(衝突前・衝突・衝突後)</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/c8-rodrot.jpg\" alt=\"棒の回転\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">資料11/16 p.12 球が当たる力積 Ft が下端に作用し、棒がAまわりに回る</figcaption></figure>",
    "title": "棒に球が衝突(1): 上端が支えられた棒(問題7.15)",
    "pre": [
     {
@@ -219,6 +222,7 @@
   },
   {
    "id": "b3",
+   "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/c8-free.jpg\" alt=\"自由な棒\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">資料11/16 p.17 支えのない棒: 衝突後は重心Gの並進 vG と回転 ω</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/c8-b79.jpg\" alt=\"例題7.9\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">資料11/16 p.21 例題7.9: 衝突点P(下端から a)、棒の長さ l、重心G</figcaption></figure>",
    "title": "棒に球が衝突(2): 自由な棒は、並進と回転の両方が起こる(例題7.9、課題5 問1)",
    "pre": [
     {
@@ -272,6 +276,7 @@
   },
   {
    "id": "b4",
+   "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/c8-center.jpg\" alt=\"打撃の中心\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">資料11/16 p.26 点Oの速度 vO、重心の速度 vG、距離 a・b</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/c8-q716.jpg\" alt=\"問題7.16\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">資料11/16 p.28 問題7.16: 上端Aの速度 vA=0 にしたい。l/2 と a</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/c8-x710.jpg\" alt=\"例題7.10\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">資料11/9 p.29 例題7.10: 球を高さ x で水平に突く(重心から x−r)</figcaption></figure>",
    "title": "打撃の中心と、球を突く高さ(問題7.16、課題5 問2、例題7.10)",
    "pre": [
     {
