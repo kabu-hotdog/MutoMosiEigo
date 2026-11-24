@@ -101,6 +101,9 @@ details.ls-terms summary{cursor:pointer;font-weight:700;font-size:.95rem}
 .ls-block.has-fig>*{grid-column:1/-1}
 .ls-block.has-fig>.ls-body:not(.ls-sub){grid-column:1}
 .ls-block.has-fig>.ls-fig{grid-column:2;margin-top:0;position:sticky;top:110px}
+.ls-block.multi-fig>.ls-body:not(.ls-sub){grid-column:1/-1}
+.ls-block.multi-fig>.ls-fig{grid-column:1/-1;margin-top:12px;position:static;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;align-items:start}
+.ls-block.multi-fig>.ls-fig>*{margin:0!important;min-width:0}
 }
 `;
 
@@ -447,6 +450,7 @@ function render() {
     var sec = el('section', 'ls-block' + ((S.blocks[b.id] || {}).passed ? ' passed' : ''));
     sec.id = 'blk_' + b.id;
     if (b.fig) sec.classList.add('has-fig');
+    if (b.fig && (b.fig.match(/<figure|<svg|<img/g) || []).length > 1 && (b.fig.match(/<figure/g) || []).length !== 1) sec.classList.add('multi-fig');
     sec.innerHTML = '<div class="ls-bh"><span class="ls-bn">BLOCK ' + (bi + 1) + '</span><h2>' + b.title + '</h2><span class="ls-stamp">合格</span></div>';
     if (b.pre && b.pre.length) {
       var pre = el('div', 'ls-pre', '<div class="hint">事前の問い(採点しない。外れて当然。考えてから押す)</div>');
