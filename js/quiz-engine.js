@@ -83,6 +83,8 @@ section>.q.q-num,section>.q.q-fc,section>.q:has(.katex),section>.q:has(.num-svg)
 .num-side{min-width:0}
 .num-main{min-width:0;position:sticky;top:70px}
 }
+.num-svg svg,.num-svg img{cursor:zoom-out}
+.fig-small svg,.fig-small img{cursor:zoom-in;max-width:220px!important;max-height:170px;width:auto}
 .q .prompt,.q .num-hint,.q .num-reveal,.q .fb,.q .opt{max-width:100%;overflow-x:auto}
 .q.kb-cur{outline:2px solid var(--teal-d);outline-offset:2px}
 .kb-help{display:none}
@@ -700,6 +702,11 @@ function kbGo(dir) {
 }
 function setupKeyboard() {
   if (_kbBound) return; _kbBound = true;
+  // 図をクリックで小さく/大きく切り替え
+  document.addEventListener('click', e => {
+    const im = e.target.closest && e.target.closest('.num-svg svg,.num-svg img');
+    if (im) (im.closest('figure') || im.closest('.num-svg')).classList.toggle('fig-small');
+  });
   document.addEventListener('keydown', e => {
     if (e.ctrlKey || e.metaKey || e.altKey) return;
     const t = e.target, tag = t && t.tagName;

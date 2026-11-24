@@ -79,6 +79,8 @@ details.ls-terms summary{cursor:pointer;font-weight:700;font-size:.95rem}
 .ls-res{margin-top:12px;font-size:.92rem}
 .ls-res .pass{color:var(--good);font-weight:800}
 .ls-res .fail{color:var(--amber);font-weight:700}
+.ls-fig img,.ls-fig svg{cursor:zoom-out}
+.fig-small img,.fig-small svg{cursor:zoom-in;max-width:220px!important;max-height:170px;width:auto}
 .ls-sum{overflow-x:auto}
 .ls-sum table{width:100%;border-collapse:collapse;font-size:.9rem}
 .ls-sum th,.ls-sum td{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top;overflow-wrap:anywhere}
@@ -551,6 +553,12 @@ window.initLesson = function (data) {
   D.blocks = D.blocks || [];
   document.title = (data.title || '学習ページ') + ' ・ 武藤模試';
   var st = document.createElement('style'); st.textContent = CSS; document.head.appendChild(st);
+  // 図をクリックで小さく/大きく切り替え
+  document.addEventListener('click', function (e) {
+    var im = e.target.closest && e.target.closest('.ls-fig img,.ls-fig svg');
+    if (!im) return;
+    (im.closest('figure') || im.closest('.ls-fig')).classList.toggle('fig-small');
+  });
   loadState();
   render();
   // 別のブラウザで進めた分を、サーバーの控えから足す(progress.js が読み込み終わったら呼ばれる)
