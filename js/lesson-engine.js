@@ -95,6 +95,13 @@ details.ls-terms summary{cursor:pointer;font-weight:700;font-size:.95rem}
 .ls-wrap.compact .ls-body,.ls-wrap.compact .ls-fig,.ls-wrap.compact .ls-example,.ls-wrap.compact .ls-pre{display:none}
 .ls-wrap .katex-display{overflow-x:auto;overflow-y:hidden;max-width:100%}
 @media(max-width:480px){.ls-hero h1{font-size:1.3rem}.ls-bh{flex-wrap:wrap}}
+@media(min-width:1000px){
+.ls-wrap{max-width:1120px}
+.ls-block.has-fig{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);column-gap:28px;align-items:start}
+.ls-block.has-fig>*{grid-column:1/-1}
+.ls-block.has-fig>.ls-body:not(.ls-sub){grid-column:1}
+.ls-block.has-fig>.ls-fig{grid-column:2;margin-top:0;position:sticky;top:110px}
+}
 `;
 
 var D, KEY, S = {};
@@ -439,6 +446,7 @@ function render() {
   D.blocks.forEach(function (b, bi) {
     var sec = el('section', 'ls-block' + ((S.blocks[b.id] || {}).passed ? ' passed' : ''));
     sec.id = 'blk_' + b.id;
+    if (b.fig) sec.classList.add('has-fig');
     sec.innerHTML = '<div class="ls-bh"><span class="ls-bn">BLOCK ' + (bi + 1) + '</span><h2>' + b.title + '</h2><span class="ls-stamp">合格</span></div>';
     if (b.pre && b.pre.length) {
       var pre = el('div', 'ls-pre', '<div class="hint">事前の問い(採点しない。外れて当然。考えてから押す)</div>');

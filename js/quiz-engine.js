@@ -72,6 +72,20 @@ section{margin-top:44px;scroll-margin-top:64px}
 .tip b{color:var(--amber)}
 footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--line);color:var(--dim);font-size:.82rem;text-align:center}
 @media(max-width:560px){.q-top{flex-direction:column;gap:7px}}
+/* PC: 幅を広げ、問題を2列に。計算問題は左=問題と図、右=答え欄・ヒント・解答 */
+@media(min-width:1000px){
+.wrap{max-width:1180px}
+section{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:16px;align-items:start}
+section>*{grid-column:1/-1}
+section>.q{grid-column:auto;margin-bottom:16px}
+section>.q.q-num,section>.q.q-fc{grid-column:1/-1}
+.num-cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:28px;align-items:start}
+.num-side{min-width:0}
+.num-main{min-width:0;position:sticky;top:70px}
+}
+.q.kb-cur{outline:2px solid var(--teal-d);outline-offset:2px}
+.kb-help{display:none}
+@media(hover:hover) and (pointer:fine) and (min-width:1000px){.kb-help{display:block;margin:0 0 14px;font-size:.82rem;color:var(--dim)}.kb-help kbd{font-family:"JetBrains Mono",monospace;font-size:.78rem;border:1px solid var(--line);border-radius:5px;padding:1px 6px;background:var(--card2);color:var(--ink)}}
 .num-tag{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:.72rem;color:var(--teal);background:rgba(70,214,196,.1);border:1px solid var(--line);border-radius:6px;padding:2px 8px;margin-bottom:8px}
 .num-svg{margin:10px 0;overflow-x:auto}
 .num-svg svg{max-width:100%;height:auto;display:block}
@@ -265,10 +279,11 @@ function loadRoadmapForNext() {
 
 function buildQuestion(q, qi, key, secId) {
   const div = document.createElement('div');
-  div.className = 'q' + (_state[key] === 1 ? ' correct' : _state[key] === -1 ? ' wrong' : '');
+  div.className = 'q' + (q.type === 'numeric' ? ' q-num' : '') + (q.type === 'flashcard' ? ' q-fc' : '') + (_state[key] === 1 ? ' correct' : _state[key] === -1 ? ' wrong' : '');
   div.id = `q_${key}`;
 
-  let inner = `<div class="q-top"><span class="qn">Q${qi + 1}</span><div class="q-body">${q.q != null ? `<div class="prompt">${q.q}</div>` : ''}${q.ref ? `<div class="q-ref">${q.ref}</div>` : ''}`;
+  const isNum = q.type === 'numeric';
+  let inner = `<div class="q-top"><span class="qn">Q${qi + 1}</span><div class="q-body">${isNum ? '<div class="num-cols"><div class="num-main">' : ''}${q.q != null ? `<div class="prompt">${q.q}</div>` : ''}${q.ref ? `<div class="q-ref">${q.ref}</div>` : ''}`;
 
   if (q.type === 'single') {
     inner += `<div class="opts">`;
@@ -338,6 +353,7 @@ function buildQuestion(q, qi, key, secId) {
     const parts = Array.isArray(q.parts) ? q.parts : [];
     if (q.tag) inner += `<div class="num-tag">${q.tag}</div>`;
     if (q.svg) inner += `<div class="num-svg">${q.svg}</div>`;
+    inner += `</div><div class="num-side">`;
     parts.forEach((pt, pi) => {
       const pk = key + '_p' + pi;
       const st = _state[pk];
@@ -363,6 +379,7 @@ function buildQuestion(q, qi, key, secId) {
       const rv = Array.isArray(q.reveal) ? q.reveal : [q.reveal];
       inner += `<div class="num-reveal" id="nr_${key}" ${_state[key + '_revealed'] ? '' : 'hidden'}>${rv.map(s => `<div>${s}</div>`).join('')}</div>`;
     }
+    inner += `</div></div>`;
 
   } else if (q.type === 'flashcard') {
     const known = _state[key] === 1;
@@ -656,6 +673,57 @@ function prepareQuestions(data) {
   });
 }
 
+// ---- PC: キーボード操作(スマホでは押されないだけなので判定は不要) ----
+let _kbId = null, _kbBound = false;
+function kbMark() {
+  document.querySelectorAll('.q.kb-cur').forEach(e => { if (e.id !== _kbId) e.classList.remove('kb-cur'); });
+  const el = _kbId && document.getElementById(_kbId);
+  if (el) el.classList.add('kb-cur');
+  return el || null;
+}
+function kbCurrent() {
+  const el = kbMark();
+  if (el) return el;
+  const qs = Array.from(document.querySelectorAll('#app .q'));
+  return qs.find(q => q.getBoundingClientRect().bottom > 90) || qs[0] || null;
+}
+function kbGo(dir) {
+  const qs = Array.from(document.querySelectorAll('#app .q'));
+  if (!qs.length) return;
+  const cur = kbCurrent();
+  const i = Math.max(0, Math.min(qs.length - 1, qs.indexOf(cur) + dir));
+  _kbId = qs[i].id; kbMark();
+  qs[i].scrollIntoView({ block: 'center', behavior: 'smooth' });
+  const inp = qs[i].querySelector('.num-input:not(:disabled)');
+  if (inp) inp.focus({ preventScroll: true });
+}
+function setupKeyboard() {
+  if (_kbBound) return; _kbBound = true;
+  document.addEventListener('keydown', e => {
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+    const t = e.target, tag = t && t.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (t && t.isContentEditable)) {
+      if (e.key === 'Escape') t.blur();
+      return;
+    }
+    const k = e.key;
+    if (k === 'j' || k === 'k') { e.preventDefault(); kbGo(k === 'j' ? 1 : -1); return; }
+    const cur = kbCurrent();
+    if (!cur) return;
+    let btn = null;
+    if (/^[1-9]$/.test(k)) btn = cur.querySelectorAll('.opt:not(:disabled)')[Number(k) - 1];
+    else if (k === 'Enter' && tag !== 'BUTTON' && tag !== 'A') btn = cur.querySelector('.multi-submit .btn');
+    else if (k === 'h') btn = cur.querySelector('[onclick^="numHint"]');
+    else if (k === 'r') btn = cur.querySelector('[onclick^="numReveal"]');
+    else if (k === 'f') btn = cur.querySelector('.fc');
+    if (!btn) return;
+    e.preventDefault();
+    _kbId = cur.id;
+    btn.click();
+    setTimeout(kbMark, 0);
+  });
+}
+
 window.initQuiz = function (data) {
   prepareQuestions(data);
   _data = data;
@@ -702,6 +770,7 @@ window.initQuiz = function (data) {
     <div class="wrap">
       <nav class="toc" id="toc"></nav>
       ${data.tip ? `<div class="tip" style="margin-top:18px"><b>使い方：</b>${data.tip}</div>` : ''}
+      <div class="kb-help">キーボード: <kbd>j</kbd>/<kbd>k</kbd> 次/前の問題 ・ <kbd>1</kbd>〜<kbd>9</kbd> 選択肢 ・ <kbd>Enter</kbd> 採点 ・ <kbd>h</kbd> ヒント ・ <kbd>r</kbd> 解答 ・ <kbd>f</kbd> カードを裏返す ・ <kbd>Esc</kbd> 入力欄を出る</div>
       <div id="app"></div>
       ${data.footer ? `<footer>${data.footer}</footer>` : ''}
     </div>
@@ -713,6 +782,7 @@ window.initQuiz = function (data) {
 
   renderAll();
   scrollToHash();
+  setupKeyboard();
 
   // Set up progress sync before progress.js loads
   window._quizSync = async function () {

@@ -4,6 +4,7 @@
 
 var CSS = `
 .rm-wrap{max-width:820px;margin:0 auto;padding:18px 16px 90px;line-height:1.65}
+@media (min-width:1000px){.rm-wrap{max-width:1000px}}
 .rm-wrap *{box-sizing:border-box}
 .rm-listlink{font-size:.8rem;margin-bottom:6px}.rm-listlink a{color:var(--muted);text-decoration:underline}
 .rm-eyebrow{font-size:.72rem;letter-spacing:.14em;color:var(--teal);font-weight:700}
