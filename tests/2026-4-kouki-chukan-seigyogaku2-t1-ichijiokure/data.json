@@ -263,28 +263,28 @@
   {
    "id": "s2",
    "no": "02",
-   "title": "演習(本番型: 演習解答例1・RC回路・特性値の連鎖)",
+   "title": "演習(本番型: 演習原題2本・RC回路の連鎖)",
    "qs": [
     {
      "type": "single",
-     "q": "<div style='font-size:13px;opacity:.85'><b>【連鎖A】演習解答例1</b>(第3回 p.3)。開ループ伝達関数 $G_1(s)=\\dfrac1s$ の要素に、フィードバック $H=4$ をつけた負帰還系がある($K=4$ とした場合)。紙に書いて解き、答えだけ入力する。</div><div style='margin-top:6px'><b>① 閉ループ伝達関数</b> $G(s)=\\dfrac{G_1}{1+G_1H}$ を整理すると?</div>",
+     "q": "<img src=\"/lessons/img/seigyo/seigyo_ex_block_feedback.png\" alt=\"演習原題のブロック線図(前向き 1/s、フィードバック K、負帰還)\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><div style='font-size:13px;opacity:.85'><b>【連鎖A】演習原題(2026年10月14日の演習問題。解答例は第3回 p.3 演習解答例1)</b> 下のブロック線図(単位負帰還ではなく、フィードバックに $K$ を置いた系)について答えよ。紙に書いて解き、選択肢から選ぶ。</div><div style='margin-top:6px'><b>① (原題)</b> 上記ブロック線図を簡単化して,1つの要素に纏めた時の総合伝達関数 $G(s)$ を求めなさい.</div>",
      "opts": [
-      "$\\dfrac{1}{s+4}$",
-      "$\\dfrac{4}{s+1}$",
-      "$\\dfrac{1}{s-4}$",
-      "$\\dfrac{s}{s+4}$",
-      "$\\dfrac{1}{4s+1}$"
+      "$\\dfrac{1}{s+K}$",
+      "$\\dfrac{K}{s+1}$",
+      "$\\dfrac{1}{s-K}$",
+      "$\\dfrac{1}{s(1+K)}$",
+      "$\\dfrac{1}{1+Ks}$"
      ],
-     "ans": "$\\dfrac{1}{s+4}$",
-     "note": "$G=\\dfrac{\\frac1s}{1+\\frac1s\\cdot4}$ の分子分母に $s$ を掛けて $\\dfrac{1}{s+4}$。分母は $1+G_1H$(プラス)。(第3回 p.3 ①)",
-     "tag": "連鎖A① 閉ループ合成",
+     "ans": "$\\dfrac{1}{s+K}$",
+     "note": "負帰還なので $G=\\dfrac{G_1}{1+G_1H}=\\dfrac{\\frac1s}{1+\\frac1s\\cdot K}$。分子分母に $s$ を掛けて $\\dfrac{1}{s+K}=\\dfrac{1/K}{1+\\frac1Ks}$。分母は $1+G_1H$(負帰還はプラス、$1-GH$ は正帰還)。(第3回 p.3 演習解答例1 ①)",
+     "tag": "連鎖A① 閉ループ合成(原題)",
      "kp": [
       "K3-002"
      ]
     },
     {
      "type": "single",
-     "q": "<div style='font-size:13px;opacity:.85'>(上の系で)</div><div style='margin-top:6px'><b>② 判定</b> $G(s)=\\dfrac{1}{s+4}$ は何要素?(分母を $1+(\\cdots)s$ にそろえて考える)</div>",
+     "q": "<div style='font-size:13px;opacity:.85'>(上のブロック線図で)</div><div style='margin-top:6px'><b>② (原題)</b> ①で求めた総合伝達関数 $G(s)$ の(基本的伝達関数に分類した時の)種類を示しなさい.</div>",
      "opts": [
       "一次遅れ要素",
       "二次遅れ要素",
@@ -292,15 +292,67 @@
       "積分要素"
      ],
      "ans": "一次遅れ要素",
-     "note": "分子分母を 4 で割ると $\\dfrac{0.25}{1+0.25s}$。$\\dfrac{K}{1+Ts}$ の形なので一次遅れ要素。(第3回 p.3 ②)",
-     "tag": "連鎖A② 一次遅れ判定",
+     "note": "$G(s)=\\dfrac{1/K}{1+\\frac1Ks}$ は $\\dfrac{K'}{1+Ts}$ の形なので一次遅れ要素。(第3回 p.3 ②)",
+     "tag": "連鎖A② 一次遅れ判定(原題)",
      "kp": [
       "K3-003"
      ]
     },
     {
+     "type": "single",
+     "q": "<div style='font-size:13px;opacity:.85'>(上のブロック線図で)</div><div style='margin-top:6px'><b>③ (原題)</b> ①で求めた総合伝達関数 $G(s)$ を基本的伝達関数(の標準形とした場合)のゲイン定数(比例定数)及び必要に応じて時定数,減衰係数,固有角周波数などの特徴的な指標の値を示しなさい.</div>",
+     "opts": [
+      "ゲイン定数 $\\dfrac1K$、時定数 $\\dfrac1K$",
+      "ゲイン定数 $K$、時定数 $K$",
+      "ゲイン定数 $\\dfrac1K$、時定数 $K$",
+      "ゲイン定数 $1$、時定数 $\\dfrac1K$"
+     ],
+     "ans": "ゲイン定数 $\\dfrac1K$、時定数 $\\dfrac1K$",
+     "note": "標準形 $\\dfrac{K'}{1+Ts}$ と $\\dfrac{1/K}{1+\\frac1Ks}$ を見比べて、ゲイン定数 $K'=\\dfrac1K$、時定数 $T=\\dfrac1K$。(減衰係数・固有角周波数は二次遅れ要素の指標なので、一次遅れでは不要。第3回 p.3 ③)",
+     "tag": "連鎖A③ ゲイン定数と時定数(原題)",
+     "kp": [
+      "KB-063",
+      "KB-071"
+     ]
+    },
+    {
+     "type": "single",
+     "q": "<div style='font-size:13px;opacity:.85'>(上のブロック線図で)</div><div style='margin-top:6px'><b>④ (原題)</b> 上記ブロック線図で表される制御系のインディシャル応答を表す式をラプラス逆変換により求めなさい.</div>",
+     "opts": [
+      "$y(t)=\\dfrac1K\\left(u(t)-\\varepsilon^{-Kt}\\right)$",
+      "$y(t)=\\dfrac1K\\varepsilon^{-Kt}$",
+      "$y(t)=K\\left(u(t)-\\varepsilon^{-Kt}\\right)$",
+      "$y(t)=\\dfrac1K\\left(u(t)-\\varepsilon^{-t/K}\\right)$"
+     ],
+     "ans": "$y(t)=\\dfrac1K\\left(u(t)-\\varepsilon^{-Kt}\\right)$",
+     "note": "$y(t)=\\mathcal{L}^{-1}\\left[G\\cdot\\dfrac1s\\right]=\\mathcal{L}^{-1}\\left[\\dfrac{1}{s(s+K)}\\right]$。部分分数展開 $\\dfrac{1}{s(s+K)}=\\dfrac1K\\left(\\dfrac1s-\\dfrac1{s+K}\\right)$ を逆変換して $\\dfrac1K\\left(u(t)-\\varepsilon^{-Kt}\\right)$。指数は $-t/T$ で $T=\\dfrac1K$ だから $-Kt$。(第3回 p.3 ④)",
+     "tag": "連鎖A④ インディシャル応答(原題)",
+     "kp": [
+      "K3-004",
+      "K1-005",
+      "K1-010"
+     ]
+    },
+    {
+     "type": "single",
+     "q": "<div style='font-size:13px;opacity:.85'>(上のブロック線図で)</div><div style='margin-top:6px'><b>⑤ (原題)</b> ④で求めた式により現われる過渡特性の概形を図示しなさい.グラフの各軸にはその名称を明示しなさい.</div>",
+     "opts": [
+      "0 から指数関数的に立ち上がり、定常値 $\\dfrac1K$ に近づく。$t=\\dfrac1K$ で定常値の約63.2%($\\dfrac{0.632}{K}$)に達する",
+      "$\\dfrac1K$ から始まって指数関数的に 0 に近づく。$t=\\dfrac1K$ で約36.8%に減る",
+      "0 から一定の傾きで増え続ける(上限なし)",
+      "0 から振動しながら定常値に近づく(行き過ぎ量がある)"
+     ],
+     "ans": "0 から指数関数的に立ち上がり、定常値 $\\dfrac1K$ に近づく。$t=\\dfrac1K$ で定常値の約63.2%($\\dfrac{0.632}{K}$)に達する",
+     "note": "<img src=\"/lessons/img/seigyo/seigyo_first_order_step_ans.png\" alt=\"演習解答例1 ⑤の波形(第3回 p.3)\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><br>縦軸 $y(t)$、横軸 $t$ を明示して、原点から始まり $\\dfrac1K$ に近づく曲線。$t=\\dfrac1K$(時定数)の点で $\\dfrac{0.632}{K}$。(第3回 p.3 ⑤)",
+     "tag": "連鎖A⑤ 過渡特性の概形(原題)",
+     "kp": [
+      "K3-005",
+      "K1-011"
+     ]
+    },
+    {
      "type": "numeric",
-     "q": "<div style='font-size:13px;opacity:.85'>(上の系で)</div><div style='margin-top:6px'><b>③ ゲイン定数と時定数</b> $G(s)=\\dfrac{K'}{1+Ts}$ の形に直して、ゲイン定数 $K'$ と時定数 $T$ を求めよ。(有効数字3桁)</div>",
+     "q": "<div style='font-size:13px;opacity:.85'><b>(確認計算)原題の系に $K=4$ を入れる</b></div><div style='margin-top:6px'><b>③' ゲイン定数と時定数</b> $G(s)=\\dfrac{1}{s+4}=\\dfrac{K'}{1+Ts}$ の形に直して、ゲイン定数 $K'$ と時定数 $T$ を求めよ。(有効数字3桁)</div>",
      "parts": [
       {
        "ans": 0.25,
@@ -315,21 +367,18 @@
        "label": "$T$"
       }
      ],
-     "note": "$\\dfrac{1}{s+4}=\\dfrac{1/4}{1+\\frac14s}$。ゲイン定数 $K'=\\dfrac14=0.250$、時定数 $T=\\dfrac14=0.250$ s。(第3回 p.3 ③、ノート9・11)",
+     "note": "$\\dfrac{1}{s+4}=\\dfrac{1/4}{1+\\frac14s}$。ゲイン定数 $K'=\\dfrac14=0.250$、時定数 $T=\\dfrac14=0.250$ s(原題 ③ の $\\dfrac1K$ に $K=4$)。",
      "reveal": [
       "分子分母を 4 で割る: $\\dfrac{1/4}{1+\\frac14s}$",
       "$K'=\\dfrac14=0.250$、$T=\\dfrac14=0.250$ s"
      ],
      "hint": "分母の定数項を 1 にする(全体を 4 で割る)。",
-     "tag": "連鎖A③ ゲイン定数と時定数",
-     "kp": [
-      "KB-063",
-      "KB-071"
-     ]
+     "tag": "連鎖A③' ゲイン定数と時定数(K=4)",
+     "kp": []
     },
     {
      "type": "numeric",
-     "q": "<div style='font-size:13px;opacity:.85'>(上の系で、③の $K'=0.250$、$T=0.250$ s を使う)</div><div style='margin-top:6px'><b>④ インディシャル応答</b> $y(t)=\\mathcal{L}^{-1}\\left[G\\cdot\\dfrac1s\\right]=K'\\left(u(t)-\\varepsilon^{-t/T}\\right)=\\dfrac14\\left(u(t)-\\varepsilon^{-4t}\\right)$ の $t=0.5$ s での値を求めよ。(有効数字3桁。$\\varepsilon=e$)</div>",
+     "q": "<div style='font-size:13px;opacity:.85'>(上の $K=4$ の系で、$K'=0.250$、$T=0.250$ s を使う)</div><div style='margin-top:6px'><b>④' インディシャル応答の値</b> 原題 ④ の式 $y(t)=\\dfrac1K\\left(u(t)-\\varepsilon^{-Kt}\\right)$ に $K=4$ を入れた $y(t)=\\dfrac14\\left(u(t)-\\varepsilon^{-4t}\\right)$ の $t=0.5$ s での値を求めよ。(有効数字3桁。$\\varepsilon=e$)</div>",
      "parts": [
       {
        "ans": 0.216,
@@ -338,58 +387,18 @@
        "label": "$y(0.5)$"
       }
      ],
-     "note": "$t=0.5$ で $\\varepsilon^{-4t}=\\varepsilon^{-2}$。$y=\\dfrac14\\left(1-\\varepsilon^{-2}\\right)=0.216$。時定数 $T=\\dfrac14$ なので指数は $-t/T=-4t$。(第3回 p.3 ④、第1回 p.9)",
+     "note": "$t=0.5$ で $\\varepsilon^{-4t}=\\varepsilon^{-2}$。$y=\\dfrac14\\left(1-\\varepsilon^{-2}\\right)=0.216$。(第3回 p.3 ④、第1回 p.9)",
      "reveal": [
       "$t=0.5$ s のとき $\\varepsilon^{-4\\times0.5}=\\varepsilon^{-2}=0.1353$",
       "$y=\\dfrac14\\left(1-0.1353\\right)=0.216$"
      ],
      "hint": "$u(0.5)=1$。指数部 $-4t$ に $t=0.5$ を入れて、電卓の $e^x$ を使う。",
-     "tag": "連鎖A④ インディシャル応答",
-     "kp": [
-      "K3-004",
-      "K1-005",
-      "K1-010"
-     ]
+     "tag": "連鎖A④' インディシャル応答(K=4)",
+     "kp": []
     },
     {
      "type": "numeric",
-     "q": "<img src=\"/lessons/img/seigyo/seigyo_first_order_step_ans.png\" alt=\"演習解答例1 ⑤の波形(第3回 p.3)\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><div style='font-size:13px;opacity:.85'>(上の系。図は一般の $K$ で描いた波形)</div><div style='margin-top:6px'><b>⑤ 波形の読み取り</b> 図の $1/K$ と $0.632/K$ に $K=4$ を入れて、(1) 定常値、(2) 破線で示した時刻 $t=\\dfrac1K$、(3) その時刻の出力 $0.632/K$、を求めよ。(有効数字3桁)</div>",
-     "parts": [
-      {
-       "ans": 0.25,
-       "unit": "",
-       "abs": 0.0015,
-       "label": "(1) 定常値"
-      },
-      {
-       "ans": 0.25,
-       "unit": "s",
-       "abs": 0.0015,
-       "label": "(2) 時刻 $1/K$"
-      },
-      {
-       "ans": 0.158,
-       "unit": "",
-       "abs": 0.0015,
-       "label": "(3) $0.632/K$"
-      }
-     ],
-     "note": "定常値 $\\dfrac1K=0.250$、時定数の時刻 $\\dfrac1K=0.250$ s、そのときの出力 $\\dfrac{0.632}{K}=0.158$(定常値の63.2%)。(第3回 p.3 ⑤)",
-     "reveal": [
-      "(1) $\\dfrac1K=\\dfrac14=0.250$",
-      "(2) 時定数 $T=\\dfrac1K=0.250$ s",
-      "(3) $\\dfrac{0.632}{4}=0.158$"
-     ],
-     "hint": "図の $1/K$、$0.632/K$ はそのまま $K=4$ を代入する。",
-     "tag": "連鎖A⑤ 波形の読み取り",
-     "kp": [
-      "K3-005",
-      "K1-011"
-     ]
-    },
-    {
-     "type": "numeric",
-     "q": "<div style='font-size:13px;opacity:.85'>(上の系 $K'=0.250$、$T=0.250$ s で)</div><div style='margin-top:6px'><b>⑥ インパルス応答</b> 単位インパルスを入力したときの出力 $y(t)=\\dfrac{K'}{T}\\varepsilon^{-t/T}$ について、(1) $t=0$ の値、(2) $t=T$ の値、(3) $t=0.5$ s の値、を求めよ。(有効数字3桁。$\\varepsilon=e$)</div>",
+     "q": "<div style='font-size:13px;opacity:.85'>(上の系に $K=4$ を入れた場合。$K'=0.250$、$T=0.250$ s)</div><div style='margin-top:6px'><b>⑥ インパルス応答</b> 単位インパルスを入力したときの出力 $y(t)=\\dfrac{K'}{T}\\varepsilon^{-t/T}$ について、(1) $t=0$ の値、(2) $t=T$ の値、(3) $t=0.5$ s の値、を求めよ。(有効数字3桁。$\\varepsilon=e$)</div>",
      "parts": [
       {
        "ans": 1.0,
@@ -548,8 +557,93 @@
      ]
     },
     {
+     "type": "single",
+     "q": "<img src=\"/lessons/img/seigyo/seigyo_ex_step_params_blank.png\" alt=\"演習原題: 単位ステップ応答の図(①〜⑤の印)\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><div style='font-size:13px;opacity:.85'><b>【連鎖C】演習原題(2026年10月14日の演習問題。解答例は第3回 p.4 演習解答例2)</b> 問 過渡応答の特性値の「名称」・「記号」および「各特性値の定義」を図中に対応する①〜⑤番号で記入しなさい。(原題は白紙の図に自分で番号を書き込む形。ここでは図に①〜⑤の印を付けてあるので、各印が指す特性値の「名称と記号」を選ぶ。定義は解説で確認する。記入例: ⓪ ほげほげ特性値 Zz = 最初のピークと二番目のピークの間隔)</div><div style='margin-top:6px'><b>① (原題)</b> 図の「①」の印が示す特性値の名称と記号は?</div>",
+     "opts": [
+      "整定時間 $T_s$",
+      "立ち上がり時間 $T_r$",
+      "遅延時間 $T_d$",
+      "行き過ぎ時間 $T_p$",
+      "最大行き過ぎ量 $P_m$"
+     ],
+     "ans": "整定時間 $T_s$",
+     "note": "① = 整定時間 $T_s$。定義: 定常値(1)に対して許容範囲(±2% か ±5%)に収まり、以後そこから出なくなるまでの時間。(第3回 p.4 演習解答例2。番号は問題によって違ってよい=番号不問。正しい「名称と記号のペア」で各1点)",
+     "tag": "連鎖C1 特性値の名称・記号(原題)",
+     "kp": [
+      "KC-049"
+     ]
+    },
+    {
+     "type": "single",
+     "q": "<div style='font-size:13px;opacity:.85'>(上の図で)</div><div style='margin-top:6px'><b>② (原題)</b> 図の「②」の印が示す特性値の名称と記号は?</div>",
+     "opts": [
+      "整定時間 $T_s$",
+      "立ち上がり時間 $T_r$",
+      "遅延時間 $T_d$",
+      "行き過ぎ時間 $T_p$",
+      "最大行き過ぎ量 $P_m$"
+     ],
+     "ans": "立ち上がり時間 $T_r$",
+     "note": "② = 立ち上がり時間 $T_r$。定義: 出力が定常値の 10% から 90% に達するまでの時間。(第3回 p.4 演習解答例2。番号は問題によって違ってよい=番号不問。正しい「名称と記号のペア」で各1点)",
+     "tag": "連鎖C2 特性値の名称・記号(原題)",
+     "kp": [
+      "KC-047"
+     ]
+    },
+    {
+     "type": "single",
+     "q": "<div style='font-size:13px;opacity:.85'>(上の図で)</div><div style='margin-top:6px'><b>③ (原題)</b> 図の「③」の印が示す特性値の名称と記号は?</div>",
+     "opts": [
+      "整定時間 $T_s$",
+      "立ち上がり時間 $T_r$",
+      "遅延時間 $T_d$",
+      "行き過ぎ時間 $T_p$",
+      "最大行き過ぎ量 $P_m$"
+     ],
+     "ans": "遅延時間 $T_d$",
+     "note": "③ = 遅延時間 $T_d$。定義: 出力が定常値の 50% に達するまでの時間。(第3回 p.4 演習解答例2。番号は問題によって違ってよい=番号不問。正しい「名称と記号のペア」で各1点)",
+     "tag": "連鎖C3 特性値の名称・記号(原題)",
+     "kp": [
+      "KC-046"
+     ]
+    },
+    {
+     "type": "single",
+     "q": "<div style='font-size:13px;opacity:.85'>(上の図で)</div><div style='margin-top:6px'><b>④ (原題)</b> 図の「④」の印が示す特性値の名称と記号は?</div>",
+     "opts": [
+      "整定時間 $T_s$",
+      "立ち上がり時間 $T_r$",
+      "遅延時間 $T_d$",
+      "行き過ぎ時間 $T_p$",
+      "最大行き過ぎ量 $P_m$"
+     ],
+     "ans": "行き過ぎ時間 $T_p$",
+     "note": "④ = 行き過ぎ時間 $T_p$。定義: 最初のピーク(最大値)に達するまでの時間。(第3回 p.4 演習解答例2。番号は問題によって違ってよい=番号不問。正しい「名称と記号のペア」で各1点)",
+     "tag": "連鎖C4 特性値の名称・記号(原題)",
+     "kp": [
+      "KC-048"
+     ]
+    },
+    {
+     "type": "single",
+     "q": "<div style='font-size:13px;opacity:.85'>(上の図で)</div><div style='margin-top:6px'><b>⑤ (原題)</b> 図の「⑤」の印が示す特性値の名称と記号は?</div>",
+     "opts": [
+      "整定時間 $T_s$",
+      "立ち上がり時間 $T_r$",
+      "遅延時間 $T_d$",
+      "行き過ぎ時間 $T_p$",
+      "最大行き過ぎ量 $P_m$"
+     ],
+     "ans": "最大行き過ぎ量 $P_m$",
+     "note": "⑤ = 最大行き過ぎ量 $P_m$。定義: ピーク値が定常値を超えた分(ピーク値 − 定常値)の最大の高さ。(第3回 p.4 演習解答例2。番号は問題によって違ってよい=番号不問。正しい「名称と記号のペア」で各1点)",
+     "tag": "連鎖C5 特性値の名称・記号(原題)",
+     "kp": [
+      "KC-050"
+     ]
+    },
+    {
      "type": "numeric",
-     "q": "<div style='font-size:13px;opacity:.85'><b>【連鎖C】特性値の読み取り</b>(第3回 p.4 演習解答例2、例題で学ぶ p.104)。ある制御系の単位ステップ応答を測ったところ、定常値は 4.0 V で、次のことが分かった。<ul style='margin:6px 0 6px 1.2em;padding:0'><li>0.4 V に達した時刻: 0.35 s</li><li>2.0 V に達した時刻: 0.90 s</li><li>3.6 V に達した時刻: 1.50 s</li><li>最大値 5.2 V に達した時刻: 2.10 s</li><li>応答が許容範囲(定常値の ±5%)から最後に外れた時刻: 5.40 s(これ以後は範囲内)</li></ul></div><div style='margin-top:6px'><b>① 特性値</b> (1) 遅延時間 $T_d$、(2) 立ち上がり時間 $T_r$、(3) 行き過ぎ時間 $T_p$、(4) 整定時間 $T_s$、(5) 最大行き過ぎ量 $P_m$、を求めよ。</div>",
+     "q": "<div style='font-size:13px;opacity:.85'><b>(確認計算)測った応答から値を出す</b>(例題で学ぶ p.104)。ある制御系の単位ステップ応答を測ったところ、定常値は 4.0 V で、次のことが分かった。<ul style='margin:6px 0 6px 1.2em;padding:0'><li>0.4 V に達した時刻: 0.35 s</li><li>2.0 V に達した時刻: 0.90 s</li><li>3.6 V に達した時刻: 1.50 s</li><li>最大値 5.2 V に達した時刻: 2.10 s</li><li>応答が許容範囲(定常値の ±5%)から最後に外れた時刻: 5.40 s(これ以後は範囲内)</li></ul></div><div style='margin-top:6px'><b>① 特性値</b> (1) 遅延時間 $T_d$、(2) 立ち上がり時間 $T_r$、(3) 行き過ぎ時間 $T_p$、(4) 整定時間 $T_s$、(5) 最大行き過ぎ量 $P_m$、を求めよ。</div>",
      "parts": [
       {
        "ans": 0.9,
@@ -591,37 +685,10 @@
       "$P_m$: $5.2-4.0=1.20$ V(定常値からの高さ)"
      ],
      "hint": "どの時刻・どの値が、どの特性値の定義(10%・50%・90%・ピーク・許容範囲)に当たるかを先に決める。",
-     "tag": "連鎖C① 特性値の読み取り",
+     "tag": "連鎖C6 特性値の読み取り(確認)",
      "kp": [
       "K1-007",
-      "K3-006",
-      "KC-046",
-      "KC-047",
-      "KC-048",
-      "KC-049",
-      "KC-050"
-     ]
-    },
-    {
-     "type": "numeric",
-     "q": "<div style='font-size:13px;opacity:.85'>(上の応答で、①の $P_m=1.20$ V を使う)</div><div style='margin-top:6px'><b>② 行き過ぎの割合</b> 最大行き過ぎ量 $P_m$ は、定常値 4.0 V に対して何%か。(有効数字3桁)</div>",
-     "parts": [
-      {
-       "ans": 30.0,
-       "unit": "%",
-       "abs": 0.15,
-       "label": "$\\dfrac{P_m}{\\text{定常値}}$"
-      }
-     ],
-     "note": "$\\dfrac{P_m}{\\text{定常値}}\\times100=\\dfrac{1.20}{4.0}\\times100=30.0\\%$。最大行き過ぎ量は安定度の尺度で、小さいほど振動が少ない。(例題で学ぶ p.104)",
-     "reveal": [
-      "$P_m=1.20$ V、定常値 $=4.0$ V",
-      "$1.20\\div4.0=0.300$ → 30.0%"
-     ],
-     "hint": "$P_m$ を定常値で割って 100 を掛ける。",
-     "tag": "連鎖C② 行き過ぎの割合",
-     "kp": [
-      "K1-008"
+      "K3-006"
      ]
     }
    ]

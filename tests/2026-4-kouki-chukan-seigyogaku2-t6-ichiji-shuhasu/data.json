@@ -109,7 +109,7 @@
   {
    "id": "s2",
    "no": "02",
-   "title": "演習(本番型: 一次遅れ・一次進み・一次微分の連鎖)",
+   "title": "演習(本番型: 一次遅れ・一次進み・RL回路(演習原題)・一次微分の連鎖)",
    "qs": [
     {
      "type": "single",
@@ -451,8 +451,105 @@
      ]
     },
     {
+     "type": "single",
+     "q": "<img src=\"/lessons/img/seigyo/seigyo_ex_rl_circuit.png\" alt=\"演習原題の電気回路(入力 v_i、抵抗 R と並列でなくコイル L に出力 v_o)\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><div style='font-size:13px;opacity:.85'><b>【連鎖F】演習原題(2026年10月21日の演習問題。解答例は第4回 p.3 演習解答例)</b> 以下に示す電気回路の入出力電圧の関係を表す伝達関数を求めなさい。つぎに、その伝達関数を用いて、インディシャル応答を求め、それをグラフとして図示しなさい。(出力 $v_o(t)$ はコイル $L$ の両端の電圧。$v_i=Ri+L\\dfrac{di}{dt}$、$v_o=L\\dfrac{di}{dt}$。紙に書いて解き、選択肢から選ぶ。)</div><div style='margin-top:6px'><b>F-a (原題) 伝達関数</b> 入出力電圧の関係を表す伝達関数 $G(s)=\\dfrac{V_o(s)}{V_i(s)}$ はどれか。</div>",
+     "opts": [
+      "$\\dfrac{Ls}{R+Ls}$",
+      "$\\dfrac{R}{R+Ls}$",
+      "$\\dfrac{1}{R+Ls}$",
+      "$\\dfrac{Ls}{R-Ls}$",
+      "$Ls$"
+     ],
+     "ans": "$\\dfrac{Ls}{R+Ls}$",
+     "note": "ラプラス変換すると $V_i=(R+Ls)I$、$V_o=LsI$。比をとると $G(s)=\\dfrac{LsI}{(R+Ls)I}=\\dfrac{Ls}{R+Ls}=\\dfrac{\\frac LR\\,s}{1+\\frac LR\\,s}$。(第4回 p.3 ①)",
+     "tag": "連鎖F-a RL回路の伝達関数(原題)",
+     "kp": []
+    },
+    {
+     "type": "single",
+     "q": "<div style='font-size:13px;opacity:.85'>(上の回路で)</div><div style='margin-top:6px'><b>F-b (原題) インディシャル応答</b> その伝達関数を用いて、単位ステップ入力($\\dfrac1s$)に対するインディシャル応答 $y(t)=\\mathcal{L}^{-1}\\left[G\\cdot\\dfrac1s\\right]$ を求めよ。($\\varepsilon$ は自然対数の底。$u(t)$ は $t\\gt0$ で 1)</div>",
+     "opts": [
+      "$y(t)=\\varepsilon^{-\\frac RLt}$",
+      "$y(t)=1-\\varepsilon^{-\\frac RLt}$",
+      "$y(t)=\\dfrac RL\\varepsilon^{-\\frac RLt}$",
+      "$y(t)=\\varepsilon^{-\\frac LRt}$"
+     ],
+     "ans": "$y(t)=\\varepsilon^{-\\frac RLt}$",
+     "note": "$y(t)=\\mathcal{L}^{-1}\\left[\\dfrac{Ls}{R+Ls}\\cdot\\dfrac1s\\right]=\\mathcal{L}^{-1}\\left[\\dfrac{L}{R+Ls}\\right]=\\mathcal{L}^{-1}\\left[\\dfrac{L/R}{1+\\frac LRs}\\right]=\\varepsilon^{-\\frac RLt}$。$\\dfrac{1}{s+R/L}$ の逆変換が $\\varepsilon^{-\\frac RLt}$。(第4回 p.3 ②)",
+     "tag": "連鎖F-b RL回路のインディシャル応答(原題)",
+     "kp": []
+    },
+    {
+     "type": "single",
+     "q": "<div style='font-size:13px;opacity:.85'>(上の回路で)</div><div style='margin-top:6px'><b>F-c (原題) グラフ</b> インディシャル応答のグラフ(縦軸 $y(t)$、横軸 $t$)の形はどれか。</div>",
+     "opts": [
+      "$t=0$ で 1 から始まり、指数関数的に 0 に近づく。$t=\\dfrac LR$ で $0.368$ になる",
+      "$t=0$ で 0 から始まり、指数関数的に 1 に近づく。$t=\\dfrac LR$ で $0.632$ になる",
+      "$t=0$ で 0 から始まり、一定の傾きで増え続ける",
+      "$t=0$ で 1 から始まり、振動しながら 0 に近づく"
+     ],
+     "ans": "$t=0$ で 1 から始まり、指数関数的に 0 に近づく。$t=\\dfrac LR$ で $0.368$ になる",
+     "note": "<img src=\"/lessons/img/seigyo/seigyo_diff_element_ans.png\" alt=\"演習解答例の波形(第4回 p.3 ③)\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><br>$y(t)=\\varepsilon^{-\\frac RLt}$ なので $y(0)=1$、$t=\\dfrac LR$ で $\\varepsilon^{-1}=0.368$、以後 0 に近づく。(第4回 p.3 ③。4点)",
+     "tag": "連鎖F-c RL回路のグラフ(原題)",
+     "kp": []
+    },
+    {
+     "type": "single",
+     "q": "<div style='font-size:13px;opacity:.85'>(上の回路で)</div><div style='margin-top:6px'><b>F-d 要素の種類</b> この $G(s)=\\dfrac{\\frac LRs}{1+\\frac LRs}$ は何要素か。また、ゲイン定数 $K$ と時定数 $T$ は?</div>",
+     "opts": [
+      "一次微分要素、$K=1$、$T=\\dfrac LR$",
+      "一次遅れ要素、$K=1$、$T=\\dfrac LR$",
+      "一次微分要素、$K=\\dfrac LR$、$T=1$",
+      "微分要素、$K=L$、$T=R$"
+     ],
+     "ans": "一次微分要素、$K=1$、$T=\\dfrac LR$",
+     "note": "$\\dfrac{Ts}{1+Ts}$ の形で、$T=\\dfrac LR$、係数 $K=1$。分子に $s$ があるので一次微分要素(一次遅れは分子が定数)。(第4回 p.3 ③の波形の横の書き込み)",
+     "tag": "連鎖F-d 一次微分要素の判定(原題)",
+     "kp": []
+    },
+    {
      "type": "numeric",
-     "q": "<div style='font-size:13px;opacity:.85'><b>【連鎖F】一次微分要素</b>(第6回 p.13)。⚠️標準形は資料から決まらない(式が空欄)ので、ここでは $G(s)=\\dfrac{Ks}{1+Ts}$ と与える。<b>資料外の確認計算</b>。</div><div style='margin-top:6px'><b>F1 ベクトル軌跡の点</b> $G(j\\omega)=\\dfrac{j\\omega K}{1+j\\omega T}$ について、(1)(2) $K=10$、$T=2$ の $\\omega=0.5$ rad/s での実部と虚部、(3) $\\omega\\to\\infty$ のときの $\\lvert G\\rvert$、(4)(5) $K=0.2$、$T=0.5$ の $\\omega=2$ rad/s での実部と虚部、を求めよ。(有効数字3桁)</div>",
+     "q": "<div style='font-size:13px;opacity:.85'>(上の回路に数値を入れる。$R=5.0\\ \\Omega$、$L=2.0$ H。<b>確認計算</b>)</div><div style='margin-top:6px'><b>F-e 数値で確かめる</b> (1) 時定数 $T=\\dfrac LR$ [s]、(2) $t=0$ での $y(0)$、(3) $t=T$ での $y(T)$、(4) $t=1.0$ s での $y(1.0)$、を求めよ。(有効数字3桁。$\\varepsilon=e$)</div>",
+     "parts": [
+      {
+       "ans": 0.4,
+       "unit": "s",
+       "abs": 0.0015,
+       "label": "(1) $T$"
+      },
+      {
+       "ans": 1.0,
+       "unit": "",
+       "abs": 0.015,
+       "label": "(2) $y(0)$"
+      },
+      {
+       "ans": 0.368,
+       "unit": "",
+       "abs": 0.0015,
+       "label": "(3) $y(T)$"
+      },
+      {
+       "ans": 0.0821,
+       "unit": "",
+       "abs": 0.00015,
+       "label": "(4) $y(1.0)$"
+      }
+     ],
+     "note": "$T=\\dfrac LR=\\dfrac{2.0}{5.0}=0.400$ s。$y(t)=\\varepsilon^{-\\frac RLt}=\\varepsilon^{-2.5t}$。$y(0)=1.00$、$y(T)=\\varepsilon^{-1}=0.368$、$y(1.0)=\\varepsilon^{-2.5}=0.0821$。",
+     "reveal": [
+      "$T=2.0/5.0=0.400$ s、$R/L=2.5$",
+      "$y(0)=1.00$",
+      "$y(T)=\\varepsilon^{-1}=0.368$",
+      "$y(1.0)=\\varepsilon^{-2.5}=0.0821$"
+     ],
+     "hint": "$y(t)=\\varepsilon^{-\\frac RLt}$ に $R/L=2.5$ を入れる。$t=T$ なら指数は $-1$。",
+     "tag": "連鎖F-e RL回路の数値",
+     "kp": []
+    },
+    {
+     "type": "numeric",
+     "q": "<div style='font-size:13px;opacity:.85'><b>【連鎖G】一次微分要素</b>(第6回 p.13)。⚠️標準形は資料から決まらない(式が空欄。連鎖Fの RL回路は $\\dfrac{Ts}{1+Ts}$ の形で $K=1$)ので、ここでは $G(s)=\\dfrac{Ks}{1+Ts}$ と与える。<b>資料外の確認計算</b>。</div><div style='margin-top:6px'><b>F1 ベクトル軌跡の点</b> $G(j\\omega)=\\dfrac{j\\omega K}{1+j\\omega T}$ について、(1)(2) $K=10$、$T=2$ の $\\omega=0.5$ rad/s での実部と虚部、(3) $\\omega\\to\\infty$ のときの $\\lvert G\\rvert$、(4)(5) $K=0.2$、$T=0.5$ の $\\omega=2$ rad/s での実部と虚部、を求めよ。(有効数字3桁)</div>",
      "parts": [
       {
        "ans": 2.5,
