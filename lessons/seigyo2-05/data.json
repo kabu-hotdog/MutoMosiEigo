@@ -1,0 +1,459 @@
+{
+ "year": 2026,
+ "grade": 4,
+ "exam": "後期中間試験",
+ "subject": "制御工学Ⅱ",
+ "title": "制御工学Ⅱ ・ 学習 第5回〜第6回前半 比例・微分・積分要素の周波数特性",
+ "storageKey": "seigyo2_learn_05_v2",
+ "minutes": 18,
+ "goals": [
+  "比例・微分・積分要素の周波数伝達関数と、ボード線図の形(傾き・位相)を説明できる",
+  "K を与えて、ω=1 のゲインや、ω を 10 倍した時のゲインを dB で計算できる",
+  "ベクトル軌跡・ゲイン−位相線図の形と、対数目盛の位置(mm)を答えられる"
+ ],
+ "katex": true,
+ "terms": [
+  {
+   "name": "周波数伝達関数 G(jω)",
+   "plain": "G(s) の s に jω を代入したもの。比例 K、微分 jωK、積分 −jK/ω の形になる。(第5回 p.4〜11)"
+  },
+  {
+   "name": "ベクトル軌跡とナイキスト線図",
+   "plain": "G(jω) の実部を横軸、虚部を縦軸に描いた図。ベクトル軌跡は ω が 0〜∞、ナイキスト線図は ω が −∞〜∞。(第4回 p.8)"
+  },
+  {
+   "name": "ボード線図",
+   "plain": "横軸に ω(対数目盛)をとり、上にゲイン G_dB=20log|G(jω)| [dB]、下に位相を描く図。(第4回 p.8・p.12)"
+  },
+  {
+   "name": "ゲイン−位相線図(ニコルス線図)",
+   "plain": "横軸に位相、縦軸にゲイン dB をとり、ω をパラメータに点を打つ図。K を変えると上下に動くだけ。(第4回 p.8、第5回 p.6・p.9・p.13)"
+  },
+  {
+   "name": "デケード(dec)",
+   "plain": "ω が 10 倍になる区間。傾き 20 dB/dec は、10 倍ごとにゲインが 20 dB 変わること。(Ⅰ教科書 p.82)"
+  },
+  {
+   "name": "対数目盛",
+   "plain": "1デケード=5 cm の目盛。1 から n までの距離は 50log n [mm]。大きい数字ほど間隔が詰まる。(第6回 p.3)"
+  }
+ ],
+ "blocks": [
+  {
+   "id": "b1",
+   "title": "前提の確認と比例要素",
+   "pre": [
+    {
+     "type": "single",
+     "q": "ゲインのデシベル値の式は?(知らなくて当然)",
+     "opts": [
+      "$20\\log|G|$",
+      "$10\\log|G|$",
+      "$\\log|G|$"
+     ],
+     "ans": "$20\\log|G|$",
+     "note": "$G_{dB}=20\\log|G(j\\omega)|$。(第4回 p.9、第5回 p.5)"
+    }
+   ],
+   "body": "<b>前提(第4回までの復習。ここは問題にしない)</b>:<ul><li>ゲインのデシベル値は $G_{dB}=20\\log|G(j\\omega)|$(つまり $20\\log|G|$)。1 は 0 dB、10 は 20 dB、0.1 は $-20$ dB、1/2 は約 $-6.02$ dB。</li><li>ボード線図は横軸に $\\omega$(対数目盛)、上にゲイン dB、下に位相。授業の用紙は、上がゲイン $+40\\sim-40$ dB、下が位相 $+90\\sim-90^\\circ$、横軸 $0.01\\sim1000$。</li><li>図式表示は4種:ベクトル軌跡($\\omega:0\\sim\\infty$)、ナイキスト線図($\\omega:-\\infty\\sim\\infty$)、ボード線図、ゲイン−位相線図。</li></ul>この回は、<b>比例・微分・積分要素</b>について、$K$ の値を変えた具体例(授業の「if $K=\\cdots$ then ?」)で3種の図を描く。式は $G(s)$ に $s=j\\omega$ を代入して作る(授業スライドの $G(s)=$ 欄は空欄なので、$G(s)$ は比例 $K$、微分 $Ks$、積分 $K/s$ と逆算できる)。<br><br><b>比例要素</b>($G(j\\omega)=K$、第5回 p.4〜6):<ul><li>$\\omega$ を含まない実数。ゲインのデシベル値は $G_{dB}=20\\log|K|$ で、<b>$\\omega$ によらず一定</b>(傾き 0)。位相は $0^\\circ$。ボード線図では<b>ゲインも位相も水平線</b>。</li><li>$K=1$ は 0 dB の水平線。$K=0.5$ は $20\\log0.5$ で約 $-6.02$ dB の水平線。(資料外の確認計算)</li><li>ベクトル軌跡は複素平面の実軸上の一点($K=1$ は点 $(1,0)$)。</li><li><b>ゲイン−位相線図</b>(横軸=位相、縦軸=ゲイン dB)は、位相 $0^\\circ$ の上の一点(ゲインは $20\\log K$)。$K=20$ は約 26 dB、$K=0.2$ は約 $-14$ dB(資料外の確認計算)。</li></ul><b>$K$ を変えると</b>:$K$ が $a$ 倍になると、ゲインの線は $20\\log a$ [dB] だけ<b>上へ平行移動する(傾きと位相は変わらない)</b>。",
+   "example": {
+    "steps": [
+     "比例要素 $G(s)=K$、$K=0.5$。$s=j\\omega$ を代入しても $G(j\\omega)=0.5$。",
+     "ゲインは $\\omega$ によらず $\\lvert G\\rvert=0.5$ で一定。",
+     "$G_{dB}=20\\log0.5$ を電卓で出す。負になるので大きさを答える。"
+    ],
+    "fill": {
+     "type": "numeric",
+     "q": "$K=0.5$ の比例要素のゲインの大きさ(絶対値)は?(有効数字3桁)",
+     "parts": [
+      {
+       "ans": 6.02,
+       "unit": "dB",
+       "abs": 0.015,
+       "label": "$\\lvert G_{dB}\\rvert$"
+      }
+     ],
+     "note": "$20\\log0.5=-6.02$ dB。大きさ 6.02。1/2 は約 $-6.02$ dB。(第5回 p.5。資料外の確認計算)",
+     "reveal": [
+      "$20\\log0.5$ を電卓で",
+      "$-6.02$ → 大きさ 6.02"
+     ]
+    }
+   },
+   "check": [
+    {
+     "type": "single",
+     "q": "比例要素 $G(j\\omega)=K$ のゲインの dB は、$\\omega$ が変わるとどうなる?",
+     "opts": [
+      "$\\omega$ によらず一定",
+      "$\\omega$ とともに増える",
+      "$\\omega$ とともに減る"
+     ],
+     "ans": "$\\omega$ によらず一定",
+     "note": "比例要素の式に $\\omega$ は無いので、ゲインは $20\\log|K|$ で一定。(第5回 p.5)"
+    },
+    {
+     "type": "single",
+     "q": "比例要素のゲイン−位相線図は、どんな図になる?",
+     "opts": [
+      "位相 $0^\\circ$ の上の一点",
+      "位相 $0^\\circ$ の縦線",
+      "ゲイン 0 dB の水平線"
+     ],
+     "ans": "位相 $0^\\circ$ の上の一点",
+     "note": "ゲインも位相も一定なので一点。(第5回 p.6。資料外の確認計算)"
+    },
+    {
+     "type": "single",
+     "q": "$K=1$ の比例要素のゲインは何 dB?",
+     "opts": [
+      "0 dB",
+      "1 dB",
+      "20 dB"
+     ],
+     "ans": "0 dB",
+     "note": "$20\\log1=0$ dB。(第5回 p.5)"
+    }
+   ]
+  },
+  {
+   "id": "b2",
+   "title": "対数目盛を用紙に振る",
+   "pre": [
+    {
+     "type": "single",
+     "q": "ボード線図用紙の対数目盛で、1デケード(ω が 10 倍)は何 cm?(知らなくて当然)",
+     "opts": [
+      "5 cm",
+      "1 cm",
+      "10 cm"
+     ],
+     "ans": "5 cm",
+     "note": "1デケード=5 cm=50 mm。(第6回 p.3、p.4)"
+    }
+   ],
+   "body": "<b>対数目盛の位置</b>(第6回 p.3 の解答例、p.4 の演習):<ul><li><b>1デケード=5 cm=50 mm</b>。基準の $1$ rad/s から数字 $n$ までの距離は $50\\log_{10}n$ mm(資料外の式。表と一致する)。</li><li>表:$2$ は <b>15.0 mm</b>、$3$ は 23.9 mm、$4$ は 30.1 mm、$5$ は 34.9 mm、$6$ は 38.9 mm、$7$ は 42.2 mm、$8$ は 45.1 mm、$9$ は <b>47.7 mm</b>。</li><li>等間隔ではなく、<b>大きい数字ほど間隔が詰まる</b>。2 の位置は 1デケードの半分(25.0 mm)ではない。</li><li>$10$ 倍ごとに 50 mm ずつ進む。たとえば $30$ は $10\\times3$ なので、1 から $50+23.9$ mm。</li></ul><b>第6回 p.4 の演習</b>(作成時間 5 分):<b>0.1〜10 の範囲だけ</b>に対数目盛を振る。0.1→1→10 は2デケードで全長 10 cm。左端($0.1$)から $\\omega=1$ までが 50 mm、そこから 2〜9 は上の表の値を足せばよい。授業で採点された観点は、<b>対数目盛が正しく書かれていること</b>(配点 10)。",
+   "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/seigyo/seigyo2_s6_log_scale.png\" alt=\"対数目盛の位置表\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">第6回 p.3 の解答例の表(1 rad/s を基準にした距離。2…15.0 mm 〜 9…47.7 mm)</figcaption></figure>",
+   "example": {
+    "steps": [
+     "$\\omega=40$ rad/s の縦線の位置を、$\\omega=1$ から右へ何 mm か求める。",
+     "$40=10\\times4$ なので、1デケード分 50 mm に、4 の位置(表で 30.1 mm)を足す。",
+     "$50+30.1$ は?"
+    ],
+    "fill": {
+     "type": "numeric",
+     "q": "$\\omega=40$ rad/s の縦線は、$\\omega=1$ rad/s から右へ何 mm?(有効数字3桁)",
+     "parts": [
+      {
+       "ans": 80.1,
+       "unit": "mm",
+       "abs": 0.15,
+       "label": "位置"
+      }
+     ],
+     "note": "$50+30.1=80.1$ mm。(第6回 p.3 の表)",
+     "reveal": [
+      "$40=10\\times4$",
+      "$50+30.1=80.1$"
+     ]
+    }
+   },
+   "check": [
+    {
+     "type": "single",
+     "q": "対数目盛の 1 から 2 までの距離は?",
+     "opts": [
+      "15.0 mm",
+      "25.0 mm",
+      "5.0 mm"
+     ],
+     "ans": "15.0 mm",
+     "note": "2 は 15.0 mm(半分の 25.0 mm ではない)。(第6回 p.3)"
+    },
+    {
+     "type": "single",
+     "q": "対数目盛で、大きい数字ほど間隔はどうなる?",
+     "opts": [
+      "詰まる",
+      "広がる",
+      "変わらない(等間隔)"
+     ],
+     "ans": "詰まる",
+     "note": "大きい数字ほど間隔が詰まる(2 で 15.0 mm、9 で 47.7 mm)。(第6回 p.3)"
+    },
+    {
+     "type": "single",
+     "q": "0.1〜10 の範囲に対数目盛を振ると、全長は?",
+     "opts": [
+      "10 cm",
+      "5 cm",
+      "25 cm"
+     ],
+     "ans": "10 cm",
+     "note": "2デケードで 10 cm。(第6回 p.4。授業の全体用紙 0.01〜1000 は 5 デケードで 25 cm)"
+    }
+   ]
+  },
+  {
+   "id": "b3",
+   "title": "微分要素($K=0.3$)のボード線図",
+   "pre": [
+    {
+     "type": "single",
+     "q": "微分要素の周波数伝達関数は、$G(j\\omega)=$ ?(知らなくて当然)",
+     "opts": [
+      "$j\\omega K$",
+      "$-jK/\\omega$",
+      "$K$"
+     ],
+     "ans": "$j\\omega K$",
+     "note": "微分要素 $G(s)=Ks$ に $s=j\\omega$ を代入して $j\\omega K$。(第5回 p.7)"
+    }
+   ],
+   "body": "<b>微分要素</b>(第5回 p.7〜9、教科書 81 頁):<ul><li>$G(j\\omega)=j\\omega K$(実部 0、虚部 $K\\omega$)。ゲインのデシベル値は $G_{dB}=20\\log|j\\omega K|=20\\log K+20\\log\\omega$。</li><li>ボード線図:ゲインは<b>$+20$ dB/dec の右上がり直線</b>、位相は $\\omega$ によらず <b>$+90^\\circ$ で一定</b>(水平線)。</li><li><b>$\\omega=1$ rad/s では $G_{dB}=20\\log K$</b>。ここから 10 倍ごとに $+20$ dB。</li><li>$K$ を変えると線は上下に平行移動するだけ(傾き・位相は同じ)。0 dB を横切るのは $\\omega=1/K$。</li><li>ベクトル軌跡:原点から<b>虚軸の正の側の半直線</b>($K=1$ も $K=0.1$ も同じ半直線で、同じ $\\omega$ では $K$ の大きい方が原点から遠い。資料外の確認計算)。</li></ul><b>解答例(第6回 p.3、$K=0.3$ の $G(j\\omega)=j0.3\\omega$)</b>:$\\omega=1$ rad/s で約 <b>$-10.5$ dB</b>($20\\log0.3$)。10 倍ごとに +20 dB なので、$\\omega=0.1$ で約 $-30.5$、$\\omega=10$ で約 $9.5$(電卓では 9.54)、$\\omega=100$ で約 <b>$29.5$ dB</b>。$K=1$ なら $\\omega=1$ で 0 dB。<br><span style='font-size:12px;opacity:.8'>$K=1$ のボード線図は、Ⅰ教科書 p.81 図5.4 と同じ形。(a) ナイキスト線図、(b) ボード線図。</span>",
+   "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/seigyo/seigyo2_s6_bode_answer.png\" alt=\"第6回 p.3 解答例\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">第6回 p.3 の解答例(手書き)。灰色の右上がり直線が微分要素 K=0.3、赤紫の右下がり直線が積分要素 K=5。位相は +90° と −90° の水平線</figcaption></figure><figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/seigyo/seigyo_tb_fig5_4.png\" alt=\"図5.4 微分要素\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">Ⅰ教科書 p.81 図5.4 微分要素 K=1((a)ナイキスト線図、(b)ボード線図)</figcaption></figure>",
+   "example": {
+    "steps": [
+     "微分要素 $G(s)=0.3s$、$G(j\\omega)=j0.3\\omega$。",
+     "$\\omega=10$ rad/s で $\\lvert G\\rvert=0.3\\times10=3$。",
+     "$G_{dB}=20\\log3$ を電卓で出す。"
+    ],
+    "fill": {
+     "type": "numeric",
+     "q": "微分要素 $G(j\\omega)=j0.3\\omega$ の $\\omega=10$ rad/s でのゲインは?(有効数字3桁)",
+     "parts": [
+      {
+       "ans": 9.54,
+       "unit": "dB",
+       "abs": 0.015,
+       "label": "$G_{dB}$"
+      }
+     ],
+     "note": "$20\\log3=9.54$ dB(第6回 p.3 の注記は約 9.5)。$\\omega=1$ の $-10.5$ dB から 1デケードで +20 dB。",
+     "reveal": [
+      "$\\lvert G\\rvert=3$",
+      "$20\\log3$ を電卓で → 9.54"
+     ]
+    }
+   },
+   "check": [
+    {
+     "type": "single",
+     "q": "微分要素のボード線図でのゲインの傾きは?",
+     "opts": [
+      "$+20$ dB/dec",
+      "$-20$ dB/dec",
+      "0 dB/dec"
+     ],
+     "ans": "$+20$ dB/dec",
+     "note": "微分要素は右上がり $+20$ dB/dec。$-20$ dB/dec は積分要素。(第6回 p.3)"
+    },
+    {
+     "type": "single",
+     "q": "微分要素 $G(j\\omega)=j0.3\\omega$ の $\\omega=1$ rad/s でのゲインは?",
+     "opts": [
+      "約 $-10.5$ dB",
+      "0 dB",
+      "約 $+14$ dB"
+     ],
+     "ans": "約 $-10.5$ dB",
+     "note": "$20\\log0.3$ で約 $-10.5$ dB。0 dB は $K=1$ のとき。(第6回 p.3)"
+    },
+    {
+     "type": "single",
+     "q": "微分要素のベクトル軌跡は?",
+     "opts": [
+      "虚軸の正の側の半直線",
+      "虚軸の負の側の半直線",
+      "実軸上の一点"
+     ],
+     "ans": "虚軸の正の側の半直線",
+     "note": "実部 0、虚部 $K\\omega$ が正で増えるので虚軸の正の半直線。(第5回 p.7。資料外の確認計算)"
+    }
+   ]
+  },
+  {
+   "id": "b4",
+   "title": "積分要素($K=5$)と、$K$ で変わる図",
+   "pre": [
+    {
+     "type": "single",
+     "q": "積分要素の周波数伝達関数は、$G(j\\omega)=$ ?(知らなくて当然)",
+     "opts": [
+      "$-jK/\\omega$",
+      "$j\\omega K$",
+      "$jK/\\omega$"
+     ],
+     "ans": "$-jK/\\omega$",
+     "note": "積分要素 $G(s)=K/s$ に $s=j\\omega$ を代入して $K/(j\\omega)=-jK/\\omega$。(第5回 p.11)"
+    }
+   ],
+   "body": "<b>積分要素</b>(第5回 p.11〜13、教科書 82 頁):<ul><li>$G(j\\omega)=-jK/\\omega$(実部 0、虚部 $-K/\\omega$)。ゲインのデシベル値は $G_{dB}=20\\log|-jK/\\omega|=20\\log K-20\\log\\omega$。</li><li>ボード線図:ゲインは<b>$-20$ dB/dec の右下がり直線</b>、位相は $\\omega$ によらず <b>$-90^\\circ$ で一定</b>。</li><li><b>$\\omega=1$ rad/s では $G_{dB}=20\\log K$</b>。ここから 10 倍ごとに $-20$ dB。0 dB を横切るのは $\\omega=K$。</li><li>ベクトル軌跡:<b>虚軸の負の側の半直線</b>($\\omega\\to0$ で $-j\\infty$、$\\omega$ が大きいほど原点に近づく)。(資料外の確認計算。Ⅰ教科書 p.82 図5.5(a))</li><li><b>ゲイン−位相線図</b>は、位相 $-90^\\circ$ の縦線(ゲインだけが $\\omega$ とともに変わる)。配布のニコルス用紙の位相 $-210\\sim0^\\circ$ に載る。微分要素は位相 $+90^\\circ$ の縦線になるが、その用紙には載らない(要確認)。</li></ul><b>解答例(第6回 p.3、$K=5$ の $G(j\\omega)=-j5/\\omega$)</b>:$\\omega=1$ rad/s で約 <b>14 dB</b>($20\\log5=13.979\\cdots$)。10 倍ごとに $-20$ dB なので、$\\omega=0.1$ で約 $34.0$、$\\omega=100$ で約 <b>$-26.0$ dB</b>。授業の「$K=0.1$ のとき?」($G=-j0.1/\\omega$)は、$\\omega=1$ で約 $-20$ dB、0 dB を横切るのは $\\omega=0.1$(資料外の確認計算)。",
+   "fig": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/seigyo/seigyo_tb_fig5_5.png\" alt=\"図5.5 積分要素\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">Ⅰ教科書 p.82 図5.5 積分要素 K=1((a)ナイキスト線図、(b)ボード線図)</figcaption></figure>",
+   "example": {
+    "steps": [
+     "積分要素 $G(j\\omega)=-j5/\\omega$。$\\omega=100$ rad/s で $\\lvert G\\rvert=5/100=0.05$。",
+     "$G_{dB}=20\\log0.05$ を電卓で出す。負になるので大きさを答える。"
+    ],
+    "fill": {
+     "type": "numeric",
+     "q": "積分要素 $G(j\\omega)=-j5/\\omega$ の $\\omega=100$ rad/s でのゲインの大きさ(絶対値)は?(有効数字3桁)",
+     "parts": [
+      {
+       "ans": 26.0,
+       "unit": "dB",
+       "abs": 0.15,
+       "label": "$\\lvert G_{dB}\\rvert$"
+      }
+     ],
+     "note": "$20\\log0.05=-26.0$ dB。大きさ 26.0(第6回 p.3 の $-26.0$ dB)。",
+     "reveal": [
+      "$\\lvert G\\rvert=0.05$",
+      "$20\\log0.05$ → $-26.0$"
+     ]
+    }
+   },
+   "check": [
+    {
+     "type": "single",
+     "q": "積分要素の位相は?",
+     "opts": [
+      "$-90^\\circ$",
+      "$+90^\\circ$",
+      "$0^\\circ$"
+     ],
+     "ans": "$-90^\\circ$",
+     "note": "積分要素は位相 $-90^\\circ$ で一定。$+90^\\circ$ は微分要素。(第6回 p.3)"
+    },
+    {
+     "type": "single",
+     "q": "積分要素 $G(j\\omega)=-j5/\\omega$ の $\\omega=1$ rad/s でのゲインは?",
+     "opts": [
+      "約 14 dB",
+      "約 $-10.5$ dB",
+      "0 dB"
+     ],
+     "ans": "約 14 dB",
+     "note": "$20\\log5$ で約 14 dB。$-10.5$ dB は微分 $K=0.3$ の値。(第6回 p.3)"
+    },
+    {
+     "type": "single",
+     "q": "積分要素のゲイン−位相線図は?",
+     "opts": [
+      "位相 $-90^\\circ$ の縦線",
+      "位相 $0^\\circ$ の上の一点",
+      "ゲイン 0 dB の水平線"
+     ],
+     "ans": "位相 $-90^\\circ$ の縦線",
+     "note": "位相が $-90^\\circ$ で一定でゲインだけ変わるので縦線。(第5回 p.13。資料外の確認計算)"
+    }
+   ]
+  }
+ ],
+ "summary": {
+  "rows": [
+   [
+    "比例要素",
+    "G(jω)=K、ゲイン 20log|K| 一定、位相 0°、ボード線図は水平線2本。ゲイン−位相線図は一点(位相 0°)。K=0.5 → 約 −6.02 dB(資料外)"
+   ],
+   [
+    "微分要素",
+    "G(jω)=jωK、ゲイン 20logK+20logω:+20 dB/dec の右上がり、位相 +90°。ω=1 で 20logK。K=0.3:ω=1 で約 −10.5、100 で約 29.5 dB。ベクトル軌跡=虚軸正の半直線"
+   ],
+   [
+    "積分要素",
+    "G(jω)=−jK/ω、ゲイン 20logK−20logω:−20 dB/dec の右下がり、位相 −90°。ω=1 で 20logK。K=5:ω=1 で約 14、100 で約 −26.0 dB。ベクトル軌跡=虚軸負の半直線。ゲイン−位相線図=位相 −90° の縦線"
+   ],
+   [
+    "K を変える",
+    "K が a 倍 → ゲインの線は 20log a [dB] だけ上へ平行移動(傾き・位相は同じ)。0 dB を横切る ω は 微分 1/K、積分 K"
+   ],
+   [
+    "対数目盛",
+    "1デケード=5 cm=50 mm、距離 50log n。2→15.0、3→23.9、4→30.1、5→34.9、6→38.9、7→42.2、8→45.1、9→47.7 mm。大きい数字ほど詰まる。0.1〜10 は 10 cm"
+   ]
+  ],
+  "write3": "紙に3行、友達に説明するつもりで書く:「比例・微分・積分要素の G(jω) とボード線図の形(傾きと位相)。K を変えると線はどう動くか。ω=1 の dB の求め方と、対数目盛の位置。」"
+ },
+ "final": [
+  {
+   "type": "single",
+   "q": "微分要素の周波数伝達関数は?",
+   "opts": [
+    "$G(j\\omega)=j\\omega K$",
+    "$G(j\\omega)=-jK/\\omega$",
+    "$G(j\\omega)=K$"
+   ],
+   "ans": "$G(j\\omega)=j\\omega K$",
+   "note": "微分要素 $G(s)=Ks$ に $s=j\\omega$ を代入。$-jK/\\omega$ は積分、$K$ は比例。(第5回 p.7)"
+  },
+  {
+   "type": "single",
+   "q": "ゲイン定数 $K$ を $a$ 倍にすると、ボード線図のゲインの線はどうなる?",
+   "opts": [
+    "上へ平行移動する(傾きと位相は変わらない)",
+    "傾きが変わる",
+    "位相が変わる"
+   ],
+   "ans": "上へ平行移動する(傾きと位相は変わらない)",
+   "note": "$K$ が $a$ 倍なら $20\\log a$ [dB] だけ上へ平行移動するだけ。(第5回 p.8、第6回 p.3)"
+  },
+  {
+   "type": "single",
+   "q": "比例要素 $G(j\\omega)=K$ の位相は?",
+   "opts": [
+    "$0^\\circ$",
+    "$+90^\\circ$",
+    "$-90^\\circ$"
+   ],
+   "ans": "$0^\\circ$",
+   "note": "実数なので位相は $0^\\circ$。(第5回 p.5)"
+  },
+  {
+   "type": "single",
+   "q": "積分要素のゲインのデシベル値の式は?",
+   "opts": [
+    "$G_{dB}=20\\log|-jK/\\omega|$",
+    "$G_{dB}=20\\log|j\\omega K|$",
+    "$G_{dB}=10\\log|K|$"
+   ],
+   "ans": "$G_{dB}=20\\log|-jK/\\omega|$",
+   "note": "積分要素 $-jK/\\omega$ の大きさを $20\\log$ にする。$j\\omega K$ は微分。(第5回 p.12)"
+  },
+  {
+   "type": "numeric",
+   "q": "微分要素 $G(j\\omega)=j0.3\\omega$ の $\\omega=100$ rad/s でのゲインは?(有効数字3桁)",
+   "parts": [
+    {
+     "ans": 29.5,
+     "unit": "dB",
+     "abs": 0.15,
+     "label": "$G_{dB}$"
+    }
+   ],
+   "note": "$20\\log30=29.5$ dB。(第6回 p.3)",
+   "reveal": [
+    "$\\lvert G\\rvert=30$",
+    "$20\\log30$ → 29.5"
+   ]
+  },
+  {
+   "type": "single",
+   "q": "対数目盛で、$\\omega=1$ から 3 までの距離は?",
+   "opts": [
+    "23.9 mm",
+    "15.0 mm",
+    "30.1 mm"
+   ],
+   "ans": "23.9 mm",
+   "note": "3 は 23.9 mm、2 は 15.0 mm、4 は 30.1 mm。(第6回 p.3)"
+  }
+ ],
+ "next": [
+  {
+   "label": "演習 ⑤ 比例・微分・積分要素の周波数特性へ",
+   "href": "/quiz.html?d=tests/2026-4-kouki-chukan-seigyogaku2-t5-teiseisoku/data.json"
+  }
+ ],
+ "footer": "出典: 制御工学Ⅱ 第5回 p.2〜13、第6回 p.3〜7(解答例)、第4回 p.8〜13、制御工学Ⅰ教科書 p.77〜83。図は講義資料・教科書からのトリミング。「資料外の確認計算」は資料に答えが無く計算で確かめた所"
+}

@@ -196,5 +196,29 @@
     "type": "summary",
     "path": "/lesson.html?d=lessons/seigyo2-04/data.json",
     "order": 3.5
+  },
+  {
+    "year": 2026,
+    "grade": 4,
+    "exam": "後期中間試験",
+    "subject": "制御工学Ⅱ",
+    "title": "制御工学Ⅱ ・ 学習 第5回 比例・微分・積分要素の周波数特性",
+    "storageKey": null,
+    "totalItems": 0,
+    "type": "summary",
+    "path": "/lesson.html?d=lessons/seigyo2-05/data.json",
+    "order": 4.5
+  },
+  {
+    "year": 2026,
+    "grade": 4,
+    "exam": "後期中間試験",
+    "subject": "制御工学Ⅱ",
+    "title": "制御工学Ⅱ ・ 学習 第6回 一次遅れ・一次進み要素の周波数特性",
+    "storageKey": null,
+    "totalItems": 0,
+    "type": "summary",
+    "path": "/lesson.html?d=lessons/seigyo2-06/data.json",
+    "order": 5.5
   }
 ]
