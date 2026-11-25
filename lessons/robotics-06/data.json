@@ -305,7 +305,7 @@
    "check": [
     {
      "type": "single",
-     "q": "下の図のロボットアーム(リンク $L_1,L_2,L_3$、関節 $\\theta_1,\\theta_2$)のヤコビ行列(行 = $x,y,z$、列 = $\\theta_1,\\theta_2,L_3$)は?",
+     "q": "リンク $L_1,L_2,L_3$($L_3$ は伸び縮みする)と2関節 $\\theta_1,\\theta_2$ のロボットアームの手先位置が ${}^{0}\\boldsymbol{P}_E=(L_2\\sin\\theta_2+L_3\\sin\\theta_1\\sin\\theta_2,\\ L_1+L_3\\cos\\theta_2,\\ L_2\\cos\\theta_1+L_3\\cos\\theta_1\\sin\\theta_2)$ のとき、ヤコビ行列(行 = $x,y,z$、列 = $\\theta_1,\\theta_2,L_3$)は?",
      "opts": [
       "$\\begin{bmatrix}L_3\\cos\\theta_1\\sin\\theta_2 & L_2\\cos\\theta_2+L_3\\sin\\theta_1\\cos\\theta_2 & \\sin\\theta_1\\sin\\theta_2 \\\\ L_3 & -L_3\\sin\\theta_2 & \\cos\\theta_2 \\\\ -L_2\\sin\\theta_1-L_3\\sin\\theta_1\\sin\\theta_2 & L_3\\cos\\theta_1\\cos\\theta_2 & \\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
       "$\\begin{bmatrix}L_3\\cos\\theta_1\\sin\\theta_2 & L_2\\cos\\theta_2+L_3\\sin\\theta_1\\cos\\theta_2 & \\sin\\theta_1\\sin\\theta_2 \\\\ 0 & L_3\\sin\\theta_2 & \\cos\\theta_2 \\\\ L_2\\sin\\theta_1+L_3\\sin\\theta_1\\sin\\theta_2 & L_3\\cos\\theta_1\\cos\\theta_2 & \\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
@@ -313,8 +313,7 @@
       "$\\begin{bmatrix}L_3\\cos\\theta_1\\sin\\theta_2 & \\sin\\theta_1\\sin\\theta_2 & L_2\\cos\\theta_2+L_3\\sin\\theta_1\\cos\\theta_2 \\\\ 0 & \\cos\\theta_2 & -L_3\\sin\\theta_2 \\\\ -L_2\\sin\\theta_1-L_3\\sin\\theta_1\\sin\\theta_2 & \\cos\\theta_1\\sin\\theta_2 & L_3\\cos\\theta_1\\cos\\theta_2\\end{bmatrix}$"
      ],
      "ans": "$\\begin{bmatrix}L_3\\cos\\theta_1\\sin\\theta_2 & L_2\\cos\\theta_2+L_3\\sin\\theta_1\\cos\\theta_2 & \\sin\\theta_1\\sin\\theta_2 \\\\ 0 & -L_3\\sin\\theta_2 & \\cos\\theta_2 \\\\ -L_2\\sin\\theta_1-L_3\\sin\\theta_1\\sin\\theta_2 & L_3\\cos\\theta_1\\cos\\theta_2 & \\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
-     "note": "$y$ は $\\theta_1$ を含まないので 2行1列は 0。(課題3 問1)",
-     "svg": "<img src=\"/lessons/img/robotics/k2-q2-arm.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">"
+     "note": "$y$ は $\\theta_1$ を含まないので 2行1列は 0。(課題3 問1)"
     }
    ]
   }
