@@ -566,7 +566,7 @@ window.initLesson = function (data) {
     if (!window.progressLoad) return;
     var s = await window.progressLoad(KEY);
     if (!s || typeof s !== 'object' || !Object.keys(s).length) return;
-    loadState();
+    // S は作り直さない(カードが持つ rec は S.q の中身。loadState() で S を差し替えると、答えた結果が S に入らず「学習済み」にならない)
     if (mergeInto(S, s)) { save(); render(); }
   };
   window._quizSync = _syncLesson;
