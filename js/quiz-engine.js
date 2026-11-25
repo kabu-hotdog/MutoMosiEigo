@@ -91,7 +91,7 @@ section>.q.q-num,section>.q.q-fc,section>.q:has(.katex),section>.q:has(.num-svg)
 @media(hover:hover) and (pointer:fine) and (min-width:1000px){.kb-help{display:block;margin:0 0 14px;font-size:.82rem;color:var(--dim)}.kb-help kbd{font-family:"JetBrains Mono",monospace;font-size:.78rem;border:1px solid var(--line);border-radius:5px;padding:1px 6px;background:var(--card2);color:var(--ink)}}
 .num-tag{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:.72rem;color:var(--teal);background:rgba(70,214,196,.1);border:1px solid var(--line);border-radius:6px;padding:2px 8px;margin-bottom:8px}
 .num-svg{margin:10px 0;overflow-x:auto}
-.num-svg svg{max-width:100%;height:auto;display:block}.num-svg img{max-width:100%;height:auto;display:block;margin:0 auto}
+.num-svg svg{max-width:100%;height:auto;display:block}.num-svg img{max-width:min(100%,520px)!important;height:auto;display:block;margin:0 auto}.num-svg .fig-small img,.num-svg.fig-small img{max-width:220px!important}
 .num-part{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:10px}
 .num-label{font-size:.9rem;color:var(--muted);min-width:1.5em}
 .num-input{font-family:inherit;font-size:.98rem;color:var(--ink);background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:9px 12px;width:150px;outline:none;transition:.2s}

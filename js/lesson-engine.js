@@ -80,6 +80,8 @@ details.ls-terms summary{cursor:pointer;font-weight:700;font-size:.95rem}
 .ls-res .pass{color:var(--good);font-weight:800}
 .ls-res .fail{color:var(--amber);font-weight:700}
 .ls-fig img,.ls-fig svg{cursor:zoom-out}
+.ls-checks .ls-fig img,.ls-example .ls-fig img,.ls-pre .ls-fig img{max-width:min(100%,520px)!important;height:auto;display:block;margin:0 auto}
+.ls-checks .fig-small img,.ls-checks .ls-fig.fig-small img{max-width:220px!important}
 .fig-small img,.fig-small svg{cursor:zoom-in;max-width:220px!important;max-height:170px;width:auto}
 .ls-sum{overflow-x:auto}
 .ls-sum table{width:100%;border-collapse:collapse;font-size:.9rem}
