@@ -185,11 +185,12 @@
        "label": "(3) 1周する $\\omega$"
       }
      ],
-     "note": "(1) $\\lvert G\\rvert=K=2.00$ が一定なので、原点中心・半径 2.00 の円。(2) $-90^\\circ=-\\dfrac\\pi2$ rad なので $\\omega L=\\dfrac\\pi2$、$\\omega=\\dfrac{\\pi}{2\\times5}=0.314$ rad/s。(3) 位相が $-2\\pi$ になるとき。$\\omega=\\dfrac{2\\pi}{5}=1.26$ rad/s。位相が負(遅れ)なので、$K$ から時計回りに回り続ける。(資料外の確認計算)(第7回 p.6)<br><img src=\"/lessons/img/seigyo/seigyo2_s7_deadtime_circle.png\" alt=\"無駄時間要素のベクトル軌跡(原点中心の円)\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><br>授業の図(原点中心の円。実軸上の $K$ を通る)。",
+     "note": "(1) $\\lvert G\\rvert=K=2.00$ が一定なので、原点中心・半径 2.00 の円。(2) $-90^\\circ=-\\dfrac\\pi2$ rad なので $\\omega L=\\dfrac\\pi2$、$\\omega=\\dfrac{\\pi}{2\\times5}=0.314$ rad/s。(3) 位相が $-2\\pi$ になるとき。$\\omega=\\dfrac{2\\pi}{5}=1.26$ rad/s。位相が負(遅れ)なので、$K$ から時計回りに回り続ける。(資料外の確認計算)(第7回 p.6)",
      "reveal": [
       "(1) $\\lvert G\\rvert=K=2.00$",
       "(2) $\\omega L=\\pi/2$ → $\\pi/10=0.314$",
-      "(3) $\\omega L=2\\pi$ → $2\\pi/5=1.26$"
+      "(3) $\\omega L=2\\pi$ → $2\\pi/5=1.26$",
+      "授業の図(第7回 p.6。原点中心の円。実軸上の $K$ を通る。資料外の確認計算)<br><img src=\"/lessons/img/seigyo/seigyo2_s7_deadtime_circle.png\" alt=\"無駄時間要素のベクトル軌跡(原点中心の円)\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">"
      ],
      "hint": "位相は $-\\omega L$。$-90^\\circ$ は $-\\pi/2$ rad、1周は $-2\\pi$ rad。",
      "tag": "連鎖H1 無駄時間のベクトル軌跡",
@@ -299,12 +300,13 @@
        "label": "(4) 実部($K=0.2$)"
       }
      ],
-     "note": "(1)(2) 原点から $K$ へ進む円なので、直径 $K=10.0$、中心 $K/2=5.00$。(3)(4) $\\omega T=1$ で $G=K\\dfrac{j}{1+j}$ に分母の共役 $1-j$ を掛けて $\\dfrac{K(1+j)}{2}$。$K=10$ で $5.00+j5.00$(虚部 5.00)。$K=0.2$ で $0.100+j0.100$(実部 0.100)。位相は $+45^\\circ$。$T$ は円の上を進む速さにだけ影響する。(資料外の確認計算)(第7回 p.9。式は問題で与えた)<br><img src=\"/lessons/img/seigyo/seigyo2_s7_diff_semicircle.png\" alt=\"一次微分要素のベクトル軌跡(上半円)\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><br>授業の図(原点から $K$ へ戻る上半円)。",
+     "note": "(1)(2) 原点から $K$ へ進む円なので、直径 $K=10.0$、中心 $K/2=5.00$。(3)(4) $\\omega T=1$ で $G=K\\dfrac{j}{1+j}$ に分母の共役 $1-j$ を掛けて $\\dfrac{K(1+j)}{2}$。$K=10$ で $5.00+j5.00$(虚部 5.00)。$K=0.2$ で $0.100+j0.100$(実部 0.100)。位相は $+45^\\circ$。$T$ は円の上を進む速さにだけ影響する。(資料外の確認計算)(第7回 p.9。式は問題で与えた)",
      "reveal": [
       "(1) $K/2=5.00$",
       "(2) $K=10.0$",
       "(3) $\\omega T=1$ → $G=\\dfrac{K(1+j)}{2}=5+j5$ → 5.00",
-      "(4) $\\dfrac{0.2(1+j)}{2}=0.1+j0.1$ → 0.100"
+      "(4) $\\dfrac{0.2(1+j)}{2}=0.1+j0.1$ → 0.100",
+      "授業の図(第7回 p.9。原点から $K$ へ戻る上半円。式は問題で与えた、資料外の確認計算)<br><img src=\"/lessons/img/seigyo/seigyo2_s7_diff_semicircle.png\" alt=\"一次微分要素のベクトル軌跡(上半円)\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">"
      ],
      "hint": "$\\dfrac{j}{1+j}$ は分母の共役 $1-j$ を掛けて整理する。",
      "tag": "連鎖I1 一次微分のベクトル軌跡",
