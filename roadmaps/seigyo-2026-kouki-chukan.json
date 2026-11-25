@@ -194,7 +194,7 @@
   },
   {
    "id": "L6",
-   "phase": "テーマ⑥ 一次遅れ・一次進み要素の周波数特性(第6回後半・約66分)",
+   "phase": "テーマ⑥ 一次遅れ・一次進み要素の周波数特性(第6回後半・約63分)",
    "label": "学習 ⑥ 第6回後半 一次遅れ・一次進み要素の周波数特性",
    "href": "/lesson.html?d=lessons/seigyo2-06/data.json",
    "minutes": 20,
@@ -205,7 +205,7 @@
   },
   {
    "id": "P6a",
-   "phase": "テーマ⑥ 一次遅れ・一次進み要素の周波数特性(第6回後半・約66分)",
+   "phase": "テーマ⑥ 一次遅れ・一次進み要素の周波数特性(第6回後半・約63分)",
    "label": "⑥ 第6回後半 一次遅れ・一次進み要素 暗記(問1型: 説明文の正誤)",
    "href": "/quiz.html?d=tests/2026-4-kouki-chukan-seigyogaku2-t6-ichiji-shuhasu/data.json",
    "minutes": 8,
@@ -218,15 +218,15 @@
   },
   {
    "id": "N6",
-   "phase": "テーマ⑥ 一次遅れ・一次進み要素の周波数特性(第6回後半・約66分)",
+   "phase": "テーマ⑥ 一次遅れ・一次進み要素の周波数特性(第6回後半・約63分)",
    "label": "⑥ 第6回後半 一次遅れ・一次進み要素 演習(本番型・紙で解いて答えだけ入力)",
    "href": "/quiz.html?d=tests/2026-4-kouki-chukan-seigyogaku2-t6-ichiji-shuhasu/data.json",
-   "minutes": 38,
+   "minutes": 35,
    "why": "本番の大問の形。1つの例を使い、前の答えを次で使う連鎖で解く。紙で順に解き、答えだけ入力する。値が要る所は電卓(fx-375ES A)で出す。(数値1問3分・選択1分・並べ替え2分の見積もり)",
    "done": {
     "quiz": "seigyo2_chukan_t6_ichiji_shuhasu_v1",
     "section": "s2",
-    "total": 17
+    "total": 16
    }
   },
   {
