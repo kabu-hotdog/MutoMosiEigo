@@ -63,7 +63,7 @@
     },
     {
      "type": "numeric",
-     "q": "<img src=\"/lessons/img/robotics/r13-planar2.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><div>下の図の2自由度平面ロボットアームで、$L_1=4$、$L_2=2$、$\\theta_1=30^\\circ$、$\\theta_2=30^\\circ$ のとき、先端(エンドエフェクタ)の位置 ${}^{0}\\boldsymbol{P}_E=\\begin{bmatrix}x\\\\y\\end{bmatrix}$ を、同次変換行列を使って求めよ。(有効数字3桁)</div>",
+     "q": "下の図の2自由度平面ロボットアームで、$L_1=4$、$L_2=2$、$\\theta_1=30^\\circ$、$\\theta_2=30^\\circ$ のとき、先端(エンドエフェクタ)の位置 ${}^{0}\\boldsymbol{P}_E=\\begin{bmatrix}x\\\\y\\end{bmatrix}$ を、同次変換行列を使って求めよ。(有効数字3桁)",
      "parts": [
       {
        "ans": 4.46,
@@ -84,7 +84,8 @@
       "${}^{2}\\boldsymbol{P}_E=(L_2,0,0)$ の下に 1 を付けて掛ける: $\\begin{bmatrix}x\\\\y\\\\0\\\\1\\end{bmatrix}=\\begin{bmatrix}\\cos 60^\\circ&-\\sin 60^\\circ&0&4\\cos 30^\\circ\\\\\\sin 60^\\circ&\\cos 60^\\circ&0&4\\sin 30^\\circ\\\\0&0&1&0\\\\0&0&0&1\\end{bmatrix}\\begin{bmatrix}2\\\\0\\\\0\\\\1\\end{bmatrix}=\\begin{bmatrix}\\cos 60^\\circ\\times2+4\\cos 30^\\circ\\\\\\sin 60^\\circ\\times2+4\\sin 30^\\circ\\\\0\\\\1\\end{bmatrix}=\\begin{bmatrix}4.464\\\\3.732\\\\0\\\\1\\end{bmatrix}$"
      ],
      "hint": "$\\boldsymbol{A}_2$ の形(資料 p.15): $\\begin{bmatrix}\\cos(\\theta_1+\\theta_2)&-\\sin(\\theta_1+\\theta_2)&0&L_1\\cos\\theta_1\\\\\\sin(\\theta_1+\\theta_2)&\\cos(\\theta_1+\\theta_2)&0&L_1\\sin\\theta_1\\\\0&0&1&0\\\\0&0&0&1\\end{bmatrix}$。これに ${}^{2}\\boldsymbol{P}_E=(L_2,0,0)$ の下に 1 を付けて掛ける。",
-     "tag": "平面2リンクの手先位置"
+     "tag": "平面2リンクの手先位置",
+     "svg": "<img src=\"/lessons/img/robotics/r13-planar2.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">"
     }
    ]
   },
@@ -95,7 +96,7 @@
    "qs": [
     {
      "type": "single",
-     "q": "<img src=\"/lessons/img/robotics/k2-q1-arm.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><div>下の図のロボットアームで、関節 $J_1$ は何軸まわりに回転?</div>",
+     "q": "下の図のロボットアームで、関節 $J_1$ は何軸まわりに回転?",
      "opts": [
       "$Y_0$ 軸まわりに $\\theta$",
       "$X_1$ 軸まわりに $\\phi$",
@@ -103,11 +104,12 @@
      ],
      "ans": "$Y_0$ 軸まわりに $\\theta$",
      "note": "(課題2 問1)",
-     "tag": "課題2 問1"
+     "tag": "課題2 問1",
+     "svg": "<img src=\"/lessons/img/robotics/k2-q1-arm.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">"
     },
     {
      "type": "numeric",
-     "q": "<img src=\"/lessons/img/robotics/k2-q1-arm.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><div>下の図のロボットアームで、$l_1=3$、$l_2=2$、$\\theta=30^\\circ$、$\\phi=60^\\circ$ のとき、${}^{0}\\boldsymbol{P}_E$ の x、y、z 成分を、同次変換行列 ${}^{0}\\boldsymbol{A}_2$ を使って求めよ。(有効数字3桁)</div>",
+     "q": "下の図のロボットアームで、$l_1=3$、$l_2=2$、$\\theta=30^\\circ$、$\\phi=60^\\circ$ のとき、${}^{0}\\boldsymbol{P}_E$ の x、y、z 成分を、同次変換行列 ${}^{0}\\boldsymbol{A}_2$ を使って求めよ。(有効数字3桁)",
      "parts": [
       {
        "ans": 0.866,
@@ -134,7 +136,8 @@
       "${}^{2}\\boldsymbol{P}_E=(0,l_2,0)$ の下に 1 を付けて掛ける: $\\begin{bmatrix}{}^{0}\\boldsymbol{P}_E\\\\1\\end{bmatrix}=\\begin{bmatrix}\\cos 30^\\circ&\\sin 30^\\circ\\sin 60^\\circ&\\sin 30^\\circ\\cos 60^\\circ&0\\\\0&\\cos 60^\\circ&-\\sin 60^\\circ&3\\\\-\\sin 30^\\circ&\\cos 30^\\circ\\sin 60^\\circ&\\cos 30^\\circ\\cos 60^\\circ&0\\\\0&0&0&1\\end{bmatrix}\\begin{bmatrix}0\\\\2\\\\0\\\\1\\end{bmatrix}=\\begin{bmatrix}\\sin 30^\\circ\\sin 60^\\circ\\times2\\\\3+\\cos 60^\\circ\\times2\\\\\\cos 30^\\circ\\sin 60^\\circ\\times2\\\\1\\end{bmatrix}=\\begin{bmatrix}0.8660\\\\4.000\\\\1.500\\\\1\\end{bmatrix}$"
      ],
      "hint": "資料の ${}^{0}\\boldsymbol{A}_2=\\begin{bmatrix}\\cos\\theta&\\sin\\theta\\sin\\phi&\\sin\\theta\\cos\\phi&0\\\\0&\\cos\\phi&-\\sin\\phi&l_1\\\\-\\sin\\theta&\\cos\\theta\\sin\\phi&\\cos\\theta\\cos\\phi&0\\\\0&0&0&1\\end{bmatrix}$ に、${}^{2}\\boldsymbol{P}_E=(0,l_2,0)$ の下に 1 を付けて掛ける。(答えは先生の ${}^{0}\\boldsymbol{P}_E=(l_2\\sin\\theta\\sin\\phi,\\ l_1+l_2\\cos\\phi,\\ l_2\\cos\\theta\\sin\\phi)$ と同じ)",
-     "tag": "課題2 問1の手先位置"
+     "tag": "課題2 問1の手先位置",
+     "svg": "<img src=\"/lessons/img/robotics/k2-q1-arm.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">"
     }
    ]
   },
@@ -145,7 +148,7 @@
    "qs": [
     {
      "type": "single",
-     "q": "<img src=\"/lessons/img/robotics/k2-q2-arm.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><div>下の図のロボットアームで、エンドエフェクタの位置 ${}^{2}\\boldsymbol{P}_E$ は?</div>",
+     "q": "下の図のロボットアームで、エンドエフェクタの位置 ${}^{2}\\boldsymbol{P}_E$ は?",
      "opts": [
       "$(L_3,\\ 0,\\ 0)$($x_2$ 方向に $L_3$)",
       "$(0,\\ L_3,\\ 0)$",
@@ -153,7 +156,8 @@
      ],
      "ans": "$(L_3,\\ 0,\\ 0)$($x_2$ 方向に $L_3$)",
      "note": "(課題2 問2)",
-     "tag": "課題2 問2"
+     "tag": "課題2 問2",
+     "svg": "<img src=\"/lessons/img/robotics/k2-q2-arm.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">"
     }
    ]
   },
@@ -164,7 +168,7 @@
    "qs": [
     {
      "type": "single",
-     "q": "【課題2 問1(2026.10.26)】下図の2つのリンク $l_1$ と $l_2$、2関節($\\theta,\\phi$)のロボットアームを考える。座標系 $\\Sigma_2(X_2,Y_2,Z_2)$ をベース座標系 $\\Sigma_0(X_0,Y_0,Z_0)$ で表す同次変換行列 ${}^{0}\\boldsymbol{A}_2$ を求めよ。次いで、座標系 $\\Sigma_0$ でのエンドエフェクタの位置ベクトル ${}^{0}\\boldsymbol{P}_E$ を求めよ。<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k2-q1-arm.jpg\" alt=\"課題2 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題2 問1 の図。J1 は $Y_0$ 軸まわりに $\\theta$、J2 は $X_1$ 軸まわりに $\\phi$。</figcaption></figure><br>(1) 同次変換行列 ${}^{0}\\boldsymbol{A}_2$ として正しいものはどれか。",
+     "q": "【課題2 問1(2026.10.26)】下図の2つのリンク $l_1$ と $l_2$、2関節($\\theta,\\phi$)のロボットアームを考える。座標系 $\\Sigma_2(X_2,Y_2,Z_2)$ をベース座標系 $\\Sigma_0(X_0,Y_0,Z_0)$ で表す同次変換行列 ${}^{0}\\boldsymbol{A}_2$ を求めよ。次いで、座標系 $\\Sigma_0$ でのエンドエフェクタの位置ベクトル ${}^{0}\\boldsymbol{P}_E$ を求めよ。<br>(1) 同次変換行列 ${}^{0}\\boldsymbol{A}_2$ として正しいものはどれか。",
      "opts": [
       "$\\begin{bmatrix}\\cos\\theta&0&-\\sin\\theta&0\\\\\\sin\\theta\\sin\\phi&\\cos\\phi&\\cos\\theta\\sin\\phi&l_1\\\\\\sin\\theta\\cos\\phi&-\\sin\\phi&\\cos\\theta\\cos\\phi&0\\\\0&0&0&1\\end{bmatrix}$",
       "$\\begin{bmatrix}\\cos\\theta&-\\sin\\theta\\sin\\phi&-\\sin\\theta\\cos\\phi&0\\\\0&\\cos\\phi&-\\sin\\phi&l_1\\\\\\sin\\theta&\\cos\\theta\\sin\\phi&\\cos\\theta\\cos\\phi&0\\\\0&0&0&1\\end{bmatrix}$",
@@ -173,11 +177,12 @@
      ],
      "ans": "$\\begin{bmatrix}\\cos\\theta&\\sin\\theta\\sin\\phi&\\sin\\theta\\cos\\phi&0\\\\0&\\cos\\phi&-\\sin\\phi&l_1\\\\-\\sin\\theta&\\cos\\theta\\sin\\phi&\\cos\\theta\\cos\\phi&0\\\\0&0&0&1\\end{bmatrix}$",
      "note": "${}^{0}\\boldsymbol{A}_2={}^{0}\\boldsymbol{A}_1\\,{}^{1}\\boldsymbol{A}_2$、${}^{2}\\boldsymbol{P}_E=(0,l_2,0)$ に掛ける。(課題2 解答)",
-     "tag": "課題2"
+     "tag": "課題2",
+     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k2-q1-arm.jpg\" alt=\"課題2 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題2 問1 の図。J1 は $Y_0$ 軸まわりに $\\theta$、J2 は $X_1$ 軸まわりに $\\phi$。</figcaption></figure>"
     },
     {
      "type": "single",
-     "q": "【課題2 問1(2026.10.26)】下図の2つのリンク $l_1$ と $l_2$、2関節($\\theta,\\phi$)のロボットアームを考える。座標系 $\\Sigma_2(X_2,Y_2,Z_2)$ をベース座標系 $\\Sigma_0(X_0,Y_0,Z_0)$ で表す同次変換行列 ${}^{0}\\boldsymbol{A}_2$ を求めよ。次いで、座標系 $\\Sigma_0$ でのエンドエフェクタの位置ベクトル ${}^{0}\\boldsymbol{P}_E$ を求めよ。<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k2-q1-arm.jpg\" alt=\"課題2 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題2 問1 の図。J1 は $Y_0$ 軸まわりに $\\theta$、J2 は $X_1$ 軸まわりに $\\phi$。</figcaption></figure><br>(2) エンドエフェクタの位置ベクトル ${}^{0}\\boldsymbol{P}_E$ として正しいものはどれか。",
+     "q": "【課題2 問1(2026.10.26)】下図の2つのリンク $l_1$ と $l_2$、2関節($\\theta,\\phi$)のロボットアームを考える。座標系 $\\Sigma_2(X_2,Y_2,Z_2)$ をベース座標系 $\\Sigma_0(X_0,Y_0,Z_0)$ で表す同次変換行列 ${}^{0}\\boldsymbol{A}_2$ を求めよ。次いで、座標系 $\\Sigma_0$ でのエンドエフェクタの位置ベクトル ${}^{0}\\boldsymbol{P}_E$ を求めよ。<br>(2) エンドエフェクタの位置ベクトル ${}^{0}\\boldsymbol{P}_E$ として正しいものはどれか。",
      "opts": [
       "$\\begin{bmatrix}l_2\\sin\\theta\\sin\\phi\\\\l_1+l_2\\cos\\phi\\\\l_2\\cos\\theta\\sin\\phi\\end{bmatrix}$",
       "$\\begin{bmatrix}l_2\\sin\\theta\\cos\\phi\\\\l_1+l_2\\sin\\phi\\\\l_2\\cos\\theta\\cos\\phi\\end{bmatrix}$",
@@ -186,11 +191,12 @@
      ],
      "ans": "$\\begin{bmatrix}l_2\\sin\\theta\\sin\\phi\\\\l_1+l_2\\cos\\phi\\\\l_2\\cos\\theta\\sin\\phi\\end{bmatrix}$",
      "note": "${}^{0}\\boldsymbol{A}_2={}^{0}\\boldsymbol{A}_1\\,{}^{1}\\boldsymbol{A}_2$、${}^{2}\\boldsymbol{P}_E=(0,l_2,0)$ に掛ける。(課題2 解答)",
-     "tag": "課題2"
+     "tag": "課題2",
+     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k2-q1-arm.jpg\" alt=\"課題2 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題2 問1 の図。J1 は $Y_0$ 軸まわりに $\\theta$、J2 は $X_1$ 軸まわりに $\\phi$。</figcaption></figure>"
     },
     {
      "type": "single",
-     "q": "【課題2 問2】左図の2つのリンク $l_1$ と $l_2$、2関節($\\theta_1,\\theta_2$)のロボットアームを考える。座標系 $\\Sigma_2(X_2,Y_2,Z_2)$ をベース座標系 $\\Sigma_0(X_0,Y_0,Z_0)$ で表す同次変換行列 ${}^{0}\\boldsymbol{A}_2$ を求めたうえで、座標系 $\\Sigma_0$ でのエンドエフェクタの位置ベクトル ${}^{0}\\boldsymbol{P}_E$ として正しいものはどれか。<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k2-q2-arm.jpg\" alt=\"課題2 問2 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題2 問2 の図。長さは図の $L_1,L_2,L_3$ を使う(問題文は $l_1,l_2$ と書いてあるが、図と解答は $L_1,L_2,L_3$)。</figcaption></figure>",
+     "q": "【課題2 問2】左図の2つのリンク $l_1$ と $l_2$、2関節($\\theta_1,\\theta_2$)のロボットアームを考える。座標系 $\\Sigma_2(X_2,Y_2,Z_2)$ をベース座標系 $\\Sigma_0(X_0,Y_0,Z_0)$ で表す同次変換行列 ${}^{0}\\boldsymbol{A}_2$ を求めたうえで、座標系 $\\Sigma_0$ でのエンドエフェクタの位置ベクトル ${}^{0}\\boldsymbol{P}_E$ として正しいものはどれか。",
      "opts": [
       "$\\begin{bmatrix}L_3\\cos\\theta_2\\\\L_3\\sin\\theta_1\\sin\\theta_2-L_2\\cos\\theta_1\\\\L_1-L_2\\sin\\theta_1+L_3\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
       "$\\begin{bmatrix}L_3\\cos\\theta_2\\\\L_3\\cos\\theta_1\\sin\\theta_2+L_2\\sin\\theta_1\\\\L_1+L_2\\cos\\theta_1-L_3\\sin\\theta_1\\sin\\theta_2\\end{bmatrix}$",
@@ -199,7 +205,8 @@
      ],
      "ans": "$\\begin{bmatrix}L_3\\cos\\theta_2\\\\L_3\\sin\\theta_1\\sin\\theta_2+L_2\\cos\\theta_1\\\\L_1+L_2\\sin\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
      "note": "${}^{0}\\boldsymbol{A}_1=\\boldsymbol{R}(x_0,\\theta_1)$ と $z_0$ 方向に $L_1$、${}^{1}\\boldsymbol{A}_2=\\boldsymbol{R}(y_1,\\theta_2)$ と $y_1$ 方向に $L_2$、${}^{2}\\boldsymbol{P}_E=(L_3,0,0)$。根元から順に掛ける。(課題2 解答)",
-     "tag": "課題2"
+     "tag": "課題2",
+     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k2-q2-arm.jpg\" alt=\"課題2 問2 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題2 問2 の図。長さは図の $L_1,L_2,L_3$ を使う(問題文は $l_1,l_2$ と書いてあるが、図と解答は $L_1,L_2,L_3$)。</figcaption></figure>"
     }
    ]
   }

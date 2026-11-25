@@ -20,7 +20,7 @@
    "qs": [
     {
      "type": "single",
-     "q": "【演習 No.1 問1(2026.11.19)】下記に直交座標系 $(x_0,y_0,z_0)$ において、$y_0$ 軸まわりに $\\phi$ 回転する場合の座標変換行列が $\\begin{bmatrix}\\cos\\phi&0&\\sin\\phi\\\\0&1&0\\\\-\\sin\\phi&0&\\cos\\phi\\end{bmatrix}$ となることを示せ。なお、$x_0,z_0$ 軸まわりの回転ではそれぞれ、$\\begin{bmatrix}1&0&0\\\\0&\\cos\\phi&-\\sin\\phi\\\\0&\\sin\\phi&\\cos\\phi\\end{bmatrix}$、$\\begin{bmatrix}\\cos\\phi&-\\sin\\phi&0\\\\\\sin\\phi&\\cos\\phi&0\\\\0&0&1\\end{bmatrix}$ である。<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/e1-q1-fig.jpg\" alt=\"演習No.1 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.1 問1 の図(左は $X$ 軸まわりの回転の参考図、右は $y_0$ 軸まわりに $\\phi$ 回転)。</figcaption></figure><br>示すために使う、回転後の軸 $x_1,y_1,z_1$ を元の座標 $(x_0,y_0,z_0)$ の成分で書いたものとして正しいものはどれか。(回転行列の列が、この3つのベクトルになる)",
+     "q": "【演習 No.1 問1(2026.11.19)】下記に直交座標系 $(x_0,y_0,z_0)$ において、$y_0$ 軸まわりに $\\phi$ 回転する場合の座標変換行列が $\\begin{bmatrix}\\cos\\phi&0&\\sin\\phi\\\\0&1&0\\\\-\\sin\\phi&0&\\cos\\phi\\end{bmatrix}$ となることを示せ。なお、$x_0,z_0$ 軸まわりの回転ではそれぞれ、$\\begin{bmatrix}1&0&0\\\\0&\\cos\\phi&-\\sin\\phi\\\\0&\\sin\\phi&\\cos\\phi\\end{bmatrix}$、$\\begin{bmatrix}\\cos\\phi&-\\sin\\phi&0\\\\\\sin\\phi&\\cos\\phi&0\\\\0&0&1\\end{bmatrix}$ である。<br>示すために使う、回転後の軸 $x_1,y_1,z_1$ を元の座標 $(x_0,y_0,z_0)$ の成分で書いたものとして正しいものはどれか。(回転行列の列が、この3つのベクトルになる)",
      "opts": [
       "$x_1=(\\cos\\phi,0,\\sin\\phi),\\ y_1=(0,1,0),\\ z_1=(-\\sin\\phi,0,\\cos\\phi)$",
       "$x_1=(\\cos\\phi,\\sin\\phi,0),\\ y_1=(-\\sin\\phi,\\cos\\phi,0),\\ z_1=(0,0,1)$",
@@ -29,7 +29,8 @@
      ],
      "ans": "$x_1=(\\cos\\phi,0,-\\sin\\phi),\\ y_1=(0,1,0),\\ z_1=(\\sin\\phi,0,\\cos\\phi)$",
      "note": "<b>トラ解</b>: 回転後の軸を元の座標の成分で書く。$y_1=(0,1,0)$、$z_1=(\\sin\\phi,0,\\cos\\phi)$($z_0$ から $x_0$ 側へ倒れる)、$x_1=(\\cos\\phi,0,-\\sin\\phi)$($x_0$ から $z_0$ の負の側へ倒れる)。回転行列の列は新しい軸の単位ベクトルなので $\\boldsymbol{R}(y,\\phi)=[x_1\\ y_1\\ z_1]$ となり、問題の行列と一致する。$y$ 軸まわりの正の回転は「$z$ から $x$ へ」向かう回転。(トラ解)",
-     "tag": "演習No.1 問1"
+     "tag": "演習No.1 問1",
+     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/e1-q1-fig.jpg\" alt=\"演習No.1 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.1 問1 の図(左は $X$ 軸まわりの回転の参考図、右は $y_0$ 軸まわりに $\\phi$ 回転)。</figcaption></figure>"
     },
     {
      "type": "single",
@@ -59,7 +60,7 @@
     },
     {
      "type": "single",
-     "q": "【演習 No.1 問3】左図の4つのリンク $L_1,L_2,L_3$ と $L_4$、2関節($\\theta_1,\\theta_2$)のロボットアームを考える。座標系 $\\Sigma_3(x_3,y_3,z_3)$ をベース座標系 $\\Sigma_0(x_0,y_0,z_0)$ で表す同次変換行列 ${}^{0}\\boldsymbol{A}_3$ を求めたうえで、座標系 $\\Sigma_0$ でのエンドエフェクタの位置ベクトル ${}^{0}\\boldsymbol{P}_E$ として正しいものはどれか。(図の読みに依存する)<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/e1-q3-arm.jpg\" alt=\"演習No.1 問3 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.1 問3 の図。</figcaption></figure>",
+     "q": "【演習 No.1 問3】左図の4つのリンク $L_1,L_2,L_3$ と $L_4$、2関節($\\theta_1,\\theta_2$)のロボットアームを考える。座標系 $\\Sigma_3(x_3,y_3,z_3)$ をベース座標系 $\\Sigma_0(x_0,y_0,z_0)$ で表す同次変換行列 ${}^{0}\\boldsymbol{A}_3$ を求めたうえで、座標系 $\\Sigma_0$ でのエンドエフェクタの位置ベクトル ${}^{0}\\boldsymbol{P}_E$ として正しいものはどれか。(図の読みに依存する)",
      "opts": [
       "$\\begin{bmatrix}L_1+L_3\\sin\\theta_1\\sin\\theta_2+L_4\\cos\\theta_1\\\\L_4\\sin\\theta_1+L_3\\cos\\theta_1\\sin\\theta_2\\\\L_2+L_3\\cos\\theta_2\\end{bmatrix}$",
       "$\\begin{bmatrix}L_1+L_3\\sin\\theta_1\\sin\\theta_2+L_4\\cos\\theta_1\\\\L_4\\sin\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2\\\\L_2+L_3\\cos\\theta_2\\end{bmatrix}$",
@@ -68,7 +69,8 @@
      ],
      "ans": "$\\begin{bmatrix}L_1+L_3\\sin\\theta_1\\sin\\theta_2+L_4\\cos\\theta_1\\\\L_4\\sin\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2\\\\L_2+L_3\\cos\\theta_2\\end{bmatrix}$",
      "note": "<b>トラ解</b>(${}^{0}\\boldsymbol{A}_1\\,{}^{1}\\boldsymbol{A}_2\\,{}^{2}\\boldsymbol{A}_3$ の積)。検算: $\\theta_1=\\theta_2=0$ なら $(L_1+L_4,\\ 0,\\ L_2+L_3)$。図の読み: $\\Sigma_1$ は $x_0$ 方向に $L_1$ 並進して $z$ 軸まわり $\\theta_1$、$\\Sigma_2$ は $z_1$ 方向に $L_2$ 並進して $x_1$ 軸まわり $\\theta_2$、$\\Sigma_3$ は $z_2$ 方向に $L_3$、先端は $x_3$ 方向に $L_4$。(トラ解)",
-     "tag": "演習No.1 問3"
+     "tag": "演習No.1 問3",
+     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/e1-q3-arm.jpg\" alt=\"演習No.1 問3 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.1 問3 の図。</figcaption></figure>"
     },
     {
      "type": "numeric",
@@ -93,7 +95,7 @@
    "qs": [
     {
      "type": "numeric",
-     "q": "【演習 No.2 問5】図のように、水平面と $30^\\circ$ の角をなす斜面上の高さ $h=1$ m のところに半径 $r=30$ cm の球を静止させる。そして、球を斜面に沿ってすべることなく転がらせ、水平面に達したときの速度 $v$ を求めよ。なお、重力加速度 $g=9.81\\ [\\mathrm{m/s^2}]$ を用いること。【答え: 3.67m/s】<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/c04-sphere-slope.jpg\" alt=\"演習No.2 問5 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.2 問5 の図。$h$ は球が斜面に接する点の高さ。</figcaption></figure>",
+     "q": "【演習 No.2 問5】図のように、水平面と $30^\\circ$ の角をなす斜面上の高さ $h=1$ m のところに半径 $r=30$ cm の球を静止させる。そして、球を斜面に沿ってすべることなく転がらせ、水平面に達したときの速度 $v$ を求めよ。なお、重力加速度 $g=9.81\\ [\\mathrm{m/s^2}]$ を用いること。【答え: 3.67m/s】",
      "parts": [
       {
        "ans": 3.67,
@@ -103,11 +105,12 @@
       }
      ],
      "note": "重心の落差 $h'=h-r(1-\\cos30^\\circ)=0.9598$、$v=\\sqrt{\\dfrac{10}{7}gh'}=3.667$。$h$ は接点の高さ。(トラ解)",
-     "tag": "演習No.2 問5"
+     "tag": "演習No.2 問5",
+     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/c04-sphere-slope.jpg\" alt=\"演習No.2 問5 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.2 問5 の図。$h$ は球が斜面に接する点の高さ。</figcaption></figure>"
     },
     {
      "type": "single",
-     "q": "【演習 No.2 問6】太さ一様で長さ $L$ のバットでボールを打つとき、ボールがバットの重心から $a$ の位置で当たった場合に、位置 $L/10$ で握った手に衝撃を受けなかった。このときの位置 $a$ の値として正しいものはどれか。<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/e2-q6-fig.jpg\" alt=\"演習No.2 問6 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.2 問6 の図($L/10$ は上端から握る点Oまで、$a$ は重心Gから衝突点まで)。</figcaption></figure>",
+     "q": "【演習 No.2 問6】太さ一様で長さ $L$ のバットでボールを打つとき、ボールがバットの重心から $a$ の位置で当たった場合に、位置 $L/10$ で握った手に衝撃を受けなかった。このときの位置 $a$ の値として正しいものはどれか。",
      "opts": [
       "$a=\\dfrac{7L}{24}$",
       "$a=\\dfrac{5L}{24}$",
@@ -116,11 +119,12 @@
      ],
      "ans": "$a=\\dfrac{5L}{24}$",
      "note": "$v_G=\\dfrac{L^2}{12a}\\omega$。点Oは重心から $\\dfrac L2-\\dfrac L{10}=\\dfrac{2L}{5}$ の所なので $v_O=v_G-\\dfrac{2L}{5}\\omega=0$。よって $\\dfrac{L^2}{12a}=\\dfrac{2L}5$、$a=\\dfrac{5L}{24}$。課題5 問2 の逆の問い。(トラ解)",
-     "tag": "演習No.2 問6"
+     "tag": "演習No.2 問6",
+     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/e2-q6-fig.jpg\" alt=\"演習No.2 問6 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.2 問6 の図($L/10$ は上端から握る点Oまで、$a$ は重心Gから衝突点まで)。</figcaption></figure>"
     },
     {
      "type": "numeric",
-     "q": "【演習 No.2 問7】一端(図中の O)が回転支持された質量 $m_2=3$ kg、長さ $l=1$ m の静止した棒に質量 $m_1=2$ kg の球が棒に垂直に速さ $v_1=10$ m/s で衝突した。衝突後の球の速さは $v_1'=2$ m/s、棒の角速度は $\\omega=12$ rad/s であった。このときの球の衝突位置 $a$ と反発係数 $e$ の値を求めよ。【答え: $a=0.75$、$e=0.7$】(原文は「反発係数をeの値を求めよ」と、「を」が余計。$a$ は支点Oから測る。$e$ は 0.700 と3桁で)<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/e2-q7-fig.jpg\" alt=\"演習No.2 問7 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.2 問7 の図(左が衝突前、右が衝突後)。</figcaption></figure>",
+     "q": "【演習 No.2 問7】一端(図中の O)が回転支持された質量 $m_2=3$ kg、長さ $l=1$ m の静止した棒に質量 $m_1=2$ kg の球が棒に垂直に速さ $v_1=10$ m/s で衝突した。衝突後の球の速さは $v_1'=2$ m/s、棒の角速度は $\\omega=12$ rad/s であった。このときの球の衝突位置 $a$ と反発係数 $e$ の値を求めよ。【答え: $a=0.75$、$e=0.7$】(原文は「反発係数をeの値を求めよ」と、「を」が余計。$a$ は支点Oから測る。$e$ は 0.700 と3桁で)",
      "parts": [
       {
        "ans": 0.75,
@@ -136,11 +140,12 @@
       }
      ],
      "note": "$Ft=m_1(v_1-v_1')=16$、$I_O=\\dfrac{m_2l^2}{3}=1$、$Fta=I_O\\omega$ より $a=0.75$。$v_2'=a\\omega=9$、$e=\\dfrac{9-2}{10}=0.7$。(トラ解)",
-     "tag": "演習No.2 問7"
+     "tag": "演習No.2 問7",
+     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/e2-q7-fig.jpg\" alt=\"演習No.2 問7 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.2 問7 の図(左が衝突前、右が衝突後)。</figcaption></figure>"
     },
     {
      "type": "numeric",
-     "q": "【演習 No.2 問8】図のように一様な太さ、長さ $L=1$ m、質量 $m_2=0.5$ kg の静止している棒に質量 $m_1$ の球が速さ $v_1=10$ m/s で衝突し、衝突後の棒の重心の速度は $v_G=4$ m/s、角速度は $\\omega=18$ rad/s となった。衝突位置 $a$、衝突後の球の速度 $v_1'$、球の質量 $m_1$ を求めよ。ただし、反発係数を $e=0.5$ とする。【答え: $a=0.375$ m、$v_1'=5.75$ m/s、$m_1=0.471$ kg】($a$ は重心から衝突点まで)<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/e2-q8-fig.jpg\" alt=\"演習No.2 問8 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.2 問8 の図(上端が切れているが、課題5 問1 と同じ型の図)。</figcaption></figure>",
+     "q": "【演習 No.2 問8】図のように一様な太さ、長さ $L=1$ m、質量 $m_2=0.5$ kg の静止している棒に質量 $m_1$ の球が速さ $v_1=10$ m/s で衝突し、衝突後の棒の重心の速度は $v_G=4$ m/s、角速度は $\\omega=18$ rad/s となった。衝突位置 $a$、衝突後の球の速度 $v_1'$、球の質量 $m_1$ を求めよ。ただし、反発係数を $e=0.5$ とする。【答え: $a=0.375$ m、$v_1'=5.75$ m/s、$m_1=0.471$ kg】($a$ は重心から衝突点まで)",
      "parts": [
       {
        "ans": 0.375,
@@ -162,7 +167,8 @@
       }
      ],
      "note": "$Ft=m_2v_G=2$、$a=\\dfrac{m_2L^2\\omega}{12Ft}=0.375$、$v_2'=v_G+a\\omega=10.75$、$v_1'=v_2'-ev_1=5.75$、$m_1=\\dfrac{2}{10-5.75}=0.471$。(トラ解)",
-     "tag": "演習No.2 問8"
+     "tag": "演習No.2 問8",
+     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/e2-q8-fig.jpg\" alt=\"演習No.2 問8 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.2 問8 の図(上端が切れているが、課題5 問1 と同じ型の図)。</figcaption></figure>"
     },
     {
      "type": "single",

@@ -182,7 +182,7 @@
    "qs": [
     {
      "type": "single",
-     "q": "【課題4 問1(2026.11.9)】質量 $m_1,m_2$ の2物体A、Bが、速度 $v_1,v_2$ で一直線上を同じ向きで運動している。なお、$v_1>v_2$ である。この2物体が衝突し、衝突後も2物体は同一直線上を運動した。ただし、$e$ は反発係数である。<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k4-q1-fig.jpg\" alt=\"課題4 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題4 問1 の図(衝突前と衝突後)。</figcaption></figure><br>(1) 衝突後の物体Aの速度 $v_1'$ として正しいものはどれか。",
+     "q": "【課題4 問1(2026.11.9)】質量 $m_1,m_2$ の2物体A、Bが、速度 $v_1,v_2$ で一直線上を同じ向きで運動している。なお、$v_1>v_2$ である。この2物体が衝突し、衝突後も2物体は同一直線上を運動した。ただし、$e$ は反発係数である。<br>(1) 衝突後の物体Aの速度 $v_1'$ として正しいものはどれか。",
      "opts": [
       "$v_1'=\\dfrac{(m_1-m_2e)v_1+m_2(1+e)v_2}{m_1+m_2}$",
       "$v_1'=\\dfrac{(m_1+m_2e)v_1+m_2(1-e)v_2}{m_1+m_2}$",
@@ -191,11 +191,12 @@
      ],
      "ans": "$v_1'=\\dfrac{(m_1-m_2e)v_1+m_2(1+e)v_2}{m_1+m_2}$",
      "note": "運動量保存則より $m_1v_1+m_2v_2=m_1v_1'+m_2v_2'$ ……①。反発係数 $e=\\dfrac{v_2'-v_1'}{v_1-v_2}$ ……② より $e(v_1-v_2)=-v_1'+v_2'$ ……③。①$-m_2\\times$③ より $(m_1-em_2)v_1+m_2(1+e)v_2=(m_1+m_2)v_1'$、$v_1'=\\dfrac{(m_1-m_2e)v_1+m_2(1+e)v_2}{m_1+m_2}$。①$+m_1\\times$③ より $m_1(1+e)v_1+(m_2-em_1)v_2=(m_1+m_2)v_2'$、$v_2'=\\dfrac{m_1(1+e)v_1+(m_2-m_1e)v_2}{m_1+m_2}$。式②と式③の連立。(課題4 解答)",
-     "tag": "課題4 問1"
+     "tag": "課題4 問1",
+     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k4-q1-fig.jpg\" alt=\"課題4 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題4 問1 の図(衝突前と衝突後)。</figcaption></figure>"
     },
     {
      "type": "single",
-     "q": "【課題4 問1(2026.11.9)】質量 $m_1,m_2$ の2物体A、Bが、速度 $v_1,v_2$ で一直線上を同じ向きで運動している。なお、$v_1>v_2$ である。この2物体が衝突し、衝突後も2物体は同一直線上を運動した。ただし、$e$ は反発係数である。<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k4-q1-fig.jpg\" alt=\"課題4 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題4 問1 の図(衝突前と衝突後)。</figcaption></figure><br>(2) 衝突後の物体Bの速度 $v_2'$ として正しいものはどれか。",
+     "q": "【課題4 問1(2026.11.9)】質量 $m_1,m_2$ の2物体A、Bが、速度 $v_1,v_2$ で一直線上を同じ向きで運動している。なお、$v_1>v_2$ である。この2物体が衝突し、衝突後も2物体は同一直線上を運動した。ただし、$e$ は反発係数である。<br>(2) 衝突後の物体Bの速度 $v_2'$ として正しいものはどれか。",
      "opts": [
       "$v_2'=\\dfrac{(m_1-m_2e)v_1+m_2(1+e)v_2}{m_1+m_2}$",
       "$v_2'=\\dfrac{m_1(1+e)v_1+(m_2+m_1e)v_2}{m_1+m_2}$",
@@ -204,7 +205,8 @@
      ],
      "ans": "$v_2'=\\dfrac{m_1(1+e)v_1+(m_2-m_1e)v_2}{m_1+m_2}$",
      "note": "運動量保存則より $m_1v_1+m_2v_2=m_1v_1'+m_2v_2'$ ……①。反発係数 $e=\\dfrac{v_2'-v_1'}{v_1-v_2}$ ……② より $e(v_1-v_2)=-v_1'+v_2'$ ……③。①$-m_2\\times$③ より $(m_1-em_2)v_1+m_2(1+e)v_2=(m_1+m_2)v_1'$、$v_1'=\\dfrac{(m_1-m_2e)v_1+m_2(1+e)v_2}{m_1+m_2}$。①$+m_1\\times$③ より $m_1(1+e)v_1+(m_2-em_1)v_2=(m_1+m_2)v_2'$、$v_2'=\\dfrac{m_1(1+e)v_1+(m_2-m_1e)v_2}{m_1+m_2}$。式②と式③の連立。(課題4 解答)",
-     "tag": "課題4 問1"
+     "tag": "課題4 問1",
+     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k4-q1-fig.jpg\" alt=\"課題4 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題4 問1 の図(衝突前と衝突後)。</figcaption></figure>"
     },
     {
      "type": "numeric",
@@ -242,7 +244,7 @@
     },
     {
      "type": "numeric",
-     "q": "【課題5 問1(2026.11.16)】下図のように一様な太さ、長さ $L=1$ m、質量 $m_2=1$ kg の静止している棒に質量 $m_1$ の球が速さ $v_1=8$ m/s で衝突し、衝突後の棒の重心の速度は $v_G=2$ m/s、角速度は $\\omega=9$ rad/s となった。衝突位置 $a$、衝突後の球の速度 $v_1'$、球の質量 $m_1$ を求めよ。ただし、反発係数を $e=0.6$ とする。【答え: $a=0.375$ m、$v_1'=0.575$ m/s、$m_1=0.269$ kg】<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k5-q1-rod.jpg\" alt=\"課題5 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題5 問1 の図($a$ は重心Gから衝突点まで)。</figcaption></figure>",
+     "q": "【課題5 問1(2026.11.16)】下図のように一様な太さ、長さ $L=1$ m、質量 $m_2=1$ kg の静止している棒に質量 $m_1$ の球が速さ $v_1=8$ m/s で衝突し、衝突後の棒の重心の速度は $v_G=2$ m/s、角速度は $\\omega=9$ rad/s となった。衝突位置 $a$、衝突後の球の速度 $v_1'$、球の質量 $m_1$ を求めよ。ただし、反発係数を $e=0.6$ とする。【答え: $a=0.375$ m、$v_1'=0.575$ m/s、$m_1=0.269$ kg】",
      "parts": [
       {
        "ans": 0.375,
@@ -264,11 +266,12 @@
       }
      ],
      "note": "$Ft=m_2v_G=2$、$a=\\dfrac{m_2L^2}{12Ft}\\omega=0.375$、$v_2'=v_G+a\\omega=5.375$、$v_1'=v_2'-ev_1=0.575$、$m_1=\\dfrac{-Ft}{v_1'-v_1}=0.2694$。(課題5 解答)",
-     "tag": "課題5 問1"
+     "tag": "課題5 問1",
+     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k5-q1-rod.jpg\" alt=\"課題5 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題5 問1 の図($a$ は重心Gから衝突点まで)。</figcaption></figure>"
     },
     {
      "type": "single",
-     "q": "【課題5 問2】太さ一様で長さ $L$ のバットでボールを打つとき、ボールがバットの先端から $L/10$ の位置で当たった場合に、手に衝撃を受けないためには、どこを握ればよいか。上端から握る点Oまでの距離 $b$ として正しいものはどれか。<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k5-q2-bat.jpg\" alt=\"課題5 問2 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題5 問2 の図($b$ は上端から握る点Oまで、$a$ は重心から衝突点まで)。</figcaption></figure>",
+     "q": "【課題5 問2】太さ一様で長さ $L$ のバットでボールを打つとき、ボールがバットの先端から $L/10$ の位置で当たった場合に、手に衝撃を受けないためには、どこを握ればよいか。上端から握る点Oまでの距離 $b$ として正しいものはどれか。",
      "opts": [
       "$b=\\dfrac{7L}{24}$",
       "$b=\\dfrac{5L}{24}$",
@@ -277,7 +280,8 @@
      ],
      "ans": "$b=\\dfrac{7L}{24}$",
      "note": "棒の並進 $Ft=mv_G$、回転 $Fat=I\\omega=\\dfrac{mL^2}{12}\\omega$ より $v_G=\\dfrac{L^2}{12a}\\omega$ ……③。点Oの速度 $v_O=v_G-(L/2-b)\\omega=0$ より $v_G=(L/2-b)\\omega$ ……④。③④より $\\dfrac{L^2}{12a}=\\dfrac L2-b$。$a=\\dfrac L2-\\dfrac L{10}=\\dfrac{2L}{5}$ を入れて $b=\\dfrac{7}{24}L$。(課題5 解答)",
-     "tag": "課題5 問2"
+     "tag": "課題5 問2",
+     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k5-q2-bat.jpg\" alt=\"課題5 問2 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題5 問2 の図($b$ は上端から握る点Oまで、$a$ は重心から衝突点まで)。</figcaption></figure>"
     },
     {
      "type": "numeric",

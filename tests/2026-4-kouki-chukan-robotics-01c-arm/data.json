@@ -133,7 +133,7 @@
    "qs": [
     {
      "type": "single",
-     "q": "<img src=\"/lessons/img/robotics/q-vertical.jpg\" alt=\"ロボットの図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><div>この図(写真と模式図)のロボットは?</div>",
+     "q": "この図(写真と模式図)のロボットは?",
      "opts": [
       "直交多関節ロボット",
       "水平多関節ロボット(スカラロボット)",
@@ -142,11 +142,12 @@
      ],
      "ans": "直交多関節ロボット",
      "note": "関節が回転してつながっている多関節のアーム。(資料 p.2)",
-     "tag": "図"
+     "tag": "図",
+     "svg": "<img src=\"/lessons/img/robotics/q-vertical.jpg\" alt=\"ロボットの図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">"
     },
     {
      "type": "single",
-     "q": "<img src=\"/lessons/img/robotics/q-scara.jpg\" alt=\"ロボットの図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><div>この図のロボットは?</div>",
+     "q": "この図のロボットは?",
      "opts": [
       "直交多関節ロボット",
       "水平多関節ロボット(スカラロボット)",
@@ -155,11 +156,12 @@
      ],
      "ans": "水平多関節ロボット(スカラロボット)",
      "note": "水平に動くアームと、先端の上下の軸。(資料 p.3)",
-     "tag": "図"
+     "tag": "図",
+     "svg": "<img src=\"/lessons/img/robotics/q-scara.jpg\" alt=\"ロボットの図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">"
     },
     {
      "type": "single",
-     "q": "<img src=\"/lessons/img/robotics/q-cartesian.jpg\" alt=\"ロボットの図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><div>この図(x・y・z にスライドする)のロボットは?</div>",
+     "q": "この図(x・y・z にスライドする)のロボットは?",
      "opts": [
       "直交多関節ロボット",
       "水平多関節ロボット(スカラロボット)",
@@ -168,11 +170,12 @@
      ],
      "ans": "直角座標ロボット(直交ロボット)",
      "note": "x・y・z のスライド軸だけでできている。(資料 p.3)",
-     "tag": "図"
+     "tag": "図",
+     "svg": "<img src=\"/lessons/img/robotics/q-cartesian.jpg\" alt=\"ロボットの図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">"
     },
     {
      "type": "single",
-     "q": "<img src=\"/lessons/img/robotics/q-cylinder.jpg\" alt=\"ロボットの図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><div>この図(θ で旋回、z と r で直動)のロボットは?</div>",
+     "q": "この図(θ で旋回、z と r で直動)のロボットは?",
      "opts": [
       "直交多関節ロボット",
       "水平多関節ロボット(スカラロボット)",
@@ -182,11 +185,12 @@
      ],
      "ans": "円筒座標ロボット",
      "note": "旋回 θ、直動 z、直動 r。(資料 p.3)",
-     "tag": "図"
+     "tag": "図",
+     "svg": "<img src=\"/lessons/img/robotics/q-cylinder.jpg\" alt=\"ロボットの図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">"
     },
     {
      "type": "single",
-     "q": "<img src=\"/lessons/img/robotics/q-polar.jpg\" alt=\"ロボットの図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><div>この図(θ と φ の回転、r の伸縮)のロボットは?</div>",
+     "q": "この図(θ と φ の回転、r の伸縮)のロボットは?",
      "opts": [
       "直交多関節ロボット",
       "水平多関節ロボット(スカラロボット)",
@@ -196,11 +200,12 @@
      ],
      "ans": "極座標ロボット",
      "note": "回転 θ・旋回 φ・直動 r。(資料 p.4)",
-     "tag": "図"
+     "tag": "図",
+     "svg": "<img src=\"/lessons/img/robotics/q-polar.jpg\" alt=\"ロボットの図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">"
     },
     {
      "type": "single",
-     "q": "<img src=\"/lessons/img/robotics/q-parallel.jpg\" alt=\"ロボットの図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><div>この図のロボットは?</div>",
+     "q": "この図のロボットは?",
      "opts": [
       "直角座標ロボット(直交ロボット)",
       "円筒座標ロボット",
@@ -209,7 +214,8 @@
      ],
      "ans": "パラレルリンクロボット",
      "note": "ベースから複数のリンクが先端でつながる。高速。(資料 p.4)",
-     "tag": "図"
+     "tag": "図",
+     "svg": "<img src=\"/lessons/img/robotics/q-parallel.jpg\" alt=\"ロボットの図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">"
     }
    ]
   }

@@ -185,7 +185,7 @@
    "qs": [
     {
      "type": "single",
-     "q": "【課題4 問4】図のように、半径 $r$ の球が位置Aからレールに沿って移動して半径 $R$ の円周上を完全に1回転させるには、位置Aの速度 $v_A$ をいかほどにすればよいか。なお、球は滑らず転がるものとする。<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/c03-loop.jpg\" alt=\"課題4 問4 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題4 問4 の図。</figcaption></figure><br>正しいものはどれか。",
+     "q": "【課題4 問4】図のように、半径 $r$ の球が位置Aからレールに沿って移動して半径 $R$ の円周上を完全に1回転させるには、位置Aの速度 $v_A$ をいかほどにすればよいか。なお、球は滑らず転がるものとする。<br>正しいものはどれか。",
      "opts": [
       "$v_A\\ge\\sqrt{5g(R-r)}$",
       "$v_A\\ge\\sqrt{\\frac{11}{3}g(R-r)}$",
@@ -194,7 +194,8 @@
      ],
      "ans": "$v_A\\ge\\sqrt{\\frac{27}{7}g(R-r)}$",
      "note": "$v=r\\omega$ より運動エネルギーは $\\dfrac12mv^2+\\dfrac12\\cdot\\dfrac25mr^2\\left(\\dfrac vr\\right)^2=\\dfrac{7}{10}mv^2$ ……①。エネルギー保存則 $\\dfrac{7}{10}mv_A^2=\\dfrac{7}{10}mv_B^2+2mg(R-r)$ から $v_B^2=v_A^2-\\dfrac{20}{7}g(R-r)$ ……②。1回転の条件 $\\dfrac{mv_B^2}{R-r}\\ge mg$ から $v_B^2\\ge g(R-r)$ ……③。②③より $v_A\\ge\\sqrt{\\dfrac{27}{7}g(R-r)}$。最高点の点Bは図には書かれていない(円の最高点)。滑る質点なら $5g(R-r)$、球の回転を入れないと係数が変わる。(課題4 解答)",
-     "tag": "課題4 問4"
+     "tag": "課題4 問4",
+     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/c03-loop.jpg\" alt=\"課題4 問4 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題4 問4 の図。</figcaption></figure>"
     }
    ]
   }

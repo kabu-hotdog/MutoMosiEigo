@@ -143,7 +143,7 @@
    "check": [
     {
      "type": "single",
-     "q": "<img src=\"/lessons/img/robotics/r13-planar2.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><div>下の図のロボットアームで、${}^{1}\\boldsymbol{A}_2$($z_1$ 軸まわりに $\\theta_2$ 回転、$x_1$ 方向に $L_1$ 移動)は、どれ?</div>",
+     "q": "下の図のロボットアームで、${}^{1}\\boldsymbol{A}_2$($z_1$ 軸まわりに $\\theta_2$ 回転、$x_1$ 方向に $L_1$ 移動)は、どれ?",
      "opts": [
       "$\\begin{bmatrix}\\cos\\theta_2 & -\\sin\\theta_2 & 0 & 0 \\\\ \\sin\\theta_2 & \\cos\\theta_2 & 0 & L_1 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
       "$\\begin{bmatrix}\\cos\\theta_2 & -\\sin\\theta_2 & 0 & 0 \\\\ \\sin\\theta_2 & \\cos\\theta_2 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
@@ -151,7 +151,8 @@
       "$\\begin{bmatrix}\\cos\\theta_2 & \\sin\\theta_2 & 0 & L_1 \\\\ -\\sin\\theta_2 & \\cos\\theta_2 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$"
      ],
      "ans": "$\\begin{bmatrix}\\cos\\theta_2 & -\\sin\\theta_2 & 0 & L_1 \\\\ \\sin\\theta_2 & \\cos\\theta_2 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
-     "note": "左上が $\\boldsymbol{R}(z,\\theta_2)$、右上は $x_1$ 方向に $L_1$ なので $(L_1,0,0)$。(資料 p.14)"
+     "note": "左上が $\\boldsymbol{R}(z,\\theta_2)$、右上は $x_1$ 方向に $L_1$ なので $(L_1,0,0)$。(資料 p.14)",
+     "svg": "<img src=\"/lessons/img/robotics/r13-planar2.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">"
     }
    ]
   },
@@ -199,7 +200,7 @@
    "check": [
     {
      "type": "single",
-     "q": "<img src=\"/lessons/img/robotics/k2-q1-arm.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><div>下の図のロボットアームの ${}^{0}\\boldsymbol{A}_1$($Y_0$ 軸まわりに $\\theta$ 回転、移動なし)は?</div>",
+     "q": "下の図のロボットアームの ${}^{0}\\boldsymbol{A}_1$($Y_0$ 軸まわりに $\\theta$ 回転、移動なし)は?",
      "opts": [
       "$\\begin{bmatrix}\\cos\\theta & 0 & \\sin\\theta & 0 \\\\ 0 & 1 & 0 & 0 \\\\ -\\sin\\theta & 0 & \\cos\\theta & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
       "$\\begin{bmatrix}\\cos\\theta & -\\sin\\theta & 0 & 0 \\\\ \\sin\\theta & \\cos\\theta & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
@@ -207,7 +208,8 @@
       "$\\begin{bmatrix}1 & 0 & 0 & 0 \\\\ 0 & \\cos\\theta & -\\sin\\theta & 0 \\\\ 0 & \\sin\\theta & \\cos\\theta & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$"
      ],
      "ans": "$\\begin{bmatrix}\\cos\\theta & 0 & \\sin\\theta & 0 \\\\ 0 & 1 & 0 & 0 \\\\ -\\sin\\theta & 0 & \\cos\\theta & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
-     "note": "$y$ 軸まわりは、右上が $+\\sin\\theta$、左下が $-\\sin\\theta$。(課題2 問1)"
+     "note": "$y$ 軸まわりは、右上が $+\\sin\\theta$、左下が $-\\sin\\theta$。(課題2 問1)",
+     "svg": "<img src=\"/lessons/img/robotics/k2-q1-arm.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">"
     }
    ]
   },
@@ -255,7 +257,7 @@
    "check": [
     {
      "type": "single",
-     "q": "<img src=\"/lessons/img/robotics/k2-q2-arm.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><div>下の図のロボットアームの ${}^{0}\\boldsymbol{A}_1$($x_0$ 軸まわりに $\\theta_1$ 回転、$z_0$ 方向に $L_1$ 移動)は?</div>",
+     "q": "下の図のロボットアームの ${}^{0}\\boldsymbol{A}_1$($x_0$ 軸まわりに $\\theta_1$ 回転、$z_0$ 方向に $L_1$ 移動)は?",
      "opts": [
       "$\\begin{bmatrix}1 & 0 & 0 & 0 \\\\ 0 & \\cos\\theta_1 & -\\sin\\theta_1 & L_1 \\\\ 0 & \\sin\\theta_1 & \\cos\\theta_1 & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
       "$\\begin{bmatrix}1 & 0 & 0 & 0 \\\\ 0 & \\cos\\theta_1 & -\\sin\\theta_1 & 0 \\\\ 0 & \\sin\\theta_1 & \\cos\\theta_1 & L_1 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
@@ -263,7 +265,8 @@
       "$\\begin{bmatrix}1 & 0 & 0 & 0 \\\\ 0 & \\cos\\theta_1 & \\sin\\theta_1 & 0 \\\\ 0 & -\\sin\\theta_1 & \\cos\\theta_1 & L_1 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$"
      ],
      "ans": "$\\begin{bmatrix}1 & 0 & 0 & 0 \\\\ 0 & \\cos\\theta_1 & -\\sin\\theta_1 & 0 \\\\ 0 & \\sin\\theta_1 & \\cos\\theta_1 & L_1 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
-     "note": "$x$ 軸まわりの回転で、右上は $z$ 方向(3行目)に $L_1$。(課題2 問2)"
+     "note": "$x$ 軸まわりの回転で、右上は $z$ 方向(3行目)に $L_1$。(課題2 問2)",
+     "svg": "<img src=\"/lessons/img/robotics/k2-q2-arm.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">"
     }
    ]
   }
