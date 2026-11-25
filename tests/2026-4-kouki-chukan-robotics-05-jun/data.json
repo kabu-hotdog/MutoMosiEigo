@@ -63,7 +63,7 @@
     },
     {
      "type": "numeric",
-     "q": "資料 p.13 の2自由度平面ロボットアームで、$L_1=4$、$L_2=2$、$\\theta_1=30^\\circ$、$\\theta_2=30^\\circ$ のとき、先端(エンドエフェクタ)の位置 ${}^{0}\\boldsymbol{P}_E=\\begin{bmatrix}x\\\\y\\end{bmatrix}$ を、同次変換行列を使って求めよ。(有効数字3桁)",
+     "q": "<img src=\"/lessons/img/robotics/r13-planar2.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><div>下の図の2自由度平面ロボットアームで、$L_1=4$、$L_2=2$、$\\theta_1=30^\\circ$、$\\theta_2=30^\\circ$ のとき、先端(エンドエフェクタ)の位置 ${}^{0}\\boldsymbol{P}_E=\\begin{bmatrix}x\\\\y\\end{bmatrix}$ を、同次変換行列を使って求めよ。(有効数字3桁)</div>",
      "parts": [
       {
        "ans": 4.46,
@@ -95,7 +95,7 @@
    "qs": [
     {
      "type": "single",
-     "q": "課題2 問1で、関節 $J_1$ は何軸まわりに回転?",
+     "q": "<img src=\"/lessons/img/robotics/k2-q1-arm.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><div>下の図のロボットアームで、関節 $J_1$ は何軸まわりに回転?</div>",
      "opts": [
       "$Y_0$ 軸まわりに $\\theta$",
       "$X_1$ 軸まわりに $\\phi$",
@@ -107,7 +107,7 @@
     },
     {
      "type": "numeric",
-     "q": "課題2 問1のロボットアームで、$l_1=3$、$l_2=2$、$\\theta=30^\\circ$、$\\phi=60^\\circ$ のとき、${}^{0}\\boldsymbol{P}_E$ の x、y、z 成分を、同次変換行列 ${}^{0}\\boldsymbol{A}_2$ を使って求めよ。(有効数字3桁)",
+     "q": "<img src=\"/lessons/img/robotics/k2-q1-arm.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><div>下の図のロボットアームで、$l_1=3$、$l_2=2$、$\\theta=30^\\circ$、$\\phi=60^\\circ$ のとき、${}^{0}\\boldsymbol{P}_E$ の x、y、z 成分を、同次変換行列 ${}^{0}\\boldsymbol{A}_2$ を使って求めよ。(有効数字3桁)</div>",
      "parts": [
       {
        "ans": 0.866,
@@ -145,7 +145,7 @@
    "qs": [
     {
      "type": "single",
-     "q": "課題2 問2で、エンドエフェクタの位置 ${}^{2}\\boldsymbol{P}_E$ は?",
+     "q": "<img src=\"/lessons/img/robotics/k2-q2-arm.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><div>下の図のロボットアームで、エンドエフェクタの位置 ${}^{2}\\boldsymbol{P}_E$ は?</div>",
      "opts": [
       "$(L_3,\\ 0,\\ 0)$($x_2$ 方向に $L_3$)",
       "$(0,\\ L_3,\\ 0)$",

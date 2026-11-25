@@ -196,7 +196,7 @@
    "check": [
     {
      "type": "single",
-     "q": "資料 p.19 の2リンクのヤコビ行列 $\\boldsymbol{J}$ は?",
+     "q": "<img src=\"/lessons/img/robotics/r13-planar2.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><div>下の図の2リンクロボットアームのヤコビ行列 $\\boldsymbol{J}$ は?</div>",
      "opts": [
       "$\\begin{bmatrix}L_1\\cos\\theta_1+L_2\\cos(\\theta_1+\\theta_2) & L_2\\cos(\\theta_1+\\theta_2) \\\\ -L_1\\sin\\theta_1-L_2\\sin(\\theta_1+\\theta_2) & -L_2\\sin(\\theta_1+\\theta_2)\\end{bmatrix}$",
       "$\\begin{bmatrix}-L_1\\sin\\theta_1-L_2\\sin(\\theta_1+\\theta_2) & -L_2\\sin(\\theta_1+\\theta_2) \\\\ L_1\\cos\\theta_1+L_2\\cos(\\theta_1+\\theta_2) & L_2\\cos(\\theta_1+\\theta_2)\\end{bmatrix}$",
@@ -304,7 +304,7 @@
    "check": [
     {
      "type": "single",
-     "q": "課題3 問1のヤコビ行列(行 = $x,y,z$、列 = $\\theta_1,\\theta_2,L_3$)は?",
+     "q": "<img src=\"/lessons/img/robotics/k2-q2-arm.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><div>下の図のロボットアーム(リンク $L_1,L_2,L_3$、関節 $\\theta_1,\\theta_2$)のヤコビ行列(行 = $x,y,z$、列 = $\\theta_1,\\theta_2,L_3$)は?</div>",
      "opts": [
       "$\\begin{bmatrix}L_3\\cos\\theta_1\\sin\\theta_2 & L_2\\cos\\theta_2+L_3\\sin\\theta_1\\cos\\theta_2 & \\sin\\theta_1\\sin\\theta_2 \\\\ L_3 & -L_3\\sin\\theta_2 & \\cos\\theta_2 \\\\ -L_2\\sin\\theta_1-L_3\\sin\\theta_1\\sin\\theta_2 & L_3\\cos\\theta_1\\cos\\theta_2 & \\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
       "$\\begin{bmatrix}L_3\\cos\\theta_1\\sin\\theta_2 & L_2\\cos\\theta_2+L_3\\sin\\theta_1\\cos\\theta_2 & \\sin\\theta_1\\sin\\theta_2 \\\\ 0 & L_3\\sin\\theta_2 & \\cos\\theta_2 \\\\ L_2\\sin\\theta_1+L_3\\sin\\theta_1\\sin\\theta_2 & L_3\\cos\\theta_1\\cos\\theta_2 & \\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
@@ -368,7 +368,7 @@
   },
   {
    "type": "single",
-   "q": "(資料 p.19)2リンクのヤコビ行列 $\\boldsymbol{J}$ は?",
+   "q": "<img src=\"/lessons/img/robotics/r13-planar2.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><div>下の図の2リンクロボットアームのヤコビ行列 $\\boldsymbol{J}$ は?</div>",
    "opts": [
     "$\\begin{bmatrix}L_1\\cos\\theta_1+L_2\\cos(\\theta_1+\\theta_2) & L_2\\cos(\\theta_1+\\theta_2) \\\\ -L_1\\sin\\theta_1-L_2\\sin(\\theta_1+\\theta_2) & -L_2\\sin(\\theta_1+\\theta_2)\\end{bmatrix}$",
     "$\\begin{bmatrix}-L_1\\sin\\theta_1-L_2\\sin(\\theta_1+\\theta_2) & L_1\\cos\\theta_1+L_2\\cos(\\theta_1+\\theta_2) \\\\ -L_2\\sin(\\theta_1+\\theta_2) & L_2\\cos(\\theta_1+\\theta_2)\\end{bmatrix}$",

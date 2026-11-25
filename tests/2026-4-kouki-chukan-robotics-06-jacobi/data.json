@@ -68,7 +68,7 @@
     },
     {
      "type": "numeric",
-     "q": "回転1関節でリンクの長さが変わる(資料 p.19)。$x=L\\cos\\theta$、$y=L\\sin\\theta$。$L=3$、$\\theta=30^\\circ$、$\\dot{L}=2$、$\\dot{\\theta}=1$ のとき、$\\begin{bmatrix}\\dot{x}\\\\\\dot{y}\\end{bmatrix}$ を、ヤコビ行列 $\\boldsymbol{J}$ を使って求めよ。(有効数字3桁)",
+     "q": "<img src=\"/lessons/img/robotics/r19-varlink.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><div>下の図のように、回転1関節でリンクの長さが変わる。$x=L\\cos\\theta$、$y=L\\sin\\theta$。$L=3$、$\\theta=30^\\circ$、$\\dot{L}=2$、$\\dot{\\theta}=1$ のとき、$\\begin{bmatrix}\\dot{x}\\\\\\dot{y}\\end{bmatrix}$ を、ヤコビ行列 $\\boldsymbol{J}$ を使って求めよ。(有効数字3桁)</div>",
      "parts": [
       {
        "ans": 0.232,
@@ -100,7 +100,7 @@
    "qs": [
     {
      "type": "single",
-     "q": "2リンクのヤコビ行列(資料 p.19)は?",
+     "q": "<img src=\"/lessons/img/robotics/r13-planar2.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><div>下の図の2リンクロボットアームのヤコビ行列は?</div>",
      "opts": [
       "$\\begin{bmatrix}-L_1\\sin\\theta_1-L_2\\sin(\\theta_1+\\theta_2) & -L_2\\sin(\\theta_1+\\theta_2) \\\\ L_1\\cos\\theta_1+L_2\\cos(\\theta_1+\\theta_2) & L_2\\cos(\\theta_1+\\theta_2)\\end{bmatrix}$",
       "$\\begin{bmatrix}L_1\\cos\\theta_1+L_2\\cos(\\theta_1+\\theta_2) & L_2\\cos(\\theta_1+\\theta_2) \\\\ -L_1\\sin\\theta_1-L_2\\sin(\\theta_1+\\theta_2) & -L_2\\sin(\\theta_1+\\theta_2)\\end{bmatrix}$",
@@ -113,7 +113,7 @@
     },
     {
      "type": "numeric",
-     "q": "資料 p.19 の2リンクのロボットアームで、$L_1=3$、$L_2=2$、$\\theta_1=30^\\circ$、$\\theta_2=30^\\circ$ のとき、$J_{21}=\\partial y/\\partial\\theta_1$、$J_{22}=\\partial y/\\partial\\theta_2$ を求めよ。(有効数字3桁)",
+     "q": "<img src=\"/lessons/img/robotics/r13-planar2.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><div>下の図の2リンクのロボットアームで、$L_1=3$、$L_2=2$、$\\theta_1=30^\\circ$、$\\theta_2=30^\\circ$ のとき、$J_{21}=\\partial y/\\partial\\theta_1$、$J_{22}=\\partial y/\\partial\\theta_2$ を求めよ。(有効数字3桁)</div>",
      "parts": [
       {
        "ans": 3.6,
@@ -157,7 +157,7 @@
     },
     {
      "type": "numeric",
-     "q": "2リンクのロボットアーム(資料 p.20)で、$L_1=3$、$L_2=2$、$\\theta_2=30^\\circ$ のとき、ヤコビ行列の行列式 $\\det\\boldsymbol{J}=L_1L_2\\sin\\theta_2$ を求めよ。(有効数字3桁)",
+     "q": "<img src=\"/lessons/img/robotics/r13-planar2.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\"><div>下の図の2リンクのロボットアームで、$L_1=3$、$L_2=2$、$\\theta_2=30^\\circ$ のとき、ヤコビ行列の行列式 $\\det\\boldsymbol{J}=L_1L_2\\sin\\theta_2$ を求めよ。(有効数字3桁)</div>",
      "parts": [
       {
        "ans": 3.0,
@@ -194,7 +194,7 @@
     },
     {
      "type": "single",
-     "q": "演習No.2 問9のヤコビ行列(トラ解)は?",
+     "q": "3自由度アームの位置ベクトル ${}^{0}\\boldsymbol{P}_E=(-L_2\\sin\\theta_1-L_3\\sin\\theta_1\\sin\\theta_2,\\ -L_3\\cos\\theta_2,\\ L_1-L_2\\cos\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2)$ の、$\\theta_1,\\theta_2,L_3$ についてのヤコビ行列は?",
      "opts": [
       "$\\begin{bmatrix}(L_2+L_3\\sin\\theta_2)\\cos\\theta_1 & L_3\\sin\\theta_1\\cos\\theta_2 & \\sin\\theta_1\\sin\\theta_2 \\\\ 0 & -L_3\\sin\\theta_2 & \\cos\\theta_2 \\\\ -(L_2+L_3\\sin\\theta_2)\\sin\\theta_1 & L_3\\cos\\theta_1\\cos\\theta_2 & \\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
       "$\\begin{bmatrix}-(L_2+L_3\\sin\\theta_2)\\sin\\theta_1 & -L_3\\sin\\theta_1\\cos\\theta_2 & -\\sin\\theta_1\\sin\\theta_2 \\\\ 0 & L_3\\sin\\theta_2 & -\\cos\\theta_2 \\\\ (L_2+L_3\\sin\\theta_2)\\cos\\theta_1 & -L_3\\cos\\theta_1\\cos\\theta_2 & -\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
