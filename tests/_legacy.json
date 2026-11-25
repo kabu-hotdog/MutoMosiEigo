@@ -220,5 +220,17 @@
     "type": "summary",
     "path": "/lesson.html?d=lessons/seigyo2-06/data.json",
     "order": 5.5
+  },
+  {
+    "year": 2026,
+    "grade": 4,
+    "exam": "後期中間試験",
+    "subject": "制御工学Ⅱ",
+    "title": "制御工学Ⅱ ・ 学習 第7回 一次進み(ニコルス)・無駄時間・一次微分要素の周波数特性",
+    "storageKey": null,
+    "totalItems": 0,
+    "type": "summary",
+    "path": "/lesson.html?d=lessons/seigyo2-07/data.json",
+    "order": 6.5
   }
 ]
