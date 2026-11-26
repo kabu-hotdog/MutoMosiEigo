@@ -1095,6 +1095,20 @@ app.post('/api/admin/set-points-user', auth, async (req, res) => {
   res.json({ ok: true, points: dsp(r[0]), lifetime_points: dp(r[0]) });
 });
 
+// 管理者：パスワード再設定（元のパスワードは見えない。session_token を消して既存ログインを無効化）
+app.post('/api/admin/reset-password', auth, async (req, res) => {
+  if (req.user.email !== 'kabu6113450@gmail.com') return res.status(403).json({ error: '権限がありません' });
+  const { userId, newPassword } = req.body;
+  if (!userId || typeof newPassword !== 'string') return res.status(400).json({ error: '不正なリクエスト' });
+  if (newPassword.length < 4) return res.status(400).json({ error: 'パスワードは4文字以上で' });
+  const { rows } = await pool.query('SELECT id, username, supabase_id FROM users WHERE id=$1', [userId]);
+  if (!rows[0]) return res.status(404).json({ error: 'ユーザーが見つかりません' });
+  if (rows[0].supabase_id) return res.status(400).json({ error: 'Googleログインのユーザーにはパスワードを設定できません' });
+  const salt = genSalt();
+  await pool.query('UPDATE users SET password_hash=$1, password_salt=$2, session_token=NULL WHERE id=$3', [hashPw(newPassword, salt), salt, userId]);
+  res.json({ ok: true, username: rows[0].username });
+});
+
 // 管理者：シーズンポイントリセット
 app.post('/api/admin/reset-season-points', auth, async (req, res) => {
   if (req.user.email !== 'kabu6113450@gmail.com') return res.status(403).json({ error: '権限がありません' });
