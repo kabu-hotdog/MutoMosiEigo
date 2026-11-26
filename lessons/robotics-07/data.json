@@ -150,14 +150,15 @@
    "check": [
     {
      "type": "single",
-     "q": "例題1 で、静止①(水平)のエネルギー $E_1$ は?",
+     "q": "下の図のように、質量 $m$、長さ $l$ の棒ABのA端を回転自由にして止め、水平(静止①)で静止させて手をはなす。棒が鉛直(運動②)になるまでで、静止①(水平)のエネルギー $E_1$ は?",
      "opts": [
       "$\\dfrac{mgl}{2}$",
       "$mgl$",
       "$\\dfrac{ml^2}{6}\\omega^2$"
      ],
      "ans": "$\\dfrac{mgl}{2}$",
-     "note": "重心が $l/2$ だけ下がる。$E_1=mg\\times\\dfrac l2$。(資料11/9 p.7)"
+     "note": "重心が $l/2$ だけ下がる。$E_1=mg\\times\\dfrac l2$。(資料11/9 p.7)",
+     "svg": "<img src=\"/lessons/img/robotics/c01-bar.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">"
     }
    ]
   },
@@ -328,14 +329,15 @@
   },
   {
    "type": "single",
-   "q": "例題1 で、B端の速度 $v_B$ は?",
+   "q": "下の図のように、質量 $m$、長さ $l$ の棒ABのA端を回転自由にして止め、水平(静止①)で静止させて手をはなす。棒が鉛直(運動②)になるまでで、B端の速度 $v_B$ は?",
    "opts": [
     "$\\sqrt{3gl}$",
     "$\\sqrt{gl}$",
     "$\\sqrt{2gl}$"
    ],
    "ans": "$\\sqrt{3gl}$",
-   "note": "(資料11/9 p.9)"
+   "note": "(資料11/9 p.9)",
+   "svg": "<img src=\"/lessons/img/robotics/c01-bar.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">"
   }
  ],
  "next": [

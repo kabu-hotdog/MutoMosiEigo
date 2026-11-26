@@ -75,7 +75,7 @@
    "qs": [
     {
      "type": "single",
-     "q": "例題1 で、静止①(水平)のエネルギー $E_1$ は?",
+     "q": "下の図のように、質量 $m$、長さ $l$ の棒ABのA端を回転自由にして止め、水平(静止①)で静止させて手をはなす。棒が鉛直(運動②)になるまでで、静止①(水平)のエネルギー $E_1$ は?",
      "opts": [
       "$\\dfrac{mgl}{2}$",
       "$mgl$",
@@ -83,7 +83,8 @@
      ],
      "ans": "$\\dfrac{mgl}{2}$",
      "note": "重心が $l/2$ 下がる。(資料11/9 p.7)",
-     "tag": "棒"
+     "tag": "棒",
+     "svg": "<img src=\"/lessons/img/robotics/c01-bar.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">"
     },
     {
      "type": "numeric",
@@ -105,7 +106,7 @@
     },
     {
      "type": "numeric",
-     "q": "例題1 の棒(長さ $l=3\\ \\mathrm{m}$)が水平から鉛直になった瞬間の角速度 $\\omega$ はいくつか。(棒のA端まわりの慣性モーメントは $I_A=ml^2/3$。$g=9.81\\ \\mathrm{m/s^2}$。有効数字3桁)",
+     "q": "下の図のように、A端を回転自由にして止め、水平から手をはなす棒AB(長さ $l=3\\ \\mathrm{m}$)が水平から鉛直になった瞬間の角速度 $\\omega$ はいくつか。(棒のA端まわりの慣性モーメントは $I_A=ml^2/3$。$g=9.81\\ \\mathrm{m/s^2}$。有効数字3桁)",
      "parts": [
       {
        "ans": 3.13,
@@ -119,7 +120,8 @@
       "$\\omega=\\sqrt{3g/l}=\\sqrt{29.43/3}=\\sqrt{9.810}=3.132$ rad/s"
      ],
      "hint": "$\\dfrac{mgl}{2}=\\dfrac{ml^2}{6}\\omega^2$ から $\\omega^2=3g/l$。",
-     "tag": "例題1 棒の角速度"
+     "tag": "例題1 棒の角速度",
+     "svg": "<img src=\"/lessons/img/robotics/c01-bar.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">"
     },
     {
      "type": "numeric",

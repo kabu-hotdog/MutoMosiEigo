@@ -39,7 +39,7 @@
    "qs": [
     {
      "type": "single",
-     "q": "例題7.5 で、式(3)から出る式は?",
+     "q": "下の図のように、一直線上を物体1(質量 $m_1$、速度 $v_1$)と物体2(質量 $m_2$、速度 $v_2$)が同じ向きに動き($v_1>v_2$)、衝突して速度が $v_1',v_2'$ になる。反発係数を $e$ とすると $e=\\dfrac{v_2'-v_1'}{v_1-v_2}$(式(3))。この式から出る式は?",
      "opts": [
       "$v_2'=e(v_1-v_2)+v_1'$",
       "$v_2'=e(v_1+v_2)-v_1'$",
@@ -47,11 +47,12 @@
      ],
      "ans": "$v_2'=e(v_1-v_2)+v_1'$",
      "note": "(資料11/9 p.23)",
-     "tag": "例題7.5"
+     "tag": "例題7.5",
+     "svg": "<img src=\"/lessons/img/robotics/c8-coll.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">"
     },
     {
      "type": "single",
-     "q": "課題4 問1 の導出で、$v_1'$ を出すには、式(2)に何を行う?",
+     "q": "下の図のように、質量 $m_1,m_2$、速度 $v_1,v_2$ の2物体が衝突し、衝突後の速度が $v_1',v_2'$ になる。運動量保存則 $m_1v_1'+m_2v_2'=m_1v_1+m_2v_2$ を式(2)、反発係数の式 $v_2'-v_1'=e(v_1-v_2)$ を③とする。$v_1'$ を出すには、式(2)に何を行う?",
      "opts": [
       "式(2) $-\\,m_2\\times$③",
       "式(2) $+\\,m_1\\times$③",
@@ -59,11 +60,12 @@
      ],
      "ans": "式(2) $-\\,m_2\\times$③",
      "note": "$m_2v_2'$ が消える。(課題4 問1)",
-     "tag": "課題4 問1"
+     "tag": "課題4 問1",
+     "svg": "<img src=\"/lessons/img/robotics/c8-coll.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">"
     },
     {
      "type": "single",
-     "q": "課題4 問2 で、Aが静止、Bが衝突後に静止のとき、$e$ は?",
+     "q": "静止している物体Aに物体Bが速度 $v_B$ で衝突し、衝突後、Bは静止してAが速度 $v_A'$ で動き出した。このとき、$e$ は?",
      "opts": [
       "$\\dfrac{v_A'}{v_B}$",
       "$\\dfrac{v_B}{v_A'}$",
@@ -163,7 +165,7 @@
    "qs": [
     {
      "type": "single",
-     "q": "問題7.15 で、棒の下端の衝突後の速度 $v_2'$ は?",
+     "q": "下の図のように、上端Aが回転自由に支えられた棒(質量 $m_2$、長さ $l$)の下端に、質量 $m_1$ の球が速さ $v_1$ で衝突した(反発係数 $e$。衝突後の球の速度 $v_1'$、棒の角速度 $\\omega$)。棒の下端の衝突後の速度 $v_2'$ は?",
      "opts": [
       "$l\\omega$",
       "$\\omega/l$",
@@ -171,7 +173,8 @@
      ],
      "ans": "$l\\omega$",
      "note": "(資料11/16 p.13)",
-     "tag": "問題7.15"
+     "tag": "問題7.15",
+     "svg": "<img src=\"/lessons/img/robotics/c8-b715.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">"
     }
    ]
   },
