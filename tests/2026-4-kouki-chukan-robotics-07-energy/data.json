@@ -28,7 +28,8 @@
      ],
      "ans": "重心",
      "note": "(資料11/9 p.7・p.13 の赤字「重要」)",
-     "tag": "道具"
+     "tag": "道具",
+     "hint": "位置エネルギー mgh の h は、物体の『何の高さ』か。"
     },
     {
      "type": "numeric",
@@ -84,7 +85,8 @@
      "ans": "$\\dfrac{mgl}{2}$",
      "note": "重心が $l/2$ 下がる。(資料11/9 p.7)",
      "tag": "棒",
-     "svg": "<img src=\"/lessons/img/robotics/c01-bar.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">"
+     "svg": "<img src=\"/lessons/img/robotics/c01-bar.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">",
+     "hint": "静止しているので運動エネルギーは 0。位置エネルギー mgh は、重心が鉛直になるまでに何だけ下がるかで考える(棒の重心は中央)。"
     },
     {
      "type": "numeric",
@@ -158,7 +160,8 @@
      ],
      "ans": "並進と回転の運動エネルギー",
      "note": "(資料11/9 p.14)",
-     "tag": "円柱"
+     "tag": "円柱",
+     "hint": "転がるときは、並進だけでなく回転もしている。エネルギーはどこへ行くか。"
     },
     {
      "type": "numeric",
@@ -197,7 +200,8 @@
      "ans": "$v_A\\ge\\sqrt{\\frac{27}{7}g(R-r)}$",
      "note": "$v=r\\omega$ より運動エネルギーは $\\dfrac12mv^2+\\dfrac12\\cdot\\dfrac25mr^2\\left(\\dfrac vr\\right)^2=\\dfrac{7}{10}mv^2$ ……①。エネルギー保存則 $\\dfrac{7}{10}mv_A^2=\\dfrac{7}{10}mv_B^2+2mg(R-r)$ から $v_B^2=v_A^2-\\dfrac{20}{7}g(R-r)$ ……②。1回転の条件 $\\dfrac{mv_B^2}{R-r}\\ge mg$ から $v_B^2\\ge g(R-r)$ ……③。②③より $v_A\\ge\\sqrt{\\dfrac{27}{7}g(R-r)}$。最高点の点Bは図には書かれていない(円の最高点)。滑る質点なら $5g(R-r)$、球の回転を入れないと係数が変わる。(課題4 解答)",
      "tag": "課題4 問4",
-     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/c03-loop.jpg\" alt=\"課題4 問4 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題4 問4 の図。</figcaption></figure>"
+     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/c03-loop.jpg\" alt=\"課題4 問4 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題4 問4 の図。</figcaption></figure>",
+     "hint": "最高点でぎりぎり離れない条件(重力 = 向心力)から、最高点の速さを出す。そこから、エネルギー保存則(転がる球は並進+回転の運動エネルギー、I=2mr²/5)で A の速さを出す。"
     }
    ]
   }

@@ -28,7 +28,8 @@
      ],
      "ans": "運動量の変化",
      "note": "$Ft=mv-mv_0$。(資料11/9 p.19)",
-     "tag": "道具"
+     "tag": "道具",
+     "hint": "力積 = 力 × 時間。運動の量のどれが変わるか。"
     }
    ]
   },
@@ -48,7 +49,8 @@
      "ans": "$v_2'=e(v_1-v_2)+v_1'$",
      "note": "(資料11/9 p.23)",
      "tag": "例題7.5",
-     "svg": "<img src=\"/lessons/img/robotics/c8-coll.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">"
+     "svg": "<img src=\"/lessons/img/robotics/c8-coll.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">",
+     "hint": "式(3) の分数を、v2' について解く(両辺に接近速度を掛けて、v1' を移項する)。"
     },
     {
      "type": "single",
@@ -61,7 +63,8 @@
      "ans": "式(2) $-\\,m_2\\times$③",
      "note": "$m_2v_2'$ が消える。(課題4 問1)",
      "tag": "課題4 問1",
-     "svg": "<img src=\"/lessons/img/robotics/c8-coll.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">"
+     "svg": "<img src=\"/lessons/img/robotics/c8-coll.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">",
+     "hint": "v2' を消すには、③を何倍して式(2)から引く(足す)と、v2' の項が相殺するか。"
     },
     {
      "type": "single",
@@ -73,7 +76,8 @@
      ],
      "ans": "$\\dfrac{v_A'}{v_B}$",
      "note": "(課題4 問2)",
-     "tag": "課題4 問2"
+     "tag": "課題4 問2",
+     "hint": "e = 分離速度 ÷ 接近速度。接近速度は B の速さ、分離速度は A の速さ(B は止まっている)。"
     },
     {
      "type": "single",
@@ -85,7 +89,8 @@
      ],
      "ans": "跳ね返った速さ ÷ ぶつかる直前の速さ",
      "note": "床の速度 0 を式(3)に入れる。(課題4 問3)",
-     "tag": "課題4 問3"
+     "tag": "課題4 問3",
+     "hint": "床は動かないので、速度 0 を式(3)に入れる。分離速度 ÷ 接近速度。"
     },
     {
      "type": "numeric",
@@ -174,7 +179,8 @@
      "ans": "$l\\omega$",
      "note": "(資料11/16 p.13)",
      "tag": "問題7.15",
-     "svg": "<img src=\"/lessons/img/robotics/c8-b715.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">"
+     "svg": "<img src=\"/lessons/img/robotics/c8-b715.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">",
+     "hint": "棒は A のまわりに回っている。回転の速さ ω から、下端の速さを出す(円運動 v = 半径 × ω)。"
     }
    ]
   },
@@ -195,7 +201,8 @@
      "ans": "$v_1'=\\dfrac{(m_1-m_2e)v_1+m_2(1+e)v_2}{m_1+m_2}$",
      "note": "運動量保存則より $m_1v_1+m_2v_2=m_1v_1'+m_2v_2'$ ……①。反発係数 $e=\\dfrac{v_2'-v_1'}{v_1-v_2}$ ……② より $e(v_1-v_2)=-v_1'+v_2'$ ……③。①$-m_2\\times$③ より $(m_1-em_2)v_1+m_2(1+e)v_2=(m_1+m_2)v_1'$、$v_1'=\\dfrac{(m_1-m_2e)v_1+m_2(1+e)v_2}{m_1+m_2}$。①$+m_1\\times$③ より $m_1(1+e)v_1+(m_2-em_1)v_2=(m_1+m_2)v_2'$、$v_2'=\\dfrac{m_1(1+e)v_1+(m_2-m_1e)v_2}{m_1+m_2}$。式②と式③の連立。(課題4 解答)",
      "tag": "課題4 問1",
-     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k4-q1-fig.jpg\" alt=\"課題4 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題4 問1 の図(衝突前と衝突後)。</figcaption></figure>"
+     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k4-q1-fig.jpg\" alt=\"課題4 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題4 問1 の図(衝突前と衝突後)。</figcaption></figure>",
+     "hint": "連立する2式: 運動量保存則 と 反発係数の式。1つを v2' (または v1')について解いて、もう1つに代入する。"
     },
     {
      "type": "single",
@@ -209,7 +216,8 @@
      "ans": "$v_2'=\\dfrac{m_1(1+e)v_1+(m_2-m_1e)v_2}{m_1+m_2}$",
      "note": "運動量保存則より $m_1v_1+m_2v_2=m_1v_1'+m_2v_2'$ ……①。反発係数 $e=\\dfrac{v_2'-v_1'}{v_1-v_2}$ ……② より $e(v_1-v_2)=-v_1'+v_2'$ ……③。①$-m_2\\times$③ より $(m_1-em_2)v_1+m_2(1+e)v_2=(m_1+m_2)v_1'$、$v_1'=\\dfrac{(m_1-m_2e)v_1+m_2(1+e)v_2}{m_1+m_2}$。①$+m_1\\times$③ より $m_1(1+e)v_1+(m_2-em_1)v_2=(m_1+m_2)v_2'$、$v_2'=\\dfrac{m_1(1+e)v_1+(m_2-m_1e)v_2}{m_1+m_2}$。式②と式③の連立。(課題4 解答)",
      "tag": "課題4 問1",
-     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k4-q1-fig.jpg\" alt=\"課題4 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題4 問1 の図(衝突前と衝突後)。</figcaption></figure>"
+     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k4-q1-fig.jpg\" alt=\"課題4 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題4 問1 の図(衝突前と衝突後)。</figcaption></figure>",
+     "hint": "連立する2式: 運動量保存則 と 反発係数の式。1つを v2' (または v1')について解いて、もう1つに代入する。"
     },
     {
      "type": "numeric",
@@ -229,7 +237,8 @@
       }
      ],
      "note": "運動量保存則 $m_Bv_B=m_Av_A'$、$e=\\dfrac{v_A'}{v_B}$。$v_A'=0.75\\times1.5=1.125$、$m_A=\\dfrac{2\\times1.5}{1.125}=2.667$。(課題4 解答。途中で丸めない)",
-     "tag": "課題4 問2"
+     "tag": "課題4 問2",
+     "hint": "静止した物体Aに当たって、Bは止まる → 運動量保存則から A の速度、反発係数 e から A の質量が決まる。まず e = 分離速度÷接近速度。"
     },
     {
      "type": "numeric",
@@ -243,7 +252,8 @@
       }
      ],
      "note": "$e=\\sqrt{\\dfrac{2gH}{v_0^2+2gH}}=\\sqrt{\\dfrac{39.24}{64.24}}=0.7816$。(課題4 解答)",
-     "tag": "課題4 問3"
+     "tag": "課題4 問3",
+     "hint": "e は『跳ね返り速さ ÷ 衝突速さ』。衝突直前の速さは、エネルギー保存則(または等加速度運動)から出す。跳ね返った後の高さ H から、跳ね返り速さも出せる。"
     },
     {
      "type": "numeric",
@@ -270,7 +280,8 @@
      ],
      "note": "$Ft=m_2v_G=2$、$a=\\dfrac{m_2L^2}{12Ft}\\omega=0.375$、$v_2'=v_G+a\\omega=5.375$、$v_1'=v_2'-ev_1=0.575$、$m_1=\\dfrac{-Ft}{v_1'-v_1}=0.2694$。(課題5 解答)",
      "tag": "課題5 問1",
-     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k5-q1-rod.jpg\" alt=\"課題5 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題5 問1 の図($a$ は重心Gから衝突点まで)。</figcaption></figure>"
+     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k5-q1-rod.jpg\" alt=\"課題5 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題5 問1 の図($a$ は重心Gから衝突点まで)。</figcaption></figure>",
+     "hint": "球の力積 = 棒が受ける力積。棒の重心の速度 v_G と回転の角速度 ω を、運動量と角運動量(重心まわり、I = mL²/12)で出す。さらに反発係数の式を使う。"
     },
     {
      "type": "single",
@@ -284,7 +295,8 @@
      "ans": "$b=\\dfrac{7L}{24}$",
      "note": "棒の並進 $Ft=mv_G$、回転 $Fat=I\\omega=\\dfrac{mL^2}{12}\\omega$ より $v_G=\\dfrac{L^2}{12a}\\omega$ ……③。点Oの速度 $v_O=v_G-(L/2-b)\\omega=0$ より $v_G=(L/2-b)\\omega$ ……④。③④より $\\dfrac{L^2}{12a}=\\dfrac L2-b$。$a=\\dfrac L2-\\dfrac L{10}=\\dfrac{2L}{5}$ を入れて $b=\\dfrac{7}{24}L$。(課題5 解答)",
      "tag": "課題5 問2",
-     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k5-q2-bat.jpg\" alt=\"課題5 問2 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題5 問2 の図($b$ は上端から握る点Oまで、$a$ は重心から衝突点まで)。</figcaption></figure>"
+     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k5-q2-bat.jpg\" alt=\"課題5 問2 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題5 問2 の図($b$ は上端から握る点Oまで、$a$ は重心から衝突点まで)。</figcaption></figure>",
+     "hint": "手に衝撃が無い = 握る点Oが回転の中心(速度0)になる点。『打撃の中心』の関係式を使う。距離の測り方(上端から or 重心から)に注意。"
     },
     {
      "type": "numeric",
@@ -298,7 +310,8 @@
       }
      ],
      "note": "$e=\\dfrac{v_B'-v_A'}{v_A-v_B}=\\dfrac{8-3}{10-0}=0.5$。(トラ解)",
-     "tag": "教科書7.8"
+     "tag": "教科書7.8",
+     "hint": "e = 分離速度 ÷ 接近速度。接近は 10 − 0(B は静止)、分離は 8 − 3。"
     },
     {
      "type": "numeric",
@@ -318,7 +331,8 @@
       }
      ],
      "note": "1回はね返ると、速さが $e$ 倍、高さが $e^2$ 倍。高さ $e^2H=0.64\\times3=1.92$。道のりは $H+2e^2H+2e^4H+\\cdots=H\\dfrac{1+e^2}{1-e^2}=3\\times\\dfrac{1.640}{0.3600}=13.67$。(トラ解。教科書の答えは未確認)",
-     "tag": "教科書7.10"
+     "tag": "教科書7.10",
+     "hint": "1回目の跳ね返りの高さは h' = e²h。止まるまでの全距離は、落下 + 2×(跳ね返りの高さの合計)の等比級数。"
     },
     {
      "type": "numeric",

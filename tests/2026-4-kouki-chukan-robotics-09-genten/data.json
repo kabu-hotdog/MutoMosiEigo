@@ -30,7 +30,8 @@
      "ans": "$x_1=(\\cos\\phi,0,-\\sin\\phi),\\ y_1=(0,1,0),\\ z_1=(\\sin\\phi,0,\\cos\\phi)$",
      "note": "<b>トラ解</b>: 回転後の軸を元の座標の成分で書く。$y_1=(0,1,0)$、$z_1=(\\sin\\phi,0,\\cos\\phi)$($z_0$ から $x_0$ 側へ倒れる)、$x_1=(\\cos\\phi,0,-\\sin\\phi)$($x_0$ から $z_0$ の負の側へ倒れる)。回転行列の列は新しい軸の単位ベクトルなので $\\boldsymbol{R}(y,\\phi)=[x_1\\ y_1\\ z_1]$ となり、問題の行列と一致する。$y$ 軸まわりの正の回転は「$z$ から $x$ へ」向かう回転。(トラ解)",
      "tag": "演習No.1 問1",
-     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/e1-q1-fig.jpg\" alt=\"演習No.1 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.1 問1 の図(左は $X$ 軸まわりの回転の参考図、右は $y_0$ 軸まわりに $\\phi$ 回転)。</figcaption></figure>"
+     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/e1-q1-fig.jpg\" alt=\"演習No.1 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.1 問1 の図(左は $X$ 軸まわりの回転の参考図、右は $y_0$ 軸まわりに $\\phi$ 回転)。</figcaption></figure>",
+     "hint": "y 軸まわりの回転行列の列ベクトルが、そのまま新しい軸 x1, y1, z1 の向きを表す。第2列が(0,1,0)なら y は動かない。"
     },
     {
      "type": "single",
@@ -43,7 +44,8 @@
      ],
      "ans": "$\\begin{bmatrix}0&-1&0\\\\\\frac{\\sqrt6-\\sqrt2}{4}&0&\\frac{\\sqrt6+\\sqrt2}{4}\\\\-\\frac{\\sqrt6+\\sqrt2}{4}&0&\\frac{\\sqrt6-\\sqrt2}{4}\\end{bmatrix}$",
      "note": "回転だけで平行移動が無いので、3×3 の ${}^{abs}\\boldsymbol{R}_c$ を掛ければよい。(トラ解)",
-     "tag": "演習No.1 問2"
+     "tag": "演習No.1 問2",
+     "hint": "① x 軸 −30° → ② z_a 軸 90° → ③ y_b 軸 45° の順に、R(x,−30°)R(z_a,90°)R(y_b,45°) と左から掛ける。(2) は、求めた R に点の座標(1,5,−3)を掛ける。"
     },
     {
      "type": "single",
@@ -56,7 +58,8 @@
      ],
      "ans": "$\\begin{bmatrix}-5\\\\-\\sqrt2-\\frac{\\sqrt6}{2}\\\\-\\sqrt6+\\frac{\\sqrt2}{2}\\end{bmatrix}\\approx\\begin{bmatrix}-5.000\\\\-2.639\\\\-1.742\\end{bmatrix}$",
      "note": "回転だけで平行移動が無いので、3×3 の ${}^{abs}\\boldsymbol{R}_c$ を掛ければよい。(トラ解)",
-     "tag": "演習No.1 問2"
+     "tag": "演習No.1 問2",
+     "hint": "① x 軸 −30° → ② z_a 軸 90° → ③ y_b 軸 45° の順に、R(x,−30°)R(z_a,90°)R(y_b,45°) と左から掛ける。(2) は、求めた R に点の座標(1,5,−3)を掛ける。"
     },
     {
      "type": "single",
@@ -70,7 +73,8 @@
      "ans": "$\\begin{bmatrix}L_1+L_3\\sin\\theta_1\\sin\\theta_2+L_4\\cos\\theta_1\\\\L_4\\sin\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2\\\\L_2+L_3\\cos\\theta_2\\end{bmatrix}$",
      "note": "<b>トラ解</b>(${}^{0}\\boldsymbol{A}_1\\,{}^{1}\\boldsymbol{A}_2\\,{}^{2}\\boldsymbol{A}_3$ の積)。検算: $\\theta_1=\\theta_2=0$ なら $(L_1+L_4,\\ 0,\\ L_2+L_3)$。図の読み: $\\Sigma_1$ は $x_0$ 方向に $L_1$ 並進して $z$ 軸まわり $\\theta_1$、$\\Sigma_2$ は $z_1$ 方向に $L_2$ 並進して $x_1$ 軸まわり $\\theta_2$、$\\Sigma_3$ は $z_2$ 方向に $L_3$、先端は $x_3$ 方向に $L_4$。(トラ解)",
      "tag": "演習No.1 問3",
-     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/e1-q3-arm.jpg\" alt=\"演習No.1 問3 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.1 問3 の図。</figcaption></figure>"
+     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/e1-q3-arm.jpg\" alt=\"演習No.1 問3 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.1 問3 の図。</figcaption></figure>",
+     "hint": "図の関節の順に、変換行列(回転と並進)を左から掛ける。リンクの長さは、並進の列に入る。"
     },
     {
      "type": "numeric",
@@ -84,7 +88,8 @@
       }
      ],
      "note": "例題1 の $v_B=\\sqrt{3gl}$ から $l=\\dfrac{v_B^2}{3g}=\\dfrac{100}{29.43}=3.398$。(トラ解)",
-     "tag": "演習No.1 問4"
+     "tag": "演習No.1 問4",
+     "hint": "エネルギー保存則 mgl/2 = (1/2)(ml²/3)ω² から ω = √(3g/l)。B端の速さ v_B = lω に、v_B=10 を入れて l を出す。"
     }
    ]
   },
@@ -106,7 +111,8 @@
      ],
      "note": "重心の落差 $h'=h-r(1-\\cos30^\\circ)=0.9598$、$v=\\sqrt{\\dfrac{10}{7}gh'}=3.667$。$h$ は接点の高さ。(トラ解)",
      "tag": "演習No.2 問5",
-     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/c04-sphere-slope.jpg\" alt=\"演習No.2 問5 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.2 問5 の図。$h$ は球が斜面に接する点の高さ。</figcaption></figure>"
+     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/c04-sphere-slope.jpg\" alt=\"演習No.2 問5 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.2 問5 の図。$h$ は球が斜面に接する点の高さ。</figcaption></figure>",
+     "hint": "h は球の接点の高さ。エネルギー保存則: mgh = (1/2)mv² + (1/2)Iω²。球の I = 2mr²/5、すべらずに転がるので v = rω。"
     },
     {
      "type": "single",
@@ -120,7 +126,8 @@
      "ans": "$a=\\dfrac{5L}{24}$",
      "note": "$v_G=\\dfrac{L^2}{12a}\\omega$。点Oは重心から $\\dfrac L2-\\dfrac L{10}=\\dfrac{2L}{5}$ の所なので $v_O=v_G-\\dfrac{2L}{5}\\omega=0$。よって $\\dfrac{L^2}{12a}=\\dfrac{2L}5$、$a=\\dfrac{5L}{24}$。課題5 問2 の逆の問い。(トラ解)",
      "tag": "演習No.2 問6",
-     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/e2-q6-fig.jpg\" alt=\"演習No.2 問6 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.2 問6 の図($L/10$ は上端から握る点Oまで、$a$ は重心Gから衝突点まで)。</figcaption></figure>"
+     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/e2-q6-fig.jpg\" alt=\"演習No.2 問6 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.2 問6 の図($L/10$ は上端から握る点Oまで、$a$ は重心Gから衝突点まで)。</figcaption></figure>",
+     "hint": "手に衝撃が無い = 握る点が回転の中心。ボールが当たった位置から、打撃の中心の関係式で a と握る位置の関係を出す。"
     },
     {
      "type": "numeric",
@@ -141,7 +148,8 @@
      ],
      "note": "$Ft=m_1(v_1-v_1')=16$、$I_O=\\dfrac{m_2l^2}{3}=1$、$Fta=I_O\\omega$ より $a=0.75$。$v_2'=a\\omega=9$、$e=\\dfrac{9-2}{10}=0.7$。(トラ解)",
      "tag": "演習No.2 問7",
-     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/e2-q7-fig.jpg\" alt=\"演習No.2 問7 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.2 問7 の図(左が衝突前、右が衝突後)。</figcaption></figure>"
+     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/e2-q7-fig.jpg\" alt=\"演習No.2 問7 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.2 問7 の図(左が衝突前、右が衝突後)。</figcaption></figure>",
+     "hint": "球の運動量変化と、棒(支点まわり、I=m2l²/3)の角運動量変化から v1' と ω を出し、反発係数の式を合わせる。聞かれているのは、棒のどの量か問題文を確認する。"
     },
     {
      "type": "numeric",
@@ -168,7 +176,8 @@
      ],
      "note": "$Ft=m_2v_G=2$、$a=\\dfrac{m_2L^2\\omega}{12Ft}=0.375$、$v_2'=v_G+a\\omega=10.75$、$v_1'=v_2'-ev_1=5.75$、$m_1=\\dfrac{2}{10-5.75}=0.471$。(トラ解)",
      "tag": "演習No.2 問8",
-     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/e2-q8-fig.jpg\" alt=\"演習No.2 問8 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.2 問8 の図(上端が切れているが、課題5 問1 と同じ型の図)。</figcaption></figure>"
+     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/e2-q8-fig.jpg\" alt=\"演習No.2 問8 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">演習No.2 問8 の図(上端が切れているが、課題5 問1 と同じ型の図)。</figcaption></figure>",
+     "hint": "課題5 問1 と同じ考え方。球の力積 = 棒の力積(重心の速度 v_G)、重心まわりの角運動量、反発係数の3つの式。"
     },
     {
      "type": "single",
@@ -181,7 +190,8 @@
      ],
      "ans": "$\\begin{bmatrix}-(L_2+L_3\\sin\\theta_2)\\cos\\theta_1&-L_3\\sin\\theta_1\\cos\\theta_2&-\\sin\\theta_1\\sin\\theta_2\\\\0&L_3\\sin\\theta_2&-\\cos\\theta_2\\\\(L_2+L_3\\sin\\theta_2)\\sin\\theta_1&-L_3\\cos\\theta_1\\cos\\theta_2&-\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
      "note": "検算: $\\theta_1=\\theta_2=0$ のとき $\\boldsymbol{J}=\\begin{bmatrix}-L_2&0&0\\\\0&0&-1\\\\0&-L_3&0\\end{bmatrix}$。(トラ解)",
-     "tag": "演習No.2 問9"
+     "tag": "演習No.2 問9",
+     "hint": "位置ベクトルの3成分(x,y,z)を、θ1,θ2,L3 で偏微分して、3×3の行列に並べる。成分ごとに、1列目が θ1、2列目が θ2、3列目が L3。式に入っていない変数の偏微分は 0。"
     }
    ]
   }

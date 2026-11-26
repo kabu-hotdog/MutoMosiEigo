@@ -28,7 +28,8 @@
      ],
      "ans": "$\\cos\\theta$",
      "note": "(資料外・補足)",
-     "tag": "微分"
+     "tag": "微分",
+     "hint": "sin の微分と cos の微分は、符号が違う。"
     },
     {
      "type": "numeric",
@@ -45,7 +46,8 @@
      "reveal": [
       "$8-3=5$"
      ],
-     "tag": "行列式"
+     "tag": "行列式",
+     "hint": "2×2 の行列式は『左上×右下 − 右上×左下』。"
     }
    ]
   },
@@ -64,7 +66,8 @@
      ],
      "ans": "関節の速度 $\\dot{\\boldsymbol{q}}$ と、手先の速度 $\\dot{\\boldsymbol{r}}$",
      "note": "$\\dot{\\boldsymbol{r}}=\\boldsymbol{J}\\dot{\\boldsymbol{q}}$。(資料 p.18)",
-     "tag": "ヤコビ行列"
+     "tag": "ヤコビ行列",
+     "hint": "ヤコビ行列は『関節の速さ』から『手先の速さ』を作る行列。"
     },
     {
      "type": "numeric",
@@ -111,7 +114,8 @@
      "ans": "$\\begin{bmatrix}-L_1\\sin\\theta_1-L_2\\sin(\\theta_1+\\theta_2) & -L_2\\sin(\\theta_1+\\theta_2) \\\\ L_1\\cos\\theta_1+L_2\\cos(\\theta_1+\\theta_2) & L_2\\cos(\\theta_1+\\theta_2)\\end{bmatrix}$",
      "note": "(資料 p.19)",
      "tag": "2リンク",
-     "svg": "<img src=\"/lessons/img/robotics/r13-planar2.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">"
+     "svg": "<img src=\"/lessons/img/robotics/r13-planar2.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">",
+     "hint": "手先の位置 x,y を θ1,θ2 で偏微分して並べる。1行目が x、2行目が y、1列目が θ1、2列目が θ2。θ1 は第2リンクにも効く(θ1+θ2 の項に注意)。"
     },
     {
      "type": "numeric",
@@ -156,7 +160,8 @@
      ],
      "ans": "特異点",
      "note": "(資料 p.20 先生の強調)",
-     "tag": "特異点"
+     "tag": "特異点",
+     "hint": "行列式が 0 になる、腕が伸びきったり折りたたまれた姿勢。"
     },
     {
      "type": "numeric",
@@ -194,7 +199,8 @@
      ],
      "ans": "0",
      "note": "(資料外・補足)",
-     "tag": "課題3"
+     "tag": "課題3",
+     "hint": "その変数を変えても、位置は変わらない。"
     },
     {
      "type": "single",
@@ -207,7 +213,8 @@
      ],
      "ans": "$\\begin{bmatrix}-(L_2+L_3\\sin\\theta_2)\\cos\\theta_1 & -L_3\\sin\\theta_1\\cos\\theta_2 & -\\sin\\theta_1\\sin\\theta_2 \\\\ 0 & L_3\\sin\\theta_2 & -\\cos\\theta_2 \\\\ (L_2+L_3\\sin\\theta_2)\\sin\\theta_1 & -L_3\\cos\\theta_1\\cos\\theta_2 & -\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
      "note": "(トラ解。先生の答えは写真に無い)",
-     "tag": "演習No.2 問9"
+     "tag": "演習No.2 問9",
+     "hint": "位置ベクトルの3成分(x,y,z)を、θ1,θ2,L3 で偏微分して、3×3の行列に並べる。成分ごとに、1列目が θ1、2列目が θ2、3列目が L3。式に入っていない変数の偏微分は 0。"
     }
    ]
   },
@@ -227,7 +234,8 @@
      ],
      "ans": "$\\begin{bmatrix}L_3\\cos\\theta_1\\sin\\theta_2&L_2\\cos\\theta_2+L_3\\sin\\theta_1\\cos\\theta_2&\\sin\\theta_1\\sin\\theta_2\\\\0&-L_3\\sin\\theta_2&\\cos\\theta_2\\\\-L_2\\sin\\theta_1-L_3\\sin\\theta_1\\sin\\theta_2&L_3\\cos\\theta_1\\cos\\theta_2&\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
      "note": "$x,y,z$ を $\\theta_1,\\theta_2,L_3$ で偏微分した9個を、行 $=x,y,z$、列 $=\\theta_1,\\theta_2,L_3$ の順に並べる。転置すると行と列が逆になる。(課題3 解答)",
-     "tag": "課題3"
+     "tag": "課題3",
+     "hint": "x,y,z の3成分を、θ1,θ2 で偏微分して 3×2 の行列を作る。L3 は伸び縮みするが、ここでは定数として扱う(変数は θ だけ)。"
     },
     {
      "type": "single",
@@ -240,7 +248,8 @@
      ],
      "ans": "$\\begin{bmatrix}-l_2\\sin\\theta_1\\cos\\theta_2-l_3\\sin\\theta_1\\cos(\\theta_2+\\theta_3)&-l_2\\cos\\theta_1\\sin\\theta_2-l_3\\cos\\theta_1\\sin(\\theta_2+\\theta_3)&-l_3\\cos\\theta_1\\sin(\\theta_2+\\theta_3)\\\\l_2\\cos\\theta_1\\cos\\theta_2+l_3\\cos\\theta_1\\cos(\\theta_2+\\theta_3)&-l_2\\sin\\theta_1\\sin\\theta_2-l_3\\sin\\theta_1\\sin(\\theta_2+\\theta_3)&-l_3\\sin\\theta_1\\sin(\\theta_2+\\theta_3)\\\\0&-l_2\\cos\\theta_2-l_3\\cos(\\theta_2+\\theta_3)&-l_3\\cos(\\theta_2+\\theta_3)\\end{bmatrix}$",
      "note": "$\\theta_2+\\theta_3$ を含む項は、$\\theta_2$ でも $\\theta_3$ でも係数1で微分される。(課題3 解答)",
-     "tag": "課題3"
+     "tag": "課題3",
+     "hint": "x,y,z の3成分を、θ1,θ2,θ3 で偏微分して 3×3 の行列を作る。積の微分(sin·cos の組)に注意。"
     }
    ]
   }

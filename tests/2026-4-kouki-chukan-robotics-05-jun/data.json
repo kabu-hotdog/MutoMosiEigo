@@ -28,7 +28,8 @@
      ],
      "ans": "関節の角度・変位から、手先の位置を求める問題",
      "note": "(資料 p.13 先生の手書き)",
-     "tag": "用語"
+     "tag": "用語",
+     "hint": "『順』は、関節 → 手先の向き。逆の向き(手先 → 関節)は逆運動学。"
     },
     {
      "type": "single",
@@ -40,7 +41,8 @@
      ],
      "ans": "${}^{0}\\boldsymbol{A}_1\\,{}^{1}\\boldsymbol{A}_2\\,{}^{2}\\boldsymbol{A}_3\\cdots{}^{n-1}\\boldsymbol{A}_n$",
      "note": "根元から先端へ左から右。(資料 p.13)",
-     "tag": "式(2.12)"
+     "tag": "式(2.12)",
+     "hint": "各関節の変換行列を、ベースから順に左から掛けていく。"
     }
    ]
   },
@@ -59,7 +61,8 @@
      ],
      "ans": "$\\theta_1+\\theta_2$",
      "note": "(資料 p.14)",
-     "tag": "平面2リンク"
+     "tag": "平面2リンク",
+     "hint": "ベースから見た向きは、関節の角度の足し算になる。"
     },
     {
      "type": "numeric",
@@ -105,7 +108,8 @@
      "ans": "$Y_0$ 軸まわりに $\\theta$",
      "note": "(課題2 問1)",
      "tag": "課題2 問1",
-     "svg": "<img src=\"/lessons/img/robotics/k2-q1-arm.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">"
+     "svg": "<img src=\"/lessons/img/robotics/k2-q1-arm.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">",
+     "hint": "図で、関節 J1 の回転の軸がどの座標軸と平行かを見る。"
     },
     {
      "type": "numeric",
@@ -157,7 +161,8 @@
      "ans": "$(L_3,\\ 0,\\ 0)$($x_2$ 方向に $L_3$)",
      "note": "(課題2 問2)",
      "tag": "課題2 問2",
-     "svg": "<img src=\"/lessons/img/robotics/k2-q2-arm.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">"
+     "svg": "<img src=\"/lessons/img/robotics/k2-q2-arm.jpg\" alt=\"問題の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px;margin-bottom:8px\">",
+     "hint": "座標系2から見た手先の位置。手先が座標系2のどの軸方向に、どれだけ離れているか図で読む。"
     }
    ]
   },
@@ -178,7 +183,8 @@
      "ans": "$\\begin{bmatrix}\\cos\\theta&\\sin\\theta\\sin\\phi&\\sin\\theta\\cos\\phi&0\\\\0&\\cos\\phi&-\\sin\\phi&l_1\\\\-\\sin\\theta&\\cos\\theta\\sin\\phi&\\cos\\theta\\cos\\phi&0\\\\0&0&0&1\\end{bmatrix}$",
      "note": "${}^{0}\\boldsymbol{A}_2={}^{0}\\boldsymbol{A}_1\\,{}^{1}\\boldsymbol{A}_2$、${}^{2}\\boldsymbol{P}_E=(0,l_2,0)$ に掛ける。(課題2 解答)",
      "tag": "課題2",
-     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k2-q1-arm.jpg\" alt=\"課題2 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題2 問1 の図。J1 は $Y_0$ 軸まわりに $\\theta$、J2 は $X_1$ 軸まわりに $\\phi$。</figcaption></figure>"
+     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k2-q1-arm.jpg\" alt=\"課題2 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題2 問1 の図。J1 は $Y_0$ 軸まわりに $\\theta$、J2 は $X_1$ 軸まわりに $\\phi$。</figcaption></figure>",
+     "hint": "図の関節の順(θ → φ)に、変換行列を左から掛ける。R(…θ) と R(…φ) をそれぞれ書き、軸の向きを図で確認してから掛ける。"
     },
     {
      "type": "single",
@@ -192,7 +198,8 @@
      "ans": "$\\begin{bmatrix}l_2\\sin\\theta\\sin\\phi\\\\l_1+l_2\\cos\\phi\\\\l_2\\cos\\theta\\sin\\phi\\end{bmatrix}$",
      "note": "${}^{0}\\boldsymbol{A}_2={}^{0}\\boldsymbol{A}_1\\,{}^{1}\\boldsymbol{A}_2$、${}^{2}\\boldsymbol{P}_E=(0,l_2,0)$ に掛ける。(課題2 解答)",
      "tag": "課題2",
-     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k2-q1-arm.jpg\" alt=\"課題2 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題2 問1 の図。J1 は $Y_0$ 軸まわりに $\\theta$、J2 は $X_1$ 軸まわりに $\\phi$。</figcaption></figure>"
+     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k2-q1-arm.jpg\" alt=\"課題2 問1 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題2 問1 の図。J1 は $Y_0$ 軸まわりに $\\theta$、J2 は $X_1$ 軸まわりに $\\phi$。</figcaption></figure>",
+     "hint": "図の関節の順(θ → φ)に、変換行列を左から掛ける。R(…θ) と R(…φ) をそれぞれ書き、軸の向きを図で確認してから掛ける。"
     },
     {
      "type": "single",
@@ -206,7 +213,8 @@
      "ans": "$\\begin{bmatrix}L_3\\cos\\theta_2\\\\L_3\\sin\\theta_1\\sin\\theta_2+L_2\\cos\\theta_1\\\\L_1+L_2\\sin\\theta_1-L_3\\cos\\theta_1\\sin\\theta_2\\end{bmatrix}$",
      "note": "${}^{0}\\boldsymbol{A}_1=\\boldsymbol{R}(x_0,\\theta_1)$ と $z_0$ 方向に $L_1$、${}^{1}\\boldsymbol{A}_2=\\boldsymbol{R}(y_1,\\theta_2)$ と $y_1$ 方向に $L_2$、${}^{2}\\boldsymbol{P}_E=(L_3,0,0)$。根元から順に掛ける。(課題2 解答)",
      "tag": "課題2",
-     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k2-q2-arm.jpg\" alt=\"課題2 問2 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題2 問2 の図。長さは図の $L_1,L_2,L_3$ を使う(問題文は $l_1,l_2$ と書いてあるが、図と解答は $L_1,L_2,L_3$)。</figcaption></figure>"
+     "svg": "<figure class=\"tb-fig\" style=\"margin:0 0 14px\"><img src=\"/lessons/img/robotics/k2-q2-arm.jpg\" alt=\"課題2 問2 の図\" loading=\"lazy\" style=\"display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px\"><figcaption style=\"font-size:12px;opacity:.75;text-align:center;margin-top:4px\">課題2 問2 の図。長さは図の $L_1,L_2,L_3$ を使う(問題文は $l_1,l_2$ と書いてあるが、図と解答は $L_1,L_2,L_3$)。</figcaption></figure>",
+     "hint": "図のリンク長と関節の順に、変換行列を左から掛ける。位置はリンクの長さと角度の sin・cos で表す。"
     }
    ]
   }
