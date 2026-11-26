@@ -287,6 +287,12 @@ function loadRoadmapForNext() {
   fetch('/' + _data.roadmap).then(r => r.json()).then(j => { _rmSteps = j.steps || []; addNextButtons(); }).catch(() => {});
 }
 
+// 選択問題のヒント(答える前だけ。ボタンで開閉)。数値・入力問題は別の仕組み
+function hintBox(q, unanswered) {
+  if (!q.hint || !unanswered) return '';
+  return `<div class="num-actions"><button class="btn ghost" onclick="var h=this.parentNode.nextElementSibling;h.hidden=!h.hidden">💡 ヒント</button></div><div class="num-hint" hidden>${q.hint}</div>`;
+}
+
 function buildQuestion(q, qi, key, secId) {
   const div = document.createElement('div');
   div.className = 'q' + (q.type === 'numeric' ? ' q-num' : '') + (q.type === 'flashcard' ? ' q-fc' : '') + (_state[key] === 1 ? ' correct' : _state[key] === -1 ? ' wrong' : '');
@@ -308,6 +314,7 @@ function buildQuestion(q, qi, key, secId) {
       inner += `<button class="${cls}" ${dis} onclick="pickSingle('${key}','${secId}',${oi})"><span class="lab">${labelChar(oi)}</span>${o}</button>`;
     });
     inner += `</div>`;
+    inner += hintBox(q, _state[key] === undefined);
 
   } else if (q.type === 'multi') {
     inner += `<div class="opts">`;
@@ -324,6 +331,7 @@ function buildQuestion(q, qi, key, secId) {
       inner += `<button class="${cls}" ${dis} onclick="toggleMulti('${key}','${secId}',${oi})"><span class="lab">${labelChar(oi)}</span>${o}</button>`;
     });
     inner += `</div>`;
+    inner += hintBox(q, _state[key] === undefined);
     if (_state[key] === undefined) {
       inner += `<div class="multi-submit"><button class="btn" onclick="submitMulti('${key}','${secId}')">採点</button></div>`;
     }
