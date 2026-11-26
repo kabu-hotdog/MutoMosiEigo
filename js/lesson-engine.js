@@ -411,6 +411,8 @@ function render() {
   app.style.cssText = ''; app.innerHTML = '';
   var wrap = el('div', 'ls-wrap');
   app.appendChild(wrap);
+  // ページの一番上にも「ロードマップへ戻る」(2026-11-26 ユーザー指示)
+  if (D.roadmap) wrap.appendChild(el('div', 'rm-top', '<a href="/roadmap.html?d=' + D.roadmap + '" style="display:inline-block;margin:4px 0 10px;font-size:.85rem;color:var(--muted);text-decoration:none;border:1px solid var(--border,rgba(128,128,128,.4));border-radius:999px;padding:5px 14px">← ロードマップへ戻る</a>'));
 
   var meta = [D.subject, D.exam, D.minutes ? '目安 ' + D.minutes + '分' : ''].filter(Boolean).join(' ・ ');
   wrap.appendChild(el('div', 'ls-hero',

@@ -216,6 +216,13 @@ function renderAll() {
   const app = document.getElementById('app');
   const toc = document.getElementById('toc');
   toc.innerHTML = ''; app.innerHTML = '';
+  // ページの一番上にも「ロードマップへ戻る」(2026-11-26 ユーザー指示)
+  if (_data.roadmap) {
+    const top = document.createElement('div');
+    top.className = 'rm-top';
+    top.innerHTML = `<a href="/roadmap.html?d=${_data.roadmap}" style="display:inline-block;margin:4px 0 10px;font-size:.85rem;color:var(--muted);text-decoration:none;border:1px solid var(--border,rgba(128,128,128,.4));border-radius:999px;padding:5px 14px">← ロードマップへ戻る</a>`;
+    app.appendChild(top);
+  }
 
   _sections.forEach(sec => {
     const a = document.createElement('a');
