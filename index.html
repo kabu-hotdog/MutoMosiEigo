@@ -678,6 +678,27 @@ function renderFolders() {
   }).join("");
 
   document.getElementById("folder-grid").innerHTML = cards;
+  updateHomeNav();
+}
+
+// ハンバーガーメニューを開くと左に出る「科目」ナビ(横長の画面だけ・app-shell の setOutline)。
+// 科目を押すとその科目を開く。開いている科目の下には、年度・学年の区切りへのジャンプを並べる
+function updateHomeNav() {
+  if (!window.appShell || !appShell.setOutline) return;
+  const items = [{ id: 'folder-view', html: '🏠 科目一覧', level: 1, onClick: () => { if (selectedSubject) closeSubject(); window.scrollTo({ top: 0, behavior: 'smooth' }); } }];
+  const subjects = [...new Set(tests.map(t => t.subject))];
+  subjects.forEach(s => {
+    if (!tests.some(t => t.subject === s && (!t.archived || showArchived))) return;
+    const [icon] = SUBJECT_ICONS[s] || ['📁'];
+    items.push({ id: 'subj:' + s, html: icon + ' ' + esc(s), level: 1, onClick: () => { openSubject(s); window.scrollTo({ top: 0 }); } });
+    if (s === selectedSubject) {
+      document.querySelectorAll('#groups .group').forEach(g => {
+        const t = g.querySelector('.group-title');
+        if (g.id && t) items.push({ id: g.id, html: esc(t.textContent), level: 2 });
+      });
+    }
+  });
+  appShell.setOutline(items, { title: '科目', wideOnly: true, current: selectedSubject ? 'subj:' + selectedSubject : 'folder-view' });
 }
 
 function openSubject(s, forceList) {
@@ -733,10 +754,11 @@ function renderGroups() {
   if (sortedKeys.length === 0) {
     document.getElementById("groups").innerHTML =
       `<div class="empty">該当する模試がありません</div>`;
+    updateHomeNav();
     return;
   }
 
-  document.getElementById("groups").innerHTML = sortedKeys.map(key => {
+  document.getElementById("groups").innerHTML = sortedKeys.map((key, gi) => {
     const cards = groupMap.get(key).map(t => {
       const isSummary = t.type === "summary";
       const { done, total } = getProgress(t.storageKey, t.totalItems);
@@ -768,11 +790,12 @@ function renderGroups() {
           ${retryBtn}
         </div>`;
     }).join("");
-    return `<div class="group">
+    return `<div class="group" id="grp_${gi}" style="scroll-margin-top:72px">
       <div class="group-title">${key}</div>
       <div class="grid">${cards}</div>
     </div>`;
   }).join("");
+  updateHomeNav();
 }
 
 function retryTest(storageKey, path) {

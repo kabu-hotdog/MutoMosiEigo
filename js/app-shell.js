@@ -14,7 +14,7 @@
 //   ログイン状態のキャッシュ(localStorage.muto_login_cache・有効 7 日): ページを開いた瞬間はキャッシュでログイン済み表示にし、
 //   裏で /api/me を確かめる(401 ならログアウト表示に戻す)。index.html 用に cachedLogin / rememberLogin / forgetLogin も公開。
 //   appShell.update({ loggedIn, name, points, avatar, frame, isAdmin })  // 表示だけ手動更新したい場合
-//   appShell.setOutline([{ id, html, level }], { title, wideOnly, current })  // ページ内の見出しジャンプ。ドロワーを開くと左に並んで開く
+//   appShell.setOutline([{ id, html, level, onClick }], { title, wideOnly, current })  // onClick があれば id へは飛ばずにそれを呼ぶ  // ページ内の見出しジャンプ。ドロワーを開くと左に並んで開く
 //                                          //   title=パネルの見出し(既定「このページ」)、wideOnly=狭い画面では出さない、
 //                                          //   current=開いた時に印を付ける id(省略時はスクロール位置から決める)
 //                                          //   id=飛び先の要素 id、html=表示(信頼済み HTML)、level=1|2(2 は字下げ)。null/[] で消す
@@ -161,6 +161,7 @@
       var a = h('a', { href: '#' + it.id, 'class': 'lv' + (it.level || 1), 'data-target': it.id, html: it.html || '' });
       a.addEventListener('click', function (e) {
         e.preventDefault();
+        if (it.onClick) { closeDrawer(); it.onClick(); return; } // 飛び先がページ内の要素でない項目(例: ホームの科目を開く)
         var t = document.getElementById(it.id);
         closeDrawer();
         if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
