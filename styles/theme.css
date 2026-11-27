@@ -267,6 +267,36 @@ body > #app-shell-bar{position:fixed;top:0;left:0;right:0;z-index:100}
   border-top:1px solid var(--line-soft)!important;border-radius:0!important;padding-top:12px!important;
 }
 
+/* ページ内の見出しジャンプ（appShell.setOutline）。ドロワーの左に並び、少し明るい面で区別する。スクロールは独立 */
+.appshell-outline{
+  position:fixed;top:0;bottom:0;right:min(304px,86vw);width:min(280px,calc(100vw - 304px - 24px));
+  background:var(--card2);border-left:1px solid var(--line-soft);
+  border-radius:var(--r-xl) 0 0 var(--r-xl);box-shadow:var(--shadow-3);
+  z-index:251;padding:12px 8px calc(16px + env(safe-area-inset-bottom));
+  overflow-y:auto;overscroll-behavior:contain;font-family:var(--font-sans);
+  opacity:0;transform:translateX(40px);pointer-events:none;visibility:hidden;
+  transition:opacity var(--dur-3) var(--ease-out),transform var(--dur-3) var(--ease-out),visibility 0s linear var(--dur-3);
+}
+.appshell-outline.open{opacity:1;transform:none;pointer-events:auto;visibility:visible;transition-delay:0s}
+.appshell-outline-head{
+  padding:10px 12px 12px;margin:0 4px 6px;border-bottom:1px solid var(--line-soft);
+  font-size:var(--fs-2xs);font-weight:700;letter-spacing:.1em;color:var(--dim);
+}
+.appshell-outline a{
+  display:block;padding:7px 12px;border-radius:var(--r-md);
+  font:500 var(--fs-sm)/1.45 var(--font-sans);color:var(--ink);text-decoration:none;overflow-wrap:anywhere;
+  transition:background-color var(--dur-1) var(--ease-out);
+}
+.appshell-outline a.lv2{padding-left:26px;font-size:var(--fs-xs);color:var(--muted)}
+.appshell-outline a:hover{background:var(--surface-2)}
+.appshell-outline a[aria-current]{color:var(--teal);background:var(--accent-soft)}
+/* 狭い画面では横に並べる幅がないので、上 40% を見出し、下をドロワーに分ける */
+@media (max-width:639px){
+  .appshell-outline{right:0;width:min(304px,86vw);bottom:auto;height:40vh;border-radius:var(--r-xl) 0 0 0;transform:translateX(104%)}
+  .appshell-outline.open{transform:none}
+  body.appshell-has-outline .appshell-drawer{top:40vh;border-radius:0 0 0 var(--r-xl)}
+}
+
 /* ══ ページ骨格（機能ページ・admin 用）══════════════════════════ */
 .page{max-width:720px;margin:0 auto;padding:calc(var(--bar-h) + 20px) 16px calc(48px + env(safe-area-inset-bottom))}
 .page--wide{max-width:960px}

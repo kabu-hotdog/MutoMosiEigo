@@ -32,6 +32,7 @@ details.ls-terms summary{cursor:pointer;font-weight:700;font-size:.95rem}
 .ls-tp .ls-tph{position:sticky;top:0;background:var(--card);display:flex;align-items:center;justify-content:space-between;padding:10px 0 6px;font-weight:700;font-size:.95rem}
 .ls-tp .ls-term:first-of-type{margin-top:0}
 .ls-block{margin-top:40px;scroll-margin-top:110px}
+.ls-wrap [id]{scroll-margin-top:110px}
 .ls-bh{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px}
 .ls-bn{flex-shrink:0;font-size:.74rem;font-weight:800;color:var(--teal);background:var(--accent-soft);border:1px solid var(--accent-line);border-radius:999px;padding:3px 10px;margin-top:4px;white-space:nowrap}
 .ls-bh h2{margin:0;font-size:1.2rem;line-height:1.4;font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;flex:1}
@@ -119,7 +120,7 @@ details.ls-terms summary{cursor:pointer;font-weight:700;font-size:.95rem}
 .ls-bar.in-head .track{min-width:60px;max-width:320px}
 .ls-bar.in-head .ls-btn{padding:6px 11px;font-size:.8rem;white-space:nowrap}
 .ls-bar.in-head+.appshell-spacer{display:none}
-.ls-block{scroll-margin-top:64px}
+.ls-block,.ls-wrap [id]{scroll-margin-top:64px}
 .ls-block.has-fig:not(.multi-fig) .ls-cols>.ls-fig{top:62px}
 /* 図1枚のブロック: 本文・例題・通常の確認問題を左列、図を右列に固定。幅広の問題(wide)は .ls-cols の外=全幅で、図はそこで追従をやめる */
 .ls-block.has-fig:not(.multi-fig) .ls-cols{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);column-gap:28px;align-items:start}
@@ -352,6 +353,7 @@ function updateBar() {
   var passed = D.blocks.filter(function (b) { return (S.blocks[b.id] || {}).passed; }).length;
   $('#lsNum').textContent = '合格 ' + passed + ' / ' + total + (S.learned ? '　学習済み ✓' : '');
   $('#lsTrack').style.width = (total ? passed / total * 100 : 0) + '%';
+  setOutline(); // 合格の ✓ を見出しにも反映
 }
 
 function showBlockResult(b) {
@@ -450,7 +452,7 @@ function render() {
   barSlot = document.createComment('ls-bar'); bar.before(barSlot);
 
   if (D.goals && D.goals.length) {
-    wrap.appendChild(el('div', 'ls-card', '<h3>この回が終わると言えること</h3><ul>' + D.goals.map(function (g) { return '<li>' + g + '</li>'; }).join('') + '</ul>'));
+    wrap.appendChild(el('div', 'ls-card', '<h3 id="ls-top">この回が終わると言えること</h3><ul>' + D.goals.map(function (g) { return '<li>' + g + '</li>'; }).join('') + '</ul>'));
   }
   if (D.terms && D.terms.length) {
     wrap.appendChild(el('details', 'ls-card ls-terms',
@@ -509,6 +511,7 @@ function render() {
         ex.appendChild(buildCard(fq, { kind: 'graded', rec: S.q[eid], first: true, label: '最後の一手', onFirst: function () {}, onWrong: function (c) { addRetry(ex, c, fq, S.q[eid], '最後の一手'); } }));
         if (S.q[eid].r === -1 && !S.q[eid].ok && fq.type !== 'numeric') addRetry(ex, ex.lastChild, fq, S.q[eid], '最後の一手');
       }
+      ex.id = 'ex_' + b.id;
       main.appendChild(ex);
     }
     // "wide": true の問題から後ろは図の横に並べず全幅にする(問題の順番は変えない)
@@ -516,7 +519,7 @@ function render() {
     var wi = cl.findIndex(function (q) { return q && q.wide; });
     if (wi < 0) wi = cl.length;
     var onRes = function () { showBlockResult(b); };
-    var head2 = el('div', 'ls-sub', '確認問題');
+    var head2 = el('div', 'ls-sub', '確認問題'); head2.id = 'chk_' + b.id;
     if (wi > 0) {
       main.appendChild(head2);
       var checks = el('div', 'ls-checks'); main.appendChild(checks);
@@ -533,7 +536,7 @@ function render() {
 
   // まとめ
   if (D.summary) {
-    var sm = el('section', 'ls-block ls-sum');
+    var sm = el('section', 'ls-block ls-sum'); sm.id = 'summary';
     sm.innerHTML = '<div class="ls-bh"><span class="ls-bn">まとめ</span><h2>この回のまとめ表</h2></div>';
     if (D.summary.rows && D.summary.rows.length) {
       sm.innerHTML += '<div class="ls-card"><table>' + D.summary.rows.map(function (r) { return '<tr><td>' + r[0] + '</td><td>' + r[1] + '</td></tr>'; }).join('') + '</table></div>';
@@ -586,6 +589,23 @@ function render() {
   updateBar();
   placeBar();
   typeset(wrap);
+}
+
+// ハンバーガーメニューを開くと左に出る見出しジャンプ(app-shell の setOutline)
+function setOutline() {
+  if (!window.appShell || !window.appShell.setOutline) return;
+  var items = [];
+  if (D.goals && D.goals.length) items.push({ id: 'ls-top', html: 'この回の目標', level: 1 });
+  D.blocks.forEach(function (b, bi) {
+    var passed = (S.blocks[b.id] || {}).passed ? ' <span style="color:var(--good)">✓</span>' : '';
+    items.push({ id: 'blk_' + b.id, html: (bi + 1) + '. ' + b.title + passed, level: 1 });
+    if (b.example) items.push({ id: 'ex_' + b.id, html: '例題', level: 2 });
+    if (b.check && b.check.length) items.push({ id: 'chk_' + b.id, html: '確認問題', level: 2 });
+  });
+  if (D.summary) items.push({ id: 'summary', html: 'まとめ', level: 1 });
+  items.push({ id: 'final', html: '回末チェック' + (S.learned ? ' <span style="color:var(--good)">✓</span>' : ''), level: 1 });
+  window.appShell.setOutline(items);
+  var ol = document.querySelector('.appshell-outline'); if (ol) typeset(ol);
 }
 
 // PC幅では進捗バーを共通ヘッダー(#app-shell-bar)の空きに移す。狭くなったら元の位置(barSlot)へ戻す

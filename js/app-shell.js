@@ -12,6 +12,8 @@
 //   window.addEventListener('appshell:auth', e => { /* e.detail = appShell.user */ });
 //   appShell.refreshAuth()  // /api/me を取り直す（ポイント変動後など）
 //   appShell.update({ loggedIn, name, points, avatar, frame, isAdmin })  // 表示だけ手動更新したい場合
+//   appShell.setOutline([{ id, html, level }])  // ページ内の見出しジャンプ。ドロワーを開くと左に並んで開く
+//                                          //   id=飛び先の要素 id、html=表示(信頼済み HTML)、level=1|2(2 は字下げ)。null/[] で消す
 //
 // nav 項目の描画規則:
 //   - href があり onClick が無ければ <a href>（通常遷移）
@@ -26,7 +28,7 @@
 
   var opts = null;
   var els = {};
-  var drawer = null, backdrop = null;
+  var drawer = null, backdrop = null, outline = null;
   var _sb = null;
   var user = null, token = null;
 
@@ -139,6 +141,44 @@
     document.body.appendChild(drawer);
   }
 
+  // ── ページ内の見出しジャンプ(ドロワーの左に並ぶ別パネル。スクロールはドロワーと独立) ──
+  function setOutline(items) {
+    if (outline) { outline.remove(); outline = null; }
+    document.body.classList.remove('appshell-has-outline');
+    if (!items || !items.length) return;
+    outline = h('nav', { 'class': 'appshell-outline', 'aria-label': 'このページの見出し' });
+    outline.appendChild(h('div', { 'class': 'appshell-outline-head', text: 'このページ' }));
+    items.forEach(function (it) {
+      var a = h('a', { href: '#' + it.id, 'class': 'lv' + (it.level || 1), 'data-target': it.id, html: it.html || '' });
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        var t = document.getElementById(it.id);
+        closeDrawer();
+        if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      outline.appendChild(a);
+    });
+    document.body.appendChild(outline);
+    document.body.classList.add('appshell-has-outline');
+    if (drawer && drawer.classList.contains('open')) openOutline();
+  }
+  // 今読んでいる見出しに印を付け、その項目が見える位置までパネルをスクロールする
+  function openOutline() {
+    if (!outline) return;
+    outline.classList.add('open');
+    var links = outline.querySelectorAll('a[data-target]'), cur = null;
+    links.forEach(function (a) {
+      a.removeAttribute('aria-current');
+      var t = document.getElementById(a.getAttribute('data-target'));
+      if (t && t.getBoundingClientRect().top < window.innerHeight * 0.35) cur = a;
+    });
+    if (!cur && links.length) cur = links[0];
+    if (cur) {
+      cur.setAttribute('aria-current', 'location');
+      outline.scrollTop = Math.max(0, cur.offsetTop - outline.clientHeight / 3);
+    }
+  }
+
   // ── 同じ試験（year/grade/exam 一致）への横断ナビ ──────────────────
   // quiz-nav.js（quiz.html 専用）の同等機能を、data.json を持たないページ
   // （まとめ・掲示ページ等。tests/_legacy.json に path 登録されているもの）にも出す。
@@ -192,6 +232,7 @@
     backdrop.classList.add('open');
     drawer.setAttribute('aria-hidden', 'false');
     els.burger.setAttribute('aria-expanded', 'true');
+    openOutline();
     document.addEventListener('keydown', onKey);
     var first = drawer.querySelector('a:not([hidden]),button:not([hidden])');
     if (first) first.focus();
@@ -202,6 +243,7 @@
     backdrop.classList.remove('open');
     drawer.setAttribute('aria-hidden', 'true');
     els.burger.setAttribute('aria-expanded', 'false');
+    if (outline) outline.classList.remove('open');
     document.removeEventListener('keydown', onKey);
   }
   function toggleDrawer() {
@@ -419,6 +461,7 @@
       loadTestSiblings();
     },
     refreshAuth: function () { return resolveAuth(); },
+    setOutline: setOutline,
     logout: function () {
       var c = sbClient();
       var done = function () {
