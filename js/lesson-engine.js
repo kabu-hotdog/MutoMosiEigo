@@ -114,6 +114,13 @@ details.ls-terms summary{cursor:pointer;font-weight:700;font-size:.95rem}
 @media(max-width:480px){.ls-hero h1{font-size:1.3rem}.ls-bh{flex-wrap:wrap}}
 @media(min-width:1000px){
 .ls-wrap{max-width:1120px}
+/* 進捗バーはヘッダーの空きに入れる(placeBar)。ページ側の sticky バーが無くなる分、上の余白を詰める */
+.ls-bar.in-head{position:static;flex:1;min-width:0;margin:0 8px;padding:0;border:none;background:none;backdrop-filter:none;flex-wrap:nowrap;gap:8px}
+.ls-bar.in-head .track{min-width:60px;max-width:320px}
+.ls-bar.in-head .ls-btn{padding:6px 11px;font-size:.8rem;white-space:nowrap}
+.ls-bar.in-head+.appshell-spacer{display:none}
+.ls-block{scroll-margin-top:64px}
+.ls-block.has-fig:not(.multi-fig) .ls-cols>.ls-fig{top:62px}
 /* 図1枚のブロック: 本文・例題・通常の確認問題を左列、図を右列に固定。幅広の問題(wide)は .ls-cols の外=全幅で、図はそこで追従をやめる */
 .ls-block.has-fig:not(.multi-fig) .ls-cols{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);column-gap:28px;align-items:start}
 .ls-block.has-fig:not(.multi-fig) .ls-main{display:block;grid-column:1}
@@ -421,6 +428,7 @@ function toggleCompact(v) {
 function render() {
   var app = document.getElementById('app');
   app.style.cssText = ''; app.innerHTML = '';
+  var oldBar = document.querySelector('#app-shell-bar .ls-bar'); if (oldBar) oldBar.remove();
   var wrap = el('div', 'ls-wrap');
   app.appendChild(wrap);
   // ページの一番上にも「ロードマップへ戻る」(2026-11-26 ユーザー指示)
@@ -436,6 +444,7 @@ function render() {
     '<button class="ls-btn ghost" id="lsCompact" type="button">要点だけ表示</button>' +
     '<button class="ls-btn ghost" id="lsReset" type="button">やり直し</button>');
   wrap.appendChild(bar);
+  barSlot = document.createComment('ls-bar'); bar.before(barSlot);
 
   if (D.goals && D.goals.length) {
     wrap.appendChild(el('div', 'ls-card', '<h3>この回が終わると言えること</h3><ul>' + D.goals.map(function (g) { return '<li>' + g + '</li>'; }).join('') + '</ul>'));
@@ -572,8 +581,20 @@ function render() {
   if (rate((D.final || []).map(function (_, i) { return 'f' + i; }))) showFinalResult();
   toggleCompact(!!S.compact);
   updateBar();
+  placeBar();
   typeset(wrap);
 }
+
+// PC幅では進捗バーを共通ヘッダー(#app-shell-bar)の空きに移す。狭くなったら元の位置(barSlot)へ戻す
+var WIDE = window.matchMedia('(min-width:1000px)'), barSlot = null;
+function placeBar() {
+  var bar = document.querySelector('.ls-bar'), host = document.getElementById('app-shell-bar');
+  var spacer = host && host.querySelector('.appshell-spacer');
+  if (!bar || !barSlot) return;
+  if (WIDE.matches && spacer) { spacer.before(bar); bar.classList.add('in-head'); }
+  else if (bar.classList.contains('in-head')) { barSlot.after(bar); bar.classList.remove('in-head'); }
+}
+if (WIDE.addEventListener) WIDE.addEventListener('change', placeBar); else if (WIDE.addListener) WIDE.addListener(placeBar);
 
 function addScript(src, onload) {
   var s = document.createElement('script'); s.src = src; s.onload = onload; document.body.appendChild(s);
