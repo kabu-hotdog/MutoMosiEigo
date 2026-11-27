@@ -33,6 +33,8 @@
   var opts = null;
   var els = {};
   var drawer = null, backdrop = null, outline = null, outlineOpts = {};
+  // 「同じ試験」ナビ。十分に広い画面(900px 以上)ではドロワーから出して、ドロワーと見出しパネルの間の3枚目にする
+  var navi = null, sibHtml = '', WIDE3 = window.matchMedia('(min-width:900px)');
   var _sb = null;
   var user = null, token = null;
 
@@ -228,6 +230,29 @@
     return html;
   }
 
+  function placeSiblings() {
+    var split = !!sibHtml && WIDE3.matches;
+    els.siblingsHost.innerHTML = split ? '' : sibHtml;
+    if (split && !navi) {
+      navi = h('nav', { 'class': 'appshell-outline appshell-navi', 'aria-label': '同じ試験' });
+      navi.addEventListener('click', function (e) { if (e.target.closest('a')) closeDrawer(); });
+      document.body.appendChild(navi);
+    }
+    if (navi) {
+      navi.innerHTML = split ? '<div class="appshell-outline-head"><span>同じ試験</span></div>' + sibHtml : '';
+      if (!split) navi.classList.remove('open');
+      else if (drawer.classList.contains('open')) openNavi();
+    }
+    document.body.classList.toggle('appshell-has-navi', split);
+  }
+  function openNavi() {
+    if (!navi || !navi.childNodes.length) return;
+    navi.classList.add('open');
+    var cur = navi.querySelector('[aria-current="page"]');
+    if (cur) navi.scrollTop = Math.max(0, cur.offsetTop - navi.clientHeight / 3);
+  }
+  if (WIDE3.addEventListener) WIDE3.addEventListener('change', function () { if (els.siblingsHost) placeSiblings(); });
+
   function loadTestSiblings() {
     var here = location.pathname + location.search;
     fetch('/api/tests').then(function (r) { return r.ok ? r.json() : null; })
@@ -235,7 +260,8 @@
         if (!Array.isArray(tests) || !els.siblingsHost) return;
         var self = tests.filter(function (t) { return t.path === here; })[0];
         if (!self) return;
-        els.siblingsHost.innerHTML = siblingsHtml(tests, self);
+        sibHtml = siblingsHtml(tests, self);
+        placeSiblings();
       })
       .catch(function () { /* 登録なし/取得失敗ならメニューのみのまま */ });
   }
@@ -261,6 +287,7 @@
     backdrop.classList.add('open');
     drawer.setAttribute('aria-hidden', 'false');
     els.burger.setAttribute('aria-expanded', 'true');
+    openNavi();
     openOutline();
     document.addEventListener('keydown', onKey);
     var first = drawer.querySelector('a:not([hidden]),button:not([hidden])');
@@ -273,6 +300,7 @@
     drawer.setAttribute('aria-hidden', 'true');
     els.burger.setAttribute('aria-expanded', 'false');
     if (outline) outline.classList.remove('open');
+    if (navi) navi.classList.remove('open');
     document.removeEventListener('keydown', onKey);
   }
   function toggleDrawer() {

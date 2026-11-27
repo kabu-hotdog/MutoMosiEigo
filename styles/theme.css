@@ -231,7 +231,7 @@ body > #app-shell-bar{position:fixed;top:0;left:0;right:0;z-index:100}
   background:var(--bg2);border-left:1px solid var(--line-soft);
   border-radius:var(--r-xl) 0 0 var(--r-xl);box-shadow:var(--shadow-3);
   transform:translateX(104%);transition:transform var(--dur-3) var(--ease-out);
-  z-index:251;display:flex;flex-direction:column;
+  z-index:252;display:flex;flex-direction:column;
   padding:12px 8px calc(16px + env(safe-area-inset-bottom));
   overflow-y:auto;overscroll-behavior:contain;font-family:var(--font-sans);
 }
@@ -306,6 +306,20 @@ body > #app-shell-bar{position:fixed;top:0;left:0;right:0;z-index:100}
 .appshell-outline a.lv2{padding-left:26px;font-size:var(--fs-xs);color:var(--muted)}
 .appshell-outline a:hover{background:var(--surface-2)}
 .appshell-outline a[aria-current]{color:var(--teal);background:var(--accent-soft)}
+/* 3枚目「同じ試験」(app-shell の placeSiblings・900px 以上)。ドロワー(252)の裏・見出しパネル(250)の上。
+   見出しパネルはさらにその左へ: margin-right で「同じ試験」パネルと一緒に動き、translate で自分の分だけ出る */
+.appshell-navi{z-index:251;right:min(304px,86vw);width:250px}
+body.appshell-has-navi .appshell-outline:not(.appshell-navi){
+  right:calc(min(304px,86vw) + 250px);width:min(260px,calc(100vw - 304px - 250px - 24px));
+  margin-right:-250px;
+  transition:transform var(--dur-3) var(--ease-out),translate var(--dur-3) var(--ease-out),margin-right var(--dur-3) var(--ease-out),visibility 0s linear var(--dur-3);
+}
+body.appshell-has-navi .appshell-outline.open:not(.appshell-navi){
+  margin-right:0;
+  transition:transform var(--dur-3) var(--ease-out),margin-right var(--dur-3) var(--ease-out) 140ms,translate var(--dur-3) var(--ease-out) 280ms,visibility 0s;
+}
+body.appshell-has-navi .appshell-drawer{border-radius:0}
+body.appshell-has-navi.appshell-has-outline .appshell-navi{border-radius:0}
 /* 見出しパネルと並ぶときはドロワーの角を落とし、2枚で1つのパネルに見せる(角丸は見出しパネルの左側だけ) */
 @media (min-width:640px){
   body.appshell-has-outline .appshell-drawer{border-radius:0}
