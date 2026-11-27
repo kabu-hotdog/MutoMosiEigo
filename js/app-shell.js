@@ -14,7 +14,9 @@
 //   ログイン状態のキャッシュ(localStorage.muto_login_cache・有効 7 日): ページを開いた瞬間はキャッシュでログイン済み表示にし、
 //   裏で /api/me を確かめる(401 ならログアウト表示に戻す)。index.html 用に cachedLogin / rememberLogin / forgetLogin も公開。
 //   appShell.update({ loggedIn, name, points, avatar, frame, isAdmin })  // 表示だけ手動更新したい場合
-//   appShell.setOutline([{ id, html, level }])  // ページ内の見出しジャンプ。ドロワーを開くと左に並んで開く
+//   appShell.setOutline([{ id, html, level }], { title, wideOnly, current })  // ページ内の見出しジャンプ。ドロワーを開くと左に並んで開く
+//                                          //   title=パネルの見出し(既定「このページ」)、wideOnly=狭い画面では出さない、
+//                                          //   current=開いた時に印を付ける id(省略時はスクロール位置から決める)
 //                                          //   id=飛び先の要素 id、html=表示(信頼済み HTML)、level=1|2(2 は字下げ)。null/[] で消す
 //
 // nav 項目の描画規則:
@@ -30,7 +32,7 @@
 
   var opts = null;
   var els = {};
-  var drawer = null, backdrop = null, outline = null;
+  var drawer = null, backdrop = null, outline = null, outlineOpts = {};
   var _sb = null;
   var user = null, token = null;
 
@@ -144,7 +146,8 @@
   }
 
   // ── ページ内の見出しジャンプ(ドロワーの左に並ぶ別パネル。スクロールはドロワーと独立) ──
-  function setOutline(items) {
+  function setOutline(items, o) {
+    outlineOpts = o || {};
     var wasOpen = !!(outline && outline.classList.contains('open'));
     if (outline) { outline.remove(); outline = null; }
     document.body.classList.remove('appshell-has-outline');
@@ -153,7 +156,7 @@
     // スマホでは見出しが先に開く。☰ で今までのメニューへ切り替える(ヘッダーの ☰ は背景の下になり押せないため)
     var menuBtn = h('button', { 'class': 'appshell-outline-menu', type: 'button', 'aria-label': 'メニューを開く', html: '<span>メニュー</span>' });
     menuBtn.addEventListener('click', showMenu);
-    outline.appendChild(h('div', { 'class': 'appshell-outline-head' }, [h('span', { text: 'このページ' }), menuBtn]));
+    outline.appendChild(h('div', { 'class': 'appshell-outline-head' }, [h('span', { text: outlineOpts.title || 'このページ' }), menuBtn]));
     items.forEach(function (it) {
       var a = h('a', { href: '#' + it.id, 'class': 'lv' + (it.level || 1), 'data-target': it.id, html: it.html || '' });
       a.addEventListener('click', function (e) {
@@ -170,8 +173,9 @@
     if (wasOpen || (drawer && drawer.classList.contains('open') && !NARROW.matches)) openOutline();
   }
   // 今読んでいる見出しに印を付け、その項目が見える位置までパネルをスクロールする
+  function outlineUsable() { return !!outline && !(outlineOpts.wideOnly && NARROW.matches); }
   function openOutline() {
-    if (!outline) return;
+    if (!outlineUsable()) return;
     outline.classList.add('open');
     var links = outline.querySelectorAll('a[data-target]'), cur = null;
     links.forEach(function (a) {
@@ -179,6 +183,7 @@
       var t = document.getElementById(a.getAttribute('data-target'));
       if (t && t.getBoundingClientRect().top < window.innerHeight * 0.35) cur = a;
     });
+    if (outlineOpts.current) cur = outline.querySelector('a[data-target="' + outlineOpts.current + '"]') || cur;
     if (!cur && links.length) cur = links[0];
     if (cur) {
       cur.setAttribute('aria-current', 'location');
@@ -243,7 +248,7 @@
     if (first) first.focus();
   }
   function openDrawer() {
-    if (outline && NARROW.matches) {
+    if (outlineUsable() && NARROW.matches) {
       // スマホ: まず見出しだけ。メニューは見出しパネルの ☰ から
       backdrop.classList.add('open');
       els.burger.setAttribute('aria-expanded', 'true');

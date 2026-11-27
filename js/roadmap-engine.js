@@ -43,6 +43,7 @@ var CSS = `
 .rm-auto .track i{display:block;height:100%;background:var(--teal)}
 .rm-warn{color:var(--bad);font-weight:700}
 .rm-link{font-family:inherit;font-size:.76rem;color:var(--teal);background:none;border:none;padding:0;cursor:pointer;text-decoration:underline}
+.rm-wrap [id]{scroll-margin-top:72px}
 @media(max-width:480px){.rm-wrap h1{font-size:1.3rem}.rm-row{padding:11px 11px;gap:10px}}
 `;
 
@@ -178,11 +179,17 @@ function render() {
   wrap.appendChild(el('div', 'rm-total',
     '<span class="n">' + doneN + ' / ' + steps.length + ' 完了</span><div class="rm-track"><i style="width:' + (steps.length ? doneN / steps.length * 100 : 0) + '%"></i></div>'));
 
-  var lastPhase = null;
+  var lastPhase = null, nav = [], ph = 0;
   steps.forEach(function (st, i) {
     var s = states[i];
-    if (st.phase && st.phase !== lastPhase) { wrap.appendChild(el('div', 'rm-phase', st.phase)); lastPhase = st.phase; }
+    if (st.phase && st.phase !== lastPhase) {
+      var phEl = el('div', 'rm-phase', st.phase); phEl.id = 'rm_ph' + (++ph);
+      wrap.appendChild(phEl); lastPhase = st.phase;
+      nav.push({ id: phEl.id, html: st.phase, level: 1 });
+    }
     var row = el('div', 'rm-row' + (s.checked ? ' done' : '') + (i === nextIdx ? ' next' : ''));
+    row.id = 'rm_st' + i;
+    nav.push({ id: row.id, level: 2, html: (s.checked ? '<span style="color:var(--good)">✓</span> ' : (i === nextIdx ? '<span style="color:var(--teal);font-weight:800">次 ▶</span> ' : '')) + st.label });
     var chk = el('input', 'rm-chk'); chk.type = 'checkbox'; chk.checked = s.checked;
     chk.setAttribute('aria-label', st.label + ' を完了にする');
     chk.addEventListener('change', function () {
@@ -210,6 +217,10 @@ function render() {
     row.appendChild(chk); row.appendChild(main);
     wrap.appendChild(row);
   });
+  // ハンバーガーメニューを開くと左に出るナビ(横長の画面だけ)。「次はこれ」に印を付けて開く
+  if (window.appShell && window.appShell.setOutline) {
+    window.appShell.setOutline(nav, { title: 'ロードマップ', wideOnly: true, current: nextIdx >= 0 ? 'rm_st' + nextIdx : null });
+  }
 }
 
 window.initRoadmap = function (data) {
