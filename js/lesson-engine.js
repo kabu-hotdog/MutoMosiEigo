@@ -80,6 +80,11 @@ details.ls-terms summary{cursor:pointer;font-weight:700;font-size:.95rem}
 .ls-res .pass{color:var(--good);font-weight:800}
 .ls-res .fail{color:var(--amber);font-weight:700}
 .ls-fig img,.ls-fig svg{cursor:zoom-out}
+/* 小さくした図は、枠(.ls-fig / figure)も図の大きさまで縮める */
+.ls-fig.fig-small,.ls-fig figure.fig-small{width:min-content;max-width:100%;margin-left:auto;margin-right:auto}
+.ls-fig.fig-small{padding:6px}
+.ls-fig.fig-small figure,.ls-fig figure.fig-small{margin:0!important}
+.fig-small figcaption{font-size:11px!important}
 .ls-checks .ls-fig img,.ls-example .ls-fig img,.ls-pre .ls-fig img{max-width:min(100%,520px)!important;height:auto;display:block;margin:0 auto}
 .ls-checks .fig-small img,.ls-checks .ls-fig.fig-small img{max-width:220px!important}
 .fig-small img,.fig-small svg{cursor:zoom-in;max-width:220px!important;max-height:170px;width:auto}
@@ -97,19 +102,25 @@ details.ls-terms summary{cursor:pointer;font-weight:700;font-size:.95rem}
 .ls-next a{display:block;padding:11px 14px;background:var(--card);border:1px solid var(--line);border-radius:10px;color:var(--teal);text-decoration:none;font-weight:700}
 .ls-next a:hover{border-color:var(--teal-d)}
 .ls-footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--dim);font-size:.8rem}
+.ls-cols{display:flex;flex-direction:column}
+.ls-main{display:contents}
+.ls-main>*,.ls-cols>*{min-width:0}
+.ls-main>*{order:3}
+.ls-main>.ls-body{order:1}
+.ls-cols>.ls-fig{order:2}
 .ls-wrap.compact .ls-body,.ls-wrap.compact .ls-fig,.ls-wrap.compact .ls-example,.ls-wrap.compact .ls-pre{display:none}
 .ls-wrap .katex-display{overflow-x:auto;overflow-y:hidden;max-width:100%}
 .ls-body,.ls-q .prompt,.ls-example,.ls-opt,.ls-hintbox,.ls-fb{max-width:100%;overflow-x:auto}
 @media(max-width:480px){.ls-hero h1{font-size:1.3rem}.ls-bh{flex-wrap:wrap}}
 @media(min-width:1000px){
 .ls-wrap{max-width:1120px}
-.ls-block.has-fig{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);column-gap:28px;align-items:start}
-.ls-block.has-fig>*{grid-column:1/-1}
-.ls-block.has-fig>.ls-body:not(.ls-sub){grid-column:1}
-.ls-block.has-fig>.ls-fig{grid-column:2;margin-top:0;position:sticky;top:110px}
-.ls-block.multi-fig>.ls-body:not(.ls-sub){grid-column:1/-1}
-.ls-block.multi-fig>.ls-fig{grid-column:1/-1;margin-top:12px;position:static;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;align-items:start}
-.ls-block.multi-fig>.ls-fig>*{margin:0!important;min-width:0}
+/* 図1枚のブロック: 本文・例題・通常の確認問題を左列、図を右列に固定。幅広の問題(wide)は .ls-cols の外=全幅で、図はそこで追従をやめる */
+.ls-block.has-fig:not(.multi-fig) .ls-cols{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);column-gap:28px;align-items:start}
+.ls-block.has-fig:not(.multi-fig) .ls-main{display:block;grid-column:1}
+.ls-block.has-fig:not(.multi-fig) .ls-cols>.ls-fig{grid-column:2;margin-top:18px;position:sticky;top:110px}
+.ls-block.multi-fig .ls-cols>.ls-fig{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;align-items:start}
+.ls-block.multi-fig .ls-cols>.ls-fig>*{margin:0!important;min-width:0}
+.ls-wrap.compact .ls-block .ls-cols{display:block}
 }
 `;
 
@@ -368,8 +379,9 @@ function showFinalResult() {
 
 // ---- 描画 ----
 // ids と問題の並びから、カード列を container に作る。初回で間違えた問題には「間はさんで再出題」。
-function renderQuestions(container, list, idPrefix, labelPrefix, afterFirst) {
+function renderQuestions(container, list, idPrefix, labelPrefix, afterFirst, start) {
   list.forEach(function (q0, i) {
+    i += start || 0;
     var qid = idPrefix + i;
     var q = prep(q0);
     var rec = S.q[qid] = S.q[qid] || {};
@@ -469,10 +481,13 @@ function render() {
       });
       sec.appendChild(pre);
     }
+    // .ls-cols = 左列 .ls-main(本文・例題・通常の確認問題) + 右列 .ls-fig。スマホでは1列(本文→図→例題→問題の順)
+    var cols = el('div', 'ls-cols'), main = el('div', 'ls-main');
+    cols.appendChild(main); sec.appendChild(cols);
     var body = el('div', 'ls-body', b.body || ''); body.id = 'body_' + b.id;
-    sec.appendChild(el('div', 'ls-sub', '本文')); sec.lastChild.classList.add('ls-body');
-    sec.appendChild(body);
-    if (b.fig) sec.appendChild(el('div', 'ls-fig', b.fig));
+    main.appendChild(el('div', 'ls-sub', '本文')); main.lastChild.classList.add('ls-body');
+    main.appendChild(body);
+    if (b.fig) cols.appendChild(el('div', 'ls-fig', b.fig));
     if (b.example) {
       var ex = el('div', 'ls-example', '<b>例題</b>' + (b.example.steps && b.example.steps.length ? '<ol>' + b.example.steps.map(function (s) { return '<li>' + s + '</li>'; }).join('') + '</ol>' : ''));
       if (b.example.fill) {
@@ -482,12 +497,24 @@ function render() {
         ex.appendChild(buildCard(fq, { kind: 'graded', rec: S.q[eid], first: true, label: '最後の一手', onFirst: function () {}, onWrong: function (c) { addRetry(ex, c, fq, S.q[eid], '最後の一手'); } }));
         if (S.q[eid].r === -1 && !S.q[eid].ok && fq.type !== 'numeric') addRetry(ex, ex.lastChild, fq, S.q[eid], '最後の一手');
       }
-      sec.appendChild(ex);
+      main.appendChild(ex);
     }
-    sec.appendChild(el('div', 'ls-sub', '確認問題')); sec.lastChild.classList.remove('ls-body');
-    var checks = el('div', 'ls-checks');
-    sec.appendChild(checks);
-    renderQuestions(checks, b.check || [], b.id + '_c', '確認 ', function () { showBlockResult(b); });
+    // "wide": true の問題から後ろは図の横に並べず全幅にする(問題の順番は変えない)
+    var cl = b.check || [];
+    var wi = cl.findIndex(function (q) { return q && q.wide; });
+    if (wi < 0) wi = cl.length;
+    var onRes = function () { showBlockResult(b); };
+    var head2 = el('div', 'ls-sub', '確認問題');
+    if (wi > 0) {
+      main.appendChild(head2);
+      var checks = el('div', 'ls-checks'); main.appendChild(checks);
+      renderQuestions(checks, cl.slice(0, wi), b.id + '_c', '確認 ', onRes, 0);
+    }
+    if (wi < cl.length) {
+      if (wi === 0) sec.appendChild(head2);
+      var wchecks = el('div', 'ls-checks ls-wide'); sec.appendChild(wchecks);
+      renderQuestions(wchecks, cl.slice(wi), b.id + '_c', '確認 ', onRes, wi);
+    }
     sec.appendChild(el('div', 'ls-res')); sec.lastChild.id = 'res_' + b.id;
     wrap.appendChild(sec);
   });
@@ -561,7 +588,10 @@ window.initLesson = function (data) {
   document.addEventListener('click', function (e) {
     var im = e.target.closest && e.target.closest('.ls-fig img,.ls-fig svg');
     if (!im) return;
-    (im.closest('figure') || im.closest('.ls-fig')).classList.toggle('fig-small');
+    // 図が1枚だけの枠なら枠ごと縮める(figure だけ縮めると .ls-fig の枠が大きいまま残る)
+    var box = im.closest('.ls-fig');
+    var t = box && box.querySelectorAll('img,svg').length === 1 ? box : (im.closest('figure') || box);
+    t.classList.toggle('fig-small');
   });
   loadState();
   render();
