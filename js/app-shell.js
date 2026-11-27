@@ -143,11 +143,15 @@
 
   // ── ページ内の見出しジャンプ(ドロワーの左に並ぶ別パネル。スクロールはドロワーと独立) ──
   function setOutline(items) {
+    var wasOpen = !!(outline && outline.classList.contains('open'));
     if (outline) { outline.remove(); outline = null; }
     document.body.classList.remove('appshell-has-outline');
     if (!items || !items.length) return;
     outline = h('nav', { 'class': 'appshell-outline', 'aria-label': 'このページの見出し' });
-    outline.appendChild(h('div', { 'class': 'appshell-outline-head', text: 'このページ' }));
+    // スマホでは見出しが先に開く。☰ で今までのメニューへ切り替える(ヘッダーの ☰ は背景の下になり押せないため)
+    var menuBtn = h('button', { 'class': 'appshell-outline-menu', type: 'button', 'aria-label': 'メニューを開く', html: '<span>メニュー</span>' });
+    menuBtn.addEventListener('click', showMenu);
+    outline.appendChild(h('div', { 'class': 'appshell-outline-head' }, [h('span', { text: 'このページ' }), menuBtn]));
     items.forEach(function (it) {
       var a = h('a', { href: '#' + it.id, 'class': 'lv' + (it.level || 1), 'data-target': it.id, html: it.html || '' });
       a.addEventListener('click', function (e) {
@@ -160,7 +164,8 @@
     });
     document.body.appendChild(outline);
     document.body.classList.add('appshell-has-outline');
-    if (drawer && drawer.classList.contains('open')) openOutline();
+    // 作り直し(合格の ✓ 更新など)で開いていた状態を保つ。スマホでメニュー表示中は見出しを重ねない
+    if (wasOpen || (drawer && drawer.classList.contains('open') && !NARROW.matches)) openOutline();
   }
   // 今読んでいる見出しに印を付け、その項目が見える位置までパネルをスクロールする
   function openOutline() {
@@ -227,7 +232,23 @@
       .catch(function () { /* 登録なし/取得失敗ならメニューのみのまま */ });
   }
 
+  var NARROW = window.matchMedia('(max-width:639px)');
+  function showMenu() {
+    if (outline) outline.classList.remove('open');
+    drawer.classList.add('open');
+    drawer.setAttribute('aria-hidden', 'false');
+    var first = drawer.querySelector('a:not([hidden]),button:not([hidden])');
+    if (first) first.focus();
+  }
   function openDrawer() {
+    if (outline && NARROW.matches) {
+      // スマホ: まず見出しだけ。メニューは見出しパネルの ☰ から
+      backdrop.classList.add('open');
+      els.burger.setAttribute('aria-expanded', 'true');
+      openOutline();
+      document.addEventListener('keydown', onKey);
+      return;
+    }
     drawer.classList.add('open');
     backdrop.classList.add('open');
     drawer.setAttribute('aria-hidden', 'false');
@@ -247,7 +268,7 @@
     document.removeEventListener('keydown', onKey);
   }
   function toggleDrawer() {
-    if (drawer.classList.contains('open')) closeDrawer(); else openDrawer();
+    if (drawer.classList.contains('open') || (outline && outline.classList.contains('open'))) closeDrawer(); else openDrawer();
   }
   function onKey(e) { if (e.key === 'Escape') closeDrawer(); }
 

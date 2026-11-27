@@ -279,6 +279,7 @@ body > #app-shell-bar{position:fixed;top:0;left:0;right:0;z-index:100}
 }
 .appshell-outline.open{opacity:1;transform:none;pointer-events:auto;visibility:visible;transition-delay:0s}
 .appshell-outline-head{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
   padding:10px 12px 12px;margin:0 4px 6px;border-bottom:1px solid var(--line-soft);
   font-size:var(--fs-2xs);font-weight:700;letter-spacing:.1em;color:var(--dim);
 }
@@ -287,14 +288,23 @@ body > #app-shell-bar{position:fixed;top:0;left:0;right:0;z-index:100}
   font:500 var(--fs-sm)/1.45 var(--font-sans);color:var(--ink);text-decoration:none;overflow-wrap:anywhere;
   transition:background-color var(--dur-1) var(--ease-out);
 }
+.appshell-outline-menu{display:none}
 .appshell-outline a.lv2{padding-left:26px;font-size:var(--fs-xs);color:var(--muted)}
 .appshell-outline a:hover{background:var(--surface-2)}
 .appshell-outline a[aria-current]{color:var(--teal);background:var(--accent-soft)}
-/* 狭い画面では横に並べる幅がないので、上 40% を見出し、下をドロワーに分ける */
+/* 狭い画面では横に並べる幅がないので、見出しパネルをドロワーと同じ場所に出し、パネル内の ☰ でメニューに切り替える */
 @media (max-width:639px){
-  .appshell-outline{right:0;width:min(304px,86vw);bottom:auto;height:40vh;border-radius:var(--r-xl) 0 0 0;transform:translateX(104%)}
+  .appshell-outline{right:0;width:min(304px,86vw);transform:translateX(104%)}
   .appshell-outline.open{transform:none}
-  body.appshell-has-outline .appshell-drawer{top:40vh;border-radius:0 0 0 var(--r-xl)}
+  .appshell-outline-menu{
+    display:inline-flex;align-items:center;gap:8px;flex-shrink:0;height:36px;padding:0 12px 0 34px;position:relative;
+    font:600 var(--fs-xs)/1 var(--font-sans);letter-spacing:0;color:var(--ink);
+    background:var(--surface-2);border:1px solid var(--line);border-radius:10px;cursor:pointer;
+  }
+  .appshell-outline-menu::before{
+    content:"";position:absolute;left:12px;top:50%;width:14px;height:2px;border-radius:2px;
+    background:currentColor;transform:translateY(-50%);box-shadow:0 -5px 0 currentColor,0 5px 0 currentColor;
+  }
 }
 
 /* ══ ページ骨格（機能ページ・admin 用）══════════════════════════ */
