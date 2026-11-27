@@ -297,6 +297,10 @@ body > #app-shell-bar{position:fixed;top:0;left:0;right:0;z-index:100}
 .appshell-outline a.lv2{padding-left:26px;font-size:var(--fs-xs);color:var(--muted)}
 .appshell-outline a:hover{background:var(--surface-2)}
 .appshell-outline a[aria-current]{color:var(--teal);background:var(--accent-soft)}
+/* 見出しパネルと並ぶときはドロワーの角を落とし、2枚で1つのパネルに見せる(角丸は見出しパネルの左側だけ) */
+@media (min-width:640px){
+  body.appshell-has-outline .appshell-drawer{border-radius:0}
+}
 /* 狭い画面では横に並べる幅がないので、見出しパネルをドロワーと同じ場所に出し、パネル内の ☰ でメニューに切り替える */
 @media (max-width:639px){
   .appshell-outline{right:0;width:min(304px,86vw);z-index:251;transform:translateX(104%);
