@@ -298,6 +298,11 @@ body > #app-shell-bar{position:fixed;top:0;left:0;right:0;z-index:100}
   transition:background-color var(--dur-1) var(--ease-out);
 }
 .appshell-outline-menu{display:none}
+/* quiz-nav の「同じ試験」ナビ(表示中の模試) */
+.appshell-outline span[aria-current="page"]{
+  display:block;padding:7px 12px;border-radius:var(--r-md);
+  font:600 var(--fs-sm)/1.45 var(--font-sans);color:var(--teal);background:var(--accent-soft);cursor:default;
+}
 .appshell-outline a.lv2{padding-left:26px;font-size:var(--fs-xs);color:var(--muted)}
 .appshell-outline a:hover{background:var(--surface-2)}
 .appshell-outline a[aria-current]{color:var(--teal);background:var(--accent-soft)}

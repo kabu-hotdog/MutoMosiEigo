@@ -24,6 +24,10 @@
   }
 
   var drawer, backdrop, burger, onKeyRef, _prevFocus;
+  // 横長(640px 以上)では「同じ試験」のナビを左の別パネル(.appshell-outline・見出しジャンプと同じ見た目)に分け、
+  // 右のドロワーはいつものメニューだけにする。狭い画面では今までどおり1枚にまとめる
+  var navi, WIDE = window.matchMedia('(min-width:640px)'), _last = { tests: null, data: null };
+  function naviOn() { return !!(navi && navi.childNodes.length); }
 
   function openDrawer() {
     if (drawer.classList.contains('open')) return;
@@ -32,6 +36,11 @@
     drawer.inert = false;
     drawer.setAttribute('aria-hidden', 'false');
     burger.setAttribute('aria-expanded', 'true');
+    if (naviOn()) {
+      navi.classList.add('open'); navi.inert = false;
+      var cur = navi.querySelector('[aria-current="page"]');
+      if (cur) navi.scrollTop = Math.max(0, cur.offsetTop - navi.clientHeight / 3);
+    }
     _prevFocus = document.activeElement;
     var firstFocusable = drawer.querySelector('a, [aria-current="page"], button');
     if (firstFocusable) firstFocusable.focus();
@@ -44,6 +53,7 @@
     backdrop.classList.remove('open');
     drawer.setAttribute('aria-hidden', 'true');
     burger.setAttribute('aria-expanded', 'false');
+    if (navi) { navi.classList.remove('open'); navi.inert = true; }
     if (onKeyRef) { document.removeEventListener('keydown', onKeyRef); onKeyRef = null; }
     drawer.inert = true;
     if (_prevFocus && typeof _prevFocus.focus === 'function') _prevFocus.focus();
@@ -106,11 +116,18 @@
   }
 
   function render(tests, data) {
-    drawer.innerHTML = siblingsHtml(tests, data) + menuHtml();
-    var links = drawer.querySelectorAll('a');
-    for (var i = 0; i < links.length; i++) {
-      links[i].addEventListener('click', closeDrawer);
-    }
+    _last = { tests: tests, data: data };
+    var sib = siblingsHtml(tests, data);
+    var split = WIDE.matches && !!sib;
+    drawer.innerHTML = (split ? '' : sib) + menuHtml();
+    navi.innerHTML = split ? '<div class="appshell-outline-head"><span>同じ試験</span></div>' + sib : '';
+    document.body.classList.toggle('appshell-has-outline', split);
+    if (drawer.classList.contains('open') && split) { navi.classList.add('open'); navi.inert = false; }
+    else if (!split) navi.classList.remove('open');
+    [drawer, navi].forEach(function (root) {
+      var links = root.querySelectorAll('a');
+      for (var i = 0; i < links.length; i++) links[i].addEventListener('click', closeDrawer);
+    });
   }
 
   function mount(data) {
@@ -138,6 +155,15 @@
     drawer.setAttribute('aria-hidden', 'true');
     document.body.appendChild(drawer);
     drawer.inert = true;
+
+    // 左のナビ。背景より後ろ・z-index 250 でドロワー(251)の裏に隠れ、開くとドロワーから左へ出る(theme.css)
+    navi = document.createElement('nav');
+    navi.className = 'appshell-outline';
+    navi.setAttribute('aria-label', '同じ試験');
+    navi.inert = true;
+    document.body.appendChild(navi);
+    var onWide = function () { render(_last.tests, _last.data); };
+    if (WIDE.addEventListener) WIDE.addEventListener('change', onWide); else if (WIDE.addListener) WIDE.addListener(onWide);
 
     // まずメニューだけで描画 → /api/tests が返ったら3グループに差し替え
     render(null, data);
