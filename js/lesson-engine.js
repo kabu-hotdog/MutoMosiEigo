@@ -128,6 +128,9 @@ details.ls-terms summary{cursor:pointer;font-weight:700;font-size:.95rem}
 .ls-block.multi-fig .ls-cols>.ls-fig{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;align-items:start}
 .ls-block.multi-fig .ls-cols>.ls-fig>*{margin:0!important;min-width:0}
 .ls-wrap.compact .ls-block .ls-cols{display:block}
+/* 右列の図がすべて小さいとき: 右列は一番大きい図の幅まで縮めて右寄せ、残りを本文・問題に回す */
+.ls-block.has-fig:not(.multi-fig) .ls-cols.fig-shrunk{grid-template-columns:minmax(0,1fr) auto}
+.ls-block.has-fig:not(.multi-fig) .ls-cols.fig-shrunk>.ls-fig{justify-self:end;margin-right:0}
 }
 `;
 
@@ -613,6 +616,12 @@ window.initLesson = function (data) {
     var box = im.closest('.ls-fig');
     var t = box && box.querySelectorAll('img,svg').length === 1 ? box : (im.closest('figure') || box);
     t.classList.toggle('fig-small');
+    // 右列(.ls-cols 直下の図)の画像がすべて小さくなったら、列ごと縮める
+    var side = t.closest('.ls-cols > .ls-fig');
+    if (side) {
+      var all = Array.prototype.every.call(side.querySelectorAll('img,svg'), function (x) { return !!x.closest('.fig-small'); });
+      side.parentNode.classList.toggle('fig-shrunk', all);
+    }
   });
   loadState();
   render();
