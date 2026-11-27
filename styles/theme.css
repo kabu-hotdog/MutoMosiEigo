@@ -275,13 +275,17 @@ body > #app-shell-bar{position:fixed;top:0;left:0;right:0;z-index:100}
   /* z-index 250 + 背景より後ろの DOM = 背景の上・ドロワー(251)の下。閉じている間はドロワーの裏に隠れている */
   z-index:250;padding:12px 8px calc(16px + env(safe-area-inset-bottom));
   overflow-y:auto;overscroll-behavior:contain;font-family:var(--font-sans);
-  opacity:0;transform:translateX(100%);pointer-events:none;visibility:hidden;
-  transition:opacity 140ms var(--ease-out),transform 200ms var(--ease-out),visibility 0s linear 200ms;
+  /* 動きを2つに分けて重ねる(transform と translate は合成される):
+     transform = ドロワーと同じ動き(ドロワーと一緒に画面外から入る=座標の基準がドロワー)
+     translate = ドロワーから見た相対位置(ドロワーの裏 100% → 左へ出る 0) */
+  transform:translateX(calc(min(304px,86vw) * 1.04));translate:100% 0;
+  pointer-events:none;visibility:hidden;
+  transition:transform var(--dur-3) var(--ease-out),translate var(--dur-3) var(--ease-out),visibility 0s linear var(--dur-3);
 }
-/* 開く: ドロワーが入りきる頃に、その裏から左へにゅっと出る */
+/* 開く: ドロワーと一緒に入ってきて、少し遅れてドロワーから同じ動きで左へ出る */
 .appshell-outline.open{
-  opacity:1;transform:none;pointer-events:auto;visibility:visible;
-  transition:opacity 0s linear 200ms,transform 340ms cubic-bezier(.2,.9,.25,1.12) 200ms,visibility 0s linear 200ms;
+  transform:none;translate:0 0;pointer-events:auto;visibility:visible;
+  transition:transform var(--dur-3) var(--ease-out),translate var(--dur-3) var(--ease-out) 140ms,visibility 0s;
 }
 .appshell-outline-head{
   display:flex;align-items:center;justify-content:space-between;gap:8px;
@@ -303,9 +307,9 @@ body > #app-shell-bar{position:fixed;top:0;left:0;right:0;z-index:100}
 }
 /* 狭い画面では横に並べる幅がないので、見出しパネルをドロワーと同じ場所に出し、パネル内の ☰ でメニューに切り替える */
 @media (max-width:639px){
-  .appshell-outline{right:0;width:min(304px,86vw);z-index:251;transform:translateX(104%);
-    transition:opacity var(--dur-3) var(--ease-out),transform var(--dur-3) var(--ease-out),visibility 0s linear var(--dur-3)}
-  .appshell-outline.open{transform:none;transition:opacity var(--dur-3) var(--ease-out),transform var(--dur-3) var(--ease-out),visibility 0s}
+  .appshell-outline{right:0;width:min(304px,86vw);z-index:251;transform:translateX(104%);translate:none;
+    transition:transform var(--dur-3) var(--ease-out),visibility 0s linear var(--dur-3)}
+  .appshell-outline.open{transform:none;translate:none;transition:transform var(--dur-3) var(--ease-out),visibility 0s}
   .appshell-outline-menu{
     display:inline-flex;align-items:center;gap:8px;flex-shrink:0;height:36px;padding:0 12px 0 34px;position:relative;
     font:600 var(--fs-xs)/1 var(--font-sans);letter-spacing:0;color:var(--ink);
