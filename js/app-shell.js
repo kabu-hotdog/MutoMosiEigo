@@ -11,6 +11,8 @@
 //   appShell.user   // null | { id, username, email, avatar, frame, points, lifetimePoints, isAdmin, ... }
 //   window.addEventListener('appshell:auth', e => { /* e.detail = appShell.user */ });
 //   appShell.refreshAuth()  // /api/me を取り直す（ポイント変動後など）
+//   ログイン状態のキャッシュ(localStorage.muto_login_cache・有効 7 日): ページを開いた瞬間はキャッシュでログイン済み表示にし、
+//   裏で /api/me を確かめる(401 ならログアウト表示に戻す)。index.html 用に cachedLogin / rememberLogin / forgetLogin も公開。
 //   appShell.update({ loggedIn, name, points, avatar, frame, isAdmin })  // 表示だけ手動更新したい場合
 //   appShell.setOutline([{ id, html, level }])  // ページ内の見出しジャンプ。ドロワーを開くと左に並んで開く
 //                                          //   id=飛び先の要素 id、html=表示(信頼済み HTML)、level=1|2(2 は字下げ)。null/[] で消す
@@ -272,7 +274,53 @@
   }
   function onKey(e) { if (e.key === 'Escape') closeDrawer(); }
 
+  // ── ログイン状態のキャッシュ ─────────────────────────────
+  // 中身はユーザー表示用の情報だけ。認証そのものはトークン(muto_session / Supabase セッション)で、サーバーが毎回確かめる。
+  var CACHE_KEY = 'muto_login_cache', CACHE_TTL = 7 * 24 * 3600 * 1000;
+  var SB_KEY = 'sb-' + SUPABASE_URL.replace(/^https:\/\//, '').split('.')[0] + '-auth-token';
+
+  function normUser(me) {
+    return {
+      id: me.id, username: me.username, email: me.email || '',
+      avatar: me.avatar || '🐸', frame: me.frame || 'default',
+      points: me.points || 0, lifetimePoints: me.lifetime_points != null ? me.lifetime_points : (me.lifetimePoints || 0),
+      unlockedAvatars: me.unlockedAvatars || [], title: me.title || '',
+      isAdmin: (me.email || '') === ADMIN_EMAIL
+    };
+  }
+  // 今すぐ使えるトークン(同期で読める分だけ)。Supabase は保存済みセッションの期限が 60 秒以上残っていれば使う
+  function quickToken(src) {
+    try {
+      if (src === 'custom') return localStorage.getItem('muto_session') || null;
+      var raw = localStorage.getItem(SB_KEY); if (!raw) return null;
+      var ss = JSON.parse(raw); ss = ss && (ss.currentSession || ss);
+      if (ss && ss.access_token && ss.expires_at && ss.expires_at * 1000 > Date.now() + 60000) return ss.access_token;
+    } catch (e) {}
+    return null;
+  }
+  function hasSession(src) {
+    try { return src === 'custom' ? !!localStorage.getItem('muto_session') : !!localStorage.getItem(SB_KEY); } catch (e) { return false; }
+  }
+  function readCache() {
+    try {
+      var c = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
+      if (!c || !c.user || !c.user.id || Date.now() - c.at > CACHE_TTL || !hasSession(c.src)) return null;
+      return c;
+    } catch (e) { return null; }
+  }
+  function writeCache(u, src) {
+    try { localStorage.setItem(CACHE_KEY, JSON.stringify({ user: u, src: src, at: Date.now() })); } catch (e) {}
+  }
+  function clearCache() { try { localStorage.removeItem(CACHE_KEY); } catch (e) {} }
+
   // ── 認証 ──────────────────────────────────────────────
+  var emittedKey = null; // 最後に appshell:auth を出した時の「誰が・どのトークンで」。同じなら再送しない(ページの二重読み込みを防ぐ)
+  function showHeader(u) {
+    window.appShell.update({
+      loggedIn: !!u, name: u && u.username, points: u && u.points,
+      avatar: u && u.avatar, frame: u && u.frame, isAdmin: !!(u && u.isAdmin)
+    });
+  }
   function applyUser() {
     window.appShell.user = user;
     window.appShell.token = token;
@@ -284,33 +332,44 @@
       frame:    user && user.frame,
       isAdmin:  !!(user && user.isAdmin)
     });
+    var key = user ? user.id + '|' + token : '';
+    if (key === emittedKey) return;
+    emittedKey = key;
     try { window.dispatchEvent(new CustomEvent('appshell:auth', { detail: user })); } catch (e) {}
   }
 
   function resolveAuth() {
-    token = null; user = null;
+    var src = localStorage.getItem('muto_session') ? 'custom' : 'sb';
+    // 1) キャッシュがあれば、確認を待たずにログイン済みで描く
+    var cached = readCache();
+    if (cached && cached.src === src) {
+      var qt = quickToken(src);
+      if (qt) { user = cached.user; token = qt; applyUser(); }
+      else showHeader(cached.user); // トークン更新待ち(Supabase の期限切れ直後): 見た目だけ先に出し、ページへの通知は確認後
+    }
+    // 2) 裏でトークンと /api/me を確かめる
     var p = Promise.resolve(localStorage.getItem('muto_session'));
-    if (!localStorage.getItem('muto_session')) {
+    if (src === 'sb') {
       var c = sbClient();
       if (c) p = c.auth.getSession().then(function (r) {
         return (r && r.data && r.data.session && r.data.session.access_token) || null;
       }).catch(function () { return null; });
     }
     return p.then(function (t) {
-      token = t || null;
-      if (!token || !window.api) { applyUser(); return; }
+      if (!t || !window.api) { clearCache(); token = null; user = null; applyUser(); return; }
       return window.api.get('/api/me').then(function (me) {
-        user = {
-          id: me.id, username: me.username, email: me.email || '',
-          avatar: me.avatar || '🐸', frame: me.frame || 'default',
-          points: me.points || 0, lifetimePoints: me.lifetime_points || 0,
-          unlockedAvatars: me.unlockedAvatars || [], title: me.title || '',
-          isAdmin: (me.email || '') === ADMIN_EMAIL
-        };
+        token = t; user = normUser(me);
+        writeCache(user, src);
         applyUser();
       }).catch(function (e) {
-        if (e && e.status === 401) localStorage.removeItem('muto_session');
-        token = null; user = null; applyUser();
+        if (e && e.status === 401) {
+          if (src === 'custom') localStorage.removeItem('muto_session');
+          clearCache(); token = null; user = null; applyUser();
+          return;
+        }
+        // 通信エラー等: キャッシュがあればログイン済みのまま(トークンはサーバー側で毎回確かめられる)
+        if (cached && cached.src === src) { token = t; user = cached.user; applyUser(); }
+        else { token = null; user = null; applyUser(); }
       });
     });
   }
@@ -482,6 +541,19 @@
       loadTestSiblings();
     },
     refreshAuth: function () { return resolveAuth(); },
+    // index.html(manageAuth:false)用: キャッシュの読み書き。cachedLogin() は今すぐ使えるトークンがある時だけ { user, token } を返す
+    cachedLogin: function () {
+      var c = readCache(); if (!c) return null;
+      var src = localStorage.getItem('muto_session') ? 'custom' : 'sb';
+      if (c.src !== src) return null;
+      var t = quickToken(src);
+      return t ? { user: c.user, token: t } : null;
+    },
+    rememberLogin: function (me) {
+      if (!me || !me.id) return;
+      writeCache(normUser(me), localStorage.getItem('muto_session') ? 'custom' : 'sb');
+    },
+    forgetLogin: clearCache,
     setOutline: setOutline,
     logout: function () {
       var c = sbClient();
@@ -489,6 +561,7 @@
         localStorage.removeItem('muto_session');
         localStorage.removeItem('muto_user');
         localStorage.removeItem('muto_points');
+        clearCache();
         token = null; user = null; applyUser();
       };
       if (c && c.auth && c.auth.signOut) c.auth.signOut().then(done, done);

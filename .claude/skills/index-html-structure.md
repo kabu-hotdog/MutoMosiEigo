@@ -55,3 +55,8 @@ metadata:
 
 `localStorage` の `muto_session` に JWT トークンを保存。  
 `getToken()` で取得。null の場合はログインなし状態。
+
+**ログイン状態のキャッシュ（2026-11-27）:** `localStorage.muto_login_cache` = `{ user, src: 'custom'|'sb', at }`（有効 7 日・表示用の情報だけ）。
+`app-shell.js` の `resolveAuth()` は、キャッシュがあり、同期で読めるトークン（`muto_session`、または期限が 60 秒以上残る Supabase 保存セッション `sb-<ref>-auth-token`）があれば、確認を待たずにログイン済みで描いて `appshell:auth` を出す。そのあと裏で `/api/me` を確かめ、401 ならログアウト表示に戻す。通信エラーのときはキャッシュのままにする。
+`appshell:auth` は「ユーザー id＋トークン」が変わったときだけ出し直す（ページの二重読み込みを防ぐ）。
+`index.html`（`manageAuth:false`）は `appShell.cachedLogin()` で先に描き、`syncUser`/`syncPasswordUser` が成功したら `rememberLogin(data)`、ログアウト・401 のときは `forgetLogin()` を呼ぶ。

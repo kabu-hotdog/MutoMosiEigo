@@ -910,6 +910,7 @@ async function doLogout() {
   localStorage.removeItem('muto_points');
   localStorage.removeItem('muto_avatar');
   localStorage.removeItem('muto_frame');
+  appShell.forgetLogin();
   authToken = null; authUser = null; authEmail = null;
   authAvatar = '🐸'; authFrame = 'default'; authPoints = 0; authLifetimePoints = 0;
   updateAuthBar();
@@ -923,6 +924,7 @@ async function syncPasswordUser(token) {
     clearTimeout(timeout);
     const data = await res.json();
     if (data.username) {
+      appShell.rememberLogin(data); // 次のページを開いた瞬間からログイン済みで描くためのキャッシュ(app-shell.js)
       authUser            = data.username;
       authEmail           = data.email || '';
       authAvatar          = data.avatar || '🐸';
@@ -937,6 +939,7 @@ async function syncPasswordUser(token) {
       localStorage.setItem('muto_unlocked_avatars', JSON.stringify(authUnlockedAvatars));
     } else {
       localStorage.removeItem('muto_session');
+      appShell.forgetLogin();
       authToken = null;
     }
   } catch(e) {
@@ -959,6 +962,7 @@ async function syncUser(token) {
     clearTimeout(timeout);
     const data = await res.json();
     if (data.username) {
+      appShell.rememberLogin(data); // 次のページを開いた瞬間からログイン済みで描くためのキャッシュ(app-shell.js)
       authUser   = data.username;
       authEmail  = data.email;
       authAvatar          = data.avatar || '🐸';
@@ -1322,6 +1326,16 @@ async function syncPersonalData() {
 }
 
 // ── Supabase Auth 初期化 ─────────────────────────────────
+// 前回確かめたログイン状態(有効期限つきキャッシュ)があれば、確認を待たずにログイン済みで描く。下の getSession で確かめ直す
+(function () {
+  const q = appShell.cachedLogin && appShell.cachedLogin();
+  if (!q) return;
+  const u = q.user;
+  authToken = q.token; authUser = u.username; authEmail = u.email; authUserId = u.id;
+  authAvatar = u.avatar; authFrame = u.frame; authPoints = u.points; authLifetimePoints = u.lifetimePoints;
+  if (u.unlockedAvatars && u.unlockedAvatars.length) authUnlockedAvatars = u.unlockedAvatars;
+  updateAuthBar();
+})();
 supabaseClient.auth.getSession().then(async ({ data: { session } }) => {
   if (session) {
     authToken = session.access_token;
@@ -1331,6 +1345,10 @@ supabaseClient.auth.getSession().then(async ({ data: { session } }) => {
     if (customToken) {
       authToken = customToken;
       await syncPasswordUser(customToken);
+    } else if (authToken) {
+      // キャッシュでログイン済みにしていたが、セッションが無かった
+      appShell.forgetLogin();
+      authToken = null; authUser = null; authEmail = null; authPoints = 0; authLifetimePoints = 0;
     }
   }
   updateAuthBar();
@@ -1345,6 +1363,7 @@ supabaseClient.auth.getSession().then(async ({ data: { session } }) => {
       syncPersonalData();
     } else if (event === 'SIGNED_OUT') {
       if (!localStorage.getItem('muto_session')) {
+        appShell.forgetLogin();
         authToken = null; authUser = null; authEmail = null; authPoints = 0; authLifetimePoints = 0;
       }
     }
