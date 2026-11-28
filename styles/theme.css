@@ -256,7 +256,9 @@ body > #app-shell-bar{position:fixed;top:0;left:0;right:0;z-index:100}
 }
 .appshell-drawer.open{transform:translateX(0)}
 .appshell-drawer-head{
-  padding:10px 12px 14px;margin:0 4px 6px;border-bottom:1px solid var(--line-soft);
+  /* 右上は閉じる × の場所(.appshell-close)。未ログインで空でも行の高さを保つ */
+  min-height:44px;padding:10px 52px 14px 12px;margin:0 4px 6px;border-bottom:1px solid var(--line-soft);
+  overflow-wrap:anywhere;
   font-size:var(--fs-sm);font-weight:600;color:var(--ink);
 }
 .appshell-drawer a,
@@ -308,7 +310,7 @@ body > #app-shell-bar{position:fixed;top:0;left:0;right:0;z-index:100}
 }
 .appshell-outline-head{
   display:flex;align-items:center;justify-content:space-between;gap:8px;
-  padding:10px 12px 12px;margin:0 4px 6px;border-bottom:1px solid var(--line-soft);
+  min-height:44px;padding:10px 12px 12px;margin:0 4px 6px;border-bottom:1px solid var(--line-soft);
   font-size:var(--fs-2xs);font-weight:700;letter-spacing:.1em;color:var(--dim);
 }
 .appshell-outline a{
@@ -317,6 +319,21 @@ body > #app-shell-bar{position:fixed;top:0;left:0;right:0;z-index:100}
   transition:background-color var(--dur-1) var(--ease-out);
 }
 .appshell-outline-menu{display:none}
+/* 閉じるボタン。開いている間だけ ☰ と同じ位置(app-shell.js の placeClose が座標を入れる)に重ねる */
+.appshell-close{
+  position:fixed;z-index:253;display:block;padding:0;
+  color:var(--ink);background:none;border:none;border-radius:var(--r-md);cursor:pointer;
+  opacity:0;visibility:hidden;pointer-events:none;transform:rotate(-90deg);
+  transition:opacity var(--dur-2) var(--ease-out),transform var(--dur-3) var(--ease-out),visibility 0s linear var(--dur-3),background-color var(--dur-1) var(--ease-out);
+}
+.appshell-close.open{opacity:1;visibility:visible;pointer-events:auto;transform:none;
+  transition:opacity var(--dur-2) var(--ease-out),transform var(--dur-3) var(--ease-out),visibility 0s,background-color var(--dur-1) var(--ease-out)}
+.appshell-close:hover{background:var(--surface-2)}
+.appshell-close::before,.appshell-close::after{
+  content:"";position:absolute;left:50%;top:50%;width:20px;height:2px;border-radius:2px;background:currentColor;
+  transform:translate(-50%,-50%) rotate(45deg);
+}
+.appshell-close::after{transform:translate(-50%,-50%) rotate(-45deg)}
 /* quiz-nav の「同じ試験」ナビ(表示中の模試) */
 .appshell-outline span[aria-current="page"]{
   display:block;padding:7px 12px;border-radius:var(--r-md);
@@ -348,6 +365,7 @@ body.appshell-has-navi.appshell-has-outline .appshell-navi{border-radius:0}
   .appshell-outline{right:0;width:min(304px,86vw);z-index:251;transform:translateX(104%);translate:none;
     transition:transform var(--dur-3) var(--ease-out),visibility 0s linear var(--dur-3)}
   .appshell-outline.open{transform:none;translate:none;transition:transform var(--dur-3) var(--ease-out),visibility 0s}
+  .appshell-outline-head{padding-right:52px} /* 右上は閉じる × の場所 */
   .appshell-outline-menu{
     display:inline-flex;align-items:center;gap:8px;flex-shrink:0;height:36px;padding:0 12px 0 34px;position:relative;
     font:600 var(--fs-xs)/1 var(--font-sans);letter-spacing:0;color:var(--ink);

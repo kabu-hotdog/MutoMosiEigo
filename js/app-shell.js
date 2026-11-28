@@ -38,6 +38,7 @@
 
   var opts = null;
   var els = {};
+  var closeBtn = null;
   var drawer = null, backdrop = null, outline = null, outlineOpts = {};
   // 「同じ試験」ナビ。十分に広い画面(900px 以上)ではドロワーから出して、ドロワーと見出しパネルの間の3枚目にする
   var navi = null, sibHtml = '', WIDE3 = window.matchMedia('(min-width:900px)');
@@ -239,6 +240,11 @@
 
     document.body.appendChild(backdrop);
     document.body.appendChild(drawer);
+
+    // 閉じるボタン。☰ はドロワーと背景の下に隠れるので、開いている間だけ ☰ と同じ位置に × を重ねる
+    closeBtn = h('button', { 'class': 'appshell-close', type: 'button', 'aria-label': 'メニューを閉じる' });
+    closeBtn.addEventListener('click', closeDrawer);
+    document.body.appendChild(closeBtn);
   }
 
   // ── ページ内の見出しジャンプ(ドロワーの左に並ぶ別パネル。スクロールはドロワーと独立) ──
@@ -368,12 +374,24 @@
     var first = drawer.querySelector('a:not([hidden]),button:not([hidden])');
     if (first) first.focus();
   }
+  // × を ☰ のいる場所（ページによってヘッダーの位置が違うので実測）に置く
+  function placeClose() {
+    var r = els.burger.getBoundingClientRect();
+    closeBtn.style.top = r.top + 'px'; closeBtn.style.left = r.left + 'px';
+    closeBtn.style.width = r.width + 'px'; closeBtn.style.height = r.height + 'px';
+  }
+  function showClose() {
+    placeClose();
+    closeBtn.classList.add('open');
+    window.addEventListener('resize', placeClose);
+  }
   function openDrawer() {
     if (outlineUsable() && NARROW.matches) {
       // スマホ: まず見出しだけ。メニューは見出しパネルの ☰ から
       backdrop.classList.add('open');
       els.burger.setAttribute('aria-expanded', 'true');
       openOutline();
+      showClose();
       document.addEventListener('keydown', onKey);
       return;
     }
@@ -383,12 +401,15 @@
     els.burger.setAttribute('aria-expanded', 'true');
     openNavi();
     openOutline();
+    showClose();
     document.addEventListener('keydown', onKey);
     var first = drawer.querySelector('a:not([hidden]),button:not([hidden])');
     if (first) first.focus();
   }
   function closeDrawer() {
     if (!drawer) return;
+    closeBtn.classList.remove('open');
+    window.removeEventListener('resize', placeClose);
     drawer.classList.remove('open');
     backdrop.classList.remove('open');
     drawer.setAttribute('aria-hidden', 'true');
@@ -719,14 +740,13 @@
       els.notifBtn.hidden  = !on || !opts.onNotif;
       els.nameWrap.hidden  = !on;
       els.logout.hidden    = !on;
-      els.drawerHead.hidden = !on;
 
       els.nameB.textContent   = state.name || '';
       renderPoints(on, state.name || '', ptsNum);
       if (state.avatar) els.avatar.textContent = state.avatar;
       els.avatar.className = 'avatar frame-' + (state.frame || 'default');
-      els.drawerHead.textContent =
-        (state.avatar || '🐸') + ' ' + (state.name || '') + ' ・ ' + ptsStr;
+      // 未ログインでも行は残す（右上の × の居場所）
+      els.drawerHead.textContent = on ? (state.avatar || '🐸') + ' ' + (state.name || '') + ' ・ ' + ptsStr : '';
 
       drawer.querySelectorAll('[data-auth]').forEach(function (n) { n.hidden = !on; });
       drawer.querySelectorAll('[data-admin]').forEach(function (n) { n.hidden = !(on && state.isAdmin); });
