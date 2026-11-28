@@ -22,6 +22,14 @@ h1{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(2rem,6vw,3rem);l
 .bar>i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal-d),var(--teal));border-radius:99px;transition:width .5s ease}
 .resetbtn{font-family:inherit;font-size:.78rem;color:var(--muted);background:none;border:1px solid var(--line);border-radius:8px;padding:5px 11px;cursor:pointer;transition:.2s}
 .resetbtn:hover{color:var(--ink);border-color:var(--teal-d)}
+.scoreboard.in-head{position:static;margin:0 12px;background:none;backdrop-filter:none;border:none}
+.scoreboard.in-head .wrap{max-width:none;margin:0;padding:0;flex-wrap:nowrap;gap:10px}
+.scoreboard.in-head .scorenum{font-size:.95rem;white-space:nowrap}
+.scoreboard.in-head .scorelbl{white-space:nowrap}
+.scoreboard.in-head .bar{max-width:360px}
+.scoreboard.in-head .resetbtn{white-space:nowrap}
+body.appshell-docked section{scroll-margin-top:calc(var(--bar-h) + 16px)}
+body.appshell-docked .num-main{top:calc(var(--bar-h) + 16px)}
 nav.toc{display:flex;gap:8px;flex-wrap:wrap;padding:22px 0 6px}
 nav.toc a{font-size:.82rem;color:var(--muted);text-decoration:none;padding:7px 13px;border:1px solid var(--line);border-radius:99px;background:var(--card);transition:.2s;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
 nav.toc a:hover{color:var(--ink);border-color:var(--teal-d);transform:translateY(-1px)}
@@ -828,7 +836,11 @@ window.initQuiz = function (data) {
     addScript('/js/api.js', function () {
       addScript('/js/nav.js', function () {
         addScript('/js/app-shell.js', function () {
-          if (window.appShell) window.appShell.mount(document.getElementById('app-shell-bar'), { nav: window.APP_NAV });
+          if (window.appShell) {
+            window.appShell.mount(document.getElementById('app-shell-bar'), { nav: window.APP_NAV });
+            // PC幅では採点バーをヘッダーに統合（lesson の進捗バーと同じ）
+            window.appShell.dock(document.querySelector('.scoreboard'));
+          }
           addScript('/js/points.js', function () {
             addScript('/js/progress.js');
           });

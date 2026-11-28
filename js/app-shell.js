@@ -17,6 +17,9 @@
 //                                          //   同じユーザーで points が変わるとヘッダーの数字が増減アニメーションする
 //   appShell.setPoints(n)  // ポイントだけ差し替える（js/points.js が POST /api/points の応答で呼ぶ）
 //   ホーム以外ではブランドが「← 武藤模試」（トップへ戻るボタン）になる
+//   appShell.dock(el, { media })  // ページの進捗バー等を、広い画面(既定 min-width:1000px)ではヘッダーの空きへ移す。
+//                                 //   移している間は el に .in-head、body に .appshell-docked。狭くなると元の位置へ戻す。
+//                                 //   el を作り直したら新しい el で呼び直す（前の el の登録は外れる）。null で解除
 //   appShell.setOutline([{ id, html, level, onClick }], { title, wideOnly, current })  // onClick があれば id へは飛ばずにそれを呼ぶ  // ページ内の見出しジャンプ。ドロワーを開くと左に並んで開く
 //                                          //   title=パネルの見出し(既定「このページ」)、wideOnly=狭い画面では出さない、
 //                                          //   current=開いた時に印を付ける id(省略時はスクロール位置から決める)
@@ -61,6 +64,35 @@
       el.appendChild(typeof c === 'string' ? document.createTextNode(c) : c);
     });
     return el;
+  }
+
+  // ── ページのバーをヘッダーへ統合（lesson の進捗バー・quiz の採点バー）──────────
+  var docked = null;
+  function undock() {
+    if (!docked) return;
+    var d = docked; docked = null;
+    if (d.mq.removeEventListener) d.mq.removeEventListener('change', d.place); else if (d.mq.removeListener) d.mq.removeListener(d.place);
+    if (d.el.classList.contains('in-head')) {
+      if (d.slot.parentNode) d.slot.after(d.el); else d.el.remove();
+      d.el.classList.remove('in-head');
+    }
+    d.slot.remove();
+    document.body.classList.remove('appshell-docked');
+  }
+  function dock(el, o) {
+    undock();
+    if (!el) return;
+    var d = { el: el, slot: document.createComment('appshell-dock'), mq: window.matchMedia((o && o.media) || '(min-width:1000px)') };
+    el.before(d.slot);
+    d.place = function () {
+      var wide = d.mq.matches && els.spacer && d.slot.parentNode;
+      if (wide) { els.spacer.before(el); el.classList.add('in-head'); }
+      else if (el.classList.contains('in-head')) { d.slot.after(el); el.classList.remove('in-head'); }
+      document.body.classList.toggle('appshell-docked', !!wide);
+    };
+    if (d.mq.addEventListener) d.mq.addEventListener('change', d.place); else if (d.mq.addListener) d.mq.addListener(d.place);
+    docked = d;
+    d.place();
   }
 
   function isHome() { return location.pathname === '/' || location.pathname === '/index.html'; }
@@ -154,7 +186,7 @@
 
     els = {
       idBtn: idBtn, googleBtn: googleBtn, notifBtn: notifBtn,
-      nameWrap: nameWrap, avatar: avatar, nameB: nameB, pointsS: pointsS, burger: burger
+      spacer: spacer, nameWrap: nameWrap, avatar: avatar, nameB: nameB, pointsS: pointsS, burger: burger
     };
   }
 
@@ -651,6 +683,7 @@
     },
     forgetLogin: clearCache,
     setOutline: setOutline,
+    dock: dock,
     logout: function () {
       var c = sbClient();
       var done = function () {
