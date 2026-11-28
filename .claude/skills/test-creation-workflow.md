@@ -116,7 +116,7 @@ node scripts/convert-quiz-html.js
 
 ## ハンバーガーメニュー（☰）の「同じ試験へのドロワー」は自動対応
 
-`quiz.html?d=...` の模試ページは `quiz-engine.js` が `quiz-nav.js` を自動ロードして採点バーに ☰（同じ試験の他科目・同科目テストへのドロワー）を付ける。`kakougaku-cheatsheet.html` のような「模試ではない独立ページ（まとめ・掲示・カンペシート等）」も、`js/app-shell.js`（`appShell.mount`）側に同等のロジックを実装済み（2026-09-12〜）。**両方とも data.json / `tests/_legacy.json` を作るだけで自動対応するので、通常のテスト追加・まとめページ追加では何もしなくてよい。**
+`quiz.html?d=...` の模試ページは `quiz-engine.js` が共通ヘッダー `js/app-shell.js` を mount し、その ☰ に同じ試験の他科目・同科目テストへのリンクが出る。`kakougaku-cheatsheet.html` のような「模試ではない独立ページ（まとめ・掲示・カンペシート等）」も同じ app-shell のロジックで出る。**両方とも data.json / `tests/_legacy.json` を作るだけで自動対応するので、通常のテスト追加・まとめページ追加では何もしなくてよい。**
 
 独立ページ側で必要なのは通常の app-shell 導入手順のみ：
 

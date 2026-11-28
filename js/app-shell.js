@@ -14,6 +14,9 @@
 //   ログイン状態のキャッシュ(localStorage.muto_login_cache・有効 7 日): ページを開いた瞬間はキャッシュでログイン済み表示にし、
 //   裏で /api/me を確かめる(401 ならログアウト表示に戻す)。index.html 用に cachedLogin / rememberLogin / forgetLogin も公開。
 //   appShell.update({ loggedIn, name, points, avatar, frame, isAdmin })  // 表示だけ手動更新したい場合
+//                                          //   同じユーザーで points が変わるとヘッダーの数字が増減アニメーションする
+//   appShell.setPoints(n)  // ポイントだけ差し替える（js/points.js が POST /api/points の応答で呼ぶ）
+//   ホーム以外ではブランドが「← 武藤模試」（トップへ戻るボタン）になる
 //   appShell.setOutline([{ id, html, level, onClick }], { title, wideOnly, current })  // onClick があれば id へは飛ばずにそれを呼ぶ  // ページ内の見出しジャンプ。ドロワーを開くと左に並んで開く
 //                                          //   title=パネルの見出し(既定「このページ」)、wideOnly=狭い画面では出さない、
 //                                          //   current=開いた時に印を付ける id(省略時はスクロール位置から決める)
@@ -37,6 +40,7 @@
   var navi = null, sibHtml = '', WIDE3 = window.matchMedia('(min-width:900px)');
   var _sb = null;
   var user = null, token = null;
+  var lastState = {};
 
   function sbClient() {
     if (_sb) return _sb;
@@ -59,11 +63,69 @@
     return el;
   }
 
+  function isHome() { return location.pathname === '/' || location.pathname === '/index.html'; }
+
+  // ── ポイント表示（増減をカウントアップ／ダウンで見せる）──────────────
+  // 同じユーザーのまま値が変わった時だけアニメーションする。初回表示・ログイン切替は即時。
+  var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var shownPts = null, shownName = null, ptsAnim = null;
+  function fmtPts(n) { return Math.round(n).toLocaleString() + 'pt'; }
+  function stopPtsAnim() { if (ptsAnim) { cancelAnimationFrame(ptsAnim.raf); ptsAnim = null; } }
+  function renderPoints(on, name, pts) {
+    var el = els.pointsS;
+    if (!on || shownPts == null || shownName !== name) {
+      stopPtsAnim();
+      el.textContent = fmtPts(on ? pts : 0);
+    } else if (pts !== shownPts) {
+      animatePoints(ptsAnim ? ptsAnim.cur : shownPts, pts);
+    }
+    shownPts = on ? pts : null;
+    shownName = on ? name : null;
+  }
+  function animatePoints(from, to) {
+    var el = els.pointsS, delta = to - shownPts;
+    stopPtsAnim();
+    if (REDUCED.matches) { el.textContent = fmtPts(to); return; }
+
+    // 増減の色フラッシュ（連続しても毎回やり直す）
+    el.classList.remove('is-up', 'is-down');
+    void el.offsetWidth;
+    el.classList.add(delta > 0 ? 'is-up' : 'is-down');
+
+    // 「+100」「−50」がポイントから浮き上がる／沈む
+    var chip = h('span', {
+      'class': 'appshell-pts-delta ' + (delta > 0 ? 'is-up' : 'is-down'), 'aria-hidden': 'true',
+      text: (delta > 0 ? '+' : '−') + Math.abs(delta).toLocaleString()
+    });
+    el.appendChild(chip);
+    chip.addEventListener('animationend', function () { chip.remove(); });
+    setTimeout(function () { chip.remove(); }, 1600);
+
+    var dur = Math.min(1200, 450 + Math.abs(to - from) * 0.6), t0 = null;
+    var a = ptsAnim = { cur: from, raf: 0 };
+    function step(t) {
+      if (t0 == null) t0 = t;
+      var p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+      a.cur = from + (to - from) * e;
+      el.firstChild.nodeValue = fmtPts(a.cur);
+      if (p < 1) a.raf = requestAnimationFrame(step);
+      else if (ptsAnim === a) ptsAnim = null;
+    }
+    el.firstChild.nodeValue = fmtPts(from);
+    a.raf = requestAnimationFrame(step);
+  }
+
   function buildBar(host) {
     host.className = 'appshell-bar';
     host.innerHTML = '';
 
+    // ホーム以外では「← 武藤模試」としてトップへ戻るボタンにする
     var brand  = h('a',   { 'class': 'appshell-brand', href: '/', text: '武藤模試' });
+    if (!isHome()) {
+      brand.classList.add('appshell-brand--back');
+      brand.setAttribute('aria-label', '武藤模試のトップへ戻る');
+      brand.insertBefore(h('span', { 'class': 'appshell-back-ico', 'aria-hidden': 'true', text: '←' }), brand.firstChild);
+    }
     var spacer = h('span', { 'class': 'appshell-spacer' });
 
     var idBtn = h('button', { 'class': 'appshell-btn', type: 'button', text: 'IDでログイン' });
@@ -195,8 +257,8 @@
   }
 
   // ── 同じ試験（year/grade/exam 一致）への横断ナビ ──────────────────
-  // quiz-nav.js（quiz.html 専用）の同等機能を、data.json を持たないページ
-  // （まとめ・掲示ページ等。tests/_legacy.json に path 登録されているもの）にも出す。
+  // quiz.html（/quiz.html?d=…）と、data.json を持たないページ
+  // （まとめ・掲示ページ等。tests/_legacy.json に path 登録されているもの）に出す。
   // 現在の URL が /api/tests のどれかの path と一致した場合だけ描画するので、
   // テストとして登録されていないページ（scores.html 等）では何も出ない＝ノーコスト。
   function groupHtml(label, itemsHtml) {
@@ -601,10 +663,21 @@
       if (c && c.auth && c.auth.signOut) c.auth.signOut().then(done, done);
       else done();
     },
+    // ポイントだけ変わった時に呼ぶ（POST /api/points の応答など）。ヘッダーの数字がアニメーションして変わる
+    setPoints: function (points) {
+      if (points == null || !lastState.loggedIn) return;
+      if (user) {
+        user.points = points;
+        writeCache(user, localStorage.getItem('muto_session') ? 'custom' : 'sb');
+      }
+      this.update(Object.assign({}, lastState, { points: points }));
+    },
     update: function (state) {
       state = state || {};
+      lastState = state;
       var on = !!state.loggedIn;
-      var ptsStr = (state.points != null ? Number(state.points).toLocaleString() : '0') + 'pt';
+      var ptsNum = state.points != null ? Number(state.points) : 0;
+      var ptsStr = ptsNum.toLocaleString() + 'pt';
 
       els.idBtn.hidden     = on;
       els.googleBtn.hidden = on;
@@ -616,7 +689,7 @@
       els.drawerHead.hidden = !on;
 
       els.nameB.textContent   = state.name || '';
-      els.pointsS.textContent = ptsStr;
+      renderPoints(on, state.name || '', ptsNum);
       if (state.avatar) els.avatar.textContent = state.avatar;
       els.avatar.className = 'avatar frame-' + (state.frame || 'default');
       els.drawerHead.textContent =

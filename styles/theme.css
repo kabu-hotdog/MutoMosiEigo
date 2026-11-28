@@ -174,6 +174,12 @@ body > #app-shell-bar{position:fixed;top:0;left:0;right:0;z-index:100}
   background:linear-gradient(135deg,var(--teal) 0%,var(--teal-d) 100%);
   box-shadow:0 0 0 1px rgba(255,255,255,.08) inset,0 4px 12px -4px rgba(70,214,196,.6);
 }
+/* ホーム以外: 「← 武藤模試」でトップへ戻るボタン */
+.appshell-brand--back{padding:0 12px 0 8px;margin-left:-6px;border-radius:10px;transition:background-color var(--dur-1) var(--ease-out)}
+.appshell-brand--back::before{display:none}
+.appshell-brand--back:hover{background:var(--surface-2)}
+.appshell-back-ico{font-size:1.125rem;font-weight:700;color:var(--teal);line-height:1;transition:transform var(--dur-1) var(--ease-out)}
+.appshell-brand--back:hover .appshell-back-ico{transform:translateX(-2px)}
 .appshell-spacer{flex:1;min-width:0}
 .appshell-btn{
   display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;white-space:nowrap;
@@ -187,7 +193,17 @@ body > #app-shell-bar{position:fixed;top:0;left:0;right:0;z-index:100}
 .appshell-btn.primary:hover{background:var(--teal-hover);border-color:var(--teal-hover)}
 .appshell-name{display:flex;align-items:center;gap:8px;font-size:var(--fs-sm);color:var(--muted);flex-shrink:1;min-width:0}
 .appshell-name b{color:var(--ink);font-weight:700;max-width:28vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.appshell-name [data-role="points"]{font-family:var(--font-mono);font-size:var(--fs-xs);color:var(--amber);white-space:nowrap}
+.appshell-name [data-role="points"]{position:relative;display:inline-block;font-family:var(--font-mono);font-size:var(--fs-xs);color:var(--amber);white-space:nowrap;font-variant-numeric:tabular-nums}
+/* ポイント増減（app-shell.js の animatePoints） */
+.appshell-name [data-role="points"].is-up{animation:pts-pop-up .9s var(--ease-out)}
+.appshell-name [data-role="points"].is-down{animation:pts-pop-down .9s var(--ease-out)}
+@keyframes pts-pop-up{0%{color:var(--amber);transform:scale(1)}15%{color:var(--good);transform:scale(1.22)}60%{color:var(--good);transform:scale(1)}100%{color:var(--amber)}}
+@keyframes pts-pop-down{0%{color:var(--amber);transform:translateX(0)}15%{color:var(--bad);transform:translateX(-2px)}30%{transform:translateX(2px)}45%{transform:translateX(-1px)}60%{color:var(--bad);transform:translateX(0)}100%{color:var(--amber)}}
+.appshell-pts-delta{position:absolute;right:0;pointer-events:none;font-weight:700;font-size:var(--fs-xs);white-space:nowrap}
+.appshell-pts-delta.is-up{top:-2px;color:var(--good);animation:pts-float-up 1.2s var(--ease-out) forwards}
+.appshell-pts-delta.is-down{top:2px;color:var(--bad);animation:pts-float-down 1.2s var(--ease-out) forwards}
+@keyframes pts-float-up{0%{opacity:0;transform:translateY(4px)}15%{opacity:1}100%{opacity:0;transform:translateY(-18px)}}
+@keyframes pts-float-down{0%{opacity:0;transform:translateY(-4px)}15%{opacity:1}100%{opacity:0;transform:translateY(18px)}}
 .appshell-name .avatar{width:32px;height:32px;font-size:1.05rem}
 .appshell-icon{
   position:relative;display:grid;place-items:center;width:40px;height:40px;flex-shrink:0;

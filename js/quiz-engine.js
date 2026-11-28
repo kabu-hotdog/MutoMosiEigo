@@ -8,13 +8,13 @@
 
 // テーマ変数（--bg 等）と reset は /styles/theme.css で定義。initQuiz が <link> で読み込む。
 const CSS = `
-body{font-family:"Outfit","Noto Sans JP",sans-serif;background:radial-gradient(1100px 600px at 80% -8%,rgba(70,214,196,.10),transparent 55%),radial-gradient(900px 500px at 5% 5%,rgba(246,179,82,.07),transparent 50%),var(--bg);color:var(--ink);line-height:1.6;padding-bottom:80px}
+body{font-family:"Outfit","Noto Sans JP",sans-serif;background:radial-gradient(1100px 600px at 80% -8%,rgba(70,214,196,.10),transparent 55%),radial-gradient(900px 500px at 5% 5%,rgba(246,179,82,.07),transparent 50%),var(--bg);color:var(--ink);line-height:1.6;padding-top:var(--bar-h);padding-bottom:80px}
 .wrap{max-width:880px;margin:0 auto;padding:0 18px}
 header{padding:46px 0 30px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,var(--bg2),transparent)}
 .eyebrow{font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:10px}
 h1{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(2rem,6vw,3rem);line-height:1.04}
 .sub{color:var(--muted);margin-top:12px;font-size:1rem;max-width:600px}
-.scoreboard{position:sticky;top:0;z-index:50;background:rgba(10,22,38,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.scoreboard{position:sticky;top:var(--bar-h);z-index:50;background:rgba(10,22,38,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .scoreboard .wrap{display:flex;align-items:center;gap:14px;padding:11px 18px;flex-wrap:wrap}
 .scorenum{font-family:"JetBrains Mono",monospace;font-size:1.05rem;color:var(--teal);font-weight:500}
 .scorelbl{color:var(--muted);font-size:.85rem}
@@ -25,7 +25,7 @@ h1{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(2rem,6vw,3rem);l
 nav.toc{display:flex;gap:8px;flex-wrap:wrap;padding:22px 0 6px}
 nav.toc a{font-size:.82rem;color:var(--muted);text-decoration:none;padding:7px 13px;border:1px solid var(--line);border-radius:99px;background:var(--card);transition:.2s;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
 nav.toc a:hover{color:var(--ink);border-color:var(--teal-d);transform:translateY(-1px)}
-section{margin-top:44px;scroll-margin-top:64px}
+section{margin-top:44px;scroll-margin-top:calc(var(--bar-h) + 64px)}
 .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
 .sec-no{font-family:"JetBrains Mono",monospace;font-size:.9rem;color:var(--teal);letter-spacing:.05em}
 .sec-head h2{font-family:"Fraunces",serif;font-weight:600;font-size:1.5rem}
@@ -81,7 +81,7 @@ section>.q{grid-column:auto;margin-bottom:16px}
 section>.q.q-num,section>.q.q-fc,section>.q:has(.katex),section>.q:has(.num-svg){grid-column:1/-1}
 .num-cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:28px;align-items:start}
 .num-side{min-width:0}
-.num-main{min-width:0;position:sticky;top:70px}
+.num-main{min-width:0;position:sticky;top:calc(var(--bar-h) + 70px)}
 }
 .num-svg svg,.num-svg img{cursor:zoom-out}
 .fig-small svg,.fig-small img{cursor:zoom-in;max-width:220px!important;max-height:170px;width:auto}
@@ -703,7 +703,7 @@ function kbCurrent() {
   const el = kbMark();
   if (el) return el;
   const qs = Array.from(document.querySelectorAll('#app .q'));
-  return qs.find(q => q.getBoundingClientRect().bottom > 90) || qs[0] || null;
+  return qs.find(q => q.getBoundingClientRect().bottom > 150) || qs[0] || null;
 }
 function kbGo(dir) {
   const qs = Array.from(document.querySelectorAll('#app .q'));
@@ -779,6 +779,7 @@ window.initQuiz = function (data) {
   // Build DOM
   document.title = data.title;
   document.body.innerHTML = `
+    <div id="app-shell-bar"></div>
     <div class="scoreboard"><div class="wrap">
       <span class="scorenum" id="sNum">0 / 0</span>
       <span class="scorelbl">正解</span>
@@ -797,7 +798,6 @@ window.initQuiz = function (data) {
       <div id="app"></div>
       ${data.footer ? `<footer>${data.footer}</footer>` : ''}
     </div>
-    <a href="/" style="position:fixed;bottom:20px;left:16px;background:rgba(10,22,38,.9);border:1px solid #27406a;color:#8aa1c0;text-decoration:none;padding:8px 14px;border-radius:99px;font-size:.82rem;z-index:200;backdrop-filter:blur(4px)">← トップへ</a>
   `;
 
   // Load state
@@ -822,17 +822,18 @@ window.initQuiz = function (data) {
 
   window.QUIZ_SUBJECT = data.subject;
 
-  // 模試ページ内ナビゲーション（採点バー右上のハンバーガー）
-  addScript('/js/nav.js', function () {
-    addScript('/js/quiz-nav.js', function () {
-      if (window.quizNav) window.quizNav.mount(data);
-    });
-  });
-
-  // Load external deps: supabase → points.js → progress.js
+  // 共通ヘッダー（← 武藤模試・アイコン・ポイント・☰）は app-shell。同じ試験の横断ナビも app-shell が出す
+  // 読み込み順: supabase → api → nav → app-shell(mount) → points → progress
   addScript('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2', function () {
-    addScript('/js/points.js', function () {
-      addScript('/js/progress.js');
+    addScript('/js/api.js', function () {
+      addScript('/js/nav.js', function () {
+        addScript('/js/app-shell.js', function () {
+          if (window.appShell) window.appShell.mount(document.getElementById('app-shell-bar'), { nav: window.APP_NAV });
+          addScript('/js/points.js', function () {
+            addScript('/js/progress.js');
+          });
+        });
+      });
     });
   });
 

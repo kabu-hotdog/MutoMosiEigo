@@ -39,6 +39,8 @@
         body: JSON.stringify(body)
       });
       const data = await res.json();
+      // 共通ヘッダー（app-shell）のポイントを更新 → 増減アニメーション
+      if (data.ok && data.points != null && window.appShell && window.appShell.setPoints) window.appShell.setPoints(data.points);
       if (data.ok && data.delta != null) {
         if (data.delta > 0) showPointsToast(`+${data.delta.toLocaleString()}pt`);
         else if (data.delta < 0) showPointsToast(`${data.delta.toLocaleString()}pt`, true);

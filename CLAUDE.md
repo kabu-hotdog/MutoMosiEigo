@@ -25,7 +25,8 @@ npm start        # サーバー起動（ポート: PORT env or 3000）
 「テスト追加のたびに `tests.json` 手編集」「`index.html` が4000行超の1枚岩」「なんでもモーダル（直リンク不可）」を解消する大規模リファクタリングのフェーズ1〜3が完了（詳細 spec: `docs/superpowers/specs/2026-09-10-architecture-refactor-design.md`、計画: `docs/superpowers/plans/2026-09-1*-phase*`）。
 
 - **共有基盤:** `styles/theme.css`（テーマ変数・全コンポーネントCSS・`[hidden]`・Web フォント `@import` の唯一の定義）／`js/api.js`（`window.api`）・`js/nav.js`（`window.APP_NAV`）・`js/app-shell.js`（共通ヘッダー＋ハンバーガー＋認証ブートストラップ＋内蔵アバターピッカー）・`js/util.js`（`esc`/`tu`/`titleBadge`/`showPointToast`）。
-- **コンテンツ:** `GET /api/tests` が `tests/*/data.json` を走査して索引を自動生成（`tests.json` 廃止）。全テストが `data.json`＋`quiz.html?d=…`。`quiz.html` は app-shell を使わず `js/quiz-engine.js` が全描画。`js/quiz-nav.js`（`quiz-engine` が `nav.js` の後に読み込み `window.quizNav.mount(data)`）が採点バー右端に `☰`＋ドロワーを足し、同じ試験（`year`+`grade`+`exam` 一致）の同科目→他科目→`APP_NAV` 分離ページの順にリンクを並べる。`/api/tests` 失敗や `exam` 欠落時はメニューのみ。
+- **コンテンツ:** `GET /api/tests` が `tests/*/data.json` を走査して索引を自動生成（`tests.json` 廃止）。全テストが `data.json`＋`quiz.html?d=…`。`quiz.html` は `js/quiz-engine.js` が全描画し、ヘッダーは他ページと同じ app-shell（`#app-shell-bar` に `appShell.mount`）。☰ ドロワーには app-shell が同じ試験（`year`+`grade`+`exam` 一致）の同科目→他科目のリンクを足す（`/api/tests` の path と `location.pathname+search` が一致した時だけ）。
+- **ヘッダーのポイント表示:** `appShell.update` で同じユーザーの points が変わると増減アニメーション（カウント＋浮き上がる差分）。`js/points.js` は `POST /api/points` の応答で `appShell.setPoints(points)` を呼ぶ。ポイントを変える新機能も `setPoints` か `refreshAuth()` を呼べば自動でアニメーションする。ホーム以外ではブランドが「← 武藤模試」（トップへ戻る）になる。
 - **マルチページ:** 各機能が独立 `.html`（`members`/`scores`/`clrank`/`predict`/`battle`/`race`/`login`/`admin`）。`express.static` のまま・ビルドツールなし。各ページは `theme.css`＋`api/nav/app-shell/util.js` を読み `appShell.mount({ nav: window.APP_NAV })`。認証は `appshell:auth` イベントで橋渡し。
 - **`index.html`（≈1459行）:** ホーム目次（試験フォルダ一覧・ランキング・時間割カード・お知らせ）＋共通シェル＋認証（`syncUser`/`syncPasswordUser`・`manageAuth:false`）＋自前のアバター/テーマ/お知らせモーダルのみ。
 - **残（任意）: フェーズ4 サーバー整理** — 科目別採点API 5本を1本化・`server.js` をルート単位に分割。
