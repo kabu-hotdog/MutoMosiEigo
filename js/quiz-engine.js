@@ -22,8 +22,8 @@ h1{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(2rem,6vw,3rem);l
 .bar>i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal-d),var(--teal));border-radius:99px;transition:width .5s ease}
 .resetbtn{font-family:inherit;font-size:.78rem;color:var(--muted);background:none;border:1px solid var(--line);border-radius:8px;padding:5px 11px;cursor:pointer;transition:.2s}
 .resetbtn:hover{color:var(--ink);border-color:var(--teal-d)}
-.scoreboard.in-head{position:static;margin:0 12px;background:none;backdrop-filter:none;border:none}
-.scoreboard.in-head .wrap{max-width:none;margin:0;padding:0;flex-wrap:nowrap;gap:10px}
+.scoreboard.in-head{position:static;background:none;backdrop-filter:none;border:none}
+.scoreboard.in-head .wrap{max-width:none;margin:0;padding:0;flex-wrap:nowrap;gap:10px;justify-content:center}
 .scoreboard.in-head .scorenum{font-size:.95rem;white-space:nowrap}
 .scoreboard.in-head .scorelbl{white-space:nowrap}
 .scoreboard.in-head .bar{max-width:360px}

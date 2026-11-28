@@ -182,7 +182,7 @@ body > #app-shell-bar{position:fixed;top:0;left:0;right:0;z-index:100}
 .appshell-brand--back:hover .appshell-back-ico{transform:translateX(-2px)}
 .appshell-spacer{flex:1;min-width:0}
 /* appShell.dock で移されたページのバー（lesson の進捗・quiz の採点）。空き(spacer)の代わりに幅いっぱいに広がる */
-.appshell-bar>.in-head{flex:1;min-width:0}
+.appshell-bar>.in-head{flex:1;min-width:0;justify-content:center} /* 左右の余白は app-shell.js の centerDock が付けて画面中央に寄せる */
 .appshell-bar>.in-head+.appshell-spacer{display:none}
 .appshell-btn{
   display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;white-space:nowrap;

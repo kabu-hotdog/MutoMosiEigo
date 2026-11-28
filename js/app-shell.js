@@ -76,11 +76,47 @@
     if (d.el.classList.contains('in-head')) {
       if (d.slot.parentNode) d.slot.after(d.el); else d.el.remove();
       d.el.classList.remove('in-head');
+      d.el.style.marginLeft = d.el.style.marginRight = '';
     }
     d.slot.remove();
     document.body.classList.remove('appshell-docked');
   }
+  // 統合したバーを画面の中央に寄せる。左(ブランド)と右(ログイン/名前/☰)の幅は違うので、
+  // 広い方に合わせて左右対称の余白を付ける。中身が入りきらない時だけ余白を詰める
+  var dockRO = null;
+  function centerDock() {
+    if (!docked || !docked.el.classList.contains('in-head')) return;
+    var el = docked.el, br = el.parentNode.getBoundingClientRect();
+    var L = els.brand.getBoundingClientRect().right - br.left, R = 0;
+    [els.idBtn, els.googleBtn, els.notifBtn, els.nameWrap, els.burger].forEach(function (n) {
+      var r = n.getBoundingClientRect();
+      if (r.width) R = Math.max(R, br.right - r.left);
+    });
+    var side = Math.max(L, R);
+    el.style.marginLeft = (side - L + 12) + 'px';
+    el.style.marginRight = (side - R + 12) + 'px';
+    // 中身の幅。中央寄せではあふれた分が左右両側に出て scrollWidth に入らないので、子要素の端から測る
+    var row = el.children.length === 1 ? el.firstElementChild : el, lo = Infinity, hi = -Infinity;
+    Array.prototype.forEach.call(row.children, function (k) {
+      var kr = k.getBoundingClientRect();
+      if (kr.width) { lo = Math.min(lo, kr.left); hi = Math.max(hi, kr.right); }
+    });
+    if (!(hi - lo > el.getBoundingClientRect().width + 0.5)) return;
+    var need = hi - lo + 2; // 小数点以下の丸め分
+    // 対称だと入りきらない: 中身(need)を、使える範囲(余白 12px)の中でできるだけ中央に置く
+    el.style.marginLeft = el.style.marginRight = '12px';
+    var r = el.getBoundingClientRect();
+    if (need >= r.width) return;
+    var left = Math.min(Math.max(br.left + br.width / 2 - need / 2, r.left), r.right - need);
+    el.style.marginLeft = (12 + left - r.left) + 'px';
+    el.style.marginRight = (12 + r.right - left - need) + 'px';
+  }
   function dock(el, o) {
+    if (!dockRO && window.ResizeObserver) {
+      dockRO = new ResizeObserver(centerDock);
+      [els.brand, els.idBtn, els.googleBtn, els.notifBtn, els.nameWrap, els.burger].forEach(function (n) { if (n) dockRO.observe(n); });
+      if (els.spacer) dockRO.observe(els.spacer.parentNode);
+    }
     undock();
     if (!el) return;
     var d = { el: el, slot: document.createComment('appshell-dock'), mq: window.matchMedia((o && o.media) || '(min-width:1000px)') };
@@ -88,8 +124,9 @@
     d.place = function () {
       var wide = d.mq.matches && els.spacer && d.slot.parentNode;
       if (wide) { els.spacer.before(el); el.classList.add('in-head'); }
-      else if (el.classList.contains('in-head')) { d.slot.after(el); el.classList.remove('in-head'); }
+      else if (el.classList.contains('in-head')) { d.slot.after(el); el.classList.remove('in-head'); el.style.marginLeft = el.style.marginRight = ''; }
       document.body.classList.toggle('appshell-docked', !!wide);
+      centerDock();
     };
     if (d.mq.addEventListener) d.mq.addEventListener('change', d.place); else if (d.mq.addListener) d.mq.addListener(d.place);
     docked = d;
@@ -187,7 +224,7 @@
 
     els = {
       idBtn: idBtn, googleBtn: googleBtn, notifBtn: notifBtn,
-      spacer: spacer, nameWrap: nameWrap, avatar: avatar, nameB: nameB, pointsS: pointsS, burger: burger
+      brand: brand, spacer: spacer, nameWrap: nameWrap, avatar: avatar, nameB: nameB, pointsS: pointsS, burger: burger
     };
   }
 

@@ -116,7 +116,7 @@ details.ls-terms summary{cursor:pointer;font-weight:700;font-size:.95rem}
 @media(min-width:1000px){
 .ls-wrap{max-width:1120px}
 /* 進捗バーはヘッダーの空きに入れる(appShell.dock)。ページ側の sticky バーが無くなる分、上の余白を詰める */
-.ls-bar.in-head{position:static;margin:0 8px;padding:0;border:none;background:none;backdrop-filter:none;flex-wrap:nowrap;gap:8px}
+.ls-bar.in-head{position:static;padding:0;border:none;background:none;backdrop-filter:none;flex-wrap:nowrap;gap:8px}
 .ls-bar.in-head .track{min-width:60px;max-width:320px}
 .ls-bar.in-head .ls-btn{padding:6px 11px;font-size:.8rem;white-space:nowrap}
 .ls-block,.ls-wrap [id]{scroll-margin-top:64px}
