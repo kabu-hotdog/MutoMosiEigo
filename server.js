@@ -11,6 +11,13 @@ function hashPw(pw, salt) { return crypto.pbkdf2Sync(pw, salt, 100000, 64, 'sha5
 function bonusDay() { return new Date(Date.now() + 4 * 60 * 60 * 1000).toISOString().slice(0, 10); }
 function dp(u) { return (u.points || 0) + (u.test_bet || 0); } // 累計ポイント（賭け中含む）
 function dsp(u) { return u.season_points || 0; }               // シーズンポイント
+// レースの end_date（"2026-06-25T10:44" 形式・日本時間）を過ぎたか。空・不正なら false
+function raceEnded(endDate) {
+  if (!endDate) return false;
+  if (/^\d{4}-\d\d-\d\d$/.test(endDate)) endDate += 'T23:59:59'; // 日付だけならその日の終わり
+  const t = Date.parse(/(?:[zZ]|[+-]\d\d:?\d\d)$/.test(endDate) ? endDate : endDate + '+09:00');
+  return !Number.isNaN(t) && t < Date.now();
+}
 
 // 称号オーバーライド（DB値より優先）
 function applyTitleOverride(u) {
@@ -415,8 +422,10 @@ app.post('/api/points', auth, async (req, res) => {
   // アクティブレースの教科を取得してシーズンpt加算可否を判定
   let addSeason = true;
   try {
-    const { rows: races } = await pool.query("SELECT subject FROM races WHERE active=1 ORDER BY id DESC LIMIT 1");
-    const raceSubject = races[0]?.subject;
+    const { rows: races } = await pool.query("SELECT subject, end_date FROM races WHERE active=1 ORDER BY id DESC LIMIT 1");
+    // 終了日時を過ぎたレースは閉じ忘れでも教科制限に使わない（end_date は管理画面の日本時間・TZなし。空なら期限なし）
+    const ended = races[0] && raceEnded(races[0].end_date);
+    const raceSubject = ended ? null : races[0]?.subject;
     if (raceSubject && subject && raceSubject !== subject) addSeason = false;
   } catch(e) {}
 
